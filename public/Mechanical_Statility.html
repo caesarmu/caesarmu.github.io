@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Mechanical Statility</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Mechanical Statility"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#d-elastic-constants"><span class="toc-section-number">1</span> 2D elastic constants</a>
+          <ul>
+          <li><a href="#voigt-notation-for-2d-square-rectangular-or-hexagonal-lattices"><span class="toc-section-number">1.1</span> Voigt notation for 2D square, rectangular, or hexagonal lattices</a></li>
+          <li><a href="#formula-for-orthorhombic-systemsconnetable09prbtutuncu07jpcm"><span class="toc-section-number">1.2</span> Formula for Orthorhombic systems<span class="citation" data-cites="Connetable09PRB Tutuncu07JPCM"><sup>[5,6]</sup></span></a>
+          <ul>
+          <li><a href="#c_11-and-c_22"><span class="toc-section-number">1.2.1</span> <span class="math inline">C_{11}</span> and <span class="math inline">C_{22}</span></a></li>
+          <li><a href="#c_12"><span class="toc-section-number">1.2.2</span> <span class="math inline">C_{12}</span></a></li>
+          <li><a href="#c_66"><span class="toc-section-number">1.2.3</span> <span class="math inline">C_{66}</span></a></li>
+          </ul></li>
+          <li><a href="#procedures-for-2d-square-rectangular-lattice"><span class="toc-section-number">1.3</span> Procedures for 2D square, rectangular lattice</a>
+          <ul>
+          <li><a href="#main"><span class="toc-section-number">1.3.1</span> Main</a></li>
+          <li><a href="#uniaxial-strain-along-x"><span class="toc-section-number">1.3.2</span> Uniaxial Strain along <span class="math inline">x</span></a></li>
+          <li><a href="#uniaxial-strain-along-y"><span class="toc-section-number">1.3.3</span> Uniaxial Strain along <span class="math inline">y</span></a></li>
+          <li><a href="#biaxial-strain"><span class="toc-section-number">1.3.4</span> Biaxial Strain</a></li>
+          <li><a href="#shear-strain"><span class="toc-section-number">1.3.5</span> Shear Strain</a></li>
+          <li><a href="#other-tips"><span class="toc-section-number">1.3.6</span> Other tips</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#graphene"><span class="toc-section-number">2</span> Graphene</a></li>
+          <li><a href="#persistence-length"><span class="toc-section-number">3</span> persistence length</a></li>
+          <li><a href="#bulk-modulus"><span class="toc-section-number">4</span> Bulk modulus</a></li>
+          <li><a href="#from-wikipedia"><span class="toc-section-number">5</span> From <span>wikipedia</span></a></li>
+          <li><a href="#ref.">Ref.</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="d-elastic-constants"><span class="header-section-number">1</span> 2D elastic constants</h1>
+<h2 data-number="1.1" id="voigt-notation-for-2d-square-rectangular-or-hexagonal-lattices"><span class="header-section-number">1.1</span> Voigt notation for 2D square, rectangular, or hexagonal lattices</h2>
+<p><span class="citation" data-cites="Zhang15PNASU Wang16NC"><sup>[1,2]</sup></span> As we fix the supercell during all of the MD simulations, it is necessary to assess the effect of lattice distortion on structural stability. To guarantee the positive-definiteness of strain energy following lattice distortion, the linear elastic constants of a stable crystal has to obey the Born–Huang criteria<span class="citation" data-cites="Born54P"><sup>[3]</sup></span>. We calculate the change of energy due to the in-plane strain to determine the mechanical stability of penta-graphene. For a 2D sheet, using the standard Voigt notation<span class="citation" data-cites="Andrew12PRB"><sup>[4]</sup></span>, i.e., 1-xx, 2-yy, and 6-xy, the elastic strain energy per unit area can be expressed as <span class="math display">U(\varepsilon)=\frac{1}{2}C_{11}\varepsilon_{xx}^2+\frac{1}{2}C_{22}\varepsilon_{yy}^2+C_{12}\varepsilon_{xx}\varepsilon_{yy}+2C_{66}\varepsilon_{xy}^2</span> where C<sub>11</sub>, C<sub>22</sub>, C<sub>12</sub>, and C<sub>66</sub> are components of the elastic modulus tensor, corresponding to second partial derivative of strain energy with respect to strain(If hexagonal structures: <span class="math inline">C_{11}=C_{22},C_{66}=1/2(C_{11}-C_{12})</span>, If square: only <span class="math inline">C_{11}=C_{22})</span><span class="citation" data-cites="Andrew12PRB"><sup>[4]</sup></span>).<br />
+For a mechanically stable 2D sheet<span class="citation" data-cites="Andrew12PRB"><sup>[4]</sup></span>, the elastic constants need to satisfy C<sub>11</sub>C<sub>22</sub> − C<sub>12</sub><sup>2</sup>&gt;0 and C<sub>66</sub> &gt; 0<span class="citation" data-cites="Born54P"><sup>[3]</sup></span>. Due to the tetragonal symmetry of penta-graphene, we have C<sub>11</sub> = C<sub>22</sub>. Thus, in this case we only need to satisfy C<sub>11</sub>&gt;|C<sub>12</sub>| and C<sub>66</sub> &gt; 0. Under uniaxial strain, <span class="math inline">\varepsilon_{yy} = 0</span>, <span class="math inline">U(\varepsilon)=1/2C_{11}\varepsilon_{xx}^2</span>. Parabolic fitting of the uniaxial strain curve yields C<sub>11</sub> = 265 GPa·nm. Under equi-biaxial strain, <span class="math inline">\varepsilon_{xx}= \varepsilon_{yy}</span>, we have <span class="math inline">U(\varepsilon)=(C_{11}+C_{12})\varepsilon_{xx}^2</span>. So Young’s modulus, which can be derived from the elastic constants by <span class="math display">Y_{a}=(C_{11}*C_{22}-C_{12}^2)/C_{22},Y_{b}=(C_{11}*C_{22}-C_{12}^2)/C_{11}</span></p>
+<ul>
+<li>Poisson’s ratio <span class="math display">\nu_{a}=C_{12}/C_{22}, \nu_{b}=C_{12}/C_{11}</span>, while <strong>Poisson’s ratio</strong> <span class="math inline">\nu</span> the ratio of the transverse strain to the axial strain, namely, <span class="math display">\nu=-\varepsilon_{trans}/\varepsilon_{axial}</span> So To check Poisson ration with vasp.impi.fixcell.</li>
+</ul>
+<figure>
+<img src="../img/Ener_strain.png" title="Ener_strain" style="width:50.0%" alt="Fig. 1: Energy vs. strain" /><figcaption aria-hidden="true">Fig. 1: Energy vs. strain</figcaption>
+</figure>
+<h2 data-number="1.2" id="formula-for-orthorhombic-systemsconnetable09prbtutuncu07jpcm"><span class="header-section-number">1.2</span> Formula for Orthorhombic systems<span class="citation" data-cites="Connetable09PRB Tutuncu07JPCM"><sup>[5,6]</sup></span></h2>
+<p><span class="math display">
+ \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix}=\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} \cdot (\boldsymbol{I}+\boldsymbol{\varepsilon})
+</span> <span class="math display">\boldsymbol{\varepsilon}= \begin{pmatrix}
+   e_1 &amp; e_6/2 &amp; e_5/2 \\
+   e_6/2 &amp; e_2 &amp; e_4/2 \\
+   e_5/2 &amp; e_4/2 &amp; e_3
+  \end{pmatrix}
+</span></p>
+<h3 data-number="1.2.1" id="c_11-and-c_22"><span class="header-section-number">1.2.1</span> <span class="math inline">C_{11}</span> and <span class="math inline">C_{22}</span></h3>
+<h4 data-number="1.2.1.1" id="c_11"><span class="header-section-number">1.2.1.1</span> <span class="math inline">C_{11}</span></h4>
+<p><span class="math display">e=(\delta,0,0,0,0,0)</span> <span class="math display">E(\delta)=E(0)+\frac{1}{2}C_{11}V_0\delta^2+O(\delta^4)</span> <span class="math display">
+    \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix} =\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} \cdot \begin{pmatrix}
+   1+\delta &amp; 0 &amp; 0 \\
+   0 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 1
+\end{pmatrix}=\begin{pmatrix}
+   (1+\delta) \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} 
+</span></p>
+<h4 data-number="1.2.1.2" id="c_22"><span class="header-section-number">1.2.1.2</span> <span class="math inline">C_{22}</span></h4>
+<p><span class="math display">e=(0, \delta,0,0,0,0)</span> <span class="math display">E(\delta)=E(0)+\frac{1}{2}C_{22}V_0\delta^2+O(\delta^4)</span> <span class="math display">
+    \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix} =\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; (1+\delta) \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} 
+</span></p>
+<h3 data-number="1.2.2" id="c_12"><span class="header-section-number">1.2.2</span> <span class="math inline">C_{12}</span></h3>
+<h4 data-number="1.2.2.1" id="d"><span class="header-section-number">1.2.2.1</span> 2D</h4>
+<p><span class="math display">e=(\delta,\delta,0,0,0,0)</span> <span class="math display">E(\delta)=E(0)+\frac{1}{2}(C_{11}+C_{22}+2C_{12})V_0\delta^2+O(\delta^4)</span> <span class="math display">
+    \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix} =\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} \cdot \begin{pmatrix}
+   1+\delta &amp; 0 &amp; 0 \\
+   0 &amp; 1+\delta &amp; 0 \\
+   0 &amp; 0 &amp; 1
+\end{pmatrix}=\begin{pmatrix}
+   (1+\delta) \boldsymbol{a_1}  &amp;  (1+\delta) \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} 
+</span></p>
+<h4 data-number="1.2.2.2" id="d-1"><span class="header-section-number">1.2.2.2</span> 3D</h4>
+<p><span class="math display">u=[1-\delta^2]^{-1/3}</span> <span class="math display">e=(u(1+\delta)-1,u(1-\delta)-1,u-1,0,0,0)</span> <span class="math display">E(\delta)=E(0)+\frac{1}{2}(C_{11}+C_{22}+2C_{12})V_0\delta^2+O(\delta^4)</span> <span class="math display">
+    \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix} =\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} \cdot \begin{pmatrix}
+   u(1+\delta) &amp; 0 &amp; 0 \\
+   0 &amp; u(1-\delta) &amp; 0 \\
+   0 &amp; 0 &amp; u
+\end{pmatrix}=\begin{pmatrix}
+   u(1+\delta) \boldsymbol{a_1}  &amp;  u(1-\delta) \boldsymbol{a_2} &amp; u\boldsymbol{a_3}
+  \end{pmatrix} 
+</span></p>
+<h3 data-number="1.2.3" id="c_66"><span class="header-section-number">1.2.3</span> <span class="math inline">C_{66}</span></h3>
+<p><span class="math display">e=(0,0,0,0,0,\delta)</span> <span class="math display">E(\delta)=E(0)+\frac{1}{2}C_{66}V_0\delta^2+O(\delta^4)</span> <span class="math display">
+    \begin{pmatrix}
+   \boldsymbol{a_1&#39;} &amp; \boldsymbol{a_2&#39;} &amp; \boldsymbol{a_3&#39;}
+  \end{pmatrix} =\begin{pmatrix}
+   \boldsymbol{a_1}  &amp; \boldsymbol{a_2} &amp; \boldsymbol{a_3}
+  \end{pmatrix} \cdot \begin{pmatrix}
+   1  &amp; \delta/2 &amp; 0 \\
+   \delta/2 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 1
+\end{pmatrix}=\begin{pmatrix}
+   \boldsymbol{a_1}+\delta/2*\boldsymbol{a_2}   &amp; \boldsymbol{a_2}+\delta/2*\boldsymbol{a_1} &amp; \boldsymbol{a_3}
+  \end{pmatrix} 
+</span></p>
+<ul>
+<li>If set <span class="math inline">\delta&#39;=\delta/2</span>, then <span class="math display">E(\delta)=E(0)+2C_{66}V_0\delta&#39;^2+O(\delta&#39;^4)</span></li>
+</ul>
+<h2 data-number="1.3" id="procedures-for-2d-square-rectangular-lattice"><span class="header-section-number">1.3</span> Procedures for 2D square, rectangular lattice</h2>
+<ul>
+<li>Hexagonal lattice can be converted to rectangular lattice</li>
+</ul>
+<h3 data-number="1.3.1" id="main"><span class="header-section-number">1.3.1</span> Main</h3>
+<ul>
+<li>Typically: <span class="math inline">-0.02\leq \varepsilon \leq 0.02</span></li>
+<li><span class="math inline">S_{cell}=a_{11}*a_{22}\times 10^{-20}\ m^2</span></li>
+<li><span class="math inline">E^s=\frac{U}{S_{cell}}*1.6\times 10^{-19}</span> J/m<sup>2</sup></li>
+<li><span class="math inline">\Delta E^s=A\varepsilon^2</span> J/m<sup>2</sup></li>
+<li>So <span class="math inline">U=(E^s_{\varepsilon=0}+A\varepsilon^2)*\frac{S_{cell}}{1.6\times 10^{-19}}</span> J/m<sup>2</sup></li>
+<li>Fitting the total energy <span class="math inline">U</span> vs. <span class="math inline">\varepsilon</span> using <span class="math display">U=A&#39;*\varepsilon**2+B\varepsilon+C</span></li>
+<li><span class="math inline">A=\frac{16}{a_{11}*a_{22}}A&#39;</span></li>
+</ul>
+<h3 data-number="1.3.2" id="uniaxial-strain-along-x"><span class="header-section-number">1.3.2</span> Uniaxial Strain along <span class="math inline">x</span></h3>
+<ul>
+<li>Calculate the strain energy per area (<span class="math inline">E_s</span>) with lateral lattice constant fixed, so that</li>
+<li><span class="math inline">\varepsilon_{yy}=0</span>, <span class="math inline">\Delta E^s=\frac{1}{2}C_{11}\varepsilon_{xx}^2</span> (<span class="math inline">C_{11}=\frac{\partial^2 E^s}{\partial\varepsilon_x^2}</span>)</li>
+<li>so that <span class="math inline">C_{11}=2*A_{xx}</span>=<span class="math inline">\frac{32}{a_{11}*a_{22}}*A&#39;_{xx}</span> J/m<sup>2</sup> (1 J/m<sup>2</sup> =1 GPa<span class="math inline">\cdot</span>nm)</li>
+</ul>
+<h3 data-number="1.3.3" id="uniaxial-strain-along-y"><span class="header-section-number">1.3.3</span> Uniaxial Strain along <span class="math inline">y</span></h3>
+<ul>
+<li>Similarly, <span class="math inline">\Delta E^s=\frac{1}{2}C_{22}\varepsilon_{yy}^2</span></li>
+<li>so that, <span class="math inline">C_{22}=2*A_{yy}</span>=<span class="math inline">\frac{32}{a_{11}*a_{22}}*A&#39;_{yy}</span> GPa<span class="math inline">\cdot</span>nm</li>
+</ul>
+<h3 data-number="1.3.4" id="biaxial-strain"><span class="header-section-number">1.3.4</span> Biaxial Strain</h3>
+<ul>
+<li><span class="math inline">\Delta E^s=(\frac{1}{2}C_{11}+\frac{1}{2}C_{22}+C_{12})\varepsilon_{xx}^2</span></li>
+<li>so that, <span class="math inline">C_{12}=A_{bi}-\frac{1}{2}C_{11}-\frac{1}{2}C_{22}</span> <span class="math inline">=\frac{16}{a_{11}*a_{22}}*A&#39;_{bi}-\frac{1}{2}C_{11}-\frac{1}{2}C_{22}</span></li>
+</ul>
+<h3 data-number="1.3.5" id="shear-strain"><span class="header-section-number">1.3.5</span> Shear Strain</h3>
+<ul>
+<li><span class="math inline">\Delta E^s=2C_{66}\varepsilon_{xy}^2</span></li>
+<li>So that <span class="math inline">C_{66}=2*A_{xy}=\frac{8}{a_{11}*a_{22}}*A&#39;_{xy}</span></li>
+</ul>
+<h3 data-number="1.3.6" id="other-tips"><span class="header-section-number">1.3.6</span> Other tips</h3>
+<ul>
+<li>For 2D square system: <span class="math inline">C_{11}=C_{22}</span></li>
+<li>For 2D hexagonal system: <span class="math inline">C_{11}=C_{22}</span>, <span class="math inline">C_{66}=1/2(C_{11}-C_{12})</span></li>
+<li>Young’s modulus: <span class="math inline">Y_{a}=(C_{11}*C_{22}-C_{12}^2)/C_{22}</span> , <span class="math inline">Y_{b}=(C_{11}*C_{22}-C_{12}^2)/C_{11}</span></li>
+<li>Poisson’s ratio: <span class="math inline">\nu_{a}=C_{12}/C_{22}</span>, <span class="math inline">\nu_{b}=C_{12}/C_{11}</span></li>
+<li>layer modulus<span class="citation" data-cites="Andrew12PRB"><sup>[4]</sup></span>: <span class="math inline">\gamma=1/4(C_{11}+C_{22}+2C_{12})</span></li>
+</ul>
+<h1 data-number="2" id="graphene"><span class="header-section-number">2</span> Graphene</h1>
+<p>Table. Elastic constants (GPa) for graphene. Rec and hex stand for rectangular and hexagonal lattice.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Graphene</th>
+<th style="text-align: center;"><span class="math inline">C_{11}</span></th>
+<th style="text-align: center;"><span class="math inline">C_{22}</span></th>
+<th style="text-align: center;"><span class="math inline">C_{12}</span></th>
+<th style="text-align: center;"><span class="math inline">1/2(C_{11}-C_{12})</span></th>
+<th style="text-align: center;"><span class="math inline">C_{66}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">This work</td>
+<td style="text-align: center;">352.62 (Rec)</td>
+<td style="text-align: center;">352.25 (Rec)</td>
+<td style="text-align: center;">61.43 (Rec)</td>
+<td style="text-align: center;">145.59 (Rec)</td>
+<td style="text-align: center;">149.56 (Hex. +Relaxtion)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ref.<span class="citation" data-cites="Wang16NC"><sup>[2]</sup></span></td>
+<td style="text-align: center;">342.93</td>
+<td style="text-align: center;">342.93</td>
+<td style="text-align: center;">62.23</td>
+<td style="text-align: center;">140.35</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<h1 data-number="3" id="persistence-length"><span class="header-section-number">3</span> persistence length</h1>
+<p><span class="citation" data-cites="Singh08NL"><sup>[7]</sup></span> another important measure of stiffness is so-called <strong>persistence length[31] lp</strong> (a correlation length for the direction of a tube exposed to equilibrium fluctuations at temperature T). Its magnitude is proportional to the tube stiffness, <span class="math display">l_{p}=\pi Cd^3/8k_BT</span>, and amounts to fraction of a millimeter at room temperature for the typical nanometer diameters.<br />
+<strong>radial breathing mode (RBM) frequency</strong></p>
+<p><span class="math display">f_{RBM}=(1/\pi{c}{d})/[(C/(1-\nu^2)\rho_s)^{1/2}]</span> where <span class="math inline">\rho_s</span> is the mass density of the sheet per unit area. (The speed of light c is to convert to spectroscopic cm-1 units.), d:nanotube diameters, <span class="math inline">\nu</span>:Poisson ratio,C:in-plane stiffness</p>
+<h1 data-number="4" id="bulk-modulus"><span class="header-section-number">4</span> Bulk modulus</h1>
+<ul>
+<li>Yang modulus: <span class="math inline">\frac{1}{E}=\frac{1}{3G_{\nu}}+\frac{1}{K_{\nu}}</span></li>
+<li>Bulk modulus <span class="math inline">G_{\nu}</span> (Voigt notation): <span class="math inline">15G_{\nu}=(C{11}+C{22}+C{33})-(C{12}+C{23}+C{31})+3(C{44}+C{55}+C{66})</span></li>
+<li>Hardness <span class="math inline">{K_{\nu}}</span> (Voigt notation): <span class="math inline">9K_{\nu}=(C{11}+C{22}+C{33})+2(C{12}+C{23}+C{31})</span></li>
+</ul>
+<h1 data-number="5" id="from-wikipedia"><span class="header-section-number">5</span> From <a href="https://en.wikipedia.iwiki.eu.org/wiki/Bulk_modulus">wikipedia</a></h1>
+<p><img src="../img/Elastic.png" title="Elastic" style="width:100.0%" /></p>
+<h1 class="unnumbered" id="ref.">Ref.</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Zhang15PNASU" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Zhang, S.; Zhou, J.; Wang, Q.; Chen, X.; Kawazoe, Y.; Jena, P. Penta-Graphene: A New Carbon Allotrope. <em>Proc. Natl. Acad. Sci. USA</em> <strong>2015</strong>, <em>112</em>, 2372–2377.</div>
+</div>
+<div id="ref-Wang16NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Wang, Y.; Li, F.; Li, Y.; Chen, Z. Semi-Metallic Be5C2 Monolayer Global Minimum with Quasi-Planar Pentacoordinate Carbons and Negative Poisson/’s Ratio. <em>Nat. Commun.</em> <strong>2016</strong>, <em>7</em>.</div>
+</div>
+<div id="ref-Born54P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Born, M.; Huang, K. Dynamical Theory of Crystal Lattices. <em>Dynamical theory of crystal lattices</em>; Oxford University Press, 1954.</div>
+</div>
+<div id="ref-Andrew12PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Andrew, R. C.; Mapasha, R. E.; Ukpong, A. M.; Chetty, N. Mechanical Properties of Graphene and Boronitrene. <em>Phys. Rev. B</em> <strong>2012</strong>, <em>85</em>, 125428.</div>
+</div>
+<div id="ref-Connetable09PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Connétable, D.; Thomas, O. First-Principles Study of the Structural, Electronic, Vibrational, and Elastic Properties of Orthorhombic NiSi. <em>Phys. Rev. B</em> <strong>2009</strong>, <em>79</em>, 094101.</div>
+</div>
+<div id="ref-Tutuncu07JPCM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Tütüncü, H. M.; Bagci, S.; Srivastava, G. P. Electronic, Elastic and Phonon Properties of the Rock-Salt LaSb and YSb. <em>J. Phys.: Condens. Matter</em> <strong>2007</strong>, <em>19</em>, 156207.</div>
+</div>
+<div id="ref-Singh08NL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Singh, A. K.; Sadrzadeh, A.; Yakobson, B. I. Probing Properties of Boron <span><span class="math inline">\alpha</span></span>-Tubes by Ab Initio Calculations. <em>Nano Lett.</em> <strong>2008</strong>, <em>8</em>, 1314–1317.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

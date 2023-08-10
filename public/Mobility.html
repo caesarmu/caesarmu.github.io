@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>2D/1D Mobility</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="2D/1D Mobility"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#effective-mass"><span class="toc-section-number">1</span> Effective mass</a></li>
+          <li><a href="#d-mobilityqiao14ncbeleznay03jcp"><span class="toc-section-number">2</span> 1D Mobility<span class="citation" data-cites="Qiao14NC Beleznay03JCP"><sup>[1,2]</sup></span></a></li>
+          <li><a href="#d-mobilityqiao14nc"><span class="toc-section-number">3</span> 2D Mobility<span class="citation" data-cites="Qiao14NC"><sup>[1]</sup></span></a></li>
+          <li><a href="#unit-conversion"><span class="toc-section-number">4</span> Unit Conversion</a></li>
+          <li><a href="#example-of-b4c3-sheettian19n"><span class="toc-section-number">5</span> Example of B<sub>4</sub>C<sub>3</sub> sheet<span class="citation" data-cites="Tian19N"><sup>[3]</sup></span></a>
+          <ul>
+          <li><a href="#note"><span class="toc-section-number">5.1</span> Note</a></li>
+          <li><a href="#formula-for-effective-mass"><span class="toc-section-number">5.2</span> Formula for effective mass:</a>
+          <ul>
+          <li><a href="#calculation"><span class="toc-section-number">5.2.1</span> Calculation</a></li>
+          </ul></li>
+          <li><a href="#deformation-energy-and-elastic-modulus-2d"><span class="toc-section-number">5.3</span> Deformation Energy and Elastic Modulus (2D)</a>
+          <ul>
+          <li><a href="#calculation-c_x2d"><span class="toc-section-number">5.3.1</span> Calculation <span class="math inline">C_x^{2D}</span></a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="effective-mass"><span class="header-section-number">1</span> Effective mass</h1>
+<p><span class="math display">m_e^*=\hbar[\frac{\partial^2E(k)}{\partial k^2}]^{-1}</span></p>
+<h1 data-number="2" id="d-mobilityqiao14ncbeleznay03jcp"><span class="header-section-number">2</span> 1D Mobility<span class="citation" data-cites="Qiao14NC Beleznay03JCP"><sup>[1,2]</sup></span></h1>
+<p>An expression for the mobility in 1D systems is <span class="math display">\mu_{1D}=\sqrt{\frac{2}{\pi}}\frac{e\hbar^2 C^{1D}}{\sqrt{k_B T} (m_e^*)^{3/2} E_l^2}</span> which should be relevant for BP ribbons. The narrower the ribbon, the smaller is its effective elastic modulus.</p>
+<h1 data-number="3" id="d-mobilityqiao14nc"><span class="header-section-number">3</span> 2D Mobility<span class="citation" data-cites="Qiao14NC"><sup>[1]</sup></span></h1>
+<p>In 2D the carrier mobility is given by the expression <span class="math display">\mu^{2D}=\frac{e\hbar^3 C^{2D}}{k_B T m_c^* m_d (E_l^i)^2}</span> where <span class="math inline">m_c^*</span> is the effective mass in the transport direction and <span class="math inline">m_d</span> is the average effective mass determined by <span class="math inline">m_d=\sqrt{m_x^*m_y^*}</span> . The term <span class="math inline">E_l</span> represents the deformation potential constant of the valence-band minimum for hole or conduction-band maximum for electron along the transport direction, defined by <span class="math display">E_l^i(VBM/CBM)=\frac{\Delta (E(VBM/CBM)-E(vac))}{\Delta l/l_0}</span></p>
+<p>Here <span class="math inline">{\Delta}V_i</span> is the energy change of the ith band under proper cell compression and dilatation (calculated using a step of 0.5%), <span class="math inline">l_0</span> is the lattice constant in the transport direction and <span class="math inline">{\Delta}l</span> is the deformation of <span class="math inline">l_0</span>. The elastic modulus <span class="math inline">C^{2D}</span> of the longitudinal strain in the propagation directions (both x and y) of the longitudinal acoustic wave is derived from <span class="math display">(E_l-E_0)/S_0=\frac{ C^{2D}}{2}(\Delta l/l_0)^2 \Rightarrow  E_l=E_0+\frac{S_0 C^{2D}}{2}(\Delta l/l_0)^2</span></p>
+<p>,where E is the total energy and <span class="math inline">S_0</span> is the lattice volume at equilibrium for a 2D system. All structural properties in the calculation of carrier mobilities were obtained from optB88-vdW and properties related to the electronic structure were computed with the HSE06 functional. The temperature used for the mobility calculations was 300 K.</p>
+<figure>
+<img src="../img/E_deform.png" title="E_deform" style="width:50.0%" alt="Fig. 1:" /><figcaption aria-hidden="true">Fig. 1:</figcaption>
+</figure>
+<p><span class="math inline">E_{deform}=slope</span></p>
+<h1 data-number="4" id="unit-conversion"><span class="header-section-number">4</span> Unit Conversion</h1>
+<p><span class="math inline">\mu^{2D}=\frac{e\hbar^3 C^{2D}}{k_B T m_c^* m_d (E_l^i)^2}</span></p>
+<p><span class="math inline">=\frac{\sout{1.602\times10^{-19}CV}/V*(1.054571817\times10^{-34})^3J^3s^3 C^{2D}N/m}{1.380649\times10^{-23}J/\sout{K}*300\sout{K}*m_c^ * m_d * (9.10956\times10^{-31})^2 kg^2 (E_l^i)^2*(1.602\times10^{-19}CV)^{\sout2}}</span></p>
+<p><span class="math inline">=\frac{(1.054571817\times10^{-34})^3Js^3/V C^{2D}J/m^2}{1.380649\times10^{-23} *300 *m_c^ * m_d * (9.10956\times10^{-31})^2 kg^2 (E_l^i)^2*(1.602\times10^{-19})}</span></p>
+<p><span class="math inline">=\frac{(1.054571817\times10^{-34})^3Js^{\sout{3}}/V C^{2D}\sout{J/m^2}}{1.380649\times10^{-23} *300 *m_c^ * m_d * (9.10956\times10^{-31})^2 kg^{\sout{2}} (E_l^i)^2*(1.602\times10^{-19})}</span></p>
+<p><span class="math inline">=\frac{2.1104\times10^{-3}C^{2D}}{m_c^ * m_d(E_l^i)^2}J\cdot s/V/kg</span> <span class="math inline">=\frac{21.104C^{2D}}{m_c^ * m_d(E_l^i)^2} cm^2V^{-1}s^{-1}</span></p>
+<p>where the units for <span class="math inline">C^{2D}</span>, <span class="math inline">m_c^*</span>, <span class="math inline">m_d</span> and <span class="math inline">E_l^i</span> are N/m, <span class="math inline">m_0</span>, <span class="math inline">m_0</span> and eV, respectively.</p>
+<ul>
+<li><span class="math inline">1J=1CV</span>, <span class="math inline">1J=1kg\cdot m^2/s^2</span></li>
+</ul>
+<h1 data-number="5" id="example-of-b4c3-sheettian19n"><span class="header-section-number">5</span> Example of B<sub>4</sub>C<sub>3</sub> sheet<span class="citation" data-cites="Tian19N"><sup>[3]</sup></span></h1>
+<h2 data-number="5.1" id="note"><span class="header-section-number">5.1</span> Note</h2>
+<ul>
+<li>Usually the realtion between lattice vector <span class="math inline">a_{i}</span> and reciprocal lattice vector <span class="math inline">b_{j}</span> is esspresed as <span class="math inline">a_{i}*b_{j}=2{\pi}{\Delta}_{ij}</span>, however it is esspresed as <span class="math inline">a_{i}*b_{j}={\Delta}_{ij}</span> in VASP，so the unit of reciprocal lattice vectors in VASP is <span class="math inline">2\pi</span>. If you use reciprocal lattice vectors from vasp, please multiply the reciprocal lattice vectors with <span class="math inline">2\pi</span></li>
+</ul>
+<h2 data-number="5.2" id="formula-for-effective-mass"><span class="header-section-number">5.2</span> Formula for effective mass:</h2>
+<p><span class="math display">E(k)=E_0+\frac{\hbar^2k^2}{2m*}=A*k^2+Bk+C</span> <span class="math display">\frac{\hbar^2}{m^*}=\frac{\partial^2E}{\partial^2k}=2A\Rightarrow\frac{1}{m^*}=\frac{1}{\hbar^2}\frac{\partial^2E}{\partial^2k}</span> * In atomic units, <span class="math inline">m^*=\frac{1}{2A}</span></p>
+<h3 data-number="5.2.1" id="calculation"><span class="header-section-number">5.2.1</span> Calculation</h3>
+<ol type="1">
+<li>Optimize cell</li>
+<li>Band structure calculation, to determine VBM and CBM.</li>
+<li>Non-SCF calculation with very dense K-points near the VBM/CBM point, to get VB and CB energy surfaces.</li>
+<li>Use some script to generate files (e.g., eig_bandsurf_024.dat) for the <code>energy surface</code> of VB/CB at every K points,</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head eig_bandsurf_024.dat</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Kx</span>             Ky             Kz             Energy  Kx<span class="pp">*</span>Rec         Ky<span class="pp">*</span>Rec         Kz<span class="pp">*</span>Rec</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.01500000</span>    <span class="at">-0.01500000</span>    0.00000000     <span class="at">-0.27691100</span>    <span class="at">-0.01163803</span>    <span class="at">-0.02017344</span>    <span class="at">-0.00000006</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.01350000</span>    <span class="at">-0.01500000</span>    0.00000000     <span class="at">-0.27680900</span>    <span class="at">-0.01047423</span>    <span class="at">-0.02017344</span>    <span class="at">-0.00000006</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.01200000</span>    <span class="at">-0.01500000</span>    0.00000000     <span class="at">-0.27672800</span>    <span class="at">-0.00931042</span>    <span class="at">-0.02017344</span>    <span class="at">-0.00000006</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-0.01050000</span>    <span class="at">-0.01500000</span>    0.00000000     <span class="at">-0.27666400</span>    <span class="at">-0.00814662</span>    <span class="at">-0.02017344</span>    <span class="at">-0.00000006</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
+<p>where <code>Kx/Ky/Kz</code> are K points near VBM/CBM，<code>Kx*Rec/Ky*Rec/Kz*Rec</code> are K points multiplied by reciprocal lattice vectors (similar to the conversion from Direct coordinates to Cartesian coordinates), and <code>Energy</code> is the energy for this band at <code>Kx/Ky/Kz</code>.<br />
+5. Extract K lines across VBM/CBM point (e.g., <span class="math inline">\Gamma</span>) along <code>x/y</code> direction with <code>atomic unit convertion</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;($1~/0.00000000/){print $6*0.529,$4/27.21}&#39;</span> eig_bandsurf_024.dat <span class="op">&gt;</span>emass_vb_ky_au.dat</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;($2~/0.00000000/){print $5*0.529,$4/27.21}&#39;</span> eig_bandsurf_024.dat <span class="op">&gt;</span>emass_vb_kx_au.dat</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;($1~/0.00000000/){print $6*0.529,$4/27.21}&#39;</span> eig_bandsurf_025.dat <span class="op">&gt;</span>emass_cb_ky_au.dat</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">&#39;($2~/0.00000000/){print $5*0.529,$4/27.21}&#39;</span> eig_bandsurf_025.dat <span class="op">&gt;</span>emass_cb_kx_au.dat</span></code></pre></div>
+<ul>
+<li>1 bohr=0.529, 1 Ha= 27.21 eV.</li>
+</ul>
+<ol start="6" type="1">
+<li>Using gnuplot for Parabolic Fitting: y=col(2) vs. x=col(1) to get the coefficient A. According to <span class="math inline">m^*=\frac{1}{2A}</span>, <span class="math inline">m_h^*(x)=1.6415</span>, <span class="math inline">m_h^*(y)=0.4427</span>, <span class="math inline">m_e^*(x)=2.4546</span>, <span class="math inline">m_e^*(y)=0.2908</span> in unit of the mass of free electron.</li>
+</ol>
+<h2 data-number="5.3" id="deformation-energy-and-elastic-modulus-2d"><span class="header-section-number">5.3</span> Deformation Energy and Elastic Modulus (2D)</h2>
+<h3 data-number="5.3.1" id="calculation-c_x2d"><span class="header-section-number">5.3.1</span> Calculation <span class="math inline">C_x^{2D}</span></h3>
+<ol type="1">
+<li>Change lattice parameter <span class="math inline">a</span> (<span class="math inline">\varepsilon=98\%\sim102\%</span>)</li>
+<li>Optimize the Cell and atomic positions with lattice vector <span class="math inline">\bold{a}</span> and <span class="math inline">\bold{c}</span> fixed while <span class="math inline">\bold{b}</span> released considering Poisson Effect.<br />
+</li>
+<li>Performe a SCF calculation with <code>LVHAR=.TRUE.</code>, get total energy, Vaccum level, VBM and CBM for each step.</li>
+<li>Linear fitting on <span class="math inline">y=E_{VBM}-E_{vac}</span> vs. <span class="math inline">x=\varepsilon</span> to get slope=<span class="math inline">E_{deform}^h</span>, and <span class="math inline">y=E_{CBM}-E_{vac}</span> vs. <span class="math inline">x=\varepsilon</span> to get slope=<span class="math inline">E_{deform}^e</span></li>
+<li>Parabolic Fitting on y=energy vs. <span class="math inline">x=\varepsilon</span> to get <span class="math inline">C_x^{2D}=\frac{2A}{S_0}</span>eV/\AA<sup>2</sup>=<span class="math inline">\frac{16.02*2A}{S_0}</span>N/m..</li>
+<li>An example,<br />
+</li>
+</ol>
+<ul>
+<li><span class="math inline">\mu_x^{2D}(e)=\frac{21.104C_x^{2D}}{m_c^ * m_d(E_l^x)^2}</span> cm<sup>2</sup>V<sup>-1</sup>s<sup>-1</sup> <span class="math inline">=21.104*(16.02*2*280.56/8.09825/4.6718746924056926)/2.4546*\sqrt(2.4546*0.2908)/2.26^2=337.9</span> cm<sup>2</sup>V<sup>-1</sup>s<sup>-1</sup></li>
+</ul>
+<hr />
+<p>Ref</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Qiao14NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Qiao, J.; Kong, X.; Hu, Z.-X.; Yang, F.; Ji, W. High-Mobility Transport Anisotropy and Linear Dichroism in Few-Layer Black Phosphorus. <em>Nat. Commun.</em> <strong>2014</strong>, <em>5</em>, 4475.</div>
+</div>
+<div id="ref-Beleznay03JCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Beleznay, F. B.; Bogár, F.; Ladik, J. Charge Carrier Mobility in Quasi-One-Dimensional Systems: Application to a Guanine Stack. <em>J. Chem. Phys.</em> <strong>2003</strong>, <em>119</em>, 5690–5695.</div>
+</div>
+<div id="ref-Tian19N" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Tian, X.; Xuan, X.; Yu, M.; Mu, Y.; Lu, H.-G.; Zhang, Z.; Li, S.-D. Predicting Two-Dimensional Semiconducting Boron Carbides. <em>Nanoscale</em> <strong>2019</strong>, <em>11</em>, 11099–11106.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

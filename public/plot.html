@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Plotting and Images</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Plotting and Images"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#gnuplot"><span class="toc-section-number">1</span> Gnuplot</a>
+          <ul>
+          <li><a href="#example-for-fit"><span class="toc-section-number">1.1</span> example for fit</a></li>
+          <li><a href="#example-for-band-plot"><span class="toc-section-number">1.2</span> example for band plot:</a></li>
+          <li><a href="#example-for-dos-plot"><span class="toc-section-number">1.3</span> example for Dos plot:</a></li>
+          <li><a href="#example-for-dirac-cone-plot"><span class="toc-section-number">1.4</span> example for Dirac Cone plot</a></li>
+          </ul></li>
+          <li><a href="#inkscape"><span class="toc-section-number">2</span> Inkscape</a>
+          <ul>
+          <li><a href="#launch-speed"><span class="toc-section-number">2.1</span> Launch Speed</a></li>
+          <li><a href="#latex-in-inkscape"><span class="toc-section-number">2.2</span> Latex in Inkscape</a></li>
+          <li><a href="#shortcuts"><span class="toc-section-number">2.3</span> ShortCuts</a></li>
+          <li><a href="#bubble"><span class="toc-section-number">2.4</span> Bubble</a></li>
+          <li><a href="#greek-symbols"><span class="toc-section-number">2.5</span> Greek Symbols</a></li>
+          </ul></li>
+          <li><a href="#imagemagick"><span class="toc-section-number">3</span> ImageMagick</a>
+          <ul>
+          <li><a href="#视频倒放"><span class="toc-section-number">3.1</span> 视频倒放</a>
+          <ul>
+          <li><a href="#视频倒放无音频"><span class="toc-section-number">3.1.1</span> 视频倒放，无音频</a></li>
+          <li><a href="#视频倒放音频不变"><span class="toc-section-number">3.1.2</span> 视频倒放，音频不变</a></li>
+          <li><a href="#音频倒放视频不变"><span class="toc-section-number">3.1.3</span> 音频倒放，视频不变</a></li>
+          <li><a href="#音视频同时倒放"><span class="toc-section-number">3.1.4</span> 音视频同时倒放</a></li>
+          </ul></li>
+          <li><a href="#图片转视频"><span class="toc-section-number">3.2</span> 图片转视频</a></li>
+          </ul></li>
+          <li><a href="#veusz"><span class="toc-section-number">4</span> Veusz</a>
+          <ul>
+          <li><a href="#default-styles"><span class="toc-section-number">4.1</span> Default Styles</a></li>
+          <li><a href="#date-import"><span class="toc-section-number">4.2</span> Date Import</a></li>
+          <li><a href="#plot"><span class="toc-section-number">4.3</span> Plot</a></li>
+          <li><a href="#export"><span class="toc-section-number">4.4</span> Export</a></li>
+          <li><a href="#double-y-axis"><span class="toc-section-number">4.5</span> Double Y axis</a></li>
+          <li><a href="#multigrid"><span class="toc-section-number">4.6</span> Multigrid</a></li>
+          <li><a href="#d-map"><span class="toc-section-number">4.7</span> 2D Map</a>
+          <ul>
+          <li><a href="#步骤"><span class="toc-section-number">4.7.1</span> 步骤</a></li>
+          </ul></li>
+          <li><a href="#other-tips"><span class="toc-section-number">4.8</span> Other Tips</a></li>
+          </ul></li>
+          <li><a href="#other-tools"><span class="toc-section-number">5</span> Other Tools</a>
+          <ul>
+          <li><a href="#convert"><span class="toc-section-number">5.1</span> Convert</a>
+          <ul>
+          <li><a href="#png-tiff"><span class="toc-section-number">5.1.1</span> png ⇒tiff</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="gnuplot"><span class="header-section-number">1</span> Gnuplot</h1>
+<h2 data-number="1.1" id="example-for-fit"><span class="header-section-number">1.1</span> example for fit</h2>
+<pre class="gnuplot"><code>datafile=&quot;En-R_arm.dat&quot;
+outfile=&#39;fit_log_arm.dat&#39;
+##################################
+set fit logfile outfile
+set print outfile append
+mean(x)=m       ## 拟合后m即为Y的平均值
+fit [x=0.325:0.345] mean(x) datafile using (4*3.1415926*3.1415926/$2**2):1 via m  #range 可选
+SST = FIT_WSSR  ## 对平均值的方差, 即SST
+
+f(x)=a*x+b     ## 线性模型
+FIT_LIMIT = 1e-6 
+fit [x=0.325:0.345] f(x) datafile using (4*3.1415926*3.1415926/$2**2):1 via a,b 
+SSE=FIT_WSSR    ## 对线性模型的方差, 即SSE
+print &quot;R^2=&quot;, 1-SSE/SST 
+print &quot;===========================================================&quot;  </code></pre>
+<p>another example with loop:</p>
+<pre class="gnuplot"><code>datafile=&quot;En-R_arm.dat&quot;
+outfile=&#39;fit_arm.dat&#39;
+##################################
+set fit logfile outfile
+set print outfile append
+do for [i=0:2]{
+colx=i*3+2
+coly=i*3+1
+mean(x)=m       ## 拟合后m即为Y的平均值
+fit mean(x) datafile using (4*3.1415926*3.1415926/(column(colx))**2):(column(coly)) via m
+SST = FIT_WSSR  ## 对平均值的方差, 即SST
+
+f(x)=a*x+b     ## 线性模型
+FIT_LIMIT = 1e-6 
+fit f(x) datafile using (4*3.1415926*3.1415926/(column(colx))**2):(column(coly)) via a,b 
+SSE=FIT_WSSR    ## 对线性模型的方差, 即SSE
+
+print &quot;cols &quot;.colx.&quot;:&quot;.coly.&quot; R^2=&quot;, 1-SSE/SST   
+print &quot;===========================================================&quot;
+}</code></pre>
+<h2 data-number="1.2" id="example-for-band-plot"><span class="header-section-number">1.2</span> example for band plot:</h2>
+<pre class="gnuplot"><code>set data style dots
+set key outside box
+#set border 5
+set font &quot;Arial, 40&quot;
+set terminal png small  size 600,480
+set output &quot;C2_eig_band_-2.2254.png&quot;
+set arrow from 0.000000,0.0 to 4.01581339,0.0 nohead
+set xrange [0: 4.01581339]
+set yrange [-6.0 : 4.0 ]
+unset xlabel ## &quot;High symmetry K-points&quot;
+set ylabel &quot;Energy (eV)&quot;
+unset key
+set arrow from  1.46988978, -6.0  to  1.46988978 ,  4.0 nohead
+set arrow from  2.31853117, -6.0  to  2.31853117 ,  4.0 nohead
+set xtics (   &quot; G &quot; 0.0 ,  &quot; M &quot; 1.46988978 ,  &quot; K &quot; 2.31853117 ,  &quot; G &quot; 4.01581339 )
+plot &quot;C2_eig_band_-2.2254.dat&quot; using 1:2 title &quot;Bands&quot;  with  lines linetype 3  linewidth 2</code></pre>
+<h2 data-number="1.3" id="example-for-dos-plot"><span class="header-section-number">1.3</span> example for Dos plot:</h2>
+<pre class="gnuplot"><code>#set data style dots
+### alpha {/Symbol a} or {$\alpha$} maybe
+### angstrom set encoding iso_8859_1 and use {/305}
+set term postscript eps color enhanced size  24cm,24cm
+set output &quot;sp_dos.eps&quot;
+set xrange [-6: 4]
+set xtics  2 out nomirror font &quot;Arial, 18&quot;
+set mxtics 2
+set xlabel &quot;Energy (eV)&quot; font &quot;Arial, 20&quot;
+set ylabel &quot;DOS (arb. units)&quot;  font &quot;Arial, 20&quot;
+set yrange [0 : 100 ]
+set arrow from 0.0,0.0 to 0.0,100.0 nohead linestyle 0 linewidth 2
+set ytics  20 out nomirror font &quot;Arial, 18&quot;
+set mxtics 2
+set  size 0.98,1.0
+set lmargin 10; set rmargin 0
+set key box opaque width 5 height 2 right top ### right top or at 0.5,1.0
+set label &quot;(a)&quot; at -5.5,80  font &quot;Arial, 25&quot;
+plot &quot;dos_0.1_ef-2.9596_all.dat&quot; using 1:2 title &quot;{/Arial=20 Total}&quot;  with  lines linetype 3  linewidth 2, \
+&quot;dos_0.1_ef-2.9596_all.dat&quot; using 1:13 title &quot;{/Arial=20 p}}&quot;  with  lines linetype 1  linewidth 2</code></pre>
+<h2 data-number="1.4" id="example-for-dirac-cone-plot"><span class="header-section-number">1.4</span> example for Dirac Cone plot</h2>
+<pre class="gnuplot"><code>set border lw 10 ### border width 
+set grid  ### grids in xy plane 
+set view 85,45 ### view angle 
+set xyplane at -0.45 ### xy plane at z=-0.15
+set xrange [-0.03000000 : 0.03000000]
+set yrange [0.30588000 : 0.36588000]
+set zrange [-0.45:-0.2]
+set xlabel &quot;k_x&quot;  font &quot;Arial, 150&quot; offset 35,-14  ### offset: label away from axis,need modification 
+set ylabel &quot;k_y&quot;   font &quot;Arial, 150&quot; offset 0,-14 ### offset:need modification
+set zlabel &quot;Energy (eV)&quot;  font &quot;Arial, 120&quot;  rotate by 90 center offset -40,0
+set xtics 0.02 out  scale 8 font &quot;Arial, 120&quot; offset 0,-8  ### tics on axis 
+set ytics 0.02 out  scale 8 font &quot;Arial,  120&quot; offset 0,-8
+set ztics 0.1 out  scale 2  font &quot;Arial,  120&quot; 
+set mytics 2  ### minor parts between major tics 
+set mxtics 2
+set mztics 2
+set  size 1.0,1.0
+set lmargin 40; set rmargin 0
+unset key    ### not title 
+#set ticslevel 0  #
+set dgrid3d 100,100 splines #number of grid mesh in the X- and Y-directions
+##  pm3d  to draw a color-mapped 3D figure
+set hidden3d  ### hidden map behind 
+set contour surface
+set cntrparam level incremental -0.45,0.025,-0.21
+set cbrange [-0.45:-0.21]
+#set colorbox vertical user origin 0.17, 0.49 size 0.04,0.12
+unset colorbox ### do not show color box bar 
+set terminal png enhanced size 2723.4,2723.4  ## 80mm= 302.36 pixel
+set output &quot;Dirac_cone_dc.png&quot;
+splot &quot;eig_bandsurf_022.dat&quot; using 1:2:4 with pm3d , &quot;eig_bandsurf_021.dat&quot; using 1:2:4 with pm3d 
+#pause -1
+#### /Times-Italic not support pngcairo, pdfcairo, epspairo  {/Times-Italic=20  p}
+set output  ### exit plot
+##set term wxt  ### return windows </code></pre>
+<h1 data-number="2" id="inkscape"><span class="header-section-number">2</span> Inkscape</h1>
+<h2 data-number="2.1" id="launch-speed"><span class="header-section-number">2.1</span> Launch Speed</h2>
+<ul>
+<li>编辑 &gt;首选项–&gt;界面：清楚列表并设置打开最近文档最大文件数为0.</li>
+<li>编辑 &gt;首选项–&gt;输入输出–&gt;渲染：缓存设置512MiB,并且Gaussian模糊质量和滤镜效果都设置成最差.</li>
+</ul>
+<h2 data-number="2.2" id="latex-in-inkscape"><span class="header-section-number">2.2</span> Latex in Inkscape</h2>
+<ul>
+<li>Install pstoedit to <code>D:\Datas\Softs\DraftTools\dosbin\pstoedit</code></li>
+<li>为Inkscape增加环境变量 in Autohotkey：<code>EnvSet, Path, %DosHome%\pstoedit;C:\"Program Files"\"MiKTeX 2.9"\miktex\bin\x64</code></li>
+</ul>
+<h2 data-number="2.3" id="shortcuts"><span class="header-section-number">2.3</span> ShortCuts</h2>
+<ul>
+<li>放大缩小：-/+/ctrl+滚轮/滚轮/shift+滚轮 放大/缩小画布, 上下/左右移动.</li>
+<li>撤销/重做：ctrl+z/ctrl+shift+z 撤销/重做.</li>
+<li>调节大小和旋转：工具条点击选取箭头, 点击目标一次, 可以缩放(加ctrl可以保持纵横比), 再点击一次, 可以变形/旋转(加ctrl可以控制15°间隔).</li>
+<li>三角形：1.扩展-&gt;渲染-&gt; 三角形； 2. 先建一个方框, 路径-&gt;对象转化成路径, 编辑节点(F2),选中三个节点, 然后从已选节点断开路径.</li>
+<li>多边形：工具条选取形状, 如方框(F4, 加ctrl控制宽高比例),圆形(F5, 加ctrl控制宽高比例),多边形(*),螺旋形(F9). 方框圆角：选中方框, 编辑节点(F2), 拖动角上节点.</li>
+<li>多边形并补：选中多个多边形, 路径-&gt;并集: ctrl++; 差集:ctrl+-; 交集:ctrl+*;互斥: ctrl+^; 分割: ctrl+/.</li>
+<li>取色和填充：工具条, 图像拾取颜色(F7),填充封闭区域(shift+F7). 颜色调节：包括填充色、轮廓色和轮廓样式可调.</li>
+<li>直线曲线：工具条, 创建流程图连接器(ctrl+F2)可用来创建直线、箭头, 然后用通过节点编辑(F2)可使直线变为曲线.</li>
+<li>改变层z高度：选区升高/降低一步-pgup/pgdown, 顶层/底层-Home/End.</li>
+<li>多层选取：鼠标点击选中, alt+click选取下一层, 移动需加alt键.</li>
+<li>文本输入：工具条选取文字对象(F8).</li>
+<li>群组：选取-&gt;右键群组(ctrl+g).</li>
+<li>图片裁剪：在图片上方放一个方框, 然后</li>
+<li>颜色反转：滤镜–&gt;颜色–&gt;反转: 反转通道(默认无)/反转色调/反转亮度/反转透明度, 可能需调整光照透明度.</li>
+<li>位图轮廓：路径–&gt;临摹位图轮廓(shift+alt+B):调节亮度截断阈值, 可选反相图像/平滑/堆叠扫描数/删除背景, 调整后更新调试, 选后后确定，将中心透明图拖出.</li>
+<li>半透明：滤镜–&gt;填充和透明度–&gt;亮度橡皮擦，扩张:351.6;侵蚀:362.6;全局不透明度0.72.</li>
+</ul>
+<h2 data-number="2.4" id="bubble"><span class="header-section-number">2.4</span> Bubble</h2>
+<p><a href="http://www.ryanlerch.org/blog/simple-bubble-in-inkscape-orb-ball-bubble/" class="uri">http://www.ryanlerch.org/blog/simple-bubble-in-inkscape-orb-ball-bubble/</a></p>
+<ol type="1">
+<li>画一个圆圈，填充色无，笔刷颜色RGBA 4fbbffff，笔刷宽度选10mm.并将笔刷的模糊blur调为3.7</li>
+<li>在圆的上半部画一个椭圆，二者上端对齐。椭圆从上到下渐变色4fbbffff到透明。</li>
+<li>将圆圈复制,将其blur调为0，并于原圆圈对齐，全选三者，对象-&gt;剪切-&gt;设置。</li>
+</ol>
+<h2 data-number="2.5" id="greek-symbols"><span class="header-section-number">2.5</span> Greek Symbols</h2>
+<ul>
+<li>切换到中文输入法，输入alpha、beta、gamma等会弹出相应符号。</li>
+</ul>
+<h1 data-number="3" id="imagemagick"><span class="header-section-number">3</span> ImageMagick</h1>
+<h2 data-number="3.1" id="视频倒放"><span class="header-section-number">3.1</span> 视频倒放</h2>
+<h3 data-number="3.1.1" id="视频倒放无音频"><span class="header-section-number">3.1.1</span> 视频倒放，无音频</h3>
+<p><code>ffmpeg.exe -i inputfile.mp4 -s 800x800 -filter_complex [0:v]reverse[v] -map [v] -preset superfast reversed.mp4</code></p>
+<h3 data-number="3.1.2" id="视频倒放音频不变"><span class="header-section-number">3.1.2</span> 视频倒放，音频不变</h3>
+<p><code>ffmpeg.exe -i inputfile.mp4 -s 800x800 -vf reverse reversed.mp4</code></p>
+<h3 data-number="3.1.3" id="音频倒放视频不变"><span class="header-section-number">3.1.3</span> 音频倒放，视频不变</h3>
+<p>ffmpeg.exe -i inputfile.mp4 -s 800x800 -map 0 -c:v copy -af “areverse” reversed_audio.mp4</p>
+<h3 data-number="3.1.4" id="音视频同时倒放"><span class="header-section-number">3.1.4</span> 音视频同时倒放</h3>
+<p>ffmpeg.exe -i inputfile.mp4 -s 800x800 -vf reverse -af areverse -preset superfast reversed.mp4</p>
+<h2 data-number="3.2" id="图片转视频"><span class="header-section-number">3.2</span> 图片转视频</h2>
+<h1 data-number="4" id="veusz"><span class="header-section-number">4</span> Veusz</h1>
+<h2 data-number="4.1" id="default-styles"><span class="header-section-number">4.1</span> Default Styles</h2>
+<ol type="1">
+<li>Edit–&gt;Default Styles,设置好，Save到某个位置。</li>
+<li>Edit–&gt;Preference–&gt;New documents–&gt;Stylesheet,设置到需要的默认格式位置。<br />
+Ps: 各种图表，越靠上位置越靠外不被覆盖。</li>
+</ol>
+<h2 data-number="4.2" id="date-import"><span class="header-section-number">4.2</span> Date Import</h2>
+<p>点击“Import data to Veusz”按钮, 弹出以下对话框, 选Standard.</p>
+<ul>
+<li>Filename处给出数据文件的位置</li>
+<li>Dataset name处给出各类数据的名称, 与Origin等不同, Veusz不是把数据以表格形式导入, 而是转换成各一维数组, 所以这个名称是一维数组的名称, 是必须的. 当使用x,,y,z时跳过第二列.</li>
+<li>Ignore text lines一般要选, 因为若是不选此项且数据文件有文字时, 数据导入不是数值格式, 而是文本格式.</li>
+<li>Read data in blocks一般不选. 若是类似能带图那种多条曲线数据且以空行分割, 选此项会导入多对一维数组, 各条曲线分开, 数组太多. 画能带图时一般不选项, 将各列数据以nan(代替空行）分割, 以免多条曲线头尾相连.</li>
+<li>Link dataset to files选择此项时, 数据不储存在Veusz文件内, 而是动态连接到外部数据文件. 可以使用unlink将数据储存在Veusz的文件中.</li>
+<li>Prefix一般要写, 便于区分一维数组命名.</li>
+<li>Tag一般也要写, 可以写数据文件名, 区分数据大类.<br />
+导入后.</li>
+</ul>
+<h2 data-number="4.3" id="plot"><span class="header-section-number">4.3</span> Plot</h2>
+<p>转到Editing面板,</p>
+<ul>
+<li>选中graph1（可以改名字）, 下面有x、y两条轴, 可以通过Properties和Formatting两个面板修改两轴的显示. 在工具栏上选择add xy, 在graph1下级出现xy1项.</li>
+<li>选中xy1, 点击Properties面板, X data 选data-Energy, Y data选data-band_1,曲线出现, 然后修改x, y,xy1的Properties和Formatting.</li>
+<li>点击 Base Graphe 增加Graph.</li>
+</ul>
+<h2 data-number="4.4" id="export"><span class="header-section-number">4.4</span> Export</h2>
+<p>选择export按钮, 导出各种格式,一般png/tiff分辨率选600dpi，eps选300dpi.</p>
+<h2 data-number="4.5" id="double-y-axis"><span class="header-section-number">4.5</span> Double Y axis</h2>
+<ol type="1">
+<li>点击add axis按钮, 改其名字为y2,</li>
+</ol>
+<ul>
+<li>Direction选择Vertical, Axis position选择1（右y轴）.</li>
+<li>选择绘图xy2时, 将其Properties中的Y axis选为y2即可.</li>
+</ul>
+<ol start="2" type="1">
+<li>点击add axis按钮, 改其名字为x2, 调整位置，可以一页双图甚至多图。</li>
+</ol>
+<h2 data-number="4.6" id="multigrid"><span class="header-section-number">4.6</span> Multigrid</h2>
+<p>选择Arrange Graphes in a gird, ,再在其下面新建add graph , 下面的与前面类似. 也可以将建好的graph拖入到grid下面.</p>
+<h2 data-number="4.7" id="d-map"><span class="header-section-number">4.7</span> 2D Map</h2>
+<h3 data-number="4.7.1" id="步骤"><span class="header-section-number">4.7.1</span> 步骤</h3>
+<ol type="1">
+<li>生成<span class="math inline">n\times m</span> 的二维矩阵csv文件</li>
+<li>Veusz⇒Date⇒Import⇒2D: csv mode, set x/y range, give dataset name (e.g., 2Dmap) ⇒Import</li>
+<li>Press image button: Plot a 2d dataset as an image: dataset: 2Dmap, select colormap</li>
+</ol>
+<ul>
+<li>P.S. use a common txt to build 2D dataset: Date⇒Create 2D: Name (e.g., 2Dmap), from x,y and z values based on 1D datasets or expressions, and select x,y and z datasets</li>
+</ul>
+<h2 data-number="4.8" id="other-tips"><span class="header-section-number">4.8</span> Other Tips</h2>
+<ul>
+<li>Data–&gt;Operations, 可以实现数据相加/减，乘以常数等操作。</li>
+</ul>
+<h1 data-number="5" id="other-tools"><span class="header-section-number">5</span> Other Tools</h1>
+<h2 data-number="5.1" id="convert"><span class="header-section-number">5.1</span> Convert</h2>
+<h3 data-number="5.1.1" id="png-tiff"><span class="header-section-number">5.1.1</span> png ⇒tiff</h3>
+<ul>
+<li>在Windows下，直接使用<code>画图</code>程序转换分辨率较低，使用<code>照片</code>程序转换得到的tiff分辨率会较高。</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

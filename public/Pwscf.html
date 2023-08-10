@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Quantum Espresso</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Quantum Espresso"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#installation"><span class="toc-section-number">1</span> Installation</a>
+          <ul>
+          <li><a href="#qe-6.7-gcc-9.3-openmpi-3.1.6-openblas-0.3.10-fftw3-passed-thermo_pw"><span class="toc-section-number">1.1</span> QE 6.7 + gcc 9.3 + OpenMPI 3.1.6 + OpenBlas 0.3.10 + FFTW3 (passed) + thermo_pw</a></li>
+          <li><a href="#qe-6.6-gcc-9.3.0-openmpi-3.1.6-amd-aocl-passed"><span class="toc-section-number">1.2</span> QE 6.6 + gcc 9.3.0 + OpenMPI 3.1.6 + AMD AOCL (passed)</a></li>
+          <li><a href="#pgi-18.10-required-openmpi-3.1.6-mkl-2015-cuda-9.2-gpu-version-passed"><span class="toc-section-number">1.3</span> pgi 18.10 (required) + OpenMPI 3.1.6 + MKL 2015 + Cuda 9.2 (GPU version passed)</a>
+          <ul>
+          <li><a href="#notes"><span class="toc-section-number">1.3.1</span> Notes</a></li>
+          </ul></li>
+          <li><a href="#intel-mpi-high-version-needed"><span class="toc-section-number">1.4</span> intel MPI (high version needed)</a>
+          <ul>
+          <li><a href="#tycloud"><span class="toc-section-number">1.4.1</span> TYCloud</a></li>
+          </ul></li>
+          <li><a href="#qe-7.1-elpa-2021.11-intel-onepai-2021.11.0-test"><span class="toc-section-number">1.5</span> QE 7.1 + ELPA 2021.11 + Intel onepai 2021.11.0 (test)</a></li>
+          <li><a href="#qe-7.1-elpa-2021.11-gcc7-openmpi-3.1.6-mkl-2015test"><span class="toc-section-number">1.6</span> QE 7.1 + ELPA 2021.11 + gcc7 + OpenMPI 3.1.6 + MKL 2015(test)</a></li>
+          <li><a href="#wannier90-3.1"><span class="toc-section-number">1.7</span> Wannier90 3.1</a></li>
+          <li><a href="#install-pgi-compiler"><span class="toc-section-number">1.8</span> Install PGI Compiler</a></li>
+          </ul></li>
+          <li><a href="#xcrysden"><span class="toc-section-number">2</span> Xcrysden</a>
+          <ul>
+          <li><a href="#install-on-linux"><span class="toc-section-number">2.1</span> Install On Linux</a>
+          <ul>
+          <li><a href="#defaut-parameters"><span class="toc-section-number">2.1.1</span> Defaut parameters</a></li>
+          <li><a href="#useful-shortcuts"><span class="toc-section-number">2.1.2</span> Useful shortcuts</a></li>
+          <li><a href="#main-window"><span class="toc-section-number">2.1.3</span> Main window</a></li>
+          <li><a href="#surface"><span class="toc-section-number">2.1.4</span> Surface</a></li>
+          </ul></li>
+          <li><a href="#install-on-windows"><span class="toc-section-number">2.2</span> Install On Windows</a>
+          <ul>
+          <li><a href="#install-cygwin"><span class="toc-section-number">2.2.1</span> Install Cygwin</a></li>
+          <li><a href="#install-xcrysden"><span class="toc-section-number">2.2.2</span> Install Xcrysden</a></li>
+          </ul></li>
+          <li><a href="#tips"><span class="toc-section-number">2.3</span> Tips</a></li>
+          </ul></li>
+          <li><a href="#windows-gui-for-quantum-espresso-qe"><span class="toc-section-number">3</span> Windows Gui for Quantum Espresso (QE)</a>
+          <ul>
+          <li><a href="#qe-on-device-studio"><span class="toc-section-number">3.1</span> QE on Device Studio</a>
+          <ul>
+          <li><a href="#more-tasks"><span class="toc-section-number">3.1.1</span> More tasks</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="installation"><span class="header-section-number">1</span> Installation</h1>
+<h2 data-number="1.1" id="qe-6.7-gcc-9.3-openmpi-3.1.6-openblas-0.3.10-fftw3-passed-thermo_pw"><span class="header-section-number">1.1</span> QE 6.7 + gcc 9.3 + OpenMPI 3.1.6 + OpenBlas 0.3.10 + FFTW3 (passed) + thermo_pw</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> qe-6.7-ReleasePack.tgz</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> qe-6.7</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># download thermo_pw &lt;https://github.com/dalcorso/thermo_pw/releases/download/1.4.1/thermo_pw.1.4.1.tar.gz&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> thermo_pw.1.4.1.tar.gz</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify Modules/parameters.f90 and set npk=999999</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify PHonon/PH/phcom.f90 and set maxter = 500</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify PHonon/PH/lambda.f90 and set npk = 500</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> veryclean</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/fftw-3.3.8-gcc-4.8.5/include/ </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--with-scalapack</span><span class="op">=</span>yes FC=gfortran F90=gfortran F77=gfortran CC=gcc MPIF90=mpif90 BLAS_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/gnu/libopenblas.a&quot;</span> SCALAPACK_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/gnu/libscalapack.a&quot;</span>   FFT_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/fftw-3.3.8-gcc-4.8.5/lib/libfftw3.a&quot;</span>  <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/config/soft/qe.bin/qe68.gcc7.fftw</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">## Tips: 1. Add -ffpe-summary=none to FFLAGS</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> thermo_pw</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> join_qe</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .. </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make all xspectra epw w90 want d3q  yambo thermo_pw <span class="kw">&amp;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-f</span> nohup.out</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install  </span></code></pre></div>
+<ul>
+<li>Mind: want will generate bands.x and dos.x, and they will cover ones generated by pp. So you should rename them.</li>
+</ul>
+<h2 data-number="1.2" id="qe-6.6-gcc-9.3.0-openmpi-3.1.6-amd-aocl-passed"><span class="header-section-number">1.2</span> QE 6.6 + gcc 9.3.0 + OpenMPI 3.1.6 + AMD AOCL (passed)</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> qe-6.6-ReleasePack.tgz</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> qe-6.6</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify Modules/parameters.f90 and set npk=999999</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify PHonon/PH/ phcom.f90 and set maxter = 500</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span>/opt/local/amd/2.2/amd-fftw/include </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--with-scalapack</span><span class="op">=</span>yes FC=gfortran F90=gfortran F77=gfortran CC=gcc MPIF90=mpif90 BLAS_LIBS=<span class="st">&quot;/opt/local/amd/2.2/amd-blis/lib/libblis.a&quot;</span> LAPACK_LIBS=<span class="st">&quot;/opt/local/amd/2.2/amd-libflame/lib/libflame.a&quot;</span> SCALAPACK_LIBS=<span class="st">&quot;/opt/local/amd/2.2/amd-scalapack/lib/libscalapack.a&quot;</span> FFT_LIBS=<span class="st">&quot;/opt/local/amd/2.2/amd-fftw/lib/libfftw3.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/qe/bin/qe66.gcc9.amd</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">## Tips: 1. delete  BEEF_LIBS,BEEF_LIBS_SWITCH and -Duse_beef 2. Add -D__FFTW3 to DFLAGS 3. Add -ffpe-summary=none to FFLAGS </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make pw ph pp pwcond neb cp ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-f</span> nohup.out</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install  </span></code></pre></div>
+<h2 data-number="1.3" id="pgi-18.10-required-openmpi-3.1.6-mkl-2015-cuda-9.2-gpu-version-passed"><span class="header-section-number">1.3</span> pgi 18.10 (required) + OpenMPI 3.1.6 + MKL 2015 + Cuda 9.2 (GPU version passed)</h2>
+<ul>
+<li>Do not use <code>-enable-openmp</code> flag for configuration, errors happen easily!</li>
+<li>Only <code>pw.x</code> ported on GPU!</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> qq-e-gpu-qe-gpu-6.5a2.tar.gz</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> q-e-gpu-qe-gpu-6.5a2</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/opt/pgi/linux86-64-llvm/18.10/bin:<span class="va">$PATH</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH</span><span class="op">=</span>/opt/pgi/linux86-64-llvm/18.10/lib:<span class="va">$LD_LIBRARY_PATH</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load openmpi path </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing power of 1080Ti: 60</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MKLROOT</span><span class="op">=</span>/opt/intel15/composerxe/mkl</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--with-scalapack</span><span class="op">=</span>no  FC=pgfortran F90=pgfortran F77=pgfortran CC=pgcc MPIF90=mpif90  BLAS_LIBS=<span class="st">&quot;-L</span><span class="va">${MKLROOT}</span><span class="st">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span>  FFT_LIBS=<span class="st">&quot;/opt/local/fftw3.pgi18/lib/libfftw3.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/home/muyw/backup/qe.mkl  <span class="at">-with-cuda</span><span class="op">=</span><span class="st">&quot;/usr/local/cuda-9.2&quot;</span> <span class="at">--with-cuda-cc</span><span class="op">=</span>60  <span class="at">--with-cuda-runtime</span><span class="op">=</span>9.2  </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> pw </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+<h3 data-number="1.3.1" id="notes"><span class="header-section-number">1.3.1</span> Notes</h3>
+<ul>
+<li>Cuda 9.1/9.2/10.0 in Pgi compiler failed, so a standalone cuda-9.2 was used.</li>
+<li><code>-with-cuda-cc=60</code> comes from the output of <code>pgaccelinfo</code>.</li>
+<li>Only <code>pw.x</code> and <code>phcg.x</code> could be accelerated by GPU in 6.6a1 version.</li>
+</ul>
+<h2 data-number="1.4" id="intel-mpi-high-version-needed"><span class="header-section-number">1.4</span> intel MPI (high version needed)</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> q-e-qe-6.5.tar.gz</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> q-e-qe-6.5</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> ~/.soft/envs/env_compiler oneapi</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span><span class="va">${MKLROOT}</span>/include/fftw</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--with-scalapack</span><span class="op">=</span>intel F90=ifort F77=ifort CC=icc MPIF90=mpiifort  FFT_LIBS=<span class="st">&quot;</span><span class="va">${MKLROOT}</span><span class="st">/interfaces/fftw3xf/libfftw3xf_intel.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/qe/bin.onepai     <span class="co">#-enable-openmp</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make pw ph pp pwcond neb cp  ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+<h3 data-number="1.4.1" id="tycloud"><span class="header-section-number">1.4.1</span> TYCloud</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> q-e-qe-6.8.tar.gz</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> q-e-qe-6.8</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> remove mpi/hpcx/gcc-7.3.1</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load compiler/intel/2021.3.0</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load  mpi/intelmpi/2021.3.0</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span><span class="va">${MKLROOT}</span>/include/fftw</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--with-scalapack</span><span class="op">=</span>intel F90=ifort F77=ifort CC=icc MPIF90=mpiifort  FFT_LIBS=<span class="st">&quot;/public/home/ywmu_sxu/.soft/libadd/staticlib/oneapi/libfftw3xf_intel.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/public/home/ywmu_sxu/source/bin68 </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make pw ph pp pwcond neb cp  ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+<h2 data-number="1.5" id="qe-7.1-elpa-2021.11-intel-onepai-2021.11.0-test"><span class="header-section-number">1.5</span> QE 7.1 + ELPA 2021.11 + Intel onepai 2021.11.0 (test)</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> elpa-2021.11.001</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">FC</span><span class="op">=</span>mpiifort  <span class="va">CC</span><span class="op">=</span>icc <span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/elpa FCFLAGS=<span class="st">&quot;-O3&quot;</span> CFLAGS=<span class="st">&quot;-O3&quot;</span> <span class="at">--enable-option-checking</span><span class="op">=</span>fatal  SCALAPACK_LDFLAGS=<span class="st">&quot;-L</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -Wl,-rpath,</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64&quot;</span> SCALAPACK_FCFLAGS=<span class="st">&quot;-L</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -I</span><span class="va">$MKL_HOME</span><span class="st">/include/intel64/lp64&quot;</span> <span class="at">--enable-avx2</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> q-e-qe-7.1</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span><span class="va">${MKLROOT}</span>/include/fftw</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ELPAROOT</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/elpa</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ELPAVER</span><span class="op">=</span>elpa-2021.11.001</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> F90=ifort F77=ifort CC=icc MPIF90=mpiifort  FFT_LIBS=<span class="st">&quot;</span><span class="va">${MKLROOT}</span><span class="st">/interfaces/fftw3xf/libfftw3xf_intel.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/qe/bin.onepai <span class="at">--with-scalapack</span><span class="op">=</span>intel <span class="at">-enable-parallel</span> <span class="at">-enable-openmp</span> <span class="at">--with-elpa-include</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${ELPAROOT}</span><span class="st">/include/</span><span class="va">${ELPAVER}</span><span class="st">/modules&quot;</span> <span class="at">--with-elpa-lib</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${ELPAROOT}</span><span class="st">/lib/libelpa.a&quot;</span> <span class="at">--with-elpa-version</span><span class="op">=</span>beyond</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># add &quot;-march=core-avx2&quot; to FFLAGS and CFLAGS in make.inc</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make pw ph pp pwcond all_currents  kcw neb cp ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make  pwcond all_currents  kcw neb cp ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+<h2 data-number="1.6" id="qe-7.1-elpa-2021.11-gcc7-openmpi-3.1.6-mkl-2015test"><span class="header-section-number">1.6</span> QE 7.1 + ELPA 2021.11 + gcc7 + OpenMPI 3.1.6 + MKL 2015(test)</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> elpa-2021.11.001</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FC</span><span class="op">=</span>mpiifort  <span class="va">CC</span><span class="op">=</span>icc <span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/elpa FCFLAGS=<span class="st">&quot;-O3&quot;</span> CFLAGS=<span class="st">&quot;-O3&quot;</span> <span class="at">--enable-option-checking</span><span class="op">=</span>fatal  SCALAPACK_LDFLAGS=<span class="st">&quot;-L</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -lm -Wl,-rpath,</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64&quot;</span> SCALAPACK_FCFLAGS=<span class="st">&quot;-L</span><span class="va">$MKL_HOME</span><span class="st">/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_lp64 -lpthread -I</span><span class="va">$MKL_HOME</span><span class="st">/include/intel64/lp64&quot;</span> <span class="at">--enable-avx2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> q-e-qe-7.1</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFTW_INCLUDE</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/fftw-3.3.8.g7/include </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ELPAROOT</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/elpa</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ELPAVER</span><span class="op">=</span>elpa-2021.11.001</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> FC=gfortran F90=gfortran F77=gfortran CC=gcc MPIF90=mpif90 FFT_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/fftw-3.3.8.g7/lib/libfftw3.a&quot;</span>  BLAS_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/gnu/libopenblas.a&quot;</span> <span class="at">--with-scalapack</span><span class="op">=</span>yes SCALAPACK_LIBS=<span class="st">&quot;/home/ywmu/backup/Src/comlib/gnu/libscalapack.a&quot;</span> <span class="at">--prefix</span><span class="op">=</span>/home/ywmu/backup/Src/qe/bin.ompi    <span class="at">-enable-parallel</span> <span class="at">-enable-openmp</span> <span class="at">--with-elpa-include</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${ELPAROOT}</span><span class="st">/include/</span><span class="va">${ELPAVER}</span><span class="st">/modules&quot;</span> <span class="at">--with-elpa-lib</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${ELPAROOT}</span><span class="st">/lib/libelpa.a&quot;</span> <span class="at">--with-elpa-version</span><span class="op">=</span>beyond</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> make pw ph pp pwcond all_currents  kcw neb cp ld1 tddfpt xspectra hp epw w90 yambo  d3q <span class="kw">&amp;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span></code></pre></div>
+<h2 data-number="1.7" id="wannier90-3.1"><span class="header-section-number">1.7</span> Wannier90 3.1</h2>
+<ul>
+<li>download wanni90 3.1 version</li>
+<li>Load Envs for gcc and Openmpi</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar</span> <span class="at">-xvf</span> v3.1.0.tar.gz</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">cd</span> wannier90-3.1.0</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cp</span> config/make.inc.ifort make.inc</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">### Edit make.inc:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">COMMS</span>  = mpi</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">MPIF90</span> = mpif90</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>   <span class="ex">LIBS</span> = /home/ywmu/backup/Src/comlib/gnu/libopenblas.a</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">###  Edit Makefile</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">PREFIX</span> <span class="pp">?</span>= /home/ywmu/.soft/espresso/otherbin</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> intall</span></code></pre></div>
+<h2 data-number="1.8" id="install-pgi-compiler"><span class="header-section-number">1.8</span> Install PGI Compiler</h2>
+<ul>
+<li>Download PGI Compiler from <a href="https://developer.nvidia.com/hpc-sdk" class="uri">https://developer.nvidia.com/hpc-sdk</a></li>
+<li></li>
+</ul>
+<h1 data-number="2" id="xcrysden"><span class="header-section-number">2</span> Xcrysden</h1>
+<h2 data-number="2.1" id="install-on-linux"><span class="header-section-number">2.1</span> Install On Linux</h2>
+<ul>
+<li>Refer to <a href="http://bbs.keinsci.com/thread-18599-1-1.html" class="uri">http://bbs.keinsci.com/thread-18599-1-1.html</a></li>
+</ul>
+<ol type="1">
+<li>Download shemi-shared version of XCrysDen 1.6.2 from <a href="http://sobereva.com/attach/564/xcrysden-1.6.2_sobereva.tar.gz" class="uri">http://sobereva.com/attach/564/xcrysden-1.6.2_sobereva.tar.gz</a></li>
+<li><code>sudo yum install libGL-devel libGLU-devel libXmu-devel libXScrnSaver.x86_64</code></li>
+<li>configure</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> xcrysden-1.6.2_sobereva.tar.gz</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> xcrysden-1.6.2</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/xcConfigure.sh</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span> <span class="er">(</span><span class="bu">set</span> no crystal<span class="kw">)</span></span></code></pre></div>
+<h3 data-number="2.1.1" id="defaut-parameters"><span class="header-section-number">2.1.1</span> Defaut parameters</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vi</span> ~/.xcrysden/custom-definitions</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> xcMisc<span class="er">(</span><span class="ex">gif_encoder</span><span class="kw">)</span>   <span class="ex">convert</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> xcMisc<span class="er">(</span><span class="ex">ImageMagick.convert</span><span class="kw">)</span> <span class="st">&quot;/usr/bin/convert </span><span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="st">                             -quality 300 -border 3x3 -bordercolor black&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">### change background color from back to white</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> myParam<span class="er">(</span><span class="ex">BACKGROUND</span><span class="kw">)</span>      <span class="ex">{1.00</span> 1.00 1.00}</span></code></pre></div>
+<h3 data-number="2.1.2" id="useful-shortcuts"><span class="header-section-number">2.1.2</span> Useful shortcuts</h3>
+<h3 data-number="2.1.3" id="main-window"><span class="header-section-number">2.1.3</span> Main window</h3>
+<ul>
+<li><code>Ctrl+p</code>: Print to image</li>
+<li><code>Ctrl+s</code>: save structure (e.g. as xsf)</li>
+<li><code>Ctrl+t</code>: save state and structure (e.g. as xsf)</li>
+<li><code>y</code>: Coordinate system</li>
+<li><code>f</code>: forces</li>
+<li><code>F3/F4</code>: Primitive/Convertional Cell</li>
+<li><code>shift+a</code>: atomic color</li>
+<li><code>shift+c</code>: cell color</li>
+<li><code>shift+n</code>: supercell view</li>
+</ul>
+<h3 data-number="2.1.4" id="surface"><span class="header-section-number">2.1.4</span> Surface</h3>
+<ul>
+<li><code>t</code>: Transparent Fermi Surface</li>
+<li><code>c</code>: Display first Brillouin zone</li>
+<li><code>p</code>: Crop Fermi surface to first BZ</li>
+<li><code>shift+s</code>: surface color</li>
+<li>`<code>shift+c</code>: cell color</li>
+</ul>
+<h2 data-number="2.2" id="install-on-windows"><span class="header-section-number">2.2</span> Install On Windows</h2>
+<h3 data-number="2.2.1" id="install-cygwin"><span class="header-section-number">2.2.1</span> Install Cygwin</h3>
+<ul>
+<li><p>Download Cygwin from <a href="http://www.cygwin.com/" class="uri">http://www.cygwin.com/</a></p></li>
+<li><p>Double click <code>setup-x86_64.exe</code>, install it step by step, Select Domestic sources （e.g., 163.com）, Install <code>tcl-tk (8.6), tcl-togl, ImageMagick, xinit, mesa, libGLU1, libfftw3_3, libgfortran4</code> packages.</p></li>
+<li><p>Set Environment for Xcrysden:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span>  <span class="va">DISPLAY</span><span class="op">=</span>:0</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$PATH</span>:/usr/lib:/usr/lib/Togl2.0</span></code></pre></div></li>
+</ul>
+<h3 data-number="2.2.2" id="install-xcrysden"><span class="header-section-number">2.2.2</span> Install Xcrysden</h3>
+<ul>
+<li>Download Xcrysden xcrysden-1.6.2-cygwin.tar.gz from <a href="http://www.xcrysden.org/" class="uri">http://www.xcrysden.org/</a>, unzip it.</li>
+<li>Run <code>./xcrysden</code> from the its home directory.</li>
+</ul>
+<h2 data-number="2.3" id="tips"><span class="header-section-number">2.3</span> Tips</h2>
+<ul>
+<li>The <code>AdvGeom</code> and <code>Property</code> modules are only active if the <code>CRYSTAL</code> package was installed, but the band path selection is available for all users.</li>
+</ul>
+<h1 data-number="3" id="windows-gui-for-quantum-espresso-qe"><span class="header-section-number">3</span> Windows Gui for Quantum Espresso (QE)</h1>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Burai</th>
+<th style="text-align: center;"><a href="https://www.quantumvitas.org/">QuantumVITAS</a></th>
+<th style="text-align: center;">QE on Device Studio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Input geometry format</td>
+<td style="text-align: center;">xyz/POSCAR/xsf/pwscf/cif</td>
+<td style="text-align: center;">Only pwscf(+g2g),not convenient</td>
+<td style="text-align: center;">POSCAR/xyz/cif/hzw</td>
+</tr>
+<tr class="even">
+<td>Support</td>
+<td style="text-align: center;">Relaxation/Cell Relaxation/Single Point/Band Structure/DOS/MD</td>
+<td style="text-align: center;">Relaxation/Cell Relaxation/Single Point/Band Structure/DOS/MD/Transition State/TDDFT/Phonon</td>
+<td style="text-align: center;">Relaxation/Cell Relaxation/Single Point/Band Structure/DOS</td>
+</tr>
+<tr class="odd">
+<td>Modeler</td>
+<td style="text-align: center;">Slab/Supercell/Translate</td>
+<td style="text-align: center;">No(+Vesta/Avogadro2/PyMatGen/vaspkit)</td>
+<td style="text-align: center;">Many functions from Device Studio</td>
+</tr>
+<tr class="even">
+<td>Optimization/MD Trace</td>
+<td style="text-align: center;">Movie</td>
+<td style="text-align: center;">Frames</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr class="odd">
+<td>Band Structure Output Analysis and Plot s</td>
+<td style="text-align: center;">Bands, not convinent for K-path input</td>
+<td style="text-align: center;">Fat band, Copy K-path from materialscloud</td>
+<td style="text-align: center;">very convenient in Device Studio</td>
+</tr>
+<tr class="even">
+<td>On Development</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="odd">
+<td>Drawback:</td>
+<td style="text-align: center;">supported tasks too few</td>
+<td style="text-align: center;">input geometry is not convenient</td>
+<td style="text-align: center;">MPI is Not supported. supported tasks too few</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.1" id="qe-on-device-studio"><span class="header-section-number">3.1</span> QE on Device Studio</h2>
+<ul>
+<li>Supported Tasks: Relaxation/Cell Relaxation/Single Point/Band Structure/DOS.</li>
+<li>Drawback: MPI is Not supported. Analysis is too simple. The date for the generated images can not be exported.</li>
+</ul>
+<h3 data-number="3.1.1" id="more-tasks"><span class="header-section-number">3.1.1</span> More tasks</h3>
+<ul>
+<li>Creat a directory, such as <code>D:\Temp\QEcmd</code></li>
+<li>Copy <code>mpi</code> and <code>qe</code> from <a href="https://www.quantumvitas.org/">QuantumVITAS</a> to <code>D:\Temp\QEcmd</code></li>
+<li>download <code>busybox.exe</code> to <code>D:\Temp\QEcmd</code></li>
+<li>Creat a <code>QE_var.reg</code>, and double click it. The content is as follows,</li>
+</ul>
+<pre class="reg"><code>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RunQE]
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RunQE\command]
+@=&quot;D:\\Temp\\QEcmd\\QE_init.bat&quot;</code></pre>
+<ul>
+<li>Creat <code>QE_init.bat</code>,</li>
+</ul>
+<pre class="bat"><code>@ECHO OFF
+SET QEHOME=%~dp0
+SET PATH=%QEHOME%mpi;%QEHOME%qe;%QEHOME%;%PATH%
+busybox.exe sh</code></pre>
+<ul>
+<li><p>Go to the working directory, right click on the background, and click <code>RunQE</code></p></li>
+<li><p>Run tasks like,</p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">OMP_NUM_THREADS</span><span class="op">=</span>1</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mpiexec</span> <span class="at">-np</span> 2 pw.exe <span class="at">-in</span> relax.in <span class="kw">|</span> <span class="fu">tee</span>  relax.out.pwscf</span></code></pre></div>
+<ul>
+<li>Open <code>relax.out.pwscf</code> with Avogadro2, and export it out as <code>opt.cif</code>.</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

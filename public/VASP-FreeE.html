@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Free Energy in VASP</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Free Energy in VASP"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#section"><span class="toc-section-number">1</span> </a>
+          <ul>
+          <li><a href="#free-energy-correction-from-phonopy"><span class="toc-section-number">1.1</span> Free Energy Correction from <span>Phonopy</span></a></li>
+          <li><a href="#thermal-electron-contributions-to-free-energywolverton95prb"><span class="toc-section-number">1.2</span> Thermal Electron Contributions to Free Energy<span class="citation" data-cites="Wolverton95PRB"><sup>[2]</sup></span></a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="section"><span class="header-section-number">1</span> </h1>
+<h2 data-number="1.1" id="free-energy-correction-from-phonopy"><span class="header-section-number">1.1</span> Free Energy Correction from <a href="%5BFormulations%20—%20Phonopy%20v.2.15.0%5D(http://phonopy.github.io/phonopy/formulation.html#helmholtz-free-energy)">Phonopy</a></h2>
+<p>The free energies for the allotropes were also evaluated using quasiharmonic approximation (QHA) method implemented in Phonopy program<span class="citation" data-cites="Togo08PRB"><sup>[1]</sup></span>. They were calculated from 0 to 1000 K at ambient pressure as follows,</p>
+<p><span class="math display">F=U(V_0)+\frac{1}{2}\sum\limits_{\boldsymbol{q}\nu}\hbar\omega_{\boldsymbol{q}\nu}+k_BT\sum\limits_{\boldsymbol{q}\nu}\ln[1-\exp(-\hbar\omega_{\boldsymbol{q}\nu}/k_BT)]</span> where <span class="math inline">U(V_0)</span> is the ground state energy at the relaxed volume <span class="math inline">V_0</span>, T is temperature, and <span class="math inline">\omega_{\boldsymbol{q}\nu}</span> is the phonon frequency for the band <span class="math inline">\nu</span> at wave vector <span class="math inline">\boldsymbol{q}</span>.</p>
+<h2 data-number="1.2" id="thermal-electron-contributions-to-free-energywolverton95prb"><span class="header-section-number">1.2</span> Thermal Electron Contributions to Free Energy<span class="citation" data-cites="Wolverton95PRB"><sup>[2]</sup></span></h2>
+<p><span class="math display">F_e(V,T)=E_e(V,T)-TS_e(V,T)</span></p>
+<p><span class="math display">S_e(V,T)=-k_B\int n(\varepsilon,V)[fln f+(1-f)ln(1-f)]d\varepsilon</span></p>
+<p><span class="math display">E_e(V,T)=\int n(\varepsilon,V)f\varepsilon d\varepsilon-\int^{\varepsilon_F}n(\varepsilon,V)\varepsilon d\varepsilon</span></p>
+<p>, where <span class="math inline">n({\varepsilon,V})</span> is DOS, <span class="math inline">\varepsilon_F</span> is Fermi level, and <span class="math inline">k_B</span> is boltzmann constant (<strong>8.6173324E-5 eV/K</strong>), <span class="math inline">f=1/(e^{(\varepsilon-\varepsilon _F)/k_BT}+1)</span> is the Fermi–Dirac distribution function.</p>
+<ul>
+<li><a href="http://muchong.com/html/201503/8650859.html">Calculate it using VASP at different SIGMA (<span class="math inline">=k_BT</span>)</a>:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ISMEAR</span> = <span class="at">-1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">SIGMA</span>  = 0.025852  <span class="co"># 300K: 8.6173324E-5*300=0.025852, to use 10K as the reference</span></span></code></pre></div>
+<p>plot a curve between free energy change relative to the reference (TOTEN in OUTCAR) vs. temperature</p>
+<ul>
+<li><p>但是我发现使用上面公式的计算结果和VASP对不上，能对的上的公式应该是：</p>
+<p><span class="math display">F_e(V,T)=E_e(V,T)-TS_e(V,T)</span></p>
+<p><span class="math display">S_e(V,T)=-k_B\int n(\varepsilon,V)[fln f+(1-f)ln(1-f)]d\varepsilon</span></p>
+<p><span class="math display">E_e(V,T)=\int n(\varepsilon,V)f\varepsilon d\varepsilon-\int^{0}n(\varepsilon,V)\varepsilon d\varepsilon</span></p>
+<p>, where <span class="math inline">\varepsilon</span> is the energy relative to Fermi Level <span class="math inline">E_F</span>, <span class="math inline">k_B</span> is boltzmann constant (<strong>8.6173324E-5 eV/K</strong>), <span class="math inline">n({\varepsilon,V})</span> is DOS, <span class="math inline">f=1/(e^{\varepsilon/k_BT}+1)</span> is the Fermi–Dirac distribution function.</p>
+<p>使用这个公式的结果与VASP ISMEAR=-1的<span class="math inline">E_{el}</span>, <span class="math inline">S_{el}</span> 和<span class="math inline">F_{el}</span> 严格相等。</p></li>
+</ul>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Togo08PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Togo, A.; Oba, F.; Tanaka, I. First-Principles Calculations of the Ferroelastic Transition Between Rutile-Type and CaCl<span><sub>2</sub></span>-Type SiO<span><sub>2</sub></span> at High Pressures. <em>Phys. Rev. B</em> <strong>2008</strong>, <em>78</em>, 134106.</div>
+</div>
+<div id="ref-Wolverton95PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Wolverton, C.; Zunger, A. First-Principles Theory of Short-Range Order, Electronic Excitations, and Spin Polarization in Ni-v and Pd-v Alloys. <em>Phys. Rev. B</em> <strong>1995</strong>, <em>52</em>, 8813–8828.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

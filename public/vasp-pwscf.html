@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Quantum Espresso vs VASP</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Quantum Espresso vs VASP"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 main">
+        
+<p>转自：https://www.nsc.liu.se/~pla/blog/2013/02/04/qevasp-part1/</p>
+<div class="entry-content">
+There are just a few implementations of the PAW method: <a href="http://users.wfu.edu/natalie/papers/pwpaw/man.html">PWPAW</a>, <a href="http://www.abinit.org/">ABINIT</a>, <a href="http://www.vasp.at/">VASP</a>, <a href="https://wiki.fysik.dtu.dk/gpaw/">GPAW</a>, and in the PWscf program in <a href="http://www.quantum-espresso.org/">Quantum Espresso</a> (“QE” from now on). VASP is frequently held up as the fastest implementation, and I concluded in <a href="https://www.nsc.liu.se/~pla/blog/2012/04/18/abinitvasp-part2">earlier tests</a> that standard DFT in ABINIT is too slow compared to VASP to be useful for when running large supercells. But how does QE compare to VASP? There has been extensive work on QE in the last years, such as adding GPU support and mixed OpenMP/MPI parallelism, and you can find papers showing good parallel scalability such as <a href="http://www.prace-ri.eu/IMG/pdf/enabling_of_quantum_espresso_to_petascale_scientific_challenges.pdf">(ref1)</a> and <a href="http://www.fisica.uniud.it/~giannozz/Papers/rimini08.pdf">(ref2)</a>. By request, I will therefore perform and publish some comparisons of VASP and QE, in the context of PAW calculations. Primarily, I am interesting in:
+<ul>
+<li>
+Raw speed, measured as performance on a single 16 core compute node.
+</li>
+<li>
+Parallel scalability, measured as the time to solution and computational efficiency for very large supercell calculations.
+</li>
+<li>
+General robustness and production readiness, in particular numerical stability, sane defaults, and quality of documentation.
+</li>
+</ul>
+<p>So as the first step, before going into parallel scaling studies, it is useful to know the performance on the level of a single compute node. In the ABINIT vs VASP study, I used a silicon supercell with 31 atoms and one vacancy for basic testing. I will use it here as well to provide a point of reference.<!--more--></p>
+<h2>
+Methods
+</h2>
+<p>Access to prepared PAW dataset is crucial for a PAW code to be useful, as most users prefer to not generate pseudopotentials themselves (although it can be discussed whether this is a wise approach). Fortunately, there are now more <a href="http://www.quantum-espresso.org/?page_id=190">PAW datasets</a> available for QE. I found “Si.pbe-n-kjpaw_psl.0.1.UPF” to be the most similar one to VASP’s standard silicon POTCAR. It is a scalar relativistic setup with 4 valance electrons for the PBE exchange-correlation functional. It differs in the suggested plane-wave cutoff, though, where the QE value is much higher (13.8 Ry, ca 500 eV) compared to the VASP one (250 eV). I decided to use 250 eV in both programs for benchmarking purposes, but it is a highly relevant question if you get the same physical results at this cutoff? I will postpone the discussion of differences between PAW potentials for now, but I expect to return to it at a later time.</p>
+As usual, I put some effort into making sure that I am running as similar calculations as possible from a numerical point of view:
+<ul>
+<li>
+The plane-wave cutoff was set to 18.4 Ry/250 eV. This lead to a 72x72x72 coarse FFT grid in both programs.
+</li>
+<li>
+The fine FFT grids were 144x144x144.
+</li>
+<li>
+80 bands, set manually
+</li>
+<li>
+6 k-points (automatically generated)
+</li>
+<li>
+6 symmetry operations detected in the crystal lattice
+</li>
+<li>
+SCF convergence thresholds were 1.0e-6 Ry and 1.0e-5 eV, respectively.
+</li>
+<li>
+Minimal disk I/O (i.e. no writing of WAVECAR and wfc files).
+</li>
+</ul>
+<p>A notable difference is that PWscf does not have the RMM-DIIS algorithm, instead I used the default Davidson iterative diagonalization. In the VASP calculations, I used the hybrid Davidson/RMM-DIIS approach (<code>ALGO=fast</code>), which is what I would use in a real-life scenario.</p>
+VASP was compiled with the <code>-DNGZhalf</code> preprocessor option for improved FFT performance. I could not find a clear answer in the PWscf documentation about this feature, but it does use the real FFT representation for gamma point calculations, so I presume that the “half” representation is also employed for normal calculations.
+<h2>
+Results
+</h2>
+<p>Results when running the Si 31 atom cell on 1 Triolith compute node (16 Xeon E5 cores clocked at 2.2-3.0 Ghz):</p>
+<p><img class="alignnone size-full wp-image-186" src="../img/vaspqe1.png" alt="Si31 cell QE vs VASP speed" width="480" height="358" /></p>
+<p>It is great to find VASP and QE pretty much tied for this test case. VASP is around 6% faster, but the QE calculation also required 20 SCF steps instead of 15 steps in VASP, so it is possible that a more experienced QE user would be able to tune the SCF convergence better to achieve at least parity in speed.</p>
+<p>I ran with both 8 cores and 16 cores per node to get a feel for the intra-node parallel scaling. QE actually scales better with 1.6x speed-up from 8 to 16 cores, vs 1.3x for VASP. This indicates to me that QE puts less pressure on the memory system and could scale better on big multicore nodes.</p>
+I also tested the OpenMP enabled version of QE, but for this test case there was no real benefit in terms of speed: 8 MPI ranks with 2 OpenMP threads each did run faster ( 27%) than 8 ranks with only MPI, but not as fast as with 16 MPI ranks. But there was a slight reduction in memory: 16 MPI ranks with <code>-npool 2</code> required a maximum of 678 MB of memory, whereas 8 MPI ranks with 2 OpenMP threads used only 605 MB. So by using this approach, you could save some memory at the expense of speed. VASP, for comparison, used 1205 MB with k-point parallelization with 16 ranks, but 706 MB with band parallelization (which was the fastest option), so the memory usage of QE and VASP is very similar in practice.
+<h2>
+Summary
+</h2>
+<p>In conclusion, this was my first serious calculations with PWscf and my overall impression is that the PAW speed is promising, and that it was relatively painless to set up the calculation and get going. I found the documentation comprehensive, but somewhat lacking in organization and mostly of reference kind. There are no explicit examples or practical notes of what you actually need to do to run a typical calculation. In fact, in my first attempt, I completely failed at getting PWscf to read my input files — I had to consult with an experienced QE user to understand why QE would not read my atomic positions (it turned out that the ATOMIC_POSITIONS section is only read if “nat” is set in the SYSTEM section). Once over the initial hurdle, it was a quite smooth ride, though. SCF convergence was achieved using the default settings, and all symmetries were detected correctly: that is something you cannot take for granted in all electronic structure codes.</p>
+<p>Next up is a medium-sized calculation, the Li2FeSiO4 supercell with 128 atoms.</p>
+</div>
+<footer>
+<p class="meta">
+<span class="byline author vcard">Posted by <span class="fn">Peter Larsson</span></span> <time datetime="2013-02-04T00:00:00 01:00" data-updated="true">Feb 4th, 2013</time>
+</p>
+<div class="entry-content">
+In the second round, I wanted to do a medium-sized, more complicated system. The original plan was to run the Li2FeSiO4 supercell with spin polarization, which I have run extensively in VASP before. It is a nontrivial example from my previous research, and it can be tricky to get fast convergence to the right ground state. Unfortunately, I failed at getting the Li2FeSiO4 system to run. PWscf kept crashing, despite much tinkering, and all I got was the following error message:
+<pre><code>Error in routine rdiaghg (1539): S matrix not positive definite
+</code></pre>
+The QE documentation does mention these kinds of errors saying that they are related to negative charges densities in the cores, which is basically either due to an unreasonable crystal structure or a poor choice of pseudopotentials. Standard tricks like increasing the <code>encutrho</code> parameter or changing the diagonalization algorithm did not help either, so my guess is that something was wrong with the available PAW datasets. The all-electron Li PAW, for example, comes with a suggested plane wave cutoff of 1100 eV, unlike 272 eV in VASP. I am not sure if it is numerically sane to mix it with the other ones with much lower cutoff. I have seen this give rise to numerical instabilities in VASP, for example.
+<h2>
+New test case: Fe-N-doped graphene
+</h2>
+<p>Instead, I constructed a 128-atom supercell of graphene. I inserted an Fe cation site coordinated by four pyridinic sites, to make it a little bit more exciting and also have a reason to do spin polarization.</p>
+<p><img class="alignnone size-full wp-image-187" src="../img/NFeGraphene.png" alt="N-Fe-doped graphene" width="600" height="285" /></p>
+The PAW datasets were:
+<pre><code>Fe.pbe-spn-kjpaw_psl.0.2.1.UPF (16 valence)
+C.pbe-n-kjpaw_psl.0.1.UPF (4 valence)
+N.pbe-n-kjpaw_psl.0.1.UPF (5 valence)
+</code></pre>
+<p>In total, this system has 127 atoms and 524 electrons, so 512 bands per spin channel is a nice and even number here. There is a similar issue with plane-wave cutoff as in the previous example. I set it to 500 eV to compare with the VASP calculation. It could be argued that it is artificially low, and that a real production calculation with QE using the PAW potentials would need to have a bigger cutoff.</p>
+<p>A 500 eV basis requires an FFT grid of 144x144x72 points, which in the case of VASP means that an optimal plan-wise decomposition of the FFTs can be achieved for 1,2,4,8, and 12 compute nodes by using NPAR=1,2,4,8,12, respectively. If I understand the PWscf documentation correctly, 72 FFT planes in Z-direction means that we should be able to scale up to 2x72 MPI ranks, since we have spin polarization (2 “effective” k-points), and that we are also likely to be helped by FFT task group parallelization using the <code>-ntg</code> command line flag.</p>
+I ran the jobs on 1,2,4,8,12, and 16 Triolith compute nodes, using all available cores (16 cores per node). For VASP, the optimal setting is band parallelization using <code>NPAR=compute nodes</code>, and <code>LPLANE=.TRUE.</code>. All PWscf calculations were run with <code>-npool 2</code>, which activates k-point parallelization, together with several combinations of <code>-ntg</code> and <code>-ndiag</code>, which controls FFT task parallelization and SCALAPACK linear algebra parallelization. There is experimental support for band parallelization in QE (<code>-nband</code> flag), but it either crashed the program or ran horribly slow, so the results below are using the standard parallelization options.
+<h2>
+Results
+</h2>
+<p><img class="alignnone size-full wp-image-188" src="../img/vaspqe2.png" alt="Fe-N-doped graphene QE vs VASP speed" width="480" height="389" /></p>
+<p>VASP scales acceptably up to 12 nodes / 192 cores, whereas QE only has decent scaling from 1 to 2 nodes. I believe that the reason is that VASP has band parallelization, but QE not. To test my theory, I ran the VASP jobs with as low NPAR as possible, which is shown as the blue dotted line. This meant NPAR=1 (no band parallelization) for 1-8 nodes, and NPAR=2 for 12-16 nodes. The parallel scaling is much worse then, and essentially flat from 8 nodes and upwards, which is similar to the QE results.</p>
+<p>In terms of absolute performance, VASP and QE are tied again when running on 16 and 32 cores, with PWscf actually being about 10% faster on 32 cores. But when comparing the top speed, VASP achieves at least 25 Jobs/h with 16 nodes vs. 10 Jobs/h with PWscf on 8 nodes. So we are looking at half the time to solution with VASP.</p>
+Another purpose of this study was to characterize the parallelization settings for QE when running on Triolith. The best parallelization settings for this system turned out to be:
+<pre><code>Nodes -ntg  -ndiag
+1        1      16
+2        1      16
+4        2      16
+8        2      16
+12       4      16
+16       4      16
+</code></pre>
+<p>FFT task groups (<code>-ntg</code>) seems to be necessary for higher core counts, just as suggested in the QE manual. The rule of thumb in the manual is to enable <code>-ntg</code> when the number of cores exceeds the number of FFT mesh points in the z direction, which seems accurate in this case.</p>
+<p>I found the performance curve for SCALAPACK parallelization very flat for <code>ndiag=16/25/36</code>, so I was unable to resolve any difference with just 3-5 samples per point, but it seems like the performance flattens out above 16 cores for this system. Diagonalizing a 512x512 matrix is not that big of a task in the context of SCALAPACK, so this is not surprising.</p>
+Mixing and SCF stability turned out to be an influential factor when making the comparison between VASP and PWscf. The default mixing scheme in VASP is very good and can converge the graphene system studied here in ca 32 SCF iterations using default settings, but getting down to that level with PWscf required tuning of beta (0.2) and change of the mixing mode from <code>plain</code> to <code>local-TF</code>.
+<h2>
+Conclusion
+</h2>
+<p>When it comes to bigger, more realistic calculations, PWscf is not as straightforward to work with as VASP. This is a combination of the robustness and availability of PAW datasets, and the increased need of parameter tuning necessary to get decent performance. The speed is on par with VASP for 1-2 compute nodes, but VASP has a much faster and more predictable parallel scaling beyond that. It was a surprise to me to not find working band parallelization in PWscf.</p>
+</div>
+<footer>
+<p class="meta">
+<span class="byline author vcard">Posted by <span class="fn">Peter Larsson</span></span> <time datetime="2013-02-19T00:00:00 01:00" data-updated="true">Feb 19th, 2013</time>
+</p>
+<div class="entry-content">
+<p>I promised a third round of Quantum Espresso (QE) benchmarking vs VASP, where I would try out some large supercells. Supposedly, this is where QE was supposed to shine, judging from the <a href="http://www.quantum-espresso.org/benchmarks/">reported benchmarks</a> on their home page. They show a 1500-atom system consisting of a carbon nanotube with 8 porphyrin groups attached. It shows good scaling up to 4096 cores on a Cray XT4 system.</p>
+<p><img class="alignnone size-full wp-image-189" src="../img/cnt1532.png" alt="Carbon nanotube with porphyrin groups" width="640" height="616" /></p>
+<p>My endeavor did not produce beautiful scaling graphs, though, as I tried several big supercells in QE with the PAW method, but were unable to get them to run reliably. They either run out of memory, or crash due to numerical instabilities. In the end, I decided to just pick the same 1532-atom carbon nanotube benchmark displayed above. It is a calculation with ultrasoft pseudopotentials, which would be unfair to compare with a VASP calculation with PAW. But since there is a special mode in VASP to emulate ultrasoft potentials, activated by <code>LMAXPAW=-1</code>, we can use that one make to the comparison more relevant.</p>
+<p>In terms of numerical settings, we have 5232 electrons and the plane wave cutoff <code>encutwfc</code> in the QE reference calculation is 25 Ry (340 eV), with <code>encutrho</code> 200 Ry. The memory requirements are steep and VASP runs out of of memory on 8 nodes, but manages to run the simulation on 16 nodes, so the total memory requirement is between 256GB and 512GB. QE, on the other hand, cannot run the simulation even on 50 nodes, and it is not until I reduce <code>encutwfc</code> to 20 Ry and run with 50 nodes using 8 cores/node that I am able to fit in on Triolith with 32GB/node. This means that the memory requirements are significantly higher for QE than VASP. The “per-process dynamical memory” is reported as ca 1.1 GB in the output files, but in reality, it is using closer to 3 GB per process on 50 nodes.</p>
+<p>Now, to performance results. The good news is that this system scales beautifully with VASP, but the bad news is that it does not look that great with QE. With VASP, I used no other tricks than the tried and tested <code>NPAR=nodes</code>, and for QE, I tested <code>-ntg=[1-4]</code> and used similar SCALAPACK setups (<code>-ndiag 100</code> and <code>-ndiag 196</code>) as in the reference runs. <code>-ntg=1</code> turned out to be optimal here, as expected (400-800 cores vs 500ish grid points in the z direction).</p>
+<p><img class="alignnone size-full wp-image-190" src="../img/qe-vasp-cnt2.png" alt="Parallel scaling comparison of CNT porphyrin system" width="640" height="430" /></p>
+<p>When looking at the scaling graph, we have near linear scaling in a good part of the range for VASP. It is quite remarkable that you can get ca 10 geometry optimization steps per hour on such a large system using just 4% of Triolith. This means that doing ab initio molecular dynamics on this system would be possible on Triolith, provided that you had a sufficiently large project allocation (several million core hours per month).</p>
+<p>The high memory demands and instability of QE prevented me from doing a proper scaling study, but we have two reference points at 50 and 100 compute nodes. There is no speedup from 50 to 100 nodes. This is unlike the study on the old Cray XT4 machine, where the improvement was in the order of 1.5x going from 1024 to 2048 cores. So I am not really able to reproduce these results on modern hardware. I suspect that what we are seeing is an effect of faster processors. In general, the slower the compute node is, the better the scaling will be, because there is more work to be done relative to the communication. An alternative theory is that I am missing something fundamental in running PWscf in parallel, despite having perused the manual. Any suggestions from readers are welcome!</p>
+<p>In conclusion, the absolute speed of Quantum Espresso using 50 compute nodes with a large simulation cell is less than half of that of VASP, which further confirms that it does not look attractive to run large supercells with QE. You are also going to need much more memory per core, which is a limitation on many big clusters today.</p>
+<p><strong>Update 2013-12-19:</strong> A reader asked about the effective size of the fast Fourier grids used, which is what actually matters, rather than the specified cut-of (at least for VASP). In the <a href="https://www.nsc.liu.se/~pla/images/qe-vasp-cnt.png">first results</a> I presented, VASP actually used a 320x320x320 FFT grid vs the 375x375x375 in QE. To make the comparison more fair, I reran the data points for 50 and 100 nodes with PREC=Accurate in VASP, giving a 432x432x432 grid, which is what you are currently seeing in the graph above. The conclusion is still the same, though.</p>
+<p>To further elaborate, I think that one of the main reasons for the difference in absolute speed (but not parallel scalability) is the lack of RMM-DIIS for matrix diagonalization in QE. In the VASP calculations, I used <code>IALGO=48</code>, which is RMM-DIIS only, but for QE I had to use Davidson iterative diagonalization. In the context of VASP, I have seen that RMM-DIIS can be 2x faster than Davidson for wide parallel runs, so something similar could apply for QE as well.</p>
+</div>
+<footer>
+<p class="meta">
+<span class="byline author vcard">Posted by <span class="fn">Peter Larsson</span></span> <time datetime="2013-12-18T00:00:00 01:00" data-updated="true">Dec 18th, 2013</time>
+</p>
+</footer>
+</footer>
+</footer>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

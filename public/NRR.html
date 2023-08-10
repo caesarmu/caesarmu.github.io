@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Nitrogen Fixation</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Nitrogen Fixation"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#基本介绍"><span class="toc-section-number">1</span> 基本介绍</a></li>
+          <li><a href="#words"><span class="toc-section-number">2</span> Words</a></li>
+          <li><a href="#formula"><span class="toc-section-number">3</span> Formula</a>
+          <ul>
+          <li><a href="#thermochemistryliu19jmc"><span class="toc-section-number">3.1</span> Thermochemistry<span class="citation" data-cites="Liu19JMC"><sup>[1]</sup></span></a>
+          <ul>
+          <li><a href="#introduction"><span class="toc-section-number">3.1.1</span> Introduction</a></li>
+          </ul></li>
+          <li><a href="#formula-2"><span class="toc-section-number">3.2</span> Formula 2</a>
+          <ul>
+          <li><a href="#paths-for-nrrzhao17jacs"><span class="toc-section-number">3.2.1</span> 3 Paths for NRR<span class="citation" data-cites="Zhao17JACS"><sup>[2]</sup></span></a></li>
+          <li><a href="#criterias"><span class="toc-section-number">3.2.2</span> Criterias</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#ref.">Ref.</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="基本介绍"><span class="header-section-number">1</span> 基本介绍</h1>
+<p>100年前开发的Haber-Bosch工艺仍在工业中用于NH3的合成，但此方法需要高温、高压，反应过程中使用的氢气主要来自天然气的蒸汽重组，这大大增加了温室气体的排放。此外，NH3产率相当低，转化率通常低于15％。将N2电化学还原为NH3是一种潜在的合成途径，可以通过太阳能或风能提供动力，实现可持续的能源经济。然而，电化学氮还原存在两个主要问题：（1）过电位高（2）法拉第效率（FE）低（由于副反应氢析出反应（HER）的发生，尤其在水溶液中）。目前用于N2还原制备NH3所报道的催化剂（Au、Pt/C、Ru、Mo、Ag/Au、Bi4V2O/CeO2、Rh和Fe/CNT）种类有限。而且，大多数催化剂的反应动力学缓慢、催化性能低。因此设计具有较好选择性且高效的电催化剂，在低过电位下实现高FE和NH3合成速率具有重要意义。 (From材料牛By微观世界)</p>
+<p>氮气是地球大气中含量最多的气体，占总体积的78.09%。分子氮（N2）中存在的氮氮三键是最强的化学键之一，这也意味着将N2转化为其他含氮化合物并非易事。大自然中存在多种固氮微生物，这些微生物利用固氮酶催化N2还原为NH3，进而转化为含氮有机物。目前已知的固氮酶均含有过渡金属（铁、钼、钒）活性中心。另一类固氮方法是我们熟知的人工固氮。早在20世纪初期，由于人类对氮肥需求的日渐增大，如何高效固氮成为了当时全世界的难题。德国科学家Fritz Haber在实验室发现过渡金属锇、铀催化剂可以在高温高压的条件下将N2和H2的混合物转化为NH3。随后该技术被德国化工巨头企业BASF购买，在科学家Carl Bosch的领导下，最终利用铁催化剂高效合成NH3。这项技术被称为哈伯法（Haber-Bosch process），一直沿用至今。(From X一MOL By chemliu )</p>
+<figure>
+<img src="../img/N_Fix_B.png" title="N_Fix_B" style="width:100.0%" alt="过渡金属与硼宾化合物对氮气的结合, DOI:10.1126/science.aaq1684" /><figcaption aria-hidden="true">过渡金属与硼宾化合物对氮气的结合, DOI:10.1126/science.aaq1684</figcaption>
+</figure>
+<p>过渡金属元素一般具有部分占据的d电子，金属中心中空的d轨道可以接收N2中的孤对电子，占据的d电子又可以反馈至氮气的反键轨道。这种“推拉”式的作用，导致成百上千的过渡金属化合物可以和N2结合（图1，左）。其次，过渡金属的前线轨道之间能量差距较小（4 eV左右），很容易和N2的轨道进行有效重叠。过渡金属中心还具有很强的多电子还原活性。不过，这些特点是大部分s区或p区的主族元素所不具备的。那么非金属元素有没有可能参与固氮呢？近日，德国维尔茨堡大学（JMU）的Holger Braunschweig教授研究组发表在Science 上的研究结果首次给出了肯定的答案，他们发现一价硼宾（borylene）化合物可以结合N2并对其进行还原（图1，右）。这项工作第一作者为Marc-André Légaré博士，值得一提的是，这篇是Légaré博士近几年来作为第一作者在硼化学研究领域发表的第二篇Science 文章（另一篇DOI: 10.1126/science.aab3591）。(From X一MOL By chemliu )</p>
+<h1 data-number="2" id="words"><span class="header-section-number">2</span> Words</h1>
+<ul>
+<li>CEPT: known as coupled proton and electron transfer (<span class="math inline">H^++e^-</span>)</li>
+</ul>
+<h1 data-number="3" id="formula"><span class="header-section-number">3</span> Formula</h1>
+<h2 data-number="3.1" id="thermochemistryliu19jmc"><span class="header-section-number">3.1</span> Thermochemistry<span class="citation" data-cites="Liu19JMC"><sup>[1]</sup></span></h2>
+<p>The fundamental thermodynamic relation states that <span class="math display">G^0=H^0-TS</span> At constant pressure and ambient temperature, the enthalpy can be described as term of <span class="math inline">H^0</span> and the heat capacity, <span class="math inline">C_p</span> : <span class="math display">H=H^0+\int{C_P}dT</span> Moreover, the entropy term can be presented to the sum of the translational, rotational, vibrational, and electronic contributions as to: <span class="math display">S=S_t+S_r+S_{\nu}+S_e</span> In the above equation, the approximations entropy can be expressed:<br />
+a. At the fundamental electronic level: <span class="math inline">S_e = 0</span>.<br />
+b. For gases, translational, rotational, and vibrational entropy terms have contributions that might not be neglected: <span class="math inline">S=S_t+S_r+S_{\nu}</span>.<br />
+c. For solids and adsorbates, both <span class="math inline">S_t=0</span> and <span class="math inline">S_r=0</span>, and thus: <span class="math inline">S=S_{\nu}</span>.<br />
+d. Because <span class="math inline">\int{C_P}dT</span> is almost negligible and <span class="math inline">\Delta\int{C_P}dT=0</span>, no thermal corrections for the enthalpy have been taken into the following calculate for Gibbs free energies (<span class="math inline">\Delta{G}</span>).<br />
+And also, intrinsic zero point energy (ZPE) and extrinsic dispersion (D) corrections can be obtained by the above analytical: <span class="math display">G=H^0+\int{C_P}dT-T(S_t+S_r+S_{\nu}+S_e)+ZPE+D</span> The neighboring intermediates can be named as 1 and 2, thus we can gain the Gibbs free energy of neighboring intermediates reaction: <span class="math display">\Delta{G}_{21}=G_2-G_1</span> Such as: in the reaction (<span class="math inline">N_2^*\rightarrow{N}_2H^*</span>), the Gibbs free energy <span class="math display">\Delta{G}=G({N}_2H^*)-G(N_2^*)-G(H^+/e^-)</span> In such equation, the chemical potential of the <span class="math inline">H^+/e^-</span> pair has the half value of the chemical potential of the dihydrogen molecule, under the standard hydrogen electrode conditions, the <span class="math inline">G(H^+/e^-)</span> equal to <span class="math inline">\frac{1}{2}G(H_2)</span>.</p>
+<h3 data-number="3.1.1" id="introduction"><span class="header-section-number">3.1.1</span> Introduction</h3>
+<p>At present, there are three typical ammonia synthesis methods: the Haber–Bosch process,6 biological nitrogen fixation,7,8 and electro/photo-electro chemical synthesis.9,10 In the Haber–Bosch process, the bonds in N2 and H2 are often broken before reduction and passed over Fe or Mo-based catalysts to form ammonia.11 As we know, the whole process is exothermic, but a significant energy input is required to achieve an acceptable reaction rate. Moreover, high pressure is also employed to shift the equilibrium in favor of ammonia synthesis.12 After extensive efforts for decades, these drastic reaction conditions have improved remarkably, while the efficiency is still limited from 10% to 15%.13</p>
+<p>On the basis of many experimental and theoretical studies on the TM-cofactor,20,21 three general pathways for ammonia synthesis from dinitrogen and hydrogen have been investigated: distal, alternating and enzyme mechanisms.18,22 However, the poor stability and low yield of ammonia on the molecular catalysts greatly hamper the viability of large-scale industry application.</p>
+<p>So far, most researchers have focused on improving the energy efficiency through smart design of novel catalysts, specifically reducing the overpotential and enhancing Faraday efficiency during the electrochemical process.</p>
+<p>Numerous theoretical studies have shown that the electrochemical nitrogen reduction reaction (NRR) depends on the three key steps, namely <span class="math inline">N_2</span> capture, <span class="math inline">N2H^*</span> formation, and <span class="math inline">NH2^*</span> destabilization.12,22</p>
+<p>In principle, a continuous H-source can be provided through two mechanisms in the electrochemical process: the first one is the <strong>Tafel-type mechanism</strong>, in which the <strong>solvated protons first combine with electrons on the catalyst surface</strong>. The hydrogen adatoms then react with the adsorbed <span class="math inline">N_2H_x</span> or <span class="math inline">NH_x</span> species. However, the Tafel-type mechanism is very slow because the activation barrier is often more than 1.0 eV.58 The other mechanism is the <strong>Heyrovsky-type</strong>, in which the <strong>adsorbed intermediate species separately react with the protons and electrons</strong>. An applied bias can directly reduce the activation barrier in the Heyrovsky-type mechanism for the electrochemical process, while the barrier of Tafel-type mechanism can only be affected by varying the concentrations of the reactants.59 Therefore, the Heyrovsky-type mechanism reaction was investigated here.</p>
+<p>In order to explore whether aggregation will occur in the <span class="math inline">Ru/B_{\alpha}</span> and<span class="math inline">Ru/B_{\beta}</span> systems, the (Eb) binding energy and (Ec) cohesive energy were calculated (Fig. 1). <strong>Generally, clustering on the surface is unfavourable if the value (Eb + Ec) is negative.57 However, even if the value is positive, the single atom can be stable on the substrate when the aggregation barrier is high enough to prevent aggregation, which is the kinetic stability of SACs</strong>.60–62 For example, Pd/g-C3N4 was synthesized experimentally in 2015, and even the value (Eb + Ec) was up to 2.4 eV.62</p>
+<h2 data-number="3.2" id="formula-2"><span class="header-section-number">3.2</span> Formula 2</h2>
+<h3 data-number="3.2.1" id="paths-for-nrrzhao17jacs"><span class="header-section-number">3.2.1</span> 3 Paths for NRR<span class="citation" data-cites="Zhao17JACS"><sup>[2]</sup></span></h3>
+<p><img src="../img/NRR_1_scheme.png" title="NRR_1_scheme" style="width:100.0%" /></p>
+<p><img src="../img/NRR_2_pathwaypng.png" title="NRR_2_pathwaypng" style="width:100.0%" /></p>
+<p><span class="citation" data-cites="Zhao17JACS"><sup>[2]</sup></span>Six net coupled proton and electron transfer (CPET) steps are involved in the NRR process (<span class="math inline">N_2+6H^++6e^-\rightarrow{2NH_3}</span>). According to previous theoretical studies,(72) for simplicity, <strong>gaseous <span class="math inline">H_2</span> was employed as the source of protons due to its convenience to simulate the anode reaction</strong> (<span class="math inline">H_2\leftrightarrow2(H^++e^-</span>), although different proton sources may affect the rate and yield of <span class="math inline">NH_3</span> production.(77) Each CPET step involves the transfer of a proton coupled with an electron from solution to an adsorbed species on the surface of catalyst. The Gibbs free energy change (<span class="math inline">\Delta{G}</span>) of every elemental step was calculated by using the standard hydrogen electrode (SHE) model proposed by Nørskov et al.,(78-80) which uses one-half of the chemical potential of hydrogen as the chemical potential of the proton–electron pair. According to this method, the <span class="math inline">\Delta{G}</span> value can be determined as follows: <span class="math inline">\Delta{G}=\Delta{E}+\Delta{ZPE}-T\Delta{S}+\Delta{G_U}+\Delta{G_{pH}}</span> , where <span class="math inline">\Delta{E}</span> is the electronic energy difference directly obtained from DFT calculations, <span class="math inline">\Delta{ZPE}</span> is the change in zero-point energies, T is the temperature (T = 298.15 K), and <span class="math inline">\Delta{S}</span> is the entropy change. <span class="math inline">\Delta{G_U}</span>is the free energy contribution related to electrode potential U. <span class="math inline">\Delta{G_{pH}}</span> is the correction of the <span class="math inline">H^+</span> free energy by the concentration, which can be determined as <span class="math inline">\Delta{G_{pH}}=2.303\times{k_B}T\times{pH}</span> (or <span class="math inline">0.059\times{pH}</span>), where <span class="math inline">k_B</span> is the Boltzmann constant and the value of <span class="math inline">pH</span> was assumed to be zero. According to this equation, the free energies of each elementary step are increased with increasing pH values, while the overpotential is unchanged (for a detailed explanation, see Note 1 in the Supporting Information). The zero-point energies and entropies of the NRR species were computed from the vibrational frequencies, in which only the adsorbate vibrational modes were calculated explicitly, while the catalyst sheet was fixed. The entropies and vibrational frequencies of molecules in the gas phase were taken from the NIST database.(81)</p>
+<h3 data-number="3.2.2" id="criterias"><span class="header-section-number">3.2.2</span> Criterias</h3>
+<p>According to previous investigations,(72, 82) the following criteria can be proposed for an eligible electrocatalyst for NRR:<br />
+a. the catalyst can facilitate the chemisorption of <span class="math inline">N_2</span> molecule to guarantee the sufficient activation of its inert N–N triple bond and<br />
+b. the catalyst can selectively stabilize <span class="math inline">N2H^*</span> and<br />
+c. destabilize <span class="math inline">NH2^*</span> species to guarantee the reduction of the overpotential.</p>
+<p>Furthermore, we calculated the overpotential (<span class="math inline">\eta</span>) for the NRR on the Mo-embedded BN monolayer via these three mechanisms. <strong>The overpotential (<span class="math inline">\eta</span>) is a good indicator of catalytic reactivity</strong>, and here a smaller <span class="math inline">\eta</span> value indicates a faster <span class="math inline">N_2</span> reduction reaction. According to the computational hydrogen electrode (CHE) model, the <span class="math inline">\eta</span> value can be determined by the equation <span class="math inline">\eta=U_{equilibrium}–U_{limiting}</span>, where <span class="math inline">U_{equilibrium}</span> is the equilibrium potential of NRR (about −0.16 V in this work for the reaction <span class="math inline">N_2+6H^++6e^-\rightarrow2NH_3</span>) and <span class="math inline">U_{limiting}</span> is the applied potential required to eliminate the energy barrier of the rate-limiting step, which can be determined as <span class="math inline">U_{limiting}=-\Delta{G}/e</span> , where <span class="math inline">\Delta{G}</span> is the free energy of the potential-limiting step.</p>
+<h1 class="unnumbered" id="ref.">Ref.</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Liu19JMC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Liu, C.; Li, Q.; Zhang, J.; Jin, Y.; MacFarlane, D. R.; Sun, C. Conversion of Dinitrogen to Ammonia on Ru Atoms Supported on Boron Sheets: A DFT Study. <em>J. Mater. Chem.A</em> <strong>2019</strong>, <em>7</em>, 4771–4776.</div>
+</div>
+<div id="ref-Zhao17JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Zhao, X.-G.; Yang, J.-H.; Fu, Y.; Yang, D.; Xu, Q.; Yu, L.; Wei, S.-H.; Zhang, L. Design of Lead-Free Inorganic Halide Perovskites for Solar Cells via Cation-Transmutation. <em>J. Am. Chem. Soc.</em> <strong>2017</strong>, <em>139</em>, 2630–2638.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

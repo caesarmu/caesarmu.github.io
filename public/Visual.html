@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Vesta, VMD and Avogadro</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Vesta, VMD and Avogadro"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#tips"><span class="toc-section-number">1</span> Tips</a>
+          <ul>
+          <li><a href="#vibration"><span class="toc-section-number">1.1</span> Vibration</a></li>
+          <li><a href="#animation"><span class="toc-section-number">1.2</span> Animation</a></li>
+          </ul></li>
+          <li><a href="#vesta"><span class="toc-section-number">2</span> Vesta</a></li>
+          <li><a href="#polyhedra-plot-for-assigned-atoms-srscnbcoo3-example"><span class="toc-section-number">3</span> Polyhedra plot for assigned atoms (SrScNbCoO3 example)</a></li>
+          <li><a href="#default-atom-color"><span class="toc-section-number">4</span> Default atom color</a>
+          <ul>
+          <li><a href="#my-preference-color"><span class="toc-section-number">4.1</span> My Preference Color</a></li>
+          </ul></li>
+          <li><a href="#vmd"><span class="toc-section-number">5</span> VMD</a>
+          <ul>
+          <li><a href="#movie"><span class="toc-section-number">5.1</span> Movie</a>
+          <ul>
+          <li><a href="#add-boudary-for-xyz-file"><span class="toc-section-number">5.1.1</span> Add boudary for xyz file</a></li>
+          </ul></li>
+          <li><a href="#charge-density"><span class="toc-section-number">5.2</span> Charge Density</a></li>
+          <li><a href="#d-plane"><span class="toc-section-number">5.3</span> 2D Plane</a></li>
+          <li><a href="#vmd.rc"><span class="toc-section-number">5.4</span> vmd.rc</a></li>
+          </ul></li>
+          <li><a href="#avogadro"><span class="toc-section-number">6</span> Avogadro</a>
+          <ul>
+          <li><a href="#tips-for-xyz-input-for-avogadro2"><span class="toc-section-number">6.1</span> Tips for xyz input for Avogadro2</a></li>
+          <li><a href="#glsl-render"><span class="toc-section-number">6.2</span> GLSL Render</a></li>
+          <li><a href="#pov-ray-image-and-movie"><span class="toc-section-number">6.3</span> Pov Ray image and movie</a>
+          <ul>
+          <li><a href="#image"><span class="toc-section-number">6.3.1</span> Image</a></li>
+          </ul></li>
+          <li><a href="#vibration-from-axsf"><span class="toc-section-number">6.4</span> Vibration from axsf</a>
+          <ul>
+          <li><a href="#rmsd"><span class="toc-section-number">6.4.1</span> RMSD</a></li>
+          <li><a href="#movie-httpsgithub.comcryosavogadroissues832"><span class="toc-section-number">6.4.2</span> Movie <span>https://github.com/cryos/avogadro/issues/832</span></a></li>
+          </ul></li>
+          <li><a href="#commands"><span class="toc-section-number">6.5</span> Commands</a></li>
+          </ul></li>
+          <li><a href="#pymol"><span class="toc-section-number">7</span> Pymol</a>
+          <ul>
+          <li><a href="#installtion-on-windows"><span class="toc-section-number">7.1</span> Installtion on windows</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="tips"><span class="header-section-number">1</span> Tips</h1>
+<h2 data-number="1.1" id="vibration"><span class="header-section-number">1.1</span> Vibration</h2>
+<ul>
+<li>mold format: Visualization by <strong>Avogadro</strong>/Jmol.</li>
+<li>xsf/axsf format: Visualization by Xcrysen (or as Force vectors in Vesta)</li>
+</ul>
+<h2 data-number="1.2" id="animation"><span class="header-section-number">1.2</span> Animation</h2>
+<ul>
+<li>xyz format: Visualization and making movie by Avogadro/Jmol/<strong>VMD</strong>.</li>
+<li>axsf format: Visualization by Xcrysen/<strong>VMD</strong>/jmol (or as Force vectors in Vesta)</li>
+</ul>
+<h1 data-number="2" id="vesta"><span class="header-section-number">2</span> Vesta</h1>
+<h1 data-number="3" id="polyhedra-plot-for-assigned-atoms-srscnbcoo3-example"><span class="header-section-number">3</span> Polyhedra plot for assigned atoms (SrScNbCoO3 example)</h1>
+<ol type="1">
+<li>Edit-&gt;Edit Data-&gt;Unit Cell-&gt;Remove symmetry.</li>
+<li>Edit-&gt;Bonds, Select “Search A2 bonded to A1,”“Search additional atoms if A1 is included in the boundary,” Check “Search by label” and “show Polyhedra”</li>
+<li>New bonds, set A1 always to O18, Min. length 0, Max. length 3.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>No.</th>
+<th>Atom 1</th>
+<th>Atom 2</th>
+<th>Min.</th>
+<th>Max.</th>
+<th>Bound.</th>
+<th>Ploy.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O18</td>
+<td>Co16</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+<tr class="even">
+<td>O18</td>
+<td>Nb11</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+<tr class="odd">
+<td>O18</td>
+<td>Sr7</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+<tr class="even">
+<td>O18</td>
+<td>Sr17</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+<tr class="odd">
+<td>O18</td>
+<td>Sr27</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+<tr class="even">
+<td>O18</td>
+<td>Sr37</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>check</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>Style-&gt;Style-&gt;Polyhedra, Objects-&gt;Properties-&gt;Polyhedra, modify Opacity to 100, modify Polyhedra style to the third one.</li>
+</ol>
+<h1 data-number="4" id="default-atom-color"><span class="header-section-number">4</span> Default atom color</h1>
+<ul>
+<li>open elements.ini in the main directory</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">1</span>  H  0.46  1.20  0.200    1.00000    0.80000    0.80000</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">1</span>  D  0.46  1.20  0.200    0.80000    0.80000    1.00000</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">2</span> He  1.22  1.40  1.220    0.98907    0.91312    0.81091</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">3</span> Li  1.57  1.40  0.590    0.52731    0.87953    0.45670</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">4</span> Be  1.12  1.40  0.270    0.37147    0.84590    0.48292</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">5</span>  B  0.81  1.40  0.110    1.00000    0.7098     0.7098 </span></code></pre></div>
+<ul>
+<li>The last three parameters (e.g.,1.00000 0.7098 0.7098 for boron) correspond to the ratios of corresponding RGB values to 255.</li>
+</ul>
+<h2 data-number="4.1" id="my-preference-color"><span class="header-section-number">4.1</span> My Preference Color</h2>
+<ul>
+<li>Properties-&gt;Atoms：Material-&gt;Specular-64/64/64, Shininess 100%</li>
+<li>Properties-&gt;Bonds：Material-&gt;Specular-64/64/64, Shininess 100%</li>
+<li>Properties-&gt;isosurfaces：Material-&gt;Specular-64/64/64, Shininess 100%, isosurfaces-&gt;Opcity 1:127/Opcity 2:255. Positive - Red, Negative - blue.</li>
+<li>View-&gt;Overall Appearance: Enable lighting:Ambient-20/Diffuce-70, Projection-Parallel, Disable Depth-cueing.</li>
+</ul>
+<h1 data-number="5" id="vmd"><span class="header-section-number">5</span> VMD</h1>
+<h2 data-number="5.1" id="movie"><span class="header-section-number">5.1</span> Movie</h2>
+<ol type="1">
+<li>Load <code>AgBO.xyz</code></li>
+<li>Main menu-&gt;Graphics-&gt;Representations,</li>
+</ol>
+<ul>
+<li>delete default rep</li>
+<li>Selected Atoms: “type Ag,” Drawing Method: VDW, Creat Rep</li>
+<li>Selected Atoms: “type B,” Drawing Method: VDW, Bond Radius: 0, Creat Rep</li>
+<li>Selected Atoms: “type B,” Drawing Method: DynamicBonds, Distance Cutoff: 1.9, Bond Radius: 0.1,Creat Rep</li>
+<li>Selected Atoms: “type O,” Drawing Method: VDW, Bond Radius: 0, Creat Rep</li>
+<li>Selected Atoms: “type O,” Drawing Method: DynamicBonds, Distance Cutoff: 1.9, Bond Radius: 0.1,Creat Rep</li>
+</ul>
+<ol start="3" type="1">
+<li>Right botton cornor of Main window, press display, change the speed.</li>
+<li>Export single snapshoot, Main Menu-&gt;File-&gt;Render, using Tachyon, start Rendering.</li>
+<li>Main menu-&gt;Extensions-&gt;visualization-&gt;Movie Maker,</li>
+</ol>
+<ul>
+<li>Set Working directory,<code>D:\Temp\vmdmovie</code></li>
+<li>Renderer: Internal Tachyon, Movie Settings: Trajectory, Make Movie, Uncheck Delete iamge files</li>
+</ul>
+<ol start="6" type="1">
+<li>Convert images to movie file using ffmpeg.exe</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ffmpeg.exe</span> <span class="at">-framerate</span> 15 <span class="at">-i</span> untitled.%05d.bmp <span class="at">-c:v</span> libx264 <span class="at">-preset</span> slow <span class="at">-crf</span> 22 output.mp4</span></code></pre></div>
+<h3 data-number="5.1.1" id="add-boudary-for-xyz-file"><span class="header-section-number">5.1.1</span> Add boudary for xyz file</h3>
+<ol type="1">
+<li>Main menu-&gt;Extensions-&gt;Tk console,</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pbc</span> set {10.153200 11.724000 21.939500} <span class="at">-all</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pbc</span> box <span class="at">-color</span> green <span class="at">-style</span> lines <span class="at">-width</span> 2 <span class="at">-resolution</span> 15</span></code></pre></div>
+<h2 data-number="5.2" id="charge-density"><span class="header-section-number">5.2</span> Charge Density</h2>
+<ol type="1">
+<li>Open a cube file</li>
+<li>Main menu-&gt;Graphics-&gt;Representations</li>
+<li>Creat Rep:</li>
+</ol>
+<ul>
+<li>Coloring Method: ColorID</li>
+<li>Drawing Method: isosurface</li>
+<li>Draw: Solid Surfaces</li>
+<li>Show: isosurface</li>
+<li>set isovalule , such as 0.2 and Get the range of isosurface.</li>
+<li>Select Material, such as Opaque.<br />
+</li>
+<li>Extensions-&gt;Visualization-&gt;Color Scale Bar: Set the range using values from isosurface.</li>
+</ul>
+<h2 data-number="5.3" id="d-plane"><span class="header-section-number">5.3</span> 2D Plane</h2>
+<ul>
+<li>Similar to Charge density, but set Drawing Method to volumeslice.</li>
+</ul>
+<h2 data-number="5.4" id="vmd.rc"><span class="header-section-number">5.4</span> vmd.rc</h2>
+<ul>
+<li>some setting from <a href="http://sobereva.com/545" class="uri">http://sobereva.com/545</a></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">############################################################################</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cr                                                                       </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#cr            (C) Copyright 1995-2007 The Board of Trustees of the            </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#cr                        University of Illinois                         </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#cr                         All Rights Reserved                           </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#cr                                                                       </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">############################################################################</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">############################################################################</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># RCS INFORMATION:</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       $RCSfile: .vmdrc,v $</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       $Author: johns $        $Locker:  $                $State: Exp $</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       $Revision: 1.9 $      $Date: 2007/01/12 20:12:44 $</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">############################################################################</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># DESCRIPTION:</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># VMD startup script.  The commands here are executed as soon as VMD starts up</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">############################################################################</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># turn on lights 0 and 1</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 0 on</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 1 on</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 2 off</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 3 off</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># position the stage and axes</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">axes</span> location lowerleft</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> location off</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># position and turn on menus</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> main     move 5   225</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> display  move 395 30</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> graphics move 395 500</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> color    move 125 225</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> files    move 125 325</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> labels   move 125 525</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> render   move 125 525</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> main      on</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#menu display  on</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co">#menu graphics on</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co">#menu color    on</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="co">#menu labels   on</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="co">#menu render   on</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co">#menu files    on</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co"># start the scene a-rockin&#39;</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co"># rock y by 1</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co"># User&#39;s default values for newly loaded molecules/reps, etc</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="co">#  mol default color {colorID 5}</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co">#  mol default style {NewCartoon 0.300000 6.000000 4.100000 0}</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="co">#  mol default selection {name CA}</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="co">#  mol default material {Transparent}</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> default style CPK</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> rendermode GLSL</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> projection orthographic</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> distance <span class="at">-8.0</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> depthcue off</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ex">color</span> scale method BWR</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="ex">color</span> Display Background white</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> bw {} {color Display Background white}</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> bb {} {color Display Background black}</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="ex">axes</span> location Off</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key n {animate next}</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key p {animate prev}</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="co">#user add key Up {animate goto [expr $vmd_frame([molinfo top])+10]}</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="co">#user add key Down {animate goto [expr $vmd_frame([molinfo top])-10]}</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key b {mol bondsrecalc all<span class="kw">;</span> <span class="ex">topo</span> retypebonds}</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key Home {display resetview}</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key Left {rotate y by <span class="at">-2}</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key Right {rotate y by 2}</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key Up {rotate x by <span class="at">-2}</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key Down {rotate x by 2}</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> bt {} {</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="ex">global</span> vmd_frame</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="ex">trace</span> variable vmd_frame<span class="er">(</span><span class="ex">[molinfo</span> top]<span class="kw">)</span> <span class="fu">w</span> updatebond</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> updatebond {args} {</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> bondsrecalc all</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ex">topo</span> retypebonds</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> bn {} {</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="ex">global</span> vmd_frame</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="ex">trace</span> vdelete vmd_frame<span class="er">(</span><span class="ex">[molinfo</span> top]<span class="kw">)</span> <span class="fu">w</span> updatebond</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="ex">proc</span> fog {} {</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> depthcue on</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> cuemode Linear</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> cuestart 1.75</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> cueend 2.5</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="co">#lappend auto_path D:/Qsync/dosbin/Candidate/VMD/scripts/la1.0</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="co">#lappend auto_path D:/Qsync/dosbin/Candidate/VMD/scripts/orient</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="co">#lappend auto_path D:/Qsync/dosbin/Candidate/VMD/scripts/download</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="co">#source D:/Qsync/dosbin/Candidate/VMD/scripts/download/pickbond.tcl</span></span></code></pre></div>
+<h1 data-number="6" id="avogadro"><span class="header-section-number">6</span> Avogadro</h1>
+<h2 data-number="6.1" id="tips-for-xyz-input-for-avogadro2"><span class="header-section-number">6.1</span> Tips for xyz input for Avogadro2</h2>
+<ul>
+<li><strong>ANSI format</strong> maybe needed for input xyz file, or there may be an error “Error parsing number of atoms.”</li>
+<li><strong>No blank lines at the end of xyz file</strong>, or there may be an error “Not enough tokens in the line.”</li>
+</ul>
+<h2 data-number="6.2" id="glsl-render"><span class="header-section-number">6.2</span> GLSL Render</h2>
+<ul>
+<li>Open a.cube with Avogadro</li>
+<li>Extensions-&gt;Creat Surfaces: Surface Type - cube file generated by…., Iso value - 0.02 -&gt; calculate.</li>
+<li>Extensions-&gt;GLSL Shaders-&gt; 1) Load Shaders: Shader name - light, Vertex Shader -light.vert-&gt;open; Shader name - x-ray, Vertex Shader - x-ray.vert-&gt;open; Shader name - x-ray-cry, Vertex Shader: x-ray-cryos.vert-&gt;open. 2) Assign Shader: Display Type-Ball and STick, Shader Program: light -&gt; Assign Shader; Display Surface, Shader Program: x-ray/x-ray-cry -&gt; Assign Shader.</li>
+</ul>
+<h2 data-number="6.3" id="pov-ray-image-and-movie"><span class="header-section-number">6.3</span> Pov Ray image and movie</h2>
+<ul>
+<li>Install <a href="http://www.povray.org/">POV-Ray</a></li>
+<li><strong>Different Path for POV-Ray in case of Image and Movie</strong></li>
+</ul>
+<h3 data-number="6.3.1" id="image"><span class="header-section-number">6.3.1</span> Image</h3>
+<ul>
+<li>File-&gt;Export POV-Ray-&gt;Assign the path (e.g., <code>C:\Program Files\POV-Ray\v3.7\bin\pvengine64.exe</code>), Render.</li>
+</ul>
+<h2 data-number="6.4" id="vibration-from-axsf"><span class="header-section-number">6.4</span> Vibration from axsf</h2>
+<ul>
+<li>VMD is able to read axsf as a trace, but does not recognize it as Vibration modes</li>
+<li>Use my script <code>xsf2nmd vib.axsf vib_pdb.nmd</code> to generate vib_pdb.nmd and vib_pdb.pdb</li>
+<li>Load vib_pdb.pdb in VMD, <code>pbc box on</code> or <code>mupbc</code> (functions begin with mu is my own script) to display the lattice</li>
+<li>Run <code>nmwiz load vib_pdb.nmd</code> or Open Extensions<span class="math inline">\rightarrow</span>Analysis<span class="math inline">\rightarrow</span>Normal Mode Wizard, and load nmd file.</li>
+<li>Open the NWwiz Gui, Adjust the length of arrow by the change <code>Scale by</code> , Adjust the arrow shape by Mode<span class="math inline">\rightarrow</span>Option</li>
+<li>Open Molecule<span class="math inline">\rightarrow</span>Option, Representation: CPK, Color Scheme: Resname.</li>
+<li><code>musnap png</code> to export to png.</li>
+</ul>
+<h3 data-number="6.4.1" id="rmsd"><span class="header-section-number">6.4.1</span> RMSD</h3>
+<h4 data-number="6.4.1.1" id="xdatcar"><span class="header-section-number">6.4.1.1</span> XDATCAR</h4>
+<ul>
+<li>VMD打开XDATCAR, after loading, <code>pbc unwrap</code> or <code>mupbc</code></li>
+<li><code>Extensions</code><span class="math inline">\rightarrow</span><code>Analysis</code><span class="math inline">\rightarrow</span><code>RMSD Trajectory Tool</code>,</li>
+<li>Enter “all,” uncheck <code>Backbone</code>, Check <code>noh</code>, check <code>plot</code>, skip-start <code>1</code>， save <code>trajrmsd.dat</code>,</li>
+<li><code>Align</code>, ‘RMSD’</li>
+<li>Select this file, right click , <code>Save coordinates</code>, Selected attoms: <code>all</code>, File type: <code>lmampstrj</code>, Stride: <code>10</code>, Save as <code>VDM_s10.lammpstrj</code></li>
+</ul>
+<h3 data-number="6.4.2" id="movie-httpsgithub.comcryosavogadroissues832"><span class="header-section-number">6.4.2</span> Movie <a href="https://github.com/cryos/avogadro/issues/832" class="uri">https://github.com/cryos/avogadro/issues/832</a></h3>
+<hr />
+<ol type="1">
+<li>Create a windows <code>bat</code> file named povray.bat</li>
+<li>Put the <code>povray.bat</code> file somewhere in one of your path locations so that the Command prompt can find it.</li>
+<li>The contents of povray.bat are as follows: <code>@START C:\"Program Files"\POV-Ray\v3.7\bin\pvengine64.exe %2 /exit %2 /exit</code></li>
+<li>Note the use of %2, because in this case %1 will catch the “-D” flag that avogadro is trying to pass and discard it.</li>
+<li>It’ll take a few tries to tell POV-Ray to stop opening all those annoying dialog boxes.</li>
+<li>POV-Ray tries to throw an error if more than one instance is open. Fix this by turning off Options-&gt;Keep Single Instance</li>
+<li>Lastly, tell POV-Ray to close on exit: Render-&gt;On Completion-&gt;Exit POV-Ray</li>
+</ol>
+<p>Once you do all that, povray will do it’s job successfully and create all the png files.</p>
+<p>Then, lucky for you, you’ll get an mencoder error because the same problem exists with mencoder, namely that the command is hardcoded to work on linux.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">const</span> QString mencoderexe = <span class="st">&quot;mencoder -ovc lavc -lavcopts vcodec=mpeg4 -of avi -o &quot;</span><span class="kw">;</span></span></code></pre></div>
+<hr />
+<ul>
+<li>So you can generate png files on windows, but you can not get a movie, but you can convert the pngs to movie using <code>ffmpeg</code>:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span>  <span class="at">-delay</span> 5 <span class="pp">*</span>.png <span class="at">-loop</span> 0 Animate_5s.mp4</span></code></pre></div>
+<h2 data-number="6.5" id="commands"><span class="header-section-number">6.5</span> Commands</h2>
+<ul>
+<li>转载自： http://blog.sina.com.cn/s/blog_4478909801014cin.html</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">VMD的console是十分强大的，也提供了很多内置命令，这里把当年研究VMD内置命令的笔记的一小部分发上来。和user</span> guide有相似之处，但是我都尽量写成例子的形式来说明，绝大部分都是亲自试过的。可能当时有些地方写的不准确，也不完整，但是现在也懒得check了。有疑问还是对照user guide中的严格说法。</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">*****一些额外内容*****</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">VMD里面所有行为，都可以用命令描述出来。打开VMD之后运行log</span> sdf.txt，接下来干你的事，你干的所有事的等价的命令行都被记录到sdf.txt当中，运行log off停止记录。</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect之后占用内存，选择范围的原子越多占得越大，应当用完之后删除，比如atomselect1</span> delete，内存就释放了。但是atomselect编号仍然继续往后延，并不会重新占用已经删了的。</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">修改TKconsole的设置，通过修改D:studyVMD186pluginsnoarchtclvmdtkcon1.0tkcon-modified.tcl。比如里面的font</span> create tkconfixed <span class="at">-family</span> Courier <span class="at">-size</span> 12，把12改成20，字号就变成20了。</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">在.vmdrc或者vmd.rc里面有很多被注释掉的内容，也有没有被注释的，都是控制启动后vmd的默认设置，比如开哪些窗口，窗口位置，光源什么的</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ex">*****以下为正文*****</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> dup 0 复制当前帧到最后新的一帧</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> dup frame 2 0 复制22帧到新的帧</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> pause 暂停播放，按回车或者随便瞎输个命令就可继续</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> forward/for向下播放</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> reverse/rev向前播放</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> prev/next 向前/向后一帧</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> skip 设置播放时的step</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> delete all 删除所有帧</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> speed 0.3 设置速度为0.3，数值<span class="op">&gt;</span>=0，<span class="op">&lt;</span>=1</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> style once/loop/rock 设置播放模式</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> styles 显示可用的播放模式，其实就是显示once、loop、rock</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ex">animate</span> goto start/end/n  回到开始帧、末尾帧、第n帧</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> keywords显示所有可以选择的关键字</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ex">macro指的就是那些charged、acidic之类的整体。</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> macro 显示所有macro</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> macro charged 显示charged的定义</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> delmacro ions    删除ions的macro</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> macro sdfsdf {resname ALA and hydrogen}  定义一个新的macro，如果已经有定义了，则覆盖</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="ex">设好的macro在graphics</span> representations-selection-singlewords里面也会出现</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect</span> 3 <span class="st">&quot;resid 25&quot;</span> frame last 选择3号分子最后一帧的resid 25。分子可以是数字或者top，所选内容就是普通的selection，用双引号或者{}括住，帧号可以是数字、first、last、now。</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="ex">选择之后，会出现比如atomselect0，然后可以运行：</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> num   显示所选的内容有多少原子</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> list  显示所选的内容的原子的编号</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> text  显示所选内容表示的意义</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> molid  显示所选内容的分子编号</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> frame  显示所选内容的所在帧。atomselect0 frame x设置选择的帧为x</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> delete   删除atomselect0函数。</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> global   将atomselect0移入全局命名空间</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> get mass 得到atomselect0所选范围的质量，还可以是{x y z}得坐标，{x}仅x坐标。get后面可以接任何属性，见manual p77</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> get structure 可以得到结构中每个残基所处的二级结构</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="ex">实际上不管是在图形界面选择newcartoon还是文本控制台输入get</span> structure，都要调用stride来计算</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> getbonds 得到成键列表</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> setbonds 按照成键列表成键，比如{{2 5} {4 6}}</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> move  4x4 matrix   根据矩阵移动</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> moveby {1 1 6}   把所选原子向1，1，6向量方向和距离上移动</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> lmoveby offset_list:  move each atom by an offset given in the list.</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> moveto { 3 6 5}   把所选内容移动到3，6，5位置</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> moveto position_list:  move each atom to a point given by the appropriate list element</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="ex">atomselect0</span> writepdb a.pdb   把目前所选原子写到当前文件夹（vmd所在文件夹）的a.pdb中</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> kk [atomselect 0 {resname ALA}]   定义<span class="va">$kk</span>变量，用echo <span class="va">$kk</span>可以查看其代表的内容，比如得到atomselect0</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> mass [<span class="va">$sel</span> get mass]        set mass [<span class="va">$sel</span> get mass]</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> kkk 4</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ex">incr</span> kkk     把kkk加1</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="va">$sel</span> set beta 0        <span class="co"># all values are set to zero</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="va">$sel</span> set beta <span class="va">$mass</span>    <span class="co"># copy mass to beta</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="ex">axes</span> locations 显示所有坐标轴可能显示的位置</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="ex">axes</span> location 得到当前坐标轴的位置</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="ex">axes</span> location <span class="op">&lt;</span> of <span class="kw">|</span> <span class="ex">origin</span> <span class="kw">|</span> <span class="ex">lowerleft</span> <span class="kw">|</span> <span class="ex">lowerright</span> <span class="kw">|</span> <span class="ex">upperleft</span> <span class="kw">|</span> <span class="ex">upperright</span> <span class="op">&gt;</span>  设置坐标轴情况</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="ex">color</span> scale method RGB设置调节颜色方法为RGB，也可以是BGR、RWB之类</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> scale methods得到所有颜色调节方法列表</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> scale method得到现在用的颜色调节方法</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> scale midpoint或min或max 得到这三种情况对应的数值，比如0.5，0.1，1.0</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> categories  显示所有颜色分类，比如Type之类</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> category Resname  显示某个颜色分类，比如Resname分类下包含的预置的对不同残基的颜色</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> colors    显示有多少种预置颜色，比如red</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="ex">colorinfo</span> index或rgb purple  显示purple颜色的序号或者rgb值（默认以1为最大）</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> update off 禁止屏幕刷新，display屏幕就卡住了</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> resetview        重置</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> distance x  设置东西与屏幕的距离，越大则分子离屏幕越近，相当于放大。不可太小比如几十，否则有凸镜的效果</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="ex">display</span> get        eyesep <span class="kw">|</span> <span class="ex">focallength</span> <span class="kw">|</span> <span class="ex">height</span> <span class="kw">|</span> <span class="ex">distance</span> <span class="kw">|</span> <span class="ex">antialias</span> <span class="kw">|</span> <span class="ex">depthcue</span> <span class="kw">|</span> <span class="ex">culling</span> <span class="kw">|</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="ex">rendermode</span> <span class="kw">|</span> <span class="fu">size</span> <span class="kw">|</span> <span class="ex">stereo</span> <span class="kw">|</span> <span class="ex">projection</span> <span class="kw">|</span> <span class="ex">nearclip</span> <span class="kw">|</span> <span class="ex">farclip</span>      得到相应的信息</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> new在分子列表中创建一个空分子</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> xxxx命令大多数情况下与graphics [molid] xxxx是等价的，draw只能在top层上绘图，而graphics可以自己指定，相对于draw是更底层的绘图命令。graphics不能自定义绘图命令比如vmd_draw_unitcell这样的。如果当前一层都没有，draw可以自动生成一层，graphics不行。以下的都可以用draw来代替。</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="ex">graphics</span> 3 {0 2 0} 在3号分子，0,2,0位置上画个点</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="ex">graphics</span> 3 {0 0 0} {3 4 5}   在0,0,0与3,4,5之间连线。几个坐标之间大括号必须有空格隔开</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="ex">graphics</span> 5 cylinder {0 1 0} {3 14 0} radius 1 filled yes resolution 20  在5号分子这两个点之间画一个柱形，半径是1，里面都充满，否则从截面就一个壳。resolution越大，越圆滑。</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="ex">graphics</span> 5 triangle {0 0 0} {5 5 5} {0 4 0} 指定三个点画一个三角</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> sphere { 0 0 0 } radius 3 resolution 15     画一个球</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> text { 0 0 0 } <span class="st">&quot;haha&quot;</span> size 3     在某个点写字，无论怎么缩放，字的大小都不变</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> color 4        graphics 4 color red3    设定颜色，不会对已经画好的物件生效，只管以后的。对几何和文字颜色都管用。</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> material Glossy   设定绘制的物件的材质。即便是已经画好的，也立刻变成现在设定的。</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> delete all   删除所有画的物件</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> delete 0   每画完一个物件，都会立刻显示此物件的id，这里删的是id=0的物件</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> list    列出现在所有物件的id</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> exists 4  检查id=4的物件是否存在，存在返回1，否为0</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> info 2   显示创造2号物件时用的指令</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="ex">draw</span> replace 3  接下来创造的物件的id=3，代替之前3号id的物件。即便是更改颜色、材质的操作，也算一个id。</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="ex">下面示例中label中只要是写Bonds的，都可以是Atoms</span><span class="kw">|</span><span class="ex">Bonds</span><span class="kw">|</span><span class="ex">Angles</span><span class="kw">|</span><span class="ex">Dihedrals之一</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="ex">和分子ID不一样，并非固定，比如Bonds</span> 3，如果在label里面把之前的Bond的label都删了，就成了Bonds 0了</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> list 显示所有的label分类</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> list Bonds 显示所有键的label</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> add Bonds 0/347 0/4440   设定index 347和index 4440的键的label</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> show/hide Bonds all      显示/隐藏所有键的label，all也可以是label号来具体控制</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> delete Atoms all     删除所有原子的label，all也可以是label号来具体控制</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="ex">用鼠标点，新生成的label号从0开始，1、2、3、4...，从Graphics-label里面能看到顺序</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> graph Bonds 0  [文件名]  显示0号Bond lable的长度，输出所有帧中的长度。如果写了文件名，则输出到文件中而不显示</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="ex">label</span> textsize 2.2   把label文字设成2.2，所有文字立刻生效。默认是1.0</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> num  显示目前有多少个光源    注意光源编号是从0开始的，0-3</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 2 on/off     把2号光源开或者关</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 0 status     显示0号光源的状态</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 1 rot x 40   把0号光源根据x轴转40度</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 0 pos        显示0号光源目前坐标</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 1 default    显示1号光源默认坐标</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="ex">light</span> 1 pos { 2 3 1.1 } 将1号光源移到2,3,1.1位置</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="ex">logfile</span> sdf.txt    把log信息写入sdf.txt。注意只有使改变了状态的指令才会被写入，比如light 0 pos {1.1 1 1}，而draw color red或者查询状态的命令都不会被写入。</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="ex">logfile</span> off        停止写入</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="ex">logfile</span> console    把本来要写入文件的信息直接在console里显示出来</span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> list  显示所有材质，比如Opaque之类的</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> settings Steel    显示Steel代表的具体的材质控制参数，5个小数。代表ambient, specular, diffuse, shininess, opacity</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> add ttt           新加一个叫ttt的材质，默认等价于Opaque</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> copy ttt          拷贝ttt成为一个新的材质，名字自动生成显示出来</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> rename ttt xxx    把ttt改名为ttt</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> delete ttt        删除ttt材质</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="ex">material</span> change diffuse xx 0<span class="kw">;</span><span class="ex">99</span>   把xx材质的diffuse属性设为0.99</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> avpos atomselect3 first 1 last 300 step 1 得到atomselect3选择的原子的从1至300帧之间的每个原子的平均位置</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> center atomselect3 weight mass   得到atomselect3的中心，用mass属性来作为权重参考。weight后面可以接各种属性，在手册77页table 5.5里面。比如还可以x、radius之类</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> contacts 5 atomselect3 atomselect4 得到在atomselect4中的任意原子的5埃范围内的atomselect3中的未与之成键的原子。如果只写一个atomselect3，则atomselect4等于atomselect3。</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> fit atomselect5 atomselect6 得到作用在atomselect5上，能使之与atomselect6的RMSD最小的4x4变换矩阵，可以套进atomselect0 move用</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> gofr  计算rdf等内容。见p103</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> sumweights atomselect7 weight mass  把atomselect7的所有原子的质量加起来。如果atomselect top protein，那么得到的就是蛋白质总质量，若charge，得到的就是总电荷。</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> hbonds 3.5 30 atomselect0 atomselect1  显示所有氢键，角度<span class="op">&lt;</span>30，距离<span class="op">&lt;</span>3.5A。!!!!!!如果两个atomselect都有，则认为0是donor，1是acceptor!!!!!!。得到的结果第一个列表是donor的index，第二个列表是acceptor的index，第三个是氢的index。两个atomselect都必须在一个ID内。donor可以是氢，也可以是氢连着的原子。</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> inverse {{1 2 3 4} { 2 5 6 8} { 8 3 5 6} { 1 4 6 2}}得到4<span class="pp">*</span>4矩阵的逆矩阵</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> rgyr atomselect0 weight mass      得到atomselect0的radius of gyration</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> minmax atomselect0        显示atomselect0里面x、y、z坐标最小和最大的原子坐标</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> rmsf atomselect0 first 50 last 100 step 2 得到atomselect0的每个原子从50帧到100帧的rmsf，两帧取样一次。可以省略selection后面的，默认为从头到尾，step=1。</span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> rmsd atomselect0 atomselect1 weight mass  得到两个selection之间的rmsd并考虑质量权重，所选的这两个部分必须原子数相同。比如可以选不同的帧的同一个部分。</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="ex">measure</span> sasa 1.4 atomselect1  以1.4埃为探测球的半径，得atomselect1的SASA。还可以加[-points varname] [-restrict restrictedsel] [-samples numsamples]参数，见P104。得到的结果和mm_pbsa得到的输出文件的surface area项基本一致。用这个方法算，两个部分不能相加，比如1的sasa和2的sasa之和不等于1和2的总sasa</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="ex">mol命令用的分子号，可以是独立的一个mol</span> ID，也可以是all, top, active,</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="ex">inactive,</span> displayed, on, off, fixed, free。</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> new   创建一个新的空分子</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> new f:sustiva.pdb   创建一个新分子，读入此文件</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> addfile f:sustiva.pdb   读入此分子到top分子中</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> new和mol addfile后面都可以接参数，type pdb读入pdb类型，还支持其它的，包括轨迹等。first、last 、step 设置读入轨迹文件时读哪些以及间隔多少。autobonds on/off决定是否自动连键。molid 5读入到id=5的分子，只对addfile管用。</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> load pdb f:<span class="dt">\s</span>ustiva.pdb  好像和mol new没区别，不能接其它参数</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> urlload 从某个URL地址读取</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> pdbload 2BBM      读取某个四个字母的pdb结构，从RCSB获得</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> list 显示目前已读取的分子信息</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> list 分子号      显示分子号包括的全部分子的详细信息，包括显示方式</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> color Chain     将默认原子上色方式改为Chain，似乎不管用</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> representation  CPK 将默认原子显示方式改为CPK，似乎不管用</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> selection [select_method]     改变默认选择方法</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> modcolor 0 top Chain    将top分子的0号representation改成Chain上色方式</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> modmaterial 0 top ghost 将top分子的0号representation改成Ghost风格</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> modmaterial 0 top CPK   将top分子的0号representation改成CPK显示方式</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> modselect 0 top {index 3} 将top分子0号representation选择内容为index 3</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> addrep 0    给0号分子新增一个representation</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> delrep 1 top  删掉top分子1号representation</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> delete top  删掉top分子</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> on/off 2   显示/不显示mol id=2的分子</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> active/inactive 2  激活/取消激活mol id=2的分子</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> default style  显示style的默认设置</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> default style CPK  设置默认style为CPK</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> modrep 1 top   将top分子的1号representation套用默认设置，似乎没用</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> fix/free 2   设置molid=2的分子是否fix<span class="er">(</span><span class="ex">固定</span><span class="kw">)</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> top      3     设置3号分子为top分子</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> cancel    3       停止3号分子载入轨迹</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> reanalyze 2      重新分析并输出2号原子的结构，比如成键情况</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> ssrecalc top     重新计算top分子的二级结构</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> rename top  pppp    重命名top分子为ppppp</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> repname top 0   显示top分子0号representation的名字</span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> rename top rep0   显示top分子名为rep0的representation的序号，若得到-1，说明没那个名字</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> selupdate/colupdate 0 top on/off  对top分子0号representation，开不开Update Selection或Color Every Frame的选项</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> smoothrep top 0 12对top分子0号representation的smooth显示值设为12</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> showrep top 0 on/off 设置top分子0号representation显示不显示</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> scaleminmax top 0 0.3 4.6 设置top分子0号rep的color scale范围为0.3-4.6</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> scaleminmax top auto 设置top分子0号rep的color scale为自动</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="ex">mol</span> drawframes molecule_number rep_number [frame specification] 可以同时播放多个轨迹，见P108</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> list  列出所有分子的ID。 分子即便删了，它的ID以后也不会再次被使用</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> num   显示分子数数目</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> top   显示top分子的ID</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> index 3  显示第3个分子的ID</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> top get { frame numframes a filename} 得到top分子的当前帧号，总帧数，和cell的a边长，和文件名。大括号里面写多少都行（如果就一个可不写大括号），属性都会以空格来分隔输出。大括号里支持的keywords见Tabel 8.3</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="ex">molinfo</span> 0 get { {rep 0} {color 0} {rep 1} {color 1} } 得到第1、2个representation的形式和参数（比如NewCartoon和其调节参数），和第1、2个图层用的Coloring Method意义<span class="er">(</span><span class="ex">如name</span><span class="kw">)</span><span class="ex">。注意读入轨迹后，切换到不同帧，get得到的是当前帧的信息，比如molinfo</span> molinfo top get {a b c alpha beta gamma}得到的是当前帧的盒子信息。</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="ex">mouse</span> mode x 设置鼠标成为某种模式。x=0代表设为旋转，1平移，2缩放，3 N设置为旋转第N个光源。4 N，N可以是</span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="ex">0:</span> query item 1: pick center 2: pick atom 3: pick bond 4: pick angle 5: pick dihedral 6: move atom 7: move residue 8: move fragment 9: move molecule 10: force on atom 11: force on residue 12: force on fragment  比如mouse mode 4 0 设鼠标为查询某个原子信息状态</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="ex">mouse</span> rocking on/off  设置鼠标拉动分子后，是否让分子继续旋转</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="ex">mouse</span> stoprotation    停止分子旋转，包括用鼠标拉动其自动旋转，和rock等命令让分子旋转所导致的</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="ex">render</span> list      显示目前可以用的渲染方法，比如POV3</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="ex">render</span> options POV3    显示当前使用POV3渲染器时的命令比如povray +W%w ......</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="ex">render</span> options POV3 sdfsdf  设置使用POV3渲染器时的命令是sdfsdf</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="ex">render</span> default VRML-1    显示默认使用VRML-1渲染器的命令</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="ex">render</span> POV3 ppp.pov  [command]   得到POV3渲染器的输入文件ppp.pov，如果加了[command]项，则紧接着运行[command]里面的内容，比如执行渲染指令，其中%s会被换为ppp.pov。</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ex">rock</span> x by 0.1        每次空闲时redraw的时候，绕x轴转0.1度，亘古不停</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ex">rock</span> x by 0.001 10000       每次空闲时redraw的时候，绕x轴转0.001度，走10000步之后向相反的方向转，etc.</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="ex">rock</span> off或者直接点鼠标就停下rock</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="ex">rotate</span> x by/to 90    沿x轴转相对90度/转到以最初视角为起点的绝对的90度        不改坐标</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="ex">rotate</span> stop   停止旋转</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="ex">quit或exit</span>           退出VMD</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="bu">wait</span> 4   等待4秒钟，这4秒内不能输入任何指令。屏幕上的动画照常播放。</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="ex">translate</span> by/to  1 3 2      平移到相对/绝对坐标1,3,2          不改坐标</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="ex">scale</span> by/to   4    使放大尺度因子f为现在的4倍/设置f为4。  to 0.01就比较合适了      不改坐标</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> lcoation  <span class="op">&lt;</span> off <span class="kw">|</span> <span class="ex">origin</span> <span class="kw">|</span> <span class="ex">bottom</span> <span class="kw">|</span> <span class="ex">top</span> <span class="kw">|</span> <span class="ex">left</span> <span class="kw">|</span> <span class="ex">right</span> <span class="kw">|</span> <span class="ex">behind</span> 〉设置挡板在哪个位置</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> location  显示挡板的当前位置</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> locations   显示所有挡板的可用位置，就是上面那一串</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> panels 4   设置场景中panels数为4，最大30。也就是指挡板的格子数</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="ex">stage</span> panels    显示目前用的panels数</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> version  显示版本号</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> versionmsg  显示完整的版本信息，最好不要用，会自动开一个vmd</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> authors  显示全部作者</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> arch  显示目前的架构</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> options   显示被用于编译VMD的选项，结果一般是WIN32 TCL</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> www  显示VMD主页</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="ex">vmdinfo</span> wwwhelp  显示VMD帮助主页，结果和上面一样</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> print keys 显示所有快捷键</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="ex">user</span> add key a dir      在Display窗口中，按a，就相当于输入了dir，即自定义快捷键</span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> list   列出所有可以列出的菜单，这些菜单往往不直接出现在GUI上，但很有用</span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> cliptool on         显示剪切工具，可以将分子按照某个平面切掉平面另一面的所有原子。</span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> main off/on          关掉/打开VMD Main</span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> pdbtool on         只有前两个能用，但没什么用，后面那堆网站都已经纳入收藏夹</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> navfly          打开飞行窗口，但是没有用</span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> pdbtool status    显示pdbtool窗口现在是开是关</span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> main loc          显示VMD main窗口当前位置</span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="ex">menu</span> main move 33 44   把VMD main窗口移到33,44坐标位置</span></code></pre></div>
+<h1 data-number="7" id="pymol"><span class="header-section-number">7</span> Pymol</h1>
+<h2 data-number="7.1" id="installtion-on-windows"><span class="header-section-number">7.1</span> Installtion on windows</h2>
+<ul>
+<li>Ref <a href="http://bbs.keinsci.com/thread-22835-1-1.html" class="uri">http://bbs.keinsci.com/thread-22835-1-1.html</a></li>
+</ul>
+<ol type="1">
+<li>Download pymol-2.5.0a0-cp38-cp38-win_amd64.whl and pymol_launcher-2.1-cp38-cp38-win_amd64.whl from <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol" class="uri">https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymol</a></li>
+<li>install 64bit Anaconda</li>
+<li>Creat pymol environment</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pymol python=3.8</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pymol</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> anaconda pip</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> anaconda numpy</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pmw</span></code></pre></div>
+<ol start="4" type="1">
+<li>install pytmol: <code>pip install --no-index --find-links="%CD%"  pymol_launcher-2.1-cp38-cp38-win_amd64.whl</code></li>
+<li>Open pymol:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pymol</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pymol</span></span></code></pre></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

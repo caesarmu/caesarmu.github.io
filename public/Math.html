@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>OMML</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="OMML"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#omml-in-ms-office"><span class="toc-section-number">1</span> OMML in MS office</a></li>
+          <li><a href="#reference">Reference</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="omml-in-ms-office"><span class="header-section-number">1</span> OMML in MS office</h1>
+<blockquote>
+<p>作者：赖枣 链接：https://www.zhihu.com/question/24613226/answer/88037643 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>0 进入公式编辑 快捷键 Alt ＋ ＝ 1 问题问的 根号 (a)，然后敲空格 ＝ 根号a 开好多根 (b&amp;a)， 然后敲空格 ＝ a开根号b 好多次方 a^b，然后空格 ＝ a的b次方 导数 df/dx，然后空格＝f对x的导数 (f)/(x)，空格空格空格 ＝f对x的偏导数 积分 _a^b，空格 ＝从a到b的积分 重积分 _A，空格＝在A集上的重积分 三重积分 _C，空格＝在C上的三重积分 _C，空格＝在C上的线积分 _S，空格＝在S上的曲面积分</p>
+<p>求和 _(n=1)^N，空格＝n从1到N的求和 2 希腊字母，花体 希腊字母 ，空格＝希腊字母alpha ，空格＝大写希腊字母alpha 其他希腊字母类似 手写体 ，空格＝手写体f ，空格＝手写体F 其他字母类似 可能叫粗体 ，空格＝类似粗体的大写R，经常用做实数集符号 ，空格＝小写l。 其他字母类似 不知道什么体但你一定见过体 ，空格＝奇怪的大写M 小写与其他字母类似 3 运算符号 ＝，就是等号lo &lt;=，空格＝小于等于 &gt;=，空格＝大于等于 &lt;&lt;，空格＝远小于？ &gt;&gt;，空格＝远大于？ ，空格＝乘号 ，空格＝除号 ，空格＝点乘 ~~，空格＝约等于 ，空格＝不等于 4 上下标 上标 xxx^(bbb)，空格。bbb就成为了xxx的上标 下标 xxx_bbb，空格。bbb就成为了xxx的下标 在前上下标 (_bbb^ccc)，空格，xxx。bbb成为了在xxx前面的下标，ccc成为了在前面的上标 在头顶的东西，hat，bar，dot等 x，空格＝x hat（x尖？） x，空格＝x bar （x杠？） x，空格＝x tilde （x一弯？） x，空格＝x check （x反尖尖？） x，空格＝x dot （x点？） x，空格＝x double dot （x两点？） 自定义在头顶的东西 a(c)，空格＝c在a上面 自定义在下面的东西 a(c)，空格＝c在a下面，下面，下面～ 5 分数 y/x，空格＝x分之y 6 括号 完整的括号 (你的内容)，空格 [你的内容]，空格 {你的内容}，空格 右开括号 （你的内容，空格 其他括号类似 左开括号 ），空格 其他括号类似 向下的括号 (你的内容），空格 7 经常见面的函数 sin，空格 cos，空格 lim，空格 max，空格 等等 其他还有arg，erf，inf，log，def，exp，lg，max，deg，gcd，min，dim，hom，ln，Pr 8 集合 ，空格＝属于 ，空格＝属于反过来 ，空格＝包含于 ，空格＝还是包含于 ，空格＝包含 a，空格＝包含 ，空格＝并运算 ，空格＝交运算 ，空格＝大写的并 ，空格＝大写的交</p>
+<p>9 矩阵 就举个例子： (1&amp;2@3&amp;4)，空格＝ 1 2 3 4</p>
+<h1 class="unnumbered" id="reference">Reference</h1>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

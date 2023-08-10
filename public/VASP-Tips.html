@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>VASP Tips</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="VASP Tips"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#unit-for-chgcar"><span class="toc-section-number">1</span> Unit for CHGCAR</a></li>
+          <li><a href="#vasp-tips"><span class="toc-section-number">2</span> VASP Tips</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="unit-for-chgcar"><span class="header-section-number">1</span> Unit for CHGCAR</h1>
+<ul>
+<li><p>From VASP manual, CHGCAR: “This file contains the lattice vectors, atomic coordinates, the total charge density multiplied by the volume <span class="math inline">\rho(r)*V_{cell}</span> on the fine FFT-grid (NG(X,Y,Z)F), and the PAW one-center occupancies.”</p></li>
+<li><p>From VESTA manual, CHGCAR/CHG/PARCHG: “When these files are read in to visualize isosurfaces and sections, data values are divided by V in the unit of <span class="math inline">bohr^3</span>. The unit of charge densities input by VESTA is, therefore, <span class="math inline">bohr^{−3}</span>.”</p></li>
+<li><p>Test: <strong>Though ELFCAR and CHGCAR share the same format, files in CHGCAR format will be divided by V in the unit of <span class="math inline">bohr^3</span> unless the file name have the string “ELFCAR” unambiguously.</strong></p></li>
+</ul>
+<h1 data-number="2" id="vasp-tips"><span class="header-section-number">2</span> VASP Tips</h1>
+<ul>
+<li>From <a href="https://sites.tufts.edu/andrewrosen/density-functional-theory/vasp/" class="uri">https://sites.tufts.edu/andrewrosen/density-functional-theory/vasp/</a></li>
+</ul>
+<p>I include here some accumulated VASP wisdom. Many of these tips are rules-of-thumb, so consider investigating them for your particular system of interest.</p>
+<p><strong>Geometry Optimizations</strong></p>
+<ul>
+<li><p>When performing geometry optimizations that involve changes in the cell shape and/or volume, always ensure that ENCUT <u>&gt;</u> 1.3*ENMAX to prevent <a href="https://en.wikipedia.org/wiki/Pulay_Stress">Pulay stresses</a>.</p></li>
+<li><p>The first step in a geometry optimization will generally have the highest number of SCF iterations. It is okay if that first step does not converge electronically within the limits of NELM. In fact, it is arguably better to have the first step reach NELM instead of running for many hundreds of SCF iterations.</p></li>
+<li><p>The general rule-of-thumb is to set EDIFFG to 0.05 eV/Å or lower for optimizations. I personally recommend 0.03 eV/Å or lower. For large, flexible materials, any value greater than 0.03 eV/Å is likely too high.</p></li>
+<li><p>When performing a full optimization of atomic positions and cell shape/volume, it is almost always best to do this in stages. It is often wise to start with a relaxation of the atomic positions (ISIF=2) followed by a full volume relaxation (ISIF=3). This will significantly reduce the chance of running into convergence issues.</p></li>
+<li><p>If your material can only be modeled with vacuum space as part of the simulation unit cell (e.g. 2D vdW materials), never use ISIF=3 to optimize the cell volume, as it will simply reduce/eliminate the vacuum. You need to vary the lattice parameters manually and find the global energy minimum that way.</p></li>
+<li><p>When performing optimizations, you are probably better off setting ISYM=0 unless you are certain you wish to constrain the symmetry. Even though this will increase the computational cost by not using available symmetry, it allows the system to reach local minima that would not otherwise be accessible. In addition, it prevents you from having to worry about errors related to SYMPREC. That being said, some symmetry issues sometimes still arise despite having ISYM=0. To resolve these, set SYMPREC = 1.0e-8.</p></li>
+<li><p>If you wish to stop a job but want it to still output any WAVECAR or CHGCAR files, create a file in the working directory named STOPCAR and have a line that reads LSTOP=.TRUE.(this will cause the job to stop on the next ionic step, and all restart files will be written)</p></li>
+</ul>
+<p><strong>Choice of Optimization Algorithms</strong></p>
+<ul>
+<li><p>In choosing an optimization algorithm for finding local minima, I generally recommend starting with the conjugate gradient (CG) algorithm (IBRION=2) because it is very robust and you do not have to worry about tweaking POTIM.</p></li>
+<li><p>In large, flexible materials with many degrees of freedom, the CG optimization algorithm (IBRION=2) oftentimes results in a bracketing error once it gets relatively close to the local minimum (search for ZBRENT: fatal error in bracketing in the standard output file). This occurs because the potential energy surface is very flat, and the CG algorithm implemented in VASP is based on the energy differences. One option to fix this is to copy the CONTCAR to the POSCAR and tighten EDIFF to 1e-6 , but a more reliable option is to use a force-based optimizer. Of these, I’d recommend FIRE as implemented with VTST (IBRION=3, IOPT=7). I have found that FIRE is generally more robust than the QN (IBRION=1) method.</p></li>
+<li><p>If the starting structure has extremely high forces on some atoms, make sure you use an appropriate optimizer, at least for the first few steps. I strongly recommend a force-based optimization algorithm with a robust line-search algorithm. For cases where the forces are so high that the structure “explodes” within a few iterations, I recommend using ASE’s BFGSLineSearch algorithm until max|F| &lt; 10 eV/A or so. Then continue with your favorite optimizer.</p></li>
+<li><p>Generally, for NEB and CI-NEB calculations,  the L-BFGS algorithm (IOPT=1) implemented in VTST is the fastest. For the dimer method, the force-based CG method in VTST (IOPT=2) is recommended. However, if you are having trouble in either case, I suggest switching to the FIRE algorithm (IOPT=7) with the default settings. It is a bit slower, but it is especially useful in troublesome cases of convergence.</p></li>
+</ul>
+<p><strong>Electronic Energy Convergence</strong></p>
+<ul>
+<li><p>For insulating materials, SCF convergence is greatly accelerated by using ALGO=All. This has the added benefit that you don’t have to worry about any of the mixing tags. This algorithm is also recommended when using the M06-L meta-GGA functional, regardless of system type.</p></li>
+<li><p>I recommend setting LWAVE=.TRUE. for most jobs, unless you are using an ASE-based optimizer or running many short jobs in succession. There is a large file I/O cost, but the WAVECAR serves as an excellent starting guess for continuation jobs, if needed, and can be deleted when you’re done. I don’t necessarily recommend setting LCHARG=.TRUE. for optimizations. The initial charge density can be calculated from the previous WAVECAR. </p></li>
+<li><p>Be careful about obtaining final energies from calculations using real-space projectors (e.g. LREAL=Auto) even for large systems. This can impact energies somewhat (even energy differences) depending on what you wish to study. If VASP recommends in the OUTCAR file that your system is large and that you will save time by using real-space projectors, I strongly recommend running your calculations with LREAL=Auto and then doing a final optimization with LREAL=.False. The optimization with the reciprocal-space projectors will only require an additional 1-5 steps on average, so you will still get the speedup of using real-space projectors.</p></li>
+<li><p>While the VASP manual suggests not setting the maximum number of SCF iterations (NELM) above 60, there are many materials (e.g. MOFs) where a higher value is needed for the first few steps. I generally set NELM=150 when studying very large materials.</p></li>
+<li><p>For materials that have charge sloshing or difficult convergence issues with the SCF, I recommend setting NELMIN to 4-6 so that accurate energies and forces are obtained.</p></li>
+<li><p>If you do not explicitly set ISTART or ICHARG, VASP will detect if a WAVECAR is present and use this for the initial wavefunction and charge density if it exists. This is arguably better than explicitly setting ISTART in your INCAR because it prevents VASP from crashing if a WAVECAR is not present (e.g. because the previous job crashed).</p></li>
+<li><p>For insulating materials (or materials that have unknown band gaps), I recommend using Gaussian smearing (ISMEAR=0) since it is appropriate for both conductors and insulators, although there are better choices for conducting materials.</p></li>
+<li><p>For insulating materials, I recommend settings SIGMA to 0.01 eV as a reasonable initial test. Always check to make sure that extrapolation back to <em>T</em> = 0 K from the finite-temperature approximation is close to the fictitious free energy, as listed in the OUTCAR file.</p></li>
+<li><p>It is generally good practice to set PREC=Accurate. This provides reasonable estimates for the integration grid (NGX, NGY, NGZ). It is often stated the meta-GGA functionals require tight integrations grids to achieve appreciable convergence. I have found that PREC=Accurate is sufficient even for these troublesome functionals.</p></li>
+</ul>
+<p><strong>Spin Polarization</strong></p>
+<ul>
+<li><p>When studying systems with magnetic moments, set LORBIT=11 so that you can view the converged magnetic moments for each atom.</p></li>
+<li><p>If you are continuing a job from a previous WAVECAR, you do not need to set the MAGMOMS in the INCAR file so long as ISPIN=2 (you can if you’d like, but VASP will ignore them).</p></li>
+<li><p>If you are unsure what to set as the magnetic moment for a metal atom, consider setting the MAGMOM value to the number of anticipated unpaired electrons. If this too is completely unknown, setting a value of 5 for <em>d</em>-block and 7 for <em>f</em>-block elements is typically okay as a first guess. If this approach is taken, it would be wise to use the converged structure to also test other spin initializations. I would also test an initial MAGMOM of 0.1 to see if this converges to a system with no spin, back to the same magnetic moment as the high-spin initialization, or something else entirely.</p></li>
+</ul>
+<p><strong>Transition States</strong></p>
+<ul>
+<li><p>If upon restarting a dimer calculation you find that the torque and angles are higher than where they left off, make sure that you are using a VASP build with VTST 3.2 or newer. See <a href="http://theory.cm.utexas.edu/forum/viewtopic.php?f=2&amp;t=2757">here</a>.</p></li>
+<li><p>The usage instructions for the VTST dimmins.pl script are incorrect. It should be dimmins.pl POSCAR MODECAR displacement, where the POSCAR and MODECAR are the resulting files from doing vfin.pl</p></li>
+<li><p>The usage instructions for the VTST neb2dim.pl script are unclear. It should state that you must first run vfin.pl, copy the exts.dat file to the parent directory (where the new POSCAR files are written), and run neb2dim.pl from that parent directory.</p></li>
+</ul>
+<p><strong>Spin/Charge Densities</strong></p>
+<ul>
+<li>Never generate AECCAR files (e.g. for a Bader analysis or DDEC charges) during a geometry optimization. VASP writes the AECCAR0 file for the input geometry but the AECCAR2 file for the converged geometry, so they are not compatible. Always do a separate single-point energy calculation (nsw=0) when setting LAECHG=.True.</li>
+</ul>
+<p><strong>Pseudopotentials</strong></p>
+<ul>
+<li><p>Always consider using the VASP-recommended PAW potentials, shown <a href="https://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html">here</a>. Note that Li_sv has an ENMAX of 499 eV in the 5.4 version of the PAW_PBE pseudopotentials, but all the rest should have ENMAX <u>&lt;</u> 400 eV. There is now an option in ASE to automatically choose the VASP-recommended default pseudopotentials. Just set setups='recommended'.</p></li>
+<li><p>For DFT+U, hybrid functionals, and meta-GGA calculations, it is <a href="https://cms.mpi.univie.ac.at/vasp/vasp/LASPH_tag.html">recommended</a> to set LASPH=.TRUE. If you use the LASPH=.TRUE. flag, make sure you include it for gas-phase species as well! It should be considered as part of your model chemistry.</p></li>
+<li><p>A subtle point is that, because the non-spherical contributions to the gradient corrections inside the PAW spheres will change with ENCUT, it will be hard (if not impossible) to converge an absolute energy with respect to the plane-wave kinetic energy cutoff if LASPH=.TRUE. Instead, one should look at convergence of relative energies or do a convergence test with LASPH=.FALSE.</p></li>
+</ul>
+<p><strong>Parallel Performance</strong></p>
+<ul>
+<li><p>The rule-of-thumb is that the number of processors you should use scales reasonably well with the number of atoms in the system. This holds fairly well for metallic systems where there are many electron-rich elements, but can be an over-estimate for organic or organometallic systems where there are many C and H atoms.</p></li>
+<li><p>I recommend using NCORE in place of NPAR since it automatically adjusts based on the number of nodes. The optimal value for NCORE strongly varies based on the computing environment. A good first-guess on many compute clusters is to try setting NCORE to the number of processors in a given node. Regardless, always make sure that the number of processors per node is value divisible by NCORE.</p></li>
+</ul>
+<p><strong>ASE</strong></p>
+<ul>
+<li><p>Whenever possible, refrain from using the ASE optimizers (or any external optimizer) with VASP calculations. If necessary, consider using the VaspInteractive calculator instead of the Vasp calculator, as this will reduce CPU time associated with starting and stopping VASP every ionic step. However, even if the VaspInteractive calculator is used in place of the Vasp calculator, VASP will generally require more electronic steps when run with an ASE optimizer than with an internal VASP or VTST optimizer. This is because VASP keeps an internal history of previous ionic steps in its mixer history and because VASP extrapolates the wavefunction and charge density from the previous step to the new positions. There is also the I/O overhead associated with reading/writing any restart files every ionic step.</p></li>
+<li><p>The above holds true for vibrational frequency calculations as well. That being said, it sometimes may be worth it to use ASE’s vibrations module even if there is added CPU overhead. The ASE-generated vibrations can be easily visualized using the ASE GUI, whereas VASP-generated vibrations are more difficult to visualize. The ASE vibrations module also saves restart files (.pckl files) for every displacement, so if the job crashes or exceeds the specified walltime, it is easy to continue where you left off.</p></li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

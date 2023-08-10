@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="index">
+    <meta name="dcterms.date" content=" 04/23/2022">
+  <title>Mu</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Mu"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Blof of Mu</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/public/Science.html">Science</a></li>
+            <li><a href="/public/System.html">System</a></li>
+            <li><a href="/public/Life.html">Life</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#topics"><span class="toc-section-number">1</span> <span><span style="color:red; font-size: 40; "><strong>Topics</strong></span></span></a></li>
+          <li><a href="#topics-1"><span class="toc-section-number">2</span> <span><span style="color:red; font-size: 40; "><strong>Topics</strong></span></span></a></li>
+          <li><a href="#topics-2"><span class="toc-section-number">3</span> <span><span style="color:red; font-size: 40; "><strong>﻿Topics</strong></span></span></a></li>
+          <li><a href="#topics-3"><span class="toc-section-number">4</span> <span><span style="color:red; font-size: 40; "><strong>﻿Topics</strong></span></span></a></li>
+          <li><a href="#electronic-structure-analysis"><span class="toc-section-number">5</span> <span><span style="color:red; font-size: 40; "><strong>﻿Electronic Structure Analysis</strong></span></span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="topics"><span class="header-section-number">1</span> <a href="/public/Note4Topic.html"><span style="color:red; font-size: 40; "><strong>Topics</strong></span></a></h1>
+<p><strong>♦</strong> <a href="/public/Note4Topic.html"><span style="color:black; font-size: 30; "><strong>Mu ◊ 2022-04-23</strong></span></a></p>
+<p><a href="/public/Note4Topic.html">My Todo x Multilayer Superconductor x Borophene to Nanotube 5.7/5.28补周四课 DAC on borophene for OER/ORR NEGF of Borophene and Borospherene ORR Review 教学成…</a></p>
+<hr />
+<h1 data-number="2" id="topics-1"><span class="header-section-number">2</span> <a href="/public/test.html"><span style="color:red; font-size: 40; "><strong>Topics</strong></span></a></h1>
+<p><strong>♦</strong> <a href="/public/test.html"><span style="color:black; font-size: 30; "><strong>Mu ◊ 2022-04-12</strong></span></a></p>
+<p><a href="/public/test.html">Principles 新方向、新思想、新观念、新极限、新机制 启发性、领域影响力（被follow） 新方法、新软件 物理机制、定性结论、预见性 工作…</a></p>
+<hr />
+<h1 data-number="3" id="topics-2"><span class="header-section-number">3</span> <a href="/public/Note4Topic.sync-conflict-20220310-103716-UMVBT2T.html"><span style="color:red; font-size: 40; "><strong>﻿Topics</strong></span></a></h1>
+<p><strong>♦</strong> <a href="/public/Note4Topic.sync-conflict-20220310-103716-UMVBT2T.html"><span style="color:black; font-size: 30; "><strong>Mu ◊ 2022-03-07</strong></span></a></p>
+<p><a href="/public/Note4Topic.sync-conflict-20220310-103716-UMVBT2T.html">Topic for Reduction Tips 新方向、新思想、新观念、新极限、新机制 启发性、领域影响力（被follow） 新方法、新软件 物理机制、定性结论、预…</a></p>
+<hr />
+<h1 data-number="4" id="topics-3"><span class="header-section-number">4</span> <a href="/public/Note4Topic.sync-conflict-20220302-210453-A7U73LO.html"><span style="color:red; font-size: 40; "><strong>﻿Topics</strong></span></a></h1>
+<p><strong>♦</strong> <a href="/public/Note4Topic.sync-conflict-20220302-210453-A7U73LO.html"><span style="color:black; font-size: 30; "><strong>Mu ◊ 2022-03-01</strong></span></a></p>
+<p><a href="/public/Note4Topic.sync-conflict-20220302-210453-A7U73LO.html">Topic Tips 新方向、新思想、新观念、新极限、新机制 启发性、领域影响力（被follow） 新方法、新软件 物理机制、定性结论、预见性 工作…</a></p>
+<hr />
+<h1 data-number="5" id="electronic-structure-analysis"><span class="header-section-number">5</span> <a href="/public/ElecStruc.html"><span style="color:red; font-size: 40; "><strong>﻿Electronic Structure Analysis</strong></span></a></h1>
+<p><strong>♦</strong> <a href="/public/ElecStruc.html"><span style="color:black; font-size: 30; "><strong>Mu ◊ 2021-12-14</strong></span></a></p>
+<p><a href="/public/ElecStruc.html">Refs: “Solids and Surfaces: A Chemist’s View of Bonding in Extended Structures,” Roald Hoffman “电子结构分析,” bilibili 刘锦程 https://space.bilibili.com/45550176 …</a></p>
+<hr />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

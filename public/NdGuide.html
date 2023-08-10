@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>鸿之微Nanodcal培训(2022)</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="鸿之微Nanodcal培训(2022)"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#device-studio和nanodcal基础"><span class="toc-section-number">1</span> Device Studio和Nanodcal基础</a>
+          <ul>
+          <li><a href="#devicestudio-构筑材料仿真大平台"><span class="toc-section-number">1.1</span> <span>DeviceStudio-构筑材料仿真大平台</span></a></li>
+          <li><a href="#nanodcal解析量子输运软件简介"><span class="toc-section-number">1.2</span> <span>Nanodcal——解析量子输运软件简介</span></a></li>
+          <li><a href="#密度泛函理论简介"><span class="toc-section-number">1.3</span> <span>密度泛函理论简介</span></a></li>
+          </ul></li>
+          <li><a href="#nanodcal晶体篇"><span class="toc-section-number">2</span> Nanodcal晶体篇</a>
+          <ul>
+          <li><a href="#材料建模的轻松秘籍-晶体篇"><span class="toc-section-number">2.1</span> <span>材料建模的轻松秘籍-晶体篇</span></a></li>
+          <li><a href="#nanodcal参数详解-晶体篇"><span class="toc-section-number">2.2</span> <span>Nanodcal参数详解-晶体篇</span></a></li>
+          <li><a href="#晶体性质计算及分析"><span class="toc-section-number">2.3</span> <span>晶体性质计算及分析</span></a></li>
+          </ul></li>
+          <li><a href="#nanodcal器件篇"><span class="toc-section-number">3</span> Nanodcal器件篇</a>
+          <ul>
+          <li><a href="#量子输运计算简介"><span class="toc-section-number">3.1</span> <span>量子输运计算简介</span></a></li>
+          <li><a href="#negf简介"><span class="toc-section-number">3.2</span> <span>NEGF简介</span></a></li>
+          <li><a href="#材料建模的轻松秘籍-器件篇1"><span class="toc-section-number">3.3</span> <span>材料建模的轻松秘籍-器件篇1</span></a></li>
+          <li><a href="#nanodcal参数详解-器件篇"><span class="toc-section-number">3.4</span> <span>Nanodcal参数详解-器件篇</span></a></li>
+          <li><a href="#材料建模的轻松秘籍-器件篇2"><span class="toc-section-number">3.5</span> <span>材料建模的轻松秘籍-器件篇2</span></a></li>
+          </ul></li>
+          <li><a href="#磁性隧道节"><span class="toc-section-number">4</span> 磁性隧道节</a>
+          <ul>
+          <li><a href="#磁性隧道结"><span class="toc-section-number">4.1</span> <span>磁性隧道结</span></a></li>
+          <li><a href="#ni-mbp-ni-文章解读与建模重述"><span class="toc-section-number">4.2</span> <span>Ni-MBP-Ni 文章解读与建模重述</span></a></li>
+          <li><a href="#ni-mbp-ni-计算重述与数据处理"><span class="toc-section-number">4.3</span> <span>Ni-MBP-Ni 计算重述与数据处理</span></a></li>
+          <li><a href="#carbon-single-atom-chain-练习"><span class="toc-section-number">4.4</span> <span>Carbon Single Atom Chain-练习</span></a></li>
+          </ul></li>
+          <li><a href="#柔性器件"><span class="toc-section-number">5</span> 柔性器件</a>
+          <ul>
+          <li><a href="#二维柔性电子器件的量子输运模拟"><span class="toc-section-number">5.1</span> <span>二维柔性电子器件的量子输运模拟</span></a></li>
+          <li><a href="#弯曲黑磷案例重述paper"><span class="toc-section-number">5.2</span> <span>弯曲黑磷案例重述</span>(<span>Paper</span>)</a></li>
+          <li><a href="#弯曲碳原子链案例重述"><span class="toc-section-number">5.3</span> <span>弯曲碳原子链案例重述</span></a></li>
+          </ul></li>
+          <li><a href="#光电器件"><span class="toc-section-number">6</span> 光电器件</a>
+          <ul>
+          <li><a href="#光电器件及理论研究"><span class="toc-section-number">6.1</span> <span>光电器件及理论研究</span></a></li>
+          <li><a href="#缺陷对自旋光电流的调控"><span class="toc-section-number">6.2</span> <span>缺陷对自旋光电流的调控</span></a></li>
+          <li><a href="#silicene-photocurrent-练习"><span class="toc-section-number">6.3</span> <span>Silicene PhotoCurrent-练习</span></a></li>
+          </ul></li>
+          <li><a href="#热电材料"><span class="toc-section-number">7</span> 热电材料</a>
+          <ul>
+          <li><a href="#热电材料中的电热输运简介"><span class="toc-section-number">7.1</span> <span>热电材料中的电热输运简介</span></a></li>
+          <li><a href="#室温下2dptx2xossete单层的显著固有zt值"><span class="toc-section-number">7.2</span> <span>室温下2DPtX2(X=O,S,Se,Te)单层的显著固有ZT值</span></a></li>
+          </ul></li>
+          <li><a href="#manual"><span class="toc-section-number">8</span> Manual</a>
+          <ul>
+          <li><a href="#nanodcal教程2020"><span class="toc-section-number">8.1</span> <span>Nanodcal教程2020</span></a></li>
+          <li><a href="#nano完整关键字说明"><span class="toc-section-number">8.2</span> <span>Nano完整关键字说明</span></a></li>
+          <li><a href="#nanodcal安装教程"><span class="toc-section-number">8.3</span> <span>Nanodcal安装教程</span></a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="device-studio和nanodcal基础"><span class="header-section-number">1</span> Device Studio和Nanodcal基础</h1>
+<h2 data-number="1.1" id="devicestudio-构筑材料仿真大平台"><span class="header-section-number">1.1</span> <a href="../NdGuide/DeviceStudio-intro.pdf" width="100%" title="-100%">DeviceStudio-构筑材料仿真大平台</a></h2>
+<h2 data-number="1.2" id="nanodcal解析量子输运软件简介"><span class="header-section-number">1.2</span> <a href="../NdGuide/Nanodcal_intro.pdf" width="100%" title="-100%">Nanodcal——解析量子输运软件简介</a></h2>
+<h2 data-number="1.3" id="密度泛函理论简介"><span class="header-section-number">1.3</span> <a href="../NdGuide/DFT-intro.pdf" width="100%" title="-100%">密度泛函理论简介</a></h2>
+<figure>
+<video src="../NdGuide/Nanodcal_intro-DFT.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/Nanodcal_intro-DFT.mp4">Nanodcal简介+DFT</a></video><figcaption aria-hidden="true">Nanodcal简介+DFT</figcaption>
+</figure>
+<h1 data-number="2" id="nanodcal晶体篇"><span class="header-section-number">2</span> Nanodcal晶体篇</h1>
+<h2 data-number="2.1" id="材料建模的轻松秘籍-晶体篇"><span class="header-section-number">2.1</span> <a href="../NdGuide/DeviceStudio-crystal.pdf" width="100%" title="-100%">材料建模的轻松秘籍-晶体篇</a></h2>
+<p><video src="../NdGuide/DeviceStudio-crystal.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/DeviceStudio-crystal.mp4">Video</a></video></p>
+<h2 data-number="2.2" id="nanodcal参数详解-晶体篇"><span class="header-section-number">2.2</span> <a href="../NdGuide/Nanodcal_para_crystal.pdf" width="100%" title="-100%">Nanodcal参数详解-晶体篇</a></h2>
+<p><video src="../NdGuide/Nanodcal_para_crystal.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/Nanodcal_para_crystal.mp4">Video</a></video></p>
+<h2 data-number="2.3" id="晶体性质计算及分析"><span class="header-section-number">2.3</span> <a href="../NdGuide/Nanodcal_crystal.pdf" width="100%" title="-100%">晶体性质计算及分析</a></h2>
+<p><video src="../NdGuide/Nanodcal_para_crystal.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/Nanodcal_para_crystal.mp4">Video</a></video></p>
+<h1 data-number="3" id="nanodcal器件篇"><span class="header-section-number">3</span> Nanodcal器件篇</h1>
+<h2 data-number="3.1" id="量子输运计算简介"><span class="header-section-number">3.1</span> <a href="../NdGuide/Qtransport.pdf" width="100%" title="-100%">量子输运计算简介</a></h2>
+<h2 data-number="3.2" id="negf简介"><span class="header-section-number">3.2</span> <a href="../NdGuide/NEGF_intro.pdf" width="100%" title="-100%">NEGF简介</a></h2>
+<figure>
+<video src="../NdGuide/NEGF-Qtransport.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/NEGF-Qtransport.mp4">NEGF+量子输运计算简介</a></video><figcaption aria-hidden="true">NEGF+量子输运计算简介</figcaption>
+</figure>
+<h2 data-number="3.3" id="材料建模的轻松秘籍-器件篇1"><span class="header-section-number">3.3</span> <a href="../NdGuide/DeviceStudio-device1.pdf" width="100%" title="-100%">材料建模的轻松秘籍-器件篇1</a></h2>
+<h2 data-number="3.4" id="nanodcal参数详解-器件篇"><span class="header-section-number">3.4</span> <a href="../NdGuide/Nnaodcal_para-device.pdf" width="100%" title="-100%">Nanodcal参数详解-器件篇</a></h2>
+<figure>
+<video src="../NdGuide/DeviceStudio-device1-para.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/DeviceStudio-device1-para.mp4">建模器件篇1+参数详解</a></video><figcaption aria-hidden="true">建模器件篇1+参数详解</figcaption>
+</figure>
+<h2 data-number="3.5" id="材料建模的轻松秘籍-器件篇2"><span class="header-section-number">3.5</span> <a href="../NdGuide/DeviceStudio-device2.pdf" width="100%" title="-100%">材料建模的轻松秘籍-器件篇2</a></h2>
+<figure>
+<video src="../NdGuide/DeviceStudio-device2_1.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/DeviceStudio-device2_1.mp4">材料建模的轻松秘籍-器件篇2</a></video><figcaption aria-hidden="true">材料建模的轻松秘籍-器件篇2</figcaption>
+</figure>
+<figure>
+<video src="../NdGuide/DeviceStudio-device2_2.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/DeviceStudio-device2_2.mp4">材料建模的轻松秘籍-器件篇2</a></video><figcaption aria-hidden="true">材料建模的轻松秘籍-器件篇2</figcaption>
+</figure>
+<h1 data-number="4" id="磁性隧道节"><span class="header-section-number">4</span> 磁性隧道节</h1>
+<h2 data-number="4.1" id="磁性隧道结"><span class="header-section-number">4.1</span> <a href="../NdGuide/%20MTJ.pdf" width="100%" title="-100%">磁性隧道结</a></h2>
+<h2 data-number="4.2" id="ni-mbp-ni-文章解读与建模重述"><span class="header-section-number">4.2</span> <a href="../NdGuide/MTJ-model.pdf" width="100%" title="-100%">Ni-MBP-Ni 文章解读与建模重述</a></h2>
+<figure>
+<video src="../NdGuide/MTJ-model.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/MTJ-model.mp4">磁性隧道结+文献解读+建模</a></video><figcaption aria-hidden="true">磁性隧道结+文献解读+建模</figcaption>
+</figure>
+<h2 data-number="4.3" id="ni-mbp-ni-计算重述与数据处理"><span class="header-section-number">4.3</span> <a href="../NdGuide/MTJ-data.pdf" width="100%" title="-100%">Ni-MBP-Ni 计算重述与数据处理</a></h2>
+<figure>
+<video src="../NdGuide/MTJ-data.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/MTJ-data.mp4">计算重述与数据处理</a></video><figcaption aria-hidden="true">计算重述与数据处理</figcaption>
+</figure>
+<h2 data-number="4.4" id="carbon-single-atom-chain-练习"><span class="header-section-number">4.4</span> <a href="../NdGuide/MTJ-Cchain.pdf" width="100%" title="-100%">Carbon Single Atom Chain-练习</a></h2>
+<h1 data-number="5" id="柔性器件"><span class="header-section-number">5</span> 柔性器件</h1>
+<h2 data-number="5.1" id="二维柔性电子器件的量子输运模拟"><span class="header-section-number">5.1</span> <a href="../NdGuide/felxdev_model.pdf" width="100%" title="-100%">二维柔性电子器件的量子输运模拟</a></h2>
+<h2 data-number="5.2" id="弯曲黑磷案例重述paper"><span class="header-section-number">5.2</span> <a href="../NdGuide/flexdev_example_Psheet.pdf" width="100%" title="-100%">弯曲黑磷案例重述</a>(<a href="../NdGuide/flexdev_example_Psheet_paper.pdf" title="-100%">Paper</a>)</h2>
+<h2 data-number="5.3" id="弯曲碳原子链案例重述"><span class="header-section-number">5.3</span> <a href="../NdGuide/flexdev_Cchain.pdf" width="100%" title="-100%">弯曲碳原子链案例重述</a></h2>
+<figure>
+<video src="../NdGuide/flexdev.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/flexdev.mp4">柔性器件专题</a></video><figcaption aria-hidden="true">柔性器件专题</figcaption>
+</figure>
+<h1 data-number="6" id="光电器件"><span class="header-section-number">6</span> 光电器件</h1>
+<h2 data-number="6.1" id="光电器件及理论研究"><span class="header-section-number">6.1</span> <a href="../NdGuide/photoelec_base.pdf" width="100%" title="-100%">光电器件及理论研究</a></h2>
+<h2 data-number="6.2" id="缺陷对自旋光电流的调控"><span class="header-section-number">6.2</span> <a href="../NdGuide/photoelec_defect.pdf" width="100%" title="-100%">缺陷对自旋光电流的调控</a></h2>
+<h2 data-number="6.3" id="silicene-photocurrent-练习"><span class="header-section-number">6.3</span> <a href="../NdGuide/photoelec_si.pdf" width="100%" title="-100%">Silicene PhotoCurrent-练习</a></h2>
+<figure>
+<video src="../NdGuide/photoelec.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/photoelec.mp4">光电器件专题</a></video><figcaption aria-hidden="true">光电器件专题</figcaption>
+</figure>
+<h1 data-number="7" id="热电材料"><span class="header-section-number">7</span> 热电材料</h1>
+<h2 data-number="7.1" id="热电材料中的电热输运简介"><span class="header-section-number">7.1</span> <a href="../NdGuide/therelec_intro.pdf" width="100%" title="-100%">热电材料中的电热输运简介</a></h2>
+<figure>
+<video src="../NdGuide/therelec.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/therelec.mp4">热电材料中的电热输运简介</a></video><figcaption aria-hidden="true">热电材料中的电热输运简介</figcaption>
+</figure>
+<h2 data-number="7.2" id="室温下2dptx2xossete单层的显著固有zt值"><span class="header-section-number">7.2</span> <a href="../NdGuide/therelec_zt.pdf" width="100%" title="-100%">室温下2DPtX2(X=O,S,Se,Te)单层的显著固有ZT值</a></h2>
+<figure>
+<video src="../NdGuide/therelec_zt.mp4" title="-100%" style="width:100.0%" controls=""><a href="../NdGuide/therelec_zt.mp4">热电优值ZT计算</a></video><figcaption aria-hidden="true">热电优值ZT计算</figcaption>
+</figure>
+<h1 data-number="8" id="manual"><span class="header-section-number">8</span> Manual</h1>
+<h2 data-number="8.1" id="nanodcal教程2020"><span class="header-section-number">8.1</span> <a href="../NdGuide/Nanodcal_manual2020.pdf" width="100%" title="-100%">Nanodcal教程2020</a></h2>
+<h2 data-number="8.2" id="nano完整关键字说明"><span class="header-section-number">8.2</span> <a href="../NdGuide/Nanodcal_input2021A.pdf" width="100%" title="-100%">Nano完整关键字说明</a></h2>
+<h2 data-number="8.3" id="nanodcal安装教程"><span class="header-section-number">8.3</span> <a href="../NdGuide/Nanodcal_install.pdf" width="100%" title="-100%">Nanodcal安装教程</a></h2>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

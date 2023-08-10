@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Thermoelectric</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Thermoelectric"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#基本介绍"><span class="toc-section-number">0.1</span> 基本介绍</a></li>
+          <li><a href="#shengbte-installation"><span class="toc-section-number">0.2</span> [ShengBTE Installation</a>
+          <ul>
+          <li><a href="#shengbte-v1.5"><span class="toc-section-number">0.2.1</span> ShengBTE v1.5</a></li>
+          <li><a href="#gpu-optimized-version-of-shengbte"><span class="toc-section-number">0.2.2</span> <span>GPU optimized Version of ShengBTE</span></a></li>
+          <li><a href="#fourthorder-version-of-shengbte"><span class="toc-section-number">0.2.3</span> <span>Fourthorder Version of ShengBTE</span></a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h2 data-number="0.1" id="基本介绍"><span class="header-section-number">0.1</span> 基本介绍</h2>
+<p>热电效应是指在给定温度梯度下产生电势差的一种物理现象。通常用品质因子(ZT)<span class="math inline">ZT=S^2\sigma{T}/\kappa</span>,（其中<span class="math inline">S</span>是Seebeck系数，<span class="math inline">\sigma</span>代表电导率，<span class="math inline">T</span>是温度，<span class="math inline">\kappa</span>则表示热导率）来表征材料的热电性能。具有高品质因子的热电材料能够有效地将废热转换为电能，具有广泛的应用前景，因此寻找具有高品质因子的热电材料是能源转换领域的一个研究热点。为了提高热电材料的品质因子，有两种途径：增强<span class="math inline">S^2\sigma</span>（又称功率因子）或者降低材料的热导率。(From材料牛By Alisa)</p>
+<p>早在1993年，麻省理工学院的Mildred Dresselhaus教授和她的博士生L. D. Hicks曾预言二维量子限域效应引起的态密度增强现象会极大地提高材料的热电功率因子 (Phys. Rev. B 47, 12727 (1993))，这为获得高性能的热电材料提供了一个非常重要的理论指导。但是截至目前，一直没有实验确切地证实这个理论预测。即使在一些实验中半导体材料量子阱的宽度已经缩小至电荷的波尔直径尺度，仍然没有观察到热电性能的显著增强。最近，南京大学物理学院的梁世军副研究员和缪峰教授开展实验，同时与吉林大学张立军教授理论课题组合作，利用二维材料均匀厚度和载流子浓度可控的特性，首次证实了著名的Hicks-Dresselhaus理论预言。(From材料牛By Alisa)</p>
+<h2 data-number="0.2" id="shengbte-installation"><span class="header-section-number">0.2</span> [ShengBTE Installation</h2>
+<h3 data-number="0.2.1" id="shengbte-v1.5"><span class="header-section-number">0.2.1</span> ShengBTE v1.5</h3>
+<ol type="1">
+<li>Down latest ShengBTE from <a href="https://bitbucket.org/sousaw/shengbte/src/master/">sousaw / shengbte — Bitbucket</a></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel oneapi</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> sousaw-shengbte-xxxxx.zip</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> sousaw-shengbte-xxxxx</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static-intel</span> <span class="at">-qopenmp</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/backup/Src/spglib/spglib-1.12.2/src/.libs/libsymspg.a  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort   <span class="co">#modify this line </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory  </span></span></code></pre></div>
+<h3 data-number="0.2.2" id="gpu-optimized-version-of-shengbte"><span class="header-section-number">0.2.2</span> <a href="https://github.com/wxmwy/ShengBTE">GPU optimized Version of ShengBTE</a></h3>
+<ol type="1">
+<li>Download GPU ShengBTE from <a href="https://github.com/wxmwy/ShengBTE" class="uri">https://github.com/wxmwy/ShengBTE</a></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GPU Version </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015 (the intel version compatible with your cuda, maybe not intel oneapi)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> ShengBTE-master.zip</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ShengBTE-master</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src-gpu</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src-gpu</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify FFLAGS, LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/muyw/backup/comlib/intel/libsymspg.a</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#######</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">## Modify cuda root in Makefile to the right path </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="va">LIBS</span><span class="op">+=</span>-L/usr/local/cuda-9.2/lib64 <span class="ex">-lcudart</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">icc</span> <span class="at">-g</span> <span class="at">-O3</span> <span class="at">-I</span>/usr/local/cuda-9.2/include <span class="at">-c</span> <span class="at">-o</span> <span class="va">$@</span> $^</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">####</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.gpu</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># you will get the GPU version ShengBTE</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># intel oneapi version </span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make ../Src</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">## unload intel2015, and load intel oneapi</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.oneapi</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">### Everything is ok for ShengBTE.gpu and ShengBTE.oneapi</span></span></code></pre></div>
+<ol start="2" type="1">
+<li>The results are very close to those from the original version of ShengBTE.</li>
+</ol>
+<h3 data-number="0.2.3" id="fourthorder-version-of-shengbte"><span class="header-section-number">0.2.3</span> <a href="https://github.com/wxmwy/ShengBTE">Fourthorder Version of ShengBTE</a></h3>
+<ol type="1">
+<li>Download Fourthorder Version of ShengBTE from <a href="https://github.com/FourPhonon/Fourthorder" class="uri">https://github.com/FourPhonon/Fourthorder</a></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FourPhonon-main.zip</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> FourPhonon-main</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify LDFLAGS, MPIFC, and MKLROOT), </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static_intel</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/.soft/libadd/staticlib/spglib/libsymspg.a</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKLROOT</span><span class="op">=</span>/opt/intel11/Compiler/mkl</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>       <span class="dt">\</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_intel_lp64.a                                <span class="dt">\</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_sequential.a                               <span class="dt">\</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory </span></span></code></pre></div>
+<ul>
+<li>The results are a little smaller than those from the original version of ShengBTE.</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

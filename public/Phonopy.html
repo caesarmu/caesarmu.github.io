@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Phonopy and Phono3py</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Phonopy and Phono3py"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#normal-version-python"><span class="toc-section-number">1</span> <span class="header-section-number">1</span> normal version python</a>
+          <ul>
+          <li><a href="#python-reinstall"><span class="toc-section-number">1.1</span> <span class="header-section-number">1.1</span> python reinstall</a></li>
+          <li><a href="#pip-and-setup-tools"><span class="toc-section-number">1.2</span> <span class="header-section-number">1.2</span> pip and setup tools</a></li>
+          <li><a href="#numpy-and-scipy-ifort-and-mkl-needed"><span class="toc-section-number">1.3</span> <span class="header-section-number">1.3</span> numpy and scipy (ifort and MKL needed)</a></li>
+          <li><a href="#libxslt-and-lxml"><span class="toc-section-number">1.4</span> <span class="header-section-number">1.4</span> libxslt and lxml</a></li>
+          <li><a href="#matplotlib-yaml-and-pyinstallermay-be-needed"><span class="toc-section-number">1.5</span> <span class="header-section-number">1.5</span> matplotlib, yaml and PyInstaller(may be needed)</a></li>
+          <li><a href="#phonopy"><span class="toc-section-number">1.6</span> <span class="header-section-number">1.6</span> phonopy</a></li>
+          <li><a href="#phono3py"><span class="toc-section-number">1.7</span> <span class="header-section-number">1.7</span> phono3py</a></li>
+          </ul></li>
+          <li><a href="#install-conda-python"><span class="toc-section-number">2</span> <span class="header-section-number">2</span> install conda python:</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="normal-version-python"><span class="header-section-number">1</span> <span class="header-section-number">1</span> normal version python</h1>
+<h2 data-number="1.1" id="python-reinstall"><span class="header-section-number">1.1</span> <span class="header-section-number">1.1</span> python reinstall</h2>
+<pre class="sourcecode"><code>yum search openssl
+yum install openssl-devel.x86_64  -y
+cd  /home/ywmu/backup/compiled.soft/Python/Python-2.7.10
+./configure   --enable-shared --prefix=/opt/Python27
+##注意 ：不加　--enable-shared　参数将编译静态的python,无法使用PyInstall的打包。
+make
+make install
+
+export PATH=/opt/Python27/bin:$PATH
+export LD_LIBRARY_PATH=/opt/Python27/lib:/opt/intel/Compiler/mkl/lib/em64t:$LD_LIBRARY_PATH</code></pre>
+<h2 data-number="1.2" id="pip-and-setup-tools"><span class="header-section-number">1.2</span> <span class="header-section-number">1.2</span> pip and setup tools</h2>
+<pre class="sourcecode"><code>wget https://pypi.python.org/packages/source/s/setuptools/setuptools-17.0.tar.gz --no-check-certificate
+tar xf setuptools-17.0.tar.gz
+cd setuptools-17.0
+python setup.py build
+python setup.py install
+
+curl -O  https://pypi.python.org/packages/source/p/pip/pip-7.1.2.tar.gz -k
+tar xvfz pip-7.1.2.tar.gz
+cd pip-7.1.2
+python setup.py install
+
+# or:
+curl -o get-pip.py https://github.com/pypa/get-pip/blob/master/get-pip.py
+python get-pip.py</code></pre>
+<h2 data-number="1.3" id="numpy-and-scipy-ifort-and-mkl-needed"><span class="header-section-number">1.3</span> <span class="header-section-number">1.3</span> numpy and scipy (ifort and MKL needed)</h2>
+<pre class="sourcecode"><code>curl -O  https://pypi.python.org/packages/source/n/numpy/numpy-1.10.0.tar.gz -k
+curl -O  https://pypi.python.org/packages/source/s/scipy/scipy-0.16.0.tar.gz -k
+tar -xvf numpy-1.10.0.tar.gz
+cd numpy-1.10.0
+cp site.cfg.example site.cfg
+## Modify site.cfg:
+ [mkl]
+ library_dirs = /opt/intel/mkl/10.0.1.014/lib/32/
+ lapack_libs = mkl_lapack
+ mkl_libs = mkl, guide
+
+ to 
+[mkl]
+library_dirs = /opt/intel/mkl/lib/intel64:/opt/intel/lib/intel64
+include_dirs =  /opt/intel/mkl/include/intel64/lp64
+mkl_libs = mkl_def, mkl_intel_lp64, mkl_intel_thread, mkl_core, iomp5
+lapack_libs = mkl_lapack95_lp64
+ 
+python setup.py build --fcompiler=intelem
+python setup.py install --record install.file.list
+or: python setup.py config --compiler=intelem build_clib --compiler=intelem build_ext --compiler=intelem install
+
+tar -xvf scipy-0.16.0.tar.gz
+cd scipy-0.16.0
+cp ../numpy-1.10.0/site.cfg
+python setup.py build --fcompiler=intelem
+python setup.py install --record install.file.list</code></pre>
+<h2 data-number="1.4" id="libxslt-and-lxml"><span class="header-section-number">1.4</span> <span class="header-section-number">1.4</span> libxslt and lxml</h2>
+<pre class="sourcecode"><code># download libxslt-1.1.28.zip and libxml2-2.7.2.tar.gz from  ftp://xmlsoft.org/libxml2/
+tar -xvf libxml2-2.7.2.tar.gz
+cd libxml2-2.7.2
+./configure --prefix=/opt/sharelib --without-crypto --without-python --with-libxml-prefix=/opt/sharelib
+make &amp;&amp; make install
+
+unzip libxslt-1.1.28.zip
+cd libxslt-1.1.28
+# (maybe need yum install  libtool.x86_64 and yum install autoconf)
+./autogen
+./configure --prefix=/opt/sharelib --without-crypto --without-python --with-libxml-prefix=/opt/sharelib
+make &amp;&amp; make install
+
+wget  http://pypi.python.org/packages/source/l/lxml/lxml-3.0.1.tar.gz
+tar -xvf lxml-3.0.1.tar.gz
+cd  lxml-3.0.1
+python setup.py  build --with-xslt-config=/opt/sharelib/bin/xslt-config
+python  setup.py install
+export  LD_LIBRARY_PATH=/opt/sharelib/lib:$LD_LIBRARY_PATH</code></pre>
+<h2 data-number="1.5" id="matplotlib-yaml-and-pyinstallermay-be-needed"><span class="header-section-number">1.5</span> <span class="header-section-number">1.5</span> matplotlib, yaml and PyInstaller(may be needed)</h2>
+<pre class="sourcecode"><code>pip install matplotlib
+pip install pyyaml
+ or: pip install -i --trusted-host http://pypi.douban.com/simple  pyyaml 
+ or: curl -O http://pyyaml.org/download/pyyaml/PyYAML-3.11.tar.gz -k &amp;&amp; pip install PyYAML-3.11.tar.gz   (tested) 
+pip install PyInstaller
+ or: download from https://github.com/pyinstaller/pyinstaller/releases/download/3.0/PyInstaller-3.0.tar.gz &amp;&amp; pip install /PyInstaller-3.0.tar.gz (tested)</code></pre>
+<h2 data-number="1.6" id="phonopy"><span class="header-section-number">1.6</span> <span class="header-section-number">1.6</span> phonopy</h2>
+<pre class="sourcecode"><code> download from http://sourceforge.net/projects/phonopy/files/phonopy/
+tar -xvf phonopy-1.9.6.3.tar.gz
+cd  phonopy-1.9.6.3
+python setup.py install   (install to python  directory, no $PYTHONPATH needed)</code></pre>
+<p>ps: the first line of python files:</p>
+<p><code>#!/opt/Python27/bin/python</code> needed to changed to <code>#!/usr/bin/env python</code>.</p>
+<p>maybe needed:</p>
+<pre class="sourcecode"><code>mkdir  phonopy.onefile &amp;&amp; cd phonopy.onefile
+for cmd in $(ls ../phonopy-1.9.6.3/bin/) ; do   pyinstaller --onefile  /opt/Python27/bin/$cmd ; done</code></pre>
+<h2 data-number="1.7" id="phono3py"><span class="header-section-number">1.7</span> <span class="header-section-number">1.7</span> phono3py</h2>
+<pre class="sourcecode"><code>## modify setup.py, add two lines in lapacke part:
+## /opt/openblas.gnu/lib/libopenblas.so copied to 
+## /home/.soft/mybin/lib/libopenblas.so.0 before
+include_dirs += [&#39;/opt/openblas.gnu/include&#39;]
+extra_link_args_lapacke = [&#39;/opt/openblas.gnu/lib/libopenblas.so&#39;]
+
+export CC=gcc FC=gfortran
+python setup.py install </code></pre>
+<h1 data-number="2" id="install-conda-python"><span class="header-section-number">2</span> <span class="header-section-number">2</span> install conda python:</h1>
+<ul>
+<li>basic</li>
+</ul>
+<pre class="sourcecode"><code>wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p /home/ywmu/.soft/miniconda</code></pre>
+<ul>
+<li>add to env_mini.sh</li>
+</ul>
+<pre class="shared"><code>export PATH=/home/ywmu/.soft/miniconda/bin:${PATH}
+export C_INCLUDE_PATH=/home/ywmu/.soft/include:${C_INCLUDE_PATH}
+export LD_LIBRARY_PATH=/home/ywmu/.soft/miniconda/lib:${LD_LIBRARY_PATH}</code></pre>
+<pre class="sourcecode"><code>. env_mini.sh</code></pre>
+<ul>
+<li>update and add channel</li>
+</ul>
+<pre class="sourcecode"><code>#conda update --yes conda
+conda config --add channels conda-forge
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --set show_channel_urls yes</code></pre>
+<ul>
+<li>add python 2.7</li>
+</ul>
+<pre class="sourcecode"><code>conda create -n py2 python=2.7
+source activate py2
+conda install --yes python=2.7 numpy
+ deactivate</code></pre>
+<ul>
+<li>install lib, phonopy and phono3py</li>
+</ul>
+<pre class="sourcecode"><code>source deactivate py2
+export TRAVIS_PYTHON_VERSION=3.5  #3.5 needed by phono3py
+conda install --yes python=$TRAVIS_PYTHON_VERSION pip numpy h5py pyyaml matplotlib openblas
+conda install -c atztogo --yes python=$TRAVIS_PYTHON_VERSION phonopy
+conda install -c atztogo --yes python=$TRAVIS_PYTHON_VERSION phono3py</code></pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

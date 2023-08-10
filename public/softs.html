@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>My Softwares</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="My Softwares"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#opensource-or-freemium-softwares"><span class="toc-section-number">1</span> Opensource or freemium softwares</a>
+          <ul>
+          <li><a href="#word-processing-and-presentation"><span class="toc-section-number">1.1</span> Word processing and Presentation</a>
+          <ul>
+          <li><a href="#office"><span class="toc-section-number">1.1.1</span> Office</a></li>
+          <li><a href="#tex"><span class="toc-section-number">1.1.2</span> Tex</a></li>
+          <li><a href="#markdownpandockatex"><span class="toc-section-number">1.1.3</span> Markdown+Pandoc+Katex</a></li>
+          </ul></li>
+          <li><a href="#pdf-reader-and-processing"><span class="toc-section-number">1.2</span> Pdf Reader and Processing</a></li>
+          <li><a href="#text-and-code-processing"><span class="toc-section-number">1.3</span> Text and Code Processing</a></li>
+          <li><a href="#reference-processing"><span class="toc-section-number">1.4</span> Reference Processing</a></li>
+          <li><a href="#data-plotting-image-processing"><span class="toc-section-number">1.5</span> Data Plotting &amp;&amp; Image Processing</a></li>
+          <li><a href="#ssh"><span class="toc-section-number">1.6</span> SSH</a></li>
+          <li><a href="#rss"><span class="toc-section-number">1.7</span> RSS</a></li>
+          <li><a href="#programmingscripting-language"><span class="toc-section-number">1.8</span> Programming/Scripting Language</a></li>
+          <li><a href="#cleaner"><span class="toc-section-number">1.9</span> Cleaner</a></li>
+          <li><a href="#other-tools"><span class="toc-section-number">1.10</span> Other Tools</a></li>
+          </ul></li>
+          <li><a href="#codes-for-science"><span class="toc-section-number">2</span> Codes for Science</a>
+          <ul>
+          <li><a href="#dftmd-code"><span class="toc-section-number">2.1</span> DFT/MD code</a></li>
+          <li><a href="#geometry-viewer"><span class="toc-section-number">2.2</span> Geometry Viewer</a></li>
+          <li><a href="#high-symmetry-k-points"><span class="toc-section-number">2.3</span> High Symmetry K Points</a></li>
+          <li><a href="#other"><span class="toc-section-number">2.4</span> Other</a></li>
+          </ul></li>
+          <li><a href="#soft-comparision"><span class="toc-section-number">3</span> Soft Comparision</a>
+          <ul>
+          <li><a href="#web-browser"><span class="toc-section-number">3.1</span> Web browser</a></li>
+          <li><a href="#firefox"><span class="toc-section-number">3.2</span> Firefox</a>
+          <ul>
+          <li><a href="#allow-redirect"><span class="toc-section-number">3.2.1</span> Allow Redirect</a></li>
+          <li><a href="#change-defaut-profile"><span class="toc-section-number">3.2.2</span> Change defaut profile</a></li>
+          </ul></li>
+          <li><a href="#cleaner-1"><span class="toc-section-number">3.3</span> Cleaner</a></li>
+          <li><a href="#burai-vs.-quantumvitas"><span class="toc-section-number">3.4</span> BURAI vs. QuantumVITAS</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="opensource-or-freemium-softwares"><span class="header-section-number">1</span> Opensource or freemium softwares</h1>
+<h2 data-number="1.1" id="word-processing-and-presentation"><span class="header-section-number">1.1</span> Word processing and Presentation</h2>
+<blockquote>
+<p>To replace commercial <strong>MS Office (Win/Mac)</strong></p>
+</blockquote>
+<h3 data-number="1.1.1" id="office"><span class="header-section-number">1.1.1</span> Office</h3>
+<ul>
+<li><strong><a href="https://education.wps.cn/">WPS office</a>(Win/Linux, Freemium &amp; Proprietary, best compatibility to MS Office)</strong></li>
+<li><a href="https://zh-cn.libreoffice.org/">LibreOffice</a> (Win/Mac/Linux, Portable, Opensource)</li>
+<li><a href="https://www.onlyoffice.com/desktop.aspx">OnlyOffice</a> (Win/Mac/Linux, Opensource, very good compatibility to MS Office)</li>
+</ul>
+<h3 data-number="1.1.2" id="tex"><span class="header-section-number">1.1.2</span> Tex</h3>
+<ul>
+<li><p><a href="http://tug.org/texlive/">TeX Live</a> (Win/Mac/Linux, Portable, Opensource)</p></li>
+<li><p><strong><a href="https://miktex.org/">Miktex</a>(Win/Mac/Linux, Portable, Opensource)</strong></p></li>
+</ul>
+<h3 data-number="1.1.3" id="markdownpandockatex"><span class="header-section-number">1.1.3</span> Markdown+Pandoc+Katex</h3>
+<ul>
+<li><p><strong><a href="https://typoraio.cn/">Typora</a> (Win/Mac/Linux, Portable, Paid &amp; Proprietary, Markdown viewer)</strong></p></li>
+<li><p><strong><a href="https://www.pandoc.org/">Pandoc</a> (Win/Mac/Linux, Portable, Opensource, Markdown converter)</strong></p></li>
+<li><p><strong><a href="https://katex.org/">Katex</a>(Win/Mac/Linux, Portable, Opensource, Tex Math render)</strong>/<a href="https://www.mathjax.org/">MathJax</a>(Win/Mac/Linux, Portable, Opensource) (Win/Mac/Linux, Portable, Tex Math render)</p></li>
+</ul>
+<h2 data-number="1.2" id="pdf-reader-and-processing"><span class="header-section-number">1.2</span> Pdf Reader and Processing</h2>
+<blockquote>
+<p>To replace commercial <strong>Acrobat Pdf (Win)</strong></p>
+</blockquote>
+<ul>
+<li><strong><a href="https://www.sumatrapdfreader.org/free-pdf-reader.html">Sumatra pdf</a> (Win, Portable, Opensource, eps/pdf/png/jpg Reader and Pdf editr)</strong></li>
+<li><a href="https://www.tracker-software.com/product/pdf-xchange-viewer">PDF-XChange Viewer</a> (Win, Freemium &amp; Proprietary, Pdf editr)</li>
+<li><a href="http://qpdf.sourceforge.net/">qpdf</a>(Win/Linux, Portable, Opensource, Pdf converter)</li>
+</ul>
+<h2 data-number="1.3" id="text-and-code-processing"><span class="header-section-number">1.3</span> Text and Code Processing</h2>
+<blockquote>
+<p>To replace commercial <strong>Emeditor</strong> or <strong>Editorplus</strong> for *.txt/*.dat/*.md/*.tex (Win)</p>
+</blockquote>
+<ul>
+<li><strong><a href="https://github.com/rizonesoft/Notepad3/">Notepad3</a> (Win, Portable, Opensource, Calculator embeded)</strong></li>
+<li><a href="https://notepad-plus-plus.org/">Notepad++</a>(Win, Portable, Opensource)</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (Win/Mac/Linux, Portable, Opensource)</li>
+</ul>
+<h2 data-number="1.4" id="reference-processing"><span class="header-section-number">1.4</span> Reference Processing</h2>
+<blockquote>
+<p>To replace commercial <strong>Endnote or Noteexpress (Win)</strong></p>
+</blockquote>
+<ul>
+<li><strong><a href="https://www.zotero.org/">Zotero</a>(Win/Mac/Linux, Opensource)</strong></li>
+<li><a href="http://www.mendeley.com/">Mendeley</a>(Win/Mac/Linux, Opensource)</li>
+<li><a href="http://www.jabref.org/">Jabref</a> (Win/Mac/Linux, Portable, Opensource)</li>
+</ul>
+<h2 data-number="1.5" id="data-plotting-image-processing"><span class="header-section-number">1.5</span> Data Plotting &amp;&amp; Image Processing</h2>
+<blockquote>
+<p>To replace commercial <strong>Origin 8 (Win)</strong></p>
+</blockquote>
+<ul>
+<li><strong><a href="https://veusz.github.io/">Veusz</a> (Win/Mac/Linux, Opensource)</strong></li>
+<li><a href="https://sourceforge.net/projects/scidavis/">SciDavis</a>(Win/Mac/Linux, Opensource)</li>
+<li><a href="http://www.gnuplot.info">Gnuplot</a> (Win/Mac/Linux, Portable, Opensource)</li>
+</ul>
+<blockquote>
+<p>To replace commercial <strong>Adobe Illustrator (Win)</strong></p>
+</blockquote>
+<ul>
+<li><strong><a href="https://inkscape.org/">Inkscape</a> (Win/Mac/Linux, Portable, Opensource)</strong></li>
+<li><strong><a href="https://imagemagick.org/">ImageMagic</a> (Win/Mac/Linux, Portable, Opensource, Image converter)</strong></li>
+</ul>
+<blockquote>
+<p>To replace commercial <strong>PhotoShop (Win/Mac)</strong></p>
+</blockquote>
+<ul>
+<li><a href="https://www.gimp.org/">GIMP</a> (Win/Mac/Linux, Opensource)</li>
+</ul>
+<h2 data-number="1.6" id="ssh"><span class="header-section-number">1.6</span> SSH</h2>
+<blockquote>
+<p>To replace commercial <strong>Xmananger (Win, Free personal for Xshell+Xftp)</strong></p>
+</blockquote>
+<ul>
+<li><strong><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">Putty</a>+<a href="https://winscp.net/eng/docs/lang:chs">WinSCP</a>+<a href="https://sourceforge.net/projects/xming/">Xming</a>(Win, Portable, Opensource)</strong></li>
+<li><a href="https://mobaxterm.mobatek.net/">MobaXerm</a> (Win, Portable, Freemium &amp; Proprietary, including SSH+SFTP+X11+Cygwin)</li>
+<li><a href="https://github.com/kingToolbox/WindTerm">WindTerm</a> (Win/Mac/Linux, Portable, Freemium &amp; Partial Open Source, including SSH+SFTP+X11)</li>
+</ul>
+<h2 data-number="1.7" id="rss"><span class="header-section-number">1.7</span> RSS</h2>
+<ul>
+<li><p>FeedBro(Web, Freemium) Chrome/MSEdge Extension</p></li>
+<li><p><a href="https://tt-rss.org/">Tiny-Tiny RSS</a> (Website hosted, Opensource)</p></li>
+<li><p><strong>OR <a href="https://www.storkapp.me/">StockApp</a> to track Reference (Web, Freemium &amp; Proprietary)</strong></p></li>
+</ul>
+<h2 data-number="1.8" id="programmingscripting-language"><span class="header-section-number">1.8</span> Programming/Scripting Language</h2>
+<ul>
+<li><strong><a href="https://www.autohotkey.com/">AutoHotkey</a> (Win, Portable, Opensource, keyboard macro program)</strong></li>
+<li><strong><a href="https://sourceforge.net/projects/gnu-awk-for-windows/">Gawk for Windows</a> (Win, Portable, Opensource, data text processing)</strong></li>
+<li><strong><a href="https://busybox.net/">BusyBox</a> (Win/Mac/Linux, Portable, Free &amp; Opensource, toolbox)</strong></li>
+<li><strong>Python (Win/Mac/Linux, Opensource)</strong></li>
+</ul>
+<h2 data-number="1.9" id="cleaner"><span class="header-section-number">1.9</span> Cleaner</h2>
+<ul>
+<li><strong><a href="https://www.bleachbit.org/">Bleachbit</a>(Win/Mac/Linux, Portable, Opensource)</strong></li>
+<li><a href="https://www.ccleaner.com/">CCleaner</a>(Win/Mac, Freemium &amp; Proprietary)</li>
+<li><a href="http://www.chuyu.me/zh-Hans/">Dism++</a>(Win, Freemium &amp; Proprietary)</li>
+</ul>
+<h2 data-number="1.10" id="other-tools"><span class="header-section-number">1.10</span> Other Tools</h2>
+<ul>
+<li><strong><a href="ttps://www.7-zip.org/">7-zip</a>(Win, p7zip for Mac/Linux, Portable, Opensource)</strong></li>
+<li><strong><a href="https://freefilesync.org/">FreeFileSync</a> (Win/Mac/Linux, Opensource, data backup software)</strong></li>
+<li><strong><a href="https://github.com/fatedier/frp">FRP</a> (Win/Mac/Linux, Portable, Opensource, fast reverse proxy)</strong></li>
+<li><strong><a href="https://syncthing.net/">Syncthing</a> (Win/Mac/Linux, Portable, Opensource, continuous file synchronization program, better than next cloud)</strong></li>
+<li><strong><a href="https://github.com/mpc-hc/mpc-hc">MPC-HC</a>(Win, Portable, Opensource, Media player)</strong></li>
+<li><strong><a href="https://www.blender.org/">Blender</a>(Win/Mac/Linux, Portable, Opensource, 3D Creation Software</strong></li>
+<li><strong><a href="https://apps.ankiweb.net/">Anki</a>(Win/Mac/Linux, Portable, Opensource, program making remembering things easy)</strong></li>
+<li><strong><a href="https://github.com/hizzgdev/jsmind">jsmind</a>(Web, Opensource, Mindmap library for Markdown)</strong></li>
+<li><a href="https://github.com/videolan/vlc">VLC</a>(Win/Mac/Linux, Opensource, Media player)</li>
+<li><a href="http://speedcrunch.org/">SpeedCrunch Calculator</a>(Win, Portable, Opensource)</li>
+<li><a href="https://www.uvnc.com/docs/uvnc-viewer.html">UltraVNC</a>(Win, Portable, Opensource, remote desktop for Linux) nginx</li>
+<li><a href="http://www.graphviz.org/">graphviz</a>(Win/Mac/Linux, Opensource, graph visualization/OCR)</li>
+</ul>
+<h1 data-number="2" id="codes-for-science"><span class="header-section-number">2</span> Codes for Science</h1>
+<h2 data-number="2.1" id="dftmd-code"><span class="header-section-number">2.1</span> DFT/MD code</h2>
+<blockquote>
+<p>To replace commercial <a href="https://www.vasp.at/">VASP</a>(Linux/Mac, Very good PAW potentials as highlight)</p>
+</blockquote>
+<ul>
+<li><strong><a href="http://www.quantum-espresso.org/">Quantum Espresso</a>(Linux/Mac/Win, Opensource, EPC and superconductor calculations as highlight, a good GUI <a href="https://www.quantumvitas.org/">QuantumVITAS</a>(Linux/Mac/Win, Opensource)</strong></li>
+<li><a href="https://www.abinit.org/">Abinit</a>(Linux/Mac/Win, Opensource)</li>
+</ul>
+<blockquote>
+<p>To replace commercial <a href="https://www.3ds.com/products-services/biovia/products/molecular-modeling-simulation/biovia-materials-studio/">Materials Studio Visualizer</a>(Win/Linux, Very friendly interface as highlight)</p>
+</blockquote>
+<ul>
+<li><strong><a href="http://openchemistry.org/avogadro2">Avogadro 2</a>(Linux/Mac/Win, Opensource, friendly interface for atom manipulation/make supercell/symmetry recognization)</strong></li>
+<li><strong><a href="http://hzwtech.com/index.html">Device Studio</a>(Win, freemium Proprietary, Very Similar to Materials Studio Visualizer)</strong></li>
+</ul>
+<blockquote>
+<p>To replace commercial <a href="https://gaussian.com/">Gaussian</a>(Win/Mac/Linux, especially for molecular calculations)+Gaussview (Win, Commercial)</p>
+</blockquote>
+<ul>
+<li><strong><a href="https://github.com/nwchemgit/nwchem">NWChem</a>(Linux/Mac, Opensource)</strong></li>
+</ul>
+<h2 data-number="2.2" id="geometry-viewer"><span class="header-section-number">2.2</span> Geometry Viewer</h2>
+<ul>
+<li><strong><a href="http://www.jp-minerals.org/vesta/en/">Vesta</a> (Win/Mac/Linux, Portable, Freemium &amp; Proprietary, Including XRD simulation, especially for charge density)</strong></li>
+<li><strong><a href="http://www.xcrysden.org/">XcrySDen</a>(Win/Mac/Linux, Portable, Opensource, especially for visualizing vibrational modes from QE and fermi surface from wannier90)</strong></li>
+<li><a href="http://www.mem-lab.fr/en/Pages/L_SIM/Softwares/V_Sim.aspx">V_sim</a> (Win/Mac/Linux, Portable, Freemium &amp; Proprietary, especially for vibrational modes from phonopy)</li>
+<li><a href="http://www.p4vasp.at/">p4vasp</a>(Win/Mac/Linux, Portable, Opensource, especially for visualize VASP output, <a href="/Soft/v_sim.zip">Download</a>)</li>
+<li><a href="http://www.wxdragon.de/">wxDragon</a> (Win/Mac/Linux, Portable, Freemium &amp; Proprietary, especially for COOP/OCHP results from LOBSTER)</li>
+<li><a href="https://sourceforge.net/projects/jmol/">Jmol</a> (Win/Mac/Linux, Portable, Opensource)</li>
+<li><a href="http://www.ks.uiuc.edu/Research/vmd/">VMD</a>(Win/Mac/Linux, Portable, Opensource, molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting,<a href="/Soft/vmd193win32nocuda.msi">Download</a>)</li>
+</ul>
+<h2 data-number="2.3" id="high-symmetry-k-points"><span class="header-section-number">2.3</span> High Symmetry K Points</h2>
+<ul>
+<li><strong><a href="http://www.xcrysden.org/">XcrySDen</a>(Win/Mac/Linux, Portable, Opensource, especially for visualizing vibrational modes from QE and fermi surface from wannier90)</strong></li>
+<li><strong><a href="http://materials.duke.edu/AFLOW/">Aflow</a>(Linux/Mac/Web, Opensource)</strong></li>
+<li><a href="https://www.materialscloud.org/work/tools/seekpath/">Seek Path</a>(Python/Web, Opensource)</li>
+<li><a href="/Soft/vaspkit" title="vaspkit">VASPKit</a> (VASP toolbox)</li>
+<li><a href="https://www.cryst.ehu.es/">Bilbao Crystallographic Server</a></li>
+</ul>
+<h2 data-number="2.4" id="other"><span class="header-section-number">2.4</span> Other</h2>
+<ul>
+<li><strong><a href="https://github.com/caesarmu/g2g">g2g</a>(Win)</strong>: Chemical format coverter based on OpenBabel</li>
+<li><strong><a href="https://github.com/openbabel/openbabel">Open Babel</a>(Linux/Mac/Win, Opensource)</strong></li>
+<li><a href="https://lammps.sandia.gov/">Lammps</a>(Win/Mac/Linux, Opensource, especially for classical molecular dynamics)</li>
+<li><a href="https://departments.icmab.es/leem/siesta/">siesta</a>(Linux, Opensource, especially for NEGF transport using transiesta module)</li>
+<li><a href="https://www.cp2k.org/">cp2k</a>(Linux, Opensource, especially for high-performance molecular dynamics)</li>
+<li><a href="https://sourceforge.net/projects/periodic-table-explorer/">Periodic Table</a> (Win, Portable, Freemium &amp; Proprietary, <a href="/Soft/EleTable.zip">Download</a>)</li>
+<li><a href="https://er-c.org/barthel/drprobe/">Dr Probe</a>(Win/Linux, Freemium &amp; Proprietary, HRTEM simulation)</li>
+<li><a href="http://sobereva.com/multiwfn/">Multiwfn</a>(Win/Mac/Linux, Portable, Opensource, electronic wavefunction analysis)</li>
+<li><a href="/Soft/gdis.zip" title="gdis.zip">(gdis.zip)</a><a href="http://gdis.seul.org/" class="uri">http://gdis.seul.org/</a>: Molecule/Crystal Editor</li>
+</ul>
+<h1 data-number="3" id="soft-comparision"><span class="header-section-number">3</span> Soft Comparision</h1>
+<h2 data-number="3.1" id="web-browser"><span class="header-section-number">3.1</span> Web browser</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Browser</th>
+<th>Chrome</th>
+<th>360 Chrome</th>
+<th>CentBrowser</th>
+<th>Opera</th>
+<th>Maxthon</th>
+<th>CM browser</th>
+<th>QQ browser</th>
+<th>Firefox</th>
+<th>MS Edge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Engine</td>
+<td>Blink</td>
+<td>Blink+Trident</td>
+<td>Blink</td>
+<td>Blink</td>
+<td>WebKit+Trident</td>
+<td>Blink+Trident</td>
+<td>Blink+Trident</td>
+<td>‎Quantum</td>
+<td>Blink</td>
+</tr>
+<tr class="even">
+<td>Bookmark Sync</td>
+<td>Extension</td>
+<td>Intrinsic</td>
+<td>Extension</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+</tr>
+<tr class="odd">
+<td>Ad Block</td>
+<td>Extension</td>
+<td>Intrinsic</td>
+<td>Extension</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Extension</td>
+<td>Extension</td>
+</tr>
+<tr class="even">
+<td>Mouse Gesture</td>
+<td>Extension</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Extension</td>
+<td>Extension</td>
+</tr>
+<tr class="odd">
+<td>Spell Check</td>
+<td>Intrinsic</td>
+<td>No</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+<td>Intrinsic</td>
+</tr>
+<tr class="even">
+<td>Portable</td>
+<td>PortableApps/DIY</td>
+<td>No</td>
+<td>Intrinsic</td>
+<td>PortableApps</td>
+<td>Intrinsic</td>
+<td>No</td>
+<td>No</td>
+<td>PortableApps/DIY</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Prospect</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Minority</td>
+<td>Excellent</td>
+<td>Minority</td>
+<td>Good</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr class="even">
+<td>Extension</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr class="odd">
+<td>Speed</td>
+<td>Fast</td>
+<td>Fast</td>
+<td>Fast</td>
+<td>Fast</td>
+<td>A little slow</td>
+<td>Fast</td>
+<td>Fast</td>
+<td>Fast</td>
+<td>Fast</td>
+</tr>
+<tr class="even">
+<td>Safety</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Unknown</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr class="odd">
+<td>MathML Support</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Opensource</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Internal call IE</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>App Mode</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Extension</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Main Drawbacks</td>
+<td>High memory demand, inconvenient Bookmark Sync</td>
+<td>No Portable, No Spell Check</td>
+<td>Minority,Unknown safety, High memory demand</td>
+<td>High memory demand</td>
+<td>Slow load, small UI font size</td>
+<td>No portable</td>
+<td>No portable</td>
+<td>Minority</td>
+<td>compatibility problem sometimes</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.2" id="firefox"><span class="header-section-number">3.2</span> Firefox</h2>
+<h3 data-number="3.2.1" id="allow-redirect"><span class="header-section-number">3.2.1</span> Allow Redirect</h3>
+<ul>
+<li><code>about:config</code> =&gt;<code>accessibility.blockautorefresh</code> to <code>false</code>.</li>
+</ul>
+<h3 data-number="3.2.2" id="change-defaut-profile"><span class="header-section-number">3.2.2</span> Change defaut profile</h3>
+<ul>
+<li><code>firefox.exe -p</code> to open profile Manangers and delete all profiles (except <code>D:\Qsync\dosbin\FireFox\FFprofile</code>).</li>
+<li>Creat new profile, and set profile path to <code>D:\Qsync\dosbin\FireFox\FFprofile</code>.</li>
+<li>Set firefox to defaut browser.</li>
+</ul>
+<h4 data-number="3.2.2.1" id="firefox.exe-not-found-in-defaut-browser-options"><span class="header-section-number">3.2.2.1</span> <code>firefox.exe</code> not found in defaut browser options</h4>
+<ul>
+<li><code>firefox/Bin/uninstall/helper.exe /SetAsDefaultAppGlobal</code> to set firefox visable in defaut browser options, then set firefox default. If it is still invisiable, run the command again.</li>
+</ul>
+<h2 data-number="3.3" id="cleaner-1"><span class="header-section-number">3.3</span> Cleaner</h2>
+<table>
+<caption>Table. Usefule cleaners for PC</caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Task</th>
+<th style="text-align: center;">CCleaner</th>
+<th style="text-align: center;">Bleachbit</th>
+<th style="text-align: center;">Dism++</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Free</td>
+<td style="text-align: center;">Free personal</td>
+<td style="text-align: center;">Free &amp; Opensource</td>
+<td style="text-align: center;">Free personal, but not Opensource as stated</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Clean Trash</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Clean Registry</td>
+<td style="text-align: center;">Easy</td>
+<td style="text-align: center;">Yes, but not complete</td>
+<td style="text-align: center;">Yes, but not friendly</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bundleware</td>
+<td style="text-align: center;">InstallAvast &amp; collects information to send to Avast</td>
+<td style="text-align: center;">Good</td>
+<td style="text-align: center;">Protable, but safety Unknown</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.4" id="burai-vs.-quantumvitas"><span class="header-section-number">3.4</span> BURAI vs. QuantumVITAS</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">QE GUI</th>
+<th style="text-align: center;">BURAI</th>
+<th style="text-align: center;">QuantumVITAS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Input Geometry</td>
+<td style="text-align: center;">.cif/.xyz/.xsf/POSCAR/pwscf, but not OpenBabel cif format</td>
+<td style="text-align: center;">Only pwscf (+g2g)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">output Geometry</td>
+<td style="text-align: center;">no (+obabel/g2g)</td>
+<td style="text-align: center;">no (+obabel/g2g)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Modeler</td>
+<td style="text-align: center;">Slab/Supercell/Translate</td>
+<td style="text-align: center;">No(+Vesta/Avogadro2/PyMatGen/vaspkit)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Optimization/MD</td>
+<td style="text-align: center;">Movie</td>
+<td style="text-align: center;">Frames (+Avogadro2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Band Structure</td>
+<td style="text-align: center;">Bands, not convinent for K-path input</td>
+<td style="text-align: center;">Fat band, Copy K-path from materialscloud</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">phonon</td>
+<td style="text-align: center;">none</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">TDDFT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NEB</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">On Development</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+</tr>
+</tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

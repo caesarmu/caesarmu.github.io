@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Yuewen Mu">
+    <meta name="dcterms.date" content=" 04/12/2022">
+  <title>Topics</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Topics"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://blog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://blog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Blof of Mu</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/public/Science.html">Science</a></li>
+            <li><a href="/public/System.html">System</a></li>
+            <li><a href="/public/Life.html">Life</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#section"><span class="toc-section-number">1</span> </a></li>
+          <li><a href="#principles"><span class="toc-section-number">2</span> Principles</a></li>
+          <li><a href="#reduction"><span class="toc-section-number">3</span> Reduction</a>
+          <ul>
+          <li><a href="#methods-for-che-model"><span class="toc-section-number">3.1</span> Methods for CHE model</a>
+          <ul>
+          <li><a href="#free-energy-at-harmonic-approximation-asthagiri14p"><span class="toc-section-number">3.1.1</span> Free energy at harmonic approximation<span class="citation" data-cites="asthagiri14P"><sup>[1]</sup></span></a></li>
+          <li><a href="#computation-details"><span class="toc-section-number">3.1.2</span> Computation Details</a></li>
+          <li><a href="#计算流程一般需要vdw矫正"><span class="toc-section-number">3.1.3</span> 计算流程(一般需要vdw矫正)</a></li>
+          <li><a href="#基本分子能量"><span class="toc-section-number">3.1.4</span> 基本分子能量</a></li>
+          <li><a href="#interface"><span class="toc-section-number">3.1.5</span> Interface</a></li>
+          </ul></li>
+          <li><a href="#discussion"><span class="toc-section-number">3.2</span> Discussion</a>
+          <ul>
+          <li><a href="#formation"><span class="toc-section-number">3.2.1</span> Formation</a></li>
+          <li><a href="#bond-charge-elfssadndpddec6bader"><span class="toc-section-number">3.2.2</span> Bond &amp; Charge (ELF/SSAdNDP/DDEC6/Bader)</a></li>
+          <li><a href="#barrier"><span class="toc-section-number">3.2.3</span> Barrier</a></li>
+          <li><a href="#pdos-cohp-band-centerkitchin04jcp"><span class="toc-section-number">3.2.4</span> PDOS &amp; COHP &amp; band center<span class="citation" data-cites="Kitchin04JCP"><sup>[35]</sup></span></a></li>
+          <li><a href="#gap"><span class="toc-section-number">3.2.5</span> Gap</a></li>
+          <li><a href="#polarization-curves-simulation-of-oer-and-orrzhou21jpcljiao15csrwei21am"><span class="toc-section-number">3.2.6</span> Polarization Curves Simulation of OER and ORR<span class="citation" data-cites="Zhou21JPCL Jiao15CSR Wei21AM"><sup>[45–47]</sup></span></a></li>
+          <li><a href="#microkinetic"><span class="toc-section-number">3.2.7</span> Microkinetic</a></li>
+          <li><a href="#volcano-plotseh17s"><span class="toc-section-number">3.2.8</span> Volcano Plot<span class="citation" data-cites="Seh17S"><sup>[50]</sup></span></a></li>
+          <li><a href="#fix-potential-and-ph"><span class="toc-section-number">3.2.9</span> Fix-potential and pH</a></li>
+          <li><a href="#xanes"><span class="toc-section-number">3.2.10</span> XANES</a></li>
+          <li><a href="#descriptor-varphizhou21jpcla"><span class="toc-section-number">3.2.11</span> Descriptor <span class="math inline">\varphi</span><span class="citation" data-cites="Zhou21JPCLa"><sup>[45]</sup></span></a></li>
+          <li><a href="#other"><span class="toc-section-number">3.2.12</span> Other</a></li>
+          <li><a href="#塔菲尔动力学fang14ac"><span class="toc-section-number">3.2.13</span> 塔菲尔动力学<span class="citation" data-cites="Fang14AC"><sup>[66]</sup></span></a></li>
+          </ul></li>
+          <li><a href="#background"><span class="toc-section-number">3.3</span> Background</a>
+          <ul>
+          <li><a href="#topic"><span class="toc-section-number">3.3.1</span> Topic</a></li>
+          <li><a href="#tips-规律性的一两句话"><span class="toc-section-number">3.3.2</span> Tips (规律性的，一两句话)</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#transport"><span class="toc-section-number">4</span> Transport</a>
+          <ul>
+          <li><a href="#methods-for-negf"><span class="toc-section-number">4.1</span> Methods for NEGF</a>
+          <ul>
+          <li><a href="#computation-details-for-negf"><span class="toc-section-number">4.1.1</span> Computation Details for NEGF</a></li>
+          <li><a href="#nanodcal计算流程"><span class="toc-section-number">4.1.2</span> Nanodcal计算流程</a></li>
+          <li><a href="#nanodcal-tips"><span class="toc-section-number">4.1.3</span> NanoDcal Tips</a></li>
+          </ul></li>
+          <li><a href="#discussion-1"><span class="toc-section-number">4.2</span> Discussion</a>
+          <ul>
+          <li><a href="#iv曲线和整流效应"><span class="toc-section-number">4.2.1</span> IV曲线和整流效应</a></li>
+          <li><a href="#transmission"><span class="toc-section-number">4.2.2</span> Transmission</a></li>
+          <li><a href="#pdos"><span class="toc-section-number">4.2.3</span> PDOS</a></li>
+          <li><a href="#mpsh-nanodcal"><span class="toc-section-number">4.2.4</span> MPSH (NanoDCAL?)</a></li>
+          <li><a href="#pathways"><span class="toc-section-number">4.2.5</span> PathWays</a></li>
+          <li><a href="#扩散系数"><span class="toc-section-number">4.2.6</span> 扩散系数</a></li>
+          </ul></li>
+          <li><a href="#background-1"><span class="toc-section-number">4.3</span> Background</a>
+          <ul>
+          <li><a href="#topics"><span class="toc-section-number">4.3.1</span> Topics</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="section"><span class="header-section-number">1</span> </h1>
+<h1 data-number="2" id="principles"><span class="header-section-number">2</span> Principles</h1>
+<ul>
+<li>新方向、新思想、新观念、新极限、新机制</li>
+<li>启发性、领域影响力（被follow）</li>
+<li>新方法、新软件</li>
+<li>物理机制、定性结论、预见性</li>
+<li>工作系统性、连续性、积累性</li>
+<li><strong>实验上可行</strong>但还没有实现的</li>
+<li>做自己擅长的，有可能做出重大突破的</li>
+<li>密切联系实验,电场/磁场/立场<span class="math inline">\rightarrow</span>构型/磁性/电子结构(<strong>门电压调控自旋过滤</strong>)，集中在<strong>层间异质结</strong>的<strong>电化学还原</strong>(HER,OER,ORR,CO2RR)/<strong>电输运</strong>（超导/热电/光电/整流）（已制备硼化物）</li>
+<li>夹层石墨烯距离优化模型</li>
+<li>2D+电子分析+DAC，</li>
+<li>不要太纠结影响因子，看解决什么问题，完成了抓紧投稿</li>
+</ul>
+<h1 data-number="3" id="reduction"><span class="header-section-number">3</span> Reduction</h1>
+<h2 data-number="3.1" id="methods-for-che-model"><span class="header-section-number">3.1</span> Methods for CHE model</h2>
+<h3 data-number="3.1.1" id="free-energy-at-harmonic-approximation-asthagiri14p"><span class="header-section-number">3.1.1</span> Free energy at harmonic approximation<span class="citation" data-cites="asthagiri14P"><sup>[1]</sup></span></h3>
+<p><span class="math display">
+G(T)=H(T)-TS
+</span></p>
+<p>G(T)=H(T)-TS</p>
+<p><span class="math inline">E=mc^2</span></p>
+<p><span class="math display">H(T)=E{elec}+ZPE+\int_{0K}^T C_V dT</span></p>
+<p><span class="math display">ZPE=\frac{1}{2}\sum\limits_{i}\hbar\omega_i</span></p>
+<p><span class="math display">\int\limits_{0K}^TC_VdT=\sum\limits_{i}\frac{\hbar\omega_i}{exp(\hbar\omega/k_BT)-1}</span> <span class="math display">S(T)=k_B\sum\limits_{i}(\frac{\hbar\omega_i/k_BT}{\exp(\hbar\omega_i/k_BT)-1}-ln(1-exp(-\hbar\omega_i/k_BT)))</span></p>
+<ul>
+<li>标准氢电极的定义为“<em>铂电极在氢离子活度为1 M的理想溶液中，并与100 kPa压力下的氢气平衡共存时所构成的电极</em>”。此种电极即当前电化学所规定的一级标准电极，其标准电极电势被人为规定为零（其绝对电势在25<span class="math inline">\degree</span>下为4.44±0.02 V）。此电极反应完全可逆，但“氢离子活度为1 M的理想溶液”实际中并不存在，故而该电极只是一个理想模型。当列举其他参比电极的电势时，如无特别说明，应该都是相对于标准氢电极的电势，标注应为“vs. SHE”。</li>
+<li>逆氢电极为标准氢电极的一种。其与标准氢电极在定义上的唯一区别便是可逆氢电极并没有氢离子活度的要求，所以可逆氢电极的电势和pH有关。利用能斯特方程（Nernst Equation）可以很容易地推导出可逆氢电极电势的具体表达式：<span class="math display">E_{RHE}=E_{SHE}+\times pH</span>标准<strong>氢电极一定是可逆的，可逆氢电极不一定是标准的</strong>. 在酸性条件下，只要保证氢气的压力为0.1Mpa，氢离子活度为1，就是标准氢电极。否则只能算是可逆氢电极. 当然*<strong>碱性条件下不存在标准氢电极</strong>.</li>
+</ul>
+<h3 data-number="3.1.2" id="computation-details"><span class="header-section-number">3.1.2</span> Computation Details</h3>
+<ul>
+<li><p>All the calculations were carried out using Vienna <em>ab initio</em> simulation package (VASP 6.2)<span class="citation" data-cites="Kresse96PRB Kresse94JPCM"><sup>[2,3]</sup></span> with projector augmented wave (PAW) pseudopotential method<span class="citation" data-cites="Blochl94PRB Kresse99PRB"><sup>[4,5]</sup></span> and Perdew-Burke-Ernzerhof (PBE) functional<span class="citation" data-cites="Perdew96PRL"><sup>[6]</sup></span>. The atomic positions were optimized using conjugate gradient method, and the convergence criteria for energy and force were <span class="math inline">1\times10^{-4}</span> eV and 0.01 eV<sup>-1</sup>, respectively. The kinetic energy cutoff for plane waves was set to 500 eV. A large vacuum spacing (more than 15 ) was taken to prevent mirror interactions. The Brillouin zones were sampled with <span class="math inline">2\pi\times0.02</span> <sup>-1</sup> spacing in reciprocal space by the Monkhorst-Pack scheme<span class="citation" data-cites="Monkhorst76PRB"><sup>[7]</sup></span>. Grimme’s DFT-D3 van der Waals (vdW) corrections with the Becke-Jonson (BJ) damping<span class="citation" data-cites="Grimme10JCP Grimme11JCC"><sup>[8,9]</sup></span> was employed.</p>
+<p>The formation energy of the dopants (<span class="math inline">E_f</span>) was calculated as follows<span class="citation" data-cites="VandeWalle04JAP"><sup>[10]</sup></span>, <span class="math display">E_f=E_{dop}-E_{undop}-\sum n_i\mu_i,</span> where <span class="math inline">E_{dop}</span> and <span class="math inline">E_{undop}</span> are the energies of the system after and before doping, respectively. <span class="math inline">n_i</span> indicates the number of atoms of type <span class="math inline">i</span> (host atoms or impurity atoms) that have been added to (<span class="math inline">n_i&gt;0</span>) or removed from (<span class="math inline">n_i&lt;0</span>) the supercell when the defect or impurity is created, and the <span class="math inline">\mu_i</span> are the corresponding chemical potentials of these species. The chemical potentials for O and N atoms were derived from freestanding molecules, and corresponding value for C was from graphene.</p>
+<p>The free energy changes (<span class="math inline">\Delta G</span>) at each electrochemical step involve a proton-electron transfer, which are computed based on computational hydrogen electrode (CHE) model<span class="citation" data-cites="Norskov04JPCB Peterson10EES"><sup>[11,12]</sup></span>, in which the zero voltage (vs. RHE) is defined in the equilibrium of <span class="math inline">H^++e^-\leftrightarrow\frac{1}{2}H_2(g)</span> at all pH. The Gibbs free energy change (<span class="math inline">\Delta G</span>) for each CO<sub>2</sub> reduction reaction (CO<sub>2</sub>RR) process were given by <span class="math display">\Delta G=\Delta E_{elec} +\Delta ZPE+\int\limits_{0K}^TC_PdT-T\Delta S+\Delta G_U+\Delta G_{pH},</span> where <span class="math inline">\Delta E_{elec}</span> is the reaction energy of reactant and product molecules adsorbed on catalyst surface. The zero-point energy (<span class="math inline">ZPE</span>), enthalpic temperature correction (<span class="math inline">\int\limits_{0K}^TC_pdT</span>), and entropy (S) for the adsorbates were calculated as follows, <span class="math display">ZPE=\frac{1}{2}\sum\limits_i\hbar\omega_i,</span> <span class="math display">\int\limits_{0K}^TC_PdT=\int\limits_{0K}^TC_VdT=\sum\limits_i\frac{\hbar\omega_i}{exp(\hbar\omega/k_BT)-1},</span> <span class="math display">S(T)=k_B\sum\limits_i(\frac{\hbar\omega_i/k_BT}{\exp(\hbar\omega_i/k_BT)-1}-ln(1-exp(-\hbar\omega_i/k_BT))),</span> where harmonic approximation was employed for the enthalpic temperature correction, and <span class="math inline">T=298.15</span> K was used for the above calculations. The free energies for the freestanding gas molecules were calculated using VASPKIT code<span class="citation" data-cites="Wang21CPC"><sup>[13]</sup></span> with pressures and temperatures from a previous study by Nørskov et al<span class="citation" data-cites="Peterson10EES"><sup>[12]</sup></span>. The bias effect on the free energy of each initial, intermediate and final state involving an electron in the electrode is taken into account by shifting the energy of the state by <span class="math inline">\Delta G_U=-neU</span> , where <span class="math inline">U</span> is the electrode applied potential relative to RHE as mentioned above, <span class="math inline">e</span> is the elementary charge transferred and <span class="math inline">n</span> is the number of proton–electron pairs transferred. <span class="math inline">\Delta G_{pH}</span> is the correction of the <span class="math inline">H^+</span> free energy and depends on whether the reaction under consideration is a reduction or an oxidation,</p>
+<p><span class="math display">\Delta G_{pH}=-k_BTln[H^+]=pH\times k_BTln10,</span></p>
+<p>where <span class="math inline">k_B</span> is the Boltzmann constant and <span class="math inline">T</span> is the temperature. Furthermore, a correction of -0.51 eV was made for the freestanding gas-phase CO molecule due to the use of PBE functional, and stabilizations of 0.25 and 0.1 eV were applied to COOH* and CO* due to solvation effect<span class="citation" data-cites="Peterson10EES"><sup>[12]</sup></span>.</p></li>
+<li><p>Hence, the equilibrium potential <span class="math inline">U_0</span> for four-electron transfer ORR at <span class="math inline">pH = 14</span> was determined to be 0.402 V versus NHE or 1.23 V versus RHE according to the Nernst equation (<span class="math inline">E=E0−1\times pH</span>, <span class="math inline">U_{RHE}^0=U_{NHE}^0+0.828=1.23</span>), where the reactant and product are at the same energy level.</p></li>
+<li><p>We used the optimized geometries from VASP and performed constant-potential calculations for single point free energy by using the open-source package JDFTx.<span class="citation" data-cites="Sundararaman17S"><sup>[14]</sup></span> The implicit CANDLE<span class="citation" data-cites="Sundararaman15JCP"><sup>[15]</sup></span> solvation model and GBRV<span class="citation" data-cites="Garrity14CMS"><sup>[16]</sup></span> ultrasoft pseudopotentials (USPPs) were used. The ionic screening of net charges resulting from the constant <span class="math inline">\mu_e</span> condition was achieved with cation (1.0 M Na+) and anion (1.0 M F) components in the fluid model.<span class="citation" data-cites="Letchworth-Weaver12PRB"><sup>[17]</sup></span> We used a <span class="math inline">3\times3\times1</span> k-point grid and 20 hartree (544 eV) energy cutoff in the JDFTx calculations. The level of the standard hydrogen electrode (SHE) was set to 4.66 V in the CANDLE model.<span class="citation" data-cites="Sundararaman15JCP"><sup>[15]</sup></span> All other settings are similar to those in the VASP calculations.</p></li>
+<li><p><span class="citation" data-cites="Xiao17P"><sup>[18]</sup></span>The explicit constant electrochemical potential (μe ) calculations with the implicit CANDLE solvation model<span class="citation" data-cites="Sundararaman15JCP"><sup>[15]</sup></span> were performed upon all IS, TS, and FS geometries, using JDFTx<span class="citation" data-cites="Sundararaman17S"><sup>[14]</sup></span>. The Garrity–Bennett–Rabe–Vanderbilt (GBRV)<span class="citation" data-cites="Garrity14CMS"><sup>[16]</sup></span> ultrasoft pseudopotentials (USPP) were used, with a plane-wave cutoff of 544 eV (20 a.u.). All other settings are similar to those in VASP calculations. The ionic screening of net charges resulting from the constant μe condition was achieved with cation (0.1 M K+) and anion (0.1 M F?) components in the fluid model<span class="citation" data-cites="Letchworth-Weaver12PRB"><sup>[17]</sup></span> under the JDFT framework<span class="citation" data-cites="Petrosyan05JPCB"><sup>[19]</sup></span>. The algorithm used by JDFTx variationally minimizes the grand free energy at fixed electron chemical potential with respect to Kohn–Sham orbitals<span class="citation" data-cites="Arias92PRL"><sup>[20]</sup></span>, fluid bound charge, and an auxiliary Hamiltonian for the occupations<span class="citation" data-cites="Freysoldt09PRB"><sup>[21]</sup></span>.</p></li>
+<li><p><span class="citation" data-cites="Xiao17P"><sup>[18]</sup></span>The TS search was conducted by using the climbing-image nudged elastic band (CI-NEB) method (39) to generate initial guess geometries, followed by the dimer method (40) to converge to the saddle points. Note that very low-frequency modes were obtained in some cases, because the explicit water molecules are not properly constrained by the hydrogen-bonding network present in water bulk. <strong>Such low-frequency modes can cause unphysically large entropy contributions, so they were reset to a threshold value of 60 cm<sup>-1</sup>, corresponding to the acoustic translational mode of the six-member rings in water bulk (41, 42).</strong> For the CO hydrogenation step where the surface H model was used to locate the TS, the IS was referenced back to the H+(H3O+/H2O) + e<sup>-1</sup> pair through the free energy difference between the surface H and H2(g), based on the half-cell reactions,</p></li>
+</ul>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_037.png" title="Note4CHE_037" style="width:100.0%" /></p>
+<ul>
+<li>Thus, the pH effect is introduced into the free energy profile with the reference. In addition to vibrational contributions, the translational and rotational contributions to the free energy of H2(g) were included, assuming the ideal gas model.</li>
+</ul>
+<h4 data-number="3.1.2.1" id="free-energies-in-jdftx-number-of-electrons-changed-every-stepshi19s"><span class="header-section-number">3.1.2.1</span> Free Energies in JDFTx (Number of electrons changed every step)<span class="citation" data-cites="Shi19S"><sup>[22]</sup></span></h4>
+<ul>
+<li><p>Using the <span class="math inline">OH^?(aq) + h\rightarrow ^*OH</span> as an example, here we show how to calculate the free energy change (ΔG) of the reaction. In this example, <span class="math display">\Delta G=G(^*OH^{Q_2})-G(*^{Q_1})-G(OH^-)(aq)+(Q_2-Q_1+1)\mu_e \ (6)</span>,where <span class="math inline">Q_1</span> and <span class="math inline">Q_2</span> are the net charges (obtained from JDFTx) on the solid before and after the adsorption. <span class="math inline">\mu_e</span> is the electron energy and can be calculated as <span class="math display">\mu_e=\mu_{SHE}-|e|U_{SHE}</span>, where <span class="math inline">U_{SHE}</span> is the applied voltage versus SHE, and <span class="math inline">\mu_{SHE}=-4.66</span> eV (<span class="math inline">\mu_{SHE}</span> in the JDFTx is different from the experimentally measured value). <span class="math inline">G(OH^-)</span> is calculated by <span class="math display">G(OH^-)=G(H_2O)-G(H^+)=G(H_2O)-[1/2G(H_20(g))-\mu_{SHE}-\times pH]\ (8)</span>,<span class="math inline">G(^*OH^{Q_2})</span> and <span class="math inline">G(*^{Q_1})</span> are calculated by summing the adsorbate vibration contribution to the free energy with the electronic energy (obtained from JDFTx), and the <span class="math inline">G(H_2)</span> is calculated by summing the vibration, translation, and rotation contributions (calculated using Gaussian software) at standard conditions with the electronic energy. Similarly, we can obtain ΔG for other reactions. The formation free energy of an adsorbate is obtained by summing up ΔG for all the reactions along the pathway toward the formation of the adsorbate.</p></li>
+<li><p><span class="citation" data-cites="Schwarz16PCCP"><sup>[23]</sup></span>We perform ab initio calculations at fixed electron chemical potential<span class="citation" data-cites="Letchworth-Weaver12PRB"><sup>[17]</sup></span> using the framework of Joint Density Functional Theory (JDFT)<span class="citation" data-cites="Petrosyan05JPCB"><sup>[19]</sup></span> as implemented in JDFTx.<span class="citation" data-cites="Sundararaman17S"><sup>[14]</sup></span> In contrast to conventional fixed-charge calculations, this allows for ready comparison with voltammetric data. The calculations utilize a continuum solvent model (LinearPCM continuum solvation model27 unless otherwise indicated) with ionic screening (1 mol/L of cations and anions unless otherwise indicated). This allows us to treat charged slabs with meaningful total free energies and absolute electron chemical potentials (relative to the vacuum level) that quickly converge with simulation cell size, as detailed elsewhere.<span class="citation" data-cites="Letchworth-Weaver12PRB"><sup>[17]</sup></span> We relate the absolute electron potential to electrode potential using the absolute potential of the standard hydrogen electrode (SHE) as 4.68 V below the vacuum level for the LinearPCM solvation model,27 and 4.55 V for the nonlocal SaLSA solvation model,30 following previous work.31</p></li>
+<li><p><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span>Although the CHE model is capable of conveniently evaluating the activity of a given electrocatalyst, it considers the effect of many working conditions (e.g., electrode potential and pH value) only in the way of energy correction, which could result in considerable uncertainty for theoretical predictions. For example, Kim et al. theoretically showed that the system charge significantly affects the activity of 2D electrocatalysts with atomic thickness.34 To this end, we also utilized the constant-potential method developed by Duan et al.35?37 to explore the effects of U and pH values on the ORR activity of 2D biphenylene a<sup>33</sup> and b<sub>22</sub></p></li>
+</ul>
+<h3 data-number="3.1.3" id="计算流程一般需要vdw矫正"><span class="header-section-number">3.1.3</span> 计算流程(一般需要vdw矫正)</h3>
+<h4 data-number="3.1.3.1" id="吸附位确定"><span class="header-section-number">3.1.3.1</span> 吸附位确定</h4>
+<ul>
+<li>先搭建几个可能构型</li>
+<li>计算优化构型的电荷分析(Bader/DDEC6)</li>
+<li>选择<strong>催化区域的阳离子</strong>作为吸附位,<strong>*OOH朝向阴离子区</strong></li>
+</ul>
+<h4 data-number="3.1.3.2" id="自由能计算"><span class="header-section-number">3.1.3.2</span> 自由能计算</h4>
+<p><span class="math display">^*+A+H^++e^-\rightarrow B^*+C</span></p>
+<ol type="1">
+<li>(VASP)计算算衬底的能量<span class="math inline">E_*</span>,反映物A的能量<span class="math inline">E_A</span>，产物C的能量<span class="math inline">E_C</span>,以及吸附B<sup>*</sup>的系统能量<span class="math inline">E_{B^*}</span>,H<sub>2</sub> 的能量<span class="math inline">E_{H_2}</span>.</li>
+<li>(VASP)计算A，C和H<sub>2</sub>的频率，对于气体分子使用VASPKit计算自由能矫正(<span class="math inline">G_{vib}</span>,注意气体温度、压强条件)，<span class="math display">G=U+ZPE-\int C_p dT -TS=U+G_{vib}</span> (P.S. 相同吸附物吸附在同类原子上的自由能矫正相差很小（e.g., OH*(C)), 可以以其近似值作为通用估计值)</li>
+<li>(VASP)计算<strong>固定衬底原子</strong>的的B<sup>*</sup>的频率,使用<strong>简谐近似</strong>计算自用能矫正（<span class="math inline">\omega&lt;50</span>cm<sup>-1</sup>设为50cm<sup>-1</sup>）,计算公式见上节，可使用VASPKit计算， <span class="math display">G=U+ZPE-\int C_p dT -TS=U+ZPE-\int C_v dT -TS</span></li>
+<li><span class="math inline">G=U+G_{vib}</span>计算个物种自由能，注意泛函修正或溶剂效应修正,</li>
+</ol>
+<ul>
+<li><p>溶剂效应(solvation effect)对CO<sub>2</sub>还原反应的修正<span class="citation" data-cites="Peterson10EES"><sup>[12]</sup></span>： <span class="math display">\mu(CO^*)=\mu(CO^*)-0.1,\ \mu(CHO^*)=\mu(CHO^*)-0.1</span> <span class="math display">\mu(R-OH^*)=\mu(R-OH^*)-0.25,\ such\ as\ ^*OOH</span></p></li>
+<li><p>溶剂效应(solvation effect)对ORR/OER反应修正<span class="citation" data-cites="Calle-Vallejo11PCCP"><sup>[25]</sup></span>：</p>
+<p><span class="math display">\mu(R-OH^*)=\mu(R-OH^*)-0.3,\ such\ as\ ^*OOH/^*OH</span></p></li>
+<li><p>泛函对于CO<sub>2</sub>还原反应的修正<span class="citation" data-cites="Peterson10EES"><sup>[12]</sup></span>, <span class="math display">\mu(CO)=\mu^{PBE}(CO)-0.51</span> <span class="math display">\mu(CO_2)=\mu^{RPBE}(CO_2)+0.45,\ \mu(HCOOH)=\mu^{RPBE}(HCOOH)+0.45</span></p></li>
+<li><p>O<sub>2</sub>, <span class="math inline">H^++e^-</span>以及<span class="math inline">OH^{-1}</span>的自由能计算： <span class="math display">G_{O_2}=2*G_{H_2O(l)}-2*G_{H_2}+1.23*4</span> <span class="math display">G_{H^++e^-}=1/2G_{H_2}-RTln10\times pH=1/2G_{H_2}-2*pH</span> <span class="math display">G_{OH^-}=G_{H_2O(l)}-G_{H+}=G_{H_2O(l)}-(1/2G_{H_2}-RTln10\times pH)</span></p></li>
+</ul>
+<ol start="5" type="1">
+<li>酸性条件下<span class="math inline">pH=0</span>,该反应自用能变化：<span class="math display">\Delta G=G(B^*)+G(C)-G(^*)-G(A)-\frac{1}{2}G(H_2)</span>, 若是碱性条件或有电压注意自由能修正。 <span class="math display">\Delta G=\Delta E+\Delta ZPE -T\Delta S+\Delta G_U+\Delta G_{pH}</span></li>
+<li>具体过程如下：</li>
+</ol>
+<ul>
+<li>HER具体计算过程见: <a href="https://blog.nanomat.top/public/HER_ORR.html" class="uri">https://blog.nanomat.top/public/HER_ORR.html</a></li>
+<li>ORR和OER具体过程见: <a href="https://blog.nanomat.top/public/HER_ORR.html" class="uri">https://blog.nanomat.top/public/HER_ORR.html</a></li>
+<li>CO2RR具体过程见: <a href="https://blog.nanomat.top/public/CO2RR.html" class="uri">https://blog.nanomat.top/public/CO2RR.html</a></li>
+</ul>
+<h4 data-number="3.1.3.3" id="her"><span class="header-section-number">3.1.3.3</span> HER</h4>
+<ul>
+<li>解离</li>
+</ul>
+<p><span class="math display">O_2+2^*\rightarrow 2O^*(4)</span> <span class="math display">2O^*+2H^++2e^-\rightarrow 2OH^*\ (5)</span> <span class="math display">2OH^*+2H^++2e^-\rightarrow 2H_2O +2^*\ (6)</span></p>
+<ul>
+<li>缔合(酸性)</li>
+</ul>
+<p><span class="math display">O_2+^*\rightarrow O_2^*(7)</span> <span class="math display">O_2^*(g)+H^++e^-+^*\rightarrow OOH^*\ (8)</span> <span class="math display">OOH^*+H^++e^-\rightarrow O^*+H_2O\ (9)</span> <span class="math display">O^*+H^++e^-\rightarrow OH^*\ (10)</span> <span class="math display">OH^*+H^++e^-\rightarrow H_2O +^*\ (11)</span></p>
+<h4 data-number="3.1.3.4" id="co2rr流程"><span class="header-section-number">3.1.3.4</span> CO2RR流程</h4>
+<p><span class="math display">𝐶𝑂_2+𝐻^+(𝑎𝑞)+𝑒^− +^∗\rightarrow 𝑂𝐶𝐻𝑂^∗ \ (1)</span> <span class="math display">𝑂𝐶𝐻𝑂^∗+𝐻^+(𝑎𝑞)+𝑒^−\rightarrow 𝐻𝐶𝑂𝑂𝐻+^∗ \  (2)</span> <span class="math display">𝐶𝑂_2+𝐻^+(𝑎𝑞)+𝑒^−+∗\rightarrow 𝐶𝑂𝑂𝐻^∗  \ (3)</span> <span class="math display">𝐶𝑂𝑂𝐻^∗+𝐻^+(𝑎𝑞)+𝑒^−\rightarrow 𝐻𝐶𝑂𝑂𝐻+^∗ \  (4)</span> <span class="math display">𝐶𝑂𝑂𝐻^∗+𝐻^+(𝑎𝑞)+𝑒^−\rightarrow 𝐶𝑂^∗+𝐻_2𝑂 \ (5)</span> <span class="math display">𝐶𝑂^∗\rightarrow 𝐶𝑂+^∗ \  (6)</span> <span class="math display">𝐻^++𝑒^− +^∗\rightarrow 𝐻^∗ \ (7)</span></p>
+<h5 data-number="3.1.3.4.1" id="𝐶𝑂_2rightarrow-𝐶𝑂𝑂𝐻-rightarrow-𝐶𝑂-rightarrow-co"><span class="header-section-number">3.1.3.4.1</span> <span class="math inline">𝐶𝑂_2\rightarrow 𝐶𝑂𝑂𝐻^* \rightarrow 𝐶𝑂^∗ \rightarrow CO</span></h5>
+<p><span class="math display">\Delta{G}_1=G_{COOH^*}-G_{^*}-\mu_{CO_2(g)}-1/2\mu_{H_2^{\theta}}</span> <span class="math display">\Delta{G}_2=G_{CO^*}+\mu_{H_2O(l)}-G_{COOH^*}-1/2\mu_{H_2^{\theta}}</span> <span class="math display">\Delta{G}_3=G_{CO}+G_{^*}-G_{CO^*}</span></p>
+<h4 data-number="3.1.3.5" id="orr流程"><span class="header-section-number">3.1.3.5</span> ORR流程</h4>
+<h5 data-number="3.1.3.5.1" id="solvation-correction"><span class="header-section-number">3.1.3.5.1</span> Solvation Correction</h5>
+<ul>
+<li><p><span class="citation" data-cites="Kolb22JMCA"><sup>[26]</sup></span>The calculations in the works by Pique et al<span class="citation" data-cites="Pique20PCCP"><sup>[27]</sup></span> and Calle-Vallejo et al<span class="citation" data-cites="Calle-Vallejo11PCCP"><sup>[25]</sup></span> contained external, somewhat arbitrary, ad hoc <strong>solvation corrections for *OH and *OOH and neglected the solvation of *O</strong>, which was shown in later works to be important<span class="citation" data-cites="Calle-Vallejo17CS Reda18CT"><sup>[28,29]</sup></span> and similar in magnitude to those of *OH and *OOH. Thus, here, we removed the solvation correction of <span class="math inline">G_{solv} =-0.3</span> eV for and from the shown data.</p></li>
+<li><p><span class="citation" data-cites="Calle-Vallejo17CS"><sup>[28]</sup></span>Fig. 6a contains free energies in solution including only a <strong>constant-shift solvation (CSS) correction</strong> of -0.30 eV for <em>OH and </em>OOH on all centers.<span class="citation" data-cites="Calle-Vallejo11PCCP"><sup>[25]</sup></span> On the other hand, Fig. 5b contains the metal- and ligand-dependent solvation (MLS) corrections in Fig. 3b and 5 added to the free energies of <em>O, </em>OH and *OOH.</p></li>
+<li><p><span class="citation" data-cites="Reda18CT"><sup>[29]</sup></span>For implicit solvent calculations we use the continuum solvation model implemented in VASPsol [34, 35] with a 600 eV plane wave cutoff. <strong>Explicit water layer structures are determined by the minima hopping algorithm implemented in ASE</strong> [36, 37]. Dipole correction is used to decouple electrostatic potentials on the two sides of the two-dimensional structure.</p>
+<figure>
+<img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_014.png" title="Note4Topic_014-90%" style="width:90.0%" alt="[29]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Reda18CT"><sup>[29]</sup></span></figcaption>
+</figure></li>
+</ul>
+<h5 data-number="3.1.3.5.2" id="e-orr"><span class="header-section-number">3.1.3.5.2</span> 2e ORR</h5>
+<ul>
+<li>For the two-electron ORR, there are two reaction steps<sup>25</sup> <span class="math display">*+O_2+H^++e^-\rightarrow OOH^* \ (5)</span> <span class="math display">OOH^*+H^++e^-\rightarrow H_2O_2+*\ (6)</span> For the hydrogenation of oxygen (Eq. (5)), the <span class="math inline">\Delta G</span> was calculated by Eqs. (7)–(9): <span class="math display">\Delta G_1=\mu_{OOH^*}-\mu_*-\mu_{O_2}-1/2\mu_{H_2}\ (7)</span> while for the reduction of OOH* to from H<sub>2</sub>O<sub>2</sub> (Eq. (6)), the <span class="math inline">\Delta G</span> can be obtained directly by Eq. (10): <span class="math display">\Delta G_2=-1.4eV-\Delta G_1\ (10)</span> herein, the <span class="math inline">G(OOH^*)</span> is defined by Eq. (11): <span class="math display">G(OOH^*)=4.92eV+\Delta G_1\ (11)</span></li>
+</ul>
+<h5 data-number="3.1.3.5.3" id="e-orr-1"><span class="header-section-number">3.1.3.5.3</span> 4e ORR</h5>
+<ul>
+<li><p>The ORR, OER and HER pathways on SAC systems were calculated in detail according to electrochemical framework developed by N?rskov and his co-workers<span class="citation" data-cites="Norskov04JPCB"><sup>[11]</sup></span>. As for ORR, in an alkaline electrolyte (pH = 14), H<sub>2</sub>O rather than H<sub>3</sub>O+ may act as the proton donor, so overall reaction scheme of the ORR can be written as: <span class="math display">O_2+2H_2O+4e^-\leftrightarrow 4OH^- (8)</span></p></li>
+<li><p>The <strong>ORR</strong> may proceed through the following elementary steps, which are usually employed to investigate the electrocatalysis of the ORR on various materials (<strong>in alkaline electrolyte</strong>): <span class="math display">O_2(g) + H_2O(l)+e^-+^*\rightarrow OOH^*+OH^-\ (9)</span> <span class="math display">OOH^*+e^-\rightarrow O^*+OH^-\ (10)</span> <span class="math display">O^*+H_2O(l)+e^-\rightarrow OH^*+OH^-\ (11)</span> <span class="math display">OH^*+e^-\rightarrow OH^-+*\ (12)</span> where <span class="math inline">^*</span> stands for an active site on the catalytic surface, (<span class="math inline">l</span>) and (<span class="math inline">g</span>) refer to liquid and gas phases, respectively.</p></li>
+<li><p><strong>ORR In acidic solution</strong>: <span class="math display">O_2(g) + H^++e^-+^*\rightarrow OOH^*\ (17)</span> <span class="math display">OOH^* + H^++e^-\rightarrow O^*+H_2O\ (18)</span> <span class="math display">O^*+H^++e^-\rightarrow OH^*\ (19)</span> <span class="math display">OH^*+H^++e^-\rightarrow H_2O + ^*\ (20)</span></p></li>
+<li><p>The <strong>OER</strong> occurring in an <strong>alkaline electrolyte (pH = 14)</strong> through elementary steps takes the reverse direction of ORR: <span class="math display">OH^-+* \rightarrow OH ^*+e^-\ (13)</span> <span class="math display">OH^*+OH^-\rightarrow O^*+H_2O(l)+e^-\ (14)</span> <span class="math display">O^*+OH^-\rightarrow OOH^*+e^-\ (15)</span> <span class="math display">OOH^*+OH^-\rightarrow O_2(g) + H_2O(l)+e^-+^*\ (16)</span></p></li>
+<li><p><strong>OER in acid electrolyte (pH =0)</strong></p></li>
+<li><p>Because <strong>it is difficult to obtain the exact free energy</strong> of <span class="math inline">OOH</span>, <span class="math inline">O</span>, <span class="math inline">OH</span> and <span class="math inline">H</span> radicals in <strong>the electrolyte solution</strong>, the adsorption free energy <span class="math inline">\Delta \mu_{OOH^*}</span>, <span class="math inline">\Delta \mu_{O^*}</span>, <span class="math inline">\Delta \mu_{OH^*}</span> and<span class="math inline">\Delta \mu_{H^*}</span>, are relative to the free energy of stoichiometrically appropriate amounts of H<sub>2</sub>O (g) and H2(g), defined as follows: <span class="math display">\color{red} {\Delta}G_{O^*}={\Delta}G(H_2O(l)+*\rightarrow O^*+H_2(g)</span> <span class="math display">\color{red} =\mu_{O^*}+\mu_{H_2}-\mu_*-\mu_{H_2O}\ (19)</span> <span class="math display">\color{red} {\Delta}G_{OH^*}={\Delta}G(H_2O(l)+*\rightarrow OH^*+1/2H_2(g))</span> <span class="math display">\color{red} =\mu_{OH^*}+1/2\mu_{H_2}-\mu_*-\mu_{H_2O}\ (20)</span> <span class="math display">\color{red} {\Delta}G_{OOH^*}={\Delta}G(2H_2O(g)+*\rightarrow OOH^*+3/2H_2(g))</span> <span class="math display">\color{red} =\mu_{OOH^*}+3/2\mu_{H_2}-\mu_*-2\mu_{H_2O}\ (21)</span> <span class="math display">\color{red} \Delta_{H^*}=\Delta G(H^++e^-+*\rightarrow H^*)</span> <span class="math display">\color{red} =\mu_{H^*}-1/2\mu_{H_2}-\mu_*</span></p></li>
+</ul>
+<h3 data-number="3.1.4" id="基本分子能量"><span class="header-section-number">3.1.4</span> 基本分子能量</h3>
+<table>
+<caption>Table 1: Zero point energy corrections and entropic contri- butions to the free energies<span class="citation" data-cites="Norskov05JES"><sup>[30]</sup></span>.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Group</th>
+<th style="text-align: center;">TS(eV)</th>
+<th style="text-align: center;">T<span class="math inline">{\Delta}S</span></th>
+<th style="text-align: center;"><span class="math inline">E_{ZPE}</span></th>
+<th style="text-align: center;"><span class="math inline">{\Delta}E_{ZPE}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">H2O(0.035bar)</td>
+<td style="text-align: center;">0.67</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">*OH+1/2H<sub>2</sub></td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">-0.47</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">-0.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*O+H<sub>2</sub></td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">-0.27</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">-0.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1/2O<sub>2</sub>+H<sub>2</sub></td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: center;">-0.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H2</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1/2O<sub>2</sub></td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OH*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.17</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="../img/Note4CHE_045.png" title="Note4CHE_045" style="width:100.0%" alt="[24]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span></figcaption>
+</figure>
+<table style="width:100%;">
+<caption>Table 2. Assumed fugacity for each non-adsorbate species, along with calculated electronic energy, zero-point energy correction, enthalpic temperature correction, entropy contribution, and chemical potential, respectively. Electronic energies and chemical potentials do not include the gas-phase correction. H2 is the value used for gaseous hydrogen, H2 (ref) is used for the computational hydrogen electrode as described in Section 1<span class="citation" data-cites="Peterson10EES"><sup>[12]</sup></span>. My calculated values at 18.5<span class="math inline">\degree</span>C using VASP/VASPKIT<span class="citation" data-cites="Wang21CPC"><sup>[13]</sup></span> (PBE-D3/PAW) are shown in later parentheses.</caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;">Fugacity (Pa)</th>
+<th style="text-align: center;"><span class="math inline">E_{elec}</span> (eV)</th>
+<th style="text-align: center;">ZPE (eV)</th>
+<th style="text-align: center;"><span class="math inline">\int C_p dT</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">-TS</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">ZPE-TS</span> (my)</th>
+<th><span class="math inline">\mu</span> (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">CO<sub>2</sub></td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.31 (0.3067)</td>
+<td style="text-align: center;">0.10 (0.0716)</td>
+<td style="text-align: center;">-0.65 (-0.6456)</td>
+<td style="text-align: center;">-0.3389</td>
+<td>0.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO</td>
+<td style="text-align: center;">5562</td>
+<td style="text-align: center;">1.75</td>
+<td style="text-align: center;">0.14 (0.1318)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.67 (-0.6680)</td>
+<td style="text-align: center;">-0.5362</td>
+<td>1.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H<sub>2</sub></td>
+<td style="text-align: center;">30296</td>
+<td style="text-align: center;">-0.00</td>
+<td style="text-align: center;">0.27 (0.2676)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.42 (-0.4220))</td>
+<td style="text-align: center;">-0.1544</td>
+<td>-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HCOOH</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">0.90 (0.8869)</td>
+<td style="text-align: center;">0.11 (0.0874)</td>
+<td style="text-align: center;">-1.02 (-1.0217)</td>
+<td style="text-align: center;">-0.1348</td>
+<td>0.91</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CH<sub>3</sub>OH</td>
+<td style="text-align: center;">6079</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">1.35</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">-0.79</td>
+<td style="text-align: center;"></td>
+<td>0.73</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub>O</td>
+<td style="text-align: center;">3534</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0.58 (0.5678)</td>
+<td style="text-align: center;">0.10 (0.0755)</td>
+<td style="text-align: center;">-0.65 (-0.6530)</td>
+<td style="text-align: center;">-0.0852</td>
+<td>0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CH<sub>4</sub></td>
+<td style="text-align: center;">20467</td>
+<td style="text-align: center;">-1.22</td>
+<td style="text-align: center;">1.20 (1.1859)</td>
+<td style="text-align: center;">0.10 (0.0765)</td>
+<td style="text-align: center;">-0.60 (-0.6009)</td>
+<td style="text-align: center;">0.5850</td>
+<td>-0.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CH<sub>2</sub>O</td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">1.19</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">-0.66</td>
+<td style="text-align: center;"></td>
+<td>1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C<sub>2</sub>H<sub>4</sub></td>
+<td style="text-align: center;">13942</td>
+<td style="text-align: center;">-0.01</td>
+<td style="text-align: center;">1.36</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">-0.71</td>
+<td style="text-align: center;"></td>
+<td>0.74</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub> (ref)</td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">-0.00</td>
+<td style="text-align: center;">0.27 (0.2676)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.39 (-0.3916)</td>
+<td style="text-align: center;">-0.1240</td>
+<td>-0.03</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Table： Base energy (PBE/PAW+500eV+VDW-D3/BJ)</caption>
+<thead>
+<tr class="header">
+<th>Molecule</th>
+<th>Eelec</th>
+<th>ZPE-TΔS (VASPKIT)</th>
+<th>μ</th>
+<th>T</th>
+<th>P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CO2</td>
+<td>-22.979</td>
+<td>-0.3389</td>
+<td>-23.3179</td>
+<td>298.15</td>
+<td>101325</td>
+</tr>
+<tr class="even">
+<td>H2</td>
+<td>-6.7689</td>
+<td>-0.1544</td>
+<td>-6.9233</td>
+<td>298.15</td>
+<td>101325</td>
+</tr>
+<tr class="odd">
+<td>H2O</td>
+<td>-14.2367</td>
+<td>-0.0852</td>
+<td>-14.3219</td>
+<td>298.15</td>
+<td>3534</td>
+</tr>
+<tr class="even">
+<td>CO</td>
+<td>-14.7873</td>
+<td>-0.5362</td>
+<td>-15.8335</td>
+<td>298.15</td>
+<td>5562</td>
+</tr>
+<tr class="odd">
+<td>HCOOH</td>
+<td>-29.9231</td>
+<td>-0.1348</td>
+<td>-30.0579</td>
+<td>298.15</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>CH4</td>
+<td>-24.0716</td>
+<td>0.673105</td>
+<td>-23.398495</td>
+<td>298.15</td>
+<td>20467</td>
+</tr>
+<tr class="odd">
+<td>N_2</td>
+<td>-16.6229</td>
+<td>-0.352536</td>
+<td>-16.975436</td>
+<td>298.15</td>
+<td>101325</td>
+</tr>
+<tr class="even">
+<td>O_2</td>
+<td>-9.8589</td>
+<td>-0.419079</td>
+<td>-10.277979</td>
+<td>298.15</td>
+<td>101325</td>
+</tr>
+<tr class="odd">
+<td>H*</td>
+<td></td>
+<td>0.23</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="3.1.5" id="interface"><span class="header-section-number">3.1.5</span> Interface</h3>
+<table>
+<thead>
+<tr class="header">
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_016.png" title="Note4Topic_016-90%" style="width:90.0%" alt="[31]" /></th>
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_018.png" title="Note4Topic_018-90%" style="width:90.0%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.2" id="discussion"><span class="header-section-number">3.2</span> Discussion</h2>
+<h3 data-number="3.2.1" id="formation"><span class="header-section-number">3.2.1</span> Formation</h3>
+<figure>
+<img src="../img/Note4CHE_087.png" title="Note4CHE_087-70%" style="width:70.0%" alt="[32]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Liu22AAMI"><sup>[32]</sup></span></figcaption>
+</figure>
+<ul>
+<li><p>Herein, we consider many kinds of vacant AlP, such as <strong>Al vacancy (V<sub>Al</sub>)</strong> and <strong>P vacancy (V<sub>P</sub>)</strong>, where <strong>xP</strong> atoms are substituted by <strong>xN</strong> atoms in the V<sub>Al</sub> system, labeled as(V<sub>Al</sub>-xN<sub>P</sub>-AlP: most stable vacant AlP system): <span class="math inline">E_{form1}=E_V-E_P+\mu_{Al/P}</span> , V/P defective and perfect AlP monolayer, <span class="math inline">\mu_{Al/P}</span> from Al(<span class="math inline">Fm\overline{3}M</span>) and P (<span class="math inline">P\overline{1}</span>),</p></li>
+<li><p>(V<sub>Al</sub>-xN<sub>P</sub>-AlP: TM atoms to bind with the substrate): <span class="math inline">E_{form2}=E_{defective}-E_P+x\mu_{N}+\mu_N+x\mu_P</span> , V/P defective and perfect AlP monolayer, <span class="math inline">\mu_{Al/P}</span> from Al(<span class="math inline">Fm\overline{3}M</span>) and P (<span class="math inline">P\overline{1}</span>),</p></li>
+<li><p>(Binding energy to verify the stability of the TM@V<sub>Al</sub>-2N-AlP system) : <span class="math inline">E_{bind}=E_{TM/AlP}-E_{V/AlP}-E_{TM-single}</span></p></li>
+<li><p>(Cluster Energy for aggregation possibility): <span class="math inline">E_{cluster}=E_{bind}-E{coh}</span>, where cohesive energy of TM atoms <span class="math inline">E_{coh}=E_{TM-bulk/n}-E_{TM-single}</span>,</p></li>
+<li><p>Dissolution potential for dissolution possibility of TM@V<sub>Al</sub>-xN<sub>P</sub>-AlP: <span class="math inline">U_{diss}=U_{diss-bulk}-E_{cluster}/n_e</span>, where U<sub>diss-bulk</sub> are the <strong>standard electrode potential, which are looked up from the handbook of chemistry and physics</strong><span class="citation" data-cites="Bratsch89JPCRD"><sup>[33]</sup></span> <a href="https://en.wikipedia.iwiki.eu.org/wiki/Standard_electrode_potential_(data_page)" title="wiki">wiki</a>.<span class="citation" data-cites="lide2006crc"><sup>[34]</sup></span> <span class="math inline">n_e</span> is the number of transferred electrons during the dissolution reaction. Theoretically<strong>, the negative value of cluster energy and the positive value of dissolution potential indicate the thermodynamic and electrochemical stabilities</strong>.</p></li>
+</ul>
+<h3 data-number="3.2.2" id="bond-charge-elfssadndpddec6bader"><span class="header-section-number">3.2.2</span> Bond &amp; Charge (ELF/SSAdNDP/DDEC6/Bader)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_001.png" title="Bader Charge +VMD-100%" style="width:100.0%" alt="Bader Charge +VMD (coloratm occ)" /></td>
+<td><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_002.png" title="Note4Topic_002-100%" style="width:100.0%" alt="Charge Density Difference VMD (addiso)" /></td>
+</tr>
+</tbody>
+</table>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_013.png" title="Note4Topic_013-100%" style="width:100.0%" /></p>
+<ul>
+<li>We all know that the flling of electrons into the anti-bonding orbital reduces the stability of the bond.</li>
+<li>阳离子更适合ORR</li>
+<li>Especially, the Fermi level mainly originates from Co-3d and O-2p because of the charge transferring from Co to O atoms, which coincides with the Bader charge analysis.</li>
+<li>Moreover, the Bader charge analysis was employed to evaluate electronic redistribution before and after adsorption of intermediates.</li>
+<li>Bader charge analysis also showed that about ∼0.29e− charge has been transferred from central Fe atom to O atom.</li>
+<li>All TM@Mo2B2 SACs show excellent metallic conductivity, which would be favorable for the charge transfer in electrocatalytic reactions.</li>
+<li>The charge transfer of BS−TM SACs was evaluated using the atoms in molecules method (Bader charge analysis)</li>
+<li>In Fig. 6 and 7, <strong>Bader charge analysis [47], [48], [49] and charge density difference during ORR, are shown</strong>. <strong>In terms of charge transfer, the α- and β-MnO2 surfaces reveal that the electron from the catalyst surfaces transferred to the intermediate species</strong>. Thus, the positive and negative values of Bader charge analysis arise from both charge accumulation and depletion, accordingly. The electron accumulation and depletion represented by the yellow and blue regions demonstrate that the Mn active site and its neighbor atoms lost their electrons to the intermediate species.</li>
+<li>The Bader charge analysis revealed that B atoms increased the charge density of Ni atoms, leading to moderate binding of O2.</li>
+<li>The Bader charge of adsorbed O 2 is denoted.</li>
+</ul>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_003.png" title="Note4Topic_003-50%" style="width:100.0%" /></p>
+<ul>
+<li>Adding iridium to the bimetallic alloys barely changes the net charge on the Pt-skin surfaces, so the surface charge is mainly modified by the 3d metals. <strong>Because Cr has a smaller electronegativity (1.66, Pauling scale) than Co (1.88, Pauling scale), the valence electrons are easier to be transferred to the surface of the Cr-containing alloy, producing a more electronegative Pt-skin surface.</strong> This is also verified by the net charge of the second layer 3d metal atoms: <strong>The values are determined as <img src="https://cfn-live-content-bucket-iop-org.s3.amazonaws.com/journals/1945-7111/157/6/B959/revision1/jes_157_6_B959ieqn121.jpg?AWSAccessKeyId=AKIAYDKQL6LTV7YY2HIK&amp;Expires=1646900568&amp;Signature=v%2FGriP01JQiDzA6pyCX6oR73H6k%3D" alt="img" /> to <img src="https://cfn-live-content-bucket-iop-org.s3.amazonaws.com/journals/1945-7111/157/6/B959/revision1/jes_157_6_B959ieqn122.jpg?AWSAccessKeyId=AKIAYDKQL6LTV7YY2HIK&amp;Expires=1646900568&amp;Signature=sdrk5L2NifvGKw5yub9uc24BsT4%3D" alt="img" /> for the Pt–Co alloys, but <img src="https://cfn-live-content-bucket-iop-org.s3.amazonaws.com/journals/1945-7111/157/6/B959/revision1/jes_157_6_B959ieqn123.jpg?AWSAccessKeyId=AKIAYDKQL6LTV7YY2HIK&amp;Expires=1646900568&amp;Signature=Fg%2FN8c6QjkLdzz%2BGNr739en42ng%3D" alt="img" /> to <img src="https://cfn-live-content-bucket-iop-org.s3.amazonaws.com/journals/1945-7111/157/6/B959/revision1/jes_157_6_B959ieqn124.jpg?AWSAccessKeyId=AKIAYDKQL6LTV7YY2HIK&amp;Expires=1646900568&amp;Signature=aWlYrsC3KrZYWSY2FTyfUNvjMkA%3D" alt="img" /> for the Pt–Cr alloys</strong>. <strong>The Bader charge distribution can be used to qualitatively interpret the surface stability and adsorption strength: The charge transfer from the 3d metals to Pt results in an extra charge–charge interaction between the surface and the sublayers and thus boosts the surface stability</strong>. <strong>It also leaves more negative charge on the surface Pt atoms, which weakens the adsorption strength of electronegative adsorbates such as O and OH</strong>. This effect consequently lowers their binding strength on the Pt-skin surface. As the valence charges on the bimetallic and trimetallic alloy surface atoms are close, the weaker binding of OH on the Pt-skin surfaces of ternary alloys should mainly originate from the compressive strain.</li>
+<li>The Bader charge analysis list in Table <a href="https://link.springer.com/article/10.1007/s00894-021-04693-5#Tab1">1</a> indicates that <em>a large amount of valence electrons are donated from the early−TM atom supported on borophene to surrounding boron atoms, resulting in partially ionic bonding between early−TM and B atoms</em>. On the contrary, the Bader charges of VIII−<em>TM</em> atoms supported on borophene are much smaller than the above counterparts. Therefore, <strong>more d electrons of VIII−<em>TM</em> atom should fill the d orbital.</strong> The electron localization functions (ELFs) were calculated to study the chemical bonding and its effects on the electrocatalytic activity of BS−<em>TM</em>. As shown in Fig. <a href="https://link.springer.com/article/10.1007/s00894-021-04693-5#Fig5">5</a> and S13, the <strong>near-free electrons are localized in the middle of B−B bonds of pristine borophenes. Thus, borophene can be easily functionalized and act as the support for adsorbate.</strong> The near-free electrons on the top of early−<em>TM</em> atoms can be easily transferred to H2O and further form the intermediate reactant, OH<em>, which results in the negative Δ</em>G<em>1. On the contrary, there are nearly no metallic electrons on the top of VIII−</em>TM* atoms. Generally, the VIII−<em>TM</em> atom is <strong>covalently bonded with the nearest-neighbored B</strong> atoms with the pd state hybridization (Fig. S11, S12).</li>
+<li>作者还计算了投影的汉密尔顿晶体轨道密度（pCOHP），来说明Pd活性位与吸附的CO <em>之间的相互作用。Pd2-CO </em>键的键合填充轨道显着高于Pd1-CO <em>（图4e）和Pd′1-CO </em>（图4f），表明Pd-CO <em>更强。用总ICOHP当作△ECO </em>的描述符得到了一个具有良好线性相关的曲线（图4h），从曲线中看出**优异的CO2 RR活性可以归因于适中的CO *结合强度**。</li>
+</ul>
+<h3 data-number="3.2.3" id="barrier"><span class="header-section-number">3.2.3</span> Barrier</h3>
+<ul>
+<li>解离：<span class="math inline">O_2+2^*\rightarrow 2O^*</span>,<span class="math inline">O^* + O^*\rightarrow OOH^*</span></li>
+<li>缔合(酸性) <span class="math inline">O_2+^*\rightarrow O_2^*</span>, <span class="math inline">O_2^*(g)+H^++e^-+^*\rightarrow OOH^*</span></li>
+</ul>
+<h3 data-number="3.2.4" id="pdos-cohp-band-centerkitchin04jcp"><span class="header-section-number">3.2.4</span> PDOS &amp; COHP &amp; band center<span class="citation" data-cites="Kitchin04JCP"><sup>[35]</sup></span></h3>
+<ul>
+<li><p>吸热反应-PDS, 电荷转移-barrier， d-center上升-&gt;结合变弱</p></li>
+<li><p><span class="citation" data-cites="Zhu21NC"><sup>[<strong>Zhu21NC?</strong>]</sup></span>作者通过<strong>XPS表征</strong>方法，发现修饰在Pt表面的Ru原子Ru 3d5/2结合能比Ru电极的能量提高0.3~0.4 eV，作者通过d带规则认为<strong>这种修饰在Pt电极的Ru导致d带位置向上移动、同时增强H*中间体的吸附作用</strong>。作者通过DFT计算对Ru/Pt(111)催化剂具有更好催化反应活性的原因，在PDOS计算中发现，修饰Ru后，d带中心的位置由-2.24 eV移动至1.10 eV，<strong>这种上移d带有效改善界面吸附中间体与基底之间的相互作用</strong>。因此界面吸附Ru改善<em>H/</em>OH吸附。</p></li>
+<li><p>In addition, the analysis of the partial density of states (PDOS) (Fig. S28†) revealed tha<strong>t the d-band center of N4Fe–CuN3 (-1.46 eV) was much closer to the Fermi level than those of Cu–N4 (-2.53 eV) and Fe–N4 (-2.29 eV)</strong>. The resulting <strong>lower occupation of the antibonding orbital</strong> with absorbed *COOH further supports the occurrence of stronger binding interactions and more stabilized adsorption on Cu–N4 and Fe–N4. After forming *COOH intermediates, all the calculated models can effortlessly undergo the second proton-coupled electron transfer process (*COOH /*CO), as verified by the observed downhill pathways.</p></li>
+<li><p><span class="citation" data-cites="Li21JMCA"><sup>[36]</sup></span>To get a deep understanding on the strain-induced spin-state transition, we studied the energy difference (<span class="math inline">\Delta E</span>) between eg and t2g according to PDOS versus strain. The Co_3d state is split into t2g (dxy,dxz, and dyz) and eg (dx2-y2, and dz2) states (Fig. S8?), and the energy difference between eg and t2g is calculated by using <span class="math inline">\Delta E=E_{t_{2g}}-E_{E_g}</span>, where Et2g and Eeg are the values of lower eg and upper t2g states,respectively. (可不可以用cener？)</p></li>
+<li><p>PDOS表明，Fe的d带与Pd的d带匹配良好，在Pd-Fe原子对中诱导了强电子耦合，增强了费米能级附近的d电子密度，为H2的吸附和活化提供了活性位点。</p></li>
+<li><p>Therefore, C1 atoms can provide empty p orbitals to activate the O2 and to promote the subsequent electrochemical steps.</p></li>
+<li><p>In principle, the hybridization between the reaction intermediates and active atoms could bring about the splitting of their hybridized energy levels to the bonding and antibonding states. As a result, a higher p-band center (εp) of the active atom would lead to a lower level of filling of antibonding states and stronger binding to adsorbates, and vice versa.</p></li>
+<li><p>The Crystal Orbital Hamilton Population (COHP) values for Co–O pairs show positive values for the bonding states, and negative values for the antibonding interaction. In general, a large integral value means a strong interaction. (反了)</p></li>
+<li><p><span class="citation" data-cites="Ju21NC"><sup>[37]</sup></span>However, as a ferroelectric semiconductor with a sizable band gap (1.46 eV)38, α-In2Se3 monolayer does not have enough electrons to be injected into the antibonding <span class="math inline">2\pi_u</span> orbitals of CO2 so that the strong sp-hybridization symmetry of the carbon atom can not be disrupted41. Thus, the material itself is not suitable as a catalyst for CO2 reduction42, which is corroborated by our theoretical study: upon adsorption on In2Se3, the inherent linear O=C=O structure of CO2 molecule is well maintained (see Supplementary Fig. 4 and Supplementary Table 3).</p></li>
+<li><p>In addition, the analysis of the partial density of states (PDOS) (Fig. S28†) revealed tha<strong>t the d-band center of N4Fe–CuN3 (-1.46 eV) was much closer to the Fermi level than those of Cu–N4 (-2.53 eV) and Fe–N4 (-2.29 eV)</strong>. The resulting <strong>lower occupation of the antibonding orbital</strong> with absorbed *COOH further supports the occurrence of stronger binding interactions and more stabilized adsorption on Cu–N4 and Fe–N4. After forming *COOH intermediates, all the calculated models can effortlessly undergo the second proton-coupled electron transfer process (*COOH /*CO), as verified by the observed downhill pathways.</p></li>
+<li><p>The resulting <strong>lower occupation of the antibonding orbital</strong> with absorbed *COOH further supports the occurrence of stronger binding interactions and more stabilized adsorption on Cu–N4 and Fe–N4. After forming *COOH intermediates, all the calculated models can effortlessly undergo the second proton-coupled electron transfer process (*COOH /*CO), as verified by the observed downhill pathways</p>
+<p><img src="../img/Note4CHE_065.png" title="Note4CHE_065" style="width:100.0%" /></p>
+<p>Fig. Molecular orbitals of free N2, and the computed partial density of states (PDOS) and the crystal orbital Hamilton populations (COHPs) of N2 on eight M2-Pc (M = Ti, V, Ta, Cr, Mn, Mo, W, and Re) surfaces. The bonding and antibonding states in COHP are depicted by cyan and yellow, respectively.</p>
+<ul>
+<li>图4a所示的吉布斯自由能图和反应路径表明，CO2向COOH* 的转化被认为是速率决定步骤。<strong>以上计算表明O-Ni2-N6 具有更优的 ΔG，导致形成COOH* 的能垒降低。而O−Ni2−N6对CO分子的吸附能力最弱，因此更容易对CO进行解吸</strong>。考虑到H2和HCOOH演化的竞争反应，研究者还计算了吉布斯自由能图，以更好地理解CO在双核O-Ni2-N6 位点上的高选择性。<strong>从图4b可以看出，O-Ni2-N6 位点吸附H的吉布斯自由能和第一步形成OCHO*的吉布斯自由能均高于COOH*</strong>。上述计算结果合理地解释了CO的高活性和选择性，与上述实验数据有很好的一致性。同时，利用投影晶体轨道哈密顿布居(pCOHP) 分析了金属中心与COOH*中间体之间的相互作用。<strong>从Ni−N4到O−Ni2−N6, Ni−COOH* 反键态的占据率降低(图4c)，表明O-Ni2-N6模型的中间体的吸附强度更强</strong>。定量计算得出O-Ni2-N6和Ni−N4的综合COHP (ICOHP) 分别为−2.20和−2.01 eV。进一步证明了O-Ni2-N6模型的键/反键轨道布居率的优化，说明了中间体吸附强度的增强。引入Bader电荷分析，分析活性位点与吸附中间体之间的电荷布居和电荷转移。与Ni−N4 (0.18) 和N−G (0.04) 相比，<strong>O-Ni2-N6 的正电荷最多（0.23 e），表明双核活性位点对CO2转化为COOH* 的活化较高(图4d)</strong>。</li>
+</ul>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_127.png" title="Note4CHE_127-80%" style="width:80.0%" /></p>
+<ul>
+<li><p><span class="citation" data-cites="Zhou21AS"><sup>[38]</sup></span>Ni3S2表面上的Ni固定Pt的形成能为−0.33 eV，明显低于该载体的S位点（7.83 eV）、底部Ni位点（−0.23 eV）和S-S位点（−0.26 eV）的形成能。与Ni3S2相比，PtSA-Ni3S2的总DOS在费米能级附近显示出更高的电子占据状态，从而导致更高的本征电导率和更大的载流子密度。密度泛函理论(DFT)计算表明，与Ni3S2（0.49 eV）、Pt箔（−0.10 eV）和最近报道的SACs相比，PtSA-Ni3S2（−0.06eV）的∆GH*更接近0 eV。这得益于在费米能级附近电子占据密度的增加，下移的d带中心，以及由于在Ni3S2的Ni位点上引入Pt后S-3p 和 Pt-5d之间发生轨道杂化导致的Pt位点的局部电子密度增强。</p></li>
+<li><table>
+<thead>
+<tr class="header">
+<th><img src="../img/ElecStruc_013.png" title="ElecStruc_013-100%" style="width:100.0%" /></th>
+<th><img src="../img/ElecStruc_016.png" title="ElecStruc_016-100%" style="width:100.0%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="../img/ElecStruc_017.png" title="ElecStruc_017-100%" style="width:100.0%" /></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+<h4 data-number="3.2.4.1" id="d-band-center"><span class="header-section-number">3.2.4.1</span> d-band center</h4>
+<ul>
+<li><p>This model was then verified with experimental and theoretical studies by various research groups.</p></li>
+<li><p>The <strong>d-band center and the product of the number of d-orbital electrons and electronegativity of the TM atom are the ideal descriptors</strong> for this system.</p></li>
+<li><p><span class="citation" data-cites="Medford15JC"><sup>[39]</sup></span>The reason is that the interaction strength is related to the <strong>filling of the anti-bonding states formed between the metal d states and the adsorbate valence states. The higher the d states are in energy relative to the highest occupied states at the Fermi energy, the higher in energy the antibonding states are, the more empty they are, and the stronger the interaction becomes</strong>.</p></li>
+<li><p><span class="citation" data-cites="Li21AMa"><sup>[40]</sup></span>The gap between d-band center (εd) of Ni (3d) orbitals and Fermi energy level (EF) is narrowed and the electronic interaction of the intermediate and the active sites is strengthened.</p></li>
+<li><p><span class="citation" data-cites="Bhattacharjee16SR"><sup>[41]</sup></span>A stronger upward shift indicates the possibility of the formation of a larger number of empty anti-bonding states, leading to a stronger binding energy. The upward shift of the d-band center can therefore be treated as a descriptor of the catalysis.</p>
+<figure>
+<img src="../img/Note4CHE_056.png" title="Note4CHE_056" style="width:100.0%" alt="[41]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Bhattacharjee16SR"><sup>[41]</sup></span></figcaption>
+</figure>
+<figure>
+<img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_123.png" title="Note4CHE_123-80%" style="width:80.0%" alt="[42]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Feng21JMCA"><sup>[42]</sup></span></figcaption>
+</figure></li>
+</ul>
+<h4 data-number="3.2.4.2" id="p-band-center"><span class="header-section-number">3.2.4.2</span> p-band Center</h4>
+<ul>
+<li><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span>In principle, the hybridization between the reaction intermediates and active atoms could bring about the splitting of their hybridized energy levels to the bonding and antibonding states. As a result, a higher p-band center (εp) of the active atom would lead to a lower level of filling of antibonding states and stronger binding to adsorbates, and vice versa.</li>
+<li><span class="citation" data-cites="Li21JMCA"><sup>[36]</sup></span>Comparing the Co_d band center and O_p band center between LS and HS CoOOH with different intermediates, we find that the O_p band center is closer to the Fermi level, and the more negative Co_d band center for HS CoOOH results in a weaker Co–O bond and adsorption free energies (Table S2?).</li>
+</ul>
+<h3 data-number="3.2.5" id="gap"><span class="header-section-number">3.2.5</span> Gap</h3>
+<ul>
+<li><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span>According to the density of states (DOS) calculations, the electronic states at the Fermi level of 2D biphenylene are primarily contributed by the 2p orbitals of C1 atoms, which could be further confirmed by partial charge density analysis (Figure S1). Overall, these abundant electronic states could accelerate electron transfer and improve the binding to adsorbates, which is desirable for electrocatalysis.</li>
+<li>Smaller band gap facilitates the greater filling of the bonding orbitals with a lower overpotential, favorable for the ORR [31]</li>
+<li><span class="citation" data-cites="Chen15JPCC"><sup>[43]</sup></span>The smaller band gaps also endow the system with higher chemistry reactivity and lower kinetics stability.</li>
+<li><span class="citation" data-cites="Zhu19JMCA"><sup>[44]</sup></span>A smaller energy gap between the M 3d and O 2p band centers of the transition metal oxide catalyst can lead to a stronger covalent bond and reduced charge transfer barrier between the metal and oxygen, which is likely to result in higher OER or ORR catalytic performance.</li>
+</ul>
+<h3 data-number="3.2.6" id="polarization-curves-simulation-of-oer-and-orrzhou21jpcljiao15csrwei21am"><span class="header-section-number">3.2.6</span> Polarization Curves Simulation of OER and ORR<span class="citation" data-cites="Zhou21JPCL Jiao15CSR Wei21AM"><sup>[45–47]</sup></span></h3>
+<p><img src="../img/Note4CHE_095.png" title="Note4CHE_095-70%" style="width:70.0%" /></p>
+<p>For a given electrochemical process <span class="math inline">O + ne \leftrightarrows R</span> under one electric potential <span class="math inline">U</span>, it can be used the well-known Nerst equation to link the concentrations of the reactant and the product16 by the following equation (9):</p>
+<p><span class="math display">U=U_0+\frac{RT}{nF}ln(\frac{C_0}{C_R})</span></p>
+<p>Here, <span class="math inline">U_0</span> refers to the equilibrium potential of the reaction at the standard state, <span class="math inline">R</span> refers to the universal gas constant, <span class="math inline">T</span> refers to the temperature, <span class="math inline">n</span> refers to the electron transfer number, <span class="math inline">F</span> refers to the Faraday constant, and <span class="math inline">C_O/C_R</span> refers to the concentration of the reactant/product in this reaction.<span class="citation" data-cites="Jiao15CSR"><sup>[46]</sup></span> Therefore, the exchange current density <span class="math inline">j_0</span> can be calculated by the following equation (10):</p>
+<p><span class="math display">j_0=nFkC_0\exp[-\frac{\alpha F}{RT}(U_{eq}-U_0)]=nFkC_0^{1-\alpha}C_R^{\alpha}</span></p>
+<p>Where <span class="math inline">k</span> refers to the reaction rate constant, <span class="math inline">U_{eq}</span> refers to the equilibrium potential, and <span class="math inline">\alpha</span> refers to the transfer coefficient. So, the electrochemical polarization equation can be defined by equation (11):</p>
+<p><span class="math display">j=j_0[\exp(-\frac{\alpha F}{RT}\eta)-\exp(-\frac{(1-\alpha)F}{RT}\eta)]</span></p>
+<p>Where <span class="math inline">\eta=U-U_{eq}</span> refers to the overpotential deviated from the equilibrium potential and <span class="math inline">j</span> of the overall current density. The exchange current density <span class="math inline">j_0</span> can be used to evaluate the catalytic activity of one catalyst. Following the electrochemical catalysis mode developed by Nørskov,<span class="citation" data-cites="Norskov04JPCB"><sup>[11]</sup></span> the reaction rate constant k can be defined as follows: (12)</p>
+<p><span class="math display">𝑘=𝑘_0\exp[-\frac{\Delta G_{max} }{k_bT}]</span>,</p>
+<p>Where <span class="math inline">k_b</span> and <span class="math inline">\Delta G_{max}</span> refers to the Boltzmann constant and the Gibbs free energy change of the potential-determining step, respectively. In the electrochemical polarization model,<span class="citation" data-cites="Ma17AM"><sup>[48]</sup></span> <span class="math inline">k_0</span> is defined as the equation (13):</p>
+<p><span class="math display">k_0=\frac{k_bT}{h}</span> Where <span class="math inline">h</span> refers to the Planck constant. Therefore, the exchange current density <span class="math inline">j_0</span> of the electrochemical reaction when the reaction approaches its equilibrium state can be described as the following equation (14):</p>
+<p><span class="math display">j_0=nFC_0\frac{k_bT}{h}exp[-\frac{\Delta G_{max} }{k_bT}]</span></p>
+<p>Hence, the overall current density j can be calculated by the follows equation (15) according to the overpotential η18:</p>
+<p><span class="math display">j=nFC_0\frac{k_bT}{h}exp[-\frac{\Delta G_{max} }{k_bT}][\exp(-\frac{\alpha F}{RT}\eta)-\exp(-\frac{(1-\alpha)F}{RT}\eta)]\approx nFC_0\frac{k_bT}{h}exp[-\frac{\Delta G_{max} }{k_bT}-\frac{\alpha F}{RT}\eta] </span>(15)</p>
+<p>The OER and ORR need to overcome the reaction kinetic energy barriers, and the onset potential generally represents the reaction potential at which the current begins to deviate from the baseline.<span class="citation" data-cites="Huang17AEM"><sup>[49]</sup></span> In this work, the calculated polarization curves for the OER and ORR was calculated as literature reported.<span class="citation" data-cites="Wei21AM"><sup>[47]</sup></span></p>
+<figure>
+<img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_039.png" title="Note4CHE_039" style="width:100.0%" alt="[24]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span></figcaption>
+</figure>
+<ul>
+<li><span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span>The polarization curves of 2D biphenylene at different pH values can be obtained by solving the rate equations (see the Supporting Information for the computational details). As a validation, the half-wave potentials (Half-wave potential (E1/2) is a potential at which polarographic wave current is equal to one half of diffusion current (id). ) of Pt(111) were determined to be 0.90 V at pH 1 and 0.87 V at pH 13, consistent with previous experimental studies.40?43 2D biphenylene exhibits a rather small half-wave potential of 0.53 V at pH 1, which is much lower than that of Pt. Therefore, although 2D biphenylene has a considerably high limiting potential, <strong>it would show rather poor ORR performance in acidic environments, which was often ignored by previous theoretical studies.</strong> Remarkably, at pH 13, the half-wave potential of 2D biphenylene reaches 0.9 V and is substantially higher than that of Pt (0.87 V). Therefore, 2D biphenylene is expected to deliver an ORR performance that is better than that of the well-established Pt under alkaline conditions.</li>
+</ul>
+<h3 data-number="3.2.7" id="microkinetic"><span class="header-section-number">3.2.7</span> Microkinetic</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_041.png" title="Note4CHE_041-90%" style="width:90.0%" /></p>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_042.png" title="Note4CHE_042-90%" style="width:90.0%" /></p>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_043.png" title="Note4CHE_043" style="width:100.0%" /></p>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_047.png" title="Note4CHE_047" style="width:100.0%" /></p>
+<h3 data-number="3.2.8" id="volcano-plotseh17s"><span class="header-section-number">3.2.8</span> Volcano Plot<span class="citation" data-cites="Seh17S"><sup>[50]</sup></span></h3>
+<figure>
+<img src="../img/Note4CHE_060.png" title="Note4CHE_060" style="width:100.0%" alt="[50]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span></figcaption>
+</figure>
+<figure>
+<img src="../img/Note4CHE_018.png" title="Note4CHE_018" style="width:100.0%" alt="[50]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span></figcaption>
+</figure>
+<figure>
+<img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_000.png" title="Note4Topic_000-100%" style="width:100.0%" alt="[51] OER Volcan" /><figcaption aria-hidden="true"><span class="citation" data-cites="Rossmeisl07JEC"><sup>[51]</sup></span> OER Volcan</figcaption>
+</figure>
+<h4 data-number="3.2.8.1" id="her-volcano"><span class="header-section-number">3.2.8.1</span> HER Volcano</h4>
+<p><img src="../img/Note4CHE_093.png" title="Note4CHE_093-70%" style="width:70.0%" /></p>
+<ul>
+<li><p><span class="citation" data-cites="Zhou21JPCL"><sup>[45]</sup></span>The exchange current <span class="math inline">i_0</span> can reflect the intrinsic state of electrons during the HER process.<span class="citation" data-cites="Norskov05JES"><sup>[30]</sup></span> Therefore, the theoretical exchange current <span class="math inline">i_0</span> was calculated to describe the HER kinetics under the <strong>equilibrium potential U = 0 and pH = 0</strong> conditions by the equation <span class="math inline">i_0=-ek_0\frac{1}{1+\exp(|\Delta G_{H^*}|/k_BT)}</span> . Here, <span class="math inline">k_0</span> is the reaction rate constant at zero overpotential, <span class="math inline">k_B</span> is the Boltzmann constant, and T is the temperature. For illustrative purpose, <strong><span class="math inline">k_0</span> was set to 1</strong>. Hence, a volcano curve is obtained and plotted using <span class="math inline">i_0</span> as a function of the calculated ΔGH* to compare the HER activities on the stable electrocatalysts (Figure 3b). The HER activity can be quantitatively evaluated from the position of ΔGH* and <span class="math inline">i_0</span> with respect to the volcano peak. The closer the position of ΔGH* to the volcano peak, the better HER activity of one catalyst.<span class="citation" data-cites="Norskov05JES"><sup>[30]</sup></span></p></li>
+<li><p><span class="citation" data-cites="Norskov05JES"><sup>[30]</sup></span>Exchange Current for HER:</p>
+<p><span class="math display">i_0=-ek_0\frac{1}{1+\exp(-\Delta G_{H^*}/k_BT)}</span> is for <span class="math inline">\Delta G_{H^*}&lt;0</span>, while <span class="math display">i_0=-ek_0\frac{1}{1+\exp(-\Delta G_{H^*}/k_BT)}\exp(-\Delta G_{H^*}/k_BT)=-ek_0\frac{1}{1+\exp(\Delta G_{H^*}/k_BT)}</span> for <span class="math inline">\Delta G_{H^*}&gt;0</span>.</p>
+<p>So: <span class="math inline">i_0=-ek_0\frac{1}{1+\exp(|\Delta G_{H^*}|/k_BT)}</span> (where <span class="math inline">e=-1,k_0=1,k_B=8.6173324\times10^{-5}</span> eV/K )</p>
+<table>
+<caption>Table: (450eV,DFT-D3,298.15K,1atm)<span class="math inline">(E_{H_2}=6.7869,\Delta ZPE-T\Delta S=(ZPE_{H^*}-0.267608)-(T\Delta S_{H^*}-0.402354)\sim0.38</span></caption>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 21%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>(n-1)*H</th>
+<th>n*H</th>
+<th><span class="math inline">\Delta E_a=E_{n*H}-E_{(n-1)*H}-E_{H_2}/2</span></th>
+<th><span class="math inline">\Delta G_{H^*} =\Delta E_{a}+0.38</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2H MoS2-Edge (<span class="math inline">E_a=-0.62</span> eV, ISPIN=1)<span class="citation" data-cites="Hinnemann05JACS Wang19JACS"><sup>[52,53]</sup></span></td>
+<td>-460.2423(<span class="math inline">\theta=0\%</span>)</td>
+<td>-463.6923 (<span class="math inline">\theta=25\%</span>)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2H MoS2-Edge (<span class="math inline">E_a=-0.21</span> eV, ISPIN=1)<span class="citation" data-cites="Hinnemann05JACS"><sup>[52]</sup></span></td>
+<td>-463.6923 (<span class="math inline">\theta=25\%</span>)</td>
+<td>-467.3443 (<span class="math inline">\theta=50\%</span>)</td>
+<td>-0.2586</td>
+<td>0.1214</td>
+</tr>
+<tr class="odd">
+<td>Pt(110) (<span class="math inline">E_a=-0.28</span> eV)<span class="citation" data-cites="Gudmundsdottir13PCCP"><sup>[54]</sup></span></td>
+<td>-296.7362(<span class="math inline">\theta=0\%</span>)</td>
+<td>-300.6377(<span class="math inline">\theta=25\%</span>)</td>
+<td>-0.5081</td>
+<td>-0.1281</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 data-number="3.2.8.2" id="orr"><span class="header-section-number">3.2.8.2</span> ORR</h4>
+<table>
+<thead>
+<tr class="header">
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_298.png" title="Note4CHE_298-90%" style="width:90.0%" alt="[55]" /></th>
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_299.png" title="Note4CHE_299-100%" style="width:90.0%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="../img/Note4CHE_088.png" title="Note4CHE_088-90%" style="width:90.0%" /></td>
+<td><img src="../img/Note4CHE_089.png" title="Note4CHE_089-90%" style="width:90.0%" /></td>
+</tr>
+</tbody>
+</table>
+<p><img src="../img/Note4CHE_091.png" title="Note4CHE_091-90%" style="width:90.0%" /></p>
+<figure>
+<img src="../img/Path_2O.png" title="-50%" alt="Path_2O" /><figcaption aria-hidden="true">Path_2O</figcaption>
+</figure>
+<ul>
+<li><p><span class="citation" data-cites="Liu22AAMI"><sup>[32]</sup></span>To further explore the correlation between the free-energy changes of each intermediate (ΔG1, ΔG2, ΔG3, and ΔG4), together with the obtained relationship of ΔG~*OOH~ and <span class="math inline">\Delta G_{*OH}</span> ( <span class="math inline">\Delta G_{*OOH}=0.92\Delta G_{*OH}+3.32</span> ), the four free-energy changes can be modified as</p>
+<p><span class="math display">\Delta G_1=\Delta G_{*OH}</span></p>
+<p><span class="math display">\Delta G_2=\Delta G_{*O}-\Delta G_{*OH}</span></p>
+<p><span class="math display">\Delta G_3=-0.08\Delta G_{*OH}-\Delta G_{*O}+\Delta G_{*OH}+3.32, \ (\Delta G_{*OOH}-\Delta G_{*O})</span></p>
+<p><span class="math display">\Delta G_4=-0.92\Delta G_{*OH}+1.60, \ (4.92-\Delta G_{*OOH})</span></p>
+<ul>
+<li>myscript: <code>orrmap a b [0.01]</code>, <span class="math inline">\Delta G_{*OOH}=a*\Delta G_{*OH}+b</span></li>
+</ul>
+<p>Hence, the OER and ORR activities can be characterized by ΔG~*O~ − ΔG<sub><em>OH ~and ΔG~</em>OH</sub>. That is to say, the adsorption energy of all species can be calculated after knowing ΔG<sub><em>O~ and ΔG~</em>OH</sub>. The contour maps of OER and ORR activities are plotted in Figure 6c,d, divided into four parts, corresponding to the intermediates’ four free-energy change steps after applying the equilibrium potential. (Over potential <span class="math inline">\eta_{OER}=\max\{\Delta G_1,\Delta G_2,\Delta G_3,\Delta G_4\}</span>)</p></li>
+<li><p>特别地，* OOH与* OH线的斜率接近于1，表明两种吸附物的金属-氧单键相似。 相反，* O与 * OH标度线的斜率接近2，与图片一致，其中吸附的O在表面具有双键，而* OH通过单键键合。</p></li>
+<li><p>由于理论上的超电势是* OOH，* O和* OH结合能的函数，我们可以使用上面的比例关系，吸附的OH自由能作为函数来定义四个步骤（UL1-L4）的极限电势，为： <span class="math inline">U_{L1}=-\Delta G_{OH}+1.72</span>, <span class="math inline">U_{L2}=-\Delta G_{OH}+3.3</span>, <span class="math inline">U_{L3}=\Delta G_{OH}</span>, <span class="math inline">U_{L4}=\Delta G_{OH}</span></p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="../img/v2-27749d595b19571bf4d7a78ce1fd2287_720w.jpg" title="-90%" alt="img" /></th>
+<th><img src="../img/v2-2b513599587d5f09a219e6439c0f798f_720w-16463755860043.jpg" title="-90%" alt="img" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>但是，预测催化剂对二电子或四电子ORR的选择性具有挑战性，因为所有对H2O2产生活性的材料对H2O2分解和进一步还原为水也具有活性（热力学上有利的产物 ）。使用DFT计算和热力学分析，已表明对H2O2的选择性取决于两个竞争反应：<span class="math inline">^*OOH+H^++e^- \rightarrow ^*O+H_2O</span>, <span class="math inline">^*OOH+H^++e^- \rightarrow H_2O_2</span>, 如上方程式所示，避免四电子路径的关键是防止吸附的* OOH中的O-O键解离。 这种简单的分析排除了所有具有强氧结合能（由于形成有利的O *的催化剂），并将搜索范围限制在了弱结合氧的材料上。</p></li>
+<li><p>尽管Pt（111）靠近热力学火山的顶部，但很明显，弱化* OH（以及随后的* O或 * OOH）的结合能会使它更靠近顶部。在上述比例关系上，最佳的ΔGOH≈0.1 eV的增加是最佳的（见下图）。 受到这种认知的启发，人们探索了各种策略，例如晶格应变工程，合金化和核壳结构，以开发出超过Pt（111）基准性能的催化剂。</p></li>
+<li><p>在这里，类似于金属的<strong>d带中心模型</strong>，各种电子性质，例如<strong>表面过渡金属离子的轨道填充</strong>（对于过氧化物）、金属阳离子的<strong>氧化还原电势</strong>（对于MN4型）、<strong>外电子数量</strong>（对于MN4型和氧化物）等也被用作ORR活性的<strong>描述符</strong>。</p></li>
+<li><p>还是回到这张图，横坐标是* OH结合自由能（ΔGOH），随着OH与固体表面的结合能越来越弱，也就是*OH越不稳定，*OH→H2O这一步越容易发生（接近平衡电压），O2→*OOH这一步越难发生。而在中间竖的虚线向右，也就是在ORR反应中*OH→H2O这一步过快的情况下，O2→*OOH的速率很慢，回到上面的ORR的机理：*OH→H2O这一步其实是受前面的反应步骤速率所限制的，它的最大速率取决于前面反应物的产生速率，如果产生的*OOH不够，那么*OH→H2O的理论反应速率再快，也不能大于*OOH缓慢的产生速率。</p></li>
+<li><p>Recently, <strong>it has been shown that the free-energy difference between OH* and OOH* is constant within ±0.2 eV and appears to be universal, independent of the binding strength</strong> to the surface.22 This observation was made by Koper,23 where he noted that the binding strengths of OH* and OOH* are related to each other by a constant amount of ∼3.2 eV for metal (111) facets and oxide surfaces regardless of the binding site. We have recently shown using detailed density functional theory calculations that this scaling relation also holds for metal (100) facets.5 **As a result, we can combine the thermodynamic analysis for the 2e− and 4e− reduction and describe the activity, to a first approximation, as a function of a single descriptor, ΔGOH*.**</p></li>
+<li><p><span class="citation" data-cites="Wang21AEM"><sup>[56]</sup></span>Given the existence of a constant scaling factor of 3.2 ± 0.2 eV between the binding free energy of HOO* and HO*, the binding free energy of HO* (GHO) can also be used as a descriptor for the 2e− ORR.[8,16] For the Fe-N-C and Mn-N-C catalysts, the strong binding free energy for the HO* intermediate favors the 4e− pathway over the 2e− pathway. Cu-N-C and Ni-N-C bind the ORR intermediates very weakly, resulting in poor peroxide selectivity and low catalyst activities, due to difficulties in forming the HOO* intermediate. The binding energy of the HO* intermediate over Co-N-C catalyst is located near the top of the volcano plot, thus accounting for favorable 2e− ORR performance.</p></li>
+<li><p>The strong binding of *OOH with small Δ<em>G</em>~<em>OOH~ value (the adsorption energy of *OOH species) is unfavorable for the peroxide formation, owing to the dissociation of *OOH (splitting of O−O bond) to form the final product H2O. It indicates the selectivity towards the 4e− pathway dominates over the 2e− pathway in this case. In contrast, the weak binding of *OOH with large ΔG</em>OOH value facilitates the desorption of *OOH to produce H2O2.</p></li>
+<li><p>The free energy results plotted in Fig. 4b show that the CO2 activation process (CO2 /*COOH) is <strong>endothermic for the different catalyst models and is thus identified as a potential limiting step</strong>.</p></li>
+<li><p><span class="citation" data-cites="Feng21JMCA"><sup>[42]</sup></span>Nevertheless, compared with other structures, the N4Fe–CuN3 diatomic active site significantly reduces the energy barrier (0.22 eV) for the formation of *COOH intermediates, <strong>resulting in a reduced onset potential and enhanced catalytic activity</strong>.This behavior is consistent with the <strong>larger charge transfer from Fe to *COOH</strong>, as evidenced by the differential charge analysis, and is consistent with the shorter Fe–C bond length (1.932 ̊ A vs. 1.945 ̊ A for FeN4) and longer C–O bond length (1.394 ̊ A vs. 1.367 ̊ A for FeN4), where the C–O bond breaks to form *CO (Fig. S27†).</p></li>
+<li><p><span class="citation" data-cites="Zhao21C"><sup>[57]</sup></span>The left leg of the 2e− volcano indicates strong binding of *OOH on the catalyst surface, wherein the limiting potentials of the 4e− route are always more positive, suggesting the presence of a greater driving force for H2O production than H2O2 production. In contrast, for the right leg of the 2e− volcano, with weak binding of *OOH on the catalyst surface, the limiting potentials for both pathways are identical, indicating simultaneous production of H2O and H2O2. The most active catalyst for 2e− ORR would locate at the peak of the 2e− volcano, which is unoccupied, owing to the either too high or too low Δ*G~*OOH~ value. Subsequent studies demonstrate that Pd-Hg possessed the optimal Δ*G*<sub><em>OOH~value as it locate closest to the peak of 2e− volcano.<a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100055#cssc202100055-bib-0033">33</a>-<a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100055#cssc202100055-bib-0035">35</a> DFT calculations on catalyst could offer in-depth insights into the thermodynamics and kinetics of the ORR. Moreover, combining the computational and experimental studies could help to build the relationship between theoretical Δ</em>G<em>~</em>OOH</sub> value and experimental overpotentials required to reach the kinetic current density of 1 mA cm−2 to H2O2, thus facilitating to determine the volcano diagram to accurately determine the most promising catalysts.<a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100055#cssc202100055-bib-0036">36</a>, 37</p></li>
+</ul>
+<h4 data-number="3.2.8.3" id="scaling-ralations"><span class="header-section-number">3.2.8.3</span> Scaling Ralations</h4>
+<ul>
+<li><p><span class="citation" data-cites="Christensen16JPCC"><sup>[58]</sup></span>The more robust scaling relation is <span class="math inline">\Delta G_{OOH^*}=\Delta G_{OH^*}+3.3\pm0.2</span> eV. The ±0.2 eV still denotes the uncertainty induced by modeling scattered data with a straight line and not the calculational uncertainty for a given surface. Using the functionally independent scaling relation, more robust predictions of minimum overpotentials and optimal adsorption free energies can be performed for a given surface. In general, the minimum thermodynamic overpotential of ∼0.4 eV will increase by 0.05 eV. Predictions of optimal catalyst reactivities are also modified. For ORR catalysts, the optimal adsorption free energy of OH* (∼0.8 eV) predicted from the improved scaling relation requires a slightly more reactive catalyst, which adsorbs OH* 0.05 eV stronger, than previously predicted. For OER, the predicted optimum adsorption free energy difference between O* and OH* (∼1.7 eV) has increased by 0.05 eV. This requires a slightly less reactive catalyst than previously predicted.</p></li>
+<li><p><span class="citation" data-cites="Koper11JEC"><sup>[59]</sup></span>From detailed DFT calculations on (1 1 1) surfaces, they found that for the energies:</p>
+<p><span class="math display">\Delta E(OH_{ads})\approx 0.50\times E(O_{ads})+0.05 eV</span>, <span class="math display">\Delta E(OOH_{ads})\approx 0.53\times E(O_{ads})+3.18 eV</span></p>
+<p>or, after the approximate corrections [32] for the free binding energies and the stabilization by the interaction with water [32]:</p>
+<p><span class="math display">\Delta E(OH_{ads})\approx 0.50\times E(O_{ads})+0.04 eV</span>,</p>
+<p><span class="math display">\Delta E(OOH_{ads})\approx 0.53\times E(O_{ads})+3.33 eV</span></p>
+<p>suggesting the following general relationships:</p>
+<p><span class="math display">\Delta E(OH_{ads})=0.5\times E(O_{ads})+K_{OH}</span>,</p>
+<p><span class="math display">\Delta E(OOH_{ads})= 0.5\times E(O_{ads})+K_{OOH}</span></p>
+<p>in which the binding energy of atomic oxygen, DG(Oads), serves as a so-called descriptor, such that the equilibrium potentials of reactions (18)–(20) may all be written as a function of this single descriptor (again assuming that the binding energy itself does not depend on potential) [17]. The bad news about these “scaling relationships” is that they exclude the possibility of finding the optimal catalyst as defined by Eqs. (25)–(27). The scaling relationships basically fix the difference <span class="math inline">\Delta E(OH_{ads})-E(O_{ads})</span> at <span class="math inline">K_{OOH}-K_{OH} = 3.29</span> eV, whereas the optimal catalyst requires this difference to be <span class="math inline">2 \times C_{O} = 2.46</span> eV. This is the fundamental reason why the ORR has a non-zero overpotential, even for the best catalyst.</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_011.png" title="Note4Topic_011-100%" style="width:100.0%" /></th>
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_012.png" title="Note4Topic_012-100%" style="width:100.0%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 data-number="3.2.8.4" id="methods"><span class="header-section-number">3.2.8.4</span> Methods</h4>
+<figure>
+<img src="../img/Note4CHE_103.png" title="Note4CHE_103-100%" style="width:100.0%" alt="(a)氢和氧循环用于储能和转化; (b)与HER，OER，ORR和HOR相关的过电位方案; (c)阴离子交换膜电解槽方案; (d)碱性电解质中燃料电池的方案." /><figcaption aria-hidden="true">(a)氢和氧循环用于储能和转化; (b)与HER，OER，ORR和HOR相关的过电位方案; (c)阴离子交换膜电解槽方案; (d)碱性电解质中燃料电池的方案.</figcaption>
+</figure>
+<h5 data-number="3.2.8.4.1" id="e-orr-2"><span class="header-section-number">3.2.8.4.1</span> 4e-ORR</h5>
+<ul>
+<li>The reaction free energy of equations (9)–(12) (<span class="math inline">\Delta G_1</span>, <span class="math inline">\Delta G_2</span>, <span class="math inline">\Delta G_3</span>, <span class="math inline">\Delta G_4</span>) for ORR can be calculated using the following equations:</li>
+</ul>
+<p><span class="math display">\color{red} \Delta{G_1}=\Delta G_{OOH^*}-4.92\ (24)</span> <span class="math display">\color{red} \Delta{G_2}=\Delta G_{O^*}-\Delta G_{OOH^*}\ (25)</span> <span class="math display">\color{red} \Delta{G_3}=\Delta G_{OH^*}-\Delta G_{O^*}\ (26)</span> <span class="math display">\color{red} \Delta{G_4}=-\Delta G_{OH^*}\ (27)</span></p>
+<ul>
+<li><p>For ORR, the onset potential is calculated by <span class="math display">U_{ORR}^{onset}=-\max\{\Delta G_1,\Delta G_2,\Delta G_3,\Delta G_4\}=\min\{-\Delta G_1,-\Delta G_2,-\Delta G_3,-\Delta G_4\}</span> , Nørskov et al. developed a method to determine the overpotentials<span class="citation" data-cites="Man11C"><sup>[60]</sup></span>, <span class="math display">\eta^{ORR}=1.23-U_{ORR}^{onset}/e\ eV</span></p></li>
+<li><p>For OER, the onset potential is calculated by <span class="math display">U_{OER}^{onset}=\max\{-\Delta G_1,-\Delta G_2,-\Delta G_3,-\Delta G_4\}</span> , Nørskov et al. developed a method to determine the overpotentials<span class="citation" data-cites="Man11C"><sup>[60]</sup></span>, <span class="math display">\eta^{OER}=U_{OER}^{onset}/e-1.23\ eV</span></p></li>
+<li><p>An ideal catalyst should be able to facilitate water oxidation just above the equilibrium potential, but requires all the four charge transfer steps to have reaction free energies of the same magnitude at zero potential (i.e., 4.92 eV/4 = 1.23 eV).</p>
+<table>
+<thead>
+<tr class="header">
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_267.png" title="Note4CHE_267-100%" style="width:100.0%" alt="[57]" /></th>
+<th><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_004.png" title="Note4Topic_004-100%" style="width:100.0%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h5 data-number="3.2.8.4.2" id="for-2e-orr"><span class="header-section-number">3.2.8.4.2</span> For 2e-ORR</h5>
+<ul>
+<li><span class="math inline">\Delta G_1=\mu_{OOH^*}-\mu_*-\mu_{O_2}-1/2\mu_{H_2}=-256.6934+242.2713+9.9134+0.5*6.9110=-1.0532</span></li>
+<li><span class="math inline">\Delta G_2=-1.4-\Delta G_1=-1.4+1.0532=-0.3468</span></li>
+<li><span class="math inline">G_{OOH^*}=4.92+\Delta G_1=4.92-1.0532=3.8668</span></li>
+<li><span class="math inline">U_{ORR}^{limit}=-\max\{\Delta G_1,\Delta G_2\}=0.3468</span></li>
+<li>Limit Line: (3.52,0)-&gt;(4.22,0.7) -&gt;(4.92,0)</li>
+<li>In theory, an ideal catalyst should have a <span class="math inline">G_{OOH^*}</span> of 4.22 (<span class="math inline">\pm0.1</span>) eV.</li>
+</ul>
+<h3 data-number="3.2.9" id="fix-potential-and-ph"><span class="header-section-number">3.2.9</span> Fix-potential and pH</h3>
+<p><img src="../img/Note4CHE_049.png" title="Note4CHE_049" style="width:100.0%" /></p>
+<ul>
+<li><p><span class="citation" data-cites="Schwarz16PCCP"><sup>[23]</sup></span>Our result for water adsorption resolves the long-standing debate regarding the species adsorbed at the step edge, and it suggests that <strong>partially oxidized water likely plays a role in many of the reactions happening on the step edge</strong>, such as the hydrogen evolution reaction.14,15,50 Others have suggested that hydrogen binding energy12,14 changes with pH; this result illustrates that water oxidation rather than hydrogen binding energy explains the unexpected pH dependence.<strong>Therefore hydrogen adsorption on platinum step-edges is not a one-electron process</strong>.</p></li>
+<li><p>pH related to <span class="math inline">H^+</span> in solution regardless of substrate, so <span class="math display">G_{H^++e^-}=1/2G_{H_2}-RTln10\times pH=1/2G_{H_2}-2*pH</span> <span class="math display">G_{OH^-}=G_{H_2O(l)}-G_{H+}=G_{H_2O(l)}-(1/2G_{H_2}-RTln10\times pH)</span></p></li>
+</ul>
+<figure>
+<img src="../img/Note4CHE_058.png" title="Note4CHE_058" style="width:100.0%" alt="[36]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Li21JMCA"><sup>[36]</sup></span></figcaption>
+</figure>
+<ul>
+<li><span class="citation" data-cites="Li21JMCA"><sup>[36]</sup></span>As we know, the electrode surface in the electrochemical system is in electrical contact with an external circuit, which will result in a charged surface and greatly affect the OER activity.<span class="citation" data-cites="Nong20N"><sup>[61]</sup></span> In this section, we extend our study on the effect of applied potential. The average slopes, which are related to capacitance, are about 7.6 and 8.6 <span class="math inline">\mu</span>F/cm<sup>2</sup> on the positively charged side for LS and HS CoOOH, respectively.</li>
+<li><span class="citation" data-cites="Li21JMCA"><sup>[36]</sup></span>Obviously, the free energy will be very sensitive to the surface net charge. We find that the potential energy barrier decreases linearly with the increase of U for the <em>O/</em>OOH step in the hydroxide ion attack mechanism (Fig. 5(a)), while it is relatively constant over the potential for the <em>O</em>O / <strong>OO step in the intramolecular coupling mechanism (Fig. 5(b)), because there is one electron involved in the <em>O / </em>OOH step but no explicit electron transfer in the <em>O</em>O/</strong>OO step.</li>
+</ul>
+<figure>
+<img src="../img/Note4CHE_052.png" title="Note4CHE_052" style="width:100.0%" alt="Free energy evolution of WSe2 reacting with OH? in water at pH = 13.[22]" /><figcaption aria-hidden="true">Free energy evolution of WSe2 reacting with OH? in water at pH = 13.<span class="citation" data-cites="Shi19S"><sup>[22]</sup></span></figcaption>
+</figure>
+<p><img src="../img/Note4CHE_049.png" title="Note4CHE_049" style="width:100.0%" /></p>
+<ul>
+<li><span class="math inline">E=E_0+RT/(nF)ln[H+]\approx E_0-\times pH/n</span></li>
+</ul>
+<figure>
+<img src="../img/Note4CHE_044.png" title="Note4CHE_044" style="width:100.0%" alt="Figure 3 shows that ΔGOOH* decreases with the increase of pH, indicating that the adsorption of OOH* species on 2D biphenylene can be greatly enhanced in a strongly alkaline environment.[24]" /><figcaption aria-hidden="true">Figure 3 shows that ΔGOOH* decreases with the increase of pH, indicating that the adsorption of OOH* species on 2D biphenylene can be greatly enhanced in a strongly alkaline environment.<span class="citation" data-cites="Liu21JPCLa"><sup>[24]</sup></span></figcaption>
+</figure>
+<h3 data-number="3.2.10" id="xanes"><span class="header-section-number">3.2.10</span> XANES</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_124.png" title="Note4CHE_124-80%" style="width:80.0%" /></p>
+<h3 data-number="3.2.11" id="descriptor-varphizhou21jpcla"><span class="header-section-number">3.2.11</span> Descriptor <span class="math inline">\varphi</span><span class="citation" data-cites="Zhou21JPCLa"><sup>[45]</sup></span></h3>
+<p>The descriptor φ involving the TM site and its nearest neighboring N/O atoms was calculated as following: (3) <span class="math display">\varphi=\theta_d\times \frac{\chi_{aver}}{\chi_O}</span> . Here, <span class="math inline">\theta_d</span> refers to the valance electron number of the TM atom, <span class="math inline">\chi_{aver}</span> refers to the average electronegativity of the TM atom and its nearest neighboring N/O atoms, and <span class="math inline">\chi_O</span> refers to the electronegativity of the O atom.<span class="math inline">\chi_{aver}</span>is defined as <span class="math inline">(\chi_{TM}+n\chi_{N/O})/(n+1)</span>, where <span class="math inline">\chi_{TM}</span> and <span class="math inline">\chi_{N/O}</span> refers to the electronegativiti es of the TM and N/O atoms, respectively, and <span class="math inline">n</span> is the number of N/O atoms (in this work, n is 4).</p>
+<h3 data-number="3.2.12" id="other"><span class="header-section-number">3.2.12</span> Other</h3>
+<ul>
+<li>e<sub>g</sub>电子占据</li>
+</ul>
+<figure>
+<img src="D:/Qsync/dosbin/Manuals/blog/img/Note4CHE_185.png" title="Note4CHE_185-100%" style="width:100.0%" alt="[62]" /><figcaption aria-hidden="true"><span class="citation" data-cites="Zhang21S"><sup>[62]</sup></span></figcaption>
+</figure>
+<ul>
+<li><p>Evac-EBM</p></li>
+<li><p>SACs和Li-S物种之间的d-p杂化</p></li>
+<li><p>自旋<span class="citation" data-cites="Zhong21JACS"><sup>[63]</sup></span></p></li>
+<li><p>电偶极矩<span class="citation" data-cites="Wang20JACS"><sup>[64]</sup></span></p></li>
+<li><p>表面d电荷<span class="citation" data-cites="Zhu19NC"><sup>[65]</sup></span></p></li>
+<li><p>在这里，类似于金属的d带中心模型，各种电子性质，例如表面过渡金属离子的轨道填充（对于过氧化物）、金属阳离子的氧化还原电势（对于MN4型）、外电子数量（对于MN4型和氧化物）等也被用作ORR活性的描述符。</p></li>
+</ul>
+<h3 data-number="3.2.13" id="塔菲尔动力学fang14ac"><span class="header-section-number">3.2.13</span> 塔菲尔动力学<span class="citation" data-cites="Fang14AC"><sup>[66]</sup></span></h3>
+<ul>
+<li><p><strong>塔菲尔公式: 在研究过程中，塔菲尔发现如果金属电极的析氢过电势较低，析氢反应就容易发生，而有机物的还原反应就会受到抑制</strong>。为了寻求更加有效的电极材料，塔菲尔对<strong>Pt</strong>、<strong>Ni</strong>、<strong>Cu</strong>、<strong>Au</strong>、<strong>Bi</strong>和<strong>Sn</strong>等金属电极的析氢反应进行了系统地研究，得出如图<strong>1</strong>所示的在不同金属电极上电流与电势的关系。1905年，塔菲尔发表了题为“über die Polarisation bei kathodischer Wasserstoffentwicklung”（关于氢气阴极析出过程的极化研究）的文章[1]，在文章中首次提出了Tafel公式即：<span class="math display">\eta=a+b*log(i)</span>，其中<span class="math inline">\eta=U-U_0</span>，后面会得到<span class="math inline">b = 2.3RT/(\alpha F)</span>。<span class="math inline">\eta</span>为过电势，<span class="math inline">i</span>为电流密度，<span class="math inline">a</span>和<span class="math inline">b</span>为常数，其中<strong>b被称为塔菲尔斜率（Tafel Slope）</strong>，<span class="math inline">R</span>为气体常数，<span class="math inline">T</span>为温度，<span class="math inline">α</span>为电子转移系数，<span class="math inline">F</span>?为法拉第常数。通过对氢气的阴极析出过程的研究，塔菲尔使用上述经验公式第一次对电极动力学过程给出了定量的描述。</p></li>
+<li><p>塔菲尔方程是由实验总结得到的，实验测得的塔菲尔斜率b是多步电化学反应的表观数值，该斜率对应于表观电子转移数。大多数电化学反应涉及多个电子转移，因此表观电子转移数包含基元速控步骤rds（rate-determining step）的电子转移数α*和rds之前的步骤电子转移数n，因此overall reaction的塔菲尔斜率应该为<span class="math inline">b = 2.3RT/(\alpha^*+n)F)</span>。</p>
+<p>如果rds涉及1个电子转移的步骤，即α* = 0.5，则<span class="math inline">b = 2.3RT/(0.5+n)F)</span>；</p>
+<p>（1）n = 0，则b = 118 mV，在rds之前的步骤不涉及电子转移。</p>
+<p>（2）n = 1，则b = 40 mV，在rds之前的步骤电子转移数为1。</p>
+<p>如果rds涉及0个电子转移的步骤，即α* = 0，则b = (2.303RT)/(nF)；</p>
+<p>（1）n = 1，则b = 60 mV，在rds之前的步骤不涉及电子转移。</p>
+<p>（2）n = 2，则b = 30 mV，在rds之前的步骤电子转移数为2。</p>
+<ul>
+<li>举例HER说明，首先回顾HER的反应机理：</li>
+</ul>
+<p>Volmer step: <span class="math inline">H^+ + e^– + ^* → H^*</span> (1)</p>
+<p>Heyrovsky step: <span class="math inline">H^* + H^+ + e^– → H_2 + ^*</span>(2)</p>
+<p>Tafel step: <span class="math inline">2H^* → H_2 + 2^*</span> (3)</p>
+<ul>
+<li>根据文献Tafel slope数据分析，在<strong>0.5 M H2SO4</strong>中，Pt各个晶面的b 都为30 mV，由上述假设对应，则<span class="math inline">α^* = 0</span>，<span class="math inline">n = 2</span>；意味着在rds之前的步骤电子转移数为2。Volmer step、Heyrovsky step和Tafel step哪一个是速控步骤？因为<strong>α* = 0，不涉及电子转移的为速控步骤，很显然</strong>rds<strong>是</strong>Tafel step<strong>，在</strong>rds<strong>之前的步骤电子转移数为</strong>2<strong>，则</strong>rds<strong>之前的步骤是</strong>Volmer step<strong>。</strong>因此Volmer step：<span class="math inline">H^+ + e^– + ^* → H^*</span>，然后进行rds，Tafel step: <span class="math inline">2H^* → H_2 + 2^*</span>，合起来就是Tafel-Volmer机理。</li>
+<li>同理可分析在<strong>0.05 M H2SO4</strong>中，Pt(100)，<span class="math inline">α^* = 0.5</span>，<span class="math inline">n = 0</span>，Pt(100)的 HER机理是Heyrovsky-Volmer机理。Pt(110)的HER机理仍然是Tafel-Volmer机理，Pt(111)的HER机理可能是Heyrovsky-Volmer机理和Tafel-Volmer机理的混合。</li>
+<li>Pt的三种晶面在0.5 M H2SO4的b都为30 mV，<strong>H+浓度较高时，吸附活化H+不受限，活化氢在表面复合受限</strong>。Pt(110)在0.05 M和0.5 M的 H2SO4中的b都接近30 mV，说明Pt(100)对H+浓度不敏感。而Pt(100)对H+浓度敏感，低浓度时是Heyrovsky-Volmer机理，高浓度时是Tafel-Volmer机理。<strong>更本质的原因可能是不同晶面与氢表面键合的强弱不同，也可能是浓度引起了表面重构</strong>。</li>
+</ul></li>
+<li><p><strong>巴特勒沃尔默方程</strong>: 到1930年前后，Bulter巴特勒和Volmer沃尔默假设得电子或失电子的步骤均为基元步骤，并应用化学动力学中的<strong>过渡态理论和能斯特方程</strong>导出了电极过程动力学的基本方程——“巴特勒-沃尔默方程（B-V方程）”。</p>
+<p><img src="../img/Note4CHE_101.png" title="Note4CHE_101-80%" style="width:80.0%" /></p>
+<p>i<sub>fd</sub>是forward current density，i<sub>rev</sub>是reverse current density，i<sub>0</sub>是exchange current density。</p>
+<p>由B-V方程可知，<strong>电化学反应过程中只有部分电能能够引起电极电位的变化，并且过电势是电化学反应速率的调节器，通过控制过电势的大小可以实现电化学反应速率的几个数量级的变化。</strong></p></li>
+</ul>
+<h2 data-number="3.3" id="background"><span class="header-section-number">3.3</span> Background</h2>
+<h3 data-number="3.3.1" id="topic"><span class="header-section-number">3.3.1</span> Topic</h3>
+<ul>
+<li>化学中做物理<span class="math inline">\rightarrow</span>物理中做化学</li>
+<li>溶剂效应对光电的影响？<span class="citation" data-cites="Ping15PCCP"><sup>[67]</sup></span></li>
+<li>溶剂效应对2d材料带隙？</li>
+<li>Non-Metal-N4？</li>
+<li>双金属单层材料？单原子合金SAAC？</li>
+<li>恒电势模型下的单层材料支撑的双原子催化研究</li>
+<li>理解贵金属和非贵金属催化剂HOR之间的差异仍然是研究前沿</li>
+<li>Reviews for print:<span class="citation" data-cites="Xiao21AN"><sup>[68]</sup></span></li>
+<li>Fixd-potentail （自由能、过渡态））</li>
+<li>溶剂模型</li>
+<li>内嵌团簇全局搜索<span class="math inline">\rightarrow</span>配位效应<span class="math inline">\rightarrow</span><strong>电催化</strong></li>
+<li>理论预测如何扎实可信？</li>
+<li><strong>如何产生更多的缺陷？纳米管生长逆过程？缺陷距离的影响？</strong>, <strong>Jahn-Teller变形促进氧缺陷的形成 , 拉伸<span class="math inline">\rightarrow</span>缺陷</strong></li>
+<li>金属原子与缺陷耦合</li>
+<li>利用氢氟酸腐蚀出二维硼化物</li>
+<li>各个吸附物构型如何确定（<strong>top? bridge? OOH* ? COOH* O<sub>2</sub>? CO<sub>2</sub>?</strong>）</li>
+<li>M烯或S化物缺陷+SAC(SCC) 协同催化/界面， strain -&gt; Vac，缺陷的形成，缺陷的合并?</li>
+<li>增强碱性，OH-消除顶端H，增强共价键，不可脱附<br />
+</li>
+<li>影响因素： 距离、配位环境</li>
+<li>Borophane：bifunctional OE+ORR</li>
+<li>WCx 支撑Fe/Ni？ 嵌入？<span class="citation" data-cites="Li21NMa"><sup>[69]</sup></span></li>
+<li>氧化态控制？</li>
+<li>SAC 与团簇协同？</li>
+<li>主族元素利于CO脱附</li>
+<li>微动力学火山图？极化曲线？</li>
+<li>金属位点重构迁移？</li>
+<li><span class="citation" data-cites="Ju21NC"><sup>[37]</sup></span>筛选出了<strong>六种锚定在In2Se3单层上的过渡金属原子铁电催化剂</strong>，TM@In2Se3（TM = Ni、Nb、Pd、Re、Rh 和 Zr），其催化性能可以通过<strong>基于调整的d带中心和负载金属原子占据的铁电开关</strong>来控制,In2Se3上原子分散的过渡金属催化剂催化CO2还原具有<strong>低的极限电位和独特的铁电可控性质</strong>. (dipol+vaspsol+vdwD3)</li>
+<li>孪晶催化<span class="citation" data-cites="Huang21S"><sup>[70]</sup></span>（borophene晶界催化）</li>
+<li><span class="citation" data-cites="Schwarz16PCCP"><sup>[23]</sup></span>These <strong>stepped surfaces serve as model surfaces for the more common polycrystalline surfaces and nanoparticles</strong> which include similar step edges.<span class="citation" data-cites="Schwarz16PCCP"><sup>[23]</sup></span>Therefore <strong>hydrogen adsorption on platinum step-edges is not a one-electron process</strong>. If n electrons are transferred in Hupd, the electrode potential varies with pH as <span class="math inline">E=E_0+RT/(nF)ln[H+]</span> by the Nernst equation, where F is the Faraday constant, T is temperature, and R is the gas constant. At room temperature, <span class="math inline">RT/(nF)ln[H+]\approx-59</span> mV per pH, <strong>so that n&gt;1 results in a reaction potential relative to an absolute reference electrode that changes by less than 59 mV per pH</strong>. Relative to the RHE that shifts 59 mV per pH, this shift will be <span class="math inline">59-59/n</span> mV per pH. The partially oxidized water shifts the step-edge Hupd peak, and because the PZTC falls in the Hupd region, this consequentially shifts the PZTC<strong>. This explains why the PZTC of Pt is experimentally found to have nearly no shift with pH for the 111 surface (-1 mV per pH unit17), and a shift of 12 mV per pH unit for the 110 surface.18</strong> The charge on the water changes somewhat depending on the metal surface, but the phenomenon of partial oxidation is observed for all of these metal step edge sites.</li>
+<li>详细的表征和密度泛函理论（DFT）计算表明，原子分散的Pd催化剂的结构控制着<strong>H<sub>2</sub>的解离吸附模式以及亚苄基亚胺（BI）中间体的氢化途径</strong>，分别导致对Pd1/ND@G和Pd<sub>n</sub>/ND@G的不同产物选择性<span class="citation" data-cites="Liu21NC"><sup>[71]</sup></span>。</li>
+<li>M-N-C催化剂的稳定性、流失和修复<span class="citation" data-cites="Feng21NC"><sup>[72]</sup></span>？</li>
+<li>Bimetal+Coordination Engineering, 缺陷密度&lt;= 协同效应</li>
+</ul>
+<h3 data-number="3.3.2" id="tips-规律性的一两句话"><span class="header-section-number">3.3.2</span> Tips (规律性的，一两句话)</h3>
+<ul>
+<li>吸附太弱Volmer限速 ( <span class="math inline">H^++e^-{\rightarrow}H_{ads}</span>)，吸附太强Heyrovsky/Tafel( <span class="math inline">2H_{ads}{\rightarrow}H_2</span>/<span class="math inline">H^++H_{ads}+e^-{\rightarrow}H_2</span>)，需要<span class="math inline">\Delta G_H \approx 0</span>。火山型关系<span class="math inline">\rightarrow</span><strong>Sabatier原理</strong></li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>pH值会影响动力学势垒，进而影响交换电流密度，pH带来火山曲线的上下移动，不会左右移动，故其描述符仍有效。但<strong>未来建模要考虑计算电化学势垒的更详细和有效的方法</strong>（如氢氧根离子和水合氢离子的质子转移反应?）</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>影响催化活性因素：活性位点数量（如Coverage, MoS<sub>2</sub>边缘，增加活性位点数量<span class="math inline">\rightarrow</span>质量和或电荷输送的限制）、位点本征活性（动力学势垒、火山图）、传荷（金属性带隙、位点离电极距离以及此方向的电子迁移率）、·传质（HER产生质子？）。负载限制要求高本征活性,非贵金属催化剂TOF仍远低于Pt，<strong>研究活性要考虑稳定性</strong></li>
+<li>活性位类型：Vacancies and Holes,Topological defects (e.g., SW), Heteroatom dopping (e.g.，N,S,B,P), Metal atoms (M-N-C,M-C), Edge edfectts,</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>Pt酸性溶液下HER性能很好，但Pt太贵。<span class="citation" data-cites="Wang19JACS"><sup>[53]</sup></span>DFT预测2H项MoS<sub>2</sub>表面HER<span class="math inline">\Delta G_H\sim1.92</span> eV, 但Mo（10-10）边<span class="math inline">\Delta G_H\sim0.08eV</span> (<span class="math inline">\theta=50\%</span>)<span class="citation" data-cites="Hinnemann05JACS"><sup>[52]</sup></span>，MoS<sub>2</sub>边缘为HER活性位点。</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>HOR为HER倪反应，也要求<span class="math inline">\Delta G_H\sim0</span> ，如酸性溶液中Pt。但MoS<sub>2H</sub>OR很差，可能源于其<span class="math inline">\Delta G_H</span>对Coverage覆盖率依赖较强.HOR下非贵金属表面氧化(或OH化)影响活性。</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>使用RGO做载体导致更好的<strong>分散和减少的MoS2纳米颗粒的聚集</strong>，边缘位点数量增加和电荷传输增强（图3B）使得催化活性优异。锂离子嵌入到MoS2相变为1T增强HER，可能是由于边缘位增多和导电增强，也有人认为是1T的表面空位催化。</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>部分文献指出，对于碳基催化剂，其起始电位实际上会受到催化剂负载量的影响，<strong>催化剂高负载时高活性</strong>。</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>电极反应5个基本步骤分别是：<strong>传质-&gt;吸附-&gt;表面反应-&gt;脱附-&gt;传质</strong>，电极表面O<sub>2</sub>反应降低其浓度,O<sub>2</sub>充足时动力学控制(法拉第电流随着过电势增大而增大),缺O<sub>2</sub>时氧气传质控制。</li>
+<li><span class="citation" data-cites="Seh17S"><sup>[50]</sup></span>锌-空气电池的正极为空气电极，其充放电过程中要求电极具有优异的氧还原反应(ORR)和析氧反应(OER)活性，通常使用较为昂贵的<strong>铂碳和氧化铱、氧化钌</strong>等催化剂。单原子催化剂具有<strong>最大化的原子效率、高选择性和高负载</strong>等优点，表现出优异的催化能力,但表面自由能高，易团聚，尤其是高负载时。二维材料利于传质，大比表面积利于更多活性位点(如缺陷以及缺陷与SAC协同)，故二维材料是催化反应的理想载体。</li>
+<li>Pd不同的团聚形式(如单原子和团簇)<span class="math inline">\rightarrow</span>中间产物不同和反应路径不同<span class="math inline">\rightarrow</span>最终产物不同<span class="citation" data-cites="Liu21NC"><sup>[71]</sup></span>.(<em>SAC vs. SCC</em>)</li>
+<li><span class="citation" data-cites="Li21AAMIa"><sup>[73]</sup></span><strong>Co掺杂的双层介孔g-C<sub>3</sub>N<sub>4</sub></strong>单原子催化剂光催化析氢性能比原始g-C3N4高409倍以上。</li>
+<li><span class="citation" data-cites="He21AN"><sup>[74]</sup></span><strong>单原子空位构建自旋极化电场打破库仑场<span class="math inline">\rightarrow</span>高效水分解</strong>: 单原子 S 空位在 CdS 上引起的<strong>自旋极化电场</strong>极大地<strong>促进了电荷载流子的空间分离和定向转移</strong>以及<strong>活化表面和降低的反应势垒</strong></li>
+<li><span class="citation" data-cites="Yang21JACS"><sup>[75]</sup></span>M-N-C(如CuN<sub>4</sub>)是典型的催化位，而Cu-N<sub>3</sub>(H饱和1个N)的ORR催化活性会比CuN<sub>4</sub>更好<span class="citation" data-cites="Yang21JACS"><sup>[75]</sup></span></li>
+<li><span class="citation" data-cites="Sarwar21NE"><sup>[31]</sup></span>石墨烯负载硫代碲化钼的电催化剂(MoSxTey/Gr). S和Te共存<span class="math inline">\rightarrow</span>Mo优异的HER活性，一个负责活性位点，一个负责导电。（<strong>Hetero+doping</strong>,DFT: Cluster/graphene）</li>
+<li><span class="citation" data-cites="Guan21NC"><sup>[76]</sup></span> <strong>几何和电子结构中尺寸依赖的纠缠往往导致活性和选择性之间的权衡，限制了整体催化性能的优化.</strong>金NPs上精确控制的铂单层,铂的高活性是由于<strong>铂晶格膨胀和配体效应使铂5d带中心上升</strong>，而高选择性是由于在大颗粒上暴露更多的平台位点。(SAA)</li>
+<li><span class="citation" data-cites="Wan22JEC"><sup>[77]</sup></span>缓慢的水解离动力学<span class="math inline">\rightarrow</span>限制Pt 基碱性HER，Pt 基单原子合金催化剂 (SAAC)有水解位点<span class="math inline">\rightarrow</span>高效Pt 基碱性HER，<strong>金诱导拉伸应变设计Pt-Co SAAC的电子结构</strong>( Au@(PtCo0.05)<sub>x</sub> core–shell structures with SAC Co)，成功解决了HER中动力学和稳定性的问题。</li>
+</ul>
+<h1 data-number="4" id="transport"><span class="header-section-number">4</span> Transport</h1>
+<h2 data-number="4.1" id="methods-for-negf"><span class="header-section-number">4.1</span> Methods for NEGF</h2>
+<h3 data-number="4.1.1" id="computation-details-for-negf"><span class="header-section-number">4.1.1</span> Computation Details for NEGF</h3>
+<ul>
+<li><p><span class="citation" data-cites="Li15NC"><sup>[78]</sup></span>During the structure relaxations, <strong>all atoms in the molecule and the Au apexes were allowed to relax</strong>, while the surface Au atoms were frozen to their bulk Au(111) crystal structure positions (the plane of Au atoms nearest to the left of the simulation box). Relaxations were carried out <strong>for various electrode–electrode separations</strong> to identify the lowest energy geometry. The structure relaxations were carried out using the Vienna ab initio simulation package (VASP)<span class="citation" data-cites="Kresse94JPCM Kresse96PRB"><sup>[2,3]</sup></span> with the projector augmented-wave potentials47 and using the Perdew–Burke–Ernzerhof generalized gradient approximation (PBE-GGA)<span class="citation" data-cites="Perdew96PRL"><sup>[6]</sup></span>. (<strong>ATK+OpenMX</strong>)</p></li>
+<li><p>Optimization of all geometric structures is carried out within the framework of the density functional theory using the Vienna ab initio simulation package (VASP)<span class="citation" data-cites="Kresse94JPCM Kresse96PRB"><sup>[2,3]</sup></span> with the projector augmented wave (PAW )<span class="citation" data-cites="Kresse99PRB"><sup>[5]</sup></span> method. … After optimization, the subsequent spin-dependent transport properties of these systems were determined by using the <strong>NanoAcademic Device Calculator (Nanodcal)</strong><span class="citation" data-cites="Taylor01PRB"><sup>[79]</sup></span> software package, which adopts the density functional theory (DFT) combined with the Keldysh nonequilibrium Green’s function formalism (NEGF). In the transport calculations, the local spin density approximation (LSDA)38–40 describes the exchange-correlation potential, and the valence electronic orbitals are expanded in a double-<span class="math inline">\zeta</span> plus polarization (DZP) basis set for all atoms. <strong>The cutoff energy for the real space grid is set to 190 Ry</strong> and 1 × 100 × 1 k-points mesh is employed in the Brillouin zone for electrodes. The spin-dependent current through the scattering region is obtained by the Landauer-Büttiker formula<span class="citation" data-cites="Buttiker85PRB"><sup>[80]</sup></span>:</p>
+<p><span class="math display">I_\sigma(V)=\frac{e}{h}\int_{\mu_L}^{\mu_R}T_{\sigma}(E,V)[f_L(E-\mu_L)-f_R(E-\mu_R)]dE</span></p>
+<p>here, <span class="math inline">h</span> and <span class="math inline">e</span> are Planck’s constant and the charge of one electron, respectively. <span class="math inline">\sigma</span> is <span class="math inline">\uparrow</span> (spin up) and <span class="math inline">\downarrow</span> (spin down), <span class="math inline">T_{\sigma}(E,V)</span> are spin-resolved transmission functions defined as:</p>
+<p><span class="math display">T_{\sigma}(E,V)=Tr(\Gamma_{L,\sigma}G_{\sigma}^R\Gamma_{R,\sigma}G_{\sigma}^A)</span></p>
+<p>where <span class="math inline">\Gamma_{L/R,\sigma}</span> is the coupling matrix; <span class="math inline">G_{\sigma}^{R/A}</span> are the retarded and advanced Green’s functions of the scattering region, respectively. The transmission coefficient represents the probability that electrons at an energy <span class="math inline">E</span> pass through the scattering region. <span class="math inline">f_{L/R}=\frac{1}{1+e^{(E-\mu_{L/R})/k_BT}}</span> are Fermi-Dirac distribution function of the left/right electrodes. <span class="math inline">\mu_{L/R}</span> are electrochemical potentials of the left/right electrodes, and the difference between them is <span class="math inline">eV=\mu_L(V)-\mu_R(V)</span> at a given bias <span class="math inline">V</span>. For all practical purposes, the equilibrium Fermi level ( <span class="math inline">E_f</span> ) is zero in the two-probe system. The electrochemical potential of the right electrode has no shift for all bias, <span class="math inline">\mu_R(V)=0</span> . Just the Fermi energy of the left electrode shifts according to the bias. Therefore, the Fermi energy of the right electrode and scattering region is always zero. Thus, <span class="math inline">[-eV, 0]</span> is the energy bias window (EBW), which means the energy region contributing to the current integral.</p></li>
+<li><p>The valence electrons were expanded in double-z plus polarization (DZP) basis set for B and Sr atoms, and single-z plus polarization (SZP) basis set for Au atoms. The Hamiltonian and electronic densities are evaluated in a real space grid defined with a plane-wave cut-off energy of 150 Ry<span class="citation" data-cites="An16PCCP"><sup>[81]</sup></span> (NanoDcal/PBE).</p></li>
+<li><p>The single-<span class="math inline">\zeta</span> with a single polarization basis set was employed for Au atom and the double-<span class="math inline">\zeta</span> basis functions with a single polarization for othe atoms, which is comparable to well-converged plane wave basis set<span class="citation" data-cites="Taylor01PRB Brandbyge02PRB"><sup>[79,82]</sup></span>. The energy cutoff was set to 150 Ry, which is enough for Au electrode system<span class="citation" data-cites="Huang0SA"><sup>[83]</sup></span>.</p></li>
+<li><p><span class="citation" data-cites="Zhao13JCP"><sup>[84]</sup></span>We have <strong>first optimized the isolated Na@C60C60<span class="citation" data-cites="F"><sup>[<strong>F?</strong>]</sup></span>, Na@C60C60, and F@C60C60 molecules</strong> by using the DFT method. The ground state of Na@C60C60<span class="citation" data-cites="F"><sup>[<strong>F?</strong>]</sup></span>, Na@C60C60, and F@C60C60 are found to be singlet, doublet, and doublet, respectively. These <strong>optimized molecules are then sandwiched between two electrodes to construct the molecular junctions</strong>, as schematically illustrated in Fig. 1. <strong>Such structures can be achieved by the lithographic mechanically controllable break junction (MCBJ) method</strong>.<span class="citation" data-cites="Martin08JACS"><sup>[85]</sup></span> The concrete process can be realized as follows: one can first fabricate the break junction on substrates by the electron beam lithography, then deposit the molecules of interest using self-assembly. Also, it is possible to suspend the molecules in a scanning tunneling microscope (STM) junction for the transport measurement.<span class="citation" data-cites="Schull11NN Schull09PRL"><sup>[86,87]</sup></span> The models M1, M2, and M3 correspond to Na@C60C60<span class="citation" data-cites="F"><sup>[<strong>F?</strong>]</sup></span>, Na@C60C60, and F@C60C60 junctions, respectively. Each junction is divided into three regions, namely, the left electrode, the right electrode, and the scattering region. In our studied systems, the atomic scale Au (100) nanowires are modeled as the semi-infinite left and right electrodes and <strong>each atomic layer in the electrodes contains 5 or 4 Au atoms.27–31</strong> The scattering region involves the central molecule and portions of two electrodes to take into account the moleculeelectrode coupling and the electrode screening effect, while the remainder of the electrodes is described by bulk parameters. <strong>The distance between the left and right electrodes for all of the studied models is fixed at 22.45 Å, which corresponds to the lowest energy for pure C60 dimer junction.</strong>13 Interactions from the adjacent neighbors are hindered by large supercell dimensions (20 Å) in the plane perpendicular to the transport direction. <strong>The whole system is relaxed again until the maximum absolute force on each atom is less than 0.05 eV/Å while the electrode Au atoms are kept fixed</strong>. It has been demonstrated that the influence of the bias voltage on the geometry is negligible when the bias voltage is smaller than 1.0 V.34,35 Therefore, we do not take into account the structural changes induced by the bias voltage.</p></li>
+<li><p>(ATK)The Troullier-Martins nonlocal pseudo-potential<span class="citation" data-cites="Troullier91PRB"><sup>[88]</sup></span> and <strong>a double-ζ plus single polarization basis</strong> set are adopted to describe the core and the valence electrons of all the atoms, respectively, except <strong>a single-ζ plus single polarization basis set</strong> is adopted for Au atoms to achieve a balance between accuracy and computation loading. The Brillouin zone of the electrode is sampled by a 1 × 1 × 100 k-point mesh within the Monkhorst-Pack scheme. The nonlinear current through the molecular device is calculated by integrating the transmission function T (E, V ) within the energy bias window [μL, μR] using the Landauer-Bütiker formula<span class="citation" data-cites="Buttiker85PRB"><sup>[80]</sup></span></p></li>
+</ul>
+<p><span class="math display">I_\sigma(V)=\frac{2e}{h}\int_{\mu_L}^{\mu_R}T_{\sigma}(E,V)[f_L(E-\mu_L)-f_R(E-\mu_R)]dE</span></p>
+<ul>
+<li>where <span class="math inline">e</span> is the electron charge, <span class="math inline">h</span> is the Planck’s constant, <span class="math inline">f_{L/R}=1/[1+e^{(E-\mu_{L/R})/k_BT}]</span> is the Fermi-Dirac distribution function, <span class="math inline">\mu_{L/R}(V)=E_F\pm eV/2</span> is the electrochemical potentials of the left/right electrode, while the average Fermi level <span class="math inline">E_F</span> of the system is set to zero in our calculations for facilitating the discussions. Therefore, <strong>the energy bias window is in fact [−eV/2, + eV/2]</strong>. The case where the left (right) electrode is the anode (cathode) is defined as the application of a positive bias. And we also must point out that the electronic transport mechanism in NEGF + DFT method is <strong>coherent ballistic</strong>, which is more applicable to <strong>the low-bias voltage regime (usually not beyond 1.0 V)</strong>.</li>
+<li>(NanodCAL)Standard norm-conserving nonlocal pseudopotentials<span class="citation" data-cites="Troullier91PRB"><sup>[88]</sup></span> are used to define the atomic cores, a <em>s</em>, <em>p</em>, <em>d</em> double-<em>ζ</em> plus polarization (DZP) linear combination of atomic orbital basis set<a href="https://aip.scitation.org/doi/10.1063/1.4890010#">33</a> is used to expand physical quantities.</li>
+<li>Around the contact distance, the tip induced structure relaxations15 could affect our results, which were neglected to reduce the computational load. The spin transport calculations were performed by the Nanodcal code,25 based on the nonequilibrium Green’s function method and density functional theory, within the local-density approximation. Valence electrons were described by a double-ζ plus polarization basis set for the H, C, and N atoms and a double-ζ basis set for Co and Mn atoms.</li>
+<li></li>
+</ul>
+<h3 data-number="4.1.2" id="nanodcal计算流程"><span class="header-section-number">4.1.2</span> Nanodcal计算流程</h3>
+<ol type="1">
+<li>VASP优化中间分子器件（<code>pps4v opt_nd</code>）（P.S. <code>nd/huge</code>自动包含<code>vdw</code>）</li>
+<li>VASP优化表面结构(一般<strong>fix4-5层/free2层</strong>), （<code>pps4v opt_nd</code>）</li>
+<li>使用VMD<strong>分子两侧接触原子沿着z方向</strong> (<strong>mualign 3 4 z</strong>)，并将分子放在表面上，在Device Studio使用镜像法创建右电极</li>
+<li>移动分子使其距离2电极距离约为2.0和3.0 <span class="math inline">\AA</span> (<code>nshift</code>), 固定电极，优化分子（<code>pps4v opt_huge</code>）,或者使左右距离均为3<span class="math inline">\AA</span>, 使用<code>pps4v test_nd[_opt]</code>优化分子与左电极之间的距离。</li>
+<li>优化分子与右电极之间的距离(<strong>可仅弛豫分子</strong>)(<code>pps4v test_nd[_opt]</code>,Relaxation Range选分子范围)</li>
+<li>找到右侧最佳距离后再用VASP优化分子(左右各2层电极层可固定或弛豫)(<code>pps4v opt_nd</code>)</li>
+<li>将结构放入Device Studio，观察<strong>是否需要增加缓冲层</strong>。设置任务，在Linux中提交：<code>ndin vlist[_vgate]</code></li>
+</ol>
+<h3 data-number="4.1.3" id="nanodcal-tips"><span class="header-section-number">4.1.3</span> NanoDcal Tips</h3>
+<h4 data-number="4.1.3.1" id="kpoint"><span class="header-section-number">4.1.3.1</span> Kpoint</h4>
+<ul>
+<li><p><code>calculation.k_spacegrids.number=[a b c]</code></p></li>
+<li><p>电极自洽时，周期方向K点取多（10左右），真空方向K点取1。输运方向K点取较多，一维体系K点建议取到100，二维和三维体系，K点建议取10左右.</p></li>
+<li><p>做中心区自洽时，周期方向K点取多（10左右），输运和真空方向K点取1；做Transmission计算时，周期方向K点取很多（100以上），输运和真空方向K点取1</p></li>
+<li><p>a/b/c设为2的次方或尽量能被2整除多次</p></li>
+<li><p>grids.number和体系的 super lattice 长度成正比。一般 0.1 埃一个点差不多了</p></li>
+<li><p><code>calculation.realspacegrids.E_cutoff</code>与此参数二选一，E_cutoff不是vasp里面的平面波截断，而是原子轨道线性组合（LCAO） 方法的截断，一般默认在50—120Hartree（或者3000eV左右）</p></li>
+</ul>
+<h4 data-number="4.1.3.2" id="电极长度"><span class="header-section-number">4.1.3.2</span> 电极长度</h4>
+<ul>
+<li>输运方向上完全周期性，没有用电器的不计算</li>
+<li>电极在输运方向是周期性的 (半无限结构)</li>
+<li>若电极不够长，Nanodcal能够自动进行拓展电极计算</li>
+<li>单倍长的电极零口实际 (自动拓展) 长度的电极是一致的</li>
+</ul>
+<h4 data-number="4.1.3.3" id="缓冲层"><span class="header-section-number">4.1.3.3</span> 缓冲层</h4>
+<ul>
+<li>缓冲层起到屏蔽中心区和电极的作用</li>
+<li>若缓冲层不够长，起不到完全的屏蔽作用，若缓冲层太长，原子数增多计算量会增大 *可以通过势函数的平缓程度来判断缓冲层长度是否台适</li>
+<li>经验值：金属3~4个原子层；自旋体系6~8个原子层; 掺杂半导体8~10甚至更多个原子层。 (具体要根据实际来测试〕</li>
+</ul>
+<h4 data-number="4.1.3.4" id="收敛问题"><span class="header-section-number">4.1.3.4</span> 收敛问题</h4>
+<ul>
+<li>首先检查体系台理性; <code>nanodcal -snucturce scf.input</code></li>
+<li>降低收敛精度</li>
+<li>提高E_cutoff值, 保证截断能 (网格密度) 足够</li>
+<li>确保Buffer layer是不是足够长</li>
+<li>茌进行高偏压下非平衡态计算的时候，可以用低偏压下已经收敛的结果</li>
+<li>逐渐调小minrate值，看能否强制收敛,如果多次尝试都不行，往往是因为这个点有点共振态或其他物理。可以通过计算一下更小范围内的相邻点(如0.8调为0.79/0.81)</li>
+<li>用<code>calculaton.SCF.MixMethod=Linear</code>,先算50步; 看看HMatrix的收敛效果; 跑完Linear后，看看结果， 再改其它的mixMethod（一般是先Linear，再Pulay方法）</li>
+<li>对于非平衡态输运计算，不收敛的时候可以尝试修改修改围道积分能量点数目(calculation.complexEcontour.numberOfPoints)</li>
+<li>对于金属电极，将温度(<code>calculation.occupationFunction.temperature</code>)升高有助于加速收敛</li>
+<li>可以不设置 bandenergy 这个参数的收敛精度值。此外，对于大体系，这个值很难 收敛；对于小体系，建议设置该参数的收敛精度值。</li>
+</ul>
+<h4 data-number="4.1.3.5" id="其它参数"><span class="header-section-number">4.1.3.5</span> 其它参数</h4>
+<ul>
+<li><code>calculation.occupationFunction.temperature</code>不是体系真实的物理温度，而是指电子所遵循的费米一狄 拉克分布时费米分布函数中的温度，但左右电极和中心区“温度”应该是一样的</li>
+<li>在 SCF 电极的时候，将两个电极的 calculation.occupationFunction.temperature 设 置 不 同 ， 两 者 之 差 就 是 温 差 。 例 如 ： lead1： <code>calculation.occupationFunction.temperature = 100</code>；lead2 ：<code>calculation.occupationFunction.temperature = 200</code>；温差为100K</li>
+<li>栅极门电压在 Nanodcal 中就是求解给定边条件的泊松方程。Nanodcal 中 system是放在一个平行六面体中的。为了简单起见，以长方体为例，假设一个中心区大 小为 Lx<em>Ly</em>Lz，输运方向是 z 方向。在这种情况下，栅极电压不能加在 left 和right，这是因为该方向是输运方向，用来加偏压；如果栅极电压加在 top 和 bottom， 这表示将栅极电压加在 y 方向，根据手册说明，top 是[0,1,0]，bottom 是[0,-1,0]，定义了中心区中的两个面（其中 top 是 y=Ly 的面，bottom 是 y=0 的面），因此 设定栅极电压相当于在这个边界面上给出一个固定的电势值，代入到泊松方程中求解系统的电势分布。注意如果要在系统中加入栅极电压，必须在相应的方向有足够的真空层，系统最 好是放在两个面的中间。以上面的例子来说，所有的原子最好放在 y=Ly/2 附近，距离 y=Ly 和 y=0 这两个面都大于 10 Bohr 以上。加上栅极电压以后，相应方向的周期性就没有了，所以需要足够真空层让 电势过渡到真空能级。</li>
+<li>结构不是参数设置说明书中的0D,1D,2D,3D，而是自定义结构，自己设置的K点。我 们 需 要 自 己 定 义 ：bandStructure.crytalStructure= ’newstructure’ ； 并 手 动 输 入 高 对 称 点 坐 标 ： coordinatesOfTheSymmetryKpoints = {’ ’ ’ ’ ’ ’ ’ ’}</li>
+<li>体系没有收敛，想继续算怎么设置？在scf.input输入文件中添加调用参数：calculation.SCF.donatorObject= ；并将上 一步计算结束时生成的Nanodcalobject.mat文件整体赋值给该参数。</li>
+<li>任务在计算过程中因为停电等原因中断了，是否可以续算？<code>：nanodcal -resume scf.input</code></li>
+<li>计算 PDOS，需设置参数<code>whatprojected</code>。即：<code>calculation.densityOfStates.whatProjected = 'Orbital'</code>；根据投影方式可供选项有：<code>'None', 'Atom', 'Orbital', 'Ell'</code>。</li>
+<li>计算输出的transmission 图怎么解释？是只看<code>energy=0</code>处么？若计算的是平衡态下的 transmission，只需看费米能级附近即可；若是非平衡态下，则需要分析偏压窗口内的 transmission 值。（每个能量下的平均透射系数）</li>
+<li>Nanodcal 计算出的结果是透射系数 T。如果系统是自旋极化的，则自旋极化电导为 <span class="math inline">G_s=e^2/h*T_s</span>；如果系统是非自旋极化的，电导为 <span class="math inline">G=2e^2/h*T</span>。（Nanodcal中.mat 文件均采用原子单位制。）</li>
+<li>光电流就是原子单位下的光电流，此处所谓的“实际的光电流”只需进行单位转换成常用单位制下的电流。换算公式见教程。</li>
+<li><code>calculation.photocurrent.partitionScheme={{253:420},{421:588}}</code>:这表示在整个体系有 588 个原子，left electrode 方向未被照射原子的原子序号为{253:420}，right electrode 方向未被照射的原子的原子序号为｛421：588｝，辐射区域是原子序号为｛1：252｝的所有原子。Nanodcal 默认照射区域为整个中心区。原子序号是指检查结构后生成的 Atoms.xyz 文件中原子排列的顺序</li>
+<li>对给定的某个电极，光电流也有正有负，这个怎么理解？正负是代表方向还是具体电子结构决定的？光电流的方向定义是指 lead 指向 center regio如果电流从电极到中心区为正 ，那么电流从中心区到电极就为负.计算出的光电流只包含由光照引起的电流。同一个 Lead 有正负也是可能出现的。偏振角度不同，或者在不同电压下，光电流的流向不一样也是可能的。因为计算光电流过程中有一个特殊的效应 photogalvanic effect，会引起光电流方向的改变。如果 two probe 体系具有“非空间 反演对称性”，则光电流的方向将会随光的偏振角度发生改变。</li>
+<li>Nanodcal 已实现声子谱、有效质量的计算,迁移率还在内测。</li>
+<li>电极半无限长主要由计算表面格林函数的算法决定，另外器件中电极长度远大于中心区，可以近似考虑为无限长。器件的电极由超胞组成，周期性地延伸到无穷远处。我们将若干层电极原子结构延伸入中心散射区 C 内，这使得电极和中心区在边界处保持各种物理量的连续。在 Nanodcal 中，我们假设电极无限长这样就可以通过 DFT 方法求解出电极的哈密顿量。计算之后，将无限长的电极 截断成半无限长的电极，并将电极表面的电势<span class="math inline">V_s(x,y)</span>保存起来，其中下标s表示电极和中心区在 z 方向的边界。为了使得输运体系电极加电压之后还是一个等势体，电极必须是金属或者金属性的材料。换句话说，当在电极上加上一个电压，此时整个电极的电势必须严格的平移相应的电压值。因此，在 Nanodcal 计算中，无论是否加偏压，电极的哈密顿量都可以用第一部分讲到的传统的 DFT 进行计算。</li>
+<li>在计算二维材料的输运时，自旋方向为垂直二维平面方向，怎么加这个自旋？这个材料为铁磁态。需要明确是哪一类的二维材料，加自旋轨道耦合时，需要设置为 generalspin；而对不需要自旋轨道耦合普通的铁磁态二维材料时，只需要设置 collinearspin，此时的自旋取向并没有具体意义，只存在自旋多态和自旋少态。设置 generalspin 时.xyz 文件里分别指定 spinpolarization_x,y,z，让其中一个分量比如 spinpolarization_z 设为某个值，其他两个分量为零，z 为垂直平面的方向。</li>
+<li>在 Nanodcal 搭建器件的时候，遇到电极被扩胞了 2 倍，计算量会不会加大？ 这个重复本身不增加任何计算量。造成重复的原因是基组的截断比较长，长的基 组使得计算量增加。通过扩大导线单胞的办法，可以让 lead 不重复，但不减少任 何计算量。只有改变基组，才能减少计算量；但是修改基组是一个大任务，若不 是计算量大到不可接受的情况，不建议做该项工作。</li>
+<li>前的计算都是在相干输运的范畴内进行的，电声耦合属于非相干输运范畴，考虑它得进行非相干输运计算。</li>
+<li>如果lead的精度设置比中心区高很多，是否会影响中心区的收敛？不会。应该说，精度越高越有利于中心区收敛，而且推荐导线高精度。</li>
+<li>如何对Nanodcal的带隙进行校正？ 用与 vasp 相同的泛函优化 Nanodcal 的基组。 原理上：vasp 是平面波基组，具有完备性；Nanodcal 采用的原子轨道基组。因为 原理上 vasp 更加准确，所以 Nanodcal 优化基组时，是参照 vasp 的计算结果或 Win2K 的全电子计算结果；或对体系进行+U/+C 计算。</li>
+<li>使用金属做导线，半导体做中间材料的器件结构在0V下比全部使用半 导体做器件更难自洽，这个问题怎么解决？ 在平衡态下，这是正常的。金属确实比纯半导体难收敛一些。但是在非平衡态下 会逐渐好起来。不过整体上不会太难，你认真检查一下自己的结构，用 pulay 之 类的 mix，体系不大的话，应该在 100 步左右能收敛。</li>
+<li>本征半导体做导线不算，是不是可以理解成Si的本征半导体最好不要做电极？或者黑磷材料也是半导体，应该不能用纯的黑磷做电极？是的。计算非平衡态性质时，本征 BP 不要用。那么说只要是半导体的话如果要成为电极，也可以掺杂？是的。</li>
+</ul>
+<h2 data-number="4.2" id="discussion-1"><span class="header-section-number">4.2</span> Discussion</h2>
+<h3 data-number="4.2.1" id="iv曲线和整流效应"><span class="header-section-number">4.2.1</span> IV曲线和整流效应</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_005.png" title="Note4Topic_005-100%" style="width:100.0%" /></p>
+<ul>
+<li><span class="citation" data-cites="Zhao13JCP"><sup>[84]</sup></span>Figure 2 describes the dependence of current I on bias voltage V (I-V curve) within bias range (−0.7, 0.7 V) for three models. From the figure, one can see that the <strong>transport properties are strongly dependent upon the species inside the fullerene and two distinct features</strong> in the evolution of current are clearly visible: First, M1 and M2 display metallic I-V characteristics, while the current is nearly zero for M3 in the whole bias range. Second, for all three models the I-V curves are not symmetrical with respect to the positive and negative bias. However, the degree of asymmetry for I-V curve is different in three models, among which M2 has the highest asymmetry. The bias-dependent rectification ratio, defined as R(V ) =|I−/I+|, is presented in the inset of Fig. 2, where <strong>I+ and I− are the currents under the positive and negative</strong> bias, respectively.</li>
+<li>There is no rectification if R(V ) = 1, and it is forward (reversed) rectification if R(V ) &lt; 1 (R(V ) &gt; 1). As can be seen that M1 and M2 show forward rectification at the low bias region (V&lt;0.3 V) and after that they are reversed up to the applied bias 0.7 V. On the contrary, until 0.2 V, M3 reveals reversed rectification, and then it is forward rectification. It is evident that M2 shows the best rectifying with the maximum rectification ratio of ∼48 at ±0.6 V, while the maximum rectification ratio is quite small in M1 (∼0.31 at ±0.3 V) and M3 (∼0.24 at ±0.6 V).</li>
+<li><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_009.png" title="Note4Topic_009-100%" style="width:100.0%" /></li>
+</ul>
+<h3 data-number="4.2.2" id="transmission"><span class="header-section-number">4.2.2</span> Transmission</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_006.png" title="Note4Topic_006-100%" style="width:100.0%" /></p>
+<ul>
+<li>As the current is obtained by integrating the transmission spectrum within the energy bias window, to explain the above I-V characteristics, we calculate the bias-dependent transmission spectra for M1 at 0, ±0.3 V, M2 and M3 at 0, ±0.6 V, respectively, as shown in Figs. 3(a)–3(c). In the figure, we indicate with dashed horizontal lines the electrochemical potentials of two electrodes at a finite bias.</li>
+<li>When the bias is applied, the system is driven out of equilibrium and the electrode electrochemical potential changes and the transmission peaks will shift in energy. However, the shift is completely different for three models. For M1, <strong>when positive bias increases, all transmission peaks shift downwards; when negative bias increases, these transmission peaks above the EF shift upwards slightly, while others below the EF shift downwards obviously.</strong> Clearly, there is a comparable transmission integral within the energy bias window at ±0.3 V, resulting in a small rectification ratio. For M2, with an increase of positive bias, all transmission peaks are depressed dramatically, and these transmission peaks within energy range (0.2, 0.4 eV) at equilibrium state shift upwards and move out of the energy bias window at 0.6 V, while others shift downwards. In the meantime, all transmission peaks shift upwards as negative bias increases and two peaks around 0.2 and 0.4 eV are enhanced significantly at −0.6 V. As a result, the covering area within the energy bias window of −0.6 V is much larger than that of 0.6 V in the case of M2, leading to a large rectification ratio of ∼48. For M3, no matter what bias increases, all transmission peaks shift downwards and move out of the energy bias window. Since there is no any transmission peak within the energy bias window, the current through M3 is nearly zero and the rectification ratio is also very small in M3.</li>
+</ul>
+<h3 data-number="4.2.3" id="pdos"><span class="header-section-number">4.2.3</span> PDOS</h3>
+<ul>
+<li>We interpret the origin of these transmission peaks and their different shift with the applied bias in terms of energy alignment using a possible scheme based on analysis of the projected density of states (PDOS). In Figs. 4(a)–4(c),this is presented for left (purple line) and right (orange line) C60 moieties of M1 at 0, ±0.3 V, M2, and M3 at 0, ±0.6 V, respectively. The positions of corresponding molecular projected self-consistent Hamiltonian (MPSH)28,39 orbital eigenvalues are marked by blue circles, which match well with the PDOS peaks. For M1, from Fig. 4(a), one can see that the <strong>left C60 moiety contributes to the three PDOS peaks within 0–0.5 eV, while the three PDOS peaks within −0.15–0 eV are the contributions of right C60 moiety at equilibrium state</strong>.</li>
+</ul>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_007.png" title="Note4Topic_007-100%" style="width:100.0%" /></p>
+<ul>
+<li>Clearly, the transmission peaks around the EF originated from these PDOS peaks (see the left panel of Fig. 3(a)). Since there is no any overlap between these two sets of PDOS, the corresponding transmission peaks are very weak. <strong>When positive bias increases, all PDOS peaks shift to lower energies</strong>, while the PDOS peaks of left (right) C60 moiety shift to higher (lower) energies slightly (obviously) with the negative bias increasing. owever, there are always obvious PDOS peaks (corresponding to MPSH orbitals 244 and 245) of left C60 moiety within the energy bias window, resulting in a comparable transmission integral at ±0.3 V and a small rectification ratio. As shown in Fig. 4(b), for M2, there are considerable overlaps between the PDOS of left and right C60 moieties around 0.08 and 0.35 eV at equilibrium state (corresponding to MPSH orbitals 241 and 244), resulting in two obvious transmission peaks at corresponding energy (see the middle panel of Fig. 3(b)). With an increase of positive bias, the PDOS peaks of left (right) C60 moiety shift downwards (upwards) significantly. Thus, there is no longer any overlap between them within the energy bias window and the transmission peaks are then weakened remarkably. On the contrary, all PDOS peaks shift upwards with the negative bias increasing and they overlap more considerably around 0.2 and 0.4 eV (corresponding to MPSH orbitals 241 and 243), leading to two heightened transmission peaks at corresponding energy. As a result, a big rectification ratio appears. As shown in Fig. 4(c), for M3, no matter what bias increases all PDOS peaks shift to lower energies and move outside the energy bias window, resulting in no any transmission within the energy bias window and a weak rectification.</li>
+</ul>
+<h3 data-number="4.2.4" id="mpsh-nanodcal"><span class="header-section-number">4.2.4</span> MPSH (NanoDCAL?)</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_008.png" title="Note4Topic_008-100%" style="width:100.0%" /></p>
+<ul>
+<li>The changes in strength of transmission peaks with an increase of bias in M2 can be seen more intuitively from the spatial distribution of the corresponding MPSH orbital.29,40 As shown in Fig. 5, we present the spatial distributions of five MPSH orbitals (240–244) around the EF at 0 and ±0.6 V, respectively. At equilibrium state, orbitals 240, 242, and 243 are strictly localized on one of the C60 moieties, while 241 (244) is mainly localized on the left (right) C60 moiety with a few extensions on the right (left) C60 moiety, resulting in two obvious transmission peaks around 0.08 and 0.35 eV. When 0.6 V bias is applied, all five orbitals strictly confine to one of the C60 moieties, causing the transmission peaks to be strongly suppressed. In the case of −0.6 V, orbitals 241 and 243 are almost delocalized on the whole fullerene dimer, leading to two heightened transmission peaks around 0.2 and 0.4 eV.</li>
+</ul>
+<h3 data-number="4.2.5" id="pathways"><span class="header-section-number">4.2.5</span> PathWays</h3>
+<p><img src="D:/Qsync/dosbin/Manuals/blog/img/Note4Topic_010.png" title="Note4Topic_010-100%" style="width:100.0%" /></p>
+<h3 data-number="4.2.6" id="扩散系数"><span class="header-section-number">4.2.6</span> 扩散系数</h3>
+<ul>
+<li>Li/Na 原子的反应速率 <span class="math inline">k</span> 可以用过渡态理论来描述<span class="math display">k(T)=\nu^*\exp(-\frac{E_a}{k_BT})</span> 其中 <span class="math inline">E_a</span>为扩散活化能，<span class="math inline">k_B</span> 和 <span class="math inline">\nu^*</span>分别为玻尔兹曼常数和尝试频率(<span class="math inline">10^{13}</span> Hz)，<span class="math inline">T</span> 分别为环 境温度。CINEB 方法采用 0-K 迁移势垒来描述动力学扩散系数，因此熵的变化可以忽 略，并且自由能近似为 0-K 活化能(Ea)。然后将扩散系数(D)量化为<span class="citation" data-cites="VanderVen08PRB"><sup>[89]</sup></span>， <span class="math display">D=l^2*k(T)</span>,其中 <span class="math inline">l</span> 表示 Li/Na 扩散路径的距离。(<span class="math inline">\nu^* =\frac{\prod\limits_i^{3M}\mu_i}{\prod\limits_j^{3M-1}\nu_j^{\textrm&#39;}})</span> (<strong>???</strong>)</li>
+</ul>
+<h2 data-number="4.3" id="background-1"><span class="header-section-number">4.3</span> Background</h2>
+<h3 data-number="4.3.1" id="topics"><span class="header-section-number">4.3.1</span> Topics</h3>
+<ul>
+<li>硼墨烯旋转角调节性质<span class="citation" data-cites="Ge22NCM"><sup>[90]</sup></span>？</li>
+<li>增加整流比方法: 分子不对称/接触不对称/门电压</li>
+<li>电场+掺杂<span class="math inline">\rightarrow</span>调制热电，<span class="citation" data-cites="Chang21PCCP"><sup>[91]</sup></span></li>
+<li>High Thermoelectric Performance for Semiconducting Bilayer Borophene</li>
+</ul>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-asthagiri14P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Asthagiri, A.; Janik, M. J. Computational Catalysis. <em>Computational catalysis</em>; The Royal Society of Chemistry, 2014.</div>
+</div>
+<div id="ref-Kresse96PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Kresse, G.; Furthmuller, J. Efficient Iterative Schemes for Ab Initio Total-Energy Calculations Using a Plane-Wave Basis Set. <em>Phys. Rev. B</em> <strong>1996</strong>, <em>54</em>, 11169–11186.</div>
+</div>
+<div id="ref-Kresse94JPCM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Kresse, G.; Hafner, J. Norm-Conserving and Ultrasoft Pseudopotentials for First-Row and Transition Elements. <em>J. Phys.: Condens. Matter</em> <strong>1994</strong>, <em>6</em>, 8245–8257.</div>
+</div>
+<div id="ref-Blochl94PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Blochl, P. E. Projector Augmented-Wave Method. <em>Phys. Rev. B</em> <strong>1994</strong>, <em>50</em>, 17953–17979.</div>
+</div>
+<div id="ref-Kresse99PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the Projector Augmented-Wave Method. <em>Phys. Rev. B</em> <strong>1999</strong>, <em>59</em>, 1758–1775.</div>
+</div>
+<div id="ref-Perdew96PRL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient Approximation Made Simple. <em>Phys. Rev. Lett.</em> <strong>1996</strong>, <em>77</em>, 3865–3868.</div>
+</div>
+<div id="ref-Monkhorst76PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Monkhorst, H. J.; Pack, J. D. Special Points for Brillouin-Zone Integrations. <em>Phys. Rev. B</em> <strong>1976</strong>, <em>13</em>, 5188–5192.</div>
+</div>
+<div id="ref-Grimme10JCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Grimme, S.; Antony, J.; Ehrlich, S.; Krieg, H. A Consistent and Accurate Ab Initio Parametrization of Density Functional Dispersion Correction (DFT-d) for the 94 Elements h-Pu. <em>J. Chem. Phys.</em> <strong>2010</strong>, <em>132</em>, 154104.</div>
+</div>
+<div id="ref-Grimme11JCC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Grimme, S.; Ehrlich, S.; Goerigk, L. Effect of the Damping Function in Dispersion Corrected Density Functional Theory. <em>J. Comput. Chem.</em> <strong>2011</strong>, <em>32</em>, 1456–1465.</div>
+</div>
+<div id="ref-VandeWalle04JAP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Van de Walle, C. G.; Neugebauer, J. First-Principles Calculations for Defects and Impurities: Applications to III-Nitrides. <em>J. Appl. Phys.</em> <strong>2004</strong>, <em>95</em>, 3851–3879.</div>
+</div>
+<div id="ref-Norskov04JPCB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Nørskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.; Kitchin, J. R.; Bligaard, T.; Jónsson, H. Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode. <em>J. Phys. Chem. B</em> <strong>2004</strong>, <em>108</em>, 17886–17892.</div>
+</div>
+<div id="ref-Peterson10EES" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Peterson, A. A.; Abild-Pedersen, F.; Studt, F.; Rossmeisl, J.; Nørskov, J. K. How Copper Catalyzes the Electroreduction of Carbon Dioxide into Hydrocarbon Fuels. <em>Energ. Environ. Sci.</em> <strong>2010</strong>, <em>3</em>, 1311.</div>
+</div>
+<div id="ref-Wang21CPC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Wang, V.; Xu, N.; Liu, J.-C.; Tang, G.; Geng, W.-T. VASPKIT: A User-Friendly Interface Facilitating High-Throughput Computing and Analysis Using VASP Code. <em>Comput. Phys. Commun.</em> <strong>2021</strong>, <em>267</em>, 108033.</div>
+</div>
+<div id="ref-Sundararaman17S" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Sundararaman, R.; Letchworth-Weaver, K.; Schwarz, K. A.; Gunceler, D.; Ozhabes, Y.; Arias, T. A. JDFTx: Software for Joint Density-Functional Theory. <em>SoftwareX</em> <strong>2017</strong>, <em>6</em>, 278–284.</div>
+</div>
+<div id="ref-Sundararaman15JCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">Sundararaman, R.; Goddard, W. A. The Charge-Asymmetric Nonlocally Determined Local-Electric (CANDLE) Solvation Model. <em>J. Chem. Phys.</em> <strong>2015</strong>, <em>142</em>, 064107.</div>
+</div>
+<div id="ref-Garrity14CMS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">Garrity, K. F.; Bennett, J. W.; Rabe, K. M.; Vanderbilt, D. Pseudopotentials for High-Throughput DFT Calculations. <em>Computational Materials Science</em> <strong>2014</strong>, <em>81</em>, 446–452.</div>
+</div>
+<div id="ref-Letchworth-Weaver12PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">Letchworth-Weaver, K.; Arias, T. A. Joint Density Functional Theory of the Electrode-Electrolyte Interface: Application to Fixed Electrode Potentials, Interfacial Capacitances, and Potentials of Zero Charge. <em>Phys. Rev. B</em> <strong>2012</strong>, <em>86</em>, 075140.</div>
+</div>
+<div id="ref-Xiao17P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">Xiao, H.; Goddard, W. A.; Cheng, T.; Liu, Y. Cu Metal Embedded in Oxidized Matrix Catalyst to Promote Co2 Activation and CO Dimerization for Electrochemical Reduction of Co2. <em>PNAS</em> <strong>2017</strong>, <em>114</em>, 6685–6688.</div>
+</div>
+<div id="ref-Petrosyan05JPCB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">Petrosyan, S. A.; Rigos, A. A.; Arias, T. A. Joint Density-Functional Theory:  Ab Initio Study of Cr2O3 Surface Chemistry in Solution. <em>J. Phys. Chem. B</em> <strong>2005</strong>, <em>109</em>, 15436–15444.</div>
+</div>
+<div id="ref-Arias92PRL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[20] </div><div class="csl-right-inline">Arias, T. A.; Payne, M. C.; Joannopoulos, J. D. Ab Initio Molecular Dynamics: Analytically Continued Energy Functionals and Insights into Iterative Solutions. <em>Phys. Rev. Lett.</em> <strong>1992</strong>, <em>69</em>, 1077–1080.</div>
+</div>
+<div id="ref-Freysoldt09PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[21] </div><div class="csl-right-inline">Freysoldt, C.; Boeck, S.; Neugebauer, J. Direct Minimization Technique for Metals in Density Functional Theory. <em>Phys. Rev. B</em> <strong>2009</strong>, <em>79</em>, 241103.</div>
+</div>
+<div id="ref-Shi19S" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[22] </div><div class="csl-right-inline">Shi, J.; Zhao, X.; Wang, Z.; Liu, Y. Eliminating Trap-States and Functionalizing Vacancies in 2d Semiconductors by Electrochemistry. <em>Small</em> <strong>2019</strong>, <em>15</em>, 1901899.</div>
+</div>
+<div id="ref-Schwarz16PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Schwarz, K.; Xu, B.; Yan, Y.; Sundararaman, R. Partial Oxidation of Step-Bound Water Leads to Anomalous pH Effects on Metal Electrode Step-Edges. <em>Phys. Chem. Chem. Phys.</em> <strong>2016</strong>, <em>18</em>, 16216–16223.</div>
+</div>
+<div id="ref-Liu21JPCLa" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Liu, T.; Jing, Y.; Li, Y. Two-Dimensional Biphenylene: A Graphene Allotrope with Superior Activity Toward Electrochemical Oxygen Reduction Reaction. <em>J. Phys. Chem. Lett.</em> <strong>2021</strong>, <em>12</em>, 12230–12234.</div>
+</div>
+<div id="ref-Calle-Vallejo11PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[25] </div><div class="csl-right-inline">Calle-Vallejo, F.; Martínez, J. I.; Rossmeisl, J. Density Functional Studies of Functionalized Graphitic Materials with Late Transition Metals for Oxygen Reduction Reactions. <em>Phys. Chem. Chem. Phys.</em> <strong>2011</strong>, <em>13</em>, 15639–15643.</div>
+</div>
+<div id="ref-Kolb22JMCA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[26] </div><div class="csl-right-inline">Kolb, M. J.; Calle-Vallejo, F. The Bifunctional Volcano Plot: Thermodynamic Limits for Single-Atom Catalysts for Oxygen Reduction and Evolution. <em>J. Mater. Chem. A</em> <strong>2022</strong>, <em>10</em>, 5937–5941.</div>
+</div>
+<div id="ref-Pique20PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[27] </div><div class="csl-right-inline">Piqué, O.; Illas, F.; Calle-Vallejo, F. Designing Water Splitting Catalysts Using Rules of Thumb: Advantages, Dangers and Alternatives. <em>Phys. Chem. Chem. Phys.</em> <strong>2020</strong>, <em>22</em>, 6797–6803.</div>
+</div>
+<div id="ref-Calle-Vallejo17CS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[28] </div><div class="csl-right-inline">Calle-Vallejo, F.; Krabbe, A.; M. García-Lastra, J. How Covalence Breaks Adsorption-Energy Scaling Relations and Solvation Restores Them. <em>Chem. Sci.</em> <strong>2017</strong>, <em>8</em>, 124–130.</div>
+</div>
+<div id="ref-Reda18CT" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[29] </div><div class="csl-right-inline">Reda, M.; Hansen, H. A.; Vegge, T. DFT Study of Stabilization Effects on n-Doped Graphene for ORR Catalysis. <em>Catal. Today</em> <strong>2018</strong>, <em>312</em>, 118–125.</div>
+</div>
+<div id="ref-Norskov05JES" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[30] </div><div class="csl-right-inline">Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Kitchin, J. R.; Chen, J. G.; Pandelov, S.; Stimming, U. Trends in the Exchange Current for Hydrogen Evolution. <em>J. Electrochem. Soc.</em> <strong>2005</strong>, <em>152</em>, J23.</div>
+</div>
+<div id="ref-Sarwar21NE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[31] </div><div class="csl-right-inline">Sarwar, S.; Ali, A.; Wang, Y.; Ahasan, Md. R.; Wang, R.; Adamczyk, A. J.; Zhang, X. Enhancement of Hydrogen Evolution Reaction Activity Using Metalrich Molybdenum Sulfotelluride with Graphene Support: A Combined Experimental and Computational Study. <em>Nano Energy</em> <strong>2021</strong>, <em>90</em>, 106599.</div>
+</div>
+<div id="ref-Liu22AAMI" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[32] </div><div class="csl-right-inline">Liu, X.; Zhang, Y.; Wang, W.; Chen, Y.; Xiao, W.; Liu, T.; Zhong, Z.; Luo, Z.; Ding, Z.; Zhang, Z. Transition Metal and n Doping on AlP Monolayers for Bifunctional Oxygen Electrocatalysts: Density Functional Theory Study Assisted by Machine Learning Description. <em>ACS Appl. Mater. Interfaces</em> <strong>2022</strong>, <em>14</em>, 1249–1259.</div>
+</div>
+<div id="ref-Bratsch89JPCRD" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[33] </div><div class="csl-right-inline">Bratsch, S. G. Standard Electrode Potentials and Temperature Coefficients in Water at 298.15 k. <em>J. Phys. Chem. Ref. Data</em> <strong>1989</strong>, <em>18</em>, 1–21.</div>
+</div>
+<div id="ref-lide2006crc" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[34] </div><div class="csl-right-inline">Lide, D. CRC Handbook of Chemistry and Physics, 87th Edn. Lide, DR. <em>CRC handbook of chemistry and physics, 87th edn. Lide, DR</em>; Boca Raton, USA: CRC Press, 2006.</div>
+</div>
+<div id="ref-Kitchin04JCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[35] </div><div class="csl-right-inline">Kitchin, J. R.; Nørskov, J. K.; Barteau, M. A.; Chen, J. G. Modification of the Surface Electronic and Chemical Properties of Pt(111) by Subsurface 3d Transition Metals. <em>J. Chem. Phys.</em> <strong>2004</strong>, <em>120</em>, 10240–10246.</div>
+</div>
+<div id="ref-Li21JMCA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[36] </div><div class="csl-right-inline">Li, F.; Ai, H.; Liu, D.; Ho Lo, K.; Pan, H. An Enhanced Oxygen Evolution Reaction on 2d CoOOH via Strain Engineering: An Insightful View from Spin State Transition. <em>J. Mater. Chem. A</em> <strong>2021</strong>, <em>9</em>, 17749–17759.</div>
+</div>
+<div id="ref-Ju21NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[37] </div><div class="csl-right-inline">Ju, L.; Tan, X.; Mao, X.; Gu, Y.; Smith, S.; Du, A.; Chen, Z.; Chen, C.; Kou, L. Controllable Co2 Electrocatalytic Reduction via Ferroelectric Switching on Single Atom Anchored In2Se3 Monolayer. <em>Nat Commun</em> <strong>2021</strong>, <em>12</em>, 5128.</div>
+</div>
+<div id="ref-Zhou21AS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[38] </div><div class="csl-right-inline">Zhou, K. L.; Han, C. B.; Wang, Z.; Ke, X.; Wang, C.; Jin, Y.; Zhang, Q.; Liu, J.; Wang, H.; Yan, H. Atomically Dispersed Platinum Modulated by Sulfide as an Efficient Electrocatalyst for Hydrogen Evolution Reaction. <em>Adv. Sci.</em> <strong>2021</strong>, <em>8</em>, 2100347.</div>
+</div>
+<div id="ref-Medford15JC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[39] </div><div class="csl-right-inline">Medford, A. J.; Vojvodic, A.; Hummelshøj, J. S.; Voss, J.; Abild-Pedersen, F.; Studt, F.; Bligaard, T.; Nilsson, A.; Nørskov, J. K. From the Sabatier Principle to a Predictive Theory of Transition-Metal Heterogeneous Catalysis. <em>J. Catal.</em> <strong>2015</strong>, <em>328</em>, 36–42.</div>
+</div>
+<div id="ref-Li21AMa" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[40] </div><div class="csl-right-inline">Li, Y.; Wei, B.; Zhu, M.; Chen, J.; Jiang, Q.; Yang, B.; Hou, Y.; Lei, L.; Li, Z.; Zhang, R.; Lu, Y. Synergistic Effect of Atomically Dispersed Nizn Pair Sites for Enhanced Co2 Electroreduction. <em>Adv. Mater.</em> <strong>2021</strong>, <em>33</em>, 2102212.</div>
+</div>
+<div id="ref-Bhattacharjee16SR" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[41] </div><div class="csl-right-inline">Bhattacharjee, S.; Waghmare, U. V.; Lee, S.-C. An Improved d-Band Model of the Catalytic Activity of Magnetic Transition Metal Surfaces. <em>Sci Rep</em> <strong>2016</strong>, <em>6</em>, 35916.</div>
+</div>
+<div id="ref-Feng21JMCA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[42] </div><div class="csl-right-inline">Feng, M.; Wu, X.; Cheng, H.; Fan, Z.; Li, X.; Cui, F.; Fan, S.; Dai, Y.; Lei, G.; He, G. Well-Defined Fecu Diatomic Sites for Efficient Catalysis of Co2 Electroreduction. <em>J. Mater. Chem. A</em> <strong>2021</strong>, <em>9</em>, 23817–23827.</div>
+</div>
+<div id="ref-Chen15JPCC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[43] </div><div class="csl-right-inline">Chen, X.; Qiao, Q.; An, L.; Xia, D. Why Do Boron and Nitrogen Doped <span><span class="math inline">\alpha</span></span>- and <span><span class="math inline">\gamma</span></span>-Graphyne Exhibit Different Oxygen Reduction Mechanism? A First-Principles Study. <em>J. Phys. Chem. C</em> <strong>2015</strong>, <em>119</em>, 11493–11498.</div>
+</div>
+<div id="ref-Zhu19JMCA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[44] </div><div class="csl-right-inline">Zhu, Y.; Liu, X.; Jin, S.; Chen, H.; Lee, W.; Liu, M.; Chen, Y. Anionic Defect Engineering of Transition Metal Oxides for Oxygen Reduction and Evolution Reactions. <em>J. Mater. Chem. A</em> <strong>2019</strong>, <em>7</em>, 5875–5897.</div>
+</div>
+<div id="ref-Zhou21JPCL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[45] </div><div class="csl-right-inline">Zhou, Y.; Sheng, L.; Luo, Q.; Zhang, W.; Yang, J. Improving the Activity of Electrocatalysts Toward the Hydrogen Evolution Reaction, the Oxygen Evolution Reaction, and the Oxygen Reduction Reaction via Modification of Metal and Ligand of Conductive Two-Dimensional Metalorganic Frameworks. <em>J. Phys. Chem. Lett.</em> <strong>2021</strong>, <em>12</em>, 11652–11658.</div>
+</div>
+<div id="ref-Jiao15CSR" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[46] </div><div class="csl-right-inline">Jiao, Y.; Zheng, Y.; Jaroniec, M.; Qiao, S. Z. Design of Electrocatalysts for Oxygen- and Hydrogen-Involving Energy Conversion Reactions. <em>Chem. Soc. Rev.</em> <strong>2015</strong>, <em>44</em>, 2060–2086.</div>
+</div>
+<div id="ref-Wei21AM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[47] </div><div class="csl-right-inline">Wei, B.; Fu, Z.; Legut, D.; Germann, T. C.; Du, S.; Zhang, H.; Francisco, J. S.; Zhang, R. Rational Design of Highly Stable and Active MXene-Based Bifunctional ORR/OER Double-Atom Catalysts. <em>Adv. Mater.</em> <strong>2021</strong>, <em>33</em>, 2102595.</div>
+</div>
+<div id="ref-Ma17AM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[48] </div><div class="csl-right-inline">Ma, H.; Chen, X.-Q.; Li, R.; Wang, S.; Dong, J.; Ke, W. First-Principles Modeling of Anisotropic Anodic Dissolution of Metals and Alloys in Corrosive Environments. <em>Acta Materialia</em> <strong>2017</strong>, <em>130</em>, 137–146.</div>
+</div>
+<div id="ref-Huang17AEM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[49] </div><div class="csl-right-inline">Huang, Z.-F.; Wang, J.; Peng, Y.; Jung, C.-Y.; Fisher, A.; Wang, X. Design of Efficient Bifunctional Oxygen Reduction/Evolution Electrocatalyst: Recent Advances and Perspectives. <em>Adv. Energy Mater.</em> <strong>2017</strong>, <em>7</em>, 1700544.</div>
+</div>
+<div id="ref-Seh17S" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[50] </div><div class="csl-right-inline">Seh, Z. W.; Kibsgaard, J.; Dickens, C. F.; Chorkendorff, I.; Nørskov, J. K.; Jaramillo, T. F. Combining Theory and Experiment in Electrocatalysis: Insights into Materials Design. <em>Science</em> <strong>2017</strong>, <em>355</em>, eaad4998.</div>
+</div>
+<div id="ref-Rossmeisl07JEC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[51] </div><div class="csl-right-inline">Rossmeisl, J.; Qu, Z.-W.; Zhu, H.; Kroes, G.-J.; Nørskov, J. K. Electrolysis of Water on Oxide Surfaces. <em>J. Electroanal. Chem.</em> <strong>2007</strong>, <em>607</em>, 83–89.</div>
+</div>
+<div id="ref-Hinnemann05JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[52] </div><div class="csl-right-inline">Hinnemann, B.; Moses, P. G.; Bonde, J.; Jørgensen, K. P.; Nielsen, J. H.; Horch, S.; Chorkendorff, I.; Nørskov, J. K. Biomimetic Hydrogen Evolution: MoS <span><sub>2</sub></span> Nanoparticles as Catalyst for Hydrogen Evolution. <em>J. Am. Chem. Soc.</em> <strong>2005</strong>, <em>127</em>, 5308–5309.</div>
+</div>
+<div id="ref-Wang19JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[53] </div><div class="csl-right-inline">Wang, H.; Xiao, X.; Liu, S.; Chiang, C.-L.; Kuai, X.; Peng, C.-K.; Lin, Y.-C.; Meng, X.; Zhao, J.; Choi, J.; Lin, Y.-G.; Lee, J.-M.; Gao, L. Structural and Electronic Optimization of MoS2 Edges for Hydrogen Evolution. <em>J. Am. Chem. Soc.</em> <strong>2019</strong>, <em>141</em>, 18578–18584.</div>
+</div>
+<div id="ref-Gudmundsdottir13PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[54] </div><div class="csl-right-inline">Gudmundsdóttir, S.; Skúlason, E.; Weststrate, K.-J.; Juurlink, L.; Jónsson, H. Hydrogen Adsorption and Desorption at the Pt(110)-(1) Surface: Experimental and Theoretical Study. <em>Phys. Chem. Chem. Phys.</em> <strong>2013</strong>, <em>15</em>, 6323–6332.</div>
+</div>
+<div id="ref-Zhang21JMCA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[55] </div><div class="csl-right-inline">Zhang, T.; Zhang, B.; Peng, Q.; Zhou, J.; Sun, Z. Mo<span><sub>2</sub></span> b<span><sub>2</sub></span> MBene-Supported Single-Atom Catalysts as Bifunctional HER/OER and OER/ORR Electrocatalysts. <em>J. Mater. Chem. A</em> <strong>2021</strong>, <em>9</em>, 433–441.</div>
+</div>
+<div id="ref-Wang21AEM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[56] </div><div class="csl-right-inline">Wang, Y.; Waterhouse, G. I. N.; Shang, L.; Zhang, T. Electrocatalytic Oxygen Reduction to Hydrogen Peroxide: From Homogeneous to Heterogeneous Electrocatalysis. <em>Adv. Energy. Mater.</em> <strong>2021</strong>, <em>11</em>, 2003323.</div>
+</div>
+<div id="ref-Zhao21C" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[57] </div><div class="csl-right-inline">Zhao, H.; Yuan, Z.-Y. Design Strategies of Non-Noble Metal-Based Electrocatalysts for Two-Electron Oxygen Reduction to Hydrogen Peroxide. <em>ChemSusChem</em> <strong>2021</strong>, <em>14</em>, 1616–1633.</div>
+</div>
+<div id="ref-Christensen16JPCC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[58] </div><div class="csl-right-inline">Christensen, R.; Hansen, H. A.; Dickens, C. F.; Nørskov, J. K.; Vegge, T. Functional Independent Scaling Relation for ORR/OER Catalysts. <em>J. Phys. Chem. C</em> <strong>2016</strong>, <em>120</em>, 24910–24916.</div>
+</div>
+<div id="ref-Koper11JEC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[59] </div><div class="csl-right-inline">Koper, M. T. M. Thermodynamic Theory of Multi-Electron Transfer Reactions: Implications for Electrocatalysis. <em>J. Electroanal. Chem.</em> <strong>2011</strong>, <em>660</em>, 254–260.</div>
+</div>
+<div id="ref-Man11C" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[60] </div><div class="csl-right-inline">Man, I. C.; Su, H.-Y.; Calle-Vallejo, F.; Hansen, H. A.; Martínez, J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.; Rossmeisl, J. Universality in Oxygen Evolution Electrocatalysis on Oxide Surfaces. <em>ChemCatChem</em> <strong>2011</strong>, <em>3</em>, 1159–1165.</div>
+</div>
+<div id="ref-Nong20N" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[61] </div><div class="csl-right-inline">Nong, H. N.; Falling, L. J.; Bergmann, A.; Klingenhof, M.; Tran, H. P.; Spöri, C.; Mom, R.; Timoshenko, J.; Zichittella, G.; Knop-Gericke, A.; Piccinin, S.; Pérez-Ramírez, J.; Cuenya, B. R.; Schlögl, R.; Strasser, P.; Teschner, D.; Jones, T. E. Key Role of Chemistry Versus Bias in Electrocatalytic Oxygen Evolution. <em>Nature</em> <strong>2020</strong>, <em>587</em>, 408–413.</div>
+</div>
+<div id="ref-Zhang21S" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[62] </div><div class="csl-right-inline">Zhang, K.; Zou, R. Advanced Transition Metal-Based OER Electrocatalysts: Current Status, Opportunities, and Challenges. <em>Small</em> <strong>2021</strong>, <em>17</em>, 2100129.</div>
+</div>
+<div id="ref-Zhong21JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[63] </div><div class="csl-right-inline">Zhong, W.; Qiu, Y.; Shen, H.; Wang, X.; Yuan, J.; Jia, C.; Bi, S.; Jiang, J. Electronic Spin Moment as a Catalytic Descriptor for Fe Single-Atom Catalysts Supported on C2n. <em>J. Am. Chem. Soc.</em> <strong>2021</strong>, <em>143</em>, 4405–4413.</div>
+</div>
+<div id="ref-Wang20JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[64] </div><div class="csl-right-inline">Wang, X.; Zhang, Y.; Si, H.; Zhang, Q.; Wu, J.; Gao, L.; Wei, X.; Sun, Y.; Liao, Q.; Zhang, Z.; Ammarah, K.; Gu, L.; Kang, Z.; Zhang, Y. Single-Atom Vacancy Defect to Trigger High-Efficiency Hydrogen Evolution of MoS2. <em>J. Am. Chem. Soc.</em> <strong>2020</strong>.</div>
+</div>
+<div id="ref-Zhu19NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[65] </div><div class="csl-right-inline">Zhu, X.; Guo, Q.; Sun, Y.; Chen, S.; Wang, J.-Q.; Wu, M.; Fu, W.; Tang, Y.; Duan, X.; Chen, D.; Wan, Y. Optimising Surface d Charge of AuPd Nanoalloy Catalysts for Enhanced Catalytic Activity. <em>Nat Commun</em> <strong>2019</strong>, <em>10</em>, 1428.</div>
+</div>
+<div id="ref-Fang14AC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[66] </div><div class="csl-right-inline">Fang, Y.-H.; Liu, Z.-P. Tafel Kinetics of Electrocatalytic Reactions: From Experiment to First-Principles. <em>ACS Catal.</em> <strong>2014</strong>, <em>4</em>, 4364–4376.</div>
+</div>
+<div id="ref-Ping15PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[67] </div><div class="csl-right-inline">Ping, Y.; Sundararaman, R.; Goddard III, W. A. Solvation Effects on the Band Edge Positions of Photocatalysts from First Principles. <em>Phys. Chem. Chem. Phys.</em> <strong>2015</strong>, <em>17</em>, 30499–30509.</div>
+</div>
+<div id="ref-Xiao21AN" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[68] </div><div class="csl-right-inline">Xiao, C.; Zhang, J. Architectural Design for Enhanced C2 Product Selectivity in Electrochemical Co2 Reduction Using Cu-Based Catalysts: A Review. <em>ACS Nano</em> <strong>2021</strong>, <em>15</em>, 7975–8000.</div>
+</div>
+<div id="ref-Li21NMa" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[69] </div><div class="csl-right-inline">Li, S.; Chen, B.; Wang, Y.; Ye, M.-Y.; van Aken, P. A.; Cheng, C.; Thomas, A. Oxygen-Evolving Catalytic Atoms on Metal Carbides. <em>Nat. Mater.</em> <strong>2021</strong>, <em>20</em>, 1240–1247.</div>
+</div>
+<div id="ref-Huang21S" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[70] </div><div class="csl-right-inline">Huang, W.; Johnston-Peck, A. C.; Wolter, T.; Yang, W.-C. D.; Xu, L.; Oh, J.; Reeves, B. A.; Zhou, C.; Holtz, M. E.; Herzing, A. A.; Lindenberg, A. M.; Mavrikakis, M.; Cargnello, M. Steam-Created Grain Boundaries for Methane ch Activation in Palladium Catalysts. <em>Science</em> <strong>2021</strong>, <em>373</em>, 1518–1523.</div>
+</div>
+<div id="ref-Liu21NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[71] </div><div class="csl-right-inline">Liu, Z.; Huang, F.; Peng, M.; Chen, Y.; Cai, X.; Wang, L.; Hu, Z.; Wen, X.; Wang, N.; Xiao, D.; Jiang, H.; Sun, H.; Liu, H.; Ma, D. Tuning the Selectivity of Catalytic Nitriles Hydrogenation by Structure Regulation in Atomically Dispersed Pd Catalysts. <em>Nat. Commun.</em> <strong>2021</strong>, <em>12</em>, 6194.</div>
+</div>
+<div id="ref-Feng21NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[72] </div><div class="csl-right-inline">Feng, C.; Wang, F.; Liu, Z.; Nakabayashi, M.; Xiao, Y.; Zeng, Q.; Fu, J.; Wu, Q.; Cui, C.; Han, Y.; Shibata, N.; Domen, K.; Sharp, I. D.; Li, Y. A Self-Healing Catalyst for Electrocatalytic and Photoelectrochemical Oxygen Evolution in Highly Alkaline Conditions. <em>Nat Commun</em> <strong>2021</strong>, <em>12</em>, 5980.</div>
+</div>
+<div id="ref-Li21AAMIa" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[73] </div><div class="csl-right-inline">Li, W.; Li, W.; Guo, Z.; Song, Y.; Tang, S.; Ma, Y.; Xing, X.; Wang, Q. Synthesis of Atomically Thin g-C3n4 Nanosheets via Supercritical Co2 Doping with Single-Atom Cobalt for Photocatalytic Hydrogen Evolution. <em>ACS Appl. Mater. Interfaces</em> <strong>2021</strong>.</div>
+</div>
+<div id="ref-He21AN" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[74] </div><div class="csl-right-inline">He, J.; Hu, L.; Shao, C.; Jiang, S.; Sun, C.; Song, S. Photocatalytic H2o Overall Splitting into H2 Bubbles by Single Atomic Sulfur Vacancy CdS with Spin Polarization Electric Field. <em>ACS Nano</em> <strong>2021</strong>.</div>
+</div>
+<div id="ref-Yang21JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[75] </div><div class="csl-right-inline">Yang, J.; Liu, W.; Xu, M.; Liu, X.; Qi, H.; Zhang, L.; Yang, X.; Niu, S.; Zhou, D.; Liu, Y.; Su, Y.; Li, J.-F.; Tian, Z.-Q.; Zhou, W.; Wang, A.; Zhang, T. Dynamic Behavior of Single-Atom Catalysts in Electrocatalysis: Identification of Cu-N3 as an Active Site for the Oxygen Reduction Reaction. <em>J. Am. Chem. Soc.</em> <strong>2021</strong>.</div>
+</div>
+<div id="ref-Guan21NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[76] </div><div class="csl-right-inline">Guan, Q.; Zhu, C.; Lin, Y.; Vovk, E. I.; Zhou, X.; Yang, Y.; Yu, H.; Cao, L.; Wang, H.; Zhang, X.; Liu, X.; Zhang, M.; Wei, S.; Li, W.-X.; Lu, J. Bimetallic Monolayer Catalyst Breaks the Activityselectivity Trade-Off on Metal Particle Size for Efficient Chemoselective Hydrogenations. <em>Nat Catal</em> <strong>2021</strong>, <em>4</em>, 840–849.</div>
+</div>
+<div id="ref-Wan22JEC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[77] </div><div class="csl-right-inline">Wan, R.; Luo, M.; Wen, J.; Liu, S.; Kang, X.; Tian, Y. Pt-Co Single Atom Alloy Catalysts: Accelerated Water Dissociation and Hydrogen Evolution by Strain Regulation. <em>J. Ener. Chem.</em> <strong>2022</strong>, <em>69</em>, 44–53.</div>
+</div>
+<div id="ref-Li15NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[78] </div><div class="csl-right-inline">Li, Z.; Smeu, M.; Rives, A.; Maraval, V.; Chauvin, R.; Ratner, M. A.; Borguet, E. Towards Graphyne Molecular Electronics. <em>Nat. Commun.</em> <strong>2015</strong>, <em>6</em>, 6321.</div>
+</div>
+<div id="ref-Taylor01PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[79] </div><div class="csl-right-inline">Taylor, J.; Guo, H.; Wang, J. Ab Initio Modeling of Quantum Transport Properties of Molecular Electronic Devices. <em>Phys. Rev. B</em> <strong>2001</strong>, <em>63</em>, 245407.</div>
+</div>
+<div id="ref-Buttiker85PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[80] </div><div class="csl-right-inline">Büttiker, M.; Imry, Y.; Landauer, R.; Pinhas, S. Generalized Many-Channel Conductance Formula with Application to Small Rings. <em>Phys. Rev. B</em> <strong>1985</strong>, <em>31</em>, 6207–6215.</div>
+</div>
+<div id="ref-An16PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[81] </div><div class="csl-right-inline">An, Y.; Zhang, M.; Wu, D.; Fu, Z.; Wang, T.; Xia, C. Electronic Transport Properties of the First All-Boron Fullerene B40 and Its Metallofullerene Sr@B40. <em>Phys. Chem. Chem. Phys.</em> <strong>2016</strong>, <em>18</em>, 12024–12028.</div>
+</div>
+<div id="ref-Brandbyge02PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[82] </div><div class="csl-right-inline">Brandbyge, M.; Mozos, J.-L.; Ordejón, P.; Taylor, J.; Stokbro, K. Density-Functional Method for Nonequilibrium Electron Transport. <em>Phys. Rev. B</em> <strong>2002</strong>, <em>65</em>, 165401.</div>
+</div>
+<div id="ref-Huang0SA" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[83] </div><div class="csl-right-inline">Huang, X.; Tang, C.; Li, J.; Chen, L.-C.; Zheng, J.; Zhang, P.; Le, J.; Li, R.; Li, X.; Liu, J.; Yang, Y.; Shi, J.; Chen, Z.; Bai, M.; Zhang, H.-L.; Xia, H.; Cheng, J.; Tian, Z.-Q.; Hong, W. Electric Fieldinduced Selective Catalysis of Single-Molecule Reaction. <em>Sci. Adv.</em> <em>5</em>, eaaw3072.</div>
+</div>
+<div id="ref-Zhao13JCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[84] </div><div class="csl-right-inline">Zhao, P.; Liu, D. S.; Chen, G. Energy Alignment Induced Large Rectifying Behavior in Endoheral Fullerene Dimers. <em>J. Chem. Phys.</em> <strong>2013</strong>, <em>139</em>, 084318.</div>
+</div>
+<div id="ref-Martin08JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[85] </div><div class="csl-right-inline">Martin, C. A.; Ding, D.; Sørensen, J. K.; Bjørnholm, T.; van Ruitenbeek, J. M.; van der Zant, H. S. J. Fullerene-Based Anchoring Groups for Molecular Electronics. <em>J. Am. Chem. Soc.</em> <strong>2008</strong>, <em>130</em>, 13198–13199.</div>
+</div>
+<div id="ref-Schull11NN" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[86] </div><div class="csl-right-inline">Schull, G.; Frederiksen, T.; Arnau, A.; Sánchez-Portal, D.; Berndt, R. Atomic-Scale Engineering of Electrodes for Single-Molecule Contacts. <em>Nat. Nanotechnol.</em> <strong>2011</strong>, <em>6</em>, 23–27.</div>
+</div>
+<div id="ref-Schull09PRL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[87] </div><div class="csl-right-inline">Schull, G.; Frederiksen, T.; Brandbyge, M.; Berndt, R. Passing Current Through Touching Molecules. <em>Phys. Rev. Lett.</em> <strong>2009</strong>, <em>103</em>, 206803.</div>
+</div>
+<div id="ref-Troullier91PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[88] </div><div class="csl-right-inline">Troullier, N.; Martins, J. L. Efficient Pseudopotentials for Plane-Wave Calculations. <em>Phys. Rev. B</em> <strong>1991</strong>, <em>43</em>, 1993–2006.</div>
+</div>
+<div id="ref-VanderVen08PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[89] </div><div class="csl-right-inline">Van der Ven, A.; Thomas, J. C.; Xu, Q.; Swoboda, B.; Morgan, D. Nondilute Diffusion from First Principles: Li Diffusion in ${\Text{li}}_{x}{\text{TiS}}_{2}$. <em>Phys. Rev. B</em> <strong>2008</strong>, <em>78</em>, 104306.</div>
+</div>
+<div id="ref-Ge22NCM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[90] </div><div class="csl-right-inline">Ge, M.; Wang, H.; Wu, J.; Si, C.; Zhang, J.; Zhang, S. Enhanced Valley Splitting of WSe2 in Twisted van Der Waals WSe2/CrI3 Heterostructures. <em>npj Comput Mater</em> <strong>2022</strong>, <em>8</em>, 1–7.</div>
+</div>
+<div id="ref-Chang21PCCP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[91] </div><div class="csl-right-inline">Chang, Z.; Yuan, K.; Sun, Z.; Zhang, X.; Gao, Y.; Qin, G.; Tang, D. Ultralow Lattice Thermal Conductivity and Dramatically Enhanced Thermoelectric Properties of Monolayer InSe Induced by an External Electric Field. <em>Phys. Chem. Chem. Phys.</em> <strong>2021</strong>, <em>23</em>, 13633–13646.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

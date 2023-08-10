@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Semimetal</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Semimetal"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#semimetal-types"><span class="toc-section-number">1</span> Semimetal types</a>
+          <ul>
+          <li><a href="#weyl-semitalarmitage18rmp"><span class="toc-section-number">1.1</span> Weyl Semital<span class="citation" data-cites="Armitage18RMP"><sup>[2]</sup></span></a></li>
+          </ul></li>
+          <li><a href="#rashba-model"><span class="toc-section-number">2</span> Rashba Model</a></li>
+          <li><a href="#fermi-velocity"><span class="toc-section-number">3</span> Fermi velocity</a>
+          <ul>
+          <li><a href="#unit-conversion"><span class="toc-section-number">3.1</span> Unit Conversion</a></li>
+          <li><a href="#calculation"><span class="toc-section-number">3.2</span> Calculation</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="semimetal-types"><span class="header-section-number">1</span> Semimetal types</h1>
+<figure>
+<img src="../img/SemiMetal_4type.png" title="SemiMetal_4type" style="width:100.0%" alt="Fig. 1:" /><figcaption aria-hidden="true">Fig. 1:</figcaption>
+</figure>
+<p>Fig. 1Schematic illustration of different types of semimetals and representative materials. a, Normal semimetal with the coexistence of electron and hole pockets. b, Semimetal with quadratic conduction and valence bands touching at the same momentum point. c, Weyl semimetal and Dirac semimetal. d, Semimetal with one hole pocket from the normal quadratic band and one electron pocket from the linear Weyl semimetal band for NbP. The valence and conduction bands are indicated by blue and green shading, respectively. The Fermi energy is marked in each case by a horizontal line.<span class="citation" data-cites="Shekhar15NP"><sup>[1]</sup></span></p>
+<ul>
+<li>Dirac Semimetal</li>
+<li>Weyl Semimetal: Breaking time reversal symmetry/Breaking space inversion symmetry</li>
+<li>Node-line semimetal: Time reversal and space inversion symmetry, Mirror symmetry</li>
+</ul>
+<h2 data-number="1.1" id="weyl-semitalarmitage18rmp"><span class="header-section-number">1.1</span> Weyl Semital<span class="citation" data-cites="Armitage18RMP"><sup>[2]</sup></span></h2>
+<figure>
+<img src="../img/Weyltype.png" title="Weyltype" style="width:100.0%" alt="Fig. 1:" /><figcaption aria-hidden="true">Fig. 1:</figcaption>
+</figure>
+<p>Fig. 2. (Left) Conventional type I Weyl point with pointlike Fermi surface. (Right) Type II Weyl point is the touching point between electron and hole pockets. Red and blue (highlighted) isoenergy contours denote the Fermi surface coming from electron and hole pockets with chemical potential tuned to the touching point.</p>
+<figure>
+<img src="../img/Semeiband4.png" title="Semeiband4" style="width:100.0%" alt="Fig. 1: Semeiband4" /><figcaption aria-hidden="true">Fig. 1: Semeiband4</figcaption>
+</figure>
+<h1 data-number="2" id="rashba-model"><span class="header-section-number">2</span> Rashba Model</h1>
+<figure>
+<img src="../img/Rashba1.png" title="Rashba1" style="width:100.0%" alt="Fig. 1: Rashba1" /><figcaption aria-hidden="true">Fig. 1: Rashba1</figcaption>
+</figure>
+<figure>
+<img src="../img/Rashba2.png" title="Rashba2" style="width:100.0%" alt="Fig. 1: Rashba2" /><figcaption aria-hidden="true">Fig. 1: Rashba2</figcaption>
+</figure>
+<h1 data-number="3" id="fermi-velocity"><span class="header-section-number">3</span> Fermi velocity</h1>
+<h2 data-number="3.1" id="unit-conversion"><span class="header-section-number">3.1</span> Unit Conversion</h2>
+<ul>
+<li>Usually the realtion between lattice vector <span class="math inline">a_{i}</span> and reciprocal lattice vector <span class="math inline">b_{j}</span> is esspresed as <span class="math inline">a_{i}*b_{j}=2{\pi}{\Delta}_{ij}</span>, however it is esspresed as <span class="math inline">a_{i}*b_{j}={\Delta}_{ij}</span> in VASP，so the unit of reciprocal lattice vectors in VASP is <span class="math inline">2\pi</span>. If you use reciprocal lattice vectors from vasp, please multiply reciprocal lattice vectors with <span class="math inline">2\pi</span>.</li>
+<li>Formula for Fermi velocity：<span class="math inline">E={\hbar}kv_F{\Rightarrow}v_F=\frac{1}{\hbar}\frac{dE}{dk}</span>,so <span class="math inline">v_F=\frac{1}{\hbar}\frac{dE}{dk}</span> <span class="math inline">=\frac{dE}{dk}\times1.602\times10^{-19}\times10^{-10}/(1.054571817\times10^{-34})=\frac{dE}{dk}\times1.5191\times10^5</span> m/s.</li>
+</ul>
+<h2 data-number="3.2" id="calculation"><span class="header-section-number">3.2</span> Calculation</h2>
+<ol type="1">
+<li>Optimization Cell and positions</li>
+<li>Band structure calculation to determine Dirac point (e.g., 0.33333 0.33333 0), where <span class="math inline">E_{VB}-E_{CB}{\sim}0</span>.</li>
+<li>Non-SCF calculation with very dense K-points near the Dirac point, to get VB and CB energy surfaces.</li>
+<li>Use some script to generate files (e.g., eig_bandsurf_004.dat) for the <code>energy surface</code> of <code>each band</code> at every K points,</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> head eig_bandsurf_004.dat</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Kx</span>             Ky             Kz             Energy  Kx<span class="pp">*</span>Rec         Ky<span class="pp">*</span>Rec         Kz<span class="pp">*</span>Rec</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">0.30333300</span>     0.30333000     0.00000000     <span class="at">-0.90880000</span>    0.77226277     1.33758928     0.00000000</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">0.30583300</span>     0.30333000     0.00000000     <span class="at">-0.86824900</span>    0.77862758     1.34126400     0.00000000</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">0.30833300</span>     0.30333000     0.00000000     <span class="at">-0.82815100</span>    0.78499239     1.34493872     0.00000000</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">0.31083300</span>     0.30333000     0.00000000     <span class="at">-0.78858300</span>    0.79135720     1.34861345     0.00000000</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
+<p>where <code>Kx/Ky/Kz</code> are K points near Dirac point，<code>Kx*Rec/Ky*Rec/Kz*Rec</code> are K points multiplied by the reciprocal lattice vecctors (similar to the conversion from Direct coordinates to Cartesian coordinates), and <code>Energy</code> is the energy for this band at <code>Kx/Ky/Kz</code>.<br />
+5. Extract K lines across Dirac point along <code>x/y</code> direction.<br />
+<code>awk '($1 ~ /0.33333/ &amp;&amp; $2 &lt; 0.33333)' eig_bandsurf_004.dat &gt; Dirac_ky.dat</code><br />
+<code>awk '($2 ~ /0.33333/ &amp;&amp; $1 &lt; 0.33333)' eig_bandsurf_004.dat &gt; Dirac_kx.dat</code><br />
+<code>awk '($1 ~ /0.33333/ &amp;&amp; $2 &gt; 0.33333)' eig_bandsurf_005.dat &gt; Dirac_ky2.dat</code><br />
+<code>awk '($2 ~ /0.33333/ &amp;&amp; $1 &gt; 0.33333)' eig_bandsurf_005.dat &gt; Dirac_kx2.dat</code><br />
+6. Only K points near Dirac point satisfy linear realtionship, so some K point far from Dirac point should be deleted. Take kx direction for example, to plot y=col(4) vs. x=col(5) in Dirac_kx.dat, to delte K point far from Dirac point and keep some near K points which satisfy linear realtionship. Linear Fitting (y=col(4) vs. x=col(5)) using remaining K points to get the slope along kx direction (or y=col(4) vs. x=col(6) for ky in Dirac_ky.dat ), <span class="math inline">\frac{dE}{dk_x}=6.337</span>, <span class="math inline">\frac{dE}{dk_y}=5.485</span> eV \AA, as a result, <span class="math inline">v_F</span> for graphene is <span class="math inline">9.62\times10^5</span>/<span class="math inline">8.33\times10^5</span> m/s along x/y direction.<br />
+7. Energy surfaces near Dirac point could be plotted by Gnuplot using files like eig_bandsurf_004.dat.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Shekhar15NP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Shekhar, C.; Nayak, A. K.; Sun, Y.; Schmidt, M.; Nicklas, M.; Leermakers, I.; Zeitler, U.; Skourski, Y.; Wosnitza, J.; Liu, Z.; et al. Extremely Large Magnetoresistance and Ultrahigh Mobility in the Topological Weyl Semimetal Candidate NbP. <em>Nat. Phys.</em> <strong>2015</strong>, <em>11</em>, 645–649.</div>
+</div>
+<div id="ref-Armitage18RMP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Armitage, N. {\hspace{0. 167em}}P.; Mele, E. {\hspace{0. 167em}}J.; Vishwanath, A. Weyl and Dirac Semimetals in Three-Dimensional Solids. <em>Rev. Mod. Phys.</em> <strong>2018</strong>, <em>90</em>, 015001.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

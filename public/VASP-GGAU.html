@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>GGA+U</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="GGA+U"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#determine-u-and-j-value"><span class="toc-section-number">1</span> Determine U and J value</a></li>
+          <li><a href="#calculating-the-hubbard-u-by-linear-response-method"><span class="toc-section-number">2</span> Calculating the Hubbard U by linear-response method</a>
+          <ul>
+          <li><a href="#from-mit"><span class="toc-section-number">2.1</span> FROM MIT</a>
+          <ul>
+          <li><a href="#background"><span class="toc-section-number">2.1.1</span> Background</a></li>
+          <li><a href="#instruction"><span class="toc-section-number">2.1.2</span> Instruction</a></li>
+          <li><a href="#summary"><span class="toc-section-number">2.1.3</span> Summary</a></li>
+          </ul></li>
+          <li><a href="#calculate-u-for-lsdau-vasp-wiki"><span class="toc-section-number">2.2</span> Calculate U for LSDA+U (VASP wiki)</a>
+          <ul>
+          <li><a href="#poscar"><span class="toc-section-number">2.2.1</span> <code>POSCAR</code></a></li>
+          </ul></li>
+          <li><a href="#kpoints"><span class="toc-section-number">2.3</span> KPOINTS</a></li>
+          <li><a href="#the-dft-groudstate"><span class="toc-section-number">2.4</span> The DFT groudstate</a></li>
+          <li><a href="#non-selfconsistent-response"><span class="toc-section-number">2.5</span> Non-selfconsistent response</a></li>
+          <li><a href="#selfconsistent-response"><span class="toc-section-number">2.6</span> Selfconsistent response</a></li>
+          <li><a href="#the-final-result"><span class="toc-section-number">2.7</span> The final result</a></li>
+          </ul></li>
+          <li><a href="#some-u-and-j-values"><span class="toc-section-number">3</span> some U and J values</a>
+          <ul>
+          <li><a href="#ggau-from-materials-project"><span class="toc-section-number">3.1</span> <span>GGA+U from Materials Project</span></a></li>
+          <li><a href="#calibration-of-u-values"><span class="toc-section-number">3.2</span> <span id="Calibration_of_U_values" class="mw-headline">Calibration of U values</span></a></li>
+          <li><a href="#u-values"><span class="toc-section-number">3.3</span> <span id="U_values" class="mw-headline">U values</span></a></li>
+          <li><a href="#caveats"><span class="toc-section-number">3.4</span> <span id="Caveats" class="mw-headline">Caveats</span></a></li>
+          <li><a href="#references">References</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="determine-u-and-j-value"><span class="header-section-number">1</span> Determine U and J value</h1>
+<ul>
+<li>U and J are screened Coulomb and exchange parameters</li>
+<li>The exchange J (typically of order ~1 eV<span class="citation" data-cites="Anisimov97JPCM"><sup>[1]</sup></span>), though not as strong as that of U (about one-tenth of U in magnitude), may also play an important role on band gaps<span class="citation" data-cites="Anisimov97JPCM"><sup>[1]</sup></span>.</li>
+</ul>
+<h1 data-number="2" id="calculating-the-hubbard-u-by-linear-response-method"><span class="header-section-number">2</span> Calculating the Hubbard U by linear-response method</h1>
+<h2 data-number="2.1" id="from-mit"><span class="header-section-number">2.1</span> FROM MIT</h2>
+<ul>
+<li>From <a href="http:/hjkgrp.mit.edu/content/calculating-hubbard-u" class="uri">http:/hjkgrp.mit.edu/content/calculating-hubbard-u</a></li>
+</ul>
+<p>Tuesday, May 31, 2011</p>
+<p>If you you think you might be interested in carrying out DFT+<em>U</em> calculations on a system, this tutorial is tailor made for you.  </p>
+<h3 data-number="2.1.1" id="background"><span class="header-section-number">2.1.1</span> Background</h3>
+<p>Recall, the DFT+<em>U</em> functional, as implemented in [Quantum-ESPRESSO]<span class="citation" data-cites="Cococcioni05PRB"><sup>[2]</sup></span> corresponds to an additional term of the form: <span class="math display">E_U=\frac{U}{2}\sum\limits_{I,\sigma}Tr[\bold{n}^{i\sigma}(1-\bold{n}^{i\sigma})]</span> The use of this functional form is particularly motivated by systems consisting of transition-metals with localized electrons (i.e. <em>d</em> or <em>f</em>) that standard DFT struggles to treat accurately.  </p>
+<p>Before embarking on production level simulations, one of the first things you should always do is to calculate the value of <em>U </em>for your system. In our linear-response <em>U</em> approach<span class="citation" data-cites="Cococcioni05PRB"><sup>[2]</sup></span>, the response function that we calculate is: <span class="math display">\chi=\frac{\partial{n}{\partial\alpha}</span> with a matrix of response functions in the case of multiple sites but a single value for single site systems. In order to obtain <em>U</em>, we invert the self-consistent response function and subtract out the bare, non-interacting response<span class="citation" data-cites="Cococcioni05PRB"><sup>[2]</sup></span>: <span class="math display">U=\chi_0^{-1}-\chi^{-1}</span> Today we will only address the single site example of MnO[3], but a future <u>tutorial</u> will expand the calculation to more manifolds.</p>
+<h3 data-number="2.1.2" id="instruction"><span class="header-section-number">2.1.2</span> Instruction</h3>
+<p><strong>The determination of the linear-response <em>U</em> is simple and costs little</strong> more than a standard single point energy calculation, which is something you have likely already carried out for the system of interest.  Using the <strong>scripts provided below</strong>, we can easily calculate the linear response <em>U</em> for the sextet ground state of the diatomic molecule MnO.</p>
+<p>We obtain the bare and self-consistent response functions from linear regression of the relationship between the occupations that result from a range of rigid potential shifts, alpha:</p>
+<p><img src="../img/MIT_GGAU_1.png" title="MIT_GGAU_1" style="width:100.0%" /></p>
+<p>For sextet MnO, the bare and self-consistent slopes are -0.32 and -0.15, respectively, giving U<sub>0</sub> = 3.47 eV.</p>
+<p>We determine the linear-response U as follows:</p>
+<ol type="1">
+<li><p><strong>Obtain single point energy at zero alpha</strong> and store density.</p></li>
+<li><p>Starting from <strong>1</strong>, <strong>obtain new single point</strong> energy at several values of<strong>non-zero alpha</strong> (e.g. -0.08 to 0.08) with tight convergence criteria.</p></li>
+<li><p><strong>Collect occupations</strong> from first iteration of <strong>2</strong> for bare response and last iteration of <strong>2</strong> for self-consistent response.</p></li>
+<li><p>Calculate response functions<strong> from linear regression of </strong>3** and invert to obtain <em>U</em>.</p></li>
+</ol>
+<p>The additional single points in step 2 should each take less than half of the time of the original single point in step 1 because the addition of alpha is only a small perturbation. (<strong>Note: The key here is to ensure that you can copy over the starting zero-alpha density each time for each non-zero alpha calculation</strong>). One approach for the file copying step is implemented in the main script, <strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/jobrun.py_0.txt">jobrun.py</a></strong>, and clarified in the variables file, <strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/variables.py_0.txt">variables.py</a></strong>.  The linear regression is carried out after completion of the SCF runs in<strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/linregress.py.txt">linregress.py</a> </strong>and the results are written to the file <strong>ucalc.dat</strong>.  </p>
+<p>In addition to the standard linear-response <em>U<sub>0</sub></em>, the self-consistent extension,<em>U<sub>scf</sub></em><span class="citation" data-cites="Kulik06PRL"><sup>[3]</sup></span>, can be determined with these scripts.  This approach is carried out automatically by setting a range of values of <em>U<sub>in</sub></em> (e.g. 0.5-3.0 eV in 0.5 eV increments) in the file <strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/variables.py_0.txt">variables.py</a></strong>.  </p>
+<p><img src="../img/MIT_GGAU_1.png" title="MIT_GGAU_2" style="width:100.0%" /></p>
+<p>The linear-response and self-consistent <em>U</em> values are essentially identical for sextet MnO. The self-consistent <em>U</em> is determined from the extrapolation of<em>U<sub>out</sub></em> calculated over a range of <em>U<sub>in</sub></em> where the relationship is linear[2].  Larger differences between the self-consistent and linear-response <em>U</em> values can be much larger, especially where the electronic structure between DFT and DFT+<em>U</em> differs significantly. We have also studied systems from a few to hundreds of atoms in size with self-consistent DFT+<em>U</em>, and I encourage you to read about the <a href="http:/hjkgrp.mit.edu/Research">research</a> and the relevant <a href="http:/hjkgrp.mit.edu/Publications">publications</a>.</p>
+<h3 data-number="2.1.3" id="summary"><span class="header-section-number">2.1.3</span> Summary</h3>
+<p>The tutorial files, provided also as a <a href="../img/DFTU-Tut.zip">zipped archive here</a>, are:</p>
+<ul>
+<li><p><strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/jobrun.py_0.txt">jobrun.py</a></strong>— skeleton script generates input files and runs jobs. </p></li>
+<li><p><strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/variables.py_0.txt">variables.py</a></strong> — you should change these job and cluster variables!  </p></li>
+<li><p><strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/libraries.py_0.txt">libraries.py</a></strong> — dictionary of parameters that should not be changed.</p></li>
+<li><p><strong><a href="http:/hjkgrp.mit.edu/sites/default/files/Tutorials/linregress.py.txt">linregress.py</a></strong> — calculates <em>U0</em> and <em>Uscf</em> from results of jobrun.py.</p></li>
+<li><p><strong>other files</strong> — pseudopotentials, coordinates for MnO, a readme file, and an example job script for SGE queues.</p></li>
+</ul>
+<p>I hope that this <a href="http:/hjkgrp.mit.edu/Tutorials">tutorial</a> has helped you to better understand how to calculate the linear-response and self-consistent Hubbard <em>U</em> for single-site transition metal complexes.  Please [email me] if you have any additional questions not answered here!</p>
+<h2 data-number="2.2" id="calculate-u-for-lsdau-vasp-wiki"><span class="header-section-number">2.2</span> Calculate U for LSDA+U (VASP wiki)</h2>
+<ul>
+<li>From <a href="https:/www.vasp.at/wiki/index.php/Calculate_U_for_LSDA%2BU" class="uri">https:/www.vasp.at/wiki/index.php/Calculate_U_for_LSDA%2BU</a></li>
+</ul>
+<p>In this exercise you will calculate the U parameter for the LSDA+U treatment of Ni <em>d</em>-electrons in NiO using the linear response <em>ansatz</em> of Cococcioni <em>et al.</em>.<span class="citation" data-cites="Cococcioni05PRB"><sup>[2]</sup></span></p>
+<h3 data-number="2.2.1" id="poscar"><span class="header-section-number">2.2.1</span> <code>POSCAR</code></h3>
+<p>For this calculation we will use a 2×2×2 supercell of AFM-II NiO:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">AFM</span>  NiO</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">4.03500000</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">2.0000000000</span>   1.0000000000   1.0000000000 </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">1.0000000000</span>   2.0000000000   1.0000000000 </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> <span class="ex">1.0000000000</span>   1.0000000000   2.0000000000 </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">1</span> 15   16 </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Direct</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.0000000000</span>   0.0000000000   0.0000000000 </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.2500000000</span>   0.2500000000   0.2500000000 </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.0000000000</span>   0.0000000000   0.5000000000 </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.2500000000</span>   0.2500000000   0.7500000000 </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.0000000000</span>   0.5000000000   0.0000000000 </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.2500000000</span>   0.7500000000   0.2500000000 </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.0000000000</span>   0.5000000000   0.5000000000 </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.2500000000</span>   0.7500000000   0.7500000000 </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.5000000000</span>   0.0000000000   0.0000000000 </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.7500000000</span>   0.2500000000   0.2500000000 </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.5000000000</span>   0.0000000000   0.5000000000 </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.7500000000</span>   0.2500000000   0.7500000000 </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.5000000000</span>   0.5000000000   0.0000000000 </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.7500000000</span>   0.7500000000   0.2500000000 </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.5000000000</span>   0.5000000000   0.5000000000 </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.7500000000</span>   0.7500000000   0.7500000000 </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.1250000000</span>   0.1250000000   0.1250000000 </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.3750000000</span>   0.3750000000   0.3750000000 </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.1250000000</span>   0.1250000000   0.6250000000 </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.3750000000</span>   0.3750000000   0.8750000000 </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.1250000000</span>   0.6250000000   0.1250000000 </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.3750000000</span>   0.8750000000   0.3750000000 </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.1250000000</span>   0.6250000000   0.6250000000 </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.3750000000</span>   0.8750000000   0.8750000000 </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.6250000000</span>   0.1250000000   0.1250000000 </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.8750000000</span>   0.3750000000   0.3750000000 </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.6250000000</span>   0.1250000000   0.6250000000 </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.8750000000</span>   0.3750000000   0.8750000000 </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.6250000000</span>   0.6250000000   0.1250000000 </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.8750000000</span>   0.8750000000   0.3750000000 </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.6250000000</span>   0.6250000000   0.6250000000 </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a> <span class="ex">0.8750000000</span>   0.8750000000   0.8750000000</span></code></pre></div>
+<p>Atoms 1-16 are Ni and atoms 17-32 are O.</p>
+<p>Note that the Ni atoms are split into two groups: atom 1, and atom 2-15. This trick breaks the symmetry of the Ni sub-lattice and allows us to treat atom 1 differently from atom 2-15. Our <code>POTCAR</code> file has to reflect the fact that we now formally have 3 "species" (2 ×Ni + 1×O), <em>i.e.</em>, we concatenate two Ni <code>POTCAR</code> files and one O <code>POTCAR</code> file:</p>
+<p><code>cat Ni/POTCAR Ni/POTCAR O/POTCAR &gt; POTCAR</code></p>
+<p>To check whether you have a suitable POTCAR type:</p>
+<p><code>grep TITEL POTCAR</code></p>
+<p>This should yield something like:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">TITEL</span> = PAW Ni 02Aug2007</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">TITEL</span> = PAW Ni 02Aug2007</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">TITEL</span> = PAW O 22Mar2012</span></code></pre></div>
+<p><em>i.e.</em>, two Ni entries followed by one O entry.</p>
+<h2 data-number="2.3" id="kpoints"><span class="header-section-number">2.3</span> KPOINTS</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Gamma</span> only</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Monkhorst</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> 1 1</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">0</span> 0 0</span></code></pre></div>
+<h2 data-number="2.4" id="the-dft-groudstate"><span class="header-section-number">2.4</span> The DFT groudstate</h2>
+<p>We will calculate the DFT groundstate of our NiO system with the following <code>INCAR</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SYSTEM</span>       = NiO AFM </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">PREC</span>         = A</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">EDIFF</span>        = 1E-6</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">ISMEAR</span>       = 0</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">SIGMA</span>        = 0.2</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">ISPIN</span>        = 2</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">MAGMOM</span>       = 1.0 <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span>  1.0 <span class="dt">\</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span> <span class="dt">\</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               1.0 <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span>  1.0 <span class="dt">\</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span>  1.0 <span class="at">-1.0</span> <span class="dt">\</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            16<span class="pp">*</span>0.0</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">LORBIT</span>       = 11</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">LMAXMIX</span>      = 4 </span></code></pre></div>
+<p>Instrumental here is that we correctly specify the initial magnetic moments (by means of <code>MAGMOM</code>). The setting above is consistent with the AFM-II magnetic structure: alternating ferromagnetic Ni (111)-layers.</p>
+<p>Secondly we set <code>LORBIT=11</code>: at the end of the OUTCAR file VASP will write the number of (<em>d</em>-) electrons per site. This information we will need to compute the <em>U</em>-parameter.</p>
+<p>Last but not least, we set <code>LMAXMIX=4</code>: this is needed to be able to perform non-selfconsistent (<code>ICHARG=11</code>) LSDA+U calculations (<code>LDAUTYPE=3</code>) in the following. For this reason we will keep a copy of the <code>CHGCAR</code> file (and the <code>WAVECAR</code> file as well):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> CHGCAR CHGCAR.0</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> WAVECAR WAVECAR.0</span></code></pre></div>
+<p>The information most relevant to the task at hand you will find near the end of the <code>OUTCAR</code>file:</p>
+<p>total charge</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">total</span> charge</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># of ion       s       p       d       tot</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">------------------------------------------</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span>        0.342   0.490   8.438   9.270</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">4</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">6</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">8</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">9</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>   <span class="ex">10</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>   <span class="ex">11</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>   <span class="ex">12</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>   <span class="ex">13</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>   <span class="ex">14</span>        0.342   0.490   8.438   9.270</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>   <span class="ex">15</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>   <span class="ex">16</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>   <span class="ex">17</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>   <span class="ex">18</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>   <span class="ex">19</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>   <span class="ex">20</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>   <span class="ex">21</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>   <span class="ex">22</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>   <span class="ex">23</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>   <span class="ex">24</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>   <span class="ex">25</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>   <span class="ex">26</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>   <span class="ex">27</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>   <span class="ex">28</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>   <span class="ex">29</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>   <span class="ex">30</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>   <span class="ex">31</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>   <span class="ex">32</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="ex">--------------------------------------------------</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="ex">tot</span>         30.489  63.111 135.011 228.611</span></code></pre></div>
+<p>This shows that in the DFT grounstate <code>8.438</code> <em>d</em>-electrons are attributed to atomic site 1.</p>
+<h2 data-number="2.5" id="non-selfconsistent-response"><span class="header-section-number">2.5</span> Non-selfconsistent response</h2>
+<p>The next step is to calculate the following response function: <span class="math display">\chi_{IJ}^0=\frac{\partial N_I^{NSCF}{\partial V_J}</span></p>
+<p>This is the change in the number of <em>d</em>-electrons on site <em>I</em> due to an additional spherical potential acting on the <em>d</em>-manifold on site <em>J</em>. In the following we will assume this response to be zero unless <em>I=J</em>.</p>
+<p>To add an additional spherical potential on the site of atom 1 that acts on the <em>d</em>-manifold we specify the following:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAU</span>         = .TRUE.</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUTYPE</span>     =  3</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUL</span>        =  2 <span class="at">-1</span> <span class="at">-1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUU</span>        =  0.10 0.00 0.00</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUJ</span>        =  0.10 0.00 0.00</span></code></pre></div>
+<p>Note that for <code>LDAUTYPE=3</code> the <code>LDAUU</code>and <code>LDAUJ</code> tags specify the strength (in <em>eV</em>) of the spherical potential acting on the spin-up and spin-down <em>d</em>-manifolds, respectively.</p>
+<p>In the present step we want to calculate the <em>non-selfconsistent</em> response to this additional potential. This is done by reading in the charge density from the previous DFT groundstate calculations and by keeping it fixed during the electronic minimization procedure:</p>
+<p><code>ICHARG= 11</code></p>
+<p>N.B.: be sure to use the charge density of the DFT groundstate calculation:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> CHGCAR.0 CHGCAR</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> WAVECAR.0 WAVECAR</span></code></pre></div>
+<p>After running this calculation you will notice that due to the additional potential the number of <em>d</em>-electrons on atom 1 has changed w.r.t. the DFT groundstate (check the <code>OUTCAR</code>file again):</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">total</span> charge</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># of ion       s       p       d       tot</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">------------------------------------------</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span>        0.342   0.490   8.488   9.319</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2</span>        0.342   0.489   8.432   9.263</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">4</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">6</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7</span>        0.342   0.490   8.435   9.266</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">8</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">9</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>   <span class="ex">10</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>   <span class="ex">11</span>        0.342   0.490   8.435   9.266</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>   <span class="ex">12</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>   <span class="ex">13</span>        0.342   0.490   8.435   9.266</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>   <span class="ex">14</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>   <span class="ex">15</span>        0.342   0.490   8.430   9.261</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>   <span class="ex">16</span>        0.342   0.489   8.432   9.263</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>   <span class="ex">17</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>   <span class="ex">18</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>   <span class="ex">19</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>   <span class="ex">20</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>   <span class="ex">21</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>   <span class="ex">22</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>   <span class="ex">23</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>   <span class="ex">24</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>   <span class="ex">25</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>   <span class="ex">26</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>   <span class="ex">27</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>   <span class="ex">28</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>   <span class="ex">29</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>   <span class="ex">30</span>        1.564   3.454   0.000   5.018</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>   <span class="ex">31</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>   <span class="ex">32</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="ex">--------------------------------------------------</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="ex">tot</span>         30.488  63.101 135.027 228.617</span></code></pre></div>
+<p>The change in the number of <em>d</em>-electrons on atomic site 1 is found to be: <span class="math display">\Delta{N}_1^{NSCF}=4.488−4.438 = 0.050</span> and hence <span class="math display">\chi_{11}^0=\frac{0.050}{0.1}=0.5\ eV^{-1}</span></p>
+<h2 data-number="2.6" id="selfconsistent-response"><span class="header-section-number">2.6</span> Selfconsistent response</h2>
+<p>The <em>selfconsistent</em> reponse function: <span class="math display">\chi_{IJ}^0=\frac{\partial N_I^{SCF}}{\partial V_J}</span></p>
+<p>is computed in a similar manner:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAU</span>         = .TRUE.</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUTYPE</span>     =  3</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUL</span>        =  2 <span class="at">-1</span> <span class="at">-1</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUU</span>        =  0.10 0.00 0.00</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">LDAUJ</span>        =  0.10 0.00 0.00</span></code></pre></div>
+<p><strong>N.B.I</strong>: The only difference between this calculation and the previous calculation of the <em>non-selfconsistent</em> response is that now we <strong>do not set</strong> <code>ICHARG=11</code>, <em>i.e</em>, now the charge density may change.</p>
+<p><strong>N.B.II</strong>: To speed things up it is a good idea to restart this calculation from the <code>WAVECAR</code> file of the previous non-selfconsistent response calculation.</p>
+<p>After this calculation has finished you should again inspect the number of <em>d</em>-electrons on atomic site 1:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">total</span> charge</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># of ion       s       p       d       tot</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">------------------------------------------</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1</span>        0.341   0.488   8.452   9.281</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">2</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">3</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">4</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">5</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">6</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">7</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">8</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">9</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>   <span class="ex">10</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>   <span class="ex">11</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>   <span class="ex">12</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>   <span class="ex">13</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>   <span class="ex">14</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>   <span class="ex">15</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>   <span class="ex">16</span>        0.342   0.490   8.438   9.269</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>   <span class="ex">17</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>   <span class="ex">18</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>   <span class="ex">19</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>   <span class="ex">20</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>   <span class="ex">21</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>   <span class="ex">22</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>   <span class="ex">23</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>   <span class="ex">24</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>   <span class="ex">25</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>   <span class="ex">26</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>   <span class="ex">27</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>   <span class="ex">28</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>   <span class="ex">29</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>   <span class="ex">30</span>        1.564   3.455   0.000   5.018</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>   <span class="ex">31</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>   <span class="ex">32</span>        1.564   3.455   0.000   5.019</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="ex">--------------------------------------------------</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="ex">tot</span>         30.488  63.107 135.022 228.617</span></code></pre></div>
+<p>The change in the number of <em>d</em>-electrons on atomic site 1 is found to be: <span class="math display">\Delta{N}_1^{NSCF}=4.452 − 4.438 = 0.012</span> and hence <span class="math display">\chi_{11}^0=\frac{0.012}{0.1}=0.12\ eV^{-1}</span></p>
+<h2 data-number="2.7" id="the-final-result"><span class="header-section-number">2.7</span> The final result</h2>
+<p>After we have computed both the non-selfconsistent as well as the selfconsistent response functions, the U parameter for the LSDA+U treatment of Ni <em>d</em>-electrons in NiO is found from:</p>
+<p><span class="math display">U=\chi^{-1}-\chi_{0}^{-1}\approx (\frac{\partial N_{I}^{SCF}}{\partial V_{I}})^{-1}-
+ (\frac{\partial N_{I}^{NSCF}}{\partial V_{I}})^{-1}</span> <span class="math display">=\frac{1}{0.12}-\frac {1}{0.5}=6.33\ eV</span></p>
+<p>To get a more accurate result one should repeat the previous calculations for a series of different additional potentials (for instance <code>LDAUU=LDAUJ=</code> <strong>-0.2, -0.15, -0.10, -0.05, 0.05, 0.10 ,0.15, and 0.20 eV</strong>). All necessary steps are scripted in doall.sh in the <a href="https:/www.vasp.at/wiki/index.php/Calculate_U_for_LSDA%2BU#Download">tgz-file below</a>.</p>
+<p>The relevant response functions are then easily found from a linear fit of the number of <em>d</em>-electrons on atomic site 1 as a function of the additional potential <em>V</em>:</p>
+<p><img src="../img/NiOLDAU3.png" title="NiOLDAU3" style="width:100.0%" /></p>
+<p>From the above we then have: <span class="math display">U=\chi^{-1}-\chi_{0}^{-1}\approx (\frac{\partial N_{I}^{SCF}}{\partial V_{I}})^{-1}-
+ (\frac{\partial N_{I}^{NSCF}}{\partial V_{I}})^{-1}</span> <span class="math display">=\frac{1}{0.13133}-\frac {1}{0.49233}=5.58\ eV</span></p>
+<h1 data-number="3" id="some-u-and-j-values"><span class="header-section-number">3</span> some U and J values</h1>
+<ul>
+<li>U values seem to depend on the oxidation states and the functional used.</li>
+<li>U-J=0.8 for Co<span class="citation" data-cites="Zhou13ACIE"><sup>[4]</sup></span></li>
+<li>5-6 eV for LDA+U and 2–3 eV for GGA+U<span class="citation" data-cites="Loschen07PRB"><sup>[5]</sup></span></li>
+<li>U value must satisfy the criteria of U &gt; 6 eV for LDA calculations and U &gt; 5 eV for GGA calculations to exactly predict the ground state of Ce2Ox.<span class="citation" data-cites="Andersson07PRB"><sup>[6]</sup></span></li>
+<li>3d轨道U和J计算如下所示：主要原理是改变d轨道的占据，在自旋极化的前提下计算不同自旋轨道能量的差值提取U和J，U为Coulomb排斥能，J是交换能，U在所有电子中都存在，不管自旋是否相同，J只存在于自旋相同的电子上。<span class="citation" data-cites="Anisimov91PRB"><sup>[7]</sup></span></li>
+</ul>
+<table>
+<caption>Table: Some U and J values</caption>
+<thead>
+<tr class="header">
+<th>Species</th>
+<th>U</th>
+<th>J</th>
+<th>U－J(Ueff)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CaCuO3</td>
+<td>7.5</td>
+<td>0.98</td>
+<td>6.5</td>
+</tr>
+<tr class="even">
+<td>NiO</td>
+<td>8.0</td>
+<td>0.95</td>
+<td>7.1</td>
+</tr>
+<tr class="odd">
+<td>CoO</td>
+<td>7.8</td>
+<td>0.92</td>
+<td>6.9</td>
+</tr>
+<tr class="even">
+<td>FeO</td>
+<td>6.8</td>
+<td>0.89</td>
+<td>5.9</td>
+</tr>
+<tr class="odd">
+<td>MnO</td>
+<td>6.9</td>
+<td>0.86</td>
+<td>10.3</td>
+</tr>
+<tr class="even">
+<td>VO</td>
+<td>6.7</td>
+<td>0.81</td>
+<td>5.9</td>
+</tr>
+<tr class="odd">
+<td>TiO</td>
+<td>6.6</td>
+<td>0.78</td>
+<td>5.8</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.1" id="ggau-from-materials-project"><span class="header-section-number">3.1</span> <a href="https:/materialsproject.org/wiki/index.php/GGA%2BU_calculations">GGA+U from Materials Project</a></h2>
+<h2 data-number="3.2" id="calibration-of-u-values"><span class="header-section-number">3.2</span> <span id="Calibration_of_U_values" class="mw-headline">Calibration of U values</span></h2>
+<p>The U values were obtained by fitting to experimental binary formation enthalpies as described in Wang et al.'s work, which is simple and accurately reproduces phase stabilities. A least squares method of obtaining the correct U value was used, as follows:</p>
+<ol type="1">
+<li>For each non-overlapping formation energy reaction considered, we find the region where the formation energy error passes zero. For the V-O system, this includes the following:
+<ol type="1">
+<li>2 V<sub>2</sub>O<sub>3</sub> + O<sub>2</sub> → 4 VO<sub>2</sub></li>
+<li>4VO<sub>2</sub> + O<sub>2</sub> → 2 V<sub>2</sub>O<sub>5</sub></li>
+</ol></li>
+<li>For each formation energy region identified, we fit the linear equation <span class="math inline">\begin{align} \mbox{Error/redox} &amp; = m U + c \end{align}</span> to the final U range. In the case of V, we will have two sets of (m,c).</li>
+<li>We find the U value that minimizes the sum of square Error / Redox.</li>
+<li>In the case of V, we get a U value of 3.25.</li>
+</ol>
+<h2 data-number="3.3" id="u-values"><span class="header-section-number">3.3</span> <span id="U_values" class="mw-headline">U values</span></h2>
+<p>The full list of U values used is described in the table below. For oxide containing any of the elements, both GGA and GGA+U calculations were performed.</p>
+<table style="width:99%;">
+<caption>Calibrated U values for Transition Metals</caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 18%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Element</th>
+<th style="text-align: left;">System</th>
+<th style="text-align: left;">Fitting Reaction</th>
+<th style="text-align: left;">Redox Couple</th>
+<th style="text-align: left;">Calibrated U (eV)</th>
+<th style="text-align: left;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Co</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">6 CoO + O<sub>2</sub> → 2 Co<sub>3</sub>O<sub>4</sub></td>
+<td style="text-align: left;">Co<sup>2+</sup> → Co<sup>2.67+</sup></td>
+<td style="text-align: left;">3.32</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cr</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">2/3 Cr<sub>2</sub>O<sub>3</sub> + O<sub>2</sub> → 4/3 CrO<sub>3</sub></td>
+<td style="text-align: left;">Cr<sup>3+</sup> → Cr<sup>6+</sup></td>
+<td style="text-align: left;">3.7</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fe</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">6 FeO + O<sub>2</sub> → 2 Fe<sub>3</sub>O<sub>4</sub><br />
+4 Fe<sub>3</sub>O<sub>4</sub> + O<sub>2</sub> → 6 Fe<sub>2</sub>O<sub>3</sub></td>
+<td style="text-align: left;">Fe<sup>2+</sup> → Fe<sup>2.67+</sup><br />
+Fe<sup>2.67+</sup> → Fe<sup>3+</sup></td>
+<td style="text-align: left;">5.3</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mn</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">6 MnO + O<sub>2</sub> → 2 Mn<sub>3</sub>O<sub>4</sub><br />
+Mn<sub>3</sub>O<sub>4</sub> + O<sub>2</sub> → 3 MnO<sub>2</sub></td>
+<td style="text-align: left;">Mn<sup>2+</sup> → Mn<sup>2.67+</sup><br />
+Mn<sup>2.67+</sup> → Mn<sup>4+</sup></td>
+<td style="text-align: left;">3.9</td>
+<td style="text-align: left;">Mn<sub>2</sub>O<sub>3</sub> was explicitly excluded from calibration set<br />
+due to the large number of atoms in its unit cell.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mo</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">2 MoO2 + O<sub>2</sub> → 2 MoO<sub>3</sub></td>
+<td style="text-align: left;">Mo<sup>4+</sup> → Mo<sup>6+</sup></td>
+<td style="text-align: left;">4.38</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">Li<sub>2</sub>O + NiO + O<sub>2</sub> → LiNiO<sub>2</sub></td>
+<td style="text-align: left;">Ni<sup>2+</sup> → Ni<sup>3+</sup></td>
+<td style="text-align: left;">6.2</td>
+<td style="text-align: left;">Binary formation energies are not readily available for the Ni.<br />
+The Ni U calibration was performed using a ternary oxide formation energy.<sup><a href="#cite_note-5">[5]</a></sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">V</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">2 V<sub>2</sub>O<sub>3</sub> + O<sub>2</sub> → 4 VO<sub>2</sub><br />
+4 VO<sub>2</sub> + O<sub>2</sub> → 2 V<sub>2</sub>O<sub>5</sub></td>
+<td style="text-align: left;">V<sup>3+</sup> → V<sup>4+</sup><br />
+V<sup>4+</sup> → V<sup>5+</sup></td>
+<td style="text-align: left;">3.25</td>
+<td style="text-align: left;">VO was explicitly excluded from calibration set<br />
+due to its known metallic nature.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">Oxides</td>
+<td style="text-align: left;">2 WO<sub>2</sub> + O<sub>2</sub> → 2 WO<sub>3</sub></td>
+<td style="text-align: left;">W<sup>4+</sup> → W<sup>6+</sup></td>
+<td style="text-align: left;">6.2</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.4" id="caveats"><span class="header-section-number">3.4</span> <span id="Caveats" class="mw-headline">Caveats</span></h2>
+<p>The U values are calibrated for phase stability analyses, and should be used with care if applied to obtain other properties such as band structures. Also, the U values depend on the pseudopotential used. A discussion of the pseudopotentials used in the Materials Project can be found <a href="/wiki/index.php/Pseudopotentials_Choice" title="Pseudopotentials Choice">here</a>.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Anisimov97JPCM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Anisimov, V. I.; Aryasetiawan, F.; Lichtenstein, A. I. First-Principles Calculations of the Electronic Structure and Spectra of Strongly Correlated Systems: The LDA+u Method. <em>J. Phys. Condens. Matter.</em> <strong>1997</strong>, <em>9</em>, 767–808.</div>
+</div>
+<div id="ref-Cococcioni05PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Cococcioni, M.; de Gironcoli, S. Linear Response Approach to the Calculation of the Effective Interaction Parameters in theLDA\mathplus{}{u}{m}ethod. <em>Phys. Rev. B</em> <strong>2005</strong>, <em>71</em>, 035105.</div>
+</div>
+<div id="ref-Kulik06PRL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Kulik, H. J.; Cococcioni, M.; Scherlis, D. A.; Marzari, N. Density Functional Theory in Transition-Metal Chemistry: A Self-Consistent HubbardUApproach. <em>Phys. Rev. Lett.</em> <strong>2006</strong>, <em>97</em>.</div>
+</div>
+<div id="ref-Zhou13ACIE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Zhou, W.; Sunarso, J.; Zhao, M.; Liang, F.; Klande, T.; Feldhoff, A. A Highly Active Perovskite Electrode for the Oxygen Reduction Reaction Below 600 \textdegreeC. <em>Angew. Chem. Int. Ed.</em> <strong>2013</strong>, <em>52</em>, 14036–14040.</div>
+</div>
+<div id="ref-Loschen07PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Loschen, C.; Carrasco, J.; Neyman, K. M.; Illas, F. First-Principles $\Mathrm{LDA}+\mathrm{u}$ and $\Mathrm{GGA}+\mathrm{u}$ Study of Cerium Oxides: Dependence on the Effective u Parameter. <em>Phys. Rev. B</em> <strong>2007</strong>, <em>75</em>, 035115.</div>
+</div>
+<div id="ref-Andersson07PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Andersson, D. A.; Simak, S. I.; Johansson, B.; Abrikosov, I. A.; Skorodumova, N. V. Modeling of $\Mathrm{ce}{\mathrm{o}}_{2}$, ${\Mathrm{ce}}_{2\mathrm{o}}_{3}$, and $\Mathrm{ce}{\mathrm{o}}_{2\ensuremath{-}x}$ in the $\Mathrm{LDA}+u$ Formalism. <em>Phys. Rev. B</em> <strong>2007</strong>, <em>75</em>, 035109.</div>
+</div>
+<div id="ref-Anisimov91PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Anisimov, V. I.; Zaanen, J.; Andersen, O. K. Band Theory and Mott Insulators: Hubbard u Instead of Stoner i. <em>Phys. Rev. B</em> <strong>1991</strong>, <em>44</em>, 943.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

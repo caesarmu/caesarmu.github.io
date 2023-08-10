@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Redox Potentials and Standard Reduction Potentials</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Redox Potentials and Standard Reduction Potentials"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#redox-poentails"><span class="toc-section-number">1</span> Redox Poentails</a></li>
+          <li><a href="#standard-reduction-potentials"><span class="toc-section-number">2</span> Standard Reduction Potentials</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="redox-poentails"><span class="header-section-number">1</span> Redox Poentails</h1>
+<p><span class="math display">V_{Reduction}(H)=0</span> <span class="math display">V_{Redox}(H)=4.44 eV</span> <span class="math display">V_{Redox}(A)=V_{Reduction}(A)+V_{Redox}(H)</span></p>
+<table>
+<caption>Table: Redox Poentails</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;">V<sub>Redox</sub>(eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">O<sub>2</sub>/O<sub>2</sub><sup>-</sup></td>
+<td style="text-align: center;">4.44-0.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O<sub>2</sub>/H<sub>2</sub>O</td>
+<td style="text-align: center;">4.44+1.229</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<h1 data-number="2" id="standard-reduction-potentials"><span class="header-section-number">2</span> Standard Reduction Potentials</h1>
+<p>Ref: <a href="https://chem.libretexts.org/Reference/Reference_Tables/Electrochemistry_Tables/P1%3A_Standard_Reduction_Potentials_by_Element" class="uri">https://chem.libretexts.org/Reference/Reference_Tables/Electrochemistry_Tables/P1%3A_Standard_Reduction_Potentials_by_Element</a></p>
+<p>The following table provides <em>E</em><sup>o</sup> and <em>E</em><sup>o</sup> values for selected reduction reactions. Values are from the following sources: Bard, A. J.; Parsons, B.; Jordon, J., eds. <em>Standard Potentials in Aqueous Solutions</em>, Dekker: New York, 1985; Milazzo, G.; Caroli, S.; Sharma, V. K. <em>Tables of Standard Electrode Potentials</em>, Wiley: London, 1978; Swift, E. H.; Butler, E. A. <em>Quantitative Measurements and Chemical Equilibria</em>, Freeman: New York, 1972.</p>
+<p>Solids, gases, and liquids are identified; all other species are aqueous. Reduction reactions in acidic solution are written using H<sup>+</sup> in place of H<sub>3</sub>O<sup>+</sup>. You may rewrite a reaction by replacing H<sup>+</sup> with H<sub>3</sub>O<sup>+</sup> and adding to the opposite side of the reaction one molecule of H<sub>2</sub>O per H<sup>+</sup>; thus</p>
+<p>H<sub>3</sub>AsO<sub>4</sub> + 2H<sup>+</sup> + 2<em>e</em><sup>–</sup> <span class="math inline">\rightleftharpoons</span> HAsO<sub>2</sub> + 2H<sub>2</sub>O</p>
+<p>becomes</p>
+<p>H<sub>3</sub>AsO<sub>4</sub> + 2H<sub>3</sub>O<sup>+</sup> + 2<em>e</em><sup>–</sup> <span class="math inline">\rightleftharpoons</span> HAsO<sub>2</sub> + 4H<sub>2</sub>O</p>
+<p>Conditions for formal potentials (E<sup>o</sup>´) are listed next to the potential.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Aluminum</th>
+<th style="text-align: center;"><strong><em>E</em></strong>° (V)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Al<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Al(<em>s</em>)</td>
+<td style="text-align: center;">–1.676</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Al(OH)<sub>4</sub><sup>−</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Al(<em>s</em>) + 4OH<sup>−</sup></td>
+<td style="text-align: center;">–2.310</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AlF<sub>6</sub><sup>3−</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Al(<em>s</em>) + 6F<sup>−</sup></td>
+<td style="text-align: center;">–2.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Antimony</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sb + 3H<sup>+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> SbH<sub>3</sub>(<em>g</em>)</td>
+<td style="text-align: center;">–0.510</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sb<sub>2</sub>O<sub>5</sub>(<em>s</em>) + 6H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2SbO<sup>+</sup> + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.605</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SbO<sup>+</sup> + 2H<sup>+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Sb(<em>s</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.212</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Arsenic</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">As + 3H<sup>+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> AsH<sub>3</sub>(<em>g</em>)</td>
+<td style="text-align: center;">–0.225</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>3</sub>AsO<sub>4</sub> + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> HAsO<sub>2</sub> + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.560</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HAsO<sub>2</sub> + 3H<sup>+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> As(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.240</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Barium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ba<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ba(<em>s</em>)</td>
+<td style="text-align: center;">–2.91</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BaO(<em>s</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ba(<em>s</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">2.365</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Beryllium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Be<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Be(<em>s</em>)</td>
+<td style="text-align: center;">–1.99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Bismuth</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bi<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Bi(<em>s</em>)</td>
+<td style="text-align: center;">0.317</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BiCl<sub>4</sub><sup>−</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Bi(<em>s</em>) + 4Cl<sup>−</sup></td>
+<td style="text-align: center;">0.199</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Boron</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B(OH)<sub>3</sub> + 3H<sup>+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> B(<em>s</em>) + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.890</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B(OH)<sub>4</sub><sup>−</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> B(<em>s</em>) + 4OH<sup>−</sup></td>
+<td style="text-align: center;">–1.811</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Bromine</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Br<sub>2</sub> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Br<sup>−</sup></td>
+<td style="text-align: center;">1.087</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HOBr + H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Br<sup>−</sup> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.341</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HOBr + H<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> ½Br<sup>−</sup> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.604</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BrO<sup>−</sup> + H<sub>2</sub>O(<em>l</em>) +<em>2e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Br<sup>−</sup> + 2OH<sup>−</sup></td>
+<td style="text-align: center;">0.76 in 1 M NaOH</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BrO<sub>3</sub><sup>−</sup> + 6H<sup>+</sup> + 5<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> ½Br<sub>2</sub>(<em>l</em>) + 3H<sub>2</sub>O</td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BrO<sub>3</sub><sup>−</sup> + 6H<sup>+</sup> + 6<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Br<sup>−</sup> + 3H<sub>2</sub>O</td>
+<td style="text-align: center;">1.478</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cadmium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cd<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cd(<em>s</em>)</td>
+<td style="text-align: center;">–0.4030</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cd(CN)<sub>4</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cd(<em>s</em>) + 4CN<sup>−</sup></td>
+<td style="text-align: center;">–0.943</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cd(<em>s</em>) + 4NH<sub>3</sub></td>
+<td style="text-align: center;">–0.622</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Calcium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ca<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ca(<em>s</em>)</td>
+<td style="text-align: center;">–2.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Carbon</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CO<sub>2</sub>(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> CO(<em>g</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.106</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO<sub>2</sub>(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> HCO<sub>2</sub>H</td>
+<td style="text-align: center;">–0.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2CO<sub>2</sub>(<em>g</em>) + 2H<sup>+</sup> +2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>C<sub>2</sub>O<sub>4</sub></td>
+<td style="text-align: center;">–0.481</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HCHO + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> CH<sub>3</sub>OH</td>
+<td style="text-align: center;">0.2323</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cerium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ce<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ce(<em>s</em>)</td>
+<td style="text-align: center;">–2.336</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ce<sup>4+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ce<sup>3+</sup></td>
+<td style="text-align: center;">1.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cesium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cs<sup>+</sup>(aq) + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Css)</td>
+<td style="text-align: center;">-2.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Chlorine</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cl<sub>2</sub>(<em>g</em>) + 2<em>e</em><sup>− </sup> <span class="math inline">\rightleftharpoons</span> 2Cl<sup>−</sup></td>
+<td style="text-align: center;">1.396</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ClO<sup>−</sup> + H<sub>2</sub>O(<em>l</em>) + <em>e</em><sup>− </sup> <span class="math inline">\rightleftharpoons</span> ½ Cl<sub>2</sub>(<em>g</em>) + 2OH<sup>−</sup></td>
+<td style="text-align: center;">0.421 in 1 M NaOH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ClO<sup>−</sup> + H<sub>2</sub>O(<em>l</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cl<sup>−</sup> + 2OH<sup>−</sup></td>
+<td style="text-align: center;">0.890 in 1 M NaOH</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HClO<sub>2</sub> + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> HOCl + H<sub>2</sub>O</td>
+<td style="text-align: center;">1.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ClO<sub>3</sub><sup>−</sup> + 2H<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> ClO<sub>2</sub>(<em>g</em>) + H<sub>2</sub>O</td>
+<td style="text-align: center;">1.175</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ClO<sub>3</sub><sup>−</sup> + 3H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H ClO<sub>2</sub> + H<sub>2</sub>O</td>
+<td style="text-align: center;">1.181</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ClO<sub>4</sub><sup>−</sup> + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> ClO<sub>3</sub><sup>−</sup> + H<sub>2</sub>O</td>
+<td style="text-align: center;">1.201</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ClO<sub>4</sub><sup>-</sup>(aq) + H<sub>2</sub>O(l) + 2e- <span class="math inline">\rightleftharpoons</span> ClO<sub>3</sub><sup>-</sup>(aq) + 2OH<sup>-</sup>(aq)</td>
+<td style="text-align: center;">0.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ClO<sub>3</sub><sup>-</sup>(aq) + H<sub>2</sub>O(l) + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> ClO<sub>2</sub><sup>-</sup>(aq) + 2OH<sup>-</sup>(aq)</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ClO<sub>2</sub><sup>-</sup>(aq) + H<sub>2</sub>O(l) + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> ClO<sup>-</sup>(aq) + 2OH<sup>-</sup>(aq)</td>
+<td style="text-align: center;">0.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Chromium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cr<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cr<sup>2+</sup></td>
+<td style="text-align: center;">–0.424</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cr<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cr(<em>s</em>)</td>
+<td style="text-align: center;">–0.90</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> + 6<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Cr<sup>3+</sup> + 7H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CrO<sub>4</sub><sup>2−</sup> + 4H<sub>2</sub>O(<em>l</em>) + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2 Cr(OH)<sub>4</sub><sup>−</sup> + 4OH<sup>−</sup></td>
+<td style="text-align: center;">–0.13 in 1 M NaOH</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cobalt</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Co<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Co(<em>s</em>)</td>
+<td style="text-align: center;">–0.277</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Co<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Co<sup>2+</sup></td>
+<td style="text-align: center;">1.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Co(NH<sub>3</sub>)<sub>6</sub><sup>3+</sup> +<em>e</em><sup>−</sup>  <span class="math inline">\rightleftharpoons</span> Co(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup></td>
+<td style="text-align: center;">0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Co(OH)<sub>3</sub>(<em>s</em>) + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Co(OH)<sub>2</sub>(<em>s</em>) + OH<sup>−</sup></td>
+<td style="text-align: center;">0.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Co(OH)<sub>2</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Co(<em>s</em>) + 2OH<sup>−</sup></td>
+<td style="text-align: center;">–0.746</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Copper</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cu<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cu(<em>s</em>)</td>
+<td style="text-align: center;">0.520</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cu<sup>2+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cu<sup>+</sup></td>
+<td style="text-align: center;">0.159</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cu<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Cu(<em>s</em>)</td>
+<td style="text-align: center;">0.3419</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cu<sup>2+</sup> + I<sup>−</sup> +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> CuI(<em>s</em>)</td>
+<td style="text-align: center;">0.86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Cu<sup>2+</sup> + Cl<sup>−</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> CuCl(<em>s</em>)</td>
+<td style="text-align: center;">0.559</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fluorine</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F<sub>2</sub>(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2HF</td>
+<td style="text-align: center;">3.053</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F<sub>2</sub>(<em>g</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2F<sup>−</sup></td>
+<td style="text-align: center;">2.87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Gallium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ga<sup>{3+}</sup> + 3e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ga(s)</td>
+<td style="text-align: center;">-0.56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Gold</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Au<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Au(<em>s</em>)</td>
+<td style="text-align: center;">1.83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Au<sup>3+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Au<sup>+</sup></td>
+<td style="text-align: center;">1.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Au<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Au(<em>s</em>)</td>
+<td style="text-align: center;">1.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AuCl<sub>4</sub><sup>−</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Au(<em>s</em>) + 4Cl<sup>−</sup></td>
+<td style="text-align: center;">1.002</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hydrogen</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2H<sup>+</sup> + 2e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> H_2(g)</td>
+<td style="text-align: center;">0.00000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub>O + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> <span class="math inline">\frac{1}{2}</span>H<sub>2</sub>(<em>g</em>) + OH<sup>−</sup></td>
+<td style="text-align: center;">–0.828</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Iodine</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I<sub>2</sub>(s) + 2e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2I<sup>−</sup></td>
+<td style="text-align: center;">0.5355</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">I<sub>3</sub><sup>−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 3I<sup>−</sup></td>
+<td style="text-align: center;">0.536</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HIO + H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> I<sup>−</sup> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.985</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">IO<sub>3</sub><sup>−</sup> + 6H<sup>+</sup> + 5<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> ½I<sub>2</sub>(<em>s</em>) + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.195</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">IO<sub>3</sub><sup>−</sup>+ 3H<sub>2</sub>O(<em>l</em>) + 6<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> I<sup>−</sup> + 6OH<sup>−</sup></td>
+<td style="text-align: center;">0.257</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Iron</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Fe(<em>s</em>)</td>
+<td style="text-align: center;">–0.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fe<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Fe(<em>s</em>)</td>
+<td style="text-align: center;">–0.037</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Fe<sup>2+</sup></td>
+<td style="text-align: center;">0.771</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fe(CN)<sub>6</sub><sup>3−</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Fe(CN)<sub>6</sub><sup>4−</sup></td>
+<td style="text-align: center;">0.356</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fe(phen)<sub>6</sub><sup>3+</sup> +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> F e(phen)<sub>6</sub><sup>2+</sup></td>
+<td style="text-align: center;">1.147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Lanthanum</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">La<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> La(<em>s</em>)</td>
+<td style="text-align: center;">–2.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Lead</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pb<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Pb(<em>s</em>)</td>
+<td style="text-align: center;">–0.126</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PbO<sub>2</sub>(s) + 4H<sup>+</sup> +2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Pb<sup>2+</sup>(aq) + 2H<sub>2</sub>O(l)</td>
+<td style="text-align: center;">1.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PbO<sub>2</sub>(<em>s</em>) + 4<em>S</em>O<sub>4</sub><sup>2−</sup> + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> PbSO<sub>4</sub>(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.690</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PbSO<sub>4</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Pb(<em>s</em>) + SO<sub>4</sub><sup>2−</sup></td>
+<td style="text-align: center;">–0.356</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Lithium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Li<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Li(<em>s</em>)</td>
+<td style="text-align: center;">–3.040</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Magnesium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mg<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mg(<em>s</em>)</td>
+<td style="text-align: center;">–2.356</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mg(OH)<sub>2</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mg(<em>s</em>) + 2OH<sup>−</sup></td>
+<td style="text-align: center;">–2.687</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Manganese</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mn<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mn(<em>s</em>)</td>
+<td style="text-align: center;">–1.17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mn<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mn<sup>2+</sup></td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MnO<sub>2</sub>(<em>s</em>) + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mn<sup>2+</sup> + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MnO<sub>2</sub>(s) + 4H<sup>+</sup> + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Mn<sup>3+</sup> (aq) + H<sub>2</sub>O(I)</td>
+<td style="text-align: center;">0.95</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MnO<sub>4</sub><sup>−</sup> + 4H<sup>+</sup> +3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> MnO<sub>2</sub>(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MnO<sub>4</sub><sup>−</sup>+ 8H<sup>+</sup> + 5<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mn<sup>2+</sup> + 4H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MnO<sub>4</sub><sup>−</sup> + 2H<sub>2</sub>O(<em>l</em>) + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> MnO<sub>2</sub>(<em>s</em>) + 4OH<sup>−</sup></td>
+<td style="text-align: center;">0.60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mercury</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hg<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Hg(<em>l</em>)</td>
+<td style="text-align: center;">0.8535</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2Hg<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Hg<sub>2</sub><sup>2+</sup></td>
+<td style="text-align: center;">0.911</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hg<sub>2</sub><sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Hg(<em>l</em>)</td>
+<td style="text-align: center;">0.7960</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hg<sub>2</sub>Cl<sub>2</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Hg(<em>l</em>) + 2Cl<sup>−</sup></td>
+<td style="text-align: center;">0.2682</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HgO(<em>s</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Hg(<em>l</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.926</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hg<sub>2</sub>Br<sub>2</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Hg(<em>l</em>) + 2Br<sup>−</sup></td>
+<td style="text-align: center;">1.392</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Hg<sub>2</sub>I<sub>2</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Hg(<em>l</em>) + 2I<sup>−</sup></td>
+<td style="text-align: center;">–0.0405</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Molybdenum</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mo<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mo(<em>s</em>)</td>
+<td style="text-align: center;">–0.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MoO<sub>2</sub>(<em>s</em>) + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mo(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.152</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MoO<sub>4</sub><sup>2−</sup> + 4H<sub>2</sub>O(<em>l</em>) + 6<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Mo(<em>s</em>) + 8OH<sup>−</sup></td>
+<td style="text-align: center;">–0.913</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Nickel</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ni<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ni(<em>s</em>)</td>
+<td style="text-align: center;">–0.257</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ni(OH)<sub>2</sub> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ni(<em>s</em>) + 2OH<sup>−</sup></td>
+<td style="text-align: center;">–0.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ni(<em>s</em>) + 6NH<sub>3</sub></td>
+<td style="text-align: center;">–0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Nitrogen</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">N<sub>2</sub>(g) + 5H<sup>+</sup> + 4e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> N<sub>2</sub>H<sub>5</sub><sup>+</sup></td>
+<td style="text-align: center;">–0.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">N<sub>2</sub>O(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> N<sub>2</sub>(<em>g</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2NO(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> N<sub>2</sub>O(<em>g</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HNO<sub>2</sub> + H<sup>+</sup> +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> NO(<em>g</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.996</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2HNO<sub>2</sub> + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> N<sub>2</sub>O(<em>g</em>) + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.297</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NO<sub>3</sub><sup>−</sup> + 3H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> HNO<sub>2</sub> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NO<sub>2</sub>(g) + H<sup>+</sup>(aq) + e<sup>-</sup>   <span class="math inline">\rightleftharpoons</span> HNO<sub>2</sub>(aq)</td>
+<td style="text-align: center;">1.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NO<sub>3</sub><sup>-</sup>(aq) + 4H<sup>+</sup>(aq) + 3e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> NO(g) + 2H<sub>2</sub>O(l)</td>
+<td style="text-align: center;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Oxygen</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O<sub>2</sub>(g) + 2H<sup>+</sup> + 2e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>O<sub>2</sub></td>
+<td style="text-align: center;">0.695</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O<sub>2</sub>(<em>g</em>) + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.229</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H<sub>2</sub>O<sub>2</sub> + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.763</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O<sub>2</sub>(<em>g</em>) + 2H<sub>2</sub>O(<em>l</em>) + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 4OH<sup>−</sup></td>
+<td style="text-align: center;">0.401</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O<sub>3</sub>(<em>g</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> O<sub>2</sub>(<em>g</em>) + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">2.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">O<sub>2</sub> (g) + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> O<sub>2</sub><sup>-</sup>(aq)</td>
+<td style="text-align: center;">-0.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O<sub>2</sub> (aq) + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> O<sub>2</sub><sup>-</sup>(aq)</td>
+<td style="text-align: center;">-0.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Phosphorous</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">P(s,white) + 3H<sup>+</sup> + 3e<sup>−</sup> <span class="math inline">\rightleftharpoons</span> PH<sub>3</sub>(g)</td>
+<td style="text-align: center;">0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>3</sub>PO<sub>3</sub>+ 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>3</sub>PO<sub>2</sub> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">-0.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H<sub>3</sub>PO<sub>4</sub> + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>3</sub>PO<sub>3</sub> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">-0.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Platinum</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pt<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Pt(<em>s</em>)</td>
+<td style="text-align: center;">1.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PtCl<sub>4</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Pt(<em>s</em>) + 4Cl<sup>−</sup></td>
+<td style="text-align: center;">0.73</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">PtCl<sub>6</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> PtCl<sub>4</sub><sup>2-</sup> + 2Cl<sup>−</sup></td>
+<td style="text-align: center;">0.68</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Potassium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">K<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> K(<em>s</em>)</td>
+<td style="text-align: center;">-2.93</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Rubidium</strong> |</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rb<sup>+</sup> + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Rb (<em>s</em>)</td>
+<td style="text-align: center;">-2.98</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ruthenium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ru<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ru<sup>2+</sup></td>
+<td style="text-align: center;">0.249</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">RuO<sub>2</sub>(<em>s</em>) + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ru(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ru(NH<sub>3</sub>)<sub>6</sub><sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ru(<em>s</em>) + Ru(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup></td>
+<td style="text-align: center;">0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ru(CN)<sub>6</sub><sup>3−</sup> +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ru(<em>s</em>) + Ru(CN)<sub>6</sub><sup>4−</sup></td>
+<td style="text-align: center;">0.86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Selenium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Se(s) + 2e<sup>−</sup><span class="math inline">\rightleftharpoons</span> Se<sup>2-</sup></td>
+<td style="text-align: center;">–0.67 in 1 M NaOH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Se(<em>s</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>Se(<em>g</em>)</td>
+<td style="text-align: center;">–0.115</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub>SeO<sub>3</sub> + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Se(<em>s</em>) + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SeO<sub>4</sub><sup>3−</sup> + 4H<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>SeO<sub>3</sub> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.151</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Silicon</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SiF_6<sup>2-</sup> + 4e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Si(s) + 6F<sup>-</sup></td>
+<td style="text-align: center;">–1.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SiO<sub>2</sub>(<em>s</em>) + 4H<sup>+</sup> + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Si(<em>s</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.909</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SiO<sub>2</sub>(<em>s</em>) + 8H<sup>+</sup> + 8<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> SiH<sub>4</sub>(<em>g</em>) + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.516</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Silver</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ag(<em>s</em>)</td>
+<td style="text-align: center;">0.7996</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AgBr(<em>s</em>) + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ag(<em>s</em>) + Br<sup>−</sup></td>
+<td style="text-align: center;">0.071</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag<sub>2</sub>C<sub>2</sub>O<sub>4</sub>(<em>s</em>) + 2<em>e</em><sup>−</sup>  <span class="math inline">\rightleftharpoons</span> 2Ag(<em>s</em>) + C<sub>2</sub>O<sub>4</sub><sup>2−</sup></td>
+<td style="text-align: center;">0.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AgCl(<em>s</em>) + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ag(<em>s</em>) + Cl<sup>−</sup></td>
+<td style="text-align: center;">0.2223</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AgI(<em>s</em>) + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ag(<em>s</em>) + I<sup>−</sup></td>
+<td style="text-align: center;">–0.152</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ag<sub>2</sub>S(<em>s</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2Ag(<em>s</em>) + S<sup>2−</sup></td>
+<td style="text-align: center;">–0.71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ag(<em>s</em>) + 2NH<sub>3</sub></td>
+<td style="text-align: center;">–0.373</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sodium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Na<sup>+</sup> + e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Na(s)</td>
+<td style="text-align: center;">–2.713</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Strontium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sr<sup>2+</sup> + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Sr(s)</td>
+<td style="text-align: center;">–2.89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sulfur</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">S(s) + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> S<sup>2-</sup></td>
+<td style="text-align: center;">–0.407</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S(<em>s</em>) + 2H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>S</td>
+<td style="text-align: center;">0.144</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">S<sub>2</sub>O<sub>6</sub><sup>2−</sup> + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span>  2H<sub>2</sub>SO <sub>3</sub></td>
+<td style="text-align: center;">0.569</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S<sub>2</sub>O<sub>8</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2SO<sub>4</sub>^2 −^</td>
+<td style="text-align: center;">1.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">S<sub>4</sub>O<sub>6</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> 2S<sub>2</sub>O~3 ~<sup>2−</sup></td>
+<td style="text-align: center;">0.080</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2SO<sub>3</sub><sup>2−</sup> + 2H<sub>2</sub>O(<em>l</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> S<sub>2</sub>O<sub>4</sub><sup>2−</sup> + 4OH<sup>−</sup></td>
+<td style="text-align: center;">–1.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2SO<sub>3</sub><sup>2−</sup> + 3H<sub>2</sub>O(<em>l</em>) + 4<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> S<sub>2</sub>O<sub>3</sub><sup>2−</sup> + 6OH<sup>−</sup></td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2SO<sub>4</sub><sup>2−</sup> + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> S<sub>2</sub>O<sub>6</sub><sup>2−</sup> + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">SO<sub>4</sub><sup>2−</sup> + H<sub>2</sub>O(<em>l</em>) + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> SO<sub>3</sub><sup>2−</sup>+ 2OH<sup>−</sup></td>
+<td style="text-align: center;">–0.936</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SO<sub>4</sub><sup>2−</sup> + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> H<sub>2</sub>SO<sub>3</sub><sup>2−</sup>+ H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.172</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thallium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Tl^{3+} + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Tl<sup>+</sup></td>
+<td style="text-align: center;">0.77 in 1 M HCl</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Tl<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Tl(<em>s</em>)</td>
+<td style="text-align: center;">0.742</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Tin</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sn<sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Sn(<em>s</em>)</td>
+<td style="text-align: center;">-0.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Sn<sup>4+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Sn<sup>2+</sup></td>
+<td style="text-align: center;">0.154</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Titanium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ti<sup>2+</sup> + 2e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> Ti(s)</td>
+<td style="text-align: center;">–0.163</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ti<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Ti<sup>2+</sup></td>
+<td style="text-align: center;">–0.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Tungsten</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">WO<sup>2</sup> (s) + 4H<sup>+</sup> + 4e<sup>-</sup> <span class="math inline">\rightleftharpoons</span> W(s) + 2H<sup>2</sup>O(l)</td>
+<td style="text-align: center;">–0.119</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">WO<sub>3</sub>(<em>s</em>) + 6H<sup>+</sup> + 6<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> W(<em>s</em>) + 3H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">–0.090</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uranium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">U<sup>3+</sup> + 3<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> U(<em>s</em>)</td>
+<td style="text-align: center;">–1.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">U<sup>4+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> U<sup>3+</sup></td>
+<td style="text-align: center;">–0.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">UO<sub>2</sub><sup>+</sup> + 4H<sup>+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> U^ 4+^ + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">UO<sub>2</sub><sup>2+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> UO <sub>2</sub><sup>+</sup></td>
+<td style="text-align: center;">0.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">UO<sub>2</sub><sup>2+</sup> + 4H<sup>+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> U<sup>4+</sup> + 2H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.327</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Vanadium</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">V<sup>2+</sup>+2e<sup>-</sup><span class="math inline">\rightleftharpoons</span>V(s)</td>
+<td style="text-align: center;">–1.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">V<sup>3+</sup> + <em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> V<sup>2+</sup></td>
+<td style="text-align: center;">–0.255</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">VO<sup>2+</sup> + 2H<sup>+</sup> +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> V<sup>3+</sup> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">0.337</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VO<sub>2</sub><sup>2+</sup> + 2H<sup>+</sup>  +<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> VO<sup>2+</sup> + H<sub>2</sub>O(<em>l</em>)</td>
+<td style="text-align: center;">1.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Zinc</td>
+<td style="text-align: center;"> </td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Zn<sup>2+</sup>(aq) + 2e− <span class="math inline">\rightleftharpoons</span> Zn(s)</td>
+<td style="text-align: center;">–0.7618</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Zn(OH)<sub>4</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Zn(<em>s</em>) + 4OH<sup>−</sup></td>
+<td style="text-align: center;">–1.285</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Zn(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Zn(<em>s</em>) + 4NH<sub>3</sub></td>
+<td style="text-align: center;">–1.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Zn(CN)<sub>4</sub><sup>2−</sup> + 2<em>e</em><sup>−</sup> <span class="math inline">\rightleftharpoons</span> Zn(<em>s</em>) + 4CN</td>
+<td style="text-align: center;">–1.34</td>
+</tr>
+</tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

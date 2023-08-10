@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Materials Studio Errors and examples</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Materials Studio Errors and examples"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#errors"><span class="toc-section-number">1</span> Errors</a>
+          <ul>
+          <li><a href="#timeout-error"><span class="toc-section-number">1.1</span> Timeout Error</a></li>
+          <li><a href="#ls_license_vs2008.dll-not-found"><span class="toc-section-number">1.2</span> <code>ls_license_vs2008.dll</code> not found</a></li>
+          <li><a href="#win10关键字不在字典中"><span class="toc-section-number">1.3</span> Win10关键字不在字典中</a></li>
+          <li><a href="#license-error"><span class="toc-section-number">1.4</span> <code>License  Error</code></a></li>
+          <li><a href="#安装失败且无法卸载问题"><span class="toc-section-number">1.5</span> 安装失败且无法卸载问题</a></li>
+          </ul></li>
+          <li><a href="#ms-examples"><span class="toc-section-number">2</span> MS Examples</a>
+          <ul>
+          <li><a href="#dmol-tansport"><span class="toc-section-number">2.1</span> Dmol Tansport</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="errors"><span class="header-section-number">1</span> Errors</h1>
+<h2 data-number="1.1" id="timeout-error"><span class="header-section-number">1.1</span> Timeout Error</h2>
+<p><img src="../img/MS_error_1.png" title="MS_error_1" style="width:100.0%" /></p>
+<ul>
+<li><strong>解决方法:</strong> <code>Tools</code>-<code>&gt;Server Console</code>, 打开 <code>Server Console</code>面板，<code>Server Gateways</code>-&gt;<code>My Computer</code>,右键属性，修改如下两项。</li>
+</ul>
+<p><img src="../img/MS_error_1_2.png" title="MS_error_1_2" style="width:100.0%" /></p>
+<ul>
+<li>返回<code>Server Gateways</code>-&gt;<code>My Computer</code>，右键<code>Test Gateway</code>，测试Gateway是否正常。</li>
+</ul>
+<h2 data-number="1.2" id="ls_license_vs2008.dll-not-found"><span class="header-section-number">1.2</span> <code>ls_license_vs2008.dll</code> not found</h2>
+<p><img src="../img/MS_error_2.png" title="MS_error_2" style="width:100.0%" /></p>
+<ul>
+<li><strong>解决方法:</strong> 找到文件夹 <code>C:\Program Files (x86)\Common Files\Accelrys\LicensePack</code> （64位） 或 <code>C:\Program Files (x86)\Common Files\Accelrys\LicensePack</code> （32位）, 将其所有的<code>dll</code>文件复制到 <code>C:\Program Files (x86)\Accelrys\Materials Studio 8.0\bin</code>目录下。32位系统类似。</li>
+<li>不要使用360清理系统，这个清理比较激进，容易过度清理掉一些库文件。如果想清理的话，推荐CCleaner。</li>
+</ul>
+<h2 data-number="1.3" id="win10关键字不在字典中"><span class="header-section-number">1.3</span> Win10关键字不在字典中</h2>
+<ol type="1">
+<li>可能与Microsoft .NET Framework 的版本更新有关，卸载掉现在电脑上安装的.NET 4.6.X，在微软官网上下载并安装.NET 4.5.2。</li>
+<li>或者安装更新版本的Materials Studio.</li>
+</ol>
+<h2 data-number="1.4" id="license-error"><span class="header-section-number">1.4</span> <code>License  Error</code></h2>
+<ol type="1">
+<li><code>控制面板(Win7)/设置(Win10)</code>-&gt;搜索<code>UAC</code>-&gt;<code>更改用户账户控制</code>-&gt;<code>调到最低</code>。</li>
+</ol>
+<p><img src="../img/MS_error_3.png" title="MS_error_3" style="width:100.0%" /></p>
+<ol start="2" type="1">
+<li>我的电脑-&gt;右键属性-&gt;找到计算机名。</li>
+<li>修改msilicense.dat，修改计算机名。</li>
+</ol>
+<p><img src="../img/MS_error_4.png" title="MS_error_4" style="width:100.0%" /></p>
+<ol start="4" type="1">
+<li>以管理员身份运行<code>License Administrator</code>-&gt;<code>Install License</code>， 找到<code>msilicense.dat</code>的路径，点击<code>install</code>,等待安装完成。</li>
+</ol>
+<h2 data-number="1.5" id="安装失败且无法卸载问题"><span class="header-section-number">1.5</span> 安装失败且无法卸载问题</h2>
+<ul>
+<li>可能是安装不完整。对于64位系统，很可能是<code>Accelrys Materials Studio 7.0 (x64 Server).msi</code>和<code>Accelrys Materials Studio Gateway Service (x64).msi</code>未安装完整，将这两个再装一次，然后再全部卸载，再重装。</li>
+</ul>
+<h1 data-number="2" id="ms-examples"><span class="header-section-number">2</span> MS Examples</h1>
+<h2 data-number="2.1" id="dmol-tansport"><span class="header-section-number">2.1</span> Dmol Tansport</h2>
+<ol type="1">
+<li>File-&gt;Import,Sturctures-metals.xsd,</li>
+<li>Build-&gt;Surfaces-&gt;Cleave Surfaces, select 1 1 1 for Cleave plane (h k l) , select 12 for Thickness.</li>
+<li>Build-&gt;Crystals-&gt;Build Vacuum Slab. select 7 for Vacuum Thickness,0 for slab position.</li>
+<li>Build-&gt;Symmetry-&gt;Lattice parametres-&gt;Advanced, Select “C along Z, B in YZ plane”</li>
+<li>Right click-&gt;Display Style-&gt;Lattice,Select original for Style.</li>
+<li>Move 12 layers along Z direction, let 6 layers in cell and 6 layers out of cell.</li>
+<li>Build-&gt;Symmetry-&gt;Redifine Lattice, Select " 1 0 0 0 1 0 0 0 1"</li>
+<li>Build-&gt;Symmetry-&gt;Redifine Lattice, Select " 2 1 0 0 2 0 0 0 1"</li>
+<li>Build-&gt;Symmetry-&gt;Nonperiodic SuperStructure.</li>
+<li>Build Transport Device-&gt;Build Electrode, Buid for +Z and -Z.</li>
+<li>Modify-&gt;Constraints, fix the six layers as Electrode.</li>
+<li>copy B40, and paste it between two slab (6 layers).</li>
+<li>optimize, get energy .vs width. many widths.</li>
+</ol>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

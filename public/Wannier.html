@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Wannier Functions</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Wannier Functions"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#wannier90"><span class="toc-section-number">1</span> Wannier90</a>
+          <ul>
+          <li><a href="#how-to-construct-high-quality-wannier-functions"><span class="toc-section-number">1.1</span> How to construct high-quality Wannier functions</a>
+          <ul>
+          <li><a href="#choose-projectors."><span class="toc-section-number">1.1.1</span> Choose projectors.</a></li>
+          <li><a href="#choose-disentanglement-energy-window-dis_win"><span class="toc-section-number">1.1.2</span> Choose disentanglement energy window dis_win</a></li>
+          <li><a href="#choose-frozen-energy-window-froz_win"><span class="toc-section-number">1.1.3</span> Choose frozen energy window froz_win</a></li>
+          <li><a href="#results"><span class="toc-section-number">1.1.4</span> Results</a></li>
+          <li><a href="#discussion"><span class="toc-section-number">1.1.5</span> Discussion</a></li>
+          <li><a href="#comments-by-ywmu"><span class="toc-section-number">1.1.6</span> Comments by ywmu</a></li>
+          </ul></li>
+          <li><a href="#wannier90输入文件中num_wann-num_bands-和energy-window等参数设置规则"><span class="toc-section-number">1.2</span> Wannier90输入文件中num_wann, num_bands, 和energy window等参数设置规则</a>
+          <ul>
+          <li><a href="#基本规则"><span class="toc-section-number">1.2.1</span> 基本规则</a></li>
+          <li><a href="#补充说明"><span class="toc-section-number">1.2.2</span> 补充说明</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#wanniertools"><span class="toc-section-number">2</span> WannierTools</a>
+          <ul>
+          <li><a href="#wanniertools教程之weyl半金属wte2"><span class="toc-section-number">2.1</span> WannierTools教程之Weyl半金属—WTe2</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="wannier90"><span class="header-section-number">1</span> Wannier90</h1>
+<h2 data-number="1.1" id="how-to-construct-high-quality-wannier-functions"><span class="header-section-number">1.1</span> How to construct high-quality Wannier functions</h2>
+<ul>
+<li>From <a href="https://www.wanniertools.org/tutorials/high-quality-wfs/" class="uri">https://www.wanniertools.org/tutorials/high-quality-wfs/</a></li>
+<li>QuanSheng Wu</li>
+<li>École Polytechnique Fédérale de Lausanne (EPFL), Switzerland</li>
+<li>Constructed on October 30, 2019</li>
+</ul>
+<p>High-quality Wannier functions (WFs) are very useful for physical properties calculations after we obtained the self-consistent charge density from the first-principle calculations. However, for the beginners, it’s not easy to obtain good WFs. Here we would like to introduce a standard way to construct high-quality Wannier functions with first-principle software package and software Wannier90. Here we don’t focus on constructing maximum localized Wannier functions (MLWFs). We only want to construct a good tight-binding model based on WFs that are able to reproduce the band structure in the energy range we are interested in. Here are four criterions of high-quality WFs.</p>
+<ul>
+<li><p>1. Perfect fitting to the DFT bands in the energy range you are interested in.</p></li>
+<li><p>2. Keep the atomic orbital symmetry.</p></li>
+<li><p>3. Well localized.</p></li>
+<li><p>4. As small number of WFs as possible.</p></li>
+</ul>
+<p>There are three important steps to reach four criterions.</p>
+<ul>
+<li><p>1. Choose projectors.</p></li>
+<li><p>2. Choose disentanglement energy window.</p></li>
+<li><p>3. Choose frozen energy window.</p></li>
+</ul>
+<p>I would like to take Bi2Se3 as an example. In order to save the computation cost, we don’t take into account the spin-orbit coupling (SOC) effect.</p>
+<h3 data-number="1.1.1" id="choose-projectors."><span class="header-section-number">1.1.1</span> Choose projectors.</h3>
+<p>Let’s perform energy band analysis first. Fig 1 is the band structure of Bi2Se3 without considering SOC. The green shaded part is the energy range which we care about. We want to construct a tight binding model which can well reproduce the energy bands in that interested range. However, those band is connected with other bands below and above. Noticeably, there is a big gap around -8.4eV and -6eV. This is a good sign since the bands below this gap is not hybridized with the bands we are interested in. In this case, those bands below the gap are not necessary to be presented in our tight binding model. Eventually, the number of WFs reduce. It fulfills the fourth criterion.</p>
+<figure>
+<img src="../img/Wannier_good_1.png" title="Wannier_good_1" style="width:100.0%" alt="Fig 1. Band structure of Bi2Se3 without consideration of spin-orbit coupling." /><figcaption aria-hidden="true">Fig 1. Band structure of Bi2Se3 without consideration of spin-orbit coupling.</figcaption>
+</figure>
+<p>After a first glance of the band structure, we still have to figure out what is the character of the bands in the interested energy range and figure out which bands are highly hybridized with them. This step is called “fatband analysis” where we need to project the atomic orbital onto the Bloch wave functions which is called the projected weight. We project the Bloch wave functions onto the s, p, d atomic orbitals of Bi and Se. The results are shown in Fig 2. Fig 2(a) and (d) show that the energy bands between [-15, -8]eV are dominated by the s orbital of Bismuth and Selenium. Fig 2 (c) and (f) show that the d orbitals of Bi and Se are located above 5eV. Fig 2 (b) and (e) show that the energy range [-6, 5] eV is dominated by p orbitals of Bi and Se. And our interested energy range, indicated as green shade in Fig 1, is in this energy range. Although there is band overlap between p and d orbitals at around 4eV, we still can omit the contribution from d orbitals since they are not high hybridized with p orbitals and can be shifted away through some deformation of the band structure.</p>
+<figure>
+<img src="../img/Wannier_good_2.png" title="Wannier_good_2" style="width:100.0%" alt="Fig 2. Fatband Of Bi2Se3. The dashed box is our selection. Bi p orbitals and Se p orbitals are used as projectors. This plot is plotted with an open source package PyProcar." /><figcaption aria-hidden="true">Fig 2. Fatband Of Bi2Se3. The dashed box is our selection. Bi p orbitals and Se p orbitals are used as projectors. This plot is plotted with an open source package PyProcar.</figcaption>
+</figure>
+<p>After the “fatband analysis,” we choose p orbitals of Bi and Se as projectors for WFs. Then there will be (2 Bi atoms)*(3 p orbitals)+(3 Se atoms) *(3 p orbitals)=15 atomic orbitals, totally 15 WFs without SOC.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">begin</span> projections</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Bi</span> : p</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Se</span> : p</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">end</span> projections</span></code></pre></div>
+<h3 data-number="1.1.2" id="choose-disentanglement-energy-window-dis_win"><span class="header-section-number">1.1.2</span> Choose disentanglement energy window dis_win</h3>
+<p>The disentanglement window is a window to extract the target bands. There are two rules to set this window. <strong>1) Not only the target bands should be included in this window, but also the major weight of the projectors should fall into this window. 2) This window should as small as possible in order to reduce the computational cost.</strong> Fig 3 gives three choices of the window marked as colored shade. Fig 3(a) is the right choice. Fig 3(b) is a very bad choice since there is one missing band, marked by dashed circle, whose weight comes from the projectors (See Fig 4b and 4e). If this weight is missing, then the spread of the WFs could become large. Fig 3(c) shows a not good choice since it contains unnecessary bands which don’t contain projector’s character.</p>
+<figure>
+<img src="../img/Wannier_good_3.png" title="Wannier_good_3" style="width:100.0%" alt="Fig 3. Choice of disentanglement window dis_win of Bi2Se3. (a) is the right choice. (b) is a wrong choice since there is one missing weight which belongs to the p orbitals of Bi and Se. (c) is not a good choice since there is unnecessary energy window [-16, -8]eV where there is almost no weight coming from the projectors." /><figcaption aria-hidden="true">Fig 3. Choice of disentanglement window dis_win of Bi2Se3. (a) is the right choice. (b) is a wrong choice since there is one missing weight which belongs to the p orbitals of Bi and Se. (c) is not a good choice since there is unnecessary energy window [-16, -8]eV where there is almost no weight coming from the projectors.</figcaption>
+</figure>
+<h3 data-number="1.1.3" id="choose-frozen-energy-window-froz_win"><span class="header-section-number">1.1.3</span> Choose frozen energy window froz_win</h3>
+<p>The frozen window is a window used for disentanglement procedure. The Bloch states will not rotate with other bands out of this window. There are three rules for choosing froz_win. <strong>1) In froz_win, there should be no weights (contributions) coming from other orbitals besides the projectors. 2) The energy range purely coming from the projectors should be included in the froz_win. 3) froz_win should be as large as possible.</strong> Fig 4 shows three choices. (a) is a good choice since it fulfill three rules . (b) is a wrong choice since it breaks the first rule. (c) is correct choice but not a perfect one since it doesn’t follow rule 2 and 3.</p>
+<figure>
+<img src="../img/Wannier_good_4.png" title="Wannier_good_4" style="width:100.0%" alt="Fig 4. Choice of frozen window froz_win of Bi2Se3. (a) A good choice. (b) a wrong choice since it contains bands that coming from d orbitals of Bi which is not a projector. (c) Not a perfect choice since there are more bands that are purely coming from the projectors." /><figcaption aria-hidden="true">Fig 4. Choice of frozen window froz_win of Bi2Se3. (a) A good choice. (b) a wrong choice since it contains bands that coming from d orbitals of Bi which is not a projector. (c) Not a perfect choice since there are more bands that are purely coming from the projectors.</figcaption>
+</figure>
+<h3 data-number="1.1.4" id="results"><span class="header-section-number">1.1.4</span> Results</h3>
+<p>After the above procedure, you shall get very good WFs with high possibility. Fig 5 shows the band structure comparison between DFT (black lines) and Wannier interpolation (red dots). It shows perfect agreement.</p>
+<figure>
+<img src="../img/Wannier_good_5.png" title="Wannier_good_5" style="width:100.0%" alt="Fig 5. The band structure comparison between DFT (black lines) and Wannier interpolation (red dots)." /><figcaption aria-hidden="true">Fig 5. The band structure comparison between DFT (black lines) and Wannier interpolation (red dots).</figcaption>
+</figure>
+<h3 data-number="1.1.5" id="discussion"><span class="header-section-number">1.1.5</span> Discussion</h3>
+<p>In the end, we would like to share some other tips.</p>
+<ol type="1">
+<li><p>It’s better not to set dis_num_iter too large, 200 is enough for most of the time. If it’s too large, then the Bloch bands could be over mixed.</p></li>
+<li><p>If you want atomic like WFs, it’s better to set num_iter less than 20. Large number of num_iter would mix the WFs such that the output WFs are not atomic like.</p></li>
+<li><p>If you find that the spread of WFs are very large or some wiggles in the Wannier interpolated bands, then try to tune the projectors, dis_win and froz_win carefully.</p></li>
+</ol>
+<p>Special for VASP user:<br />
+<br />
+If you are going to construct WFs for a system with SOC, then Please set “ISYM=-1” in the INCAR file if “LWANNIER90 = T” is present. Since there are some bugs in copying spinor wave functions from one k point to the one related by symmetry in VASP, then the quality of WFs would be significantly improved after we turn off this symmetry tag.</p>
+<h3 data-number="1.1.6" id="comments-by-ywmu"><span class="header-section-number">1.1.6</span> Comments by ywmu</h3>
+<ul>
+<li>Combining PDOS and Fatband is better to determine dis_win and froz_win.</li>
+</ul>
+<h2 data-number="1.2" id="wannier90输入文件中num_wann-num_bands-和energy-window等参数设置规则"><span class="header-section-number">1.2</span> Wannier90输入文件中num_wann, num_bands, 和energy window等参数设置规则</h2>
+<blockquote>
+<p>转自 <a href="http://blog.sciencenet.cn/blog-2909108-1154273.html" class="uri">http://blog.sciencenet.cn/blog-2909108-1154273.html</a></p>
+</blockquote>
+<h3 data-number="1.2.1" id="基本规则"><span class="header-section-number">1.2.1</span> 基本规则</h3>
+<ul>
+<li>Wannier90是一个构建局域轨道基组的有力工具，一般用来计算紧束缚模型中的占位能和跳跃积分，再结合杂化泛函或GW方法，插值得到更为准确的能带结构，或者计算极化、输运、拓扑不变量等物理性质。在其输入文件中，num_wann、num_bands、projections和energy window是几类极其重要的参数，如果设置不当，容易导致Wannier函数不够局域，计算结果误差很大。对于比较复杂的体系，这些参数的默认值一般不符合要求，需要手动指定。在这里总结一下个人关于如何设定这些参数的经验，欢迎大家批评指正。</li>
+<li><strong>在使用最大局域化Wannier函数(MLWF)理论及Wannier90程序之前，一定要先确定打算拟合哪一部分能带。</strong>拟合全部能带一来非常耗时，二来容易拟合失败。一般来说，如果做能带插值，取费米能级附近几条能带就足够了。如果计算输运、拓扑性质等物理量，可能有额外的判定标准。我没有算过这些性质，不敢妄下结论。</li>
+<li><strong>明确拟合哪一部分能带后，还需要结合fatband或者PDOS，确定这部分能带由哪些单原子态贡献。</strong>在这里以某化合物为例，其原胞中包含28个A原子和1个B原子，最高的价带为第49条能带，最低的导带为第50条能带。通过fatband得知，价带顶和导带底附近的能带主要由A原子的p<sub>z</sub>轨道和B原子的<code>d~z2~</code>和<code>d~x2-y2~</code>轨道贡献。有了这些信息，便可指定projections了：</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">begin projections</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">A:pz</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">B:dz2</span><span class="kw">;</span><span class="ex">dx2-y2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">end projections</span></span></code></pre></div>
+<p>Wannier函数个数为<code>28*1+1*2=30</code>。均分之后，各考虑15条价带和15条导带 <strong>[1]</strong>。为了解纠缠，还需多预留4条价带 <strong>[2]</strong>，因此需要关注第31-64条能带。如果用QE生成波函数，在第二步计算时(<code>calculation="bands"</code>)需指定<code>nbnd = 64</code>。如果用VASP生成波函数，非自洽计算时需指定<code>NBANDS = 64</code>。因为我们只关心第31-64条能带，所以需要把第1-30条能带排除。对应参数设置为：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">num_wann = 30</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">num_bands = 34</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">exclude_bands = 1-30</span></span></code></pre></div>
+<p>生成波函数后，通过输出文件或EIGENVAL，<strong>确定各能带能量范围如下（以区间表示，单位为eV，均未作任何平移）</strong>：</p>
+<p><img src="../img/wannier_good_6.png" title="wannier_good_6" style="width:100.0%" /></p>
+<p>第64条能带能量范围为[4.58, 5.31]，第35条能带（对应<code>num_wann</code>下限）能量范围为[-3.70, -3.09]，第31条能带（对应<code>num_bands</code>下限）能量范围为[-4.91, -3.94]。</p>
+<ul>
+<li>解纠缠时涉及两个能量窗口：<code>outer_window</code>和<code>frozen_window</code>。<strong>若不考虑其物理意义，frozen_window取值范围无限制，<code>outer_window</code>内至少包含<code>num_wann</code>条能带。</strong>在此例中，dis_win_min要低于第35条能带能量最小值（-3.70 eV），否则报如下错误：</li>
+</ul>
+<p><img src="../img/wannier_good_7.png" title="wannier_good_7" style="width:100.0%" /></p>
+<ul>
+<li><strong>实际上一般将<code>outer_window</code>设置为用<code>exclude_bands</code>排除无关能带后，剩下的能带能量范围，两端再留些余量。</strong>此例中为第31-64条能带，对应参数设置为：</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dis_win_min = -5.0</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dis_win_max = 5.4</span></span></code></pre></div>
+<p><strong>frozen_window则设定为num_wann对应能带的能量范围，两端留些余量。</strong>此例中为第35-64条能带，对应参数设置为：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dis_froz_min = -3.8</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dis_froz_max = 5.4</span></span></code></pre></div>
+<p>如此设置，一般能得到较好的拟合结果。</p>
+<h3 data-number="1.2.2" id="补充说明"><span class="header-section-number">1.2.2</span> 补充说明</h3>
+<p>1 . 费米能级上下各取15条能带，是根据fatband大概数出来的。取14条价带和16条导带，或18条价带和12条导带均可，不必十分严格。</p>
+<ol start="2" type="1">
+<li>关于什么情况下需要解纠缠，Wannier90的帮助文档和MLWF的理论文献中有十分详细的描述。简单来说，一旦<code>num_wann</code>所指定的能带范围把一组完整的能带一分为二，就需要解纠缠。</li>
+</ol>
+<p><img src="../img/wannier_good_8.png" title="wannier_good_8" style="width:100.0%" /></p>
+<p>以上图为例，当num_wann指定的能带范围包含完整的A组和（或）B组价带时，不需要解纠缠。一旦切到了某组价带，或者切到了导带C，就需要解纠缠。实际上，只有在拟合完整的半导体或绝缘体价带时，才不需要解纠缠。对于半导体的导带或金属能带，很难找到一组和其它能带完全分离的能带。这种情况下就需要解纠缠。</p>
+<p>解纠缠需要<code>num_bands&gt;num_wann</code>，即额外预留一部分能带。本例中预留了4条价带，这没有什么严格的标准，预留4条导带或2条价带+2条导带均可，也可预留更多能带。</p>
+<h1 data-number="2" id="wanniertools"><span class="header-section-number">2</span> WannierTools</h1>
+<h2 data-number="2.1" id="wanniertools教程之weyl半金属wte2"><span class="header-section-number">2.1</span> WannierTools教程之Weyl半金属—WTe2</h2>
+<p>轉載地址：WannierTools教程之拓撲絕緣體---Bi2Se3 - WannierTools - 材料基因論壇 MaterialsGene</p>
+<p>以後WannierTools官方的中文教程將會在材料基因論壇發布，歡迎大家參與討論。在所有教程完成之前，請大家閱讀www.wanniertools.com上的說明文檔。</p>
+<p>本系列教程將以多個例子的形式來開展，其中包括拓撲絕緣體，Weyl半金屬，Dirac半金屬，Triple point金屬，Nodal line半金屬等等。每當出現一種新的拓撲體系，我們都將嘗試用WannierTools去重複前人的結果，儘可能讓WannierTools適用於所有拓撲體系。</p>
+<p>在首個教程中，我們以經典的Bi2Se3三維強拓撲絕緣體體系為例子，來展示如何從第一性原理模擬到構造Wannier函數，最後到利用WannierTools研究拓撲性質的全過程。</p>
+<p>WannierTools 是一個基於緊束縛模型的程序包。這個緊束縛模型可以由人工構造，也可以有軟體產生。但是格式是固定的，目前採用的格式是由Wannier90程序包所定義 （請參考Wannier90_hr.dat里的具體格式，後面會陸續完善所有涉及到的細節）。在此我們只介紹如何使用Wannier90程序和VASP構造基於Wannier函數的緊束縛模型wannier90_hr.dat。</p>
+<p><strong>首先我們進行第一性原理模擬</strong>，軟體選用VASP。由於我們知道Bi2Se3材料的解理面是垂直於c軸的面，因此我們在原包構造的時候就有意將（001）面設置為垂直c軸的面。這樣有助於我們後面的表面態分析。選好的原胞POSCAR為：</p>
+<p><em>Bi2Se3</em></p>
+<p><em>1.0</em></p>
+<p><em>-2.069 -3.583614 0.000000</em></p>
+<p><em>2.069 -3.583614 0.000000</em></p>
+<p><em>0.000 2.389075 9.546667</em></p>
+<p><em>Bi Se</em></p>
+<p><em>2 3</em></p>
+<p><em>Direct</em></p>
+<p><em>0.3990 0.3990 0.6970</em></p>
+<p><em>0.6010 0.6010 0.3030</em></p>
+<p><em>0 0 0.5</em></p>
+<p><em>0.2060 0.2060 0.1180</em></p>
+<p><em>0.7940 0.7940 0.8820</em></p>
+<p>對於的結構示意圖如下</p>
+<p><img src="../img/want_05.jpg" title="want_05" style="width:100.0%" /></p>
+<p>畫一下能帶結構，然後再做一下Fatband分析，了解費米面附近能帶是有哪些成分構成的。對於Bi2Se3，費米面附近的能帶是有Bi原子和Se原子的px,py,pz軌道構成。於是構造Wannier函數的時候，可以選擇這些軌道作為初始投影軌道。</p>
+<p><strong>接下來是構造Wannier函數</strong>。有不少朋友反映VASP+Wannier90 v1.2在構造含有自旋軌道耦合體系中會失效。目前我沒有碰到類似的問題，從我閱讀VASP5.3—VASP5.4.1源碼的經驗來看，Wannier90 v1.2完全可以和VASP+SOC兼容。 然而官網明確表示VASP和Wannier90 v2.0不兼容。Wannier90 v2.0確實增加了不少功能，不過就構造緊束縛模型這一點來說（也就是生成Wannier90_hr.dat），v2.0和v1.2並沒有什麼區別。 構造Wannier函數的時候，需要在INCAR中加入LWANNIER90 = .TRUE.，另外提供一個wannier90.win文件。適用於Bi2Se3的wannier90.win文件為</p>
+<p><em>num_wann = 30</em></p>
+<p><em>num_bands = 60</em></p>
+<p><em>dis_num_iter=1000</em></p>
+<p><em>num_iter=0</em></p>
+<p><em>iprint=2</em></p>
+<p><em>!min of outer window</em></p>
+<p><em>dis_win_min = -2.0</em></p>
+<p><em>dis_win_max = 18.0</em></p>
+<p><em>!inner -</em></p>
+<p><em>dis_froz_min = -2.0000</em></p>
+<p><em>dis_froz_max = 5.5000</em></p>
+<p><em>hr_plot =.true.</em></p>
+<p><em>begin projections</em></p>
+<p><em>Bi : px; py; pz</em></p>
+<p><em>Se : px; py; pz</em></p>
+<p><em>end projections</em></p>
+<p><em>spinors = .true.</em></p>
+<p>這裡需要注意的一點是，num_bands必須和你OUTCAR中的NBANDS一致。在並行運行VASP的時候，VASP會根據系統cpu個數和你指定的NBANDS個數來調整真實運行的NBANDS個數，因此需要特別注意一下。</p>
+<p><strong>構造好Wannier函數以後</strong>，仔細檢查一下wannier90.wout，搜索」Final State」，在這裡可以看到每條Wannier軌道的展寬，由此可以檢查你構造的Wannier函數是否足夠局域。如果有某個Wannier函數的展寬比晶格常數大許多，就表明你的Wannier函數構造不是很理想，需要不斷調節投影軌道，解糾纏窗口以及Frozen窗口等。從這些軌道的中心和展寬也能看出軌道之間的簡併性如何，由此也可以判斷所構造的Wannier函數對稱性如何，這個也會影響後續的分析，特別是表面態的計算。</p>
+<p><strong>緊接著，你就可以開始書寫WannierTools的主輸入文件了，目前叫input.dat，以後會改成http://wt.in (WannierTools v2.2之後)。</strong> 這裡不具體介紹每一個參數，在說明文檔中有詳細的介紹，中文版的說明文檔正在翻譯中。 input.dat文件有模板，使用的時候直接拷貝然後加以修改。很多內容都可以直接從wannier90.win和wannier90.wout中拷貝。 Bi2Se3的主輸入文件input.dat可以在附件中下載得到。我們可以通過控制輸入文件中的一些參數來實現我們所需要的功能。</p>
+<p>1. 計算體能帶，對比VASP計算的能帶和Wannier TB得到的能帶。輸入文件中需要編輯的地方為，</p>
+<p><em>&amp;TB_FILE</em></p>
+<p><em>Hrfile = wannier90_hr.dat</em></p>
+<p><em>Particle= electron</em></p>
+<p><em>/</em></p>
+<p><em>LATTICE</em></p>
+<p><em>Angstrom</em></p>
+<p><em>-2.069 -3.583614 0.000000 ! crystal lattice information</em></p>
+<p><em>2.069 -3.583614 0.000000</em></p>
+<p><em>0.000 2.389075 9.546667</em></p>
+<p><em>ATOM_POSITIONS</em></p>
+<p><em>5 ! number of atoms for projectors</em></p>
+<p><em>Direct ! Direct or Cartisen coordinate</em></p>
+<p><em>Bi 0.3990 0.3990 0.6970</em></p>
+<p><em>Bi 0.6010 0.6010 0.3030</em></p>
+<p><em>Se 0 0 0.5</em></p>
+<p><em>Se 0.2060 0.2060 0.1180</em></p>
+<p><em>Se 0.7940 0.7940 0.8820</em></p>
+<p><em>PROJECTORS</em></p>
+<p><em>3 3 3 3 3 ! number of projectors</em></p>
+<p><em>Bi px py pz ! projectors</em></p>
+<p><em>Bi px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>&amp;CONTROL</em></p>
+<p><em>BulkBand_calc = T</em></p>
+<p><em>/</em></p>
+<p><em>&amp;SYSTEM</em></p>
+<p><em>SOC = 1 ! soc</em></p>
+<p><em>E_FERMI = 4.4195 ! e-fermi</em></p>
+<p><em>/</em></p>
+<p><em>&amp;PARAMETERS</em></p>
+<p><em>Nk1 = 41 ! number k points odd number would be better</em></p>
+<p><em>/</em></p>
+<p><em>KPATH_BULK ! k point path</em></p>
+<p><em>4 ! number of k line only for bulk band</em></p>
+<p><em>G 0.00000 0.00000 0.0000 Z 0.00000 0.00000 0.5000</em></p>
+<p><em>Z 0.00000 0.00000 0.5000 F 0.50000 0.50000 0.0000</em></p>
+<p><em>F 0.50000 0.50000 0.0000 G 0.00000 0.00000 0.0000</em></p>
+<p><em>G 0.00000 0.00000 0.0000 L 0.50000 0.00000 0.0000</em></p>
+<p>直接運行wann_tools &amp;</p>
+<p>這裡需要提到的是如果你不想運行其它功能，請在CONTROL中把其它所有的Flag都設成F，或者刪除，只留下</p>
+<p>&amp;CONTROLBulkBand_calc = T</p>
+<p>/</p>
+<p>運行完成後，可以在當前文件夾下看到bulkek.gnu, bulkek.dat. 使用gnuplot5.0以上版本的軟體，就可以得到bulkek.eps圖。 命令為gnuplot bulkek.gnu 。 下圖是VASP計算的能帶（藍色）和Wannier TB得到的能帶（紅色）對比圖，從圖中可以看出我們構造的Wannier函數能夠很好在費米面附近重複第一性原理的得到的能帶。 <img src="../img/want_01.jpg" title="want_01" style="width:100.0%" alt="Fig. 1: want_01" /></p>
+<p>2. 計算Z2數，最新的版本可以直接計算三維絕緣體的拓撲數。</p>
+<p>輸入文件為</p>
+<p><em>&amp;TB_FILE</em></p>
+<p><em>Hrfile = wannier90_hr.dat</em></p>
+<p><em>Particle= electron</em></p>
+<p><em>/</em></p>
+<p><em>LATTICE</em></p>
+<p><em>Angstrom</em></p>
+<p><em>-2.069 -3.583614 0.000000 ! crystal lattice information</em></p>
+<p><em>2.069 -3.583614 0.000000</em></p>
+<p><em>0.000 2.389075 9.546667</em></p>
+<p><em>ATOM_POSITIONS</em></p>
+<p><em>5 ! number of atoms for projectors</em></p>
+<p><em>Direct ! Direct or Cartisen coordinate</em></p>
+<p><em>Bi 0.3990 0.3990 0.6970</em></p>
+<p><em>Bi 0.6010 0.6010 0.3030</em></p>
+<p><em>Se 0 0 0.5</em></p>
+<p><em>Se 0.2060 0.2060 0.1180</em></p>
+<p><em>Se 0.7940 0.7940 0.8820</em></p>
+<p><em>PROJECTORS</em></p>
+<p><em>3 3 3 3 3 ! number of projectors</em></p>
+<p><em>Bi px py pz ! projectors</em></p>
+<p><em>Bi px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>&amp;CONTROL</em></p>
+<p><em>Z2_3D_calc = T</em></p>
+<p><em>/</em></p>
+<p><em>&amp;SYSTEM</em></p>
+<p><em>SOC = 1 ! soc</em></p>
+<p><em>NumOccupied = 18 ! Number of occupied Wannier bands</em></p>
+<p><em>/</em></p>
+<p><em>&amp;PARAMETERS</em></p>
+<p><em>Nk1 = 41 ! number k points odd number would be better</em></p>
+<p><em>Nk2 = 41 ! number k points odd number would be better</em></p>
+<p><em>/</em></p>
+<p>運行wann_tools&amp;完畢後，可以得到</p>
+<p>wanniercenter3D_Z2.gnu, wanniercenter3D_Z2_1.dat wanniercenter3D_Z2_3.dat wanniercenter3D_Z2_5.dat</p>
+<p>wanniercenter3D_Z2_2.dat wanniercenter3D_Z2_4.dat wanniercenter3D_Z2_6.dat 共7個文件，同樣通過gnuplot wanniercenter3D_Z2.gnu命令可以得到wanniercenter3D_Z2.eps文件。 結果如下：</p>
+<p><img src="../img/want_02.jpg" title="want_02" style="width:100.0%" /></p>
+<p>這幅圖畫的是Wilson loop（Wannier Charge Center）隨著k點的變化。具體的定義和物理含義大家可以參考Yu Rui et.al(2011), Alexey A. Soluyanov et.al (2011) 兩篇文獻。 首先說明一個概念，我們通常所說的Z2數是在一個2維閉合曲面內定義的一個拓撲數，比如在kx=0的平面內（由於布里淵區的周期性，所以有閉合曲面的概念）。這裡a-f六幅圖分別畫的是在 k1=0.0、 k1=0.5、 k2=0.0、 k2=0.5、 k3=0.0、 k3=0.5平面內的Wilson loop演化圖，從這些演化圖中可以知道每一幅圖的Z2數。規則是：在圖中畫一條從左到右的曲線，數這條曲線和圖中曲線的交叉點個數，如果交叉點個數為奇數，那麼Z2數為1，如果為偶數，那麼Z2數為0。 這個交叉數並不會因為你畫的曲線不同而不同。 知道了這6個數後，我們就可以通過Fu Liang 在2007年提出的方法（Phys. Rev. Lett. 98, 106803）</p>
+<p>來判斷這個絕緣體的拓撲指數。 對於Bi2Se3，拓撲指數為(1;000)，根據Fu的定義，我們知道Bi2Se3是強拓撲絕緣體。 這裡可以多談一點，我們計算過程中計算了6個Z2數，然而這六個數並不是各自獨立的，他們滿足一個等式[tex]X_0+X_1=Y_0+Y_1=Z_0+Z_1[/tex].其中X、Y、Z分別對應上面的1、2、3. 有趣的是，如果你計算得到的這六個數並不滿足這個等式的話，那麼恭喜你，你找到了一個Dirac材料。因為Dirac點的出現會改變Z2數，從而破壞了等式。</p>
+<p>3. 計算表面態</p>
+<p>表面態是拓撲材料的一個重要的特徵，也是理論與實驗之間最直接的橋樑。理論中計算出來的表面態，可以直接與試驗中的ARPES數據相比，從而間接的驗證理論的正確性。 在WannierTools中，我們可以計算任意界面的表面態，這點需要用戶仔細閱讀文檔中關於SURFACE CARD這段。 這裡我們只計算Bi2Se3解理面的表面態， 輸入文件為：</p>
+<p><em>&amp;TB_FILE</em></p>
+<p><em>Hrfile = wannier90_hr.dat</em></p>
+<p><em>Particle= electron</em></p>
+<p><em>/</em></p>
+<p><em>LATTICE</em></p>
+<p><em>Angstrom</em></p>
+<p><em>-2.069 -3.583614 0.000000 ! crystal lattice information</em></p>
+<p><em>2.069 -3.583614 0.000000</em></p>
+<p><em>0.000 2.389075 9.546667</em></p>
+<p><em>ATOM_POSITIONS</em></p>
+<p><em>5 ! number of atoms for projectors</em></p>
+<p><em>Direct ! Direct or Cartisen coordinate</em></p>
+<p><em>Bi 0.3990 0.3990 0.6970</em></p>
+<p><em>Bi 0.6010 0.6010 0.3030</em></p>
+<p><em>Se 0 0 0.5</em></p>
+<p><em>Se 0.2060 0.2060 0.1180</em></p>
+<p><em>Se 0.7940 0.7940 0.8820</em></p>
+<p><em>PROJECTORS</em></p>
+<p><em>3 3 3 3 3 ! number of projectors</em></p>
+<p><em>Bi px py pz ! projectors</em></p>
+<p><em>Bi px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>&amp;CONTROL</em></p>
+<p><em>SlabSS_calc = T</em></p>
+<p><em>SlabArc_calc = T</em></p>
+<p><em>/</em></p>
+<p><em>&amp;SYSTEM</em></p>
+<p><em>SOC = 1 ! soc</em></p>
+<p><em>NumOccupied = 18 ! Number of occupied Wannier bands</em></p>
+<p><em>E_FERMI = 4.4195 ! e-fermi</em></p>
+<p><em>/</em></p>
+<p><em>&amp;PARAMETERS</em></p>
+<p><em>Eta_Arc = 0.001 ! infinite small value, like brodening</em></p>
+<p><em>E_arc = 0.0 ! energy for calculate Fermi Arc</em></p>
+<p><em>OmegaMin = -0.6 ! energy interval</em></p>
+<p><em>OmegaMax = 0.5 ! energy interval</em></p>
+<p><em>OmegaNum = 401 ! omega number</em></p>
+<p><em>Nk1 = 101 ! number k points odd number would be better</em></p>
+<p><em>Nk2 = 101 ! number k points odd number would be better</em></p>
+<p><em>/</em></p>
+<p><em>SURFACE ! See doc for details</em></p>
+<p><em>1 0 0</em></p>
+<p><em>0 1 0</em></p>
+<p><em>0 0 1</em></p>
+<p><em>KPATH_SLAB</em></p>
+<p><em>2 ! numker of k line for 2D case</em></p>
+<p><em>K 0.33 0.67 G 0.0 0.0 ! k path for 2D case</em></p>
+<p><em>G 0.0 0.0 M 0.5 0.5</em></p>
+<p><em>KPLANE_SLAB</em></p>
+<p><em>-0.1 -0.1 ! Original point for 2D k plane</em></p>
+<p><em>0.2 0.0 ! The first vector to define 2D k plane</em></p>
+<p><em>0.0 0.2 ! The second vector to define 2D k plane for arc plots</em></p>
+<p>得到的結果為</p>
+<p><img src="../img/want_04.jpg" title="want_04" style="width:100.0%" /></p>
+<p>4. 計算表面態上的自旋分布</p>
+<p>一般拓撲絕緣體都伴隨著強SOC，表面態上的自旋和動量總是鎖定在一起的，形成特殊的Spin-texture。 WannierTools滿足了這一需求，輸入文件中特殊指定的為</p>
+<p><em>&amp;TB_FILE</em></p>
+<p><em>Hrfile = wannier90_hr.dat</em></p>
+<p><em>Particle= electron</em></p>
+<p><em>/</em></p>
+<p><em>LATTICE</em></p>
+<p><em>Angstrom</em></p>
+<p><em>-2.069 -3.583614 0.000000 ! crystal lattice information</em></p>
+<p><em>2.069 -3.583614 0.000000</em></p>
+<p><em>0.000 2.389075 9.546667</em></p>
+<p><em>ATOM_POSITIONS</em></p>
+<p><em>5 ! number of atoms for projectors</em></p>
+<p><em>Direct ! Direct or Cartisen coordinate</em></p>
+<p><em>Bi 0.3990 0.3990 0.6970</em></p>
+<p><em>Bi 0.6010 0.6010 0.3030</em></p>
+<p><em>Se 0 0 0.5</em></p>
+<p><em>Se 0.2060 0.2060 0.1180</em></p>
+<p><em>Se 0.7940 0.7940 0.8820</em></p>
+<p><em>PROJECTORS</em></p>
+<p><em>3 3 3 3 3 ! number of projectors</em></p>
+<p><em>Bi px py pz ! projectors</em></p>
+<p><em>Bi px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>Se px py pz</em></p>
+<p><em>&amp;CONTROL</em></p>
+<p><em>SlabSpintexture_calc = F</em></p>
+<p><em>/</em></p>
+<p><em>&amp;SYSTEM</em></p>
+<p><em>SOC = 1 ! soc</em></p>
+<p><em>E_FERMI = 4.4195 ! e-fermi</em></p>
+<p><em>/</em></p>
+<p><em>&amp;PARAMETERS</em></p>
+<p><em>Eta_Arc = 0.001 ! infinite small value, like brodening</em></p>
+<p><em>E_arc = 0.0 ! energy for calculate Fermi Arc</em></p>
+<p><em>Nk1 = 101 ! number k points odd number would be better</em></p>
+<p><em>Nk2 = 101 ! number k points odd number would be better</em></p>
+<p><em>/</em></p>
+<p><em>SURFACE ! See doc for details</em></p>
+<p><em>1 0 0</em></p>
+<p><em>0 1 0</em></p>
+<p><em>0 0 1</em></p>
+<p><em>KPLANE_SLAB</em></p>
+<p><em>-0.1 -0.1 ! Original point for 2D k plane</em></p>
+<p><em>0.2 0.0 ! The first vector to define 2D k plane</em></p>
+<p><em>0.0 0.2 ! The second vector to define 2D k plane for arc plots</em></p>
+<p>結果為</p>
+<p>Note： 計算Spin texture時，我們假定你構造的經束縛模型的基矢自旋上和自旋下沒有耦合在一起。 這個依賴於你構造的Wannier函數的質量。 如果對此計算不放心，可以結合第一性原理計算和Wannier90進行spintexture計算。</p>
+<p><img src="../img/want_03.jpg" title="want_03" style="width:100.0%" /></p>
+<p><strong>總結：</strong> Bi2Se3是一個標準的例子，每一個進入拓撲材料領域的人都必須要學習這一典型範例。 具體的文章請參考張海軍教授的文章（Topological insulators in Bi2Se3, Bi2Te3 and Sb2Te3 with a single Dirac cone on the surface http://dx.doi.org/10.1038/nphys1270）。還有一些功能可以用於計算QPI能譜（STM傅里葉變換譜）還有待用戶自行測試。</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

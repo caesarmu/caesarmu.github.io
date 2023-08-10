@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Windows</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Windows"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#windows-缩放问题"><span class="toc-section-number">1</span> Windows 缩放问题</a></li>
+          <li><a href="#cygwin文件权限问题"><span class="toc-section-number">2</span> Cygwin文件权限问题</a></li>
+          <li><a href="#win10中文件夹列显示不全问题"><span class="toc-section-number">3</span> Win10中文件夹列显示不全问题</a></li>
+          <li><a href="#删除cd驱动器z"><span class="toc-section-number">4</span> 删除CD驱动器Z</a></li>
+          <li><a href="#视力保护色豆沙色"><span class="toc-section-number">5</span> 视力保护色（豆沙色）：</a>
+          <ul>
+          <li><a href="#cmd-windows-颜色"><span class="toc-section-number">5.1</span> CMD windows 颜色</a></li>
+          <li><a href="#屏幕设定"><span class="toc-section-number">5.2</span> 屏幕设定：</a>
+          <ul>
+          <li><a href="#win7系统下"><span class="toc-section-number">5.2.1</span> win7系统下</a></li>
+          <li><a href="#win-10"><span class="toc-section-number">5.2.2</span> win 10：</a></li>
+          <li><a href="#sumatra-pdf"><span class="toc-section-number">5.2.3</span> Sumatra PDF：</a></li>
+          <li><a href="#foxit-pdf"><span class="toc-section-number">5.2.4</span> Foxit pdf：</a></li>
+          <li><a href="#firefox"><span class="toc-section-number">5.2.5</span> Firefox:</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#文件夹或目录背景右键出现无效的cmd"><span class="toc-section-number">6</span> 文件夹或目录背景右键出现无效的cmd</a></li>
+          <li><a href="#windows-10之-隐藏此电脑窗口的6个额外文件夹及移除onedrive"><span class="toc-section-number">7</span> Windows 10之 隐藏“此电脑”窗口的6个额外文件夹及移除OneDrive</a></li>
+          <li><a href="#设定指定文件格式的打开程序和显示图标"><span class="toc-section-number">8</span> 设定指定文件格式的打开程序和显示图标</a></li>
+          <li><a href="#hp打印机"><span class="toc-section-number">9</span> HP打印机</a>
+          <ul>
+          <li><a href="#hp打印机无线提示-需要注意"><span class="toc-section-number">9.1</span> HP打印机(无线)提示: 需要注意</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="windows-缩放问题"><span class="header-section-number">1</span> Windows 缩放问题</h1>
+<ul>
+<li>在win10中，如果把系统显示缩放调到125%，文字会发生模糊，所以这个缩放应该保持100%。 但可以更改文本和其他项目的大小， 把仅更改文本大小中的选项： 标题栏、菜单、消息框、调色板标题、图标、工具提示等全由9号字提升到12号。360浏览器缩放125%，若标题栏、收藏栏等字体太小，将上面的消息框、图标调至更大，如16.</li>
+<li>字体大小也可以在注册表中更改：<code>[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]</code>,将CaptionFont，IconFont，MenuFont，MessageFont，SmCaptionFont以及StatusFont中的0000后面大F4跳为F0(F4 = 9,F3 = 10,F1 = 11,F0 = 12,EF = 13,ED = 14,EC = 15,E0 = 24)。</li>
+</ul>
+<h1 data-number="2" id="cygwin文件权限问题"><span class="header-section-number">2</span> Cygwin文件权限问题</h1>
+<ul>
+<li>执行管理员取得所有权</li>
+<li>Cygwin下：<code>chmod u=rwx,go=rx *</code></li>
+<li>增加Mu/Administrator 和Mu/Mu(或ywmu@live.com)的所有权限,其它<code>Mu/None</code>(或<code>Mu/Users</code>), everyone 读写权限，并应用于此文件夹、子文件夹和文件。</li>
+<li>选择 使用可从对象继承的权限项目替换所有子权限的项目，并应用</li>
+</ul>
+<h1 data-number="3" id="win10中文件夹列显示不全问题"><span class="header-section-number">3</span> Win10中文件夹列显示不全问题</h1>
+<ul>
+<li>文件夹背景右键-&gt;排列方式-&gt;更多，设置名称、修改日期、类型、大小宽度分别为500，200，250和150.</li>
+<li>点击文件夹菜单栏 查看-&gt;选项-&gt;查看-&gt;应用到文件夹，点击确定。</li>
+</ul>
+<h1 data-number="4" id="删除cd驱动器z"><span class="header-section-number">4</span> 删除CD驱动器Z</h1>
+<ul>
+<li>删除<code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WiserIso 把 WiserIso</code>，然后重启。</li>
+</ul>
+<h1 data-number="5" id="视力保护色豆沙色"><span class="header-section-number">5</span> 视力保护色（豆沙色）：</h1>
+<p>HSU 设置为： 色度(HUE) 85 饱和度(SAT) 123 亮度 205<br />
+三原色RGB设置为：红199 绿237 蓝204<br />
+RGB十六进制： 红C7 绿ED 蓝CC<br />
+淡绿色（豆沙色）：#C7EDCC</p>
+<h2 data-number="5.1" id="cmd-windows-颜色"><span class="header-section-number">5.1</span> CMD windows 颜色</h2>
+<ul>
+<li>背景色RGB： 199|237|204</li>
+<li>文字颜色RGB： 136|23|152</li>
+</ul>
+<h2 data-number="5.2" id="屏幕设定"><span class="header-section-number">5.2</span> 屏幕设定：</h2>
+<h3 data-number="5.2.1" id="win7系统下"><span class="header-section-number">5.2.1</span> win7系统下</h3>
+<ol type="1">
+<li>桌面点鼠标右键，选择 个性化 - 窗口颜色 - 高级外观设置</li>
+<li>项目栏选“窗口” - 再点后面的“颜色” - “其他”，按上面XP设置方式一样进行设置就是了。 OK，现在我们的窗口颜色就是极具保护视力的嫩绿色了。</li>
+</ol>
+<h3 data-number="5.2.2" id="win-10"><span class="header-section-number">5.2.2</span> win 10：</h3>
+<ol type="1">
+<li>快捷键Win+R打开运行，输入regedit运行注册表编辑程序；<br />
+</li>
+<li>依次打开<code>[HKEY_CURRENT_USER\Control Panel\Colors]</code>，双击修改Window字符串值为“204 232 207”（注意空格），此为豆沙绿护眼色，需要修改为别的颜色可自行输入颜色RGB值 199 237 204<br />
+</li>
+<li>关闭注册表，注销或重启系统即可生效。</li>
+</ol>
+<h3 data-number="5.2.3" id="sumatra-pdf"><span class="header-section-number">5.2.3</span> Sumatra PDF：</h3>
+<p>设置-&gt;高级选项： UseSysColors = false 改为 true</p>
+<h3 data-number="5.2.4" id="foxit-pdf"><span class="header-section-number">5.2.4</span> Foxit pdf：</h3>
+<p>Edit-&gt;preference-&gt;Accessibility-&gt;选择Replace document colors-&gt;custom background</p>
+<h3 data-number="5.2.5" id="firefox"><span class="header-section-number">5.2.5</span> Firefox:</h3>
+<p>设置-&gt;颜色-&gt;选择使用系统颜色，高对比度时覆盖。</p>
+<h1 data-number="6" id="文件夹或目录背景右键出现无效的cmd"><span class="header-section-number">6</span> 文件夹或目录背景右键出现无效的cmd</h1>
+<ul>
+<li>打开注册表regedit，找到<code>HKEY_CLASSES_ROOT\Directory\Background\shell</code>或<code>HKEY_CLASSES_ROOT\Directory\Background\shell</code>下，查看是否有多余的cmd，右键这个cmd项打开权限卡-&gt;高级，所有者改为everyone，其权限改为完全控制，勾选下面可从此权限几种的项目替代所有子对象权限项目，确定。右键点击cmd项删除。</li>
+</ul>
+<h1 data-number="7" id="windows-10之-隐藏此电脑窗口的6个额外文件夹及移除onedrive"><span class="header-section-number">7</span> Windows 10之 隐藏“此电脑”窗口的6个额外文件夹及移除OneDrive</h1>
+<p>转自： http://ycrsjxy.blog.51cto.com/618627/1729092</p>
+<p>默认情况下，Windows 10的“此电脑”窗口会显示“视频、图片、文档、下载、<span style="color: #333333; line-height: 30px; text-indent: 28px; font-family: 1Microsoft YaHei\&#39;, \&#39;微软雅黑\&#39;, arial, \&#39;宋体\&#39;; font-size: 15px;">音乐、桌面“六个文件夹。大部分情况下，用户使用这几个文件夹的机会并不多，有时会觉得有些“碍眼“。那么，用户是否能删除（隐藏）他们呢？</span></p>
+<p><span style="color: #333333; line-height: 30px; text-indent: 28px; font-family: 1Microsoft YaHei\&#39;, \&#39;微软雅黑\&#39;, arial, \&#39;宋体\&#39;; font-size: 15px;">要隐藏这几个文件，用户只需要在管理员权限下运行regedit程序，修改相应键值即可。</span></p>
+<!--more-->
+<p><span style="color: #333333; line-height: 30px; text-indent: 28px; font-family: 1Microsoft YaHei\&#39;, \&#39;微软雅黑\&#39;, arial, \&#39;宋体\&#39;; font-size: 15px;">（具体键值可以从附件下载）</span></p>
+<p><span style="color: #333333; line-height: 30px; text-indent: 28px; font-family: 1Microsoft YaHei\&#39;, \&#39;微软雅黑\&#39;, arial, \&#39;宋体\&#39;; font-size: 15px;">将相应项下的“ThisPCPolicy”修改为“Hide”。</span></p>
+<p><span style="color: #333333; line-height: 30px; text-indent: 28px; font-family: 1Microsoft YaHei\&#39;, \&#39;微软雅黑\&#39;, arial, \&#39;宋体\&#39;; font-size: 15px;">桌面文件夹对应的PropertyBag项内可能没有“ThisPCPolicy”，手动新建一个“字符串值”将其命名为ThisPCPolicy，并赋予Hide值同样可以起到隐藏的作用。</span></p>
+<pre class="shell"><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag]
+
+&quot;ThisPCPolicy&quot;=&quot;Hide&quot;</code></pre>
+<p>转自： http://www.xitonghe.com/jiaocheng/Windows10-3471.html</p>
+<p>至Win8系统开始微软在系统中集成了OneDrive云服务功能，最初这项功能使用起来还是很方便的，不过由于某些原因在使用了长达两年的OneDrive后最终还是选择放弃了。</p>
+<p>在Win10中，OneDrive默认会出现在资源管理器左侧导航窗格中，即使未登录OneDrive也会出现。那么既然已不使用它，就想着把它去除掉。</p>
+<p>移除或隐藏OneDrive图标的方法有两个，一个是注册表修改隐藏，还有一个就是彻底关闭OneDrive功能，具体操作如下。</p>
+<p><strong>方法一：禁用OneDrive</strong></p>
+<p>1、在win10系统下按下WIN R 组合键，然后输入 gpedit.msc 回车；</p>
+<p>2、打开本地组策略后，我们依次展开：“计算机配置”——“管理模板”——“Windows组件”——“OneDrive”；</p>
+<p>3、双击右侧“禁止使用 <strong>Onedrive</strong> 进行文件储存“选项，设置为启用，如下图，然后确定即可。</p>
+<p>4、最后需要重启一下计算机才可以。</p>
+<p><strong>方法二：注册表修改</strong></p>
+<p>1、按Win R打开运行，输入regedit回车打开注册表编辑器；</p>
+<p>2、导航至HKEY_CLASSES_ROOT{018D5C66-4533-4307-9B53-224DE2ED1FE6}</p>
+<p>3、在右侧找到Attributes，双击将其值修改为f090004d。</p>
+<p><img class="alignnone size-full wp-image-174" src="https://192.168.1.103:8182/WordPress/wp-content/uploads/2017/09/20150927090905716.png" alt="" width="598" height="345" /></p>
+<p>如果你遇到注册表权限问题可参考 <a href="http://www.xitonghe.com/jiaocheng/Windows10-3016.html" target="_blank" rel="noopener">Win10系统修改注册表需要权限如何获得？</a></p>
+<p>OK，通过上述两个方法都可以不显示资源管理器导航栏OneDrive图标，一个是只隐藏，而一个是需要关闭OneDrive.</p>
+<h1 data-number="8" id="设定指定文件格式的打开程序和显示图标"><span class="header-section-number">8</span> 设定指定文件格式的打开程序和显示图标</h1>
+<ol type="1">
+<li><code>addpdf.reg</code>,双击</li>
+</ol>
+<pre class="reg"><code>[-HKEY_CLASSES_ROOT\.pdf]
+[HKEY_CLASSES_ROOT\.pdf]
+@=&quot;pdf_xxfile&quot;
+[HKEY_CLASSES_ROOT\pdf_xxfile]
+[HKEY_CLASSES_ROOT\pdf_xxfile\DefaultIcon]
+@=&quot;D:\\Qsync\\dosbin\\MyAHK\\ico\\pdf.png&quot;
+[HKEY_CLASSES_ROOT\pdf_xxfile\shell]
+[HKEY_CLASSES_ROOT\pdf_xxfile\shell\open]
+[HKEY_CLASSES_ROOT\pdf_xxfile\shell\open\command]
+@=&quot;\&quot;D:\\Qsync\\dosbin\\Bin\\ahkview.exe\&quot; \&quot;%1\&quot;&quot;</code></pre>
+<ol start="2" type="1">
+<li>将pdf文件选定打开方式为<code>ahkview.exe</code>,</li>
+<li>再执行一次<code>addpdf.reg</code></li>
+</ol>
+<h1 data-number="9" id="hp打印机"><span class="header-section-number">9</span> HP打印机</h1>
+<h2 data-number="9.1" id="hp打印机无线提示-需要注意"><span class="header-section-number">9.1</span> HP打印机(无线)提示: 需要注意</h2>
+<ol type="1">
+<li>打印机⇒管理⇒打印机属性⇒删除被占用的打印机ip端口</li>
+<li>删除打印机</li>
+<li>添加打印机或扫描仪⇒“我需要的打印机不在列表中”⇒ 使用IP添加 ⇒输入ip地址</li>
+</ol>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
