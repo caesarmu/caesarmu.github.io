@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../Manuals/Private/Tasks_self.html">Tasks</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="../../Manuals/Private/Private_self.html">Private</a></li>
+        <li><a href="../../Manuals/Private/Note4Topic_self.html">Topic</a></li>
+        <li><a href="../../Manuals/Private/Manual4pps4v_self.html">PPS4V</a></li>
+        <li class="dropdown">
+          <a href="Tasks_self.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a  target="_blank" href="https://blog.nanomat.top/note/">Note</a></li>
+            <li><a target="_blank" href="https://reabble.cn/app#/">RSS</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top">Blog</a></li>
+            <li><a target="_blank" href="https://127.0.0.1:8133/">Syncthing</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a  target="_blank" href="https://blog.nanomat.top/pmmp/">PMMP</a></li>
+            <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+            <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+            <li><a  target="_blank" href="http://myportal.sxu.edu.cn/">SXU MYPORTAL</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://next-gen.materialsproject.org/materials/?API_KEY=dPQ0vE0Tom8RThWQPuoojRjd4eTwLUgm">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/geoview.html?fname=a.xsf">Jsmol</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/my-mind/?url=https%3A%2F%2Fblog.nanomat.top%2Fdav%2FTopics.mymind">MindMap</a></li>    
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

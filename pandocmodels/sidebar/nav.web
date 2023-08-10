@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/paper.html">Paper</a></li>
+        <li><a href="/post.html">Post</a></li>
+        <li class="dropdown">
+          <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+          <ul class="dropdown-menu">  
+        <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+        <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+        <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+        <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+        <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+        <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+            <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+            <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+          </ul>
+        </li>
+        <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+      </ul>
+    </div>
+  </div>
+</nav>
