@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>posts</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="posts"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://blog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://blog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 main">
+        
+<div class="card">
+<h1 id="cohp"><a href="/public/cohp.html"><span style="font-size: 40; "><strong>COHP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-08-10</span></p>
+<p style="text-align: left;">
+Theory: From H<sub>2</sub> to Data Storage Alloys From http://www.cohp.de/ The COHP (or COOP) concept is most easily understood by looking at the simple band structure of a "one dimensional" solid; the following example has been stolen from a classic introduction (http://onlinelibrary.wiley.com/doi/10.1002/anie.1987084 61/abstract). Imagine a linear chain of hydrogen atoms, the one dimensionally periodic analogue of H<sub>2</sub> (whose molecular orbital scheme is known from the freshmen lecture)!…
+</p>
+<button onclick="location.href=&#39;/public/cohp.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="d-mateirials-family"><a href="/public/2D_Family.html"><span style="font-size: 40; "><strong>2D Mateirials Family</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+definition 结构有序 二维平面生长 第三维度超薄 单层未必最好，也许几层更佳 Graphene family: Graphene, Fluorographene, graphene oxide hBN white graphene BCN, g CN X enes (silicene. germanene. stanene) borophene. phosphorene, single element 2D materials 2D chalcogenfdes MoS<sub>2</sub>, WS<sub>2</sub>, MoSe2, WSe Semiconducting dichalcogenides: MoTe<sub>2</sub>, WTe<sub>2</sub>, ZrS<sub>2</sub>, ZrSe<sub>2</sub> and so on Metallic dichalcogenides: NbSe<sub>2</sub>, NbS<sub>2</sub>, TaSe TiS<sub>2</sub>, NiSe<sub>2</sub> and so on Layered…
+</p>
+<button onclick="location.href=&#39;/public/2D_Family.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="mindmap"><a href="/public/mindmap.html"><span style="font-size: 40; "><strong>MindMap</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+My Mind https://blog.nanomat.top/my mind/ jsmind ```html head link type=“text/css” rel=“stylesheet” href=“https://blog.nanomat.top/jsmind/style/jsmind.css” / style type=“text/css” jsmind_container{ width:800px; height:600px; border:solid 1px ccc; /background:f4f4f4;/ background:f4f4f4; } /style script type=“text/javascript” src=“https://blog.nanomat.top/jsmind/js/jsmind.js” /script script…
+</p>
+<button onclick="location.href=&#39;/public/mindmap.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="office"><a href="/public/Office.html"><span style="font-size: 40; "><strong>Office </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Office software comparision | Items | Microsoft | WPS | Yozo | Libreoffice| OnlyOffice | ||||||| | 版权| 商业| 个人免费| 商业| 开源、免费| 社区版免费 | | OLE| 正常| 正常| 有问题| 正常| 未知 | | 公式| 自带公式(OMML) | MathType+OMML|科教编辑器|自带Math模块，OMML兼容有问题|自带公式(OMML)| | Word公式| 正常| 兼容| 兼容| 兼容| 正常 | | PPT兼容| …
+</p>
+<button onclick="location.href=&#39;/public/Office.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="pdf-viewers"><a href="/public/pdf.html"><span style="font-size: 40; "><strong>Pdf Viewers </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Compare free PDF viewers | Foxit reader | Acobat PDF DC | Pdf Xchang | sumatra PDF | ||||| |free | free | free | free | |tabbed | not tabbed | tabbed | tabbed| |printer | no printer | no printer | no printer | |no eps,png support | no eps,png support | no eps,png support|eps,png support| |no restart support | no…
+</p>
+<button onclick="location.href=&#39;/public/pdf.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="配置-yum-源的两种方法"><a href="/public/yum.html"><span style="font-size: 40; "><strong>配置 yum 源的两种方法</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+转自：  a href=“http://blog.itpub.net/25313300/viewspace 708509” target="_blank" http://blog.itpub.net/25313300/viewspace 708509 /a 由于 redhat的yum在线更新是收费的，如果没有注册的话不能使用，如果要使用，需将redhat的yum卸载后，重启安装，再配置其他源. 本文包括配置本地源及第三方源。第三方源包括：网易，epel, span style=“font size: medium;” repoforge /span ,rpmfusion 以下为详细过程： strong 1.删除redhat原有…
+</p>
+<button onclick="location.href=&#39;/public/yum.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="windows"><a href="/public/Windows.html"><span style="font-size: 40; "><strong>Windows </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Windows 缩放问题 在win10中，如果把系统显示缩放调到125%，文字会发生模糊，所以这个缩放应该保持100%。 但可以更改文本和其他项目的大小， 把仅更改文本大小中的选项： 标题栏、菜单、消息框、调色板标题、图标、工具提示等全由9号字提升到12号。360浏览器缩放125%，若标题栏、收藏栏等字体太小，将上面的消息框、图标调至更大，如16. …
+</p>
+<button onclick="location.href=&#39;/public/Windows.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="writting-skills"><a href="/public/Writting.html"><span style="font-size: 40; "><strong>Writting Skills</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+选题和写作 与其跟风大文章，不如找一个有特色、原创性高、有系统的课题，这样更容易建立学术声誉 任何研究都是有有效期的，所以要尽快完成 思考自己擅长什么，给学生分配他们能做的课题 选题有广度(Broad Interest)，有深度(Significants)，有难度(Difficulty)，有新意(Novelty)，出人意料甚至颠覆(Unexpected)，问题导向(Question). 为什么做: 缘起与意义，significants(深度)和general…
+</p>
+<button onclick="location.href=&#39;/public/Writting.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="wannier-functions"><a href="/public/Wannier.html"><span style="font-size: 40; "><strong>Wannier Functions</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Wannier90 How to construct high quality Wannier functions From https://www.wanniertools.org/tutorials/high quality wfs/ QuanSheng Wu École Polytechnique Fédérale de Lausanne (EPFL), Switzerland Constructed on October 30, 2019 High quality Wannier functions (WFs) are very useful for physical properties calculations after we obtained the self consistent charge density from the first principle calculations. However, for the beginners, it’s not easy to obtain good WFs. Here we would…
+</p>
+<button onclick="location.href=&#39;/public/Wannier.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="vesta-vmd-and-avogadro"><a href="/public/Visual.html"><span style="font-size: 40; "><strong>Vesta, VMD and Avogadro</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Tips Vibration mold format: Visualization by Avogadro/Jmol. xsf/axsf format: Visualization by Xcrysen (or as Force vectors in Vesta) Animation xyz format: Visualization and making movie by Avogadro/Jmol/VMD. axsf format: Visualization by Xcrysen/VMD/jmol (or as Force vectors in Vesta) Vesta Polyhedra plot for assigned atoms (SrScNbCoO3 example) 1. Edit Edit Data Unit Cell Remove symmetry. 2. Edit Bonds, Select “Search A2 bonded to A1”,"Search additional atoms if A1 is included…
+</p>
+<button onclick="location.href=&#39;/public/Visual.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="vpn"><a href="/public/VPN.html"><span style="font-size: 40; "><strong>VPN </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+VPN Server at QNAP NAS PPTP: 控制台 应用服务器 VPN服务器 启用PPTV VPN服务器。权限设置上，取消admin的PPTP和OpenVPN，增加user的PPTP。 OpenVPN: 控制台 应用服务器 VPN服务器 启用OpenVPN服务器，并下载凭证。权限设置上，取消admin的PPTP和OpenVPN，增加user的OpenVPN。 注意： 选择以太网卡2 TPLINK端口映射 应用管理 虚拟服务器里增加： | 常用服务器 | 外部端口 | 内部端口 | IP地址 | 协议…
+</p>
+<button onclick="location.href=&#39;/public/VPN.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="vasp-tips"><a href="/public/VASP-Tips.html"><span style="font-size: 40; "><strong>VASP Tips</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Unit for CHGCAR From VASP manual, CHGCAR: “This file contains the lattice vectors, atomic coordinates, the total charge density multiplied by the volume <span class="math inline">\rho(r)V_{cell}</span> on the fine FFT grid (NG(X,Y,Z)F), and the PAW one center occupancies.” From VESTA manual, CHGCAR/CHG/PARCHG: “When these files are read in to visualize isosurfaces and sections, data values are divided by V in the unit of <span class="math inline">bohr^3</span>. The unit of charge densities input by VESTA is, therefore, <span class="math inline">bohr^{−3}</span>.” Test: Though…
+</p>
+<button onclick="location.href=&#39;/public/VASP-Tips.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="my-violent-monkey-scripts"><a href="/public/Violent_monkey.html"><span style="font-size: 40; "><strong>My Violent Monkey scripts</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Violent Monkey scripts 破解VIP会员视频集合 百度网盘直接下载助手 京东自营过滤 QR This Page True URL downloads 视频站启用html5播放器 购物党比价工具 VIP视频在线解析 AC baidu： 优化百度、搜狗、谷歌搜索结果之重定向去除+去广告+favicon <code>// connect</code>= <code>// connect  false</code> My Own ```sh // ==UserScript== // name Monkey4Mu // namespace my // description page lodeded and useso fonts for http (https not…
+</p>
+<button onclick="location.href=&#39;/public/Violent_monkey.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="installtion-of-vasp"><a href="/public/VASP.html"><span style="font-size: 40; "><strong>Installtion of VASP </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installtion install Bader <code>sh tar  xvf  bader.tar.gz &amp;&amp; cd  bader`    to edit makefile.lnx_ifort:   Line 7:  LINK =  static =   LINK =  static intel    make  f makefile.lnx_ifort    cp bader ~/.soft/vasp/vaspshell/bader.x</code> install MKL, IMPI and FFTW 1. Install intel parallel studio first. 2. compile fftw <code>sh cd /opt/intel/mkl/interfaces/fftw3xf make libintel64 compiler=intel</code> FFTW 3 ```sh cd fftw/ ./configure prefix=/opt/local/fftw 3.3.8.g7 CC=gcc MPICC=mpicc…
+</p>
+<button onclick="location.href=&#39;/public/VASP.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="multiferro-for-vasp"><a href="/public/VASP_MF.html"><span style="font-size: 40; "><strong>Multiferro for VASP </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Berry phase 计算铁电极化的步骤 confirmed by 大牛Ederer by fan_zhen from http://muchong.com/bbs/viewthread.php?tid=8575960&amp;fpage=1&amp;target=blank 四年之前曾经发帖求助Berry phase 如何计算铁电极化的问题，那个帖子之后有一些同行回帖或者短消息我， 抱歉我都没有回复， 主要是本人对小木虫使用很有限，而且功能不熟悉，每次登陆自己账户都是为了下载资源，之后匆匆下线。 今天为了回馈多年来小…
+</p>
+<button onclick="location.href=&#39;/public/VASP_MF.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="neb-for-vasp"><a href="/public/VASP-NEB.html"><span style="font-size: 40; "><strong>NEB for VASP </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+NEB 转载自： http://blog.sina.com.cn/s/blog_b364ab230102v1wk.html The VASP manual has a brief description of how to perform elastic band calculations on this page: http://cms.mpi.univie.ac.at/vasp/vasp/Elastic_band_method.html You can also check the VASP forum for answers and post a question there if it has not already been answered: http://cms.mpi.univie.ac.at/vasp forum/forum.php While the method currently implemented in VASP is reasonable, I would suggest that you check out the…
+</p>
+<button onclick="location.href=&#39;/public/VASP-NEB.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="quantum-espresso-vs-vasp"><a href="/public/vasp-pwscf.html"><span style="font-size: 40; "><strong>Quantum Espresso vs VASP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+转自：https://www.nsc.liu.se/~pla/blog/2013/02/04/qevasp part1/ div class=“entry content” There are just a few implementations of the PAW method: a href=“http://users.wfu.edu/natalie/papers/pwpaw/man.html” PWPAW /a , a href=“http://www.abinit.org/” ABINIT /a , a href=“http://www.vasp.at/” VASP /a , a href=“https://wiki.fysik.dtu.dk/gpaw/” GPAW /a , and in the PWscf program in a href=“http://www.quantum espresso.org/” Quantum Espresso /a (“QE” from now on). VASP is frequently…
+</p>
+<button onclick="location.href=&#39;/public/vasp-pwscf.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="ggau"><a href="/public/VASP-GGAU.html"><span style="font-size: 40; "><strong>GGA+U</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Determine U and J value U and J are screened Coulomb and exchange parameters The exchange J (typically of order ~1 eV Anisimov97JPCM ), though not as strong as that of U (about one tenth of U in magnitude), may also play an important role on band gaps Anisimov97JPCM . Calculating the Hubbard U by linear response method FROM MIT From http:/hjkgrp.mit.edu/content/calculating hubbard u Tuesday, May 31, 2011 If you you think you might be interested in carrying out DFT+U calculations…
+</p>
+<button onclick="location.href=&#39;/public/VASP-GGAU.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="cell-constraint"><a href="/public/VASP_ConstrCell.html"><span style="font-size: 40; "><strong>Cell Constraint</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Cell Constraint for VASP Modify <code>src/constr_cell_relax.F</code> as follows, and recompile it. ```patch src/constr_cell_relax.F 2020 08 25 23:27:21.000000000 +0800 +++ ../vasp.6.1.2.ext/src/constr_cell_relax.F 2020 12 02 09:53:37.541195944 +0800 27,17 +27,47 SUBROUTINE CONSTR_CELL_RELAX(FCELL) USE prec REAL(q) FCELL(3,3) + INTEGER FIXCELL(3,3) ! added by Mu + LOGICAL FCEXIST !added by Mu + INTEGER I,J,IREADFIX ! added by Mu + SAVE…
+</p>
+<button onclick="location.href=&#39;/public/VASP_ConstrCell.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="free-energy-in-vasp"><a href="/public/VASP-FreeE.html"><span style="font-size: 40; "><strong>Free Energy in VASP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Free Energy Correction from Phonopy) The free energies for the allotropes were also evaluated using quasiharmonic approximation (QHA) method implemented in Phonopy program Togo08PRB . They were calculated from 0 to 1000 K at ambient pressure as follows, <span class="math display">F=U(V_0)+\frac{1}{2}\sum\limits_{\boldsymbol{q}\nu}\hbar\omega_{\boldsymbol{q}\nu}+k_BT\sum\limits_{\boldsymbol{q}\nu}\ln 1 \exp( \hbar\omega_{\boldsymbol{q}\nu}/k_BT) </span> where <span class="math inline">U(V_0)</span> is the ground state energy at the relaxed volume…
+</p>
+<button onclick="location.href=&#39;/public/VASP-FreeE.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="paramters-and-units"><a href="/public/Units.html"><span style="font-size: 40; "><strong>Paramters and Units</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+常用物理基本常数表 |物理常数|符号|最佳实验值|供计算用值| |::|::|::|::| | 真空中光速 | c | 299792458±1.2m·s^ 1^ | 3.00×10<sup>8</sup> m·s^ 1^ | | 引力常数 | G<sub>0</sub> | (6.6720±0.0041)×10^ 11<sup>m</sup>3<sup>·s</sup> 2^ | 6.67×10^ 11^ m<sup>3</sup>·s^ 2^ | | 阿伏加德罗(Avogadro)常数 | N<sub>0</sub> | (6.022045±0.000031) ×10<sup>23</sup>mol^ 1^ | 6.02×10<sup>23</sup> mol^ 1^ | | 普适气体常数 …
+</p>
+<button onclick="location.href=&#39;/public/Units.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="energy-relative-to-vacuum"><a href="/public/Vacuum_energy.html"><span style="font-size: 40; "><strong>Energy Relative to vacuum</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Light Induced Ambient Degradation of Few Layer Black Phosphorus: Mechanism and Protection Zhou16ACIE Visual light(400nm 760nm) by <span class="math inline">E=h\nu=hc/\lambda</span>, <span class="math inline">E_{visual}=1.63 \sim 3.1 eV</span> !{width=100%} Fig. 1: The light induced ambient degradation process of phosphorene. Step I: O<sub>2</sub>^ ^ is generated through a charge transfer reaction under ambient light ( <span class="math inline">O_2+h\nu</span><span class="math inline">\rightarrow</span><span class="math inline">O_2^ +h^+</span> ; P and h<sup>+</sup> stands for phosphorene and a hole, respectively); step II: O<sub>2</sub>^ ^ dissociates at the surface…
+</p>
+<button onclick="location.href=&#39;/public/Vacuum_energy.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="band-structure-and-dos-in-vasp"><a href="/public/VASP-Band.html"><span style="font-size: 40; "><strong>Band structure and DOS in VASP </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Band structure Plot <code>fatband</code> with <code>P4vasp</code> 1. Open <code>P4vasp</code> 2. Open <code>vasprun.xml</code> 3. Click <code>Menu  Electronic  Local DOS+band control</code> 4. Click <code>Show  Bands</code> above the graph. 5. Focus on the control tab <code>ElectronicControlApplet</code>, fill element name (e.g., C) to <code>Atom selection</code>, select Oribital (e.g., pz) in <code>Orbital selection</code> part. And click <code>Add new line</code>. The symbol type and size could be…
+</p>
+<button onclick="location.href=&#39;/public/VASP-Band.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="benchmark-for-vasp"><a href="/public/vasp.bench.html"><span style="font-size: 40; "><strong>BenchMark for vasp</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+| OS| Hyper| CPU/GPU| NP| impi| Vasp| LREAL| Clcok| Steps| Energy| TotalTime| |||||||||||| | 7.4| n| GPU/i7| 1| 5| 5.4.4| Auto| 2871.888s| 35| 150.5363| 766m(16c)| | 7.4| n| intel/E5| 16| 5| 5.4.4| False| 2490.956s| 29| 150.5301| 664m| | 7.4| y| intel/E5| 16| 5| 5.4.4| False| 3313.815s| 29| 150.5301| …
+</p>
+<button onclick="location.href=&#39;/public/vasp.bench.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="literature-tracking"><a href="/public/Track.html"><span style="font-size: 40; "><strong>Literature Tracking</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Email Alerts Follow a paper or an author 1. Visit <code>Microsoft Academic</code> https://academic.microsoft.com/php . 2. Search a paper or an author. 3. To <code>Follow</code> a paper or an author, then you will receive Live Mail email alert for changes. 4. You can do it in a similar way on <code>Goolge Scholar</code>. Follow a keyword or a paper 1. Visit Web of Science http://apps.webofknowledge.com/ . 2. Search a paper tile, an author or a keyword. 3. You can <code>creat an alert</code> for the search. 4. Or Click an…
+</p>
+<button onclick="location.href=&#39;/public/Track.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="kinetics-and-transition-state"><a href="/public/Transition_State.html"><span style="font-size: 40; "><strong>Kinetics and Transition State</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Transition State in VASP VTST, CI NEB Henkelman00JCP and SSNEB Sheppard12JCP . Kinetics with Pressure Zhang14JACS The rate of the C monomer being captured can be roughly estimated as <span class="math display">R_{cap}=\frac{exp( E_{cap}/k_BT)}{(exp( E_{cap}/k_BT)+exp( E_{didff}/k_BT)}\sim99.5\%</span> where E<sub>cap</sub> (0.62 eV) and E<sub>diff</sub> (1.15 eV) are the activation energies of the C atom being captured by the edge and diffusing through the border, respectively, k<sub>B</sub> is Boltzmann’s constant, and T (~1300 K) is a…
+</p>
+<button onclick="location.href=&#39;/public/Transition_State.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="temperature-monitor"><a href="/public/Temp_monitor.html"><span style="font-size: 40; "><strong>Temperature Monitor</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install OpenIPMI and ipmitool ``<code>sh  run as root yum install  OpenIPMI  ipmitool systemctl enable ipmi  systemctl start ipmi   key step: ipmitool sdr type temp"   add</code>/5 root /home/muyw/.soft/GBS/temp_monitor.sh` to /etc/crontab systemctl restart crond…
+</p>
+<button onclick="location.href=&#39;/public/Temp_monitor.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="tex"><a href="/public/Tex.html"><span style="font-size: 40; "><strong>Tex </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Tex Symbols Greek letters | Greek | Tex | Greek | Tex | ||||| | <span class="math inline">\alpha</span> | \alpha | <span class="math inline">\beta</span> | \beta | | <span class="math inline">\gamma</span> | \gamma | <span class="math inline">\Gamma</span> | \Gamma | | <span class="math inline">\delta</span> | \delta | <span class="math inline">\Delta</span> | \Delta | |<span class="math inline">\epsilon</span>| \epsilon| <span class="math inline">\varepsilon</span>|\varepsilon| | <span class="math inline">\zeta</span> | \zeta | <span class="math inline">\eta</span> | \eta | | <span class="math inline">\theta</span> | \theta | <span class="math inline">\vartheta</span>| \vartheta| | <span class="math inline">\Theta</span> | \Theta | <span class="math inline">\iota</span> | \iota | | <span class="math inline">\kappa</span> | \kappa | <span class="math inline">\lambda</span>| \lambda | | <span class="math inline">\Lambda</span>| \Lambda | <span class="math inline">\mu</span> |…
+</p>
+<button onclick="location.href=&#39;/public/Tex.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="thermoelectric"><a href="/public/Thermoelectric.html"><span style="font-size: 40; "><strong>Thermoelectric</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+基本介绍 热电效应是指在给定温度梯度下产生电势差的一种物理现象。通常用品质因子(ZT)<span class="math inline">ZT=S^2\sigma{T}/\kappa</span>,（其中<span class="math inline">S</span>是Seebeck系数，<span class="math inline">\sigma</span>代表电导率，<span class="math inline">T</span>是温度，<span class="math inline">\kappa</span>则表示热导率）来表征材料的热电性能。具有高品质因子的热电材料能够有效地将废热转换为电能，具有广泛的应用前景，因此寻找具有高品质因子的热电材料是能源转换领域的一个研究热点。为了提高热电…
+</p>
+<button onclick="location.href=&#39;/public/Thermoelectric.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="ssadndp"><a href="/public/SSAdNDP.html"><span style="font-size: 40; "><strong>SSAdNDP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installation Download Download SSAdNDP from http://ion.chem.usu.edu/~boldyrev/ssadndp.php Install New Periodic NBO New Periodic NBO (2015) Ref: http://bbs.keinsci.com/thread 12111 1 1.html ```sh tar xvf periodic_nbo_v.1.1.tgz cd projection sed i “s/USE mkl95_BLAS/USE BLAS95/ig;s/USE mkl95_LAPACK/USE LAPACK95/ig” .f90 sed i “s/zGEMM_MKL95/GEMM/ig;s/DGEMM_MKL95/GEMM/ig;” .f90 sed i “s/DGETRF_MKL95/GETRF/ig;s/ZGETRF_MKL95/GETRF/ig;” .f90 sed i…
+</p>
+<button onclick="location.href=&#39;/public/SSAdNDP.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="ssh"><a href="/public/SSH.html"><span style="font-size: 40; "><strong>SSH </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+xshell and Xming 生成SSH.bat, <code>bat echo off start /B C:\"Program Files (x86)"\NetSarang\"Xshell 5"\Xshell.exe" start /B C:\"Program Files (x86)"\Xming\Xming.exe :0  clipboard  multiwindow</code> 生成快捷方式，并更换图标。 To Install MobaXterm unzip MobaXterm_v8.6.zip copy MobaXterm_v8.6/MobaXterm_Personal_8.6.exe to <code>E:\Softs\DoNotSync\MobaXterm</code> double click MobaXterm_Personal_8.6.exe copy Configuration file to `E:or…
+</p>
+<button onclick="location.href=&#39;/public/SSH.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="superconductor"><a href="/public/supercond.html"><span style="font-size: 40; "><strong>Superconductor </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Formulas The total electron phonon coupling constant <span class="math inline">\lambda</span> can be obtained by <span class="math display">\lambda=\sum_{q\nu}\lambda_{q\nu}=2\int_0^{\omega}\frac{\alpha^2F(\omega)}{\omega}d\omega</span> <span class="math display">\lambda_{q\nu}=\frac{\gamma_{q\nu}}{\pi{h}N(E_f)\omega^2_{q\nu}}</span> where Eliashberg spectral function is <span class="math display">\alpha^{2}F(\omega)=\frac{1}{2\pi{N}(E_F)}\sum_{q\nu}\delta(\omega \omega_{q\nu})\frac{\gamma_{q\nu}}{\hbar\omega_{q\nu}}</span> The cirtical temperatures <span class="math inline">T_c</span> were estimated by Allan−Dynes modified McMillan’s…
+</p>
+<button onclick="location.href=&#39;/public/supercond.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="symmetry"><a href="/public/Symmetry.html"><span style="font-size: 40; "><strong>Symmetry</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Symmetry Operations Symmetry operations include the improper rotation, inversion operation, mirror plane, and rotation. Together, these operations create 32 crystal classes corresponding to the 32 point groups. Inversion operation <span class="math inline">i</span> It takes <span class="math inline">(x,y,z)\rightarrow( x, y, z)</span> and is denoted <span class="math inline">i</span>. When used in conjunction with a rotation, it becomes an improper rotation. An improper rotation by <span class="math inline">360\degree/n</span> degrees is denoted <span class="math inline">\bar{n}</span> (or <span class="math inline">S_n</span>). For periodic crystals, the crystallography…
+</p>
+<button onclick="location.href=&#39;/public/Symmetry.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="siesta"><a href="/public/Siesta.html"><span style="font-size: 40; "><strong>Siesta </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install ```sh tar xvf siesta 3.2 pl 4.tgz cd siesta 3.2 pl 4 cd Obj sh ../Src/obj_setup.sh ../Src/configure CC=icc FC=ifort modify arch.make: 1)FC=… change to: FC=mpif90 2)add : CC=icc 3)FFLAGS=.. change to: FFLAGS= g O2 DMPI 4)add: DUMMY_FOX= enable dummy 5) BALAS_LIBS=… , LAPACK_LIBS=.. BLACS_LIBS=… SCALAPACK_LIBS=…. and COMP_LIBS=.. change to: MKL_PATH=$(MKLROOT)/lib/intel64 BLAS_LIBS= Wl, start group $(MKL_PATH)/libmkl_intel_lp64.a $(MKL_PATH)/libmkl_sequential.a…
+</p>
+<button onclick="location.href=&#39;/public/Siesta.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="my-softwares"><a href="/public/softs.html"><span style="font-size: 40; "><strong>My Softwares</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Opensource or freemium softwares Word processing and Presentation To replace commercial MS Office (Win/Mac) Office WPS office(Win/Linux, Freemium &amp; Proprietary, best compatibility to MS Office) LibreOffice (Win/Mac/Linux, Portable, Opensource) OnlyOffice (Win/Mac/Linux, Opensource, very good compatibility to MS Office) Tex TeX Live (Win/Mac/Linux, Portable, Opensource) Miktex(Win/Mac/Linux, Portable, Opensource) Markdown+Pandoc+Katex Typora (Win/Mac/Linux, Portable, Paid &amp;…
+</p>
+<button onclick="location.href=&#39;/public/softs.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="solar-cell"><a href="/public/Solar_Cell.html"><span style="font-size: 40; "><strong>Solar Cell</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+基本介绍…
+</p>
+<button onclick="location.href=&#39;/public/Solar_Cell.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="posts-for-science"><a href="/public/science.html"><span style="font-size: 40; "><strong>Posts for science</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">index / 2023-06-25</span></p>
+<p style="text-align: left;">
+span style=“color:red; font size: 40;” ﻿2D Mateirials Family /span span style=“color:black; font size: 30;” Oct 04, 2021 /span definition 结构有序 二维平面生长 第三维度超薄 单层未必最好，也许几层更佳 Graphene family: Graphene, Fluorographene, graphene oxide hBN white graphene BCN,… span style=“color:red; font size: 40;” ﻿AdNDP and PES using Gaussian 03 /span span style=“color:black; font size: 30;” Oct 04, 2021 /span AdNDP …
+</p>
+<button onclick="location.href=&#39;/public/science.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="semimetal"><a href="/public/SemiMetal.html"><span style="font-size: 40; "><strong>Semimetal </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Semimetal types !Fig. 1:{width=100%} Fig. 1Schematic illustration of different types of semimetals and representative materials. a, Normal semimetal with the coexistence of electron and hole pockets. b, Semimetal with quadratic conduction and valence bands touching at the same momentum point. c, Weyl semimetal and Dirac semimetal. d, Semimetal with one hole pocket from the normal quadratic band and one electron pocket from the linear Weyl semimetal band for NbP. The valence and conduction…
+</p>
+<button onclick="location.href=&#39;/public/SemiMetal.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="redox-potentials-and-standard-reduction-potentials"><a href="/public/Redox_Potentials.html"><span style="font-size: 40; "><strong>Redox Potentials and Standard Reduction Potentials</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Redox Poentails <span class="math display">V_{Reduction}(H)=0</span> <span class="math display">V_{Redox}(H)=4.44 eV</span> <span class="math display">V_{Redox}(A)=V_{Reduction}(A)+V_{Redox}(H)</span> | Species | V<sub>Redox</sub>(eV) | |::|::| |O<sub>2</sub>/O<sub>2</sub>^ ^| 4.44 0.33| |O<sub>2</sub>/H<sub>2</sub>O|4.44+1.229| | 0 | 0 | :Table: Redox Poentails Standard Reduction Potentials Ref: https://chem.libretexts.org/Reference/Reference_Tables/Electrochemistry_Tables/P1%3A_Standard_Reduction_Potentials_by_Element The following table provides E<sup>o</sup> and E<sup>o</sup> values for selected reduction…
+</p>
+<button onclick="location.href=&#39;/public/Redox_Potentials.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="reference"><a href="/public/Reference.html"><span style="font-size: 40; "><strong>Reference</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Zotero Preference Main General: Uncheck <code>Automatically tags items with keywords and subject headings</code> Sync: Login zotero account, enable Data syncing and set <code>Sync automatically</code>, <code>Sync full text context</code>, Disable File syncing. Advanced/Files and Folders/Base directory: <code>D:\Qsync\dosbin\Refs4Mu\Pdfs</code> Zotero connector and Update Updation always leads to compatibility problems. Zotero Edit Preference config editor: set <code>extension.zotero.automaticSnapshots</code> to false. Zotero Edit…
+</p>
+<button onclick="location.href=&#39;/public/Reference.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="single-point-catalysis"><a href="/public/SAC.html"><span style="font-size: 40; "><strong>Single Point Catalysis </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+制备要求 原子级分散的贵金属催化剂由于其高原子利用效率而表现出更高的催化活性。为了制备单原子催化剂，一般有以下几种方法： 1. 降低金属负载量 2. 提高金属 载体相互作用 3. 利用载体上的空位或缺陷 整体来说，目前原子级分散催化剂主要存在以下两大挑战： 1….
+</p>
+<button onclick="location.href=&#39;/public/SAC.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="quantum-espresso"><a href="/public/Pwscf.html"><span style="font-size: 40; "><strong>Quantum Espresso </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installation QE 6.7 + gcc 9.3 + OpenMPI 3.1.6 + OpenBlas 0.3.10 + FFTW3 (passed) + thermo_pw ```sh tar xvf qe 6.7 ReleasePack.tgz cd qe 6.7 download thermo_pw https://github.com/dalcorso/thermo_pw/releases/download/1.4.1/thermo_pw.1.4.1.tar.gz tar xvf thermo_pw.1.4.1.tar.gz Modify Modules/parameters.f90 and set npk=999999 Modify PHonon/PH/phcom.f90 and set maxter = 500 Modify PHonon/PH/lambda.f90 and set npk = 500 make veryclean export FFTW_INCLUDE=/home/ywmu/backup/Src/comlib/fftw…
+</p>
+<button onclick="location.href=&#39;/public/Pwscf.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="python"><a href="/public/Python.html"><span style="font-size: 40; "><strong>Python</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+normal version python Some Differences between Python 2 and Python 3 | Python2 | Python 3 | ||| | <code>print "aa"</code> | <code>print("aa")</code> | | <code>raw_input("name:")</code> | <code>input("name:")</code> | | <code>dict.keys().sort().reverse()</code> |<code>sorted(dict.keys()).reverse()</code> | |<code>4/2=2</code> | <code>/2=2.0</code> | | <code>print   sys.staerr, "fatal error"</code> | <code>print ("fatal error", file=sys.stderr)</code> | Tips pause: <code>os.system("pause")</code>; 每一个变量和数组都要初始化， 如`list = 0 12 or list =…
+</p>
+<button onclick="location.href=&#39;/public/Python.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="plotting-and-images"><a href="/public/plot.html"><span style="font-size: 40; "><strong>Plotting and Images</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Gnuplot example for fit ```Gnuplot datafile=“En R_arm.dat” outfile=‘fit_log_arm.dat’ set fit logfile outfile set print outfile append mean(x)=m 拟合后m即为Y的平均值 fit x=0.325:0.345 mean(x) datafile using (43.14159263.1415926/$22):1 via m range 可选 SST = FIT_WSSR 对平均值的方差, 即SST f(x)=ax+b 线性模型 FIT_LIMIT = 1e 6 fit x=0.325:0.345 f(x) datafile using (43.14159263.1415926/$22):1 via a,b SSE=FIT_WSSR 对线性模型的方差, 即SSE…
+</p>
+<button onclick="location.href=&#39;/public/plot.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="what-is-the-port-number-used-by-qnap-nas"><a href="/public/Port4QNAP.html"><span style="font-size: 40; "><strong>What is the port number used by QNAP NAS? </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+FTP 21 by default and configurable. Passive FTP port 55536 ~ 56559 by default and configurable SSH 22 by default and configurable.  SMTP 25 by default and configurable. Web Server/HTTP 80; HTTPS 8081 by default and configurable.  Netbios/SAMBA 137, 138, 139, 445 SSL/HTTPS 443 by defualt and configurable AFP 548 Rsync 873 by default and configurable. RTRR 8899 by default and configurable MySQL 3306 by defualt and…
+</p>
+<button onclick="location.href=&#39;/public/Port4QNAP.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="phase-diagram"><a href="/public/Phase_Diagram.html"><span style="font-size: 40; "><strong>Phase Diagram</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Kvashnin14NL The phase diagram was obtained from the calculation of the Gibbs free energies G of the compared phases in the quasiharmonic approximation: <span class="math display">G(P,T)=E_0(V)+PV+U_0(V)+F_{vib}(T,V)</span> where E<sub>0</sub>, U<sub>0</sub>, and F<sub>vib</sub> are the total energy from the DFT calculations, while the zero point and vibrational energies are calculated from the following relations: <span class="math display">U_0(V)=1/2\int g(V,\omega)\hbar \omega d\omega</span> $$F_{vib}(T,V)=k_BT_{}g(V,)ln 1 exp( )…
+</p>
+<button onclick="location.href=&#39;/public/Phase_Diagram.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="phonopy-and-phono3py"><a href="/public/Phonopy.html"><span style="font-size: 40; "><strong>Phonopy and Phono3py</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+span class=“header section number” 1 /span normal version python {normal version python} span class=“header section number” 1.1 /span python reinstall {python reinstall} ~~~~ sourceCode yum search openssl yum install openssl devel.x86_64 y cd /home/ywmu/backup/compiled.soft/Python/Python 2.7.10 ./configure enable shared prefix=/opt/Python27 注意 ：不加　 enable shared　参数将编译静态的python,无法使用PyInstall的打包。 make make install export…
+</p>
+<button onclick="location.href=&#39;/public/Phonopy.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="php"><a href="/public/php.html"><span style="font-size: 40; "><strong>PHP </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+~~~~ sourceCode download https://github.com/moriyoshi/libmbfl unzip libmbfl master.zip cd libmbfl master ./buildconf ./configure prefix=/home/user/backup/compiledsoft/lib cp r /home/user/backup/compiledsoft/lib /home/user/soft/nginx/mbfl ./configure prefix=/home/user/soft/nginx/php/ enable fpm enable mbstring make &amp;&amp; make install cp php.ini production /home/user/soft/nginx/php/lib/php.ini cd /home/user/soft/nginx/php/ cp etc/php fpm.conf.default etc/php fpm.conf cp etc/php…
+</p>
+<button onclick="location.href=&#39;/public/php.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="optic-gap"><a href="/public/optic_gap.html"><span style="font-size: 40; "><strong>Optic Gap</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+理论 对于半导体材料，其光学带隙和吸收系数之间的关系式为 Smith1978 ： <span class="math display">\alpha{h}\nu=B(h\nu E_g)^m</span> 其中<span class="math inline">\alpha</span>为摩尔吸收系数,<span class="math inline">h</span>为普朗克常数， <span class="math inline">\nu</span>为入射光子频率，<span class="math inline">B</span>为比例常数， <span class="math inline">E_g</span>为半导体材料的光学带隙， <span class="math inline">m</span>的值与半导体材料以及跃迁类型相关： 1. 当 m=1/2 时，对应直接带隙半导体允许的偶极跃迁； 2. 当 m=3/2 时，对应直接带隙半导体禁戒的偶极跃迁； 3. 当 m=2…
+</p>
+<button onclick="location.href=&#39;/public/optic_gap.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="oxidation"><a href="/public/Oxidation.html"><span style="font-size: 40; "><strong>Oxidation</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Oxidation of the Si(001) Surface Kato98PRL Molecular beam experiments reported that the initial sticking probability <span class="math inline">S_0</span> of an O<sub>2</sub> molecule with a low incident energy (<span class="math inline">E_i 0.1</span> eV) decreases with increasing temperature, while <span class="math inline">S_0</span> for a high incident energy (<span class="math inline">E_i 0.5</span> eV) shows an opposite tendency up to 900 K, above which the desorption channel of volatile SiO opens 1–4 . Based on these observations Miyake et al. concluded that for small <span class="math inline">E_i</span> , the precursor mediated…
+</p>
+<button onclick="location.href=&#39;/public/Oxidation.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="torque-pbs"><a href="/public/PBS.html"><span style="font-size: 40; "><strong>Torque PBS </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installation Ref 1: https://zhuanlan.zhihu.com/p/387947448 Ref 2: https://blog.csdn.net/weixin_29147589/article/details/117043834 Install Torque PBS On Server ```sh su root Download torque 6.1.2.tar.gz and maui 3.3.1.tar.gz yum install libxml2 devel openssl devel gcc gcc c++ boost devel libtool tar xvf torque 6.1.2.tar.gz cd torque 6.1.2 ./configure prefix=/opt/torque with scp with default server=node01 make install make packages for compute nodes libtool finish…
+</p>
+<button onclick="location.href=&#39;/public/PBS.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="nitrogen-fixation"><a href="/public/NRR.html"><span style="font-size: 40; "><strong>Nitrogen Fixation</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+基本介绍 100年前开发的Haber Bosch工艺仍在工业中用于NH3的合成，但此方法需要高温、高压，反应过程中使用的氢气主要来自天然气的蒸汽重组，这大大增加了温室气体的排放。此外，NH3产率相当低，转化率通常低于15％。将N2电化学还原为NH3是一种潜在的合成途径，可以通过太阳能或风能提供动力，实现可持续的能源经济。然而，电化学氮还原存在两个主要问题：（1）过电位…
+</p>
+<button onclick="location.href=&#39;/public/NRR.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="nginx"><a href="/public/nginx.html"><span style="font-size: 40; "><strong>Nginx </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install ```sh download pcre from https://sourceforge.net/projects/pcre/files/pcre/ tar xvf pcre 8.41.tar.gz download zlib from http://zlib.net/ tar xvf zlib 1.2.11.tar.gz download nginx dav ext module form https://github.com/arut/nginx dav ext module tar xvf nginx dav ext module 3.0.0.tar.gz maybe needed: yum y install libxml2 libxml2 dev &amp;&amp; yum y install libxslt devel ./configure prefix=/home/ywmu/.soft/nginx pid path=/tmp/nginx/nginx.pid lock path=/tmp/nginx/ http…
+</p>
+<button onclick="location.href=&#39;/public/nginx.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="bookmarks"><a href="/public/Note4Bookmark.html"><span style="font-size: 40; "><strong>Bookmarks</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">MyNote / 2023-06-25</span></p>
+<p style="text-align: left;">
+! {width=30%} (https://reabble.cn/app/) ! {width=30%} (https://m.toutiao.com/?W2atIF=1) ! {width=30%} (https://blog.nanomat.top/GBS/muyw/) ! {width=30%} (https://blog.nanomat.top/) ! {width=30%} (https://weibo.com/) ! {width=30%}…
+</p>
+<button onclick="location.href=&#39;/public/Note4Bookmark.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="notepad-versions"><a href="/public/notepad.html"><span style="font-size: 40; "><strong>Notepad Versions </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Notepad++ PreviewHTML Install PreviewHTML (opensource) Install Pandoc Intall Plugin <code>PreviewHTML</code> in notepadd++ Modify Setting in <code>%HomeOfNPP%\plugins\Config\PreviewHTML</code>: 1. create <code>Filters.ini</code> ```sh ; Content of Filter.ini file Markdown Extension=.md Command=D:.exe standalone number sections katex=“https://blog.nanomat.top/katex/” citeproc bibliography=“D:/Qsync/dosbin/Refs4Mu/JabRef4Mu.bib” …
+</p>
+<button onclick="location.href=&#39;/public/notepad.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="materials-studio-errors-and-examples"><a href="/public/MS.html"><span style="font-size: 40; "><strong>Materials Studio Errors and examples</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Errors Timeout Error !{width=100%} 解决方法: <code>Tools</code> <code>Server Console</code>, 打开 <code>Server Console</code>面板，<code>Server Gateways</code> <code>My Computer</code>,右键属性，修改如下两项。 !{width=100%} 返回<code>Server Gateways</code> <code>My Computer</code>，右键<code>Test Gateway</code>，测试Gateway是否正常。 <code>ls_license_vs2008.dll</code> not found !{width=100%} 解决方法: 找到文件夹 <code>C:\Program Files (x86)\Common Files\Accelrys\LicensePack</code> （64位） 或 `C:Files (x86)…
+</p>
+<button onclick="location.href=&#39;/public/MS.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="mxenes"><a href="/public/MXenes.html"><span style="font-size: 40; "><strong>MXenes</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+基本介绍…
+</p>
+<button onclick="location.href=&#39;/public/MXenes.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="my-papers"><a href="/public/MyPapers.html"><span style="font-size: 40; "><strong>My Papers </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+New Technology | Paper | New Technology | |::|::| | Mu, Y. et al. Chem. Phys. Lett. 2011, 511, 97 100. | GA + SW potential | | Mu, Y. et al. Phys. Rev. A 2011, 84, 053201. | GA + EAM potential | |Mu, Y. J. Phys. Chem. C 2015, 119, 20911 20916.| Mean ﬁeld theory + Ising MC | | Mu, Y.; Ding, F. &amp; Lu, H. RSC Adv. 2015, 5, 11392 11396. | Dirac Cone + Fermi Velocity | |Mu, Y. &amp; Li, S. D. J. Mater. Chem. C 2016, 4, 7339 7344.| IR + Raman + SSAdNDP| |Mu, Y. et al. Phys. Chem….
+</p>
+<button onclick="location.href=&#39;/public/MyPapers.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="鸿之微nanodcal培训2022"><a href="/public/NdGuide.html"><span style="font-size: 40; "><strong>鸿之微Nanodcal培训(2022)</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Device Studio和Nanodcal基础 DeviceStudio 构筑材料仿真大平台{width=100%} Nanodcal——解析量子输运软件简介{width=100%} 密度泛函理论简介{width=100%} !Nanodcal简介+DFT{width=100%} Nanodcal晶体篇 材料建模的轻松秘籍 晶体篇{width=100%} !{width=100%} Nanodcal参数详解 晶体篇{width=100%} !{width=100%} 晶体性质计算及分析{width=100%} !{width=100%} Nanodcal器件篇 量子输运计算简介{width=100%} NEGF简介{width=100%}…
+</p>
+<button onclick="location.href=&#39;/public/NdGuide.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="d1d-mobility"><a href="/public/Mobility.html"><span style="font-size: 40; "><strong>2D/1D Mobility</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Effective mass <span class="math display">m_e^=\hbar \frac{\partial^2E(k)}{\partial k^2} ^{ 1}</span> 1D Mobility Qiao14NC;Beleznay03JCP An expression for the mobility in 1D systems is <span class="math display">\mu_{1D}=\sqrt{\frac{2}{\pi}}\frac{e\hbar^2 C^{1D}}{\sqrt{k_B T} (m_e^)^{3/2} E_l^2}</span> which should be relevant for BP ribbons. The narrower the ribbon, the smaller is its effective elastic modulus. 2D Mobility Qiao14NC In 2D the carrier mobility is given by the expression <span class="math display">\mu^{2D}=\frac{e\hbar^3 C^{2D}}{k_B T m_c^ m_d (E_l^i)^2}</span>…
+</p>
+<button onclick="location.href=&#39;/public/Mobility.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="mpi-and-fftw"><a href="/public/mpi_fftw.html"><span style="font-size: 40; "><strong>MPI and FFTW</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+MPI ifort + OpenMPI <code>sh  ./configure   prefix=/home/ywmu/.soft/openmpi_i  CC=icc CXX=icpc F77=ifort FC=ifort   not found: libstdc++.so.5  solve:  yum search libstdc++  yum install compat libstdc++ 33.x86_64 make make install</code> Environment Variables ```sh export OPAL_PREFIX=/home/ywmu/.soft/openmpi_i export OPAL_BINDIR=<span class="math inline">{OPAL_PREFIX}/bin export OPAL_LIBDIR=</span>{OPAL_PREFIX}/lib export OPAL_MANDIR=<span class="math inline">{OPAL_PREFIX}/share/man export PATH=</span>{OPAL_BINDIR}:$PATH export…
+</p>
+<button onclick="location.href=&#39;/public/mpi_fftw.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="markdown-editor"><a href="/public/mdeditor.html"><span style="font-size: 40; "><strong>Markdown Editor</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+Online Editor.md 1. Download source file from https://github.com/pandao/editor.md 2. unzip the tgz file to <code>editor</code> in root directory of website.. 3. <code>cd editor &amp;&amp; cp examples/simple.html index.html</code> 4. Edit <code>index.html</code> and add <code>tex : true,</code>: ```html … $(function() { testEditor = editormd(“test editormd”, { width : “90%”, height : 640, syncScrolling : “single”, path :…
+</p>
+<button onclick="location.href=&#39;/public/mdeditor.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="mechanical-statility"><a href="/public/Mechanical_Statility.html"><span style="font-size: 40; "><strong>Mechanical Statility</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+2D elastic constants Voigt notation for 2D square, rectangular, or hexagonal lattices Zhang15PNASU;Wang16NC As we fix the supercell during all of the MD simulations, it is necessary to assess the effect of lattice distortion on structural stability. To guarantee the positive definiteness of strain energy following lattice distortion, the linear elastic constants of a stable crystal has to obey the Born–Huang criteria Born54P . We calculate the change of energy due to the in plane strain…
+</p>
+<button onclick="location.href=&#39;/public/Mechanical_Statility.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="pandoc中的markdown语法"><a href="/public/md4pandoc.html"><span style="font-size: 40; "><strong>Pandoc中的Markdown语法</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+转自：http://www.cnblogs.com/baiyangcao/p/pandoc_markdown.html Pandoc中支持扩展修订版本的Markdown语法 ul li 使用pandoc中支持的Markdown语法用 code f markdown /code /li li 使用标准Markdown语法用 code f markdown_strict /code /li /ul Pandoc所支持的语法各种对标准Markdown语法的扩展可以通过在格式后以 code +EXTENSION /code 添加或 code EXTENSION /code 去除，如： ul li code f markdown footnotes /code …
+</p>
+<button onclick="location.href=&#39;/public/md4pandoc.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="omml"><a href="/public/Math.html"><span style="font-size: 40; "><strong>OMML</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+OMML in MS office 作者：赖枣 链接：https://www.zhihu.com/question/24613226/answer/88037643 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 0 进入公式编辑 快捷键 Alt ＋ ＝ 1 问题问的 根号 (a)，然后敲空格 ＝ 根号a 开好多根 (b&amp;a)， 然后敲空格 ＝ a开根号b 好多次方 a^b，然后空格 ＝ a的b次方 导数 df/dx，然后空格＝f对x的导数…
+</p>
+<button onclick="location.href=&#39;/public/Math.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="linux"><a href="/public/Linux.html"><span style="font-size: 40; "><strong>Linux </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Intall 开始安装系统，<code>Install or upgrade an existing system</code> <code>选择Skip</code>,语言选择English <code>选择基本存储设备</code>，<code>是，放弃所有数据</code> <code>配置网络DHCP+自动连接</code> ,<code>时区选择上海</code> <code>设置root密码</code>，<code>创建自定义布局</code>， ```harddisk for 2T HardDisk /boot:ext4:500M /swap:Memory2 (for mem 4G) and Memory (for mem 4G) /:ext4:150G /home:ext4:rest for 4T HardDisk /boot:ext4:1G LVM: /swap:Memory2 (for mem 4G) and Memory (for mem 4G) /:ext4:200G…
+</p>
+<button onclick="location.href=&#39;/public/Linux.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="magic-cubes"><a href="/public/MagicCube.html"><span style="font-size: 40; "><strong>Magic Cubes</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+二阶魔方 白色面 白色面要求： 1. 一面白色 2. 白色相邻侧面为同色 方法 1. 要调的白色面在在在下（已包含1~2块白色） 2. 候选白色块在右侧，并对准白色缺口，且颜色与缺口旁边的块侧面颜色对应。 3. 主要口诀：上勾下回 对面黄色面（小鱼头） 口诀：底勾顶勾，底勾勾顶 黄色块在右前方位，(如果黄块对角，则放在在左前 右后方位)，白色对面如果没有黄块，执行一次…
+</p>
+<button onclick="location.href=&#39;/public/MagicCube.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="lammps"><a href="/public/Lammps.html"><span style="font-size: 40; "><strong>Lammps </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installtion download <code>sh git clone  b stable https://github.com/lammps/lammps.git mylammps (2022 version needed for MLIP2) git clone https://gitlab.com/ashapeev/mlip 2.git git clone https://gitlab.com/ashapeev/interface lammps mlip 2.git .  OR git clone https://gitlab.com/ashapeev/mlip 3.git git clone https://gitlab.com/ivannovikov/interface lammps mlip 3.git</code> Compile MLIP2 or MLIP3 Similar method for MLIP2 and MLIP 3 Intel oneapi ```sh load environment variables for intel…
+</p>
+<button onclick="location.href=&#39;/public/Lammps.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="lapack-and-blas"><a href="/public/lapack_blas.html"><span style="font-size: 40; "><strong>Lapack and BLAS</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+install lapack and blas ```sh cur o blas.tgz http://www.netlib.org/blas/blas.tgz tar xvf blas.tgz cd BLAS modify make.inc OPTS = O3 m64 fno second underscore fPIC BLASLIB = librefblas.a end make.inc make mkdir ../lib.gnu &amp;&amp; cp librefblas.a ../lib.gnu/ download latest lapack from http://www.netlib.org/lapack/ tar xvf lapack 3.6.1.tgz cd lapack 3.6.1 cp INSTALL/make.inc.gfortran make.inc modify make.inc for lapack OPTS = O2 frecursive m64 fPIC NOOPT = O0 frecursive m64 …
+</p>
+<button onclick="location.href=&#39;/public/lapack_blas.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="libreoffice-tips"><a href="/public/LibreOffice.html"><span style="font-size: 40; "><strong>LibreOffice Tips </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">System / 2023-06-25</span></p>
+<p style="text-align: left;">
+Tips Change Formula Size Open LibreOffice Math, `Format Font Size Basic Size,set to 40 and Set…
+</p>
+<button onclick="location.href=&#39;/public/LibreOffice.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="jmol"><a href="/public/Jmol.html"><span style="font-size: 40; "><strong>Jmol </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Jmol Colors | ID | Name | RGB1 | RGB2 | ||||| |1|H| 255,255,255 |FFFFFF| |2|He| 217,255,255 |D9FFFF| |3|Li| 204,128,255 |CC80FF| |4|Be| 194,255,0 |C2FF00| |5|B| 255,181,181 |FFB5B5| |6|C| 144,144,144 |909090| |7|N| 48,80,248 |3050F8| |8|O| 255,13,13 |FF0D0D| |9|F| 144,224,80 |90E050| |10|Ne| 179,227,245 |B3E3F5| |11|Na| 171,92,242 |AB5CF2| |12|Mg| 138,255,0 |8AFF00| |13|Al| 191,166,166 |BFA6A6| |14|Si| 240,200,160 |F0C8A0| |15|P| 255,128,0 |FF8000| |16|S| 255,255,48 |FFFF30| |17|Cl| 31,240,31…
+</p>
+<button onclick="location.href=&#39;/public/Jmol.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="journal-guidelines"><a href="/public/Journal.html"><span style="font-size: 40; "><strong>Journal Guidelines</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Images Prepare Use Arial, 16pt, Bold fonts and white background for (a),(b)… In Inkscape, set File Document Properties background color to white. Guide for Journals Tips for ACS TOC: 3.6 cm <span class="math inline">\times</span> 8.9 cm Image: 8.25cm (single) and 17.78cm (double) Journal IF Table: Sharing Permission | Colors | Preprint | PostPrint | Publisher PDF | ||||| | Green | Yes | Yes | Yes | | Blue | No | Yes | Yes | | Yellow | Yes | No | No | | White | No | No | …
+</p>
+<button onclick="location.href=&#39;/public/Journal.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="julia"><a href="/public/Julia.html"><span style="font-size: 40; "><strong>Julia </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install Package Installation <code>sh wget https://mirrors.tuna.tsinghua.edu.cn/julia releases/bin/linux/x64/1.8/julia 1.8 latest linux x86_64.tar.gz   no check certificate</code> Mat ```julia Environment variables export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia export JULIA_DEPOT_PATH=<span class="math inline">{soft_root}/julia/mypkg install using Pkg Pkg.add(&quot;MAT&quot;) Pkg.add(&quot;CSV&quot;) Pkg.add(&quot;DataFrames&quot;) Pkg.add(&quot;printf&quot;) call inmat = &quot;</span>inmat" using MAT, CSV, DataFrames file = matopen(inmat) …
+</p>
+<button onclick="location.href=&#39;/public/Julia.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="python中__init__.py文件的作用详解"><a href="/public/init4python.html"><span style="font-size: 40; ">**Python中__init__.py文件的作用详解**</span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+转自：http://m.jb51.net/article/92863.htm div id=“wen” class=“wtitle” 作者：Data&amp;Truth /div div class=“con” div id=“art_demo” <strong>init</strong>.py 文件的作用是将文件夹变为一个Python模块,Python 中的每个模块的包中，都有__init__.py 文件.这篇文章主要介绍了Python中__init__.py文件的作用详解,非常不错，具有参考借鉴价值，需要的朋友可以参考下 /div /div div id=“content” class=“con” <strong>init</strong>.py 文件的作用是将文件…
+</p>
+<button onclick="location.href=&#39;/public/init4python.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="cent-os上jdftx-安装"><a href="/public/jdftx.html"><span style="font-size: 40; "><strong>Cent OS上JDFTx 安装</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Installation Ref: https://lu git.github.io/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/ gsl 安装（gcc7） <code>sh  wget http://mirrors.ustc.edu.cn/gnu/gsl/gsl 2.5.tar.gz tar  xzvf gsl 2.5.tar.gz cd gsl 2.5/  load gcc7  ./configure   prefix=/usr/local/gsl make  j4 sudo make  j4 install  Environment variables export PATH=/usr/local/gsl/bin:$PATH export LD_LIBRARY_PATH=usr/local/gsl/lib:$LD_LIBRARY_PATH</code> libxc 安装（gcc7） ```sh wet https://gitlab.com/libxc/libxc/ /archive/5.1.7/libxc…
+</p>
+<button onclick="location.href=&#39;/public/jdftx.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="her-oer-and-orr"><a href="/public/HER_ORR.html"><span style="font-size: 40; "><strong>HER, OER and ORR</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Sabatier Principle It states that a good catalyst material should bind the molecules that participate in the chemical reaction neither too strongly nor too weakly to its surface. The bonds should be strong enough to activate the molecules for the reaction, but still weak enough to not hold on to them forever. Unfortunately, many materials follow so called scaling relations. They tend to bind different molecules either all stronger or all weaker, while for many reactions catalysts are needed…
+</p>
+<button onclick="location.href=&#39;/public/HER_ORR.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="hydrogen-storage"><a href="/public/H_Storage.html"><span style="font-size: 40; "><strong>Hydrogen Storage</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Diffusion Mandeltort12JPCC The fundamental kinetic equation for surface diffusion is given in eq 2. <span class="math display">D={\nu}a^2(\frac{ E_{diff}}{k_BT})</span> where <span class="math inline">D</span> = diffusion coefficient, <span class="math inline">\nu</span> = jump frequency = <span class="math inline">k_BT/h</span> = <span class="math inline">\sim6\times10^{12}</span> s<sup>−1</sup> at 300 K, <span class="math inline">a</span> = jump distance (<span class="math inline">\sim2\times10^{−8}</span> cm for the activation step), and <span class="math inline">E_{diff}</span> = diffusion activation energy. Wang16IJHE The kinetic equation for surface diffusion is given by Ref. Mandeltort12JPCC , $$D=D_0exp(\frac{…
+</p>
+<button onclick="location.href=&#39;/public/H_Storage.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="期刊影响因子"><a href="/public/IF.html"><span style="font-size: 40; "><strong>期刊影响因子</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+影响因子 : 学校使用中科院分区前推一年基础版 | 杂志 | 2021基础版 | 2021升级版 | 2022分区 | 2022 IF | | :: | :: | :: | :: | :: | | J Mater Chem C | 2区top | 2区 | 2区top | 8.1 | | J Phys Chem C | 2区top | 3区 | 3区 | 4.2 | | J Phys Chem Lett | 2区top | 2区 | 2区 | 6.9 | | Phys Chem Chem Phys | 3区 | 2区top | 2区top | …
+</p>
+<button onclick="location.href=&#39;/public/IF.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="gitblog"><a href="/public/GitBlog.html"><span style="font-size: 40; "><strong>GitBlog </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+GitBlog Install and configuration 下载解压,修改conf.yaml ```yaml GitBlog配置文件，使用4个空格代替Tab url: /index.php title: Blog of Mu subtitle: 自强不息 厚德载物 theme: quest enableCache: true highlight: true mathjax: false katex: true youyan: baiduAnalytics: keywords: GitBlog,博客,Markdown,Mu description: Mu的博客 version: 2.2 author: name: Mu email: ywmusxu.edu.cn github: caesarmu weibo: avatar: blog: recentSize: 0 …
+</p>
+<button onclick="location.href=&#39;/public/GitBlog.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="github"><a href="/public/Github.html"><span style="font-size: 40; "><strong>Github </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install Create SSH key <code>sh ssh keygen  t rsa  C "ywmulive.com"</code> push Enter to generare id_rsa and id_rsa.pub in ~/.ssh/. To copy the content of id_rsa.pub to GitHub: Edit Profile SSH and GPG keys New SSH key. Create repository On GitHub: New repository Enter the name (e.g., Scripts4VASP) and Create repository, swith to SSH for Quick Setup, and to excute on my computer: ```sh mkdir p /drives/e/Softs/DoNotSync/Git/MuScripts cd /drives/e/Softs/DoNotSync/Git/MuScripts echo " gg" …
+</p>
+<button onclick="location.href=&#39;/public/Github.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="gpu"><a href="/public/gpu.html"><span style="font-size: 40; "><strong>GPU</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Very Important DO NOT upgrade kernal to other version!!!!!!!! ```sh qemu img create f qcow2 /home/kvm/win10.img 200G qemu img info /home/kvm/win10.img dd if=/dev/sr0 of=/home/muyw/backup/cn_windows_10_business_editions_version_2004_x64_dvd_c59a4f91.iso dd if=/dev/sr0 of=/homw/muyw/backup/ virt install n win10 r 16384 vcpus=2 os type=windows accelerate c /home/muyw/backup/cn_windows_10_business_editions_version_2004_x64_dvd_c59a4f91.iso disk…
+</p>
+<button onclick="location.href=&#39;/public/gpu.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="hardware-recommendations-for-vasp"><a href="/public/Hardware4vasp_php.html"><span style="font-size: 40; "><strong>Hardware Recommendations for VASP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+From https://www.nsc.liu.se/~pla/blog/2013/09/04/hardware for vasp/ I was recently asked what kind of hardware you should for running VASP calculations. I recommend looking at the configuration of the a href=“http://www.nsc.liu.se/systems/triolith/” Triolith /a cluster at NSC. It was designed to run VASP as big part of the workload, and we did extensive benchmarking to optimize price/performance. An alternative is too look through the supercomputing a href=“http://www.top500.org/” Top500…
+</p>
+<button onclick="location.href=&#39;/public/Hardware4vasp_php.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="compare-with-experiments"><a href="/public/Experiment.html"><span style="font-size: 40; "><strong>Compare with Experiments</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+IR and Raman IR VASP_IR Karhanek10JPCM applied in my paper. Mu16JMCC Raman VASP_Raman Porezag96PRB;Fonari00P applied in my paper. Mu16JMCC The frequency mode for IR and Raman Peak should be examined referring to Bilbao Crystallographic Server Kroumova03PT . Partial charge density (STM) 1. STM simulation . 2. Chanrge density at some K ponts. Core Level Shift (cls) vs. XPS …
+</p>
+<button onclick="location.href=&#39;/public/Experiment.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="easy-ways-to-fail-a-ph.d."><a href="/public/Fail.Phd.html"><span style="font-size: 40; "><strong>10 easy ways to fail a Ph.D.</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+By Matt Might from https://matt.might.net/articles/ways to fail a phd/ The attrition rate in Ph.D. school is high. Anywhere from a third to half will fail. In fact, there’s a disturbing consistency to grad school failure. I’m supervising a lot of new grad students this semester, so for their sake, I’m cataloging the common reasons for failure. Read on for the top ten reasons students fail out of Ph.D. school. Focus on grades or coursework No one cares about grades in grad school. There’s…
+</p>
+<button onclick="location.href=&#39;/public/Fail.Phd.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="energy-definition"><a href="/public/Energy_definition.html"><span style="font-size: 40; "><strong>Energy definition</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Binding Energy and Curvature energy 1. Average binding energy <span class="math display">E_b AB =(N_AE_A+N_BE_B E_{tot} AB )/(N_A+N_B)</span> where <span class="math inline">E_A</span> and <span class="math inline">E_B</span> are the energy of free atom in vacuum for A and B. 2. Tibbetts84JCG;Speck89JCG Curvature energy for nanotubes <span class="math display">E_{tube}=E_{2D} E_{curv}=E_{2D} A/R^2</span> Formation Energy 1. Singh10AN General trend in formation energy for QD: <span class="math display">\varepsilon(n) \varepsilon(\infty)\propto const/\sqrt{n}</span> formation energy of a defect or impurity 2. VandeWalle04JAP The…
+</p>
+<button onclick="location.href=&#39;/public/Energy_definition.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="出差住宿标准"><a href="/public/Evection2018.html"><span style="font-size: 40; "><strong>出差住宿标准</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+2018年 部级： 1100元：北京市、上海市 900元：江苏省、浙江省、福建省、厦门市、河南省、广东省、深州市、四川省、云南省 800元：天津市、河北省、山西省、内蒙古、辽宁省、大连市、。吉林省、黑龙江省、宁波市、安徽省、江西省、山东省、青岛市、湖北省、湖南省、广西、海南省、重庆市、贵州省、西藏、陕西省、甘肃省、青海省、宁夏、新疆 司局级： 650元：北…
+</p>
+<button onclick="location.href=&#39;/public/Evection2018.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="excel-tips"><a href="/public/Excel.html"><span style="font-size: 40; "><strong>Excel Tips</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+《excel高手捷径：一招鲜，吃遍天》读书笔记 ShortCut | ShortCut | Function | |::|::| | Alt+Enter | 单元格内强制换行 | | Ctrl+Enter | 批量输入相同内容 | | Ctrl+Shift+<span class="math inline">\downarrow</span> | 快速选中以下所有数据行 | | Ctrl+Shift+<span class="math inline">\uparrow</span> | 快速选中以上所有数据行 | | Ctrl+Shift+<span class="math inline">\rightarrow</span> | 快速选中右侧所有数据列 | | Ctrl+Shift+<span class="math inline">\leftarrow</span> | 快速选中左侧所有数据列 | | …
+</p>
+<button onclick="location.href=&#39;/public/Excel.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="domain-vps-and-frp"><a href="/public/Domain.html"><span style="font-size: 40; "><strong>Domain, VPS and FRP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+域名 域名申请 万网 免费SSL申请 1. 登陆阿里云网站 2. 进入控制台 云盾控制台 证书服务 3. 购买证书 Symantec 增强型OV SSL 免费型OV SSL 立即0元购买。 VPS VPS申请 VPS配置 FRP服务 下载 https://github.com/fatedier/frp 上下载最新版frp. Server配置 ```sh vi frps.ini common bind_addr = 0.0.0.0 bind_port = 7000 bind_udp_port = 7001 vhost_http_port = 80 vhost_https_port = 443 dashboard_addr = 0.0.0.0 dashboard_port = 7500…
+</p>
+<button onclick="location.href=&#39;/public/Domain.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="驾照考试"><a href="/public/Driver.html"><span style="font-size: 40; "><strong>驾照考试</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Life / 2023-06-25</span></p>
+<p style="text-align: left;">
+科目一 使用驾考宝典 科目二 部件 方向盘 顺时针叫做推，逆时针叫作拉，6点/12点方向以左手处为准 推拉最多都是一圈半，推拉时注意换手 方向盘够用即可 方向盘使用要果断、灵活，不可僵硬，用太极拳的话说“用意不用力” 离合和档位 空档在3 4档间，向右上5档，左为1 2档，倒挡为按下左上。 升档时，加油门提速，离合到底同时减油门，换挡，然后轻松离合至半…
+</p>
+<button onclick="location.href=&#39;/public/Driver.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="dynamic-stabililty"><a href="/public/Dynamic_Stabililty.html"><span style="font-size: 40; "><strong>Dynamic Stabililty</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Phonon Spectrum Zhang15PNASU Quantitatively, the frequency wave vector relationship, in the vicinity of the <span class="math inline">\Gamma</span> point, can be formulated (<span class="math inline">\omega 80</span> cm 1) as <span class="math display">\omega=cq^2=\sqrt{D/\rho}q^2</span> so <span class="math display">D=c^2\rho</span> where D and <span class="math inline">\rho</span> correspond to the bending modulus and the mass area density of the nanosheet, respectively. You can get D by fitting c. P.S. the in plane longitudinal (L) and transverse (T) modes. While the TA and LA modes display the normal linear dispersion around the G…
+</p>
+<button onclick="location.href=&#39;/public/Dynamic_Stabililty.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="constants"><a href="/public/Constant.html"><span style="font-size: 40; "><strong>Constants</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Physical Constants From https://physics.info/constants/ | Symbol | Name | Value | |::|::|::| | <span class="math inline">c</span> | speed of light in a vacuum| 299,792,458 m/s | | <span class="math inline">G</span> | gravitational constant | <span class="math inline">6.67430\times10^{ 11}</span> N m<sup>2</sup>/kg<sup>2</sup> | | <span class="math inline">h</span> | planck constant | <span class="math inline">6.62607015\times10^{−34}</span> J<span class="math inline">\cdot</span>s = <span class="math inline">4.135667696\times10^{−15}</span> eV<span class="math inline">\cdot</span>s| | <span class="math inline">hc</span> | <span class="math inline">hc</span> | <span class="math inline">1.986445857\times10^{−25}</span> J<span class="math inline">\cdot</span>m = 1239.841984 eV<span class="math inline">\cdot</span>nm| |<span class="math inline">\hbar</span> |reduced planck constant|…
+</p>
+<button onclick="location.href=&#39;/public/Constant.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="crystal-operation"><a href="/public/crystaloperation.html"><span style="font-size: 40; "><strong>Crystal Operation</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Creating Slab (3 Methods) Avogadro File Import Crystal elements Au Gold.cif Crystallography Build Slab ! Change Lattice paratmer <span class="math inline">C</span> from 40  to 20. Crystallography Wrap Atoms to Cell (可能会有重叠原子，可用VESTA去除) Crystallography Translate atoms: ! Save as Au111.pdb !{width=80%} Burai 打开BURAI.exe, 将POSCAR/ CONTCAR/xyz/xsf/cif文件拖入Burai打开 !{width=100%} Modeler Slab Model (111) Build，调整厚度width/cell和真空层大小. 点…
+</p>
+<button onclick="location.href=&#39;/public/crystaloperation.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div  class="card">
+<div>
+<h1 id="curie-temperature-and-mc"><a href="/public/Curie_Temp.html"><span style="font-size: 40; "><strong>Curie temperature and MC</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+<ol type="1">
+<li>The exchange parameter was calculated from the energy difference between the ferromagnetic and antiferromagnetic states of a supercell with four adatoms Zhou11JACS . <span class="math display">H(m)= \sum\limits_{i,j} {J\mathbf{m}_i\mathbf{m}_j}</span> based on Mean field theory (MFT) to get Curie temperature Mu15JPCC <span class="math display">Z=\sum_{m=1, 1}e^{\gamma Jm\langle m \rangle/k_BT}=2\cosh(\gamma J\langle m \rangle/k_BT)</span> $$m =_{m=1, 1}me^{Jmm /k_BT)}=(Jm…
+</p>
+<button onclick="location.href=&#39;/public/Curie_Temp.html&#39;">
+Read More
+</button>
+</div>
+</div>
+<div class="container">
+
+</div></li>
+</ol>
+<div class="card">
+<h1 id="dftb"><a href="/public/DFTB.html"><span style="font-size: 40; "><strong>DFTB </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install ```sh tar xvf dftbp_1.2.1_src.tar.gz cd dftb+_1.2.1_src cp Makefile.user.template Makefile.user cd sysmakes vi make.x86_64 linux ifort : LN = $(FC90) static change to: LN = $(FC90) MKL_LIBDIR =…. change to: MKL_LIBDIR = $(MKLROOT)/lib/intel64 LIB_BLAS =… and LIB_LAPACK=…. change to: LIB_BLAS = Wl, start group $(MKL_LIBDIR)/libmkl_intel_lp64.a $(MKL_LIBDIR)/libmkl_sequential.a $(MKL_LIBDIR)/libmkl_core.a Wl, end group liomp5 lpthread limf lm LIB_LAPACK =…
+</p>
+<button onclick="location.href=&#39;/public/DFTB.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="co2-reduction"><a href="/public/CO2RR.html"><span style="font-size: 40; "><strong>CO<sub>2</sub> Reduction</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+基本介绍 CO<sub>2</sub>热力学较为稳定（标准摩尔生成焓为 393.51 kJ•mol 1）、惰性、不易活化（C=O键键能为~750 kJ•mol 1）。因此，实现CO<sub>2</sub>在温和条件下的化学转化是一项极具挑战性的研究。CO<sub>2</sub>电化学还原可将太阳能、风能等可再生能源转化的电能进一步转化成化学能，储存在高附加值的燃料与化学品中。尽管CO<sub>2</sub>电化学还原逐步引起各国科学家的关注和研究兴趣，但该领域仍然存在…
+</p>
+<button onclick="location.href=&#39;/public/CO2RR.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="bonding-analysis"><a href="/public/bonding_analysis.html"><span style="font-size: 40; "><strong>Bonding Analysis</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+COOP and COHP Both COOP (crystal orbital overlap population) and COHP (crystal orbital Hamilton population) are partitioning methods for analyzing the (k dependent) wavefunction. While COOP partitions the electron number, COHP partitions the band structure energy. As a consequence, if you calculate the energy integral of a COOP curve, you get a number of electrons (like in the Mulliken scheme); if you integrate a COHP curve, you get an energy value that hints toward the bond strength. 使…
+</p>
+<button onclick="location.href=&#39;/public/bonding_analysis.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="keywords-in-vasp-corresponding-to-castep"><a href="/public/Castep_VASP.html"><span style="font-size: 40; "><strong>Keywords in VASP Corresponding to CASTEP</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Tabs in CASTEP Setup Main Task: NSW, IBRION Quality: PREC Functional: GGA Spin Polarized: ISPIN, MAGMOM LDA+U: LDAU (暂定) Charge: NELECT=N(中性）+charge, N(中性）有POTCAR得出 More OPt Optimize Cell: ISIF Energy:EDIFFG( 0) Max Force: EDIFFG( 0) Max Displament: POTIM Option Algorithm: IBRION MD Ensemble (NVE/NVT): TEBEG,TEEND,SMASS Timestep: POTIM Simulation Time: NSWPOTIM Electronic Main Energy Cutoff: ENCUT (受PREC控制，默认值从POTCAR读取) SCF…
+</p>
+<button onclick="location.href=&#39;/public/Castep_VASP.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="cluster"><a href="/public/Cluster.html"><span style="font-size: 40; "><strong>Cluster</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Sites Montejano Carrizales97NM | | CO| Ico| BCC| SC| |::|::|::|::|::| | <span class="math inline">N</span> |<span class="math inline">10\nu^3/3+5\nu^2+11\nu/3+1</span> |<span class="math inline">10\nu^3/3+5\nu^2+11\nu/3+1</span>|<span class="math inline">(2\nu+1)(\nu^2+\nu+1)</span>|<span class="math inline">(2\nu+1)^3</span> | | <span class="math inline">N_{\sigma}</span>|<span class="math inline">10\nu^2+2</span> | <span class="math inline">10\nu^2+2</span>| <span class="math inline">6\nu^2+2</span> | <span class="math inline">24\nu^2+2</span>| | <span class="math inline">D</span> | <span class="math inline">N_{\sigma}/N</span> | <span class="math inline">N_{\sigma}/N</span>|<span class="math inline">N_{\sigma}/N</span>|<span class="math inline">N_{\sigma}/N</span>| |<span class="math inline">N_S</span>| <span class="math inline">6(\nu 1)^2</span> | | <span class="math inline">6(\nu 1)^2</span> | <span class="math inline">6(2\nu 1)^2</span> | |<span class="math inline">R_S^p</span> | <span class="math inline">\nu(\nu+2)/8</span> | | <span class="math inline">\nu(\nu+2)/8</span> | <span class="math inline">\nu(\nu+1)/2</span> | |<span class="math inline">R_S^i</span> |$(^2…
+</p>
+<button onclick="location.href=&#39;/public/Cluster.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="battery"><a href="/public/Battery.html"><span style="font-size: 40; "><strong>Battery</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Li Ion Voltage Aydinol97PRB The equilibrium voltage difference between the two electrodes, also referred to as the open circuit voltage (OCV), depends on the difference of the Li chemical potential between the anode and cathode <span class="math display">V(x)= \frac{\mu_{Li}^{cathode} \mu_{Li}^{anode}}{zF} \ (1)</span> where F is the Faraday constant (96485.33289(59) C mol<sup>−1</sup>) and z is the charge (in electrons) transported by lithium in the electrolyte. In most nonelectronically conducting electrolytes z=1 for Li…
+</p>
+<button onclick="location.href=&#39;/public/Battery.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="boron-crystal-allotropes"><a href="/public/BCrystal.html"><span style="font-size: 40; "><strong>Boron Crystal Allotropes</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+硼的同素异形体(维基百科) 硼 {.underline}有多种 同素异形体 {.underline}，包括 晶体 {.underline}和 无定形体 {.underline}。现已知（已制备）的结晶状硼有α菱面体硼晶、β菱面体硼晶以及β四方硼晶；此外，在某些特定情况下，α四方硼晶、γ正交硼晶等同素异形体结构也能被制备出来。非结晶体的形式有两种已知，一种为精细粉末，另外一种为玻璃状的固体  1  (cite_note…
+</p>
+<button onclick="location.href=&#39;/public/BCrystal.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="bigdft"><a href="/public/BigDFT.html"><span style="font-size: 40; "><strong>BigDFT </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Install pass,intel2015 <code>sh ./configure FC=mpiifort   FCFLAGS=" O2  openmp"  FCFLAGS=" O2  openmp"  with ext linalg=" mkl=parallel"</code> pass,intel2015+openmpi1.6 <code>sh  ./configure FC=mpif90   FCFLAGS=" O2  openmp"  FCFLAGS=" O2  openmp"  with ext linalg=" mkl=parallel"</code> pass,openmpi1.6+ifort11+icc11 <code>sh  ./configure FC=mpif90 CC=icc FCFLAGS=" O2  openmp"   prefix=/home/ywmu/.soft/bigdft/ompi1.6     enable minima hopping    enable mpi    with ext linalg=" mkl=parallel"</code> …
+</p>
+<button onclick="location.href=&#39;/public/BigDFT.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div  class="card">
+<div>
+<h1 id="autohotkey"><a href="/public/Autohotkey.html"><span style="font-size: 40; "><strong>AutoHotkey </strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+<ol type="1">
+<li>MsgBox命令有几种格式？ MsgBox, 文本 或 MsgBox , 类型,标题, 文本, 显示时间 2. MsgBox命令按钮有几种类型？ OK—0 OK/Cancel—1 Abort/Retry/Ignore—2 Yes/No/Cancel—3 Yes/No—4 Retry/Cancel—5 Icon Hand (stop/error)—16 Icon Question—32 Icon Exclamation—48 Icon Asterisk (info)—64 Make 2nd button the default—256 Make 3rd button the default—512 System Modal (always on top) —4096 Task Modal—8192…
+</p>
+<button onclick="location.href=&#39;/public/Autohotkey.html&#39;">
+Read More
+</button>
+</div>
+</div>
+<div class="container">
+
+</div></li>
+</ol>
+<div class="card">
+<h1 id="awk简明教程"><a href="/public/Awk.html"><span style="font-size: 40; "><strong>AWK简明教程</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+AWK的输出 简单输出 <code>sh $ netstat|head  5|awk '{print $1, $4}' Active (w/o Proto Local tcp amd10:34315 tcp amd10:49829 tcp amd10:47962 $ echo "bbbb ccc"| awk '{print $1}' $ cat a.dat|awk '{print $1, $4}'  $ awk '{print $1, $4}' a.dat</code> 其中单引号中的被大括号括着的就是awk的语句，注意，其只能被单引号包含(gawk for windows 是双引号)。 其中的$1..$n表示第几例。注：$0表示整个行 格式化输出 和C语言的printf没什么两样 …
+</p>
+<button onclick="location.href=&#39;/public/Awk.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="band-structure"><a href="/public/Band_structure.html"><span style="font-size: 40; "><strong>Band Structure</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+High symmetry K points 1. From Bilbao Crystallographic Server. 2. From Materiasl Studio. 3. From Aconvasp. 4. From my Program vsym.x(not fully tested yet). Fat Band 1. Could be generated by LOBSTER. 2. by my script vpro2bnd. d band center Kitchin04JCP http://mob.muchong.com/mip/html/201407/7649565.html $$<em>d=\frac{</em>{ }^{E_F}f(PDOS_d)EdE}{_{…
+</p>
+<button onclick="location.href=&#39;/public/Band_structure.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="adndp-and-pes-using-gaussian-03"><a href="/public/AdNDP4Gaussian.html"><span style="font-size: 40; "><strong>AdNDP and PES using Gaussian 03</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+AdNDP 优化和频率计算 B4.square.gjf文件： <code>sh %nprocshared=16 %mem=16GB %chk=B4.chk p opt freq b3lyp/6 31g    B4   0 1  B                  1.21435106    0.69628856    0.10869034  B                  0.36399099    1.17989093    0.17470963  B                  1.35821264    1.03729467    0.15887841  B                  0.51861172    0.54166004    0.15688456</code> <code>g09 B4.square.gjf B4.square.log</code>,生成B4.square.log文件，在ResultsSummary中看总能量，对称性，是否有虚頻…
+</p>
+<button onclick="location.href=&#39;/public/AdNDP4Gaussian.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+<div class="card">
+<h1 id="arduino-manual"><a href="/public/Arduino.html"><span style="font-size: 40; "><strong>Arduino Manual</strong></span></a></h1>
+<p>◊ <span style="font-size: 30; ">Science / 2023-06-25</span></p>
+<p style="text-align: left;">
+Variables &amp;&amp; Built in Functions ```c const int ledPin = 13; int ledState = LOW; // led状态，亮或者灭，可以修改 long previousMillis = 0; // 存储最后一次的led状态 unsigned long currentMillis = millis(); int ledPins = { 0,1,2, 3, 4, 5, 6, 7, }; // 对应的led引脚 pinMode(LED, OUTPUT); pinMode(pushButton, INPUT); // 独立模块LY 51S开发板上独立按键K1 K8都可以使用。 digitalWrite(LED, HIGH); // 初始化串口…
+</p>
+<button onclick="location.href=&#39;/public/Arduino.html&#39;">
+Read More
+</button>
+</div>
+<div class="container">
+
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Yuewen Mu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Publications</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Publications"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://blog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://blog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#section">2023</a></li>
+          <li><a href="#section-1">2022 (11)</a></li>
+          <li><a href="#section-2">2021 (5)</a></li>
+          <li><a href="#section-3">2019 (8)</a></li>
+          <li><a href="#section-4">2018 (5)</a></li>
+          <li><a href="#section-5">2017 (8)</a></li>
+          <li><a href="#section-6">2016 (6)</a></li>
+          <li><a href="#section-7">2015 (5)</a></li>
+          <li><a href="#section-8">2014 (1)</a></li>
+          <li><a href="#section-9">2013 (4)</a></li>
+          <li><a href="#section-10">2011 (4)</a></li>
+          <li><a href="#section-11">2010 (2)</a></li>
+          <li><a href="#section-12">2009 (2)</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 id="section">2023</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Mu, Y.; Li, S.-D. Superconducting and Transport Properties of Biphenylene Network Monolayer with Alkaline Metal Adatoms. <em>Appl. Surf. Sci.</em> <strong>2023</strong>, <em>628</em>, 157255. <a href="https://doi.org/10.1016/j.apsusc.2023.157255" class="uri">https://doi.org/10.1016/j.apsusc.2023.157255</a>.</div></p>
+<h1 id="section-1">2022 (11)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Ao, M.-Z.; Zhang, F.; Ma, Y.-Y.; Mu, Y.; Li, S.-D. Heptacoordinate Transition-Metal-Decorated Metallo-Borospherenes and Multiple-Helix Metallo-Boronanotubes. <em>Nanoscale</em> <strong>2022</strong>. <a href="https://doi.org/10.1039/D2NR05486H" class="uri">https://doi.org/10.1039/D2NR05486H</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Ao, M.-Z.; Lu, X.-Q.; Mu, Y.-W.; Zan, W.-Y.; Li, S.-D. La@[La<sub>5</sub>&amp;B<sub>30</sub>]<sup>0/-/2-</sup>: Endohedral Trihedral Metallo-Borospherenes with Spherical Aromaticity. <em>Phys. Chem. Chem. Phys.</em> <strong>2022</strong>, <em>24</em>, 3918–3923. <a href="https://doi.org/10.1039/D1CP05644A" class="uri">https://doi.org/10.1039/D1CP05644A</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Lu, X.-Q.; Zhao, X.-N.; Mu, Y.-W.; Li, S.-D. Lanthanide/Actinide Boride Nanoclusters and Nanomaterials Based on Boron Frameworks Consisting of Conjoined Bn Rings (n = 7). <em>Phys. Chem. Chem. Phys.</em> <strong>2022</strong>, <em>24</em>, 21078–21084. <a href="https://doi.org/10.1039/D2CP03142F" class="uri">https://doi.org/10.1039/D2CP03142F</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Ma, Y.-Y.; Zhao, X.-Y.; Zan, W.; Mu, Y.; Zhang, Z.; Li, S.-D. Prediction of freestanding semiconducting bilayer borophenes. <em>Nano Res.</em> <strong>2022</strong>, <em>15</em>, 5752–5757. <a href="https://doi.org/10.1007/s12274-022-4169-x" class="uri">https://doi.org/10.1007/s12274-022-4169-x</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Mu, Y.; Wang, B.; Li, S.-D.; Ding, F. A Family of Superconducting Boron Crystals Made of Stacked Bilayer Borophenes. <em>Nanoscale</em> <strong>2022</strong>, <em>14</em>, 9754–9761. <a href="https://doi.org/10.1039/D2NR02013K" class="uri">https://doi.org/10.1039/D2NR02013K</a>.</div></p>
+<p><div class="csl-left-margin">(6) </div><div class="csl-right-inline">Qin, X.; Liu, J.; Mu, Y.; Li, S.-D. Compression-Induced Crimping of Boron Nanotubes from Borophenes: A DFT Study. <em>Phys. Chem. Chem. Phys.</em> <strong>2022</strong>, <em>24</em>, 14566–14572. <a href="https://doi.org/10.1039/D2CP01824A" class="uri">https://doi.org/10.1039/D2CP01824A</a>.</div></p>
+<p><div class="csl-left-margin">(7) </div><div class="csl-right-inline">Yan, Q.-Q.; Zhang, T.; Ma, Y.-Y.; Chen, Q.; Mu, Y.-W.; Li, S.-D. A Bottom-up Approach from Medium-Sized Bilayer Boron Nanoclusters to Bilayer Borophene Nanomaterials. <em>Nanoscale</em> <strong>2022</strong>, <em>14</em>, 11443–11451. <a href="https://doi.org/10.1039/D2NR02950B" class="uri">https://doi.org/10.1039/D2NR02950B</a>.</div></p>
+<p><div class="csl-left-margin">(8) </div><div class="csl-right-inline">Zan, W.-Y.; Huo, J.; Mu, Y.-W.; Li, S.-D. Phase Crossover in Transition Metal Dichalcogenide Monolayers on Metal Substrates. <em>Appl. Surf. Sci.</em> <strong>2022</strong>, <em>599</em>, 153949. <a href="https://doi.org/10.1016/j.apsusc.2022.153949" class="uri">https://doi.org/10.1016/j.apsusc.2022.153949</a>.</div></p>
+<p><div class="csl-left-margin">(9) </div><div class="csl-right-inline">Zhu, H.; Zan, W.; Chen, W.; Jiang, W.; Ding, X.; Li, B. L.; Mu, Y.; Wang, L.; Garaj, S.; Leong, D. T. Defect-Rich Molybdenum Sulfide Quantum Dots for Amplified Photoluminescence and Photonics-Driven Reactive Oxygen Species Generation. <em>Adv. Mater.</em> <strong>2022</strong>, <em>n/a</em>, 2200004. <a href="https://doi.org/10.1002/adma.202200004" class="uri">https://doi.org/10.1002/adma.202200004</a>.</div></p>
+<p><div class="csl-left-margin">(10) </div><div class="csl-right-inline">Zhu, S.; Wang, L.; Gu, C.; Liu, H.; Mu, Y.; Ni, J.; Han, G. Boosting Capacitive Performance of Nitrogen-Doped Carbon by Atomically Dispersed Iron. <em>J. Power Sources</em> <strong>2022</strong>, <em>532</em>, 231335. <a href="https://doi.org/10.1016/j.jpowsour.2022.231335" class="uri">https://doi.org/10.1016/j.jpowsour.2022.231335</a>.</div></p>
+<p><div class="csl-left-margin">(11) </div><div class="csl-right-inline">Zuo, Z.; Yan, W.; Zhang, K.; Xi, C.; Mu, Y.; Hu, Z.-B.; Zhang, M.; Hu, K.-J.; Song, Y.; Song, F. An Au<sub>25</sub>-R Single-Molecule Tidal Diode Induced by the Asymmetrical Coupling. <em>AIP Adv.</em> <strong>2022</strong>, <em>12</em>, 095104. <a href="https://doi.org/10.1063/5.0110804" class="uri">https://doi.org/10.1063/5.0110804</a>.</div></p>
+<h1 id="section-2">2021 (5)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Chen, W.-J.; Ma, Y.-Y.; Chen, T.-T.; Ao, M.-Z.; Yuan, D.-F.; Chen, Q.; Tian, X.-X.; Mu, Y.-W.; Li, S.-D.; Wang, L.-S. B<sub>48</sub><sup>-</sup>: A Bilayer Boron Cluster. <em>Nanoscale</em> <strong>2021</strong>, <em>13</em>, 3868–3876. <a href="https://doi.org/10.1039/D0NR09214B" class="uri">https://doi.org/10.1039/D0NR09214B</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Li, J.; Zan, W.-Y.; Kang, H.; Dong, Z.; Zhang, X.; Lin, Y.; Mu, Y.-W.; Zhang, F.; Zhang, X.-M.; Gu, J. Graphitic-N Highly Doped Graphene-Like Carbon: A Superior Metal-Free Catalyst for Efficient Reduction of CO<sub>2</sub>. <em>Appl. Catal. B Environ.</em> <strong>2021</strong>, <em>298</em>, 120510. <a href="https://doi.org/10.1016/j.apcatb.2021.120510" class="uri">https://doi.org/10.1016/j.apcatb.2021.120510</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Li, P.; Qu, L.; Zhang, C.; Ren, X.; Wang, H.; Zhang, J.; Mu, Y.; Lü, B. Probing into the Crystal Plane Effect on the Reduction of <em>α</em>-Fe<sub>2</sub>O<sub>3</sub> in CO by Operando Raman Spectroscopy. <em>J. Fuel. Chem. Technol.</em> <strong>2021</strong>, <em>49</em>, 1558–1566. <a href="https://doi.org/10.1016/S1872-5813(21)60154-8" class="uri">https://doi.org/10.1016/S1872-5813(21)60154-8</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Lin, H.; Shi, H.; Wang, Z.; Mu, Y.; Li, S.; Zhao, J.; Guo, J.; Yang, B.; Wu, Z.-S.; Liu, F. Scalable Production of Freestanding Few-Layer <em>β</em><sub>12</sub>-Borophene Single Crystalline Sheets as Efficient Electrocatalysts for Lithium Batteries. <em>ACS Nano</em> <strong>2021</strong>, <em>15</em>, 17327–17336. <a href="https://doi.org/10.1021/acsnano.1c04961" class="uri">https://doi.org/10.1021/acsnano.1c04961</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Niu, C.; Mu, Y.; Song, H.; Chang, Y.; Hou, W.; Zhao, Y.; Han, G.; Xiao, Y. Using Phosphorus-Doped Molybdenum Sulfide with (100)-Facet-Exposed and Enlarged Interlayer Spacing to Enhance Hydrogen Evolution. <em>J. Electroanal. Chem.</em> <strong>2021</strong>, <em>897</em>, 115545. <a href="https://doi.org/10.1016/j.jelechem.2021.115545" class="uri">https://doi.org/10.1016/j.jelechem.2021.115545</a>.</div></p>
+<p># 2020 (10)</p>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Li, H.-R.; Zhang, M.; Yan, M.; Zan, W.-Y.; Tian, X.-X.; Mu, Y.-W.; Li, S.-D. Fluxional Bonds in Tubular Molecular Rotors B<sub>3</sub>-[Ta@B<sub>18</sub>] and B<sub>4</sub>-[Ta@B<sub>18</sub>]<sup>+</sup> in 18-Electron Configurations. <em>J Clust Sci</em> <strong>2020</strong>, <em>31</em>, 331–336. <a href="https://doi.org/10.1007/s10876-019-01646-0" class="uri">https://doi.org/10.1007/s10876-019-01646-0</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Liu, H.; Mu, Y.-W.; Li, S.-D. Axially Chiral Cage-Like B38<sup>+</sup> and B38<sup>2+</sup>: New Aromatic Members of the Borospherene Family. <em>J. Cluster Sci.</em> <strong>2020</strong>, <em>33</em> (1), 81–87. <a href="https://doi.org/10.1007/s10876-020-01943-z" class="uri">https://doi.org/10.1007/s10876-020-01943-z</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Lu, X.-Q.; Ao, M.-Z.; Tian, X.-X.; Zan, W.-Y.; Mu, Y.-W.; Li, S.-D. Perfect Cubic <span class="nocase">La-doped</span> Boron Clusters La<sub>6</sub>&amp;[La@B<sub>24</sub>]<sup>+/0</sup> as the Embryos of Low-Dimensional Lanthanide Boride Nanomaterials. <em>RSC Adv.</em> <strong>2020</strong>, <em>10</em>, 12469–12474. <a href="https://doi.org/10.1039/d0ra01616k" class="uri">https://doi.org/10.1039/d0ra01616k</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Mu, Y.; Li, S.-D. First-Principles Study on the Oxidation of Supported <em>β</em><sub>12</sub>-Borophene. <em>J. Phys. Chem. C</em> <strong>2020</strong>, <em>124</em>, 28145–28151. <a href="https://doi.org/10.1021/acs.jpcc.0c09297" class="uri">https://doi.org/10.1021/acs.jpcc.0c09297</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Pei, L.; Ma, Y.-Y.; Yan, M.; Zhang, M.; Yuan, R.-N.; Chen, Q.; Zan, W.-Y.; Mu, Y.-W.; Li, S.-D. Bilayer B<sub>54</sub>, B<sub>60</sub>, and B<sub>62</sub> Clusters in a Universal Structural Pattern. <em>Eur. J. Inorg. Chem.</em> <strong>2020</strong>, <em>2020</em>, 3296–3301. <a href="https://doi.org/10.1002/ejic.202000473" class="uri">https://doi.org/10.1002/ejic.202000473</a>.</div></p>
+<p><div class="csl-left-margin">(6) </div><div class="csl-right-inline">Pei, L.; Li, D.-Z.; Li, H.-R.; Mu, Y.-W.; Lu, H.-G.; Wu, Y.-B.; Li, S.-D. (C<sub>6</sub>H<sub>6</sub>Cr)<sub>n</sub>&amp;B<sub>40</sub> (n = 1~ 6): Exohedral Borospherene Complexes with Cage-Like B<sub>40</sub> as an Effective Ligand with Multiple Coordination Sites. <em>J. Cluster Sci.</em> <strong>2020</strong>, <em>31</em>, 1363–1369. <a href="https://doi.org/10.1007/s10876-019-01747-w" class="uri">https://doi.org/10.1007/s10876-019-01747-w</a>.</div></p>
+<p><div class="csl-left-margin">(7) </div><div class="csl-right-inline">Pei, L.; Yan, M.; Zhao, X.-Y.; Mu, Y.-W.; Lu, H.-G.; Wu, Y.-B.; Li, S.-D. Sea-Shell-Like B<sub>31</sub> and B<sub>32</sub>: Two New Axially Chiral Members of the Borospherene Family. <em>RSC Adv.</em> <strong>2020</strong>, <em>10</em>, 10129–10133. <a href="https://doi.org/10.1039/d0ra01087a" class="uri">https://doi.org/10.1039/d0ra01087a</a>.</div></p>
+<p><div class="csl-left-margin">(8) </div><div class="csl-right-inline">Wang, M.; Ding, R.; Xiao, Y.; Wang, H.; Wang, L.; Chen, C.-M.; Mu, Y.; Wu, G.-P.; Lv, B. CoP/RGO-Pd Hybrids with Heterointerfaces as Highly Active Catalysts for Ethanol Electrooxidation. <em>ACS Appl. Mater. Interfaces</em> <strong>2020</strong>, <em>12</em>, 28903–28914. <a href="https://doi.org/10.1021/acsami.0c07703" class="uri">https://doi.org/10.1021/acsami.0c07703</a>.</div></p>
+<p><div class="csl-left-margin">(9) </div><div class="csl-right-inline">Yan, M.; Tian, X.-X.; Pei, L.; Ma, Y.-Y.; Zan, W.-Y.; Mu, Y.-W.; Li, S.-D. Novel B-C Binary Fullerenes Following the Isolated B<sub>4</sub>C<sub>3</sub> Hexagonal Pyramid Rule. <em>J. Mol. Model.</em> <strong>2020</strong>, <em>26</em>, 199. <a href="https://doi.org/10.1007/s00894-020-04425-1" class="uri">https://doi.org/10.1007/s00894-020-04425-1</a>.</div></p>
+<p><div class="csl-left-margin">(10) </div><div class="csl-right-inline">Yang, Y.; Qian, Y.; Li, H.; Zhang, Z.; Mu, Y.; Do, D.; Zhou, B.; Dong, J.; Yan, W.; Qin, Y.; Fang, L.; Feng, R.; Zhou, J.; Zhang, P.; Dong, J.; Yu, G.; Liu, Y.; Zhang, X.; Fan, X. O-Coordinated <span class="nocase">W-mo</span> Dual-Atom Catalyst for <span class="nocase">pH-Universal</span> Electrocatalytic Hydrogen Evolution. <em>Sci. Adv.</em> <strong>2020</strong>, <em>6</em>, eaba6586. <a href="https://doi.org/10.1126/sciadv.aba6586" class="uri">https://doi.org/10.1126/sciadv.aba6586</a>.</div></p>
+<h1 id="section-3">2019 (8)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Ding, R.; Wang, M.; Wang, X.; Wang, H.; Wang, L.; Mu, Y.; Lv, B. N-Doped Amorphous MoS<sub>x</sub> for the Hydrogen Evolution Reaction. <em>Nanoscale</em> <strong>2019</strong>, <em>11</em>, 11217–11226. <a href="https://doi.org/10.1039/c9nr02717c" class="uri">https://doi.org/10.1039/c9nr02717c</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Li, H.-R.; Lu, X.-Q.; Ma, Y.-Y.; Mu, Y.-W.; Lu, H.-G.; Wu, Y.-B.; Li, S.-D. K(CO)<sub>8</sub><sup>-</sup> and Rb(CO)<sub>8</sub><sup>-</sup>: Cube-Like Alkali Octacarbonyls Satisfying the 18-Electron Rule. <em>J. Cluster Sci.</em> <strong>2019</strong>, <em>30</em>, 621–626. <a href="https://doi.org/10.1007/s10876-019-01521-y" class="uri">https://doi.org/10.1007/s10876-019-01521-y</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Lu, X.-Q.; Chen, Q.; Tian, X.-X.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Predicting Lanthanide Boride Inverse Sandwich Tubular Molecular Rotors with the Smallest Core Structure. <em>Nanoscale</em> <strong>2019</strong>, <em>11</em>, 21311–21316. <a href="https://doi.org/10.1039/c9nr07284e" class="uri">https://doi.org/10.1039/c9nr07284e</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Tian, X.; Xuan, X.; Yu, M.; Mu, Y.; Lu, H.-G.; Zhang, Z.; Li, S.-D. Predicting Two-Dimensional Semiconducting Boron Carbides. <em>Nanoscale</em> <strong>2019</strong>, <em>11</em>, 11099–11106. <a href="https://doi.org/10.1039/c9nr02681a" class="uri">https://doi.org/10.1039/c9nr02681a</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Wang, Y.; Mu, Y.; Li, S.-D. Exfoliation of Borophenes from Silver Substrates Assisted by Li/Mg Atoms-a Density Functional Theory Study. <em>J. Mater. Chem. C</em> <strong>2019</strong>, <em>7</em>, 4043–4048. <a href="https://doi.org/10.1039/c8tc06598e" class="uri">https://doi.org/10.1039/c8tc06598e</a>.</div></p>
+<p><div class="csl-left-margin">(6) </div><div class="csl-right-inline">Yan, M.; Li, H.-R.; Zhao, X.-Y.; Lu, X.-Q.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Fluxional Bonds in Planar B<sub>19</sub><sup>-</sup>, Tubular Ta@<sub>20</sub><sup>-</sup> , and Cage-Like B<sub>39</sub><sup>-</sup>. <em>J. Comput. Chem.</em> <strong>2019</strong>, <em>40</em>, 966–970. <a href="https://doi.org/10.1002/jcc.25728" class="uri">https://doi.org/10.1002/jcc.25728</a>.</div></p>
+<p><div class="csl-left-margin">(7) </div><div class="csl-right-inline">Yan, M.; Li, H.-R.; Tian, X.-X.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Fluxional Bonds in Quasi-Planar B<sub>18</sub><sup>2-</sup> and Half-Sandwich MB<sub>18</sub><sup>-</sup> (M = K, Rb, and Cs). <em>J. Comput. Chem.</em> <strong>2019</strong>, <em>40</em>, 1227–1232. <a href="https://doi.org/10.1002/jcc.25782" class="uri">https://doi.org/10.1002/jcc.25782</a>.</div></p>
+<p><div class="csl-left-margin">(8) </div><div class="csl-right-inline">Zan, W.-Y.; Li, H.-R.; Mu, Y.; Lu, H.-G.; Li, S.-D. Low-Dimensional Functional Networks of Cage-Like B<sub>40</sub> with Effective Transition-Metal Intercalations. <em>Phys. Chem. Chem. Phys.</em> <strong>2019</strong>, <em>21</em>, 22611–22617. <a href="https://doi.org/10.1039/c9cp03252e" class="uri">https://doi.org/10.1039/c9cp03252e</a>.</div></p>
+<h1 id="section-4">2018 (5)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Li, H.-R.; Liu, H.; Lu, X.-Q.; Zan, W.-Y.; Tian, X.; Lu, H.-G.; Wu, Y.; Mu, Y.; Li, S.-D. Cage-Like Ta@B<sub>n</sub><sup>q</sup> Complexes (n = 23 - 28, q = -1 -+3) in 18-Electron Configurations with the Highest Coordination Number of Twenty-Eight. <em>Nanoscale</em> <strong>2018</strong>, <em>10</em>, 7451–7456. <a href="https://doi.org/10.1039/c8nr01087k" class="uri">https://doi.org/10.1039/c8nr01087k</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Li, H.-R.; Liu, H.; Zhao, X.-Y.; Pei, L.; Chen, N.; Zan, W.-Y.; Lu, H.-G.; Wang, Y.-K.; Mu, Y.-W.; Li, S.-D. High-Symmetry Tubular Ta@B<sub>18</sub><sup>3-</sup>, Ta<sub>2</sub><span class="citation" data-cites="B&lt;sub&gt;18">@B&lt;sub&gt;18</span></sub>, and Ta<sub>2</sub><span class="citation" data-cites="B&lt;sub&gt;27">@B&lt;sub&gt;27</span></sub><sup>+</sup> as Embryos of <span class="math inline">\\Alpha</span>-Boronanotubes with a Transition-Metal Wire Coordinated Inside. <em>Phys. Chem. Chem. Phys.</em> <strong>2018</strong>, <em>20</em>, 25009–25015. <a href="https://doi.org/10.1039/c8cp04602f" class="uri">https://doi.org/10.1039/c8cp04602f</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Liu, H.; Chen, Q.; Li, H.-R.; Zhao, X.-Y.; Tian, X.-X.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Aromatic Cage-Like B<sub>34</sub> and B<sub>35</sub><sup>+</sup>: New Axially Chiral Members of the Borospherene Family. <em>Phys. Chem. Chem. Phys.</em> <strong>2018</strong>, <em>20</em>, 15344–15349. <a href="https://doi.org/10.1039/c8cp01769g" class="uri">https://doi.org/10.1039/c8cp01769g</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Pei, L.; Li, H.-R.; Yan, M.; Chen, Q.; Mu, Y.-W.; Lu, H.-G.; Wu, Y.-B.; Li, S.-D. Charge-Induced Structural Transition Between Seashell-Like B<sub>29</sub><sup>-</sup> and B<sub>29</sub><sup>+</sup> in 18 <span class="math inline">\\Pi</span>-Electron Configurations. <em>Phys. Chem. Chem. Phys.</em> <strong>2018</strong>, <em>20</em>, 15330–15334. <a href="https://doi.org/10.1039/c8cp01078a" class="uri">https://doi.org/10.1039/c8cp01078a</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Tian, X.; Wang, T.; Fan, L.; Wang, Y.; Lu, H.; Mu, Y. A Dft Based Method for Calculating the Surface Energies of Asymmetric Mop Facets. <em>Appl. Surf. Sci.</em> <strong>2018</strong>, <em>427</em>, 357–362. <a href="https://doi.org/10.1016/j.apsusc.2017.08.172" class="uri">https://doi.org/10.1016/j.apsusc.2017.08.172</a>.</div></p>
+<h1 id="section-5">2017 (8)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Chen, Q.; Tian, W.-J.; Feng, L.-Y.; Lu, H.-G.; Mu, Y.-W.; Zhai, H.-J.; Li, S.-D.; Wang, L.-S. Planar B<sub>38</sub><sup>-</sup> and B<sub>37</sub><sup>-</sup> Clusters with a Double-Hexagonal Vacancy: Molecular Motifs for Borophenes. <em>Nanoscale</em> <strong>2017</strong>, <em>9</em>, 4550–4557. <a href="https://doi.org/10.1039/c7nr00641a" class="uri">https://doi.org/10.1039/c7nr00641a</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Chen, N.; Wang, Y.; Mu, Y.; Fan, Y.; Li, S.-D. A First-Principles Study on Zigzag Phosphorene Nanoribbons Passivated by Iron Group Atoms. <em>Phys. Chem. Chem. Phys.</em> <strong>2017</strong>, <em>19</em>, 25441–25445. <a href="https://doi.org/10.1039/c7cp04511e" class="uri">https://doi.org/10.1039/c7cp04511e</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Li, J.-J.; Mu, Y.; Tian, X.; Yuan, C.; Wu, Y.; Wang, Q.; Li, D.; Wang, Z.-X.; Li, S.-D. Zigzag Double-Chain <span class="nocase">C-be</span> Nanoribbon Featuring Planar Pentacoordinate Carbon and Ribbon Aromaticity. <em>J. Mater. Chem. C</em> <strong>2017</strong>, <em>5</em>, 408–414. <a href="https://doi.org/10.1039/C6TC04356A" class="uri">https://doi.org/10.1039/C6TC04356A</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Li, H.-R.; Liu, H.; Tian, X.-X.; Zan, W.-Y.; Mu, Y.-W.; Lu, H.-G.; Li, J.; Wang, Y.-K.; Li, S.-D. Structural Transition in Metal-Centered Boron Clusters: From Tubular Molecular Rotors Ta@B<sub>21</sub> and Ta@B<sub>22</sub><sup>+</sup> to Cage-Like Endohedral Metalloborospherene Ta@B<sub>22</sub><sup>-</sup>. <em>Phys. Chem. Chem. Phys.</em> <strong>2017</strong>, <em>19</em>, 27025–27030. <a href="https://doi.org/10.1039/c7cp05179d" class="uri">https://doi.org/10.1039/c7cp05179d</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Li, H.-R.; Tian, X.-X.; Luo, X.-M.; Yan, M.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Heteroborospherene Clusters Ni<sub>n</sub> ∈ B<sub>40</sub> (n=1-4) and Heteroborophene Monolayers Ni<sub>2</sub> ∈ B<sub>14</sub> with Planar Heptacoordinate Transition-Metal Centers in <em>η</em><sup>7</sup>-B<sub>7</sub> Heptagons. <em>Sci. Rep.</em> <strong>2017</strong>, <em>7</em>, 5701. <a href="https://doi.org/10.1038/s41598-017-06039-9" class="uri">https://doi.org/10.1038/s41598-017-06039-9</a>.</div></p>
+<p><div class="csl-left-margin">(6) </div><div class="csl-right-inline">Mu, Y.; Chen, Q.; Chen, N.; Lu, H.-G.; Li, S.-D. A Novel Borophene Featuring Heptagonal Holes: A Common Precursor of Borospherenes. <em>Phys. Chem. Chem. Phys.</em> <strong>2017</strong>, <em>19</em>, 19890–19895. <a href="https://doi.org/10.1039/c7cp03021e" class="uri">https://doi.org/10.1039/c7cp03021e</a>.</div></p>
+<p><div class="csl-left-margin">(7) </div><div class="csl-right-inline">Tian, W.-J.; Tian, X.; Mu, Y.; Lu, H.-G.; Li, S.-D. Double-Ring Tubular (B<sub>2</sub>O<sub>2</sub>)<sub>n</sub> Clusters (n=6-42) Rolled up from the Most Stable BO Double-Chain Ribbon in Boron Monoxides. <em>Phys. Chem. Chem. Phys.</em> <strong>2017</strong>, <em>19</em>, 23213–23217. <a href="https://doi.org/10.1039/c7cp04889k" class="uri">https://doi.org/10.1039/c7cp04889k</a>.</div></p>
+<p><div class="csl-left-margin">(8) </div><div class="csl-right-inline">Zhao, X.-Y.; Chen, Q.; Li, H.-R.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. Cage-Like B<sub>39</sub><sup>+</sup> Clusters with the Bonding Pattern of <em>σ</em>+<em>π</em> Double Delocalization: New Members of the Borospherene Family. <em>Phys. Chem. Chem. Phys.</em> <strong>2017</strong>, <em>19</em>, 10998–11003. <a href="https://doi.org/10.1039/c7cp00725f" class="uri">https://doi.org/10.1039/c7cp00725f</a>.</div></p>
+<h1 id="section-6">2016 (6)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Bai, H.; Bai, B.; Zhang, L.; Huang, W.; Mu, Y.-W.; Zhai, H.-J.; Li, S.-D. Lithium-Decorated Borospherene B<sub>40</sub>: A Promising Hydrogen Storage Medium. <em>Sci. Rep.</em> <strong>2016</strong>, <em>6</em>, 35518. <a href="https://doi.org/10.1038/srep35518" class="uri">https://doi.org/10.1038/srep35518</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Chen, Q.; Li, H.-R.; Miao, C.-Q.; Wang, Y.-J.; Lu, H.-G.; Mu, Y.-W.; Ren, G.-M.; Zhai, H.-J.; Li, S.-D. Endohedral Ca@B<sub>38</sub>: Stabilization of a B<sub>38</sub><sup>2-</sup> Borospherene Dianion by Metal Encapsulation. <em>Phys. Chem. Chem. Phys.</em> <strong>2016</strong>, <em>18</em>, 11610–11615. <a href="https://doi.org/10.1039/c5cp06169e" class="uri">https://doi.org/10.1039/c5cp06169e</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Gao, T.-T.; Chen, Q.; Mu, Y.-W.; Lu, H.; Li, S.-D. W-X-M Transformations in Isomerization of B<sub>39</sub><sup>-</sup> Borospherenes. <em>Aip Adv.</em> <strong>2016</strong>, <em>6</em>,<a href="https://doi.org/10.1063/1.4954030" class="uri">https://doi.org/10.1063/1.4954030</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Mu, Y.; Li, S.-D. Multiple Dirac Cones in BN Co-Doped <em>β</em>-Graphyne. <em>J. Mater. Chem. C</em> <strong>2016</strong>, <em>4</em>, 7339–7344. <a href="https://doi.org/10.1039/c6tc02184k" class="uri">https://doi.org/10.1039/c6tc02184k</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Tian, W.-J.; Chen, Q.; Li, H.-R.; Yan, M.; Mu, Y.-W.; Lu, H.-G.; Zhai, H.-J.; Li, S.-D. Saturn-Like Charge-Transfer Complexes Li<sub>4</sub>&amp;B<sub>36</sub>, Li<sub>5</sub>&amp;B<sub>36</sub><sup>+</sup>, and Li<sub>6</sub>&amp;B<sub>36</sub><sup>2+</sup>: Exohedral Metalloborospherenes with a Perfect Cage-Like B<sub>36</sub><sup>4-</sup> Core. <em>Phys. Chem. Chem. Phys.</em> <strong>2016</strong>, <em>18</em>, 9922–9926. <a href="https://doi.org/10.1039/c6cp01279e" class="uri">https://doi.org/10.1039/c6cp01279e</a>.</div></p>
+<p><div class="csl-left-margin">(6) </div><div class="csl-right-inline">Tian, W.-J.; Chen, Q.; Tian, X.-X.; Mu, Y.-W.; Lu, H.-G.; Li, S.-D. From Quasi-Planar B<sub>56</sub> to Penta-Ring Tubular Ca©B<sub>56</sub>: Prediction of Metal-Stabilized Ca\textcopyright B<sub>56</sub> as the Embryo of Metal-Doped Boron <em>α</em>-Nanotubes. <em>Sci. Rep.</em> <strong>2016</strong>, <em>6</em>, 37893. <a href="https://doi.org/10.1038/srep37893" class="uri">https://doi.org/10.1038/srep37893</a>.</div></p>
+<h1 id="section-7">2015 (5)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Chen, Q.; Zhang, S.-Y.; Bai, H.; Tian, W.-J.; Gao, T.; Li, H.-R.; Miao, C.-Q.; Mu, Y.-W.; Lu, H.-G.; Zhai, H.-J.; Li, S.-D. Cage-Like B<sub>41</sub><sup>+</sup> and B<sub>42</sub><sup>2+</sup>: New Chiral Members of the Borospherene Family. <em>Angew. Chem. Int. Ed.</em> <strong>2015</strong>, <em>54</em>, 8160–8164. <a href="https://doi.org/10.1002/anie.201501588" class="uri">https://doi.org/10.1002/anie.201501588</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Chen, Q.; Gao, T.; Tian, W.-J.; Bai, H.; Zhang, S.-Y.; Li, H.-R.; Miao, C.-Q.; Mu, Y.-W.; Lu, H.-G.; Zhai, H.-J.; Li, S.-D. Endohedral C<sub>3</sub> Ca@B<sub>39</sub><sup>+</sup> and C<sub>2</sub> Ca@B<sub>39</sub><sup>+</sup>: Axially Chiral Metalloborospherenes Based on B<sub>39</sub><sup>-</sup>. <em>Phys. Chem. Chem. Phys.</em> <strong>2015</strong>, <em>17</em>, 19690–19694. <a href="https://doi.org/10.1039/c5cp03178h" class="uri">https://doi.org/10.1039/c5cp03178h</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Mu, Y. Chemical Functionalization of GaN Monolayer by Adatom Adsorption. <em>J. Phys. Chem. C</em> <strong>2015</strong>, <em>119</em>, 20911–20916. <a href="https://doi.org/10.1021/acs.jpcc.5b04695" class="uri">https://doi.org/10.1021/acs.jpcc.5b04695</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Mu, Y.; Ding, F.; Lu, H. Strain-Induced Metal-Semimetal Transition of BeB<sub>2</sub> Monolayer. <em>RSC Adv.</em> <strong>2015</strong>, <em>5</em>, 11392–11396. <a href="https://doi.org/10.1039/c4ra14684k" class="uri">https://doi.org/10.1039/c4ra14684k</a>.</div></p>
+<p><div class="csl-left-margin">(5) </div><div class="csl-right-inline">Zhang, S.-Y.; Bai, H.; Chen, Q.; Mu, Y.-W.; Gao, T.; Lu, H.; Li, S.-D. Ribbon Aromaticity of Double-Chain B<sub>2n</sub>C<sub>2</sub>H<sub>2</sub> Clusters (n = 2): A First Principle Study. <em>J. Cluster Sci.</em> <strong>2015</strong>, <em>26</em>, 2043–2050. <a href="https://doi.org/10.1007/s10876-015-0903-9" class="uri">https://doi.org/10.1007/s10876-015-0903-9</a>.</div></p>
+<h1 id="section-8">2014 (1)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Zhai, H.-J.; Zhao, Y.-F.; Li, W.-L.; Chen, Q.; Bai, H.; Hu, H.-S.; Piazza, Z. A.; Tian, W.-J.; Lu, H.-G.; Wu, Y.-B.; Mu, Y.-W.; Wei, G.-F.; Liu, Z.-P.; Li, J.; Li, S.-D.; Wang, L.-S. Observation of an All-Boron Fullerene. <em>Nat. Chem.</em> <strong>2014</strong>, <em>6</em>, 727–731. <a href="https://doi.org/10.1038/nchem.1999" class="uri">https://doi.org/10.1038/nchem.1999</a>.</div></p>
+<h1 id="section-9">2013 (4)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Bai, H.; Chen, Q.; Miao, C. Q.; Mu, Y. W.; Wu, Y. B.; Lu, H. G.; Zhai, H. J.; Li, S. D. Ribbon Aromaticity in Double-Chain Planar B<sub>n</sub>H<sub>2</sub><sup>2-</sup> and Li<sub>2</sub>B<sub>n</sub>H<sub>2</sub> Nanoribbon Clusters up to n = 22: Lithiated Boron Dihydride Analogues of Polyenes. <em>Phys. Chem. Chem. Phys.</em> <strong>2013</strong>, <em>15</em>, 18872–18880. <a href="https://doi.org/10.1039/c3cp53761g" class="uri">https://doi.org/10.1039/c3cp53761g</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Lu, H.; Mu, Y.; Li, S.-D. Comment on “<span class="nocase">Two-dimensional</span> Boron Monolayer Sheets”. <em>ACS Nano</em> <strong>2013</strong>, <em>7</em>, 879–879. <a href="https://doi.org/10.1021/nn3033562" class="uri">https://doi.org/10.1021/nn3033562</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Lu, H.; Mu, Y.; Bai, H.; Chen, Q.; Li, S.-D. Binary Nature of Monolayer Boron Sheets from Ab Initio Global Searches. <em>J. Chem. Phys.</em> <strong>2013</strong>, <em>138</em>, 024701–024704. <a href="https://doi.org/10.1063/1.4774082" class="uri">https://doi.org/10.1063/1.4774082</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Lu, Q. L.; Meng, J. W.; Song, W. J.; Mu, Y. W.; Wan, J. G. Stuffing Enhances the Stability of Medium-Sized (GaAs)<sub>n</sub> Clusters. <em>J. Phys. Chem. C</em> <strong>2013</strong>, <em>117</em>, 12835–12840. <a href="https://doi.org/10.1021/jp401426r" class="uri">https://doi.org/10.1021/jp401426r</a>.</div></p>
+<h1 id="section-10">2011 (4)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Li, J. R.; Mu, Y. W.; Wan, J. G.; Song, F. Q.; Han, M.; Wang, G. H. First-Principles Calculations of the Structural, Electronic and Magnetic Properties of B<sub>n</sub>N<sub>20-n</sub> (n=6-18) Clusters. <em>Eur. Phys. J. D</em> <strong>2011</strong>, <em>63</em>, 201–207.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Li, Z.; Qin, Y.; Mu, Y.; Chen, T.; Xu, C.; He, L.; Ding, W.; Wan, J.; Song, F.; Han, M. Visualizing Topological Insulating Bi<sub>2</sub>Te<sub>3</sub> Quintuple Layers on SiO<sub>2</sub>-Capped Si Substrates and Its Contrast Optimization. <em>J. Nanosci. Nanotechnol.</em> <strong>2011</strong>, <em>11</em>, 7042. <a href="https://doi.org/10.1166/jnn.2011.4205" class="uri">https://doi.org/10.1166/jnn.2011.4205</a>.</div></p>
+<p><div class="csl-left-margin">(3) </div><div class="csl-right-inline">Mu, Y.; Li, J.; Wan, J.; Song, F.; Wang, G. Structures and Polarizabilities of Medium-Sized Ga<sub>n</sub>As<sub>m</sub> Clusters. <em>Chem. Phys. Lett.</em> <strong>2011</strong>, <em>511</em>, 97–100. <a href="https://doi.org/10.1016/j.cplett.2011.06.008" class="uri">https://doi.org/10.1016/j.cplett.2011.06.008</a>.</div></p>
+<p><div class="csl-left-margin">(4) </div><div class="csl-right-inline">Mu, Y.; Han, Y.; Wang, J.; Wan, J.; Wang, G. Structures and Magnetic Properties of Pd<sub>n</sub> Clusters (n=3 - 19) Doped by Mn Atoms. <em>Phys. Rev. A</em> <strong>2011</strong>, <em>84</em>, 053201. <a href="https://doi.org/10.1103/physreva.84.053201" class="uri">https://doi.org/10.1103/physreva.84.053201</a>.</div></p>
+<h1 id="section-11">2010 (2)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">He, L.; Chen, X.; Mu, Y.; Song, F.; Han, M. Two-Dimensional Gradient Ag Nanoparticle Assemblies: Multiscale Fabrication and SERS Applications. <em>Nanotechnology</em> <strong>2010</strong>, <em>21</em>, 495601–495601. <a href="https://doi.org/10.1088/0957-4484/21/49/495601" class="uri">https://doi.org/10.1088/0957-4484/21/49/495601</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Yao, C. H.; Zhao, S. F.; Li, J. R.; Mu, Y. W.; Wan, J. G.; Han, M.; Wang, G. H. Structures and Electronic Properties of Stoichiometric Hydrogenated Aluminum Clusters. <em>Eur. Phys. J. D</em> <strong>2010</strong>, <em>57</em>, 197–205. <a href="https://doi.org/10.1140/epjd/e2010-00022-y" class="uri">https://doi.org/10.1140/epjd/e2010-00022-y</a>.</div></p>
+<h1 id="section-12">2009 (2)</h1>
+<p><div class="csl-left-margin">(1) </div><div class="csl-right-inline">Li, J. R.; Yao, C. H.; Mu, Y. W.; Wan, J. G.; Han, M. Structures and Magnetic Properties of Si<sub>n</sub>Ni (n=1-17) Clusters. <em>J. Mol. Struc: Theochem</em> <strong>2009</strong>, <em>916</em>, 139–146. <a href="https://doi.org/10.1016/j.theochem.2009.09.027" class="uri">https://doi.org/10.1016/j.theochem.2009.09.027</a>.</div></p>
+<p><div class="csl-left-margin">(2) </div><div class="csl-right-inline">Zhao, S. F.; Yao, M. L.; Wan, J. G.; Mu, Y. W.; Zhou, J. F.; Wang, G. H. The Microstructure and Magnetic Behavior of Co Nanostructured Film Prepared by Energetic Cluster Beam Deposition. <em>Eur. Phys. J. D</em> <strong>2009</strong>, <em>52</em>, 163–166. <a href="https://doi.org/10.1140/epjd/e2008-00253-5" class="uri">https://doi.org/10.1140/epjd/e2008-00253-5</a>.</div></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
