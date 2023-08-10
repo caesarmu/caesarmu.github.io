@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Excel Tips</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Excel Tips"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#shortcut"><span class="toc-section-number">1</span> ShortCut</a></li>
+          <li><a href="#一些基本功能"><span class="toc-section-number">2</span> 一些基本功能</a>
+          <ul>
+          <li><a href="#等差数列"><span class="toc-section-number">2.1</span> 等差数列</a></li>
+          <li><a href="#重复数值"><span class="toc-section-number">2.2</span> 重复数值</a></li>
+          <li><a href="#行列变换"><span class="toc-section-number">2.3</span> 行列变换</a></li>
+          <li><a href="#文本分列"><span class="toc-section-number">2.4</span> 文本分列</a></li>
+          <li><a href="#条件格式"><span class="toc-section-number">2.5</span> 条件格式</a></li>
+          <li><a href="#冻结窗格"><span class="toc-section-number">2.6</span> 冻结窗格</a></li>
+          <li><a href="#排序"><span class="toc-section-number">2.7</span> 排序</a></li>
+          <li><a href="#数据透视表"><span class="toc-section-number">2.8</span> 数据透视表</a></li>
+          </ul></li>
+          <li><a href="#excel公式"><span class="toc-section-number">3</span> Excel公式</a>
+          <ul>
+          <li><a href="#绝对引用相对引用"><span class="toc-section-number">3.1</span> 绝对引用/相对引用</a></li>
+          </ul></li>
+          <li><a href="#excel函数"><span class="toc-section-number">4</span> Excel函数</a>
+          <ul>
+          <li><a href="#cuntifrangecriteriasumifrangecriteriasumrange"><span class="toc-section-number">4.1</span> CUNTIF(range,criteria/SUMIF(range,criteria,sumrange)</a></li>
+          <li><a href="#ifiogicai_testvaiue_if_truevaiue_if_faise"><span class="toc-section-number">4.2</span> IF(IogicaI_test,vaIue_if_true,vaIue_if_faIse)</a></li>
+          <li><a href="#字符串截取"><span class="toc-section-number">4.3</span> 字符串截取</a></li>
+          </ul></li>
+          <li><a href="#excel-绘图"><span class="toc-section-number">5</span> Excel 绘图</a>
+          <ul>
+          <li><a href="#更改数据图xy轴或增加绘图"><span class="toc-section-number">5.1</span> 更改数据图x/y轴或增加绘图</a></li>
+          <li><a href="#双y轴"><span class="toc-section-number">5.2</span> 双y轴</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<ul>
+<li>《excel高手捷径：一招鲜，吃遍天》读书笔记</li>
+</ul>
+<h1 data-number="1" id="shortcut"><span class="header-section-number">1</span> ShortCut</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">ShortCut</th>
+<th style="text-align: center;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Alt+Enter</td>
+<td style="text-align: center;">单元格内强制换行</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl+Enter</td>
+<td style="text-align: center;">批量输入相同内容</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ctrl+Shift+<span class="math inline">\downarrow</span></td>
+<td style="text-align: center;">快速选中以下所有数据行</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl+Shift+<span class="math inline">\uparrow</span></td>
+<td style="text-align: center;">快速选中以上所有数据行</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ctrl+Shift+<span class="math inline">\rightarrow</span></td>
+<td style="text-align: center;">快速选中右侧所有数据列</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl+Shift+<span class="math inline">\leftarrow</span></td>
+<td style="text-align: center;">快速选中左侧所有数据列</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ctrl+Shift+<span class="math inline">\downarrow</span> + Ctrl+Shift+<span class="math inline">\rightarrow</span></td>
+<td style="text-align: center;">快速选中右下所有数据</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F4</td>
+<td style="text-align: center;">在此单元格重复上一个操作/改变引用方式(绝对/混合/相对)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F5</td>
+<td style="text-align: center;">快速定位(如填充区域空格为0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl+;</td>
+<td style="text-align: center;">当前日期</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ctrl+Shift;</td>
+<td style="text-align: center;">当前时间</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ctrl+~</td>
+<td style="text-align: center;">公式/结果切换</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">数值前加单引号’</td>
+<td style="text-align: center;">文本显示</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">数值前加单引号“0”</td>
+<td style="text-align: center;">方式分数变日期</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Alt+=</td>
+<td style="text-align: center;">批量求和</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">按住Ctrl</td>
+<td style="text-align: center;">数据多选</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../img/Excel_shortcut1.png" title="Excel_shortcut1" style="width:100.0%" /></p>
+<p><img src="../img/Excel_shortcut2.png" title="Excel_shortcut1" style="width:100.0%" /></p>
+<p><img src="../img/Excel_shortcut3.png" title="Excel_shortcut1" style="width:100.0%" /></p>
+<h1 data-number="2" id="一些基本功能"><span class="header-section-number">2</span> 一些基本功能</h1>
+<h2 data-number="2.1" id="等差数列"><span class="header-section-number">2.1</span> 等差数列</h2>
+<ul>
+<li>选中2单元格</li>
+<li>右下加号下拉或右拉</li>
+</ul>
+<h2 data-number="2.2" id="重复数值"><span class="header-section-number">2.2</span> 重复数值</h2>
+<ul>
+<li>选中1单元格</li>
+<li>右下加号下拉或右拉</li>
+</ul>
+<h2 data-number="2.3" id="行列变换"><span class="header-section-number">2.3</span> 行列变换</h2>
+<ul>
+<li>选中数列</li>
+<li>转置粘贴</li>
+</ul>
+<h2 data-number="2.4" id="文本分列"><span class="header-section-number">2.4</span> 文本分列</h2>
+<ul>
+<li>选一列</li>
+<li>数据<span class="math inline">\rightarrow</span>分列</li>
+<li>选择分割符号</li>
+</ul>
+<h2 data-number="2.5" id="条件格式"><span class="header-section-number">2.5</span> 条件格式</h2>
+<ul>
+<li>开始<span class="math inline">\rightarrow</span>条件格式<span class="math inline">\rightarrow</span>新建规则<span class="math inline">\rightarrow</span>: 选择格式如，只为包含以下内容…</li>
+<li>符合条件更改显示方式(如2标红),亦可标记重复值</li>
+</ul>
+<h2 data-number="2.6" id="冻结窗格"><span class="header-section-number">2.6</span> 冻结窗格</h2>
+<ul>
+<li>视图<span class="math inline">\rightarrow</span>冻结窗格<span class="math inline">\rightarrow</span>冻结首行/首列</li>
+</ul>
+<h2 data-number="2.7" id="排序"><span class="header-section-number">2.7</span> 排序</h2>
+<ul>
+<li>选中数据表</li>
+<li>数据<span class="math inline">\rightarrow</span>排序：设定条件</li>
+</ul>
+<p>:Table. ShortCuts for Excel</p>
+<h2 data-number="2.8" id="数据透视表"><span class="header-section-number">2.8</span> 数据透视表</h2>
+<ul>
+<li>选中一个表外单元格</li>
+<li>插入<span class="math inline">\rightarrow</span>数据透视图</li>
+<li>选择数据透视区域</li>
+<li>选择合适的行、列、值(值显示方式/值汇总方式)</li>
+<li>以数值数据为行，分类数据为值，加组合可以做分组数据</li>
+</ul>
+<h1 data-number="3" id="excel公式"><span class="header-section-number">3</span> Excel公式</h1>
+<table>
+<caption>Table. 单元格公式 (P.S. 数组公式的{}不是手工录入, 是输入公式后按 Ctrl+Shift+Enter三键结束。)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">公式</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">=15*3+20*2</td>
+<td style="text-align: center;">包含常呈运算的公式</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">=A1*3+$A$2*2</td>
+<td style="text-align: center;">包含单元格引用的公式</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">=SUM(A1*3,$A$2*2)</td>
+<td style="text-align: center;">包含函数的公式二单价</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">=SUM(A1:A15)</td>
+<td style="text-align: center;">数组求和</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">单价*数量</td>
+<td style="text-align: center;">包含名称的公式</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">{=A1:A10+B1:B20}</td>
+<td style="text-align: center;">包含数组运算的公式</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="3.1" id="绝对引用相对引用"><span class="header-section-number">3.1</span> 绝对引用/相对引用</h2>
+<table>
+<caption>Table. 变量引用 (F4循环:A1<span class="math inline">\rightarrow</span>$A$1<span class="math inline">\rightarrow</span>A$1<span class="math inline">\rightarrow</span>$A1<span class="math inline">\rightarrow</span>A1)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">变量</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A1</td>
+<td style="text-align: center;">相对引用，行列可变</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">$A$1</td>
+<td style="text-align: center;">绝对引用，行列不变</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A$1</td>
+<td style="text-align: center;">混合引用，列变行不变</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">$A1</td>
+<td style="text-align: center;">混合引用，行变列不变</td>
+</tr>
+</tbody>
+</table>
+<h1 data-number="4" id="excel函数"><span class="header-section-number">4</span> Excel函数</h1>
+<table>
+<caption>Table. Excel functions</caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Function(MS16)</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Tips</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">COUNT(number1,number2…)</td>
+<td style="text-align: center;">只计数</td>
+<td style="text-align: center;">文本、逻辑值、错误信息、空单元格都不统计</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">COUNTA(data1,data2…)</td>
+<td style="text-align: center;">统计非空单元格</td>
+<td style="text-align: center;">只要单元格有内容，就会被统计，包括有些看不见的字符</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MAX(number1,number2…)</td>
+<td style="text-align: center;">求最大值</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MIN(number1,number2…)</td>
+<td style="text-align: center;">求最小值</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">LARGE(array,k)</td>
+<td style="text-align: center;">第k最大值</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SMALL(array,k)</td>
+<td style="text-align: center;">第k最小值</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">INT(number)</td>
+<td style="text-align: center;">向下取整</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ROUND(number,k)</td>
+<td style="text-align: center;">根据小数点后k位四舍五入</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ROUND(number,k)</td>
+<td style="text-align: center;">根据小数点后k位向上舍入</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ROUNDDOWN(number,k)</td>
+<td style="text-align: center;">根据小数点后k位向下舍入</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ABS(number)</td>
+<td style="text-align: center;">绝对值</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FREQUENCY(Data-array,Bins-array)</td>
+<td style="text-align: center;">频数分布函数</td>
+<td style="text-align: center;">Ctrl+Shift+Enter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MODE.SNGL(number1,number2…),MODE.MULT(number1,number2…)(MS16)/MODE(number1,number2…)(WPS)</td>
+<td style="text-align: center;">数值型数据的众数(数值或数列)</td>
+<td style="text-align: center;"><span class="math inline">M_o</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MEDIAN(number1,number2…)</td>
+<td style="text-align: center;">数值型数据的中位数</td>
+<td style="text-align: center;"><span class="math inline">M_e=x_(\frac{n+1}{2})\ or \ \frac{1}{2}\{x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}\}</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">QUARTILE.INC(array,k),QUARTILE.EXC(array,k)(MS16)/QUARTILE(array,quart),<span class="math inline">quat\sim 0-4</span>(WPS)</td>
+<td style="text-align: center;">数值型数据的四分数</td>
+<td style="text-align: center;"><span class="math inline">Q_L=\frac{n+3}{4},Q_U=\frac{3n+1}{4}</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AVERAGE(number1,number2…)</td>
+<td style="text-align: center;">数值型数据的算数平均数</td>
+<td style="text-align: center;"><span class="math inline">\bar{x}=\frac{\sum\limits_{i=1}^n x_i}{n}</span>,如果单元格为空，求平均值不包含空值</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">GEOMEAN(number1,number2…)</td>
+<td style="text-align: center;">数值型数据的几何平均数</td>
+<td style="text-align: center;"><span class="math inline">G=\sqrt[n]{\prod\limits_{i=1}^n x_i}</span> 　</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">PRODUCT(number1,number2…)或 PRODUCT(number1,number2^(-1),…)</td>
+<td style="text-align: center;">数值型数据的数值连乘</td>
+<td style="text-align: center;"><span class="math inline">=\prod\limits_{i=1}^n x_i</span> 　</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AVEDEV(number1,number2…)</td>
+<td style="text-align: center;">数值型数据的平均差</td>
+<td style="text-align: center;"><span class="math inline">M_d=\frac{\sum\limits_{i=1}^n |x_i-\bar{x}|}{n}</span> 　</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">STDEV.S(number1,number2…)(MS16)/STDEV(number1,number2…)(WPS)</td>
+<td style="text-align: center;">数值型数据的标准差</td>
+<td style="text-align: center;"><span class="math inline">M_d=\sqrt{\frac{\sum\limits_{i=1}^n (x_i-\bar{x})^2}{n}}</span> 　</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">RANK.AVG(number,array,order),RANK.EQ(number,array,order)(MS16)/RANK(number,array,order)(WPS)</td>
+<td style="text-align: center;">求排序</td>
+<td style="text-align: center;">order=0,降序; <span class="math inline">\ne0</span>升序</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">EXACT(A1,B1)</td>
+<td style="text-align: center;">判断字符串是否相同</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A1&amp;A2&amp;“C”</td>
+<td style="text-align: center;">字符串拼接</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">SUBSTITUTE(text,oId_text,new_text,[instance_num])</td>
+<td style="text-align: center;">文本替换</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">RepIace(oId_text,start_num,num_chars,new_text)</td>
+<td style="text-align: center;">文本字符串指定次数的替换</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MATCH(number,array)</td>
+<td style="text-align: center;">number匹配array的第几个数</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">INDEX(number,array)</td>
+<td style="text-align: center;">number匹配array的数值</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="4.1" id="cuntifrangecriteriasumifrangecriteriasumrange"><span class="header-section-number">4.1</span> CUNTIF(range,criteria/SUMIF(range,criteria,sumrange)</h2>
+<ul>
+<li>=CONUTIF(F2:F13,“&lt;2000”) , 注意双引</li>
+<li>=CONUTIF(F2:F13,“&lt;”&amp;A21)</li>
+<li>=CONUTIF(F2:F13,“&lt;”&amp;AVERAGE(F2:F13)</li>
+<li>=CONUTIF(F2:F13,"*空调"), 那个使用通配符</li>
+<li>=CONUTIF(F2:F13,“?????”), 5位数</li>
+<li>=CONUTIF(F2:F13,“?????”)-CONUTIF(D2:D13,"*空调")</li>
+<li>=SUMIF(A2:A13,“可乐,”B2:B13),求和区可以与条件区域不同</li>
+</ul>
+<h2 data-number="4.2" id="ifiogicai_testvaiue_if_truevaiue_if_faise"><span class="header-section-number">4.2</span> IF(IogicaI_test,vaIue_if_true,vaIue_if_faIse)</h2>
+<ul>
+<li>=IF(A1,“123,”“234”)</li>
+<li>=IF(B2&lt;60,“不及格,”IF(B2&lt;70,“及格,”IF(B2&lt;85,“良好,”“优秀”)))</li>
+</ul>
+<h2 data-number="4.3" id="字符串截取"><span class="header-section-number">4.3</span> 字符串截取</h2>
+<table>
+<caption>Table. 字符串截取</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">len(B2,6)</td>
+<td style="text-align: center;">返回文本串中的字符数。不论中英文字符都按1计数</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">lenb(B2,6)</td>
+<td style="text-align: center;">返回文本串中的字节数。汉字丶全角状态下的标点符号，每个字符按2计数,数字和半角状态下的标点符号按1计数。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">left(B2,6)</td>
+<td style="text-align: center;">根据指定的字符数返回文本中的第一个或前几个字符</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">leftb(B2,6)</td>
+<td style="text-align: center;">根据指定的字符数返回文本中的第一个或前几个字节</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">riht(B2,6)</td>
+<td style="text-align: center;">根据指定的字符数返回文本中的最后一个或多个字符</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">righb(B2,6)</td>
+<td style="text-align: center;">根据指定的字符数返回文本中的最后一个或多个字</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">mid(B2,3,6)</td>
+<td style="text-align: center;">返回文本串中从指定位置开始的特定数目的字符</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">midb(B2,3,6)</td>
+<td style="text-align: center;">返回文本串中从指定位置开始的特定数目的字节</td>
+</tr>
+</tbody>
+</table>
+<h1 data-number="5" id="excel-绘图"><span class="header-section-number">5</span> Excel 绘图</h1>
+<figure>
+<img src="../img/Excel_plot4.png" title="Excel_plot4" style="width:100.0%" alt="Fig. 1. Excel_plot4" /><figcaption aria-hidden="true">Fig. 1. Excel_plot4</figcaption>
+</figure>
+<h2 data-number="5.1" id="更改数据图xy轴或增加绘图"><span class="header-section-number">5.1</span> 更改数据图x/y轴或增加绘图</h2>
+<p><img src="../img/Excel_plot5.png" title="Excel_plot5" style="width:45.0%" /> <img src="../img/Excel_plot6.png" title="Excel_plot5" style="width:45.0%" /></p>
+<h2 data-number="5.2" id="双y轴"><span class="header-section-number">5.2</span> 双y轴</h2>
+<ul>
+<li>选择其中一个数据图</li>
+<li>右键<span class="math inline">\rightarrow</span>设置数据系列格式<span class="math inline">\rightarrow</span>次坐标抽</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

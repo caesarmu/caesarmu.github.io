@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>驾照考试</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="驾照考试"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#科目一"><span class="toc-section-number">1</span> 科目一</a></li>
+          <li><a href="#科目二"><span class="toc-section-number">2</span> 科目二</a>
+          <ul>
+          <li><a href="#部件"><span class="toc-section-number">2.1</span> 部件</a>
+          <ul>
+          <li><a href="#方向盘"><span class="toc-section-number">2.1.1</span> 方向盘</a></li>
+          <li><a href="#离合和档位"><span class="toc-section-number">2.1.2</span> 离合和档位</a></li>
+          </ul></li>
+          <li><a href="#起步"><span class="toc-section-number">2.2</span> 起步</a></li>
+          <li><a href="#停车"><span class="toc-section-number">2.3</span> 停车</a></li>
+          <li><a href="#倒库全程注意压低车速"><span class="toc-section-number">2.4</span> 倒库（全程注意压低车速）</a>
+          <ul>
+          <li><a href="#正库"><span class="toc-section-number">2.4.1</span> 正库</a></li>
+          <li><a href="#反库"><span class="toc-section-number">2.4.2</span> 反库</a></li>
+          <li><a href="#调整"><span class="toc-section-number">2.4.3</span> 调整</a></li>
+          </ul></li>
+          <li><a href="#侧方位"><span class="toc-section-number">2.5</span> 侧方位</a>
+          <ul>
+          <li><a href="#侧方位进"><span class="toc-section-number">2.5.1</span> 侧方位进</a></li>
+          <li><a href="#侧方位出"><span class="toc-section-number">2.5.2</span> 侧方位出</a></li>
+          </ul></li>
+          <li><a href="#半坡起步"><span class="toc-section-number">2.6</span> 半坡起步</a></li>
+          <li><a href="#注意"><span class="toc-section-number">2.7</span> 注意</a></li>
+          <li><a href="#直角"><span class="toc-section-number">2.8</span> 直角</a>
+          <ul>
+          <li><a href="#注意-1"><span class="toc-section-number">2.8.1</span> 注意</a></li>
+          </ul></li>
+          <li><a href="#考场训练"><span class="toc-section-number">2.9</span> 考场训练</a>
+          <ul>
+          <li><a href="#考前"><span class="toc-section-number">2.9.1</span> 考前</a></li>
+          <li><a href="#倒库"><span class="toc-section-number">2.9.2</span> 倒库</a></li>
+          <li><a href="#定点停车和半坡起步"><span class="toc-section-number">2.9.3</span> 定点停车和半坡起步</a></li>
+          <li><a href="#侧方位和直角转弯"><span class="toc-section-number">2.9.4</span> 侧方位和直角转弯</a></li>
+          <li><a href="#直角-1"><span class="toc-section-number">2.9.5</span> 直角</a></li>
+          </ul></li>
+          <li><a href="#s形技巧"><span class="toc-section-number">2.10</span> S形技巧</a></li>
+          </ul></li>
+          <li><a href="#科目三"><span class="toc-section-number">3</span> 科目三</a>
+          <ul>
+          <li><a href="#上车准备"><span class="toc-section-number">3.1</span> 上车准备</a></li>
+          <li><a href="#夜间灯光模拟"><span class="toc-section-number">3.2</span> 夜间灯光模拟</a></li>
+          <li><a href="#起步-1"><span class="toc-section-number">3.3</span> 起步</a></li>
+          <li><a href="#通过人行横道"><span class="toc-section-number">3.4</span> 通过人行横道</a></li>
+          <li><a href="#通过公共汽车站"><span class="toc-section-number">3.5</span> 通过公共汽车站</a></li>
+          <li><a href="#通过学校"><span class="toc-section-number">3.6</span> 通过学校</a></li>
+          <li><a href="#直行通过路口"><span class="toc-section-number">3.7</span> 直行通过路口</a></li>
+          <li><a href="#超车"><span class="toc-section-number">3.8</span> 超车</a></li>
+          <li><a href="#会车"><span class="toc-section-number">3.9</span> 会车</a></li>
+          <li><a href="#掉头"><span class="toc-section-number">3.10</span> 掉头</a></li>
+          <li><a href="#变更车道"><span class="toc-section-number">3.11</span> 变更车道</a></li>
+          <li><a href="#直线行驶"><span class="toc-section-number">3.12</span> 直线行驶</a></li>
+          <li><a href="#加减档位操作"><span class="toc-section-number">3.13</span> 加减档位操作</a></li>
+          <li><a href="#路口左转弯"><span class="toc-section-number">3.14</span> 路口左转弯</a></li>
+          <li><a href="#靠边停车"><span class="toc-section-number">3.15</span> 靠边停车</a></li>
+          <li><a href="#路口右转弯"><span class="toc-section-number">3.16</span> 路口右转弯</a></li>
+          <li><a href="#注意事项"><span class="toc-section-number">3.17</span> 注意事项</a>
+          <ul>
+          <li><a href="#全程注意"><span class="toc-section-number">3.17.1</span> 全程注意</a></li>
+          </ul></li>
+          <li><a href="#可能考试路线"><span class="toc-section-number">3.18</span> 可能考试路线</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="科目一"><span class="header-section-number">1</span> 科目一</h1>
+<ul>
+<li>使用驾考宝典</li>
+</ul>
+<h1 data-number="2" id="科目二"><span class="header-section-number">2</span> 科目二</h1>
+<h2 data-number="2.1" id="部件"><span class="header-section-number">2.1</span> 部件</h2>
+<h3 data-number="2.1.1" id="方向盘"><span class="header-section-number">2.1.1</span> 方向盘</h3>
+<ul>
+<li>顺时针叫做推，逆时针叫作拉，6点/12点方向以左手处为准</li>
+<li>推拉最多都是一圈半，推拉时注意换手</li>
+<li>方向盘够用即可</li>
+<li>方向盘使用要果断、灵活，不可僵硬，用太极拳的话说“用意不用力”</li>
+</ul>
+<h3 data-number="2.1.2" id="离合和档位"><span class="header-section-number">2.1.2</span> 离合和档位</h3>
+<ul>
+<li>空档在3-4档间，向右上5档，左为1-2档，倒挡为按下左上。</li>
+<li>升档时，加油门提速，离合到底同时减油门，换挡，然后轻松离合至半联动状态（听声音），稳定后完全松开离合</li>
+<li>减档时，离合到底慢踩刹车，待车速慢下来后再减档，轻松离合至半联动状态（听声音），稳定后完全松开离合</li>
+<li>半离合前要快点(充分利用转速),半离合后慢点(减少顿挫感)</li>
+<li>科目二的关键在离合，压低车速（不要停车），根据阻力不断的调整离合</li>
+</ul>
+<h2 data-number="2.2" id="起步"><span class="header-section-number">2.2</span> 起步</h2>
+<ul>
+<li>系好安全带</li>
+<li>检查座椅位置（抬下方按钮，以离合到底腿微曲为宜）</li>
+<li>检查靠背（抬左方按钮，以靠座椅后手腕搭上方向盘上端为宜）</li>
+<li>检查空挡和手刹</li>
+<li>离合和刹车到底，然后启动汽车</li>
+<li>挂挡，松离合至半联动状态，松刹车（平地时可提前松刹车）</li>
+</ul>
+<h2 data-number="2.3" id="停车"><span class="header-section-number">2.3</span> 停车</h2>
+<ul>
+<li>离合到底，轻踩刹车</li>
+<li>挂空挡，拉手刹，松离合、松刹车</li>
+</ul>
+<h2 data-number="2.4" id="倒库全程注意压低车速"><span class="header-section-number">2.4</span> 倒库（全程注意压低车速）</h2>
+<h3 data-number="2.4.1" id="正库"><span class="header-section-number">2.4.1</span> 正库</h3>
+<ul>
+<li>座位在右侧黄线上停车，离合为主，刹车为辅</li>
+<li>开始倒车，当倒视镜刚盖住黄线时，方向盘推一圈半打死，观察右倒视镜，先过左库角，直到轮眉距右库角30cm左右方向盘回半圈，继续后退至后轮眉据右边界线15cm作用方向盘回一圈，观察左侧倒视镜车线是否与左边界线平行，宽拉窄推，使车身与左边界线平行，观察倒视镜遮盖前边界线一半，踩离合、踩刹车。</li>
+<li>挂一档前行，至车盖前刚与黄线重合，方向盘推一圈半打死，前行至左犄角与黄线角重合回半圈，行至车身与边界平行回一圈，注意压低车速，至黄线在座椅下踩离合、踩刹车。</li>
+</ul>
+<h3 data-number="2.4.2" id="反库"><span class="header-section-number">2.4.2</span> 反库</h3>
+<ul>
+<li>在库内挂一档前行，至车盖前刚与黄线重合，方向盘拉一圈半打死，前行至车前盖一半与黄线角重合回半圈，行至车身与边界平行回一圈，注意压低车速，至黄线在座椅下踩离合、踩刹车。</li>
+<li>开始倒车，当倒视镜刚盖住黄线一半时，方向盘拉一圈半打死，观察左倒视镜，先过右库角，直到轮眉距左库角30cm左右方向盘回半圈，继续后退至后轮眉据右边界线15cm作用方向盘回一圈，观察左侧倒视镜车线是否与左边界线平行，宽拉窄推，使车身与左边界线平行，观察倒视镜遮盖前边界线一半，踩离合、踩刹车。</li>
+</ul>
+<h3 data-number="2.4.3" id="调整"><span class="header-section-number">2.4.3</span> 调整</h3>
+<ul>
+<li>教练说的位置需根据个人情况调整，如正库时倒视镜要完全覆盖黄线以后才可推方向盘，反库时后视镜刚与黄线相交时就要拉方向盘。</li>
+<li>万一轮眉到库口时位置不对，找轮眉尾与边界线30cm。</li>
+</ul>
+<h2 data-number="2.5" id="侧方位"><span class="header-section-number">2.5</span> 侧方位</h2>
+<h3 data-number="2.5.1" id="侧方位进"><span class="header-section-number">2.5.1</span> 侧方位进</h3>
+<ul>
+<li>倒车，观察右倒视镜，观察停车边界线左犄角从出现到消失，消失时推方向盘一圈半打死</li>
+<li>低头观察左倒视镜，观察停车边界线右后角出现时回方向盘一圈半</li>
+<li>身子贴左车窗观察做后视镜内，当后车轮与边界左线相交时，拉方向盘一圈半打死</li>
+<li>观察车头左角与左边界线内侧重合时，停车。</li>
+</ul>
+<h3 data-number="2.5.2" id="侧方位出"><span class="header-section-number">2.5.2</span> 侧方位出</h3>
+<ul>
+<li>双脚踩紧离合刹车，挂1档，手放回，打开左转向灯，松刹车离合</li>
+<li>前进至左车头刚过路心黄线，回一圈半，行至车盖一半完全过黄线，推方向盘一圈。</li>
+</ul>
+<h2 data-number="2.6" id="半坡起步"><span class="header-section-number">2.6</span> 半坡起步</h2>
+<ul>
+<li>进入车道，坐直身体，观察前面号牌右侧与黄线紧贴（可略留空隙），保持距离，方向盘摆正，观察倒视镜底与定点实黄线相交，双脚踩死。</li>
+<li>打左转向灯，拉手刹，放手刹，松离合观察转速表由10稳定降至6，缓松刹车开出上坡车道。</li>
+</ul>
+<h2 data-number="2.7" id="注意"><span class="header-section-number">2.7</span> 注意</h2>
+<ol type="1">
+<li>车与右边界线&lt;30cm</li>
+<li>车头停在定点实黄线以内</li>
+</ol>
+<h2 data-number="2.8" id="直角"><span class="header-section-number">2.8</span> 直角</h2>
+<ul>
+<li>进入车道，前盖刚与黄线相交，拉方向盘一圈半打死，前盖中过黄线拉回半圈，到左犄角与左边界线重合拉回一圈，保持左犄角与左边界线重合前进</li>
+<li>稳定后，右手掌方向盘，左手按住右转向灯，至盖刚与黄线相交，双手放回方向盘，推一圈半打死，至左犄角与黄线重合，拉回一圈半，保持左犄角与左边界线重合前进</li>
+</ul>
+<h3 data-number="2.8.1" id="注意-1"><span class="header-section-number">2.8.1</span> 注意</h3>
+<ul>
+<li>只考察两个右转直角</li>
+</ul>
+<h2 data-number="2.9" id="考场训练"><span class="header-section-number">2.9</span> 考场训练</h2>
+<h3 data-number="2.9.1" id="考前"><span class="header-section-number">2.9.1</span> 考前</h3>
+<ul>
+<li>红房子候车考试，等待叫号</li>
+<li>叫号以后，上车后做车前准备</li>
+</ul>
+<h4 data-number="2.9.1.1" id="准备事项"><span class="header-section-number">2.9.1.1</span> 准备事项</h4>
+<ul>
+<li>系好安全带</li>
+<li>检查座椅位置（抬下方按钮，以离合到底腿微曲为宜）</li>
+<li>检查靠背（抬左方按钮，以靠座椅后手腕搭上方向盘上端为宜）</li>
+<li>检查空挡和手刹</li>
+<li>刷身份证</li>
+</ul>
+<h4 data-number="2.9.1.2" id="开始启动"><span class="header-section-number">2.9.1.2</span> 开始启动</h4>
+<ul>
+<li>离合和刹车到底，然后启动汽车</li>
+<li>挂挡，松离合至半联动状态，松刹车（平地时可提前松刹车）</li>
+</ul>
+<h3 data-number="2.9.2" id="倒库"><span class="header-section-number">2.9.2</span> 倒库</h3>
+<ul>
+<li>开至倒库前等待，5号从西面进入（注意5号可能还有8号车），方向盘对着第三虚线和第四虚线之间进入反库倒车位置。6号7号从南面进入，当车头与前面黄线相贴的时候打右方向盘，也是方向盘对着第三虚线和第四虚线之间进入反库倒车位置。</li>
+<li>先反库后正库倒车。</li>
+<li>正库结束后挂1档前进，车头未到黄线时拉一圈半，离开倒库考点。</li>
+<li>注意事项</li>
+</ul>
+<ol type="1">
+<li>注意不要压线</li>
+<li>停车时车身与边界平行。</li>
+<li>5号库进入时，水泥线相交时右拐，其它库进入时可以让车适当横一点。</li>
+<li>如何看见车轮要压角了，可方向盘可提前回半圈到一圈，回完后马上让方向盘回来找15cm。太远的直接找30cm回半圈，再回一圈。</li>
+<li>注意倒库停车位置，身体坐直，倒视镜与黄线相交刚消失。</li>
+<li>倒库最后时，注意宽拉窄推，后面略窄。</li>
+</ol>
+<h3 data-number="2.9.3" id="定点停车和半坡起步"><span class="header-section-number">2.9.3</span> 定点停车和半坡起步</h3>
+<ul>
+<li>进入此考区，如果前面有车考区外等待。</li>
+<li>具体细节见前面</li>
+<li>注意：</li>
+</ul>
+<ol type="1">
+<li>身体坐直，号牌右侧与边界线基本相切（略有距离）</li>
+<li>进入定点停车区前要使车身已经与有边界平行，方向盘调整一点，马上回来，让车头始终与黄线交于相同的位置。</li>
+<li>注意停车位置</li>
+<li>注意左转向灯和手刹</li>
+<li>注意离合控制</li>
+</ol>
+<h3 data-number="2.9.4" id="侧方位和直角转弯"><span class="header-section-number">2.9.4</span> 侧方位和直角转弯</h3>
+<ul>
+<li>左转进入旧捷达侧方位区，调整车身与又边界线距离（技巧与定点停车类似），至倒视镜到第二棵树位置停车。</li>
+<li>侧方位技巧见前部分。</li>
+<li>侧方位出来进入直角转弯区，直角转弯技巧见前，左鼓包左侧车头与黄线相交时推一圈半打死，注意松一点离合。</li>
+<li>注意：</li>
+</ul>
+<ol type="1">
+<li>出侧方位的左转向灯</li>
+<li>进入直角转弯前左手按住右转向灯</li>
+</ol>
+<h3 data-number="2.9.5" id="直角-1"><span class="header-section-number">2.9.5</span> 直角</h3>
+<h2 data-number="2.10" id="s形技巧"><span class="header-section-number">2.10</span> S形技巧</h2>
+<ul>
+<li>. 注意车速要慢,进入前左鼓包对住水泥线</li>
+<li>前行至车盖中与黄线刚相交，推方向盘一圈，至左S边界线与右犄角略有空隙，推12点，行进中保持车盖与左边界交点不变</li>
+<li>前进至天线快到黄线，方向盘完全回正，前进至车盖左隆起与右边界线相交，拉方向盘1圈，至左犄角与黄线相交，拉6点，恰当时候回方向盘出考区</li>
+</ul>
+<h1 data-number="3" id="科目三"><span class="header-section-number">3</span> 科目三</h1>
+<h2 data-number="3.1" id="上车准备"><span class="header-section-number">3.1</span> 上车准备</h2>
+<p>考前考生验证，在副驾驶门口等待，语音提示上车准备，或观察安全员手势， 1. 上车后调整座位、头枕 2. 检查灯光是否处于近光状态 3. 调整后视镜（后视镜基本不用动），报告考官已准备好，语音提示上车准备，考生开关车门，语音提示项目结束。 4. 检查空挡、手刹 5. 观察车是否在启动状态，看左侧转速表（转速表指针在零处说明处于熄火状态），打火。 6. 等待观察员确认可以，下车检查一周，从车后到车前，车右后角拍4-5下，左前角拍4-5下，结束上车。 7. 系安全带，上车准备结束。</p>
+<h2 data-number="3.2" id="夜间灯光模拟"><span class="header-section-number">3.2</span> 夜间灯光模拟</h2>
+<p>语音提示下面将进行模拟夜间行驶场景灯光使用的考试，请按我的指令在5秒内作出相应的灯光操作，按顺序考。</p>
+<ol type="1">
+<li>夜间在没有路灯，照明不良条件下行驶：开启近光灯</li>
+<li>请将前照灯变换为远光灯：应开启远光灯，在刚才同样条件下紧跟前车行驶，应将远光灯变为近光灯</li>
+<li>请将前照灯变换为远光灯：应将近光灯变换为远光灯，与对方会车，距对方来车将近150米，应将远光灯变换为近光灯</li>
+<li>夜间通过急弯、坡路、拱桥、人行横道或没有交通信号灯控制的路口，应远近交替灯光三组</li>
+<li>夜间在道路上发生故障或交通事故，妨碍交通又难以移动，应开启危险报警闪光灯（双闪），语音提示项目结束，请进入下一考试项目</li>
+<li>将双闪和近光灯复位。</li>
+</ol>
+<h2 data-number="3.3" id="起步-1"><span class="header-section-number">3.3</span> 起步</h2>
+<p>叮声后语音提示开始起步：</p>
+<ol type="1">
+<li>打左转向灯，转向灯必须工作3秒以上</li>
+<li>踩离合器、刹车，挂一档</li>
+<li>放手刹，手刹一定要放到底</li>
+<li>记检查仪表盘(手刹，车门，安全带的指示灯)</li>
+<li>缓抬离合器至半联动，松开刹车，平稳起步几米后完全松开离合。</li>
+<li>变二车道，或三道直行起步，语音提示项目结束，请进入下一考试项目 注意：转向灯工作不够3秒扣10分，起步项目结束保<strong>证转向灯复位</strong>。</li>
+</ol>
+<h2 data-number="3.4" id="通过人行横道"><span class="header-section-number">3.4</span> 通过人行横道</h2>
+<p><strong>无语音、叮声提示开始，有语音提示结束，在上一项目结束，不提示下一项目</strong>。开始通过人行横道，从车头与标志牌对齐开始轻点刹车，直至项目结束。语音提示前方有行人通过，须在停止线十米以内将车停下，二秒后，语音提示行人以通过，必须在十秒内平稳起步，如果没有语音提示前方行人通过，则不需要停车(注<strong>车速不能超过二十迈</strong>)</p>
+<h2 data-number="3.5" id="通过公共汽车站"><span class="header-section-number">3.5</span> 通过公共汽车站</h2>
+<p><strong>无语音、叮声提示开始，有语音提示结束，在上一项目结束，不提示下一项目</strong>。车速保持在20迈以下，从车头与标志牌对齐开始轻点刹车，直至项目结束。此项不存在路口行人通过，无需停车，语音提示项目结束，下一考试项目，XXXX，听到叮声后考试开始</p>
+<h2 data-number="3.6" id="通过学校"><span class="header-section-number">3.6</span> 通过学校</h2>
+<p><strong>无语音、叮声提示开始，有语音提示结束，在上一项目结束，不提示下一项目</strong>，车速20迈以下，从车头与标志牌对齐开始轻点刹车，直至项目结束。语音提示，前方有行人通过，需在停止线十米以内，将车停下，二秒后语音提示，行人己通过，在十秒内平稳起步，语音提示，项目结束，下一项目XXXX。</p>
+<h2 data-number="3.7" id="直行通过路口"><span class="header-section-number">3.7</span> 直行通过路口</h2>
+<ul>
+<li>叮声后语音提示前方路口请直行，车速保持在20迈以下，此项不存在路口行人通过，无需停车</li>
+<li>注意：此项目需通过交通信号灯，注意红绿灯，过了路口，语音提示项目结束，下一考试项目超车，叮声后考试开始</li>
+</ul>
+<h2 data-number="3.8" id="超车"><span class="header-section-number">3.8</span> 超车</h2>
+<ul>
+<li>叮声后语音提示请根据实际道路交通情况选择合适时机超车，打左转向灯，转向灯工作3秒，看左后视镜，确认一道安全后将车变入一道，平稳行驶后，打右转向灯8秒（闪8下），看右后视镜，确认安全后驶回原车道二道，语音提示项目结束，下一项目会车，叮声后考试开始</li>
+<li>注意：结束后注意保证转向灯复位。保证超车开始时不是最左车道。</li>
+</ul>
+<h2 data-number="3.9" id="会车"><span class="header-section-number">3.9</span> 会车</h2>
+<ul>
+<li>提示会车叮声之前就开始对点(中间行驶、推10点拉8点，对雨刷靠右侧行驶)）叮声后语音提示会车开始，车速小于20迈，保持右侧行驶状态，直至语音提示会车结束为止，项目结束，下一项目掉头听到叮的一声后考试开始。</li>
+<li>注意：会车结束车拉回车道中间。</li>
+</ul>
+<h2 data-number="3.10" id="掉头"><span class="header-section-number">3.10</span> 掉头</h2>
+<ul>
+<li>语音提示掉头叮声之前，如果车不在最左车道，打转向向左变道，一次一道。</li>
+<li>叮声后语音提示前方路口请掉头，打左转向，转向灯工作3秒，看左后视镜，确认安全，换一档，<strong>必须过了停止线掉头</strong>，进入对面车道二道</li>
+<li>语音提示项目结束。下一项目变更车道，听到叮的一声后考试开始。 注意：掉头不打转向灯扣100分，结束后注意保证转向灯复位。。</li>
+</ul>
+<h2 data-number="3.11" id="变更车道"><span class="header-section-number">3.11</span> 变更车道</h2>
+<p>叮声后语音提示请根据道路交通情况选择合适时机变更车道（根据路况可向左和向右变更车道），打左转向灯，转向灯工作3秒，看左后视镜，确认一道安全后将车变入一道，语音提示项目结束，此科目无速度要求。语音提示下一考试项目直线行驶，听到叮声后考试开始</p>
+<h2 data-number="3.12" id="直线行驶"><span class="header-section-number">3.12</span> 直线行驶</h2>
+<ul>
+<li>语音提示直线行驶，叮声前将车身调正，将车保持直线行驶状态，叮声后语音提示请保持直线行驶，大约6秒语音提示项目结束</li>
+<li>注意：此项一定要提前抢口令，发动机转速不得超过3000转，<strong>车速不能超过30迈</strong>。语音提示，下一考试项目XXX。</li>
+</ul>
+<h2 data-number="3.13" id="加减档位操作"><span class="header-section-number">3.13</span> 加减档位操作</h2>
+<ul>
+<li>语音提示加减档位操作叮声前换二档，</li>
+<li>将车速提到25迈以上至30之间并稳定住，叮声后快速放油门脚拿开，狠踩离合，手从方向盘到变速杆换3档，松离合分3步，快速到半联动，略慢离合完全放完，然后脚拿开。</li>
+<li>踩油门狠踩到底，将车速提到35迈-40迈，快速放油门脚拿开，狠踩离合，手从方向盘到变速杆换4档，松离合分3步，快速到半联动，略慢离合完全放完，然后脚拿开。</li>
+<li>轻踩刹车速低于30迈接近25迈，迅速放开刹车脚拿开，狠踩离合，手从方向盘到变速杆换3档，松离合分3步，快速到半联动，略慢离合完全放完，然后脚拿开。</li>
+<li>轻踩刹车低于20迈接近15迈，迅速放开刹车脚拿开，狠踩离合，手从方向盘到变速杆换3档，松离合分3步，快速到半联动，略慢离合完全放完，然后脚拿开。项目结束。下一项目xxxx，听倒叮的一声后，考试开始。</li>
+</ul>
+<h2 data-number="3.14" id="路口左转弯"><span class="header-section-number">3.14</span> 路口左转弯</h2>
+<ul>
+<li>语音提示后叮声前，将车变道至最左车道，叮声后打左转向灯，不可压实线，转向灯必须工作够三秒，语音提示项目结束，下一项目靠边停车，听到叮声后考试开始。</li>
+<li>注意：结束后注意保证转向灯复位。</li>
+</ul>
+<h2 data-number="3.15" id="靠边停车"><span class="header-section-number">3.15</span> 靠边停车</h2>
+<ul>
+<li>语音提示后叮声前， 将挡位换为1档，车身摆正。</li>
+<li>叮声后，打右转向灯，推10点拉8点，后视镜1指，转向灯在工作状态</li>
+<li>关转向，摘空档，拉手刹，熄火，放左右脚等三秒开关车门(右手拉开关，左手推扶手)。语音提示，项目结束。</li>
+<li>再次起步打转向，踩离合刹车挂挡放手刹，先往左拉半圈避免起步压线，离合半联动松刹车，几米后完全放开离合。</li>
+<li>注意：靠边停车，不能压线，停的小于30公分以内。保证停车前转向灯工作状态，停车后转向等复位。</li>
+</ul>
+<h2 data-number="3.16" id="路口右转弯"><span class="header-section-number">3.16</span> 路口右转弯</h2>
+<p>叮声后打在转向灯，不可压实线，转向灯必须工作够三秒，开始轻点刹车，语音提示项目结束。电脑语音播报及格。考试完毕。</p>
+<h2 data-number="3.17" id="注意事项"><span class="header-section-number">3.17</span> 注意事项</h2>
+<h3 data-number="3.17.1" id="全程注意"><span class="header-section-number">3.17.1</span> 全程注意</h3>
+<ul>
+<li>全程发动机转速不得超过3000转，车速不得超过50迈，每次使用转向灯必须工作3秒以上。</li>
+<li>保证转向前在最边车道，打转向灯并保持3秒，转向结束后转向要将灯复位。</li>
+<li>踩离合要狠，松离合先快后慢再拿开，踩刹车要轻，松刹车要快，然后拿开。</li>
+<li>变道时左转方向盘不过8点，右转时不过4点，灯一般不会掉，如掉了迅速补上。</li>
+<li>人行横道、学校和公交站前无语音提示有标志牌，如果前一项目结束，未提示下一项目，可能就有类似项目。</li>
+</ul>
+<h2 data-number="3.18" id="可能考试路线"><span class="header-section-number">3.18</span> 可能考试路线</h2>
+<p><img src="../img/Driver3_map1.jpg" title="Driver3_map1" style="width:100.0%" alt="Fig. 1: Map 1" /> <img src="../img/Driver3_map1_2.jpg" title="Driver3_map1_2" style="width:100.0%" alt="Fig. 2: Map 1" /></p>
+<p><img src="../img/Driver3_map2.jpg" title="Driver3_map2" style="width:100.0%" alt="Fig. 3: Map 2" /> <img src="../img/Driver3_map2_2.jpg" title="Driver3_map2_2" style="width:100.0%" alt="Fig. 4: Map 2" /></p>
+<figure>
+<img src="../img/Driver3_map3.jpg" title="Driver3_map2" style="width:100.0%" alt="Fig. 5: Map 3" /><figcaption aria-hidden="true">Fig. 5: Map 3</figcaption>
+</figure>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

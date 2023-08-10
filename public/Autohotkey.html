@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>AutoHotkey</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="AutoHotkey"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 main">
+        
+<ol type="1">
+<li><p>MsgBox命令有几种格式？<br />
+MsgBox, 文本 或 MsgBox [, 类型,标题, 文本, 显示时间 ]</p></li>
+<li><p>MsgBox命令按钮有几种类型？<br />
+OK—0<br />
+OK/Cancel—1<br />
+Abort/Retry/Ignore—2<br />
+Yes/No/Cancel—3<br />
+Yes/No—4<br />
+Retry/Cancel—5<br />
+Icon Hand (stop/error)—16<br />
+Icon Question—32<br />
+Icon Exclamation—48<br />
+Icon Asterisk (info)—64<br />
+Make 2nd button the default—256<br />
+Make 3rd button the default—512<br />
+System Modal (always on top) —4096<br />
+Task Modal—8192 这些参数允许相加而得到复合效果。</p></li>
+<li><p>显示含有yes/no按钮并总在顶端的对话框？<br />
+msgbox,4100,标题,内容</p></li>
+<li><p>MsgBox如何换行？<br />
+MsgBox,你好，欢迎关注静海安澜阁 `n 请继续关注</p></li>
+<li><p>如何对MsgBox命令的选择结果进行处理？<br />
+IfMsgBox, ButtonName<br />
+ButtonName可选项: Yes No OK Cancel Abort Ignore Retry Timeout</p></li>
+<li><p>对话框显示时间，并以秒为单位？<br />
+msgbox , , 标题 , 内容 , 5</p></li>
+<li><p>运行外部可执行程序或者直接打开文件？<br />
+Run, 目标文件[ , 工作目录 , Max|Min|Hide|UseErrorLevel , 输出PID 变量]</p></li>
+<li><p>如何运行记事本并以最大化状态显示？<br />
+Run, Notepad.exe , , Max</p></li>
+<li><p>如何直接打开文件？<br />
+Run, MyFile.txt</p></li>
+<li><p>命令行解释器cmd.exe 用那个宏来表示？<br />
+%ComSpec% /k在执行完命令后保留命令提示窗口，而/c则在执行完命令之后关闭提示窗口</p></li>
+<li><p>命令“dir c:”如何实现？<br />
+Run, %ComSpec% /k dir c:</p></li>
+<li><p>如何打开网页？<br />
+Run, http://hi.baidu.com/xuejinglan</p></li>
+<li><p>如何打开系统属性窗口？<br />
+Run control sysdm.cpl 需要的话可以搜索所有的*.cpl文件</p></li>
+<li><p>打开控制面板？<br />
+run,control</p></li>
+<li><p>如何打开搜索窗口且指定搜索位置？<br />
+Run, find C:<br />
+</p></li>
+<li><p>如何显示指定文件的属性窗口？<br />
+Run, properties MyFile.txt 注意：AHK 在退出前将自动关闭打开的属性窗口！</p></li>
+<li><p>如何打印指定文件？<br />
+Run, print MyFile.txt</p></li>
+<li><p>等待窗口出现、被激活、被关闭用那些命令？<br />
+WinWait/WinWaitActive/WinWaitClose</p></li>
+<li><p>如何使目标窗口出现之前不执行后面语句？<br />
+WinWait [, 窗口标题, 窗口文本, 超时时间, 排除标题, 排除文本]</p></li>
+<li><p>如何使目标窗口成为活动窗口？<br />
+WinActivate [,窗口标题, 窗口文本, 排除标题, 排除文本]</p></li>
+<li><p>关闭窗口有几种方式？<br />
+正常关闭窗口（WinClose ），强行关闭窗口（WinKill）：<br />
+WinClose/WinKill [ , 窗口标题, 窗口文本, 超时时间, 排除标题, 排除文本]</p></li>
+<li><p>同名窗口使我们无法用窗口标题准确标识窗口，如何使用窗口ID来准确定位窗口？<br />
+使用获得窗口句柄的命令WinGet<br />
+WinGet[, 输出变量, CMD, 窗口标题, 窗口文本, 排除标题, 排除文本]</p></li>
+<li><p>如何用窗口ID来替代窗口标题？<br />
+ahk_pid %ThisPID%</p></li>
+<li><p>那个命令把鼠标点击事件发送到目标窗口的目标控件上？<br />
+ControlClick [, 目标控件或坐标位置, 窗口标题, 窗口文本, 鼠标按钮, 点击次数, 选项, 排除标题,排除文本]</p></li>
+<li><p>ControlClick命令中，目标控件参数主要是什么？<br />
+目标控件参数是指要点击的控件的类别名（ClassNN）或控件文本，还可以使用控件句柄（若用的是控件句柄则第一个参数需留空，并在第二个参数中使用ahk_id %控件句柄%）。</p></li>
+<li><p>如何获得目标控件信息？<br />
+先打开你要进行操作的目标窗口，然后运行AutoIt3 Window Spy，把鼠标移到目标控件上</p></li>
+<li><p>鼠标单击系统属性确定按钮代码是？<br />
+ControlClick, 确定, 系统属性<br />
+ControlClick, Button2, 系统属性</p></li>
+<li><p>目标窗口或控件是隐藏状态，ControlClick还可以点击目标控件吗? 可以点击目标控件，但不能保证成功率。</p></li>
+<li><p>如何设置控件文本？<br />
+ControlSetText [, 目标控件, 新文本, 窗口标题, 窗口文本, 排除标题, 排除文本]<br />
+例如：ControlSetText, Edit1, D:, Setup foobar</p></li>
+<li><p>如何选中和取消单选框和复选框项目中的选择项目？<br />
+Control [, 命令, 值, 目标控件, 窗口标题, 窗口文本, 排除标题, 排除文本]<br />
+其中，“命令”就是让我们指定要进行何种设置的参数。对这些单选框/复选框按钮来说，适用的命令是“Check”和“UnCheck”。 例如：Control, Check, , Button5, foobar<br />
+Control, UnCheck, , Button7, foobar</p></li>
+<li><p>如何选择下拉列表的项目？<br />
+仍是使用Control命令，适用的命令是“Choose, N”和“ChooseString, String”，分别表示选中第N个项目和选中与字符串String</p></li>
+</ol>
+<p>匹配的项目；例如：<br />
+Control, Choose, 5, ComboBox1, Installer<br />
+Control, ChooseString, 简体中文, ComboBox1, Installer</p>
+<ol start="32" type="1">
+<li><p>键盘如何重定义？<br />
+a::b</p></li>
+<li><p>字符串如何进行自动替换？<br />
+::is::island of resistance或者<br />
+::china::<br />
+Clipboard=中华人民共和国 send,^V<br />
+Return</p></li>
+<li><p>屏蔽或开启键盘、鼠标？ BlockInput 命令后，紧跟on，则屏蔽键盘鼠标操作，紧跟off，则重新启用用户输入。<br />
+如何仅仅屏蔽鼠标？如何恢复？ BlockInput,MouseMove 恢复为：BlockInput, MouseMoveOff</p></li>
+<li><p>如何建立一个弹出式窗口例示文本？如何关闭？ SplashTextOn [, 宽度, 高度, 标题, 文本] `n 可以在MsgBox和SplashTextOn等命令中对显示的文本进行换行。 SplashTextOff 为关闭SplashTextOn命令建立的弹出式窗口。</p></li>
+<li><p>如何将一系列指令重复执行指定次数？<br />
+Loop [, Count]<br />
+{<br />
+循环体……<br />
+}</p></li>
+<li><p>Loop中的count允许是表达式或者变量吗？<br />
+Count不允许是表达式，但允许是一个变量。<br />
+如何知道loop现在循环到第几次？ loop 指令隐含有一个变量 A_Index ，用来记录当前状态是第几次循环</p></li>
+<li><p>如何中断循环？<br />
+if a_index &gt; 25<br />
+break ; 中断循环</p></li>
+<li><p>如何跳过本次循环？<br />
+if a_index &lt; 20<br />
+continue ; 跳过本次循环，开始一次新的循环</p></li>
+<li><p>如何使使脚本等待指定时间？<br />
+Sleep,时间 单位为毫秒</p></li>
+<li><p>如进行数学运算，使用什么符来把表达式运算的结果赋予某变量？<br />
+使用冒号等号符。如：NetPrice := Price * (1 - Discount/100)</p></li>
+<li><p>i := i+1 的简化写法是什么？<br />
+i + =1</p></li>
+<li><p>如何获取指定区间的随机数？<br />
+Random, 输出变量 [, 最小值, 最大值]</p></li>
+<li><p>如何从指定文本中读取指定行？<br />
+FileReadLine, 输出变量, 文件名, 行数</p></li>
+<li><p>如何判断文本超出边界？<br />
+ErrorLevel 是命令内置的一个变量，当读取文件超出边界时将被赋值为1.</p></li>
+<li><p>ErrorLevel 为0和1时一般代表什么？<br />
+一般情况下，为0代表操作成功，为1，代表操作失败。</p></li>
+<li><p>一般情况下，编写弹出式菜单代码的顺序是什么？<br />
+1、 先定义子菜单项；2、编写菜单项；3、编写令菜单显示的代码；4、编写删除代码；5、编写响应代码。</p></li>
+<li><p>如何添加子菜单？<br />
+Menu,add,子菜单项,:子菜单变量如：menu,mymenu,add,常用程序,:amenu</p></li>
+<li><p>用来在弹出式菜单中显示一条分割线的代码是？<br />
+Menu, MenuName, add</p></li>
+<li><p>正常菜单项的代码是？<br />
+Menu, MenuName, add,菜单项,响应标志</p></li>
+<li><p>响应代码的格式是？<br />
+响应标志：<br />
+响应代码……<br />
+return</p></li>
+<li><p>形如：Menu,amenu,add,txt 的代码是什么意思？<br />
+它其实是Menu,amenu,add,txt,txt 的一种简写，代表菜单项和响应标志</p></li>
+<li><p>在指定坐标处显示菜单项的代码是？<br />
+Menu,MenuName,show,X坐标,Y坐标 如省略坐标，则在鼠标当前位置显示菜单项。</p></li>
+<li><p>如何指定显示菜单的背景色？<br />
+Menu,MenuName,color,颜色代码</p></li>
+<li><p>删除所有菜单的代码是什么？有什么作用？<br />
+Menu,mymenu,deleteall<br />
+如果没有这句代码，代码中分割线会在菜单重显时翻倍。如无分割线，可免</p></li>
+<li><p>重启、关闭、注销系统的指令是什么？ Shutdown 后跟0为注销1为关机，2为重启，4为强制关闭 8为关闭关闭电源</p></li>
+<li><p>隐藏脚本图标有几种方法？<br />
+Menu , tray , noicon 或者#NoTrayIcon</p></li>
+<li><p>显示脚本图标的代码？<br />
+Menu , tray , icon</p></li>
+<li><p>脚本图标的气泡提示如何显示？<br />
+Menu , tray , tip , 我自己的脚本</p></li>
+<li><p>如何设置脚本的图标？<br />
+Menu , tray , icon , %systemroot%32.dll ,22或者Menu , tray , icon , e:\1.ico</p></li>
+<li><p>如何利用快捷键退出脚本？<br />
+#x::ExitApp</p></li>
+<li><p>如何移除托盘图标的所有标准菜单项？<br />
+Menu , tray , NoStandard</p></li>
+<li><p>如何插入托盘图标菜单？<br />
+Menu , tray , add , myitem</p></li>
+<li><p>如何显示托盘图标的标准菜单项？<br />
+Menu , tray , standard</p></li>
+<li><p>在托盘图标显示一个二级菜单代码如何表示？<br />
+menu,mymenu,add,boke<br />
+menu,mymenu,add,luntan<br />
+menu,tray,add,相关网站,:mymenu<br />
+Return 注意：响应标志后是 ：不是：：</p></li>
+<li><p>如何使非热键类的脚本持久运行？<br />
+#Persistent</p></li>
+<li><p>显示一个标准的文件选择对话框的代码为？<br />
+FileSelectFile, OutputVar [, Options, RootDir, Prompt, Filter] Option 参数如被省略，则为单选。M 多选，M后允许随意跟随一个数字。S: 显示保存对话框。数字为一般为3，即文件及路径必须存在。Filter 参数格式如：Example: Audio (<em>.wav; </em>.mp2; *.mp3)</p></li>
+<li><p>FileSelectFile命令如用户选择了多个文件，输出变量如何分割？<br />
+输出变量用(`n)字符分割。第一个参数为路径，随后紧跟选定的各个文件名。<br />
+if files =<br />
+{<br />
+MsgBox, 用户放弃选择。<br />
+}<br />
+Loop, parse, files, `n<br />
+{<br />
+if a_index = 1<br />
+mypath = %A_LoopField%<br />
+else<br />
+{<br />
+runwait, %mypath%%A_LoopField%<br />
+}<br />
+}<br />
+return</p></li>
+<li><p>运行并等待程序完成的指令是？<br />
+runwait</p></li>
+<li><p>从某字符串中逐次分解出一个个的子串。<br />
+Loop, Parse , 某字符串 , 用于分割的特征变量</p></li>
+<li><p>用对话框显示音量递增10%？<br />
+MsgBox, 音量递增10`%</p></li>
+<li><p>使静音或者取消静音状态？<br />
+SoundSet, +1, , mute 或者Send,{Volume_Mute}</p></li>
+<li><p>使主音量提升（降低）10%？<br />
+SoundSet ,+（-）10, MASTER</p></li>
+<li><p>使音量中波形音量提升（降低）10%？<br />
+SoundSet , +（-）10, WAVE</p></li>
+<li><p>#NoEnv 作用是什么？<br />
+主要是为了与以后兼容，也可以改善性能</p></li>
+<li><p>如何对某些多媒体功能键重定义？<br />
+建个脚本内容为#InstallKeybdHook并执行，双击图标，窗口中选择菜单 view 第四项 key 开头的然后按多媒体键,f5刷新,看第二列内容比如a,显示的值是01e 。使用时就是sc01e::msgbox</p></li>
+<li><p>显示器的宽度和高度用那两个常数表示？<br />
+A_ScreenWidth 和 A_ScreenHeight</p></li>
+<li><p>如何移动鼠标光标？<br />
+MouseMove, X, Y [, Speed, R] Speed 参数的范围在 0 (最快) to 100 (最慢)之间取值.<br />
+R 参数 如果有此参数，则鼠标移动将以当前位置为基准，进行 x 和 y 像素的位移.</p></li>
+<li><p>如何获取当前鼠标坐标？<br />
+MouseGetPos, X, Y</p></li>
+<li><p>MouseGetPos还有什么作用？<br />
+MouseGetPos指令用来返回鼠标的当前位置，以及鼠标当前悬停的窗口和控件。格式为：<br />
+MouseGetPos, [OutputVarX, OutputVarY, OutputVarWin, OutputVarControl<br />
+OutputVarWin 这个变量存储了当前鼠标悬停的窗口的ID ，即使窗口未处于激活状态。OutputVarControl 这个变量存储了当前鼠标悬停的控件的名称（ClassNN）。</p></li>
+<li><p>MouseGetPos 命令在最后有1、2、3参数是什么意思？<br />
+1：在多文档界面程序（例如 SysEdit 或 TextPadThis ）中可以准确的获取激活或置顶的子窗口信息。对其它情况就不那么准确了。2 ：在 OutputVarControl 中存储 control’s HWND/窗口句柄。3 ：同时包含 1 和 2 的功能。</p></li>
+<li><p>如何在屏幕上建立一个紧随鼠标的弹出式窗口？<br />
+ToolTip [, Text, X, Y]</p></li>
+<li><p>如何获得当前位置像素的颜色RGB的值？<br />
+PixelGetColor, OutputVar, X, Y [, RGB]</p></li>
+<li><p>如何在系统托盘建立一个弹出式窗口？<br />
+TrayTip [, Title, Text, Seconds, Options] 注意senconds的取值一般在10到30之间</p></li>
+<li><p>如何用指定时间间隔自动或重复激发某子程序？<br />
+SetTimer , Label , 时间间隔</p></li>
+<li><p>关闭某进程的代码是？<br />
+Process,close,autohotkey.exe</p></li>
+<li><p>如何检索鼠标所在位置的信息？<br />
+MouseGetPos , , , id , control ; 得到鼠标所在位置窗口的id及控件名称 WinGetTitle, title, ahk_id %id% ；检索到相应id对应窗口的标题<br />
+WinGetClass, class, ahk_id %id% ；检索到相应id对应窗口的类名</p></li>
+<li><p>如何得到当天的日期？<br />
+dd = %A_YYYY%年%A_MM%月%A_DD%日</p></li>
+<li><p>如何给剪贴板赋值？<br />
+clipboard = %var%</p></li>
+<li><p>当前桌面那个常数表示?<br />
+%A_Desktop%</p></li>
+<li><p>如何设置鼠标速度？<br />
+SetDefaultMouseSpeed 30; 默认的是2 ，可以从0调到100，越小越快</p></li>
+<li><p>如何设置鼠标动作结束之后的延迟？<br />
+SetMouseDelay 30; 默认是10毫秒</p></li>
+<li><p>如何实现ctrl+鼠标双击？<br />
+send ^{click 100,200 2}</p></li>
+<li><p>使滚轮向上滚2次？<br />
+click wheelup 2 ; wheelup 可以写成WU</p></li>
+<li><p>滚轮向下滚一次？<br />
+click wheeldown ；wheeldown 可以简化为WD</p></li>
+<li><p>使鼠标滚轮向下滚5次有几种方法？<br />
+Click , WD,5或 loop 5 click WD</p></li>
+<li><p>当前位置鼠标单击左键<br />
+click ；<br />
+right 右键，left左键（默认可省略），middle 中键</p></li>
+<li><p>当前位置鼠标双击左键？<br />
+click 2</p></li>
+<li><p>移动鼠标到30，40？<br />
+click 30 , 40 , 0</p></li>
+<li><p>点击鼠标右键的代码如何编写？<br />
+Click , 100 , 200 , right</p></li>
+<li><p>如果鼠标点击的坐标是动态的如何表达?<br />
+Click %x% %y%</p></li>
+<li><p>拖动某图标?<br />
+click 30,40 down click 50,60 up</p></li>
+<li><p>如何设置一个进度条？<br />
+Progress , %i% , 进度条下文本 , 进度条上文本 , 标题</p></li>
+<li><p>如何创建快捷方式？<br />
+FileCreateShortcut, 目标文件, 快捷方式名 [, 工作目录, 用空格分开的参数, 描述, 图标, 快捷键, 图标标号, 运行状态] 注意：只需指定单个按键，所有的快捷键被指定为 CTRL+ALT + 快捷键，如果给该参数指定 B，将会产生一个 CTRL-ALT-B 的快捷键。运行状态1 - 正常(默认)3 - 最大化7 - 最小化</p></li>
+<li><p>空格键: {space}</p></li>
+<li><p>向左的箭头: {Left}</p></li>
+<li><p>ctrl键: ^</p></li>
+<li><p>alt键: !</p></li>
+<li><p>回车: {enter}</p></li>
+<li><p>小键盘的1: Numpad1</p></li>
+<li><p>Windows键: #</p></li>
+<li><p>Shift键: +</p></li>
+<li><p>逻辑与，把多个按键或鼠标组合成一个自定义键: &amp;</p></li>
+<li><p>一对按键中的左边的按键: &lt;</p></li>
+<li><p>通配符，表示热键被按下时，即使同时还有其他的按键按下，依然有效: *</p></li>
+<li><p>热键被触发后，动作不会被阻塞: ~</p></li>
+<li><p>禁用某键: 在::后紧跟return即可。如：RWin::return</p></li>
+<li><p>按键重映射？<br />
+a::b 如：RAlt::Rbutton 右alt映射为鼠标右键Lbutton：：return 鼠标左键被屏蔽</p></li>
+<li><p>仅在notepad中交换a、b键？<br />
+#IfWinActive ahk_class Notepad a::b ; #IfWinActive ;</p></li>
+<li><p>鼠标定义？<br />
+LButton RButton MButton WheelDown WheelUp</p></li>
+<li><p>键盘定义？<br />
+Space Tab Enter (or Return) Escape (or Esc) Backspace (or BS) Delete (or Del) Insert (or Ins) Home End PgUp PgDn Up Down Left Right ScrollLock CapsLock NumLock Numlock ON Numlock OFF Numpad0 NumpadPgUp NumpadDot (.) NumpadDel NumpadDiv (/) NumpadDiv (/) NumpadMult (<em>) NumpadMult (</em>) NumpadAdd (+) NumpadAdd (+) NumpadSub (-) NumpadSub (-) NumpadEnter NumpadEnter 1 a A LWin Control (or Ctrl) Alt Shift F1 PrintScreen CtrlBreak Pause Break</p></li>
+<li><p>注释<br />
+；跟在需注释的语句之后，注意语句和分号之间至少要有一个空格。如果要注释多个语句可以使用/* */</p></li>
+<li><p>函数<br />
+Add(x, y)<br />
+{<br />
+return x + y ; “Return” expects an expression.<br />
+}<br />
+函数调用时，变量的后面使用 ：= 例如：Var := Add(2, 3) ; 由于一个函数调用就是一个表达式，所以函数的参数列表里面的变量前面不能加百分号“%”，相反的，字符串要使用引号。当一个命令的参数调用函数的时候，如果命令的参数不支持表达式，就必须使用百分号“%”，如：<br />
+MsgBox % “The answer is:” Add(3, 2)</p></li>
+<li><p>如果要想在热字符串替换后加上空格？<br />
+在语句的后边加上 `，<br />
+:*:btw::By the way `</p></li>
+<li><p>弹出光驱<br />
+Drive, Eject,, 0</p></li>
+<li><p>收回光驱 Drive, Eject,, 1</p></li>
+<li><p>使窗口透明，值在1-255之间？<br />
+WinSet, Transparent, 100,我的电脑</p></li>
+<li><p>创建或更新启动界面？<br />
+SplashImage,d:\1.jpg,b fs18<br />
+Sleep,5000<br />
+b fs 18 可以去除界面边框。原因不明</p></li>
+<li><p>修改脚本之后，按住左键后按R重新载入脚本<br />
+~LButton &amp; r::<br />
+reload<br />
+return</p></li>
+<li><p>打开/激活记事本 IfWinExist 无标题 - 记事本 { WinActivate } Else { Run Notepad WinWait 无标题 - 记事本 WinActivate }</p></li>
+<li><p>隐藏任务栏 WinHide ahk_class Shell_TrayWnd<br />
+显示任务栏 WinShow ahk_class Shell_TrayWnd</p></li>
+<li><p>如何强制单线程？<br />
+#SingleInstance force</p></li>
+<li><p>屏蔽Ctrl+Alt+Del？<br />
+Regwrite,REG_SZ,HKEY_LOCAL_MACHINE,SOFTWARENTFile Execution Options.exe, Debugger, Hotkey Disabled<br />
+解除屏蔽 RegDelete,HKLM,SOFTWARENTFile Execution Options.exe</p></li>
+<li><p>双击启动A程序.再双击,自动关闭A程序.<br />
+ifexist, 程序窗口标题<br />
+winkill, 程序窗口标题<br />
+else<br />
+run, 程序文件路径<br />
+return</p></li>
+<li><p>当前窗口始终置于顶层?<br />
+WinSet AlwaysOnTop, on, A</p></li>
+<li><p>关闭当前窗口置于顶层状态?<br />
+WinSet AlwaysOnTop, off, A</p></li>
+<li><p>窗口还可以用表示?<br />
+ahk_class class、ahk_pid %PID%、ahk_id %ID%</p></li>
+<li><p>音乐播放或暂停?<br />
+Send , {Media_Play_Pause}</p></li>
+<li><p>音乐播放停止？<br />
+Send , {Media_Stop}</p></li>
+<li><p>播放上一首？<br />
+Send , {Media_Prev}</p></li>
+<li><p>播放下一首？<br />
+Send , {Media_Next}</p></li>
+<li><p>按下浏览器回退键？<br />
+Send , {BROWSER_BACK}</p></li>
+<li><p>按下浏览器 向前键？<br />
+Send , {BROWSER_FORWARD}</p></li>
+<li><p>按下浏览器刷新键？<br />
+Send , {BROWSER_REFRESH}</p></li>
+<li><p>按下浏览器停止键？<br />
+Send , {BROWSER_STOP}</p></li>
+<li><p>按下浏览器搜索键？<br />
+Send , {BROWSER_SEARCH}</p></li>
+<li><p>按下浏览器收藏键？ Send , {BROWSER_FAVORITES}</p></li>
+<li><p>按下浏览器主页键？<br />
+Send , {BROWSER_HOME}</p></li>
+<li><p>使静音？<br />
+Send , {VOLUME_MUTE}</p></li>
+<li><p>降低音量？<br />
+Send , {VOLUME_DOWN}</p></li>
+<li><p>提升音量？<br />
+Send , {VOLUME_UP}</p></li>
+<li><p>打开邮件程序？<br />
+Send , {LAUNCH_MAIL}</p></li>
+<li><p>打开播放器？<br />
+Send , {LAUNCH_MEDIA}</p></li>
+<li><p>如何对字符串中某字符进行替换？<br />
+StringReplace,CodeString, CodeString, 被替换 , 替换, All</p></li>
+<li><p>鼠标光标的状态用那个常数表示？<br />
+% A_Cursor%</p></li>
+<li><p>当前脚本的运行路径用那个常数表示？<br />
+%A_WorkingDir%</p></li>
+<li><p>常用判断语句运行失败的代码是？<br />
+if ErrorLevel<br />
+break</p></li>
+<li><p>如何令鼠标进行相对移动？<br />
+在Click命令后使用Rel或者Relative参数，如：Click , 100 , 55 , rel</p></li>
+<li><p>如何模拟Shift + 点击？<br />
+Send +{Click 100, 200}</p></li>
+<li><p>如何模拟Ctrl +右键点击？<br />
+Send ^{Click 100, 200, right}</p></li>
+<li><p>退出或终止某个 loop循环用那个命令？<br />
+Break如：<br />
+loop<br />
+{<br />
+…<br />
+if var &gt; 25 break<br />
+…<br />
+if var &lt;= 5<br />
+continue<br />
+}</p></li>
+<li><p>如何确定是否删除首位空格和Tab的设置?<br />
+判断% A_AutoTrim% （On 或者Off ）</p></li>
+<li><p>单个空格和单个Tab用哪个常量表示?<br />
+% A_Space % 和 % A_Tab %</p></li>
+<li><p>“Var1 = %Var2%” 表达式中自动省略 Var2 中首尾的空格和Tab 用哪个命令实现?<br />
+AutoTrim, On</p></li>
+<li><p>点击或按住一个鼠标按键，或者滚动鼠标滚轮除了Click外还有哪个?<br />
+MouseClick [, WhichButton , X, Y, ClickCount, Speed, D|U, R]</p></li>
+<li><p>鼠标滚轮：WU 向上滚动， WD 向下滚动滚轮，后续的 ClickCount 参数表示滚动滚轮的次数。ClickCount如省略，则默认点击1 次。D = 按住鼠标按键不放；U = 释放鼠标按键；R 相对移动</p></li>
+<li><p>Mouse 开头的函数中WhichButton有那些选择?<br />
+WhichButton ：Left/左键，Right/右键，Middle/中键滚动</p></li>
+<li><p>Mouse 开头的函数中Speed 有那些选择?<br />
+Speed 鼠标移动的速度，从 0（最快）到 100（最慢）</p></li>
+<li><p>点击并按住指定的鼠标按键，移动鼠标到目标位置，释放鼠标按键?<br />
+MouseClickDrag, WhichButton, X1, Y1, X2, Y2 [, Speed, R] X1, 起始位置　X2, Y2 目标位置坐标 R 相对移动</p></li>
+<li><p>WinWaitActive,ahk_class MSPaintApp,, 2中最后2代表什么?<br />
+超时时间，秒为单位</p></li>
+<li><p>ELSE后可跟什么命令?<br />
+任何单个命令都能和一个ELSE命令在同一行。如其后拥有多行，那些行必须被括入大括号。但是如果只有一行属于一个IF或一个ELSE命令，那么大括号是可选的。</p></li>
+<li><p>无条件地终止脚本用哪个命令?<br />
+ExitApp 脚本将立即被终止，如果脚本有 OnExit 子程序，它将响应ExitApp而运行。<br />
+如：onexit,a<br />
+s::ExitApp<br />
+a:<br />
+msgbox,kk<br />
+Return</p></li>
+<li><p>如何删除一个或多个文件?<br />
+FileDelete, FilePattern。FilePattern 单个文件的名称或一个像C:*.tmp这样的通配符样式。如果绝对路径没被指定，FilePattern 会被假设在 %A_WorkingDir% 。</p></li>
+<li><p>移除包含子文件夹和文件的整个文件夹?<br />
+FileRemoveDir，DirName</p></li>
+<li><p>如何移除只读属性 FileSetAttrib, -R, C:File.txt<br />
+</p></li>
+</ol>
+<ul>
+<li>增加属性- 取消属性^ 设置增加取消开关R = 只读A = 存档S = 系统H = 隐藏N = 普通 O = 脱机 T = 临时</li>
+</ul>
+<ol start="177" type="1">
+<li><p>跳到指定的标签并且继续执行? Gosub, Label 。Label 跳转的标签. 热键标签 或者 热字串标。Return脚本跳回Gosub下首个命令并继续执行。Exit终止当前的线程。</p></li>
+<li><p>标签可以是变量吗?<br />
+Label 可以是一个 变量 如 %MyLabel%，如果Label不存在，将显示一个错误对话框。</p></li>
+<li><p>哪个函数可以检验标签是否存在? IsLabel(标签名) 如：<br />
+if IsLabel(VarContainingLabelName)<br />
+Gosub %VarContainingLabelName%</p></li>
+<li><p>显示一个输入对话框，接受用户输入的数据?<br />
+InputBox, 输出变量 [, 标题, 提示文本, HIDE, 宽度, 高度, 横坐标, 纵坐标, 必须留空, Timeout, Default]<br />
+HIDE 如果这里使用单词 HIDE ，那么用户的输入内容会被隐藏。这在输入密码的时候很有用。Timeout 超时时间，单位是秒。Default 输入对话框出现时默认出现在输入框中的数据。</p></li>
+<li><p>检查文件或文件夹或驱动器是否存在?<br />
+IfExist, FilePattern或者IfNotExist, FilePattern 如：<br />
+IfExist, D: <br />
+MsgBox, 驱动器存在。</p></li>
+<li><p>从一个字符串的左边或右边开始提取一定数量的字符用那个命令?<br />
+左边：StringLeft, OutputVar, InputVar, Count<br />
+右边：StringRight, OutputVar, InputVar, Count<br />
+Count 需要提取的字符数量，OutputVar 可以和 InputVar 相同。</p></li>
+<li><p>如何获取字符串长度?<br />
+StringLen , OutputVar , InputVar InputVar 需要统计长度的字符串变量名。</p></li>
+<li><p>如何将某字符串中的英文字母全部转换为大写或小写? 参数中的T有什么作用?<br />
+小写：StringLower, OutputVar, InputVar [, T]<br />
+大写：StringUpper, OutputVar, InputVar [, T]<br />
+T 如果这个参数使用字母 T ，字符串将被转换为标题格式。</p></li>
+<li><p>如何判断某字符串是否全部是大写或小写字母?<br />
+可以使用“if var is [not] upper/lower”。</p></li>
+<li><p>如何从字符串中指定的位置返回一个或多个字符?<br />
+StringMid, OutputVar, InputVar, StartChar [, Count , L]<br />
+StartChar 提取的起始位置，Count如省略或留空，默认是一个足够存储所有字符的值。否则，该参数表示需要提取的字符数量，L从 StartChar 开始向左边提取字符</p></li>
+<li><p>如何对字符串中指定的子字符串进行替换?<br />
+StringReplace, OutputVar, InputVar, SearchText [, ReplaceText, ReplaceAll ]<br />
+SearchText 被替换的文本，不区分大小写。ReplaceText 替换的文本。ReplaceAll如省略，只有第一个匹配 SearchText 的子字符串会被替换。如果这个参数是 1 . A 或者 All ，则所有匹配的子字符串都将被替换。如果这个参数是 UseErrorLevel 将在ErrorLevel中存储被替换的子字符串的数量</p></li>
+<li><p>如何在剪贴板中移除换行?<br />
+StringReplace, clipboard, clipboard, `r`n, , All</p></li>
+<li><p>如何从字符串的左边或右边移除指定数量的字符? 左边：StringTrimLeft, OutputVar, InputVar, Count 右边：StringTrimRight, OutputVar, InputVar, Count</p></li>
+<li><p>写入一个值到注册表中用那个命令?<br />
+RegWrite, ValueType, RootKey, SubKey [, ValueName, Value]</p></li>
+<li><p>从注册表中读取一个值用那个命令?<br />
+RegRead, OutputVar, RootKey, SubKey [, ValueName]</p></li>
+<li><p>从注册表中删除一个子键或一个值用那个命令?<br />
+RegDelete, RootKey, SubKey [, ValueName]</p></li>
+<li><p>ValueType有那些可选项?<br />
+只能是 REG_SZ ，REG_EXPAND_SZ ，REG_MULTI_SZ ，REG_DWORD 或者 REG_BINARY</p></li>
+<li><p>RootKey 有那些可选项?<br />
+只能是HKEY_LOCAL_MACHINE 、HKEY_USERS 、HKEY_CURRENT_USER 、HKEY_CLASSES_ROOT 、HKEY_CURRENT_CONFIG 其中之一（或者它们的缩写，例如 HKLM ）。要访问远程注册表，在前面加上电脑名和一个冒号，例如：\workstation01:HKEY_LOCAL_MACHINE</p></li>
+<li><p>SubKey代表什么含义?<br />
+子键的名字如 Software。如果 SubKey 不存在，将会在它的父类之下自动创建。如留空，将把值直接写入到 RootKey 中</p></li>
+<li><p>ValueName 代表什么?<br />
+需要写入值的项的名称。如果留空或省略，默认修改的是 Subkey 的默认值，也就是在 RegEdit 中显示为“(Default)/默认”的值</p></li>
+<li><p>Value 代表什么? 需要写入的值。如省略，默认是一个空字符串，或 0</p></li>
+<li><p>IfEqual, var, value 等同于? if var = value</p></li>
+<li><p>IfNotEqual, var, value 等同于? if var &lt;&gt; value) (!= 能用来替代 &lt;&gt;)</p></li>
+<li><p>IfGreater, var, value 等同于? if var &gt; value</p></li>
+<li><p>IfGreaterOrEqual, var, value等同于? if var &gt;= value</p></li>
+<li><p>IfLess, var, value 等同于? if var &lt; value</p></li>
+<li><p>IfLessOrEqual, var, value 等同于? if var &lt;= value</p></li>
+<li><p>If var 代表什么? 如果变量的内容为空或是 0 ，那么它被认作 false。否则，将为 true。</p></li>
+<li><p>检查一个变量是否在两个 values 之间用那个命令?<br />
+if var [not] between LowerBound and UpperBound</p></li>
+<li><p>如何检查某变量是否存在于一个 values 列表内部?<br />
+if var [not] in value1,value2<br />
+if Done If ……if else ……if else 语句完毕</p></li>
+<li><p>如何使指定窗口最大化?<br />
+WinMaximize [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>如某特定窗口没有准确地对WinMaximize 做出反应怎么办?<br />
+PostMessage, 0x112, 0xF030,,, WinTitle, WinText ; 0x112 = WM_SYSCOMMAND, 0xF030 = SC_MAXIMIZE此命令仅运作在匹配的最前端窗口上</p></li>
+<li><p>用那个命令检索目标窗口有输入焦点的控件?<br />
+ControlGetFocus, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]<br />
+OutputVar 存储控件标识符的变量名称，如 Button12。</p></li>
+<li><p>如何防止当前线程被其他线程中断?<br />
+Critical [, On | Off]　如参数被省略或是 On，则当前的线程不会被其他线程中断。如是Off，则可中断。</p></li>
+<li><p>如何取得谋控件的位置和大小?<br />
+ControlGetPos [, X, Y, Width, Height, Control, WinTitle, WinText, ExcludeTitle, ExcludeText]<br />
+X, Y 是控件左上角坐标。如省略坐标将不被储存。Width/Height 是控件的高和宽。Control 控件的名称/文本或 ClassNN (控件的类名和序号)</p></li>
+<li><p>Edit命令有什么作用?<br />
+Edit 命令使用关联的编辑器打开当前脚本进行编辑，相当于托盘图标菜单的“Edit This Script”命令。</p></li>
+<li><p>是否允许某脚本重复次运行?<br />
+#SingleInstance [force|ignore|off]　参数 FORCE 将跳过对话框，并自动地替换旧的实例，实际上同 Reload 命令相似。参数IGNORE 将跳过对话框，并让旧的实例运行。单词 OFF 允许多个脚本实例同时运行。如参数被省略，将显示一个对话框，询问是保持旧的实例还是使用新的实例来替换它。</p></li>
+<li><p>#HotkeyInterval随同 #MaxHotkeysPerInterval 一起的作用是什么?<br />
+指定 热键 激活的速率，当超过这一速率时，将会显示一个警告对话框。<br />
+格式为：#HotkeyInterval Milliseconds 参数：Milliseconds 间隔的长度，以毫秒为单位。</p></li>
+<li><p>哪个命令用来等待匹配指定条件的窗口被关闭?<br />
+WinWaitClose [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]</p></li>
+<li><p>如何调用窗口菜单项?<br />
+WinMenuSelectItem, WinTitle, WinText, Menu [, SubMenu1, SubMenu2, SubMenu3, SubMenu4, SubMenu5, SubMenu6, ExcludeTitle, ExcludeText]</p></li>
+<li><p>在WinMenuSelectItem命令中Menu参数代表什么?<br />
+Menu 是顶级菜单的名称，例如 File、Edit等，SubMenu1 需要选择的菜单的名称或位置，SubMenu2 如果 SubMenu1 本身还有子菜单，那么这个参数就是子菜单项的名称或位置。以此类推。也可以使用 1&amp; 表示第一个菜单项，2&amp;表示第二个菜单项。</p></li>
+<li><p>用那个命令强制关闭窗口?<br />
+WinKill [, WinTitle, WinText, SecondsToWait, ExcludeTitle, ExcludeText]</p></li>
+<li><p>WinKill命令中SecondsToWait参数有何含义?<br />
+如果省略或留空，命令完全不会等待。如果使用 0 ，会等待 500ms 。否则，它会等待指定的时间（可以包含小数点或者是一个 表达式 ）来让窗口彻底关闭。</p></li>
+<li><p>隐藏/显示指定窗口的命令是?<br />
+WinHide/WinShow [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>最小化匹指定窗口到任务栏的命令是?<br />
+WinMinimize [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>如果某些窗口不能正确响应 WinMinimize ，可以尝试使用脚本?<br />
+PostMessage, 0x112, 0xF020,,, WinTitle, WinText ; 0x112 = WM_SYSCOMMAND ，0xF020 = SC_MINIMIZE　这个命令只对匹配窗口中处于最前端的进行操作</p></li>
+<li><p>激活最底端的窗口的命令是?<br />
+WinActivateBottom [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>关闭指定窗口的命令是?<br />
+WinClose [, WinTitle, WinText, SecondsToWait, ExcludeTitle, ExcludeText] 或者是PostMessage, 0x112, 0xF060,,,WinTitle, WinText ; 0x112 = WM_SYSCOMMAND, 0xF060 = SC_CLOSE</p></li>
+<li><p>等待指定窗口处于激活或未激活状态的命令是?<br />
+WinWaitActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText] WinWaitNotActive [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText] Seconds 超时时间。留空表示无限等待。指定 0 等同于 0.5 。</p></li>
+<li><p>等待指定窗口出现的命令是?<br />
+WinWait [, WinTitle, WinText, Seconds, ExcludeTitle, ExcludeText]　　</p></li>
+<li><p>改变指定窗口的标题的命令是?<br />
+WinSetTitle, NewTitle 或WinSetTitle, WinTitle, WinText, NewTitle [, ExcludeTitle, ExcludeText] NewTitle 目标窗口的新标题。如果只有此参数，默认是上一次匹配窗口 。</p></li>
+<li><p>最小化或还原所有窗口的命令是?<br />
+WinMinimizeAll / WinMinimizeAllUndo 这个命令等同于 Explore 的 Win-M 和 Win-D 快捷键。</p></li>
+<li><p>移动指定窗口的命令是?<br />
+WinMove, X, Y</p></li>
+<li><p>移动窗口更改大小的命令是?<br />
+WinMove, WinTitle, WinText, X, Y [, Width, Height, ExcludeTitle, ExcludeText]</p></li>
+<li><p>还原指定窗口的命令是?<br />
+WinRestore [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>如果某些窗口不能正确响应 WinRestore ，可以尝试使用的脚本为?<br />
+PostMessage, 0x112, 0xF120,,, WinTitle, WinText ; 0x112 = WM_SYSCOMMAND ，0xF120 = SC_RESTORE</p></li>
+<li><p>匹配指定条件的窗口进行设置，如“总在最前”，以及透明度等使用那个命令?<br />
+WinSet, Attribute, Value [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>WinSet中后紧跟AlwaysOnTop有什么含义?<br />
+让一个窗口处于置顶状态。使用 ON 开启设置，使用 OFF 关闭设置，使用 TOOGLE 切换设置。如果省略，默认是 TOOGLE。也可以使用单词 Topmost 替换 AlwaysOnTop。</p></li>
+<li><p>如何切换计算器的“总在最前”状态?<br />
+WinSet, AlwaysOnTop, toggle, Calculator</p></li>
+<li><p>WinSet中后紧跟Bottom有什么含义?<br />
+将一个窗口放到最底端，即所有窗口的下面。类似使用 Alt－Escape 快捷键。例如：<br />
+WinSet, Bottom,, WinTitle</p></li>
+<li><p>WinSet中后紧跟Top有什么含义?<br />
+将一个窗口放到最前端而不进行激活。但多数情况下系统都会自动激活它。</p></li>
+<li><p>WinSet中后紧跟Disable 或 Enable有什么含义?<br />
+停用或启用一个窗口。当一个窗口处于停用状态的时候，用户不能移动它或利用它的控件进行交互。另外，停用的窗口也不会出现在alt-tab 列表中。</p></li>
+<li><p>WinSet中后紧跟Redraw有什么含义?<br />
+通过通知系统某个窗口区域需要重绘，来刷新一个窗口的界面和内容。</p></li>
+<li><p>WinSet中后紧跟Style,N 或 ExStyle,N有什么含义?<br />
+分别设置窗口的样式或扩展样式。如果 N 中的第一个字符是加号或减号，则窗口会增加或移除 N 中指定的样式（可同时指定多个样式，下同）；如果第一个字符是符号“`”，窗口将对 N 中指定的样式进行切换操作；如果第一个字符是数字，窗口原来的所有样式将被覆盖，彻底变成 N 中指定的样式。更改了一个窗口的样式之后，可能使用命令 WinSet Redraw 重绘窗口</p></li>
+<li><p>移除当前激活窗口的标题栏?<br />
+WinSet, Style, -0xC00000, A</p></li>
+<li><p>将窗口添加到/移除于 alt-tab 列表中。 WinSet, ExStyle, ^0x80, WinTitle</p></li>
+<li><p>更改某窗口的形状为指定形状?<br />
+WinSet, Region [, Options, WinTitle, …]</p></li>
+<li><p>WinSet, Region后Options 参数留空有何作用?<br />
+窗口将恢复到原来的形状</p></li>
+<li><p>WinSet, Region后Options 参数可以指定那些参数?<br />
+请用空格分隔各个参数。 Wn：方形或椭圆形的宽度如：w200。 Hn：方形或椭圆形的高度。例如：h300<br />
+X-Y：X轴 和 Y轴 坐标。如，200-0 E：将窗口形状设置为椭圆形。<br />
+R[w-h]：设置方形窗口的圆角。如，R30-30 ，如省略 w-h ，默认使用 30-30 。</p></li>
+<li><p>设置一个椭圆窗口的代码如?<br />
+WinSet, Region, 50-0 W200 H250 E, WinTitle</p></li>
+<li><p>如何设置一个多边形窗口?<br />
+如果同时指定了 W 和 H 参数，并且在 X-Y 参数中指定了多组坐标，窗口的形状将变成多边形（每组坐标以窗口左上角为原点）。</p></li>
+</ol>
+<p>例如，如果指定了 3 组坐标，大多数情况下窗口的形状会变成三角形，具体的形状取决于 3 组坐标的顺序。此外，在 Options 参数中也可以加上单词 Wind ，这将会使用一种弯曲的方式来决定多边形的形状。</p>
+<ol start="248" type="1">
+<li><p>如何设置窗口的透明度?<br />
+WinSet, Transparent, N, WinTitle ；N 为一个 0 到 255 的数字：0 表示完全透明，255 表示完全不透明。使用单词 OFF 彻底关闭窗口的透明效果。</p></li>
+<li><p>还有那种属性设置也可以让窗口设置透明度?<br />
+Gui -Caption +ToolWindow.</p></li>
+<li><p>设置任务栏的透明度?<br />
+WinSet, Transparent, 150, ahk_class Shell_TrayWnd</p></li>
+<li><p>如何使目标窗口中指定颜色的区域透明?<br />
+WinSet, TransColor, Color [N], WinTitle Color 参数可以是一个颜色名称或一个 RGB 值，可以在颜色参数后跟一表示透明度的数字（0 - 255）。例如：WinSet, TransColor, EEAA99 150, WinTitle　　如果用户点击窗口中的透明部分，点击事件会“穿透”该窗口传递给下面的窗口。</p></li>
+<li><p>如何让窗口中白色的部分透明?<br />
+WinSet, TransColor, White, Untitled - Notepad ;</p></li>
+<li><p>如何完全关闭窗口的透明设置?<br />
+WinSet, Transparent, Off, WinTitle 或者 WinSet, TransColor, Off, WinTitle</p></li>
+<li><p>取消脚本的 SplashText 窗口的置顶状态?<br />
+WinSet , AlwaysOnTop , Off , SplashText窗口的标题</p></li>
+<li><p>让窗口只显示指定的方形部分?<br />
+WinSet, Region, 50-0 W200 H250, WinTitle</p></li>
+<li><p>让窗口有圆角的方形?<br />
+WinSet, Region, 50-0 W200 H250 R40-40, WinTitle</p></li>
+<li><p>倒三角形窗口?<br />
+WinSet, Region, 50-0 250-0 150-250, WinTitle</p></li>
+<li><p>将窗口恢复原状?<br />
+WinSet, Region,, WinTitle</p></li>
+<li><p>在窗口中创建了一个方形的“洞?” WinSet, Region, 0-0 300-0 300-300 0-300 0-0 100-100 200-100 200-200 100-200 100-100, WinTitle</p></li>
+<li><p>返回符合指定条件的窗口的 uID，进程ID，进程名称，或控件列表,包含所有符合指定条件的窗口的列表?<br />
+WinGet, OutputVar [, Cmd, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>WinGet中 Cmd参数处如留空或是ID有何含义?<br />
+返回窗口的 uID（HWND/句柄）。</p></li>
+<li><p>WinGet中 Cmd参数处为IDLast有何含义? 当匹配的窗口超过一个的时候，它返回的是 最底端/最后使用 的窗口的 ID。</p></li>
+<li><p>WinGet中 Cmd参数处为PID有何含义?<br />
+返回窗口的 进程ID（PID）。</p></li>
+<li><p>WinGet中 Cmd参数处为ProcessName有何含义?<br />
+返回窗口所属进程的进程名称</p></li>
+<li><p>WinGet中 Cmd参数处为Count有何含义?<br />
+返回符合指定条件的窗口数量（如果没有匹配窗口则返回 0 ）。要统计当前总窗口数，省略所有和 标题/文本 有关的参数。</p></li>
+<li><p>WinGet中 Cmd参数处为List有何含义?<br />
+返回所有符合指定条件的窗口的 uID 。每个 ID 由一个 数组元素 存储，数组元素名从 OutputVar 开始，而 OutputVar 本身则存储了数组的长度。例如，OutputVar 使用 MyArray ，有 2 个匹配窗口，则变量 MyArray1 存储了第一个窗口的 ID ，变量MyArray2 存储了第二个窗口的 ID</p></li>
+<li><p>WinGet中 Cmd参数处为MinMax有何含义?<br />
+返回窗口的 最小化/最大化 状态。返回下列数值之一：-1：窗口处于最小化状态;　1：窗口处于最大化状态。0：窗口既不处于最大化也不处于最小化状态。</p></li>
+<li><p>WinGet中 Cmd参数处为ControlList有何含义?<br />
+返回一个列表，包含窗口中所有控件的名称。每个控件的名称由它的 class 名和序号（ClassNN）组成，除了最后一个控件的名称之外，每个名称后都跟着一个换行符（`n）。要单独遍历所有的控件名称，使用 parsing loop</p></li>
+<li><p>WinGet中 Cmd参数处为ControlListHwnd何义?<br />
+功能同上，不同的是它返回的是控件的 窗口句柄（HWND）。</p></li>
+<li><p>WinGet中 Cmd参数处为Transparent有何含义?<br />
+返回窗口的透明度,OutputVar 存储一个 0 到 255 之间的值，0 表示完全透明，255 表示不透明。</p></li>
+<li><p>WinGet中 Cmd参数处为TransColor有何含义?<br />
+返回窗口的透明色OutputVar 存储一个 6 位的十六进制数，表示 RGB 颜色如 0x00CC99 。</p></li>
+<li><p>WinGet中 Cmd参数处为Style 或 ExStyle何含义?<br />
+返回一个 8 位的十六进制数，表示窗口的样式或扩展样式。</p></li>
+<li><p>检测一个窗口是否具有 WS_DISABLED 样式? WinGet, Style, Style, My Window Title<br />
+if (Style &amp; 0x8000000) ; 0x8000000 表示 WS_DISABLED</p></li>
+<li><p>检测一个窗口是否具有置顶样式?<br />
+WinGet, ExStyle, ExStyle, My Window Title if (ExStyle &amp; 0x8) ; 0x8 表示 WS_EX_TOPMOST.</p></li>
+</ol>
+<p>275、激活当前窗口并获得位置. 大小信息?<br />
+WinGetActiveStats, Title, Width, Height, X, Y 说明：Title 存储当前激活窗口的标题。Width/Height 存储当前激活窗口的宽或高。X, Y 存储当前激活窗口左上角坐标标。</p>
+<ol start="276" type="1">
+<li><p>获取当前激活窗口的标题?<br />
+WinGetActiveTitle, OutputVar</p></li>
+<li><p>如何得到指定窗口的 class 名? WinGetClass, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]　</p></li>
+<li><p>如何得到指定窗口的位置和大小?<br />
+WinGetPos [, X, Y, Width, Height, WinTitle, WinText, ExcludeTitle, ExcludeText]<br />
+X, Y 目标窗口左上角的坐标。Width/Height 目标窗口的宽或高。如参数 WinTitle 使用“Program Manager”，该命令会返回桌面</p></li>
+<li><p>如何得到指定窗口中的文本?<br />
+WinGetText, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]<br />
+OutputVar 存储获取的文本。每个获取的文本元素之后都跟着一个回车换行符，在脚本中用 `r`n 表示。</p></li>
+<li><p>如何得到指定窗口的标题?<br />
+WinGetTitle, OutputVar [, WinTitle, WinText, ExcludeTitle, ExcludeText]</p></li>
+<li><p>如何激活指定窗口，将它置于最前端?<br />
+WinActivate [, WinTitle, WinText, ExcludeTitle, ExcludeText ]</p></li>
+<li><p>等待直到 剪贴板中含有数据为止? ClipWait [, 等待N秒, 1] 参数若省略，则等候时间无期限。</p></li>
+<li><p>如何加载某个外部文件中定义的 函数?<br />
+#Include 文件名或目录名 或者 #IncludeAgain 文件名或目录名 如：#Include C:DocumentsSubroutines.ahk #Include 会确保每个文件仅被装入一次，#IncludeAgain允许多次装入同一个文件。<br />
+给文件名参数前加上一个 <em>i 前缀和一个空格符后，程序将忽略加载装入文件时发生的任何错误。例如：#Include </em>i SpecialOptions.ahk。</p></li>
+</ol>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Battery</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Battery"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#li-ion-voltage"><span class="toc-section-number">1</span> Li Ion Voltage</a></li>
+          <li><a href="#li-ion-battery-using-sheet"><span class="toc-section-number">2</span> Li Ion Battery using Sheet</a></li>
+          <li><a href="#钠离子电池"><span class="toc-section-number">3</span> 钠离子电池</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="li-ion-voltage"><span class="header-section-number">1</span> Li Ion Voltage</h1>
+<ul>
+<li><p><span class="citation" data-cites="Aydinol97PRB"><sup>[1]</sup></span>The equilibrium voltage difference between the two electrodes, also referred to as the open circuit voltage (OCV), depends on the difference of the Li chemical potential between the anode and cathode <span class="math display">V(x)=-\frac{\mu_{Li}^{cathode}-\mu_{Li}^{anode}}{zF} \ (1)</span> where F is the Faraday constant (96485.33289(59) C mol<sup>−1</sup>) and z is the charge (in electrons) transported by lithium in the electrolyte. In most nonelectronically conducting electrolytes z=1 for Li intercalation. For a battery, a large chemical-potential difference between cathode and anode is desirable as this leads to a high OCV. For electrochromic applications the voltage is less important. In this paper we will assume an anode of metallic lithium, although for practical applications, lithium-carbon solutions are preferred[6]. A high intercalation voltage and low molar weight are desirable from the standpoint of obtaining an electrode with high-energy density. High Li diffusivity is important to satisfy the current-density requirements.</p></li>
+<li><p>The open-cell voltage that can be derived from Li intercalation between a lithium anode and a lithium-metal-oxide cathode depends on the lithium chemical potential in the cathode [see Eq. (1)]. As Li is intercalated, its chemical potential in the cathode increases, leading to a decrease in the cell voltage. This intercalation curve, V(x<sub>Li</sub>), has been measured experimentally for several Li<sub>x</sub>MO<sub>2</sub> materials. In general, a relatively flat intercalation curve is desirable for applications, although some slope to the curve is useful to relate the OCV to the level of intercalation during charge and discharge. Here we instead calculate the average intercalation voltage. We will show that this quantity can be determined from the total energy of three structures with small unit cells.</p></li>
+<li><p>In a metallic Li anode the chemical potential is constant and equal to the Gibbs free energy of Li metal. The electrical energy obtained by discharging between Li<sub>x1</sub>MO<sub>2</sub> and Li<sub>x2</sub>MO<sub>2</sub> (x2&gt;x1) is the integral of the voltage times the displaced charge [<span class="math inline">q_{tot}=e(x_2-x_1)</span>]: <span class="math display">E=\int_0^{q_{tot}}V(x)dq=-\int_0^{q_{tot}}\frac{\mu_{Li}^{IC}(x)-\mu_{Li}^0}{e}dq\ (2)</span> In Eq. (2) <span class="math inline">\mu_{Li}^{IC}(x)</span> is the chemical potential of Li (per atom) in the intercalation compound, <span class="math inline">\mu_{Li}^0</span> is the chemical potential in metallic Li, and e is the electronic charge. If all the displaced charge is due to Li, <span class="math inline">dq=edx</span>, resulting in <span class="math display">E=-\int_{x_1}^{x_2}[\mu_{Li}^{IC}(x)-\mu_{Li}^0]dx_{Li}=-[G_{Li_{x_2}MnO_2}-G_{Li_{x_1}MnO_2}-(x_2-x_1)G_{Li}]=-{\Delta}G_r</span> The average voltage is then <span class="math display">\overline{V}=-\frac{{\Delta}G_r}{(x_2-x_1)F} \ (4)</span> Equation (4) allows one to compute the average voltage between any two intercalation limits. For most values of x it is difficult to compute the Gibbs free energy as the Li disorder makes the system nonperiodic. Even if one attempted to approximate these structures with a periodic system, one is faced with the task of coming up with reasonable superstructures for Li as a function of composition. Currently, very little is known about the nature of the Li ordering for compositions between x=0 and 1. We therefore set the intercalation limits in this study to x=0 and 1. This leads to structures with fairly small unit cells and no configurational Li disorder. The intercalation limits x=0 and 1 are not completely realistic. In many cases, the host structure Li<sub>x</sub>MO<sub>2</sub> becomes unstable for x approaching zero, and intercalation cycles are done in a more limited concentration range. The average voltage over the theoretical cycle (0&lt;x&lt;1) should, however, not be too different from the experimentally measured values.</p></li>
+<li><p>Comparison of calculated and experimental results for this system should therefore be done with care. Calculations can be significantly simplified by further approximating <span class="math display">{\Delta}G_r\equiv {\Delta}E_r +P{\Delta}V_r-T{\Delta}S_r</span> by the change in internal energy (<span class="math inline">{\Delta}E_r</span>) at 0 K. We expect this approximation to be quite good since the term <span class="math inline">P{\Delta}V_r</span> is of the order of 10<sup>-5</sup> electron volts whereas <span class="math inline">{\Delta}E_r</span> is of the order of 3–4 eV per molecule. The term <span class="math inline">T{\Delta}S_r</span> is of the order of the thermal energy which is also much smaller than <span class="math inline">{\Delta}E_r</span>.</p></li>
+<li><p>Having described a method to compute the average intercalation voltage, our objective is to investigate the effect of three variables in the cathode material: the selection of the metal M, the cation ordering over octahedral sites, and the effect of substitution of the anion. To clearly identify the effect of these variables on the intercalation voltage we will vary only one variable at a time. Li intercalates into the cathode as a positive ion. It is traditionally assumed that the compensating electron reduces the metal ion. The nature of the metal (M) and the strength of its M<sub>IV</sub>/M<sub>III</sub> redox couple is therefore expected to be a significant variable in determining the intercalation voltage</p></li>
+</ul>
+<h1 data-number="2" id="li-ion-battery-using-sheet"><span class="header-section-number">2</span> Li Ion Battery using Sheet</h1>
+<ol type="1">
+<li><span class="citation" data-cites="Zhang16AAMI"><sup>[2]</sup></span>According to the Arrhenius equation, the diffusion constant</li>
+</ol>
+<ol start="4" type="A">
+<li>of Li atom on the borophene surface can be evaluated by the following equation: <span class="math display">D\propto exp(\frac{-E_a}{k_BT})</span></li>
+</ol>
+<ul>
+<li>to compare diffusion mobility of Li on borophene surface along different directions, and other materials.<br />
+Considering that the charging/discharging processes of borophene-based anode can be assumed as <span class="math display">Li_{x_1}B+(x_2-x_1)Li^++(x_2-x_1)e^-\leftrightarrow Li_{x_2}B</span> hence, the average OCV of Li<sub>x</sub>B can be evaluated as the following formula <span class="math display">OCV\approx \frac{E_{Li_{x_1}B}+(x_2-x_1)E_{Li}-E_{Li_{x_2}B}}{x_2-x1}</span> where <span class="math inline">E_{Li_{x_1}B}</span>, <span class="math inline">E_{Li_{x_2}B}</span> and <span class="math inline">E_{Li}</span> are the potential energies of Li<sub>x1</sub>B, Li<sub>x2</sub>B, and metallic Li bulk, respectively. Based on this measurement above, various electrochemical properties correlated to Li ion battery can be predicted accurately, such as the average insertion potential,[45,46] and the charging/discharging voltage of Li intercalation in metal oxides and metal dichalcogenides.</li>
+</ul>
+<ol start="2" type="1">
+<li><span class="citation" data-cites="Zhang16N"><sup>[3]</sup></span>Here we employ the <span class="math inline">2\times 2</span> supercell with an increasing number of adsorbed Li and Na atoms on both sides of the host. The charge/discharge processes can be respectively described by the following half-cell reactions: <span class="math inline">B_{20}+xM^++xe^- \leftrightarrow M_xB_{20}</span> where M = (Li, Na) and x is the number of adsorbed atoms. Then we can obtain the average adsorption energy of each layer (E<sub>ave</sub>) by using the following expression: <span class="math display">E_{ave}=(E_{B_{20}M_{8n}}-E_{B_{20}M_{8(n-1)}}-8E_M)/8</span> where again M = (Li, Na) and EM is the cohesive energy in the bulk metal (Li/Na); <span class="math inline">E_{B_{20}M_{8n}}</span> and <span class="math inline">E_{B_{20}M_{8(n-1)}}</span> are the total energies of <span class="math inline">\beta_{12}</span> borophene with n and (n − 1) Li/Na adsorption layers. the number “8” in the formula represents eight adsorbed Li/Na atoms in each layer (for a <span class="math inline">2\times 2</span> supercell and on both sides). Then we can estimate the maximum capacity (CM) from the following equation, <span class="math display">C_M=xF/M_{borophene}</span> where x represents the maximum number of electrons involving the electrochemical process, F derives from the Faraday constant with the value of 26 798 mA h mol<sub>−1</sub>, and M<sub>Borophene</sub> is the mass of borophene in g mol<sub>−1</sub>. Furthermore, we also estimate the average open-circuit voltage (V<sub>ave</sub>), which is defined as <span class="math display">V_{ave}=(E_{B_{20}}+xE_M-E_{B_{20}M_x})/xye</span> where M = (Li, Na), and <span class="math inline">E_{B_{20}}</span> and <span class="math inline">E_{B_{20}M_x})</span> are the total energies of <span class="math inline">\beta_12</span> borophene without and with Li/Na intercalation; E<sub>M</sub> is the cohesive energy of metal Li or Na; y is the electronic charge of Li/Na ions in the electrolyte (here y = 1).</li>
+</ol>
+<h1 data-number="3" id="钠离子电池"><span class="header-section-number">3</span> 钠离子电池</h1>
+<p>锂离子电池（LIBs）是最成功的清洁和高效能量存储设备之一，被广泛用于各种便携式电子设备。然而，锂在地球上的储存量相当有限。根据目前每年21280吨的消耗率，现有的锂源只能维持约65年。钠是地壳中第四丰富的元素，为开发钠离子电池（SIB）提供了大量的钠源。钠与锂具有相似的插层性质，这意味着LIBs中的一些成熟技术可以迁移到SIB。此外，SIBs的安全性远优于LIBs。因此，SIB成为能源储存设备的最佳候选者之一。然而，SIB仍处于最初的发展阶段，仍然面临许多问题。寻找高性能阳极材料已成为SIB发展的主要障碍。已经报道了用于SIB的各种改进的C基阳极材料（例如膨胀石墨，硬碳，嵌入碳中的锡纳米颗粒和分层多孔碳/石墨烯复合材料）。但是，它们的比容量远远不能令人满意。尽管IV族和V族元素材料（如Ge，Sn，Pb和Sb）的比容量有所提高，但它们的倍率能力极大地限制了SIB的性能。因此，对于SIBs来说，开发合适的钠离子电池阳极材料变得相当紧迫。(From材料人By微观世界)</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Aydinol97PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Aydinol, M. K.; Kohan, A. F.; Ceder, G.; Cho, K.; Joannopoulos, J. Ab Initio Study of Lithium Intercalation in Metal Oxides and Metal Dichalcogenides. <em>Phys. Rev. B</em> <strong>1997</strong>, <em>56</em>, 1354–1365.</div>
+</div>
+<div id="ref-Zhang16AAMI" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Zhang, Y.; Wu, Z.-F.; Gao, P.-F.; Zhang, S.-L.; Wen, Y.-H. Could Borophene Be Used as a Promising Anode Material for High-Performance Lithium Ion Battery? <em>ACS Appl. Mater. Inter.</em> <strong>2016</strong>, <em>8</em>, 22175–22181.</div>
+</div>
+<div id="ref-Zhang16N" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Zhang, X.; Hu, J.; Cheng, Y.; Yang, H. Y.; Yao, Y.; Yang, S. A. Borophene as an Extremely High Capacity Electrode Material for Li-Ion and Na-Ion Batteries. <em>Nanoscale</em> <strong>2016</strong>, <em>8</em>, 15340–15347.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

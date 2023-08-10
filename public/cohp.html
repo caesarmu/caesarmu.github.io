@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>COHP</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="COHP"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#theory-from-h2-to-data-storage-alloys"><span class="toc-section-number">1</span> Theory: From H<sub>2</sub> to Data-Storage Alloys</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="theory-from-h2-to-data-storage-alloys"><span class="header-section-number">1</span> Theory: From H<sub>2</sub> to Data-Storage Alloys</h1>
+<ul>
+<li>From <a href="http://www.cohp.de/" class="uri">http://www.cohp.de/</a></li>
+</ul>
+<p>The COHP (or COOP) concept is most easily understood by looking at the simple band structure of a "one-dimensional" solid; the following example has been stolen from <a href="http://onlinelibrary.wiley.com/doi/10.1002/anie.1987084%2061/abstract">a classic introduction</a>. Imagine a linear chain of hydrogen atoms, the one-dimensionally periodic analogue of H<sub>2</sub> (whose molecular-orbital scheme is known from the freshmen lecture)! Along this chain, each H atom carries one 1s atomic orbital, and we may sketch them in the following figure by colored spheres. The ideal combination of these 1s orbitals would certainly be one where all have the same plus/minus sign (visualized by like coloring); this is the H–H bonding (in-phase) crystal orbital, characterized by a positive overlap population. At high energies, we find alternating plus/minus signs between neighboring atomic orbitals; this is the H–H antibonding (out-of-phase) combination with a negative overlap population:</p>
+<figure>
+<img src="../img/picture.gif" alt="From Bands to DOS to COOP, schematic" /><figcaption aria-hidden="true">From Bands to DOS to COOP, schematic</figcaption>
+</figure>
+<p>The density-of-states (DOS) diagram in the middle results as the inverse slope of the band structure on the left. Physicists will note that, funnily, quantum chemists plot the energy as a function of the DOS; while this does not make sense at all from a physicist's perspective (the DOS is a function of the energy, not vice versa), chemists want to see how the DOS emerges from the bands; it's just a matter of cultures (or religion).</p>
+<p>A bonding indicator for the solid is easily constructed by generating an overlap population-weighted density-of-states, the crystal orbital overlap population (COOP), given on the right part of the above figure. The COOP results from multiplying the DOS by the overlap population, and it adds an additional dimension—the bonding information: it adopts positive values (bonding, because of the positive overlap population) and negative values (which identify antibonding interactions). By comparing the band structure and its orbital icons with the COOP diagram, it is obvious why the nearest-neighbor COOP is bonding at low energies and antibonding at high energies. Simple, isn't it? Note that we have effectively partitioned the electron density into bonding, nonbonding, and antibonding sections.</p>
+<p>If one can weight the DOS by the overlap population, one can also weight it by the corresponding element of the Hamiltonian. In fact, technical reasons arising within density-functional techniques suggest to choose the latter method, dubbed <a href="http://pubs.acs.org/doi/abs/10.1021/j100135a014">crystal orbital Hamilton population (COHP)</a>. By doing so, we partition the band structure energy (instead of the electrons) but again into bonding, nonbonding, and antibonding contributions. There is also a difference in the plus/minus signs: we recall that bonding is characterized by a <em>positive</em> overlap population; the corresponding Hamiltonian off-site element (physicists would probably call it "hopping term") will then be <em>negative</em>, just like the hydrogen molecule <em>lowers</em> its energy by forming a bond! Consequently, antibonding interactions exhibit positive off-site Hamiltonian elements.</p>
+<p>In order to make COHP plots look similar to COOP, most people (including us) are plotting –COHP diagrams such that bonding states (positive, to the right) and antibonding states (negative, to the left) are easy to grasp. Note that there is not a <em>direct</em> equivalence between COOP and –COHP—why would we need this page, otherwise?</p>
+<p>Let us look at a more realistic example. This finger exercise, <a href="http://onlinelibrary.wiley.com/doi/10.1002/1521-3749%28200201%2%209628:1%3C295::AID-ZAAC295%3E3.0.CO;2-T/abstract">published 2002</a>, nicely illustrates how nature optimizes structures by the above principle of maximum bonding. If one calculates the band structure of, say, elemental tellurium assuming a primitive, simple cubic crystal structure, one arrives at the following bands, DOS and COHP:<br />
+</p>
+<figure>
+<img src="../img/picture.png" alt="COHP analysis for hypothetical undistorted, simple cubic Te." /><figcaption aria-hidden="true">COHP analysis for hypothetical undistorted, simple cubic Te.</figcaption>
+</figure>
+<p>Some bands cross the Fermi level, leading to a significant DOS; cubic Te would be expected to be an electric conductor. Te–Te bonding, however, is clearly unoptimized since there are populated (!) antibonding states which lead to an enormous internal stress. As a matter of fact, more than 11 GPa pressure are needed to force tellurium into the related rhombohedral Po structure with six equal interatomic Te-Te distances; otherwise the antibonding, repelling atomic interactions cannot be counterbalanced.</p>
+<p>Just like in molecular orbital theory, the antibonding states at high energies reflect an electronic instability, a Peierls instability in this particular case. If left alone, cubic Te immediately "explodes" and adopts its famous ground-state structure containing helices of Te atoms. You may now guess how the bands, DOS and COHP look like; here they are:</p>
+<figure>
+<img src="../img/picture_002.png" alt="COHP analysis for Te in its actual trigonal structure." /><figcaption aria-hidden="true">COHP analysis for Te in its actual trigonal structure.</figcaption>
+</figure>
+<p>Upon structural change, a band gap opens up, depleting antibonding areas; in fact, hexagonal Te is a small band gap semiconductor, as observed in the DOS. Focusing on the COHP plots, the antibonding interactions below the Fermi level have become much smaller. Again, nature optimizes bonding.</p>
+<p>This conceptual approach can be further extended to spin-related phenomena, offering <a href="http://onlinelibrary.wiley.com/doi/10.1002/%28SICI%291521-%203773%2820000502%2939:9%3C1560::AID-ANIE1560%3E3.0.CO;2-T/abstract">a new look at itinerant magnetism</a> of the transition metals. We would first like to know how the band structure of body-centered cubic (bcc) iron looks like without spin-polarization. In other words, we do a <em>gedankenexperiment</em> on an Fe phase which does not exist at all, namely nonmagnetic iron at zero Kelvin—here are the bands, the DOS and the Fe–Fe COHP for nonmagnetic Fe, that is, with all spins paired:</p>
+<figure>
+<img src="../img/picture_003.png" alt="Data for hypothetical, nonmagnetic iron." /><figcaption aria-hidden="true">Data for hypothetical, nonmagnetic iron.</figcaption>
+</figure>
+<p>The bands in the valence region are mostly 3d, naturally, and there results the typical three-peaked DOS of a bcc transition metal. The curious thing about the nonmagnetic COHP is that the Fermi level falls in a strong Fe–Fe <em>antibonding</em> region. Again, we have discerned an electronic instability!</p>
+<p>Consequently, one would expect some kind of structural change—which here does not occur: bcc-Fe stays bcc-Fe. The answer to that puzzle is that nonmagnetic iron <em>does</em> undergo a distortion, but instead of the atoms rearranging themselves, the electrons do. Nonmagnetic bcc-Fe is unstable with respect to an <em>electronic structure distortion</em>, which makes the two spin sublattices inequivalent, thereby lowering the energy and giving rise, upon ordering, to ferromagnetism; these are the corresponding spin-polarized results:</p>
+<figure>
+<img src="../img/picture_004.png" alt="DOS and COHP for ferromagnetic (spin-polarized) iron." /><figcaption aria-hidden="true">DOS and COHP for ferromagnetic (spin-polarized) iron.</figcaption>
+</figure>
+<p>The theoretical magnetic moment (2.27 Bohr magnetons) is very close to the experimental one (2.21). Upon spin-polarization, the total energy lowers by about 0.43 eV, which is paralleled by a strengthening of the Fe–Fe bonds by roughly 5 per cent. The shifts in the majority (red) and minority (blue) spin sublattices have removed the antibonding states at the Fermi level, thereby maximizing the Fe–Fe bonding as far as possible. It looks like a new, purely electronic kind of Jahn-Teller distortion since only the electrons are involved in breaking the symmetry. <a href="http://onlinelibrary.wiley.com/doi/10.1002/%28SICI%291521-37%2073%2820000502%2939:9%3C1560::AID-ANIE1560%3E3.0.CO;2-T/abstract">What about the other transition metals?</a> The following picture shows the nonmagnetic DOSs and metal-metal COHPs for the entire 3d row:</p>
+<figure>
+<img src="../img/picture_004.gif" alt="COHP analysis for the 3d row." /><figcaption aria-hidden="true">COHP analysis for the 3d row.</figcaption>
+</figure>
+<p>For the early transition metals like Ti, the Fermi level lies low in the COHP curve and thereby falls in the metal–metal bonding region: there is no drive towards ferromagnetism for the early transition metals. For Cr (a typical antiferromagnet), the Fermi level lies in the COHP curve between the bonding and antibonding regions, whereas for the metals from Mn (which we describe in a bcc structure for simplicity) to Ni, the Fermi level lies in the clearly antibonding region; Fe, Co, and Ni are all ferromagnetic. (To our physicist friends: yep, we know that this story can be physically explained by the size of the kinetic and exchange energies, and there is also Stoner's invaluable theory. You have, however, just witnessed a <em>chemical</em> interpretation of that very phenomenon.)</p>
+<p>An extension of this idea to more complicated alloys is straightforward: if you want to synthesize a new ferromagnet, try to adjust (by chemical means such as oxidation and reduction) the Fermi energy of the material such as to push it into antibonding interactions. To avoid overloading this site, we may just refer the reader to <a href="http://onlinelibrary.wiley.com/doi/10.1002/1521-3773%2820020715%2%20941:14%3C2528::AID-ANIE2528%3E3.0.CO;2-6/abstract">some of</a> the <a href="http://onlinelibrary.wiley.com/doi/10.1002/chem.200700128%20/abstract">original literature</a>.</p>
+<p>At last, let us look at a totally different field of chemistry, in which COHP analysis has been established as quite useful as well. With the incredible amounts of digital data that are generated each day—COHP plots, stock market prices, adult movies, weather simulations—new technologies for storing such data are very much needed. A promising way is the use of so-called <a href="http://www.nature.com/nmat/journal/v6/n11/full/nmat2009.ht%20ml">phase-change materials</a> (PCMs) which can be switched between two different solid-state forms, usually a crystalline and an amporphous phase; this way, one can reversibly encode "one" and "zero" bits. Crudely sketched, it looks like this:</p>
+<figure>
+<img src="../img/picture_002.gif" alt="Schematic principle of PCM operation." /><figcaption aria-hidden="true">Schematic principle of PCM operation.</figcaption>
+</figure>
+<p>Many such PCMs are found in the ternary germanium–antimony–tellurium system. (Chemists shorten this notation to "Ge–Sb–Te", physicists and engineers are even more economic and say "GST"). Ge<sub>2</sub>Sb<sub>2</sub>Te<sub>5</sub>, for example, is found in DVD-RAM disks whereas Ge<sub>8</sub>Sb<sub>2</sub>Te<sub>11</sub> is employed in the re-writeable Blu-Ray disk. As a first step, we here look at a few prototypical compounds but keep in mind that all "GST" materials are closely related chemically, no matter the exact stoichiometric composition.</p>
+<p>We have now <a href="http://www.nature.com/nmat/journal/v6/n2/full/nmat1807.html">calculated COHP curves</a>, starting with the hypothetical compound Ge<sub>2</sub>Sb<sub>2</sub>Te<sub>4</sub> (left), taking the rocksalt structure with Ge and Sb randomly distributed on the cationic (fcc) sublattice, and Te fully occupying the other, anionic one. Indeed, this very compound does <em>not</em> exist; surprisingly only at first sight, it decomposes by expelling pure germanium.</p>
+<figure>
+<img src="../img/picture_003.gif" alt="COHP analysis for Ge2Sb2Te4, Ge1.5Sb2Te4, and Ge1Sb2Te4." /><figcaption aria-hidden="true">COHP analysis for Ge2Sb2Te4, Ge1.5Sb2Te4, and Ge1Sb2Te4.</figcaption>
+</figure>
+<p>The above picture shows why. Both Ge–Te and Sb–Te bonding clearly falls into antibonding regions around the Fermi level if one starts with the fully occupied, rocksaltlike "224" phase. By removing cations (and creating vacancies on the corresponding sublattice), the Fermi level is lowered, removing electrons from these unfavorable areas. On the right, the GST-124 material is characterized where a noticeable part of these antibonding levels has been emptied, and the remaining structure is strenghtened this way. Please, as always, have a look at the <a href="http://www.nature.com/nmat/journal/v6/n2/full/nmat1807.html">original story</a> for a more detailed presentation as possible here.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

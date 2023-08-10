@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Cluster</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Cluster"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#sitesmontejano-carrizales97nm"><span class="toc-section-number">1</span> Sites<span class="citation" data-cites="Montejano-Carrizales97NM"><sup>[1]</sup></span></a></li>
+          <li><a href="#reorganization-energyjones18n"><span class="toc-section-number">2</span> Reorganization Energy<span class="citation" data-cites="Jones18N"><sup>[2]</sup></span></a></li>
+          <li><a href="#ref.">Ref.</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="sitesmontejano-carrizales97nm"><span class="header-section-number">1</span> Sites<span class="citation" data-cites="Montejano-Carrizales97NM"><sup>[1]</sup></span></h1>
+<table>
+<caption>Table 5. Particular Expressions of the Geometrical Characteristics for the Cube-octahedral, Icosahedral, Budy Centered Cubic and Simple Cubic Structures.</caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">CO</th>
+<th style="text-align: center;">Ico</th>
+<th style="text-align: center;">BCC</th>
+<th style="text-align: center;">SC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">N</span></td>
+<td style="text-align: center;"><span class="math inline">10\nu^3/3+5\nu^2+11\nu/3+1</span></td>
+<td style="text-align: center;"><span class="math inline">10\nu^3/3+5\nu^2+11\nu/3+1</span></td>
+<td style="text-align: center;"><span class="math inline">(2\nu+1)(\nu^2+\nu+1)</span></td>
+<td style="text-align: center;"><span class="math inline">(2\nu+1)^3</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">N_{\sigma}</span></td>
+<td style="text-align: center;"><span class="math inline">10\nu^2+2</span></td>
+<td style="text-align: center;"><span class="math inline">10\nu^2+2</span></td>
+<td style="text-align: center;"><span class="math inline">6\nu^2+2</span></td>
+<td style="text-align: center;"><span class="math inline">24\nu^2+2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">D</span></td>
+<td style="text-align: center;"><span class="math inline">N_{\sigma}/N</span></td>
+<td style="text-align: center;"><span class="math inline">N_{\sigma}/N</span></td>
+<td style="text-align: center;"><span class="math inline">N_{\sigma}/N</span></td>
+<td style="text-align: center;"><span class="math inline">N_{\sigma}/N</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">N_S</span></td>
+<td style="text-align: center;"><span class="math inline">6(\nu-1)^2</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;"><span class="math inline">6(\nu-1)^2</span></td>
+<td style="text-align: center;"><span class="math inline">6(2\nu-1)^2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">R_S^p</span></td>
+<td style="text-align: center;"><span class="math inline">\nu(\nu+2)/8</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;"><span class="math inline">\nu(\nu+2)/8</span></td>
+<td style="text-align: center;"><span class="math inline">\nu(\nu+1)/2</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">R_S^i</span></td>
+<td style="text-align: center;"><span class="math inline">(\nu^2-1)/8</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;"><span class="math inline">(\nu^2-1)/8</span></td>
+<td style="text-align: center;"><span class="math inline">\nu(\nu+1)/2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">N_T</span></td>
+<td style="text-align: center;"><span class="math inline">4(\nu-1)(\nu-2)</span></td>
+<td style="text-align: center;"><span class="math inline">10(\nu-1)(\nu-2)</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;">—-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">R_T^p</span></td>
+<td style="text-align: center;"><span class="math inline">\sum\limits_{\alpha=1}^{m/2}(3\alpha+a)+\sum\limits_{\alpha=1}^{m/2-1}(3\alpha);\nu=3m+a;\alpha=-1,0,1</span></td>
+<td style="text-align: center;"><span class="math inline">\sum\limits_{\alpha=1}^{m/2}(3\alpha+a)+\sum\limits_{\alpha=1}^{m/2-1}(3\alpha);\nu=3m+a;\alpha=-1,0,1</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;">—-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">R_T^i</span></td>
+<td style="text-align: center;"><span class="math inline">\frac{1+a}{1+|a|}+\sum\limits_{\alpha=1}^{(m-1)/2}(6\alpha+a);\nu=3m+a;\alpha=-1,0,1</span></td>
+<td style="text-align: center;"><span class="math inline">\frac{1+a}{1+|a|}+\sum\limits_{\alpha=1}^{(m-1)/2}(6\alpha+a);\nu=3m+a;\alpha=-1,0,1</span></td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;">—-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">N_E</span></td>
+<td style="text-align: center;"><span class="math inline">24(\nu-1)</span></td>
+<td style="text-align: center;"><span class="math inline">30(\nu-1)</span></td>
+<td style="text-align: center;"><span class="math inline">12(\nu-1)</span></td>
+<td style="text-align: center;"><span class="math inline">12(2\nu-1)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">R_E^p</span></td>
+<td style="text-align: center;"><span class="math inline">\nu/2</span></td>
+<td style="text-align: center;"><span class="math inline">\nu/2</span></td>
+<td style="text-align: center;"><span class="math inline">\nu/2</span></td>
+<td style="text-align: center;"><span class="math inline">\nu</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">R_E^i</span></td>
+<td style="text-align: center;"><span class="math inline">(\nu-1)/2</span></td>
+<td style="text-align: center;"><span class="math inline">(\nu-1)/2</span></td>
+<td style="text-align: center;"><span class="math inline">(\nu-1)/2</span></td>
+<td style="text-align: center;"><span class="math inline">\nu</span></td>
+</tr>
+</tbody>
+</table>
+<p>P.S.</p>
+<ul>
+<li><span class="math inline">N</span>: Total number of atoms</li>
+<li><span class="math inline">N_{\sigma}</span>: Number of atoms in a crust</li>
+<li><span class="math inline">N_S</span>: Number of atoms on square faces, S</li>
+<li><span class="math inline">R_S^e</span>: Number of shells in which the S-tites are contained (<span class="math inline">\nu</span> even)</li>
+<li><span class="math inline">R_S^o</span>: Number of shells in which the S-sites are contained (<span class="math inline">\nu</span> odd)</li>
+<li><span class="math inline">N_T</span>: Number of atoms on triangular faces, T</li>
+<li><span class="math inline">R_T^e</span>: Number of shells in which the T-sites are contained (<span class="math inline">\nu</span> even)</li>
+<li><span class="math inline">R_T^o</span>: Number of shells in which the T-sites are contained (<span class="math inline">\nu</span> odd)</li>
+<li><span class="math inline">N_E</span>: Number of atoms on edges, E</li>
+<li><span class="math inline">R_E^e</span>:Number of shells in which the E-sites are contained (<span class="math inline">\nu</span> even)</li>
+<li><span class="math inline">R_E^o</span>:Number of shells in which the &amp;sites are contained (<span class="math inline">\nu</span> odd)</li>
+<li><span class="math inline">D_I</span>: Contribution of the <span class="math inline">I</span>–sites to the dispersion; {<span class="math inline">N_I/N;I=S, T, E, V</span>)</li>
+<li><span class="math inline">\Nu_C</span>: Number of bonds in the core of a cluster of order <span class="math inline">\nu</span>;(<span class="math inline">1/2\times{z}\times{N}(\nu-1)</span>)</li>
+<li><span class="math inline">\Nu_{SC}</span>: Number of bonds between the surface (<span class="math inline">\nu</span>) and core (<span class="math inline">\nu</span> – 1):<span class="math inline">\sum\limits_I(\uparrow)_IN_I(\nu-1),\sum\limits_I(\downarrow)_IN_I(\nu)</span></li>
+<li><span class="math inline">\Nu_{SS}</span>: Number of bonds on the surface of a cluster of order <span class="math inline">\nu</span>, <span class="math inline">\frac{1}{2}\sum\limits_I(\leftrightarrow)_IN_I(\nu)</span></li>
+<li><span class="math inline">\Nu</span>: Number of bonds in a cluster of order <span class="math inline">\nu</span>, (<span class="math inline">N_C+N_{SC}+N_{SS}</span>)<br />
+</li>
+<li><span class="math inline">\bar{Z}</span>: Cluster average coordination number; <span class="math inline">2\Nu(\nu)/N(\nu)</span></li>
+<li><span class="math inline">\bar{Z}_C</span>: Core average coordination number; <span class="math inline">2\Nu_C(\nu)/N(\nu-1)</span></li>
+<li><span class="math inline">\bar{Z}_{CS}</span>: Core-surface average coordination number; <span class="math inline">\Nu_{SC}(\nu)/N_{\sigma}(\nu-1)</span></li>
+<li><span class="math inline">\bar{Z}_{SC}</span>: Surface-core average coordination number; <span class="math inline">\Nu_{CC}(\nu)/N_{\sigma}(\nu)</span></li>
+<li><span class="math inline">\bar{Z}_{SS}</span>: Surface average coordination number; <span class="math inline">2\Nu_{Ss}(\nu)/N_{\sigma}(\nu)</span></li>
+</ul>
+<h1 data-number="2" id="reorganization-energyjones18n"><span class="header-section-number">2</span> Reorganization Energy<span class="citation" data-cites="Jones18N"><sup>[2]</sup></span></h1>
+<p><img src="../img/Ereorg.png" title="Ereorg" style="width:100.0%" /> Fig. 1: The ionization energy (IE) and electron affnity (EA) pathways between the anion, neutral and cation potential energy surfaces for the calculation of the hole (electron) reorganization energy <span class="math inline">\lambda_h</span> (<span class="math inline">\lambda_e</span>).</p>
+<h1 class="unnumbered" id="ref.">Ref.</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Montejano-Carrizales97NM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Montejano-Carrizales, J. M.; Aguilera-Granja, F.; Morán-López, J. L. DIRECT ENUMERATION OF THE GEOMETRICAL CHARACTERISTICS OF CLUSTERS. <em>Nanostruct. Mater.</em> <strong>1997</strong>, <em>8</em>, 269–287.</div>
+</div>
+<div id="ref-Jones18N" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Jones, L.; Lin, L.; Chamberlain, T. W. Oxygen, Sulfur and Selenium Terminated Single-Walled Heterocyclic Carbon Nanobelts (SWHNBs) as Potential 3d Organic Semiconductors. <em>Nanoscale</em> <strong>2018</strong>, <em>10</em>, 7639–7648.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

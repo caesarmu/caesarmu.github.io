@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>CO2 Reduction</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="CO2 Reduction"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#基本介绍"><span class="toc-section-number">1</span> 基本介绍</a></li>
+          <li><a href="#free-energies-for-some-molecules"><span class="toc-section-number">2</span> Free energies for some molecules</a>
+          <ul>
+          <li><a href="#basepeterson10ees"><span class="toc-section-number">2.1</span> Base<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></a></li>
+          <li><a href="#free-energy-at-harmonic-approximation-asthagiri14p"><span class="toc-section-number">2.2</span> Free energy at harmonic approximation<span class="citation" data-cites="asthagiri14P"><sup>[3]</sup></span></a></li>
+          <li><a href="#free-energies-of-non-adsorbed-molecules"><span class="toc-section-number">2.3</span> Free energies of non-adsorbed molecules</a></li>
+          <li><a href="#free-energies-of-adsorbed-molecules"><span class="toc-section-number">2.4</span> Free energies of adsorbed molecules</a></li>
+          <li><a href="#pbe-vs.-rpbe"><span class="toc-section-number">2.5</span> PBE vs. RPBE</a>
+          <ul>
+          <li><a href="#reaction-pbed3-at-18.5c"><span class="toc-section-number">2.5.1</span> Reaction (PBE+D3) at 18.5◦C</a></li>
+          <li><a href="#implicit-solvation-correction-at-pbe"><span class="toc-section-number">2.5.2</span> Implicit Solvation Correction at PBE</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#backgroundgao15jacs"><span class="toc-section-number">3</span> Background<span class="citation" data-cites="Gao15JACS"><sup>[5]</sup></span></a></li>
+          <li><a href="#methods"><span class="toc-section-number">4</span> Methods</a>
+          <ul>
+          <li><a href="#formulas-1peterson12jpcl"><span class="toc-section-number">4.1</span> Formulas 1<span class="citation" data-cites="Peterson12JPCL"><sup>[7]</sup></span></a></li>
+          <li><a href="#formulas-2hansen13jpcl"><span class="toc-section-number">4.2</span> Formulas 2<span class="citation" data-cites="Hansen13JPCL"><sup>[9]</sup></span></a>
+          <ul>
+          <li><a href="#thermodynamic-treatment"><span class="toc-section-number">4.2.1</span> Thermodynamic Treatment</a></li>
+          <li><a href="#computational-hydrogen-electrode"><span class="toc-section-number">4.2.2</span> Computational Hydrogen Electrode</a></li>
+          <li><a href="#direct-co2-dissociation"><span class="toc-section-number">4.2.3</span> Direct CO<sub>2</sub> dissociation</a></li>
+          <li><a href="#kinetic-model"><span class="toc-section-number">4.2.4</span> Kinetic model</a></li>
+          <li><a href="#alkaline-kinetic-model"><span class="toc-section-number">4.2.5</span> Alkaline kinetic model</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#co2-reduction"><span class="toc-section-number">5</span> CO<sub>2</sub> Reduction</a>
+          <ul>
+          <li><a href="#co2-to-co"><span class="toc-section-number">5.1</span> CO<sub>2</sub> to CO</a></li>
+          </ul></li>
+          <li><a href="#ref.">Ref.</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="基本介绍"><span class="header-section-number">1</span> 基本介绍</h1>
+<p>CO<sub>2</sub>热力学较为稳定（标准摩尔生成焓为-393.51 kJ•mol-1）、惰性、不易活化（C=O键键能为~750 kJ•mol-1）。因此，实现CO<sub>2</sub>在温和条件下的化学转化是一项极具挑战性的研究。CO<sub>2</sub>电化学还原可将太阳能、风能等可再生能源转化的电能进一步转化成化学能，储存在高附加值的燃料与化学品中。尽管CO<sub>2</sub>电化学还原逐步引起各国科学家的关注和研究兴趣，但该领域仍然存在许多亟待解决的问题，例如：（1）过高的外加电势（或低能量效率）；（2）缓慢的电子传递动力学；（3）产物的选择性不理想；（4）偏电流密度过低（仅几十毫安每平方厘米）；（5）催化剂的稳定性与耐久性欠佳（小于100小时）等。上述问题极大地限制了已有电极催化材料的实际应用和商业化。基于此，开发高性能的催化材料，降低CO<sub>2</sub>电化学还原的过电位，提高催化材料的活性、选择性和稳定性具有重要的科学意义和工业价值。(From X-Mol)</p>
+<p>与传统的催化材料相比，二维纳米材料（纳米片）具有更大的比表面积，有利于反应物的扩散；具有更多暴露的活性位点，有利于界面电荷的快速转移。同时，二维材料可以通过异质原子（金属或非金属元素）掺杂进一步增加低配位的原子比，促进反应物的化学吸附与活化；此外，人们也可通过控制空位缺陷和外界刺激（电场、应变、光照等）实现对电子结构的调节，有效调节其催化性质。近年来，二维纳米结构的金属（如Co、Ag、Sb纳米片）、金属氧化物（如SnO2、Co3O4）、金属硫族化物（如MoS2、WSe2、SnS2、MoSeS和Mo-Bi双金属硫化物等）以及二维碳材料（单原子掺杂、多原子掺杂石墨烯）等在CO<sub>2</sub>电化学还原领域均表现出巨大的潜力。(From X-Mol)</p>
+<h1 data-number="2" id="free-energies-for-some-molecules"><span class="header-section-number">2</span> Free energies for some molecules</h1>
+<h2 data-number="2.1" id="basepeterson10ees"><span class="header-section-number">2.1</span> Base<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></h2>
+<ul>
+<li>Since the RHE is defined to be at 0 V at all pH values, a pH correction is not needed. Thus, the total chemical potential of the proton-electron pair as a function of applied potential, at all temperature and pH values, can be calculated as <span class="math display">\mu(H^+)+\mu(e^-)=\frac{1}{2}\mu(H_{2(g)})-eU</span></li>
+<li>As an example, to calculate the free energy change from State 3 (adsorbed CO) to State 23 (adsorbed CHO), the free energy change of the below chemical reaction needs to be calculated: <span class="math display">CO^*+H^++e^-\rightarrow CHO^*</span> where an asterisk (∗) indicates that the species is adsorbed on the copper surface. The free energy change of this reaction would thus be: <span class="math display">\Delta G(3\rightarrow23)=\mu(CHO^*)-\mu(CO^*)-[\mu(H^+)+\mu(e^-)]</span> <span class="math display">=\mu(CHO^*)-\mu(CO^*)-[\frac{1}{2}\mu(H_{2(g)})-eU]</span></li>
+<li>To facilitate comparisons versus the data of Hori et al. [2], the literature data was converted from standard hydrogen electrode (SHE), which is defined at pH 0, to RHE by subtracting <span class="math inline">k_BT\times pH\times\ln10</span>.</li>
+<li>In the current study, the relative free energies of the intermediates were taken only as an indication of when different pathways in the electroreduction of CO<sub>2</sub> open, <span style="color:red;"><strong>since reaction barriers and coverage effects were not calculated. Barriers for proton transfer to adsorbates from solution are expected to be quite small</strong></span>.</li>
+<li>Free energies of adsorbates were calculated by <span style="color:red;"><strong>treating all 3N degrees of freedom of the adsorbate as vibrational and assuming that any changes in the vibrations of the copper surface caused by the presence of the adsorbate were minimal</strong></span>, in accordance with Jones et al. [12].</li>
+<li><span style="color:red;"><strong>Zero-point energies, entropies, and heat capacities were calculated from these vibrations by standard methods<span class="citation" data-cites="Cramer04P"><sup>[2]</sup></span> and used to convert the electronic energies into free energies at 18.5◦C</strong></span>(to permit comparison to the data of Hori et al.[2]).</li>
+<li>We include solvation at the water-solid interface approximately by exploiting the findings that hydroxyl adsorbates (OH*) exposed to the liquid water were found to be stabilized by approximately 0.5 eV [1, 14, 15], and <span style="color:red;"><strong>hydroxyl that is indirectly bound to the surface through other atoms, *R-OH, may be stabilized by 0.25 eV (as shown for OOH) [4]. This resulted in a CO* stabilization of 0.1 eV which was applied to CO* and CHO*</strong></span></li>
+</ul>
+<h2 data-number="2.2" id="free-energy-at-harmonic-approximation-asthagiri14p"><span class="header-section-number">2.2</span> Free energy at harmonic approximation<span class="citation" data-cites="asthagiri14P"><sup>[3]</sup></span></h2>
+<p><span class="math display">G(T)=H(T)-TS</span> <span class="math display">H(T)=E{elec}+E_{ZPE}+\int_{0K}^T C_V dT</span> <span class="math display">E_{ZPE}=\frac{1}{2}\sum\limits_{i=0}^{\#DOF}\hbar\omega_i</span> <span class="math display">\int\limits_{0K}^TC_VdT=\sum\limits_{i=0}^{\#DOF}\frac{\hbar\omega_i}{exp(\hbar\omega/k_BT)-1}</span> <span class="math display">S(T)=k_B\sum\limits_{i=0}^{\#DOF}(\frac{\hbar\omega_i/k_BT}{\exp(\hbar\omega_i/k_BT)-1}-ln(1-exp(-\hbar\omega_i/k_BT)))</span></p>
+<h2 data-number="2.3" id="free-energies-of-non-adsorbed-molecules"><span class="header-section-number">2.3</span> Free energies of non-adsorbed molecules</h2>
+<table style="width:100%;">
+<caption>Table. Assumed fugacity for each non-adsorbate species, along with calculated electronic energy, zero-point energy correction, enthalpic temperature correction, entropy contribution, and chemical potential, respectively. Electronic energies and chemical potentials do not include the gas-phase correction. H2 is the value used for gaseous hydrogen, H2 (ref) is used for the computational hydrogen electrode as described in Section 1<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>. My calculated values at 18.5◦C using VASP/VASPKIT<span class="citation" data-cites="Wang21CPC"><sup>[4]</sup></span> (PBE-D3/PAW) are shown in later parentheses.</caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;">Fugacity (Pa)</th>
+<th style="text-align: center;"><span class="math inline">E_{elec}</span> (eV)</th>
+<th style="text-align: center;">ZPE (eV)</th>
+<th style="text-align: center;"><span class="math inline">\int C_p dT</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">-TS</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\mu</span> (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">CO<sub>2</sub></td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.31 (0.3067)</td>
+<td style="text-align: center;">0.10 (0.0716)</td>
+<td style="text-align: center;">-0.65 (-0.6456)</td>
+<td style="text-align: center;">0.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO</td>
+<td style="text-align: center;">5562</td>
+<td style="text-align: center;">1.75</td>
+<td style="text-align: center;">0.14 (0.1318)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.67 (-0.6680)</td>
+<td style="text-align: center;">1.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H<sub>2</sub></td>
+<td style="text-align: center;">30296</td>
+<td style="text-align: center;">-0.00</td>
+<td style="text-align: center;">0.27 (0.2676)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.42 (-0.4220))</td>
+<td style="text-align: center;">-0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">HCOOH</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">0.90 (0.8869)</td>
+<td style="text-align: center;">0.11 (0.0874)</td>
+<td style="text-align: center;">-1.02 (-1.0217)</td>
+<td style="text-align: center;">0.91</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CH<sub>3</sub>OH</td>
+<td style="text-align: center;">6079</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">1.35</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">-0.79</td>
+<td style="text-align: center;">0.73</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub>O</td>
+<td style="text-align: center;">3534</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0.58 (0.5678)</td>
+<td style="text-align: center;">0.10 (0.0755)</td>
+<td style="text-align: center;">-0.65 (-0.6530)</td>
+<td style="text-align: center;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CH<sub>4</sub></td>
+<td style="text-align: center;">20467</td>
+<td style="text-align: center;">-1.22</td>
+<td style="text-align: center;">1.20 (1.1859)</td>
+<td style="text-align: center;">0.10 (0.0765)</td>
+<td style="text-align: center;">-0.60 (-0.6009)</td>
+<td style="text-align: center;">-0.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CH<sub>2</sub>O</td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">1.19</td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">-0.66</td>
+<td style="text-align: center;">1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C<sub>2</sub>H<sub>4</sub></td>
+<td style="text-align: center;">13942</td>
+<td style="text-align: center;">-0.01</td>
+<td style="text-align: center;">1.36</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">-0.71</td>
+<td style="text-align: center;">0.74</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub> (ref)</td>
+<td style="text-align: center;">101325</td>
+<td style="text-align: center;">-0.00</td>
+<td style="text-align: center;">0.27 (0.2676)</td>
+<td style="text-align: center;">0.09 (0.0628)</td>
+<td style="text-align: center;">-0.39 (-0.3916)</td>
+<td style="text-align: center;">-0.03</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The free energy of liquid water was calculated as an ideal gas and adjusted to a fugacity of 3534 Pa, which is the vapor pressure of water (at which point the chemical potential of liquid and vapor phases are equal). Similarly, formic acid was calculated as an ideal gas with a fugacity of 2.0 Pa, which corresponds to an aqueous-phase activity of 0.01. Methanol was calculated at a fugacity of 6080 Pa, which from its vapor-liquid equilibrium with water corresponds to a liquid mole fraction of 0.01.</li>
+<li>As reported elsewhere [16], the gas-phase thermochemical reaction energies calculated with the RPBE functional were found to be inconsistent with experimental values. In particular, the reaction enthalpy of the water-gas shift reaction was found to be particularly deviant from its known experimental value; the thermochemistry of this reaction is of particular importance in this study. To quantify this inaccuracy, a set of 11 species in 21 reactions (listed in Table S6), focused on the energies of CO<sub>2</sub>, CO, H<sub>2</sub>, and H<sub>2</sub>O, was statistically analyzed. . <span style="color:red;"><strong>A systematic error was found in all species containing the OCO backbone, specifically CO<sub>2</sub>, HCOOH, CH<sub>3</sub>COOH, and HCOOCH<sub>3</sub> (of which, only CO<sub>2</sub> and HCOOH are significant in the current study)</strong></span></li>
+<li>The mean absolute error of the unaffected (“bystander”) reactions is 0.157 eV; the mean absolute error of the affected reactions at 0 eV correction is 0.385 eV. As shown, the optimal correction to these species is +0.45 eV. This results in a reduction in the mean absolute error of the affected reactions to 0.061 eV. Thus, <span style="color:red;"><strong>the correction of +0.45 eV was applied to CO<sub>2</sub> and HCOOH in the current study (RPBE)</strong></span>.</li>
+</ul>
+<h2 data-number="2.4" id="free-energies-of-adsorbed-molecules"><span class="header-section-number">2.4</span> Free energies of adsorbed molecules</h2>
+<table>
+<caption>Table S3: Contributions to the adsorbate free energy from the zero-point energy correction, enthalpic temperature correction, entropy, and the total free energy correction, respectively. All values are given in eV<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>. My calculated values at PBE-D3/PAW by VASP/VASPKIT<span class="citation" data-cites="Wang21CPC"><sup>[4]</sup></span> are shown in later parentheses.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Adsorbate</th>
+<th style="text-align: center;">ZPE (eV)</th>
+<th style="text-align: center;"><span class="math inline">\int C_p dT</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">-TS</span></th>
+<th style="text-align: center;"><span class="math inline">G-E_{elec}</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">OH^*</span></td>
+<td style="text-align: center;">0.364 (0.3580)</td>
+<td style="text-align: center;">0.046 (0.0462)</td>
+<td style="text-align: center;">-0.079 (-0.0851)</td>
+<td style="text-align: center;">0.331</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">CO^*</span></td>
+<td style="text-align: center;">0.192 (0.1835)</td>
+<td style="text-align: center;">0.076 (0.0776)</td>
+<td style="text-align: center;">-0.153 (-0.1741)</td>
+<td style="text-align: center;">0.115</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">OCHO^*</span></td>
+<td style="text-align: center;">0.624</td>
+<td style="text-align: center;">0.102</td>
+<td style="text-align: center;">-0.234</td>
+<td style="text-align: center;">0.491</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">H^*</span></td>
+<td style="text-align: center;">0.160</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">-0.007</td>
+<td style="text-align: center;">0.159</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">COOH^*</span></td>
+<td style="text-align: center;">0.624</td>
+<td style="text-align: center;">0.096</td>
+<td style="text-align: center;">-0.178</td>
+<td style="text-align: center;">0.542</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">CHO^*</span></td>
+<td style="text-align: center;">0.444</td>
+<td style="text-align: center;">0.086</td>
+<td style="text-align: center;">-0.184</td>
+<td style="text-align: center;">0.346</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">CH_2O^*</span></td>
+<td style="text-align: center;">0.758</td>
+<td style="text-align: center;">0.091</td>
+<td style="text-align: center;">-0.190</td>
+<td style="text-align: center;">0.659</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">CH_3O^*</span></td>
+<td style="text-align: center;">1.108</td>
+<td style="text-align: center;">0.093</td>
+<td style="text-align: center;">-0.179</td>
+<td style="text-align: center;">1.022</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">O^*</span></td>
+<td style="text-align: center;">0.072</td>
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;">-0.038</td>
+<td style="text-align: center;">0.059</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="2.5" id="pbe-vs.-rpbe"><span class="header-section-number">2.5</span> PBE vs. RPBE</h2>
+<p>Table S8: Comparison of the gas-phase errors encountered with the RPBE and PBE exchangecorrelation functionals. MAE compares the mean absolute error (in eV) of the reactions in Table S6. The numbers next to the molecules indicate the optimal correction to each species to minimize the MAE, considering single molecules only.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">RPBE</th>
+<th style="text-align: center;">PBE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">MAE</td>
+<td style="text-align: center;">.309</td>
+<td style="text-align: center;">.334</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO</td>
+<td style="text-align: center;">-.18</td>
+<td style="text-align: center;">-.51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CO<sub>2</sub></td>
+<td style="text-align: center;">+.41</td>
+<td style="text-align: center;">+.13</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub></td>
+<td style="text-align: center;">+.09</td>
+<td style="text-align: center;">-.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H<sub>2</sub>O</td>
+<td style="text-align: center;">-.21</td>
+<td style="text-align: center;">-.06</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Table S8 shows only single-molecule optimums, thus an optimal correction of +0.41 eV is shown for CO<sub>2</sub>, rather than the +0.45 eV correction noted earlier for all OCO-containing species. <span style="color:red;"><strong>This table implies that the gas-phase error in PBE lies largely on the CO molecule. Thus, an independent set of calculations can be made with the PBE functional without the effect of systematically changing the crucial CO2energy.</strong></span> Gas-phase calculations were undertaken in a manner identical to that described earlier, and <span style="color:red;"><strong>a correction of -0.51 eV was made to the CO energy.</strong></span></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Pathway</th>
+<th style="text-align: center;">RPBE</th>
+<th style="text-align: center;">PBE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Limiting step and potential</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub></td>
+<td style="text-align: center;"><span class="math inline">^*\rightarrow H^*</span> -0.03 eV</td>
+<td style="text-align: center;"><span class="math inline">H^*\rightarrow H_2</span> -0.09 eV</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">HCOOH</td>
+<td style="text-align: center;"><span class="math inline">^*+CO_2\rightarrow COOH^*</span> -0.41 eV</td>
+<td style="text-align: center;"><span class="math inline">OCHO^*\rightarrow HCOOH</span> -0.32 eV</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CO</td>
+<td style="text-align: center;"><span class="math inline">^*+CO_2\rightarrow COOH^*</span> -0.41 eV</td>
+<td style="text-align: center;"><span class="math inline">^*+CO_2\rightarrow COOH^*</span> -0.46 eV</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CH<sub>4</sub></td>
+<td style="text-align: center;"><span class="math inline">CO^* \rightarrow CHO^*</span> -0.74 eV</td>
+<td style="text-align: center;"><span class="math inline">CO^* \rightarrow CHO^*</span> -0.61 eV</td>
+</tr>
+</tbody>
+</table>
+<p>Table S9: Comparison of limiting potentials and steps for RPBE and PBE functionals.</p>
+<ul>
+<li>As can be seen in Table S9, the limiting potential at which each product is first exergonic is unchanged (within ∼0.1 V) when using the gas-corrected PBE or the gas-corrected RPBE functional.</li>
+<li><span style="color:red;"><strong>The PBE functional (with a CO correction) is in reasonable agreement with the RPBE functional (with CO<sub>2</sub> and HCOOH corrections), indicating that the CO<sub>2</sub> gas-phase correction did not significantly skew the results in this study</strong></span>.</li>
+</ul>
+<h3 data-number="2.5.1" id="reaction-pbed3-at-18.5c"><span class="header-section-number">2.5.1</span> Reaction (PBE+D3) at 18.5◦C</h3>
+<h4 data-number="2.5.1.1" id="correctionpeterson10ees"><span class="header-section-number">2.5.1.1</span> Correction<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></h4>
+<ul>
+<li>Solvation effect: <span class="math inline">\mu(CO^*)=\mu(CO^*)-0.1</span>, <span class="math inline">\mu(CHO^*)=\mu(CHO^*)-0.1</span></li>
+<li>Solvation effect: <span class="math inline">\mu(R-OH^*)=\mu(R-OH^*)-0.25</span>, such as <span class="math inline">^*OOH</span></li>
+<li>PBE functional: <span class="math inline">\mu(CO)=\mu(CO)-0.51</span></li>
+<li>RPBE functional: <span class="math inline">\mu(CO_2)=\mu(CO_2)+0.45</span>, <span class="math inline">\mu(HCOOH)=\mu(HCOOH)+0.45</span></li>
+</ul>
+<h4 data-number="2.5.1.2" id="base-energy"><span class="header-section-number">2.5.1.2</span> Base energy</h4>
+<ul>
+<li><span class="math inline">\mu(H_2,ref)=-6.7689-0.036074=-6.8050</span></li>
+<li><span class="math inline">\mu(H_2)=-6.7689-0.066416=-6.8353</span></li>
+<li><span class="math inline">\mu(CO)=-14.7873-0.448284=-15.2356</span></li>
+<li><span class="math inline">\mu(CO_2)=-22.9790-0.243454=-23.2225</span></li>
+<li><span class="math inline">\mu(HCOOH)=-29.9231-0.024958=-29.9481</span></li>
+<li><span class="math inline">\mu(CH_4)=-24.0716+0.686525=-24.7581</span></li>
+<li><span class="math inline">\mu(*)=-67.9144</span></li>
+<li><span class="math inline">\mu(H*)=-71.6994+0.165505=-71.5339</span></li>
+<li><span class="math inline">\mu(CO*)=-83.8841+0.090750=-83.7934</span></li>
+<li><span class="math inline">\mu(OCHO^*)=-95.5559+0.500259=-95.0556</span></li>
+<li><span class="math inline">\mu(COOH^*)=-94.7348+0.497994=-94.2368</span></li>
+<li><span class="math inline">\mu(CHO^*)=-86.7985+0.358354=-86.4401</span></li>
+<li><span class="math inline">\mu(OH^*)=-79.2321+0.319059=-78.9130</span></li>
+</ul>
+<hr />
+<p><span class="math display">^*+H^++e^- \rightarrow H^*</span></p>
+<ul>
+<li><span class="math inline">\Delta G(PBE)=\mu(H*)-\mu(*)-\frac{1}{2}\mu(H_2,ref)=-71.5339+67.9144+6.8050/2=-0.2170</span></li>
+<li><span class="math inline">\Delta G (RPBE)=\mu(H*)-\mu(*)-\frac{1}{2}\mu(H_2,ref)=-0.15+0.159+0.03/2=0.0240</span> vs. 0.03<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+</ul>
+<p><span class="math display">H^*+H^++e^- \rightarrow ^*+ H_2</span></p>
+<ul>
+<li><span class="math inline">\Delta G (PBE)=\mu(*)+\mu(H_2)-\mu(H*)-\frac{1}{2}\mu(H_2,ref)=-67.9144-6.8353+71.5339+6.8050/2=0.1867</span> vs. 0.09<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+<li><span class="math inline">\Delta G (RPBE)=\mu(*)+\mu(H_2)-\mu(H*)-\frac{1}{2}\mu(H_2,ref)=-0.06-(-0.15+0.159)+0.03/2=-0.0540</span></li>
+</ul>
+<hr />
+<p><span class="math display">^*+CO_2+H^++e^-\rightarrow COOH^*</span></p>
+<ul>
+<li><span class="math inline">\Delta G(PBE)=\mu(COOH^*)-\mu(*)-\mu(CO_2)-\frac{1}{2}\mu(H_2,ref)=(-94.2368-0.25)+67.9144+23.2225+6.8050/2=0.0526</span> vs. 0.46<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+<li><span class="math inline">\Delta G(RPBE)=\mu(COOH^*)-\mu(*)-\mu(CO_2)-\frac{1}{2}\mu(H_2,ref)=(1.22+0.542-0.25)-(0.66+0.45)+0.03/2=0.4170</span> vs. 0.41<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+</ul>
+<hr />
+<p><span class="math display">OCHO^*+H^++e^-\rightarrow HCOOH + ^*</span></p>
+<ul>
+<li><span class="math inline">\Delta G(PBE)=\mu(HCOOH)+\mu(*)-\mu(OCHO^*)-\frac{1}{2}\mu(H_2,ref)=-29.9481-67.9144+95.0556+6.8050/2=0.5956</span> vs. 0.32<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+<li><span class="math inline">\Delta G(RPBE)=\mu(HCOOH)+\mu(*)-\mu(OCHO^*)-\frac{1}{2}\mu(H_2,ref)=(0.91+0.45)-(0.28+0.491)+0.03/2=0.6040</span><span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+</ul>
+<hr />
+<p><span class="math display">CO^*+H^++e^-\rightarrow CHO^*</span></p>
+<ul>
+<li><span class="math inline">\Delta G(PBE)= \mu(CHO^*)-\mu(CO*)-\frac{1}{2}\mu(H_2)=(-86.4401-0.1)-(-83.7934-0.1)+6.8050/2=0.7558</span> vs. 0.61<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+<li><span class="math inline">\Delta G(RPBE)= \mu(CHO^*)-\mu(CO*)-\frac{1}{2}\mu(H_2,ref)=(1.54+0.346-0.1)-(1.05+0.115-0.1)+0.03/2=0.7360</span> vs. 0.74<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span></li>
+</ul>
+<hr />
+<h3 data-number="2.5.2" id="implicit-solvation-correction-at-pbe"><span class="header-section-number">2.5.2</span> Implicit Solvation Correction at PBE</h3>
+<ul>
+<li><span class="math inline">\mu(^*,sol)=-67.9257</span></li>
+<li><span class="math inline">\mu(CO,sol)=-14.7941-0.448284=-15.2424</span></li>
+<li><span class="math inline">\mu(CO^*,sol)=-83.9024+0.088444=-83.8140</span></li>
+<li><span class="math inline">\mu(CO^*,sol)-\mu(^*,sol)-\mu(CO,sol)=-83.8140+67.9257+15.2424=-0.6459</span></li>
+<li><span class="math inline">\mu(CO^*)-\mu(^*)-\mu(CO)=-83.7934+67.9144+15.2356=-0.6434</span></li>
+</ul>
+<h1 data-number="3" id="backgroundgao15jacs"><span class="header-section-number">3</span> Background<span class="citation" data-cites="Gao15JACS"><sup>[5]</sup></span></h1>
+<p>The accelerated depletion of fossil fuel resources leads to increasing accumulation of greenhouse gas, <span class="math inline">CO_2</span>, in the atmosphere, which raises serious environmental concerns.(1) To reduce our dependence on fossil fuels, renewable energy sources, such as solar and wind energies, are growing up rapidly, but these renewable electricities are difficult to merge into the electricity grid due to their intermittent and local nature, and further expansion is highly limited by a lack of efficient energy storage and conversion techniques.(2) Electrocatalytic reduction of <span class="math inline">CO_2</span> to fuel and chemical feedstock, powered by intermittent renewable electricity, is an attractive route for simultaneous conversion of <span class="math inline">CO_2</span> and renewable energy sources.(3) However, there are several fundamental challenges in the electrocatalytic reduction of <span class="math inline">CO_2</span>, such as <strong>high overpotential, low Faradaic efficiency</strong> due to the <strong>competitive hydrogen evolution reaction (HER)</strong>, etc.(4, 5) Key points in addressing these issues are the successive <span class="math inline">CO_2</span> adsorption,(6-9) intermediates formation,(10, 11) and product removal(12, 13) on active sites during the electrocatalytic reaction.</p>
+<p>Various metallic electrodes have been screened thoroughly, and it is found that <strong>the trends on product composition and distribution are strongly dependent on the binding energy of intermediates on metals</strong>.(14) For instance, <span class="math inline">CO_2</span> is converted into <span class="math inline">CO</span> on Au and Ag and into hydrocarbons on Cu due to the adsorption strength of <span class="math inline">CO^*</span> intermediates on metals.(14) <strong>Varying the particle size has also shown a size effect on the electrocatalytic reduction of <span class="math inline">CO_2</span></strong>, where the dependence of Faradaic efficiency and current density on particle size has been observed on Ag,(15) SnO2,(16) Cu,(17) and Au(18, 19) nanoparticles (NPs). However, there have been limited studies looking into the size effect among NPs smaller than 10 nm, which are most commonly used in catalysis. Recently, studies on the <span class="math inline">CO_2</span> reduction reactivity trends over Au NPs within a very narrow size range of ∼1–8 nm(18) or 4–10 nm(19) were reported. Current density for both <span class="math inline">CO</span> and <span class="math inline">H_2</span> production increases obviously with decreasing the size of Au NPs along with the decrease in Faradaic efficiency toward <span class="math inline">CO</span> production. Density functional theory (DFT) calculations reveal that the edge site on Au NPs is much more active than terrace and corner sites for <span class="math inline">CO_2</span> reduction to CO, while corner sites are highly active for competitive HER.</p>
+<p>In order to understand the relationship between the <span class="math inline">CO_2</span> reduction reactivity and the size of Pd NPs, DFT calculations were conducted. It is still a computational challenge to directly simulate the <span class="math inline">CO_2</span> reduction over Pd NPs with different sizes by means of DFT calculations. However, it is possible to simulate the process over three different reaction sites (terrace, edge, and corner) of Pd NPs, represented by flat Pd(111) surfaces, stepped Pd(211) surfaces, and <span class="math inline">Pd_{55}</span> (or <span class="math inline">Pd_{38}</span>) clusters, respectively. Furthermore, according to the ratio of three kinds of reaction sites (terrace, edge, and corner) on ideal Pd NPs with different sizes, it is reasonable to build the intrinsic relationship between catalytic properties and NPs size.(22) <span class="math inline">CO_2</span> weakly adsorbs on Pd(111), Pd(211), <span class="math inline">Pd_{55}</span> with 0.23, −0.11, and −0.21 eV respectively, and <span class="math inline">CO_2</span> prefers to be away from Pd(111) (Figure S6). The calculated Gibbs free energy diagrams for <span class="math inline">CO_2</span> reduction into <span class="math inline">CO</span> on Pd(111), Pd(211), <span class="math inline">Pd_{55}</span> , and <span class="math inline">Pd_{38}</span> at 0 V (vs RHE) are shown in Figure 3 according to the methodology proposed by Nørskov et al.(23) It is seen that on Pd(111), the formation of <span class="math inline">COOH^*</span>, a key reaction intermediate of <span class="math inline">CO_2</span> reduction, is associated with an increase in free energy (0.22 eV), while on Pd(211) and <span class="math inline">Pd_{55}</span> , <span class="math inline">COOH^*</span> is very stable with a release of −0.15 and −0.53 eV, respectively. Therefore, the formation of reaction intermediate <span class="math inline">COOH^*</span> becomes easier from terrace (Pd(111)), stepped (Pd(211)) to corner ( <span class="math inline">Pd_{55}</span> ). <span class="math inline">Pd_{38}</span> has a free energy similar to that of <span class="math inline">Pd_{55}</span> . On these models, the formation of <span class="math inline">CO^*</span>, another reaction intermediate, are all exergonic with Gibbs free energy changes very similar to that of <span class="math inline">COOH^*</span>, because the conversion of <span class="math inline">COOH^*</span> to <span class="math inline">CO^*</span> is typically facile.(21, 24) Therefore, it is concluded that the formation of <span class="math inline">COOH^*</span> is a key electrochemical step for <span class="math inline">CO_2</span> reduction to CO.</p>
+<p><img src="../img/CO2RR_3_sites.png" title="CO2RR_3_sites" style="width:100.0%" /></p>
+<p>The main reason for different changes of Gibbs free energies on different reaction sites is that the adsorption of <span class="math inline">COOH</span> and <span class="math inline">CO</span> become stronger from terrace to step to corner site (Figure 3 and Figure S7). These calculations well explain that Pd NPs have positive shifts in the position of the reduction peak of Pd(OH)2 in the cathodic scan(25) between 0.9 and 0.5 V with increasing particle size (Figure S8). The reduction peak potential of Pd(OH)2 shows a linear increase with increasing the size of Pd NPs (Figure S8c), since a stronger hydroxyl adsorption on defects (corner and edge sites), corresponding to small Pd NPs, than on terrace sites for large Pd NPs.(26) The strong adsorption of <span class="math inline">CO</span> on Pd NPs could be probed by the electrochemical <span class="math inline">CO</span> stripping voltammetry method.(25) As shown in Figure S9, a broad <span class="math inline">CO</span> stripping profile with a dominant peak around 1.03 V (vs RHE) occurs on 2.4, 3.7, and 4.5 nm Pd, whereas there is a sharp peak around 0.9 V (vs RHE) with a shoulder peak around 1.03 V (vs RHE) on 6.2, 7.8, and 10.3 nm Pd. The negative shift on peak potential and the reduced current density at 1.03 V (vs RHE) with increasing particle size suggest the weakened adsorption of <span class="math inline">CO</span> on Pd NPs, in consistent with the DFT calculations (Figure S7). From the calculated Gibbs free energy diagrams, the formation of <span class="math inline">H_2</span> has tiny differences on these models (Figure S10), and the overall Gibbs free energy changes is much smaller than that for the formation of <span class="math inline">CO^*</span>, indicating that <span class="math inline">CO_2</span> reduction is predominant under the present experimental conditions.</p>
+<p>According to the DFT calculation results, the corner and edge sites on Pd NPs are considered active for CO2 reduction, and the corner, edge, and terrace sites are all active for HER. TOF for <span class="math inline">CO</span> or <span class="math inline">H_2</span> production on Pd NPs at various potentials was calculated according to the ratio of corner and edge or the ratio of corner, edge, and terrace in Pd NPs (Figure S11). Figure 4 shows the size dependence of TOF for <span class="math inline">CO</span> production at various potentials. The maximum TOF varies from 3.7 to 4.5 nm Pd when the applied potential is shifted from −0.59 to −0.89 V (vs RHE) gradually. The sluggish removal of <span class="math inline">CO^*</span> at a high coverage on 3.7 nm Pd, having a higher ratio of corner and edge sites, probably retards the increase of TOF with the potential, compared with that on 4.5 nm Pd. The difference of TOF for <span class="math inline">CO</span> production over differently sized Pd NPs is enlarged at high applied potentials, revealing that the electrochemical step for formation of <span class="math inline">HCOO^*</span> and <span class="math inline">CO^*</span> becomes dominant on the reaction rate.</p>
+<p><img src="../img/CO2RR_4_tof.png" title="CO2RR_4_tof" style="width:100.0%" /></p>
+<p><img src="../img/CO2RR_5_ratio.png" title="CO2RR_5_ratio" style="width:100.0%" /></p>
+<ul>
+<li>P.S. Ratio may be referred to.<span class="citation" data-cites="Montejano-Carrizales97NM"><sup>[6]</sup></span></li>
+</ul>
+<h1 data-number="4" id="methods"><span class="header-section-number">4</span> Methods</h1>
+<h2 data-number="4.1" id="formulas-1peterson12jpcl"><span class="header-section-number">4.1</span> Formulas 1<span class="citation" data-cites="Peterson12JPCL"><sup>[7]</sup></span></h2>
+<p>Binding energies derived from scaling relations were used to create estimates of the limiting potential of each elementary hydrogenation step; a more complete explanation is provided herein.<br />
+The “computational hydrogen electrode” technique uses simple thermodynamic relations to take advantage of the fact that electrical potentials are reported relative to an experimental reference electrode. A simplified explanation is contained herein, more complete details can be found in refs.<span class="citation" data-cites="Peterson10EES Norskov04JPCB"><sup>[1,8]</sup></span>. The electrode chosen as a reference in this work is the reversible hydrogen electrode (RHE), which is defined to have zero voltage when 1 bar H<sub>2</sub> gas is bubbled over a Pt electrode at all values of pH and temperature. By design, at the reference electrode surface, the reaction <span class="math display">\frac{1}{2}H_{2(g)}\leftrightarrow{H}^++e^-</span> is in equilibrium. Thermodynamics tells us that a reaction at equilibrium will have zero change in free energy across the reaction, so in terms of chemical potential (<span class="math inline">\mu</span>), <span class="math display">\mu[H^+]+\mu[e^-]=0.5\mu[H_{2(g)}]</span> at 0 V vs RHE. Free energy (<span class="math inline">G</span>) and electrical potential (<span class="math inline">U</span>) can be related by <span class="math inline">\Delta{G} = −eU</span>, where <span class="math inline">e</span> is the (positive) charge of an electron. Thus, the free energy of a proton-electron pair as a function of potential can be found as <span class="math display">\mu[H^+]+\mu[e^-]=0.5\mu[H_{2(g)}]-eU</span> We are interested in the limiting potentials (<span class="math inline">U_L</span>) of elementary hydrogenation reactions, defined as the potential at which the reaction becomes exergonic, or downhill in free energy. For an example reaction of the protonation of adsorbed <span class="math inline">CO</span> to produce adsorbed <span class="math inline">CHO</span>, the elementary hydrogenation reaction can be written as <span class="math display">CO^*+H^++e^-\rightarrow{CHO}^*</span> where an asterisk, <span class="math inline">*</span>, indicates a surface-bound species (for example, <span class="math inline">CO</span> bound to the fcc (211)facet of copper). The free energy change of the elementary reaction will be <span class="math display">\Delta{G}_{elem}=\mu[CHO^*]-\mu[CO^*]-\mu[H^++e^-]</span> <span class="math display">=\mu[CHO^*]-\mu[CO^*]-0.5\mu[H_{2(g)}]-eU</span> By the earlier definition, <span class="math inline">\Delta{G}_{elem}=0</span> at <span class="math inline">U=U_L</span>, so <span class="math display">U_L=-\frac{\mu[CHO^*]-\mu[CO^*]-0.5\mu[H_{2(g)}]}{e}=\frac{-\Delta{G}_{elem}^{0V}}{e}(7)</span> This is identical to previous analyses.<br />
+In order to find the limiting potential (<span class="math inline">U_L</span>) as a function of a single parameter, <span class="math inline">E_B[CO]</span> (the binding energy of <span class="math inline">CO</span>), the scaling relations in Figure 1 of the main text were used. The binding energy of <span class="math inline">CHO</span> can be related to that of <span class="math inline">CO</span> by <span class="math display">E_B[CHO]=0.88E_B[CO]+2.03eV</span> The binding energies, <span class="math inline">E_B</span> , were converted to chemical potentials by the free energy corrections calculated with standard statistical mechanics methods, <span class="math display">\mu[CHO^*]=E_B[CHO]+G_{corr}[CHO^*]</span> <span class="math display">\mu[CO^*]=E_B[CO]+G_{corr}[CO^*]</span> where the <span class="math inline">G_{corr}</span> terms contain the zero-point, enthalpic (heat-capacity), and entropic portions of the free energy, and were calculated identically to the quantities described in-depth in the supplementary information of ref..<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span> These chemical potentials are used in conjunction with equation (7) above to predict the limiting potentials of each elementary step. This approach predicts the theoretical overpotential for the onset of <span class="math inline">CH_4</span> production to within about 0.1 V of direct DFT calculations<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>, and allows the limiting potentials to be expressed as functions of the two variables <span class="math inline">E_B[CO]</span> and <span class="math inline">E_B[OH]</span>.</p>
+<h2 data-number="4.2" id="formulas-2hansen13jpcl"><span class="header-section-number">4.2</span> Formulas 2<span class="citation" data-cites="Hansen13JPCL"><sup>[9]</sup></span></h2>
+<h3 data-number="4.2.1" id="thermodynamic-treatment"><span class="header-section-number">4.2.1</span> Thermodynamic Treatment</h3>
+<p>In this work we consider the acid reaction mechanism, consisting of coupled e<sup>-</sup> and H<sup>+</sup> transfers:<br />
+<span class="math inline">CO_2(g)+*+H^+(aq)+e^-{\leftrightarrow}COOH^*</span> (S.1.a)<br />
+<span class="math inline">COOH^*+e^-+H^+(aq){\leftrightarrow}CO^*+H_2O(l)</span> (S.2.a)<br />
+<span class="math inline">CO^*{\leftrightarrow}CO+^*</span> (S.3.a)</p>
+<h3 data-number="4.2.2" id="computational-hydrogen-electrode"><span class="header-section-number">4.2.2</span> Computational Hydrogen Electrode</h3>
+<p>Reaction free energies of the acidic electrochemical steps are calculated using the computational hydrogen electrode<span class="citation" data-cites="Norskov04JPCB"><sup>[8]</sup></span>.<br />
+The reaction free energies of (S.1) and (S.2) as function of the applied potentials are given by <span class="math display">{\Delta}G_1=G_{COOH^*}-G_{^*}-\mu_{CO_2(g)}-\frac{1}{2}\mu_{H_2^\Theta}+eU</span> and <span class="math display">{\Delta}G_2=G_{CO^*}+\mu_{H_2O(l)}-G_{COOH^*}-\frac{1}{2}\mu_{H_2^\Theta}+eU</span> where U is the potential relative to the reversible hydrogen electrode (RHE) at the same pH as the reactions.<br />
+The free energy of a species is calculated according to <span class="math display">G=E_{DFT}+E_{ZPE}+\int{C_pdT}-TS</span> where <span class="math inline">E_{DFT}</span> is the (corrected) DFT total energy including the effect of solvation, <span class="math inline">E_{ZPE}</span> is the zero point energy, <span class="math inline">C_p</span> is the heat capacity and <span class="math inline">S</span> is the entropy. The latter three quantities are calculated from statistical mechanics within the harmonic approximation, taking the vibrational frequencies of adsorbates and molecules as calculated within DFT. We expect variations in <span class="math inline">E_{ZPE}</span> , <span class="math inline">C_p</span> and <span class="math inline">S</span> are small compared to the variations in the reaction energies based on <span class="math inline">E_{DFT}</span> alone and assume <span class="math inline">E_{ZPE}</span> , <span class="math inline">C_p</span> and <span class="math inline">S</span> are constant for all materials considered in this study. We use values that have been published previously for Cu(211)<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>, and explicit tests for other metal surfaces confirm the validity of this approximation.<br />
+The relevant corrections to adsorbates and molecules are reproduced in table S1, and the effective corrections are listed in Table S2.</p>
+<table>
+<caption>Table S1. DFT total energies in Jacapo and GPAW, Zero point energy, enthalpic temperature correction and entropy correction at 18.5 C. The entropies of <span class="math inline">H_2(g)</span>, <span class="math inline">CO_2(g)</span> and <span class="math inline">CO(g)</span>are calculated at 1 atm, while the entropy of <span class="math inline">H_2O(g=l)</span> is calculated at 0.035 atm, which corresponds to the vapor pressure of liquid water. The vibrational corrections are obtained from calculations in ref (<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>).</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Species</th>
+<th style="text-align: center;"><span class="math inline">E_{DFT,J}</span>(eV)</th>
+<th style="text-align: center;"><span class="math inline">E_{DFT,GPAW}</span>(eV)</th>
+<th style="text-align: center;"><span class="math inline">E_{ZPE}</span></th>
+<th style="text-align: center;"><span class="math inline">\int{C_pdT}</span></th>
+<th style="text-align: center;">-TS (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">H_2(g)</span></td>
+<td style="text-align: center;">-32.031</td>
+<td style="text-align: center;">-6.716</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">-0.39</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">CO_2(g)</span></td>
+<td style="text-align: center;">-1030.000</td>
+<td style="text-align: center;">-22.666</td>
+<td style="text-align: center;">0.31</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">-0.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">CO(g)</span></td>
+<td style="text-align: center;">-591.423</td>
+<td style="text-align: center;">-14.631</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">-0.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">H_2O(g=l)</span></td>
+<td style="text-align: center;">-469.729</td>
+<td style="text-align: center;">-14.027</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">-0.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">COOH^*</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">-0.18</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">CO^*</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">0.08</td>
+<td style="text-align: center;">-0.15</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Table S2. Contributions to the free energy corrections to the acidic reaction energies.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Reaction</th>
+<th style="text-align: center;"><span class="math inline">E_{ZPE}</span></th>
+<th style="text-align: center;"><span class="math inline">{\int}C_pdT</span> (eV)</th>
+<th style="text-align: center;">-TS (eV)</th>
+<th style="text-align: center;">Total (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">CO_2(g)+*+H^+(aq)+e^-{\leftrightarrow}COOH^*</span></td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">-0.05</td>
+<td style="text-align: center;">0.67</td>
+<td style="text-align: center;">0.80</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">COOH^*+e^-+H^+(aq){\leftrightarrow}CO^*+H_2O(l)</span></td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">-0.43</td>
+<td style="text-align: center;">-0.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">CO^*{\leftrightarrow}CO+^*</span></td>
+<td style="text-align: center;">-0.05</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">-0.44</td>
+<td style="text-align: center;">-0.48</td>
+</tr>
+</tbody>
+</table>
+<p>A correction of +0.45 eV is applied to the CO<sub>2</sub> molecule in the gas phase in order to correct for a systematic error on this molecule when using the RPBE functional<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>. The effect of solvation is treated in an approximate way for the metals, alloys and cubanes by stabilizing <span class="math inline">COOH^*</span> by 0.25 eV and <span class="math inline">CO^*</span> by 0.1 eV as in Reference<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>. For the <span class="math inline">CODH</span> enzymes no correction for solvation is applied since only little water is expected to be present within the interior of the enzyme and the model of the enzyme already contain ligands that may hydrogen bond to the adsorbate. The reaction energies of (S.1.a), (S.2.a) and (S.3.a) including solvation but without the correction to the <span class="math inline">CO</span> 2 molecule are shown in Table S4. We note that <span class="math inline">\Delta{E}_1(solv)=E(COOH(solv))</span> and <span class="math inline">\Delta{E}_3(solv)=-E(CO(solv))</span>. Table S4 also shows the reaction free energies calculated using the free energy corrections in Table S2 and the +0.45 eV correction to the <span class="math inline">CO</span> 2 molecule.<br />
+In this treatment we have neglected contributions from the electric field at the electrochemical interface on the free energy of the adsorbates.</p>
+<p>The reversible potential of the overall half-cell reaction <span class="math display">CO_2+2H^++2e^-{\rightarrow}CO+H_2O</span> calculated from DFT is then -0.18 V vs RHE, while the experimental value is -0.10 V vs RHE. Figure 2 is plotted at 0.35 V overpotential relative to the experimental reversible potential.</p>
+<table>
+<caption>Table S3. DFT total energies for metals from the Jacapo DFT code based on calculations in Ref. (3) and DFT total energies for the CODH enzymes from the GPAW code based on this work.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">E(*) (eV)</th>
+<th style="text-align: center;">E(<span class="math inline">COOH^*</span>)(eV)</th>
+<th style="text-align: center;">E(<span class="math inline">CO^*</span>) (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cu</td>
+<td style="text-align: center;">-45195.300</td>
+<td style="text-align: center;">-46241.000</td>
+<td style="text-align: center;">-45787.399</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Au</td>
+<td style="text-align: center;">-37524.623</td>
+<td style="text-align: center;">-38569.972</td>
+<td style="text-align: center;">-38116.438</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag</td>
+<td style="text-align: center;">-34909.217</td>
+<td style="text-align: center;">-35954.456</td>
+<td style="text-align: center;">-35500.821</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pt</td>
+<td style="text-align: center;">-32662.145</td>
+<td style="text-align: center;">-33708.682</td>
+<td style="text-align: center;">-33255.540</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pd</td>
+<td style="text-align: center;">-2853689</td>
+<td style="text-align: center;">-2958746</td>
+<td style="text-align: center;">-2912919</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ni</td>
+<td style="text-align: center;">-35226.182</td>
+<td style="text-align: center;">-36272.508</td>
+<td style="text-align: center;">-3581917</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rh</td>
+<td style="text-align: center;">-22884.021</td>
+<td style="text-align: center;">-23930.605</td>
+<td style="text-align: center;">-23477.370</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ChCODH</td>
+<td style="text-align: center;">-685.249</td>
+<td style="text-align: center;">-711.114</td>
+<td style="text-align: center;">-700.37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MbCODH</td>
+<td style="text-align: center;">-671.634</td>
+<td style="text-align: center;">-697.388</td>
+<td style="text-align: center;">-686.506</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<caption>Table S4. Reaction energies including solvation and reaction free energies at 0 V vs RHE of the three reaction steps.</caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\Delta{E}_1(solv)</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\Delta{E}_2(solv)</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\Delta{E}_3(solv)</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\Delta{G}_1^0</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\Delta{G}_2^0</span> (eV)</th>
+<th style="text-align: center;"><span class="math inline">\Delta{G}_3^0</span> (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cu</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">0.78</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">-0.34</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Au</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">-0.03</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.77</td>
+<td style="text-align: center;">-0.41</td>
+<td style="text-align: center;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Ag</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">0.28</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">-0.31</td>
+<td style="text-align: center;">-0.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pt</td>
+<td style="text-align: center;">-0.77</td>
+<td style="text-align: center;">-0.42</td>
+<td style="text-align: center;">2.07</td>
+<td style="text-align: center;">-0.42</td>
+<td style="text-align: center;">-0.80</td>
+<td style="text-align: center;">1.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Pd</td>
+<td style="text-align: center;">-0.29</td>
+<td style="text-align: center;">-0.74</td>
+<td style="text-align: center;">1.91</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">-1.12</td>
+<td style="text-align: center;">1.43</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ni</td>
+<td style="text-align: center;">-0.56</td>
+<td style="text-align: center;">-0.37</td>
+<td style="text-align: center;">1.81</td>
+<td style="text-align: center;">-0.21</td>
+<td style="text-align: center;">-0.75</td>
+<td style="text-align: center;">1.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Rh</td>
+<td style="text-align: center;">-0.82</td>
+<td style="text-align: center;">-0.33</td>
+<td style="text-align: center;">2.03</td>
+<td style="text-align: center;">-0.47</td>
+<td style="text-align: center;">-0.71</td>
+<td style="text-align: center;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ChCOD H</td>
+<td style="text-align: center;">0.16</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">-0.31</td>
+<td style="text-align: center;">0.02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">MbCOD H</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.21</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">-0.17</td>
+<td style="text-align: center;">-0.24</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="4.2.3" id="direct-co2-dissociation"><span class="header-section-number">4.2.3</span> Direct CO<sub>2</sub> dissociation</h3>
+<p>Reactive materials may dissociate CO<sub>2</sub> without the need to form COOH<sup>*</sup> as an intermediate. One such possiblilty is the following mechanism <span class="math display">CO_2(g)+2^*{\leftrightarrow}CO^*+O^*</span> <span class="math display">O^*+e^-+H^+{\leftrightarrow}OH^*</span> <span class="math display">OH^*+e^-+H^+{\leftrightarrow}H_2O(l)+^*</span> <span class="math display">CO^*{\leftrightarrow}CO+^*</span> The free energy diagram for this mechanism on Cu, Ni, Pd, Pt and Rh are show in figure S1 at <span class="math inline">U_0-0.3</span> V vs RHE based on DFT calculations from Ref..<span class="citation" data-cites="Peterson12JPCL"><sup>[7]</sup></span> It is seen tha desorption will severly limit the rate of <span class="math inline">CO</span> evolution on Ni, Pd, Pt and Rh. Direct <span class="math inline">CO</span> 2 dissociation on Cu(211) has been calculated to have a barrier of 1.6 eV (4), and is therefore expected to be kinetically prohibited.</p>
+<p><img src="../img/CO2RR_1.png" title="$CO_2$RR_1" style="width:50.0%" /></p>
+<p>Fig. S1: Free energy diagrams for direct CO<sub>2</sub> dissociation at <span class="math inline">U_0-0.35</span> V vs RHE.</p>
+<h3 data-number="4.2.4" id="kinetic-model"><span class="header-section-number">4.2.4</span> Kinetic model</h3>
+<p>The rate equations are <span class="math display">r_1=k_1\theta*p_{CO_2}-k_{-1}{\theta}_{COOH}</span> <span class="math display">r_2=k_2\theta_{COOH}-k_{-2}{\theta}_{CO}</span> <span class="math display">r_1=k_3\theta_{CO}-k_{-3}{\theta}*p_{CO}</span> where {k<sub>i</sub> } and {k<sub>-i</sub>} are rate constants for the forward and backwards reactions, respectively. The {p<sub>i</sub>} and {<span class="math inline">\theta</span><sub>i</sub>} denote pressure and surface coverages, respectively. The forward rate constants for step (1) and (2) are calculated from <span class="math display">k_i=A&#39;exp(-\frac{\beta{e}(U-U_i^0)}{k_BT})</span> , where <span class="math inline">U_i^0</span> is the reversible potential for step i, <span class="math display">U_i^0=-\frac{\Delta{G}_i^0}{e}</span> , with <span class="math inline">G_i^0</span> being the standard reaction free energy at 0 V vs RHE.</p>
+<p>I.e. <span class="math display">\Delta{G}_1^0=G_{COOH^*}-G_{^*}-\mu_{CO_2(g)}-1/2\mu_{H_2^{\theta}}</span> and <span class="math display">\Delta{G}_2^0=G_{CO^*}-G_{COOH^*}+\mu_{H_2O(l)}-1/2\mu_{H_2^{\theta}}</span> We set a maximum value for the prefactors of electrochemical steps at <span class="math inline">k_B T/h=6\cdot10^{12}</span> s<sup>-1</sup>. Our results are not sensitive to the exact value of this cutoff.</p>
+<p>The rate constants for the backwards electrochemical reactions are calculated from <span class="math display">k_{-i}=k_i/K_i=k_{i}e^{\Delta{G}_i/(k_BT)}=k_{i}e^{(\Delta{G}_i^0+eU)/(k_BT)}</span> The rate constant for the <span class="math inline">CO</span> desorption step is calculated from <span class="math display">k_3=\nu{e}^{-E_{CO}/(k_BT)}</span> where <span class="math inline">E_{CO}</span> is the <span class="math inline">CO</span> adsorption energy including zero point energy corrections, an the pre-exponential factor is taken to be 10<sup>13</sup> s<sup>-1</sup>. The rate equations are solved numerically under steady state with the constraint from site conservation <span class="math display">\theta_{COOH}+\theta_{CO}+\theta_{^*}=1</span></p>
+<h3 data-number="4.2.5" id="alkaline-kinetic-model"><span class="header-section-number">4.2.5</span> Alkaline kinetic model</h3>
+<p>We note that CO<sub>2</sub> reduction to <span class="math inline">CO</span> on gold has been proposed to follow an alkaline pathway (5, 6). In alkaline, the mechanism involving the same surface intermediates as in acid would be<br />
+<span class="math inline">CO_2(g)+*+H_2O(l)+e^-{\leftrightarrow}COOH^*+OH^-</span> (S.1.b)<br />
+<span class="math inline">COOH^*+e^-{\leftrightarrow}CO^*+OH^-</span> (S.2.b)<br />
+<span class="math inline">CO^*{\leftrightarrow}CO+^*</span> (S.3.b)<br />
+Since we ultimately fit the effective activation energy to experiment at a single pH, the model based on the above alkaline pathway would yield the same results as the acid pathway (S.1.a)-(S.3.a). The acid formulation has been chosen here for simplicity.</p>
+<h1 data-number="5" id="co2-reduction"><span class="header-section-number">5</span> CO<sub>2</sub> Reduction</h1>
+<h2 data-number="5.1" id="co2-to-co"><span class="header-section-number">5.1</span> CO<sub>2</sub> to CO</h2>
+<ul>
+<li>We examined the reaction pathway which predicts reactivity towards methane on copper<span class="citation" data-cites="Peterson10EES"><sup>[1]</sup></span>; though, in finding that CO does not bind to the surfaces, we focus only on the steps in Eqs. (1) and (2) below, where * represents an arbitrary surface. <span class="math display">CO_2(g)+H^++e^-+*\rightarrow ^*COOH\ (1)</span> <span class="math display">^*COOH+H^++e^-\rightarrow CO(g) + H_2O (g)+*\ (1)</span> From adsorbate binding energies, we can compute the theoretical overpotential, which estimates the bias voltage that must be applied to the electrode in order for the reaction pathway to occur entirely downhill in free energy; this is equal to the greatest change in free energy.</li>
+<li>Method for adsorption: RPBE+vdw+IDIPOL</li>
+</ul>
+<h1 class="unnumbered" id="ref.">Ref.</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Peterson10EES" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Peterson, A. A.; Abild-Pedersen, F.; Studt, F.; Rossmeisl, J.; Nørskov, J. K. How Copper Catalyzes the Electroreduction of Carbon Dioxide into Hydrocarbon Fuels. <em>Energ. Environ. Sci.</em> <strong>2010</strong>, <em>3</em>, 1311.</div>
+</div>
+<div id="ref-Cramer04P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Cramer, C. J. Essentials of Computational Chemistry Theories and Models. <em>Essentials of computational chemistry theories and models</em>; Wiley, 2004.</div>
+</div>
+<div id="ref-asthagiri14P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Asthagiri, A.; Janik, M. J. Computational Catalysis. <em>Computational catalysis</em>; The Royal Society of Chemistry, 2014.</div>
+</div>
+<div id="ref-Wang21CPC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Wang, V.; Xu, N.; Liu, J.-C.; Tang, G.; Geng, W.-T. VASPKIT: A User-Friendly Interface Facilitating High-Throughput Computing and Analysis Using VASP Code. <em>Comput. Phys. Commun.</em> <strong>2021</strong>, <em>267</em>, 108033.</div>
+</div>
+<div id="ref-Gao15JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Gao, D.; Zhou, H.; Wang, J.; Miao, S.; Yang, F.; Wang, G.; Wang, J.; Bao, X. Size-Dependent Electrocatalytic Reduction of CO<span><sub>2</sub></span>over Pd Nanoparticles. <em>J. Am. Chem. Soc.</em> <strong>2015</strong>, <em>137</em>, 4288–4291.</div>
+</div>
+<div id="ref-Montejano-Carrizales97NM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Montejano-Carrizales, J. M.; Aguilera-Granja, F.; Morán-López, J. L. DIRECT ENUMERATION OF THE GEOMETRICAL CHARACTERISTICS OF CLUSTERS. <em>Nanostruct. Mater.</em> <strong>1997</strong>, <em>8</em>, 269–287.</div>
+</div>
+<div id="ref-Peterson12JPCL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Peterson, A. A.; Nørskov, J. K. Activity Descriptors for Co2 Electroreduction to Methane on Transition-Metal Catalysts. <em>J. Phys. Chem. Lett.</em> <strong>2012</strong>, <em>3</em>, 251–258.</div>
+</div>
+<div id="ref-Norskov04JPCB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Nørskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.; Kitchin, J. R.; Bligaard, T.; Jónsson, H. Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode. <em>J. Phys. Chem. B</em> <strong>2004</strong>, <em>108</em>, 17886–17892.</div>
+</div>
+<div id="ref-Hansen13JPCL" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Hansen, H. A.; Varley, J. B.; Peterson, A. A.; Nørskov, J. K. Understanding Trends in the Electrocatalytic Activity of Metals and Enzymes for Co2 Reduction to CO. <em>J. Phys. Chem. Lett.</em> <strong>2013</strong>, <em>4</em>, 388–392.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

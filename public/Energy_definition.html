@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>Energy definition</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Energy definition"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#binding-energy-and-curvature-energy"><span class="toc-section-number">1</span> Binding Energy and Curvature energy</a></li>
+          <li><a href="#formation-energy"><span class="toc-section-number">2</span> Formation Energy</a>
+          <ul>
+          <li><a href="#formation-energy-of-a-defect-or-impurity"><span class="toc-section-number">2.1</span> formation energy of a defect or impurity</a></li>
+          <li><a href="#chemical-potential"><span class="toc-section-number">2.2</span> Chemical Potential</a></li>
+          <li><a href="#helmholtz-free-energylau08jpcb"><span class="toc-section-number">2.3</span> Helmholtz free energy<span class="citation" data-cites="Lau08JPCB"><sup>[5]</sup></span></a></li>
+          <li><a href="#formation-valleywang17cm"><span class="toc-section-number">2.4</span> Formation Valley<span class="citation" data-cites="Wang17CM"><sup>[6]</sup></span></a></li>
+          <li><a href="#surface-energy"><span class="toc-section-number">2.5</span> Surface Energy</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="binding-energy-and-curvature-energy"><span class="header-section-number">1</span> Binding Energy and Curvature energy</h1>
+<ol type="1">
+<li>Average binding energy <span class="math display">E_b[AB]=(N_A*E_A+N_B*E_B-E_{tot}[AB])/(N_A+N_B)</span> where <span class="math inline">E_A</span> and <span class="math inline">E_B</span> are the energy of free atom in vacuum for A and B.</li>
+<li><span class="citation" data-cites="Tibbetts84JCG Speck89JCG"><sup>[1,2]</sup></span>Curvature energy for nanotubes <span class="math display">E_{tube}=E_{2D}-E_{curv}=E_{2D}-A/R^2</span></li>
+</ol>
+<h1 data-number="2" id="formation-energy"><span class="header-section-number">2</span> Formation Energy</h1>
+<ol type="1">
+<li><span class="citation" data-cites="Singh10AN"><sup>[3]</sup></span>General trend in formation energy for QD: <span class="math display">\varepsilon(n)-\varepsilon(\infty)\propto const/\sqrt{n}</span></li>
+</ol>
+<h2 data-number="2.1" id="formation-energy-of-a-defect-or-impurity"><span class="header-section-number">2.1</span> formation energy of a defect or impurity</h2>
+<ol start="2" type="1">
+<li><span class="citation" data-cites="VandeWalle04JAP"><sup>[4]</sup></span>The formation energy of a defect or impurity X in charge state q is defined as <span class="math display">E_f[X^q]=E_{tot}[X^q]-E_{tot}[GaN,bulk]-\sum\limits_i n_i\mu_i+q[E_F+E_\nu+{\Delta}V]</span> <span class="math inline">E{tot}[X]</span> is the total energy derived from a supercell calculation with one impurity or defect X in the cell, and <span class="math inline">E_{tot}[GaN,bulk]</span> is the total energy for the equivalent supercell containing only bulk GaN. <span class="math inline">n_i</span> indicates the number of atoms of type i (host atoms or impurity atoms) that have been added to (<span class="math inline">n_i&gt;0</span>) or removed from (<span class="math inline">n_i&lt;0</span>) the supercell when the defect or impurity is created, and the <span class="math inline">\mu_i</span> are the corresponding chemical potentials of these species. E~F ~ is the Fermi level, referenced to the valence-band maximum in the bulk. Due to the choice of this reference, we need to explicitly put in the energy of the bulk valence-band maximum, <span class="math inline">E_{\nu}</span>, in our expressions for formation energies of charged states. As discussed in Sec. II C, we also need to add a correction term DV, to align the reference potential in our defect supercell with that in the bulk.</li>
+</ol>
+<ul>
+<li>In GaN: <span class="math inline">\mu_{Ga}+\mu_N=E_{tot}[GaN]</span></li>
+<li>extreme Ga-rich conditions: <span class="math display">\mu_{Ga}=\mu_{Ga[bulk]},\mu_N^{min}=E_{tot}[GaNs]-\mu_{Ga[bulk]}</span></li>
+<li>extreme N-rich conditions: <span class="math display">\mu_N=\mu_{N[N2]},\mu_{Ga}^{min}=E_{tot}[GaN]-\mu_{N[N2]}</span> The total energy of GaN can also be expressed as <span class="math display">E_{tot}[GaN]=\mu_{{Ga}[bulk]}+\mu_{N[N_2]}+{\Delta}H_f[GaN]</span> where <span class="math inline">{\Delta}H_f[GaN]</span> is the enthalpy of formation, which is negative for a stable compound.</li>
+</ul>
+<h2 data-number="2.2" id="chemical-potential"><span class="header-section-number">2.2</span> Chemical Potential</h2>
+<p>The chemical potentials can in principle be related to partial pressures, using standard thermodynamic expressions. For instance, the chemical potential for hydrogen atoms in a gas of H2 molecules is given by <span class="math display">2\mu_H=E_{H_2}+k_BTln(\frac{pV_Q}{k_BT}-lnZ_{rot}-lnZ_{vib})</span> where E<sub>H2</sub> is the energy of an H2 molecule, k<sub>B</sub> is the Boltzmann constant, T is the temperature, and p is the pressure. <span class="math inline">V_Q=(h^2/2\pi m k_B T)^{3/2}</span> is the quantum volume, and Z<sub>rot</sub> and Z<sub>vib</sub> are the rotational and vibrational partition functions.</p>
+<h2 data-number="2.3" id="helmholtz-free-energylau08jpcb"><span class="header-section-number">2.3</span> Helmholtz free energy<span class="citation" data-cites="Lau08JPCB"><sup>[5]</sup></span></h2>
+<p>From the computed phonon spectrum of the sheet configurations, the temperature-dependent vibrational Helmholtz free energy and entropy can be calculated in the harmonic approximation<sup>21</sup>.<br />
+<span class="math inline">F(V,T)</span>, the free energy of a crystal, can be written as a sum of <span class="math inline">E(V)</span>, the energy of the static lattice at the equilibrium configuration, and <span class="math inline">F_{vib}(V, T)</span>, the vibrational free energy associated with the modes, <span class="math inline">\omega(q)</span>. <span class="math display">F=E+F_{vib}=E+\sum_q\frac{\hbar\omega(q)}{2}-ST</span> Here, S is entropy, <span class="math inline">\sum_q\frac{\hbar\omega(q)}{2}</span> is the summation of contributions of the zero-point energy from each phonon mode, and T is the temperature.<br />
+Considering the first-order corrections to be small, S can be calculated<sup>20</sup> as follows: <span class="math display">S=-k_B\sum_q ln(1-\exp(-\hbar\omega(q)/k_BT))</span> The lattice heat capacity per unit cell at constant volume can be defined as follows: <span class="math display">C_V(T)=\sum_q{c_v(q)}=k_B\sum_q{({\hbar}{\omega}(q)/2K_BT)^2/sinh^2({\hbar}{\omega}(q)/2K_BT)}</span></p>
+<h2 data-number="2.4" id="formation-valleywang17cm"><span class="header-section-number">2.4</span> Formation Valley<span class="citation" data-cites="Wang17CM"><sup>[6]</sup></span></h2>
+<figure>
+<img src="../img/TiB12_Alloy_Eformpng.png" title="TaB12_Alloy_Eformpng" style="width:80.0%" alt="Fig. 1:" /><figcaption aria-hidden="true">Fig. 1:</figcaption>
+</figure>
+<p>Formation energies per atom (E<sub>f</sub>) for 2D TiB<sub>x</sub>-multilayers. <span class="math inline">E_f=(E_{TiB_x}-E_{Ti}-xE_B)/(x+1)</span> from alloy, bulk Ti and <span class="math inline">\alpha</span> sheet.</p>
+<h2 data-number="2.5" id="surface-energy"><span class="header-section-number">2.5</span> Surface Energy</h2>
+<ul>
+<li>Thick engough，surface energy <span class="math inline">\gamma</span> vs. thickness convergence test needed</li>
+</ul>
+<p><span class="math display">\gamma=\frac{E_{slab}-N*E_{bulk}}{2A}</span>, where <span class="math inline">E_{slab}</span> is the total energy of surface slab obtained using density functional theory. N is the number of atoms in the surface slab. <span class="math inline">E_{bulk}</span> is the bulk energy per atom. A is the surface area. For a slab, we have two surfaces and they are of the same type, which is reflected by the number 2 in the denominator. To guarantee this, we need to create the slab carefully to make sure that the upper and lower surfaces are of the same type.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Tibbetts84JCG" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Tibbetts, G. G. Why Are Carbon Filaments Tubular? <em>J. Cryst. Growth</em> <strong>1984</strong>, <em>66</em>, 632–638.</div>
+</div>
+<div id="ref-Speck89JCG" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Speck, J. S.; Endo, M.; Dresselhaus, M. S. Structure and Intercalation of Thin Benzene Derived Carbon Fibers. <em>J. Cryst. Growth</em> <strong>1989</strong>, <em>94</em>, 834–848.</div>
+</div>
+<div id="ref-Singh10AN" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Singh, A. K.; Penev, E. S.; Yakobson, B. I. Vacancy Clusters in Graphane as Quantum Dots. <em>ACS Nano</em> <strong>2010</strong>, <em>4</em>, 3510–3514.</div>
+</div>
+<div id="ref-VandeWalle04JAP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Van de Walle, C. G.; Neugebauer, J. First-Principles Calculations for Defects and Impurities: Applications to III-Nitrides. <em>J. Appl. Phys.</em> <strong>2004</strong>, <em>95</em>, 3851–3879.</div>
+</div>
+<div id="ref-Lau08JPCB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Lau, K. C.; Pandey, R. Thermodynamic Stability of Novel Boron Sheet Configurations. <em>J. Phys. Chem. B</em> <strong>2008</strong>, <em>112</em>, 10217–10220.</div>
+</div>
+<div id="ref-Wang17CM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Wang, J.; Khazaei, M.; Arai, M.; Umezawa, N.; Tada, T.; Hosono, H. Semimetallic Two-Dimensional TiB12: Improved Stability and Electronic Properties Tunable by Biaxial Strain. <em>Chem. Mater.</em> <strong>2017</strong>, <em>29</em>, 5922–5930.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

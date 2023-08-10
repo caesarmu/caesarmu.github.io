@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Science">
+    <meta name="dcterms.date" content=" 02/18/2022">
+  <title>Electronic Structure Analysis</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Electronic Structure Analysis"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Blof of Mu</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/public/Science.html">Science</a></li>
+            <li><a href="/public/System.html">System</a></li>
+            <li><a href="/public/Life.html">Life</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#轨道相互作用-from-刘锦程"><span class="toc-section-number">1</span> 轨道相互作用 (From 刘锦程)</a></li>
+          <li><a href="#reference">Reference</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<p>Refs:</p>
+<ul>
+<li>“Solids and Surfaces: A Chemist’s View of Bonding in Extended Structures,” Roald Hoffman</li>
+<li>“电子结构分析,” bilibili 刘锦程 <a href="https://space.bilibili.com/45550176" class="uri">https://space.bilibili.com/45550176</a></li>
+</ul>
+<h1 data-number="1" id="轨道相互作用-from-刘锦程"><span class="header-section-number">1</span> 轨道相互作用 (From 刘锦程)</h1>
+<p><img src="../img/ElecStruc_000.png" title="ElecStruc_000" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_001.png" title="ElecStruc_001" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_002.png" title="ElecStruc_002" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_003.png" title="ElecStruc_003" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_004.png" title="ElecStruc_004" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_005.png" title="ElecStruc_005" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_006.png" title="ElecStruc_006" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_007.png" title="ElecStruc_007" style="width:100.0%" /></p>
+<figure>
+<img src="../img/ElecStruc_008.png" title="ElecStruc_008" style="width:100.0%" alt="Gaussian MOs for CO (Or VASP Partial Charge for special K and Band)" /><figcaption aria-hidden="true">Gaussian MOs for CO (Or VASP Partial Charge for special K and Band)</figcaption>
+</figure>
+<p><img src="../img/ElecStruc_009.png" title="ElecStruc_009" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_010.png" title="ElecStruc_010" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_011.png" title="ElecStruc_011" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_012.png" title="ElecStruc_012" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_013.png" title="ElecStruc_013" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_014.png" title="ElecStruc_014" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_015.png" title="ElecStruc_015" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_016.png" title="ElecStruc_016" style="width:100.0%" /></p>
+<p><img src="../img/ElecStruc_017.png" title="ElecStruc_017" style="width:100.0%" /></p>
+<figure>
+<img src="../img/ElecStruc_019.png" title="ElecStruc_019" style="width:100.0%" alt="Fig. 019." /><figcaption aria-hidden="true">Fig. 019.</figcaption>
+</figure>
+<h1 class="unnumbered" id="reference">Reference</h1>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

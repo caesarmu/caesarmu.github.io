@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 08/10/2023">
+  <title>HER, OER and ORR</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="HER, OER and ORR"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#sabatier-principle"><span class="toc-section-number">1</span> Sabatier Principle</a></li>
+          <li><a href="#zero-point-energy-corrections-and-entropic-contributions-to-the-free-energiesnorskov05jes."><span class="toc-section-number">2</span> Zero point energy corrections and entropic contributions to the free energies<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span>.</a></li>
+          <li><a href="#hydrogen-evolution-reaction-her"><span class="toc-section-number">3</span> Hydrogen-evolution reaction (HER)</a>
+          <ul>
+          <li><a href="#mechanism-of-hydrogen-evolution-reactions-in-acidic-and-alkaline-solution"><span class="toc-section-number">3.1</span> Mechanism of hydrogen evolution reactions in acidic and alkaline solution</a>
+          <ul>
+          <li><a href="#acidic-electrolyte"><span class="toc-section-number">3.1.1</span> Acidic electrolyte</a></li>
+          <li><a href="#alkaline-electrolyte"><span class="toc-section-number">3.1.2</span> Alkaline electrolyte</a></li>
+          </ul></li>
+          <li><a href="#her-calculation-methodchen17jacszhang15aciehinnemann05jacs"><span class="toc-section-number">3.2</span> HER calculation method<span class="citation" data-cites="Chen17JACS Zhang15ACIE Hinnemann05JACS"><sup>[2–4]</sup></span></a>
+          <ul>
+          <li><a href="#overpotential"><span class="toc-section-number">3.2.1</span> Overpotential</a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#oxygen-reduction-reactionorr-and-oxygen-evolution-reaction-oer"><span class="toc-section-number">4</span> Oxygen Reduction Reaction(ORR) and Oxygen Evolution Reaction (OER)</a>
+          <ul>
+          <li><a href="#e-orr-yang20nc"><span class="toc-section-number">4.1</span> 2e-ORR<span class="citation" data-cites="Yang20NC"><sup>[5]</sup></span></a></li>
+          <li><a href="#e-orr-xu18ncli14jc"><span class="toc-section-number">4.2</span> 4e-ORR<span class="citation" data-cites="Xu18NC Li14JC"><sup>[6,7]</sup></span></a>
+          <ul>
+          <li><a href="#reaction-mechanism"><span class="toc-section-number">4.2.1</span> Reaction mechanism</a></li>
+          <li><a href="#reaction-free-energy-calculation"><span class="toc-section-number">4.2.2</span> Reaction free energy calculation</a></li>
+          </ul></li>
+          <li><a href="#an-example-for-orr"><span class="toc-section-number">4.3</span> An Example for ORR</a></li>
+          <li><a href="#edge-site"><span class="toc-section-number">4.4</span> Edge Site</a>
+          <ul>
+          <li><a href="#e-orr-and-4e-oer-for-edge-site"><span class="toc-section-number">4.4.1</span> 4e-ORR and 4e-OER for edge site</a></li>
+          <li><a href="#over-potential"><span class="toc-section-number">4.4.2</span> Over potential</a></li>
+          <li><a href="#if-u0.7-v-e-1"><span class="toc-section-number">4.4.3</span> if U=0.7 V (e=-1)</a></li>
+          <li><a href="#e-orr"><span class="toc-section-number">4.4.4</span> 2e-ORR</a></li>
+          <li><a href="#another-example-for-volcano-plots-lu18nca"><span class="toc-section-number">4.4.5</span> Another Example for volcano plots<span class="citation" data-cites="Lu18NCa"><sup>[13]</sup></span></a></li>
+          </ul></li>
+          </ul></li>
+          <li><a href="#ref">Ref</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="sabatier-principle"><span class="header-section-number">1</span> Sabatier Principle</h1>
+<p>It states that a good catalyst material should bind the molecules that participate in the chemical reaction neither too strongly nor too weakly to its surface. The bonds should be strong enough to activate the molecules for the reaction, but still weak enough to not hold on to them forever. Unfortunately, many materials follow so-called scaling relations. They tend to bind different molecules either all stronger or all weaker, while for many reactions catalysts are needed that selectively bind certain molecules stronger and others weaker.</p>
+<h1 data-number="2" id="zero-point-energy-corrections-and-entropic-contributions-to-the-free-energiesnorskov05jes."><span class="header-section-number">2</span> Zero point energy corrections and entropic contributions to the free energies<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span>.</h1>
+<table>
+<caption>Table: Zero point energy corrections and entropic contri- butions to the free energies.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Group</th>
+<th style="text-align: center;">TS(eV)</th>
+<th style="text-align: center;">T<span class="math inline">{\Delta}S</span></th>
+<th style="text-align: center;"><span class="math inline">E_{ZPE}</span></th>
+<th style="text-align: center;"><span class="math inline">{\Delta}E_{ZPE}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">H2O(0.035bar)</td>
+<td style="text-align: center;">0.67</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">*OH+1/2H<sub>2</sub></td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">-0.47</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">-0.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*O+H<sub>2</sub></td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">-0.27</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">-0.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1/2O<sub>2</sub>+H<sub>2</sub></td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: center;">-0.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H2</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1/2O<sub>2</sub></td>
+<td style="text-align: center;">0.32</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OH*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">H*</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h1 data-number="3" id="hydrogen-evolution-reaction-her"><span class="header-section-number">3</span> Hydrogen-evolution reaction (HER)</h1>
+<h2 data-number="3.1" id="mechanism-of-hydrogen-evolution-reactions-in-acidic-and-alkaline-solution"><span class="header-section-number">3.1</span> Mechanism of hydrogen evolution reactions in acidic and alkaline solution</h2>
+<h3 data-number="3.1.1" id="acidic-electrolyte"><span class="header-section-number">3.1.1</span> Acidic electrolyte</h3>
+<p><span class="math display">2H(aq)^++2e^-{\rightarrow}H_2(g)</span></p>
+<ul>
+<li>Volmer step: <span class="math inline">H^++e^-{\rightarrow}H_{ads}</span></li>
+<li>Tafel step: <span class="math inline">2H_{ads}{\rightarrow}H_2</span></li>
+<li>Heyrovsky step: <span class="math inline">H^++H_{ads}+e^-{\rightarrow}H_2</span></li>
+<li>整个反应的速率很大程度上取决于氢吸附自由能<span class="math inline">\Delta G_H</span>如果氢气与表面键合太弱，吸附（Volmer）步骤将限制整个反应速率，而如果键合太强，解吸（Heyrovsky/Tafel）步骤将限制反应速率。因此，具有HER活性的催化剂的必要不充分条件是<span class="math inline">\Delta G_H \approx 0</span>。</li>
+</ul>
+<h3 data-number="3.1.2" id="alkaline-electrolyte"><span class="header-section-number">3.1.2</span> Alkaline electrolyte</h3>
+<p><span class="math display">2H_2O+2e^-{\rightarrow}H_2(g)+2OH(aq)^-</span></p>
+<ul>
+<li>Volmer step: <span class="math inline">2H_2O+e^-{\rightarrow}2H_{ads}+2OH^-</span></li>
+<li>Tafel step: <span class="math inline">2H_{ads}{\rightarrow}H_2</span></li>
+<li>Heyrovsky step: <span class="math inline">H_2O+H_{ads}+e^-{\rightarrow}H_2+OH^-</span></li>
+</ul>
+<h2 data-number="3.2" id="her-calculation-methodchen17jacszhang15aciehinnemann05jacs"><span class="header-section-number">3.2</span> HER calculation method<span class="citation" data-cites="Chen17JACS Zhang15ACIE Hinnemann05JACS"><sup>[2–4]</sup></span></h2>
+<p>The electrocatalytic activity of a given material for HER can be closely correlated to the adsorption energy of a single H atom on the surface of the material. According to basic Sabatier principle, with the free energy of adsorbed H on the catalyst usually required to be close to that of the product. Therefore, the value of free energy of H* (<span class="math inline">\Delta G_{H*}</span>) of a site is usually viewed as a reliable indicator of the degree of catalytic activity of the site in question toward HER, where a smaller absolute value of <span class="math inline">\Delta G_{H*}</span> means a better catalytic activity toward HER.<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span></p>
+<p>The related free energies can be computed by the formula <span class="math display">\Delta G_{H*}=\Delta E_{H*}-\Delta ZPE-T\Delta S</span>, in which <span class="math inline">\Delta E_{H*}</span>, <span class="math inline">\Delta ZPE</span> and <span class="math inline">\Delta S</span> are the binding energy, zero point energy change and entropy change of H* adsorption, respectively. The differential hydrogen adsorption energy <span class="math inline">\Delta E_{H*}</span> is defined as follows, <span class="math display">{\Delta}E_H*=E_{system+nH}-E_{system+(n-1)H}-1/2E_{H_2},</span> where <span class="math inline">E_{system+nH}</span> is the total DFT energy for the system with <span class="math inline">n</span> hydrogen atoms adsorbed, <span class="math inline">E_{system+(n-1)H}</span> is the total DFT energy for <span class="math inline">(n-1)</span> hydrogen atoms adsorbed and <span class="math inline">E_{H_2}</span> is the DFT energy for a hydrogen molecule in the gas phase. The differential hydrogen binding energy describes the energy needed to increase the coverage by one hydrogen atom. In this work, we computed the <span class="math inline">T\Delta S</span> and <span class="math inline">\Delta ZPE</span> according to the scheme proposed by Norskov et al.<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span> Specifically, <span class="math inline">\Delta S</span> was obtained by using the equation <span class="math display">\Delta S=S(H*)-1/2S(H_2)\approx -1/2S^0(H_2)</span>, as the configurational and vibrational entropy of H* is negligible. Since <span class="math inline">TS(H_2)</span> is 0.41 eV for H2 at at standard conditions (298.15 K and 1 atm), the corresponding <span class="math inline">T\Delta S</span> was obtained to be -0.205 eV. On the other hand, the equation <span class="math display">\Delta ZPE=ZPE(H*)-1/2ZPE(H_2)</span>(<span class="math inline">ZPE(H_2)</span>=0.27eV) was employed to calculate <span class="math inline">\Delta ZPE</span> for H*. It is worth mentioning here that our computed <span class="math inline">ZPE(H2)</span> value was about 0.288 eV, close to the value reported by Norskov et al. for a similar system.<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span></p>
+<p><img src="../img/HER1.png" title="HER1" style="width:50.0%" /></p>
+<p>Fig. 2: Free-energy diagram for hydrogen evolution reaction on different catalysts. The free energy of H<sup>+</sup>+ e<sup>-</sup> is defined as the same as that of 1/2H<sub>2</sub> at room temperature and standard conditions<span class="citation" data-cites="Zhang15ACIE"><sup>[3]</sup></span>.</p>
+<h3 data-number="3.2.1" id="overpotential"><span class="header-section-number">3.2.1</span> Overpotential</h3>
+<ul>
+<li>The theoretical overpotential <span class="math inline">\eta</span> for HER, which is determined by <span class="math inline">\Delta G_{H^*}</span>: <span class="math display">\color{red} \eta=-|\Delta G_{H^*}|/e</span></li>
+</ul>
+<h1 data-number="4" id="oxygen-reduction-reactionorr-and-oxygen-evolution-reaction-oer"><span class="header-section-number">4</span> Oxygen Reduction Reaction(ORR) and Oxygen Evolution Reaction (OER)</h1>
+<p><span class="math display">1/2O_2+H^++e^-\rightarrow 1/2H_2O_2\ (U_0^{O_2/H_2O_2} =0.7\ V\ vs.\ RHE)</span> <span class="math display">1/4O_2(g)+H^++e^-\rightarrow 1/2H_2O\ (U_0^{O_2/H_2O} =1.229\ V\ vs.\ RHE (pH=0)</span> <span class="math display">1/4O_2(g)+1/2H_2O-\rightarrow OH^-\ (U_0^{O_2/H_2O} =0.41\ V\ vs.\ RHE (pH=14)</span></p>
+<h2 data-number="4.1" id="e-orr-yang20nc"><span class="header-section-number">4.1</span> 2e-ORR<span class="citation" data-cites="Yang20NC"><sup>[5]</sup></span></h2>
+<ul>
+<li>The total energy (E) and corresponding thermodynamic quantities, in eV, for free H<sub>2</sub>, H<sub>2</sub>O, H<sub>2</sub>O<sub>2</sub> species, were listed in Supplementary Table 8. Since O<sub>2</sub> molecule is poorly described by standard DFT calculations, all the free energies were calculated by using the free energies of H<sub>2</sub>O (l) and H2 (g) as ref.<sup>30</sup>. <strong>The free energies of O2 molecule and H<sub>2</sub>O<sub>2</sub> molecules are determined by equilibrium potential of four-electron (1.23 V vs. RHE) and two-electron (0.70 V vs. RHE) ORR, which are estimated by 4.92 (4 × 1.23) and 3.52 (4 × 1.23–0.70 × 2) eV, respectively.</strong></li>
+<li>For the two-electron ORR, there are two reaction steps<sup>25</sup>(in acidic solution) <span class="math display">*+O_2+H^++e^-\rightarrow OOH^* \ (5)</span> <span class="math display">OOH^*+H^++e^-\rightarrow H_2O_2+*\ (6)</span> For the hydrogenation of oxygen (Eq. (5)), the <span class="math inline">\Delta G</span> was calculated by Eqs. (7)–(9): <span class="math display">\Delta G_1=\mu_{OOH^*}-\mu_*-\mu_{O_2}-1/2\mu_{H_2}\ (7)</span> while for the reduction of OOH* to from H<sub>2</sub>O<sub>2</sub> (Eq. (6)), the <span class="math inline">\Delta G</span> can be obtained directly by Eq. (10): <span class="math display">\Delta G_2=-1.4eV-\Delta G_1\ (10)</span> herein, the <span class="math inline">G(OOH^*)</span> is defined by Eq. (11): <span class="math display">G(OOH^*)=4.92eV+\Delta G_1\ (11)</span></li>
+</ul>
+<h2 data-number="4.2" id="e-orr-xu18ncli14jc"><span class="header-section-number">4.2</span> 4e-ORR<span class="citation" data-cites="Xu18NC Li14JC"><sup>[6,7]</sup></span></h2>
+<h3 data-number="4.2.1" id="reaction-mechanism"><span class="header-section-number">4.2.1</span> Reaction mechanism</h3>
+<ul>
+<li>The ORR, OER and HER pathways on SAC systems were calculated in detail according to electrochemical framework developed by Nørskov and his co-workers<span class="citation" data-cites="Norskov04JPCB"><sup>[8]</sup></span>. As for ORR, in an alkaline electrolyte (pH = 14), H<sub>2</sub>O rather than H<sub>3</sub>O+ may act as the proton donor, so overall reaction scheme of the ORR can be written as: <span class="math display">O_2+2H_2O+4e^-\leftrightarrow 4OH^- (8)</span></li>
+<li>The <strong>ORR</strong> may proceed through the following elementary steps, which are usually employed to investigate the electrocatalysis of the ORR on various materials(in alkaline solution): <span class="math display">O_2(g) + H_2O(l)+e^-+^*\rightarrow OOH^*+OH^-\ (9)</span> <span class="math display">OOH^*+e^-\rightarrow O^*+OH^-\ (10)</span> <span class="math display">O^*+H_2O(l)+e^-\rightarrow OH^*+OH^-\ (11)</span> <span class="math display">OH^*+e^-\rightarrow OH^-+*\ (12)</span> where <span class="math inline">^*</span> stands for an active site on the catalytic surface, (<span class="math inline">l</span>) and (<span class="math inline">g</span>) refer to liquid and gas phases, respectively.</li>
+</ul>
+<p><strong>In acidic solution</strong>: <span class="math display">O_2(g) + H^++e^-+^*\rightarrow OOH^*\ (17)</span> <span class="math display">OOH^* + H^++e^-\rightarrow O^*+H_2O\ (18)</span> <span class="math display">O^*+H^++e^-\rightarrow OH^*\ (19)</span> <span class="math display">OH^*+H^++e^-\rightarrow H_2O + ^*\ (20)</span></p>
+<ul>
+<li><p>The <strong>OER</strong> occurring in an <strong>alkaline electrolyte (pH = 14)</strong> through elementary steps takes the reverse direction of ORR: <span class="math display">OH^-+* \rightarrow OH ^*+e^-\ (13)</span> <span class="math display">OH^*+OH^-\rightarrow O^*+H_2O(l)+e^-\ (14)</span> <span class="math display">O^*+OH^-\rightarrow OOH^*+e^-\ (15)</span> <span class="math display">OOH^*+OH^-\rightarrow O_2(g) + H_2O(l)+e^-+^*\ (16)</span></p></li>
+<li><p>As for <strong>HER</strong>, <strong>in an acid electrolyte (pH = 0)</strong>, H+ can act as the proton donor, so the overall reaction scheme of the HER can be written as: <span class="math display">H^++e^-+^*\leftrightarrow 1/2H_2(g)+*</span> where the * represents the adsorption site.</p></li>
+</ul>
+<h3 data-number="4.2.2" id="reaction-free-energy-calculation"><span class="header-section-number">4.2.2</span> Reaction free energy calculation</h3>
+<ul>
+<li>For proton-transfer steps, reaction free energies are regarded as approximate values of the activation barriers, because <strong>detailed calculations for the transfer of a solvated proton to adsorbed OH− show the neglect of overbarriers has been proven as a very good approximation for a situation where the proton transfer is downhill in energy</strong><span class="citation" data-cites="Desai03PRB"><sup>[9]</sup></span>. This approximation may result in a slight overestimation of activity for a given proton-transfer elementary step, but can still qualitatively represent the right relative energetic ordering of the various proton-transfer elementary steps. Therefore, we took the reactions in equations (9)–(16) to derive the thermochemistry for ORR and OER. The RHE model developed by Nørskov and co-workers35,60,<span class="citation" data-cites="Norskov04JPCB"><sup>[8]</sup></span> was used to obtain the Gibbs reaction free energy of these electrochemical elementary steps. In this model, we set up RHE as the reference electrode, which allows us to replace chemical potential (<span class="math inline">\mu</span>) of the proton–electron pair with that of half a hydrogen molecule: <span class="math display">\mu_{H^+}+ \mu_{e^−} = 1/2\mu_{H_2}</span>, at conditions with <span class="math inline">U = 0</span> V and <span class="math inline">P_{H_2} = 1</span> bar.</li>
+<li>The chemical potential of each adsorbate is defined as: <span class="math display">\mu=E+E_{ZPE}-T\times S\ (18)</span> where the <span class="math inline">E</span> is the total energy obtained from DFT calculations, <span class="math inline">E_{ZPE}</span> is zero-point energy and S is the entropy at 298 K. In order to obtain the reactionfree energy of each elementary step of ORR, OER and HER, we calculated the adsorption free energy of O<em>, OH</em>, OOH* and H*. Because it is difficult to obtain the exact free energy of <span class="math inline">OOH</span>, <span class="math inline">O</span>, <span class="math inline">OH</span> and <span class="math inline">H</span> radicals in the electrolyte solution, the adsorption free energy <span class="math inline">\Delta \mu_{OOH^*}</span>, <span class="math inline">\Delta \mu_{O^*}</span>, <span class="math inline">\Delta \mu_{OH^*}</span> and<span class="math inline">\Delta \mu_{H^*}</span>, are relative to the free energy of stoichiometrically appropriate amounts of H<sub>2</sub>O (g) and H2(g), defined as follows: <span class="math display">\color{red} {\Delta}G_{O^*}={\Delta}G(H_2O(l)+*\rightarrow O^*+H_2(g)</span> <span class="math display">\color{red} =\mu_{O^*}+\mu_{H_2}-\mu_*-\mu_{H_2O}\ (19)</span> <span class="math display">\color{red} {\Delta}G_{OH^*}={\Delta}G(H_2O(l)+*\rightarrow OH^*+1/2H_2(g))</span> <span class="math display">\color{red} =\mu_{OH^*}+1/2\mu_{H_2}-\mu_*-\mu_{H_2O}\ (20)</span> <span class="math display">\color{red} {\Delta}G_{OOH^*}={\Delta}G(2H_2O(g)+*\rightarrow OOH^*+3/2H_2(g))</span> <span class="math display">\color{red} =\mu_{OOH^*}+3/2\mu_{H_2}-\mu_*-2\mu_{H_2O}\ (21)</span> <span class="math display">\color{red} \Delta_{H^*}=\Delta G(H^++e^-+*\rightarrow H^*)</span> <span class="math display">\color{red} =\mu_{H^*}-1/2\mu_{H_2}-\mu_*</span></li>
+<li><strong>Entropy values of gaseous molecules are taken from the standard tables in Physical Chemistry<span class="citation" data-cites="Atkins10P"><sup>[10]</sup></span>, while the entropies of adsorbate and adsorption sites are negligible. The zero-point energy for each adsorbate and free molecules can be obtained from the vibration frequency calculation, while the zero-point energy of adsorption sites is negligible.</strong></li>
+<li>For each elementary step, the Gibbs reaction free energy Δ G is defined as the difference between free energies of the initial and final states and is given by the expression: <span class="math display">\Delta G=\Delta E+\Delta ZPE -T\Delta S+\Delta G_U+\Delta G_{pH}</span> where <span class="math inline">\Delta E</span> is the reaction energy of reactant and product molecules adsorbed on catalyst surface, obtained from DFT calculations; <span class="math inline">\Delta ZPE</span> and <span class="math inline">\Delta ZPE</span> are the change in zero point energies and entropy due to the reaction. The bias effect on the free energy of each initial, intermediate and final state involving an electron in the electrode is taken into account by shifting the energy of the state by <span class="math inline">\Delta G_U= − neU</span>, where <span class="math inline">U</span> is the electrode applied potential relative to RHE as mentioned above, <span class="math inline">e</span> is the elementary charge transferred and <span class="math inline">n</span> is the number of proton–electron pairs transferred. <strong><span class="math inline">\Delta G_{pH}</span> is the correction of the H+ free energy and depends on whether the reaction under consideration is a reduction or an oxidation.</strong> <span class="math display">\Delta G_{pH} = − k_BTln[H+] = pH \times kBTln10</span>, where <span class="math inline">k_B</span> is the Boltzmann constant and <span class="math inline">T</span> is the temperature. Hence, the equilibrium potential <span class="math inline">U_0</span> for four-electron transfer ORR at pH = 14 was determined to be 0.402 V versus NHE or 1.23 V versus RHE according to the Nernst equation (<span class="math inline">E= E0 − 0.0591\times pH</span>, <span class="math inline">U^0_{RHE}=U^0_{NHE}+0.828=1.23</span> eV, where the reactant and product are at the same energy level.</li>
+<li>Given that the high-spin ground state of the oxygen molecule is poorly described in DFT calculations, the free energy of the O<sub>2</sub> molecule was derived according to <span class="math display">G_{O_2}(g)=2G_{H_2O}(l)-2G_{H_2}+4*1.23</span> eV.</li>
+<li>The free energy of OH− was derived as <span class="math display">G_{OH^−} = G_{H_2O}(l)− G_{H^+}</span>. <strong>The free energy for gas phase water is calculated at 0.035 bars because this is the equilibrium pressure in contact with liquid water at 298 K</strong>. The free energy of gas phase water at these conditions is equal to the free energy of liquid water.</li>
+<li>The reaction free energy of equations (9)–(12) (<span class="math inline">\Delta G_1</span>, <span class="math inline">\Delta G_2</span>, <span class="math inline">\Delta G_3</span>, <span class="math inline">\Delta G_4</span>) for ORR can be calculated using the following equations: <span class="math display">\color{red} \Delta{G_1}=\Delta G_{OOH^*}-4.92\ (24)</span> <span class="math display">\color{red} \Delta{G_2}=\Delta G_{O^*}-\Delta G_{OOH^*}\ (25)</span> <span class="math display">\color{red} \Delta{G_3}=\Delta G_{OH^*}-\Delta G_{O^*}\ (26)</span> <span class="math display">\color{red} \Delta{G_4}=-\Delta G_{OH^*}\ (27)</span></li>
+<li>For ORR, the onset potential is calculated by <span class="math display">U_{ORR}^{onset}=-\max\{\Delta G_1,\Delta G_2,\Delta G_3,\Delta G_4\}\ (28)</span> , Nørskov et al. developed a method to determine the overpotentials<span class="citation" data-cites="Man11C"><sup>[11]</sup></span>, <span class="math display">\eta^{OER}=1.23-U_{ORR}^{onset}/e\ eV</span></li>
+<li>The reaction free energy of equations (13)–(16) (<span class="math inline">\Delta G_5</span>, <span class="math inline">\Delta G_6</span>, <span class="math inline">\Delta G_7</span>, <span class="math inline">\Delta G_8</span>) for OER, which are <strong>reverse reactions of equations (9)–(12)</strong>, can be calculated using the following equations: <span class="math display">\color{red} \Delta{G_5}=\Delta G_{OH^*}\ (29)</span> <span class="math display">\color{red} \Delta{G_6}=\Delta G_{O^*}-\Delta G_{OH^*}\ (30)</span> <span class="math display">\color{red} \Delta{G_7}=\Delta G_{OOH^*}-\Delta G_{O^*}\ (31)</span> <span class="math display">\color{red} \Delta{G_8}=4.92-\Delta G_{OOH^*}\ (32)</span></li>
+<li>For OER, the onset potential is calculated by <span class="math display">U_{OER}^{onset}=\max\{\Delta G_5,\Delta G_6,\Delta G_7,\Delta G_8\}</span> , Nørskov et al. developed a method to determine the overpotentials<span class="citation" data-cites="Man11C"><sup>[11]</sup></span>, <span class="math display">\eta^{OER}=U_{OER}^{onset}/e-1.23\ eV</span> . An ideal catalyst should be able to facilitate water oxidation just above the equilibrium potential, but requires all the four charge transfer steps to have reaction free energies of the same magnitude at zero potential (i.e., 4.92 eV/4 = 1.23 eV).</li>
+</ul>
+<h2 data-number="4.3" id="an-example-for-orr"><span class="header-section-number">4.3</span> An Example for ORR</h2>
+<ul>
+<li>Hydrogen Peroxide Generation with 100% Faradaic Efficiency on Metal-Free Carbon Black<span class="citation" data-cites="Wang21AC"><sup>[12]</sup></span></li>
+</ul>
+<h2 data-number="4.4" id="edge-site"><span class="header-section-number">4.4</span> Edge Site</h2>
+<table>
+<caption>Table 1: Calculated free energies at PBE+D3 level.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Group</th>
+<th style="text-align: center;">E (eV)</th>
+<th style="text-align: center;">ZPE-298.15*<span class="math inline">S_{vib}</span>(eV)</th>
+<th style="text-align: center;">G (eV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">H<sub>2</sub>O(0.035bar)</td>
+<td style="text-align: center;">-14.2367</td>
+<td style="text-align: center;">0.579-0.67<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span></td>
+<td style="text-align: center;">-14.3277</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">H<sub>2</sub></td>
+<td style="text-align: center;">-6.7689</td>
+<td style="text-align: center;">0.2679-0.41<span class="citation" data-cites="Norskov05JES"><sup>[1]</sup></span></td>
+<td style="text-align: center;">-6.9110</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O<sub>2</sub></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">-9.9134</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OH<sup>-</sup></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">-10.8722+0.0592*pH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">-242.2713</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">-242.2713</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OH*</td>
+<td style="text-align: center;">-252.7821</td>
+<td style="text-align: center;">0.3914-0.0719</td>
+<td style="text-align: center;">-252.4626</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">O*</td>
+<td style="text-align: center;">-247.2320</td>
+<td style="text-align: center;">0.0711-0.0591</td>
+<td style="text-align: center;">-247.2200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">OOH*</td>
+<td style="text-align: center;">-257.0118</td>
+<td style="text-align: center;">0.4688-0.1504</td>
+<td style="text-align: center;">-256.6934</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">G_{O_2}=2*G_{H_2O(l)}-2*G_{H_2}+1.23*4</span></li>
+<li><span class="math inline">G_{H^++e^-}=1/2G_{H_2}-RTln10\times pH=1/2G_{H_2}-0.0592*pH</span></li>
+<li><span class="math inline">G_{OH^-}=G_{H_2O(l)}-G_{H+}=G_{H_2O(l)}-(1/2G_{H_2}-RTln10\times pH)</span><br />
+</li>
+</ul>
+<h3 data-number="4.4.1" id="e-orr-and-4e-oer-for-edge-site"><span class="header-section-number">4.4.1</span> 4e-ORR and 4e-OER for edge site</h3>
+<figure>
+<img src="../img/ORR.test_001.png" title="ORR.test_001" style="width:100.0%" alt="Free energy profile of 4e- pathway at U = 0 V on four defect GNR models.[12]" /><figcaption aria-hidden="true">Free energy profile of 4e- pathway at U = 0 V on four defect GNR models.<span class="citation" data-cites="Wang21AC"><sup>[12]</sup></span></figcaption>
+</figure>
+<p><br />
+</p>
+<ul>
+<li><span class="math inline">{\Delta}G_{OH^*}=G_{OH^*}+1/2G_{H_2}-G_*-G_{H_2O}=-252.4626-0.5*6.9110+242.2713+14.3277=0.6809</span> eV</li>
+<li><span class="math inline">{\Delta}G_{O^*}=G_{O^*}+G_{H_2}-G_*-G_{H_2O}=-247.2200-6.9110+242.2713+14.3277=2.468000</span> eV</li>
+<li><span class="math inline">{\Delta}G_{OOH^*}=G_{OOH^*}+3/2E_{H_2}-E_*-2E_{H_2O}=-256.6934-1.5*6.9110+242.2713+2*14.3277=3.866800</span> eV</li>
+<li><span class="math inline">{\Delta}G_{O_2}=4.92</span> eV</li>
+</ul>
+<h3 data-number="4.4.2" id="over-potential"><span class="header-section-number">4.4.2</span> Over potential</h3>
+<p><span class="math display">\Delta{G_1}=\Delta G_{OOH^*}-4.92=3.866800-4.92=-1.0532</span> <span class="math display">\Delta{G_2}=\Delta G_{O^*}-\Delta G_{OOH^*}=2.468-3.8668=-1.399</span> <span class="math display">\Delta{G_3}=\Delta G_{OH^*}-\Delta G_{O^*}=0.6809-2.468=-1.7871</span> <span class="math display">\Delta{G_4}=-\Delta G_{OH^*}=-0.6809</span> <span class="math display">\Delta{G_5}=\Delta G_{OH^*}=0.6809</span> <span class="math display">\Delta{G_6}=\Delta G_{O^*}-\Delta G_{OH^*}=1.7871</span> <span class="math display">\Delta{G_7}=\Delta G_{OOH^*}-\Delta G_{O^*}=1.399</span> <span class="math display">\Delta{G_8}=4.92-\Delta G_{OOH^*}=1.0532</span></p>
+<ul>
+<li>For OER, the onset potential is calculated by <span class="math display">U_{OER}^{onset}=\max\{\Delta G_5,\Delta G_6,\Delta G_7,\Delta G_8\}=1.7871</span> <span class="math display">\eta_{OER}=U_{OER}^{onset}/e-1.23=0.557</span></li>
+<li>For ORR <span class="math display">U_{ORR}^{onset}=-\max\{\Delta G_1,\Delta G_2,\Delta G_3,\Delta G_4\}=0.6809</span> <span class="math display">\eta_{ORR}=1.23-U_{ORR}^{onset}/e=0.549</span></li>
+</ul>
+<h3 data-number="4.4.3" id="if-u0.7-v-e-1"><span class="header-section-number">4.4.3</span> if U=0.7 V (e=-1)</h3>
+<p><span class="math display">{\Delta}G={\Delta}E+{\Delta}ZPE-T{\Delta}S+eU+{\Delta}G_{pH}</span></p>
+<ul>
+<li><span class="math inline">{\Delta}G_{OH^*}=0.6809-0.7=-0.019</span></li>
+<li><span class="math inline">{\Delta}G_{O^*}=2.468-0.7*2=1.068</span></li>
+<li><span class="math inline">{\Delta}G_{OOH^*}=3.866800-0.7*3=1.767</span></li>
+<li><span class="math inline">{\Delta}G_{OOH^*}=4.92-0.7*4=2.120000</span></li>
+</ul>
+<h3 data-number="4.4.4" id="e-orr"><span class="header-section-number">4.4.4</span> 2e-ORR</h3>
+<ul>
+<li><span class="math inline">\Delta G_1=\mu_{OOH^*}-\mu_*-\mu_{O_2}-1/2\mu_{H_2}=-256.6934+242.2713+9.9134+0.5*6.9110=-1.0532</span></li>
+<li><span class="math inline">\Delta G_2=-1.4-\Delta G_1=-1.4+1.0532=-0.3468</span></li>
+<li><span class="math inline">G_{OOH^*}=4.92+\Delta G_1=4.92-1.0532=3.8668</span></li>
+<li><span class="math inline">U_{ORR}^{limit}=-\max\{\Delta G_1,\Delta G_2\}=0.3468</span></li>
+<li>Limit Line: (3.52,0)-&gt;(4.22,0.7) -&gt;(4.92,0)</li>
+<li>In theory, an ideal catalyst should have a <span class="math inline">G_{OOH^*}</span> of 4.22 (<span class="math inline">\pm0.1</span>) eV.</li>
+</ul>
+<figure>
+<img src="../img/ORR.test_005.png" title="ORR.test_005" style="width:100.0%" alt="Calculated volcano relation of limiting potential U_L as a function of G_{OOH^*}.[12]" /><figcaption aria-hidden="true">Calculated volcano relation of limiting potential <span class="math inline">U_L</span> as a function of <span class="math inline">G_{OOH^*}</span>.<span class="citation" data-cites="Wang21AC"><sup>[12]</sup></span></figcaption>
+</figure>
+<h4 data-number="4.4.4.1" id="u0.7-v"><span class="header-section-number">4.4.4.1</span> U=0.7 V</h4>
+<p><span class="math display">G_{OOH^*}=3.8668-0.7=3.1668</span> <span class="math display">G_{O_2}=G_{H_2O_2}=3.52</span></p>
+<figure>
+<img src="../img/ORR.test_004.png" title="ORR.test_004" style="width:100.0%" alt="Free energy profile of 2e− pathway at U = 0.7 V for the four defect GNR models.[12]" /><figcaption aria-hidden="true">Free energy profile of 2e<sup>−</sup> pathway at U = 0.7 V for the four defect GNR models.<span class="citation" data-cites="Wang21AC"><sup>[12]</sup></span></figcaption>
+</figure>
+<h3 data-number="4.4.5" id="another-example-for-volcano-plots-lu18nca"><span class="header-section-number">4.4.5</span> Another Example for volcano plots<span class="citation" data-cites="Lu18NCa"><sup>[13]</sup></span></h3>
+<ul>
+<li><strong>We use <span class="math inline">G_{OOH^*}</span> as a descriptor and plot the activity volcano to underline the activities of different oxygen functional groups<sup>[14,15]</sup>. The limiting potential, <span class="math inline">U_L</span>, which can be considered a metric of activity, is defined as the lowest potential at which all the reaction steps are downhill in free energy. The theoretical overpotential is defined as the maximum difference between the limiting poten- tial and equilibrium potential.</strong></li>
+</ul>
+<figure>
+<img src="../img/ORR.test_006.png" title="ORR.test_006" style="width:100.0%" alt="Calculated two-electron (solid black) ORR-related volcano plot for the electro-reduction of oxygen to H2O2 displayed with the limiting potential plotted as a function of G_{OOH^*}. The equilibrium potential for the two-electron ORR is shown as the dashed black line.[13]" /><figcaption aria-hidden="true">Calculated two-electron (solid black) ORR-related volcano plot for the electro-reduction of oxygen to H<sub>2</sub>O<sub>2</sub> displayed with the limiting potential plotted as a function of <span class="math inline">G_{OOH^*}</span>. The equilibrium potential for the two-electron ORR is shown as the dashed black line.<span class="citation" data-cites="Lu18NCa"><sup>[13]</sup></span></figcaption>
+</figure>
+<p><br />
+</p>
+<ul>
+<li>Figure 4b shows the calculated <span class="math inline">U_L</span> as a function of <span class="math inline">G_{OOH^*}</span> for the two-electron ORR to H<sub>2</sub>O<sub>2</sub> on these materials. The structures located on the right side of the volcano bind OOH* weakly, hence equation (1) is a limiting step. Those located on the left side, however, bind OOH* strongly, thus equation (2) is limiting. As a result, the binding strength of OOH* to the surface ultimately determines the ORR activity. The maxi- mum limiting potential is 0.70 V, representing zero overpotential at the top of the volcano.</li>
+</ul>
+<h1 class="unnumbered" id="ref">Ref</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Norskov05JES" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Kitchin, J. R.; Chen, J. G.; Pandelov, S.; Stimming, U. Trends in the Exchange Current for Hydrogen Evolution. <em>J. Electrochem. Soc.</em> <strong>2005</strong>, <em>152</em>, J23.</div>
+</div>
+<div id="ref-Chen17JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Chen, Y.; Yu, G.; Chen, W.; Liu, Y.; Li, G.-D.; Zhu, P.; Tao, Q.; Li, Q.; Liu, J.; Shen, X.; et al. Highly Active, Nonprecious Electrocatalyst Comprising Borophene Subunits for the Hydrogen Evolution Reaction. <em>J. Am. Chem. Soc.</em> <strong>2017</strong>, <em>139</em>, 12370–12373.</div>
+</div>
+<div id="ref-Zhang15ACIE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Zhang, Z.; Yang, Y.; Gao, G.; Yakobson, B. I. Two-Dimensional Boron Monolayers Mediated by Metal Substrates. <em>Angew. Chem. Int. Ed.</em> <strong>2015</strong>, <em>54</em>, 13022–13026.</div>
+</div>
+<div id="ref-Hinnemann05JACS" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Hinnemann, B.; Moses, P. G.; Bonde, J.; Jørgensen, K. P.; Nielsen, J. H.; Horch, S.; Chorkendorff, I.; Nørskov, J. K. Biomimetic Hydrogen Evolution: MoS <span><sub>2</sub></span> Nanoparticles as Catalyst for Hydrogen Evolution. <em>J. Am. Chem. Soc.</em> <strong>2005</strong>, <em>127</em>, 5308–5309.</div>
+</div>
+<div id="ref-Yang20NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Yang, Q.; Xu, W.; Gong, S.; Zheng, G.; Tian, Z.; Wen, Y.; Peng, L.; Zhang, L.; Lu, Z.; Chen, L. Atomically Dispersed Lewis Acid Sites Boost 2-Electron Oxygen Reduction Activity of Carbon-Based Catalysts. <em>Nat. Commun.</em> <strong>2020</strong>, <em>11</em>, 5478.</div>
+</div>
+<div id="ref-Xu18NC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Xu, H.; Cheng, D.; Cao, D.; Zeng, X. C. A Universal Principle for a Rational Design of Single-Atom Electrocatalysts. <em>Nat. Catal.</em> <strong>2018</strong>, <em>1</em>, 339–348.</div>
+</div>
+<div id="ref-Li14JC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Li, M.; Zhang, L.; Xu, Q.; Niu, J.; Xia, Z. N-Doped Graphene as Catalysts for Oxygen Reduction and Oxygen Evolution Reactions: Theoretical Considerations. <em>J. Catal.</em> <strong>2014</strong>, <em>314</em>, 66–72.</div>
+</div>
+<div id="ref-Norskov04JPCB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Nørskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.; Kitchin, J. R.; Bligaard, T.; Jónsson, H. Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode. <em>J. Phys. Chem. B</em> <strong>2004</strong>, <em>108</em>, 17886–17892.</div>
+</div>
+<div id="ref-Desai03PRB" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Desai, S. K.; Neurock, M. First-Principles Study of the Role of Solvent in the Dissociation of Water over a Pt-Ru Alloy. <em>Phys. Rev. B</em> <strong>2003</strong>, <em>68</em>, 075420.</div>
+</div>
+<div id="ref-Atkins10P" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Atkins, P.; de Paula, J. Physical Chemistry. <em>Physical chemistry</em>; Oxford University Press: Oxford, 2010.</div>
+</div>
+<div id="ref-Man11C" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Man, I. C.; Su, H.-Y.; Calle-Vallejo, F.; Hansen, H. A.; Martínez, J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.; Rossmeisl, J. Universality in Oxygen Evolution Electrocatalysis on Oxide Surfaces. <em>ChemCatChem</em> <strong>2011</strong>, <em>3</em>, 1159–1165.</div>
+</div>
+<div id="ref-Wang21AC" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wang, Z.; Li, Q.-K.; Zhang, C.; Cheng, Z.; Chen, W.; McHugh, E. A.; Carter, R. A.; Yakobson, B. I.; Tour, J. M. Hydrogen Peroxide Generation with 100% Faradaic Efficiency on Metal-Free Carbon Black. <em>ACS Catal.</em> <strong>2021</strong>, <em>11</em>, 2454–2459.</div>
+</div>
+<div id="ref-Lu18NCa" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Lu, Z.; Chen, G.; Siahrostami, S.; Chen, Z.; Liu, K.; Xie, J.; Liao, L.; Wu, T.; Lin, D.; Liu, Y.; et al. High-Efficiency Oxygen Reduction to Hydrogen Peroxide Catalysed by Oxidized Carbon Materials. <em>Nat. Catal.</em> <strong>2018</strong>, <em>1</em>, 156–162.</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>
