@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="180.32745mm"
+   height="80mm"
+   viewBox="0 0 180.32746 80"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="Tc.vs.thick.svg"
+   inkscape:export-filename="D:\Qsync\Transfer\Draft.MLayer\Superconductor_Project\pic\tc.vs.thick.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600">
+  <defs
+     id="defs2">
+    <rect
+       x="9.0871639"
+       y="-6.4144688"
+       width="56.126602"
+       height="28.33057"
+       id="rect863" />
+    <rect
+       id="rect863-5"
+       height="28.33057"
+       width="56.126602"
+       y="-6.4144688"
+       x="9.0871639" />
+    <rect
+       id="rect876"
+       height="28.33057"
+       width="56.126602"
+       y="-6.4144688"
+       x="9.0871639" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="329.00304"
+     inkscape:cy="-53.650526"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(31.945328,-27.157587)">
+    <g
+       id="g879">
+      <image
+         sodipodi:absref="D:\Qsync\Transfer\Draft.MLayer\Superconductor_Project\pic\Selected_094.png"
+         xlink:href="Selected_094.png"
+         id="image866"
+         preserveAspectRatio="none"
+         height="80"
+         width="95.368782"
+         x="-31.945328"
+         y="27.157587" />
+      <image
+         sodipodi:absref="D:\Qsync\Transfer\Draft.MLayer\Superconductor_Project\pic\Selected_090.png"
+         xlink:href="Selected_090.png"
+         id="image857"
+         preserveAspectRatio="none"
+         height="80"
+         width="84.958679"
+         x="63.423454"
+         y="27.157587" />
+      <text
+         transform="translate(41.704791,37.431485)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect863);fill:#000000;fill-opacity:1;stroke:none;"
+         id="text861"
+         xml:space="preserve"><tspan
+           x="9.0878906"
+           y="-0.058735526"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial">(a)</tspan></tspan></text>
+      <rect
+         y="27.157587"
+         x="63.439682"
+         height="9.7256069"
+         width="7.9212785"
+         id="rect896"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5" />
+      <text
+         xml:space="preserve"
+         id="text861-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect863-5);fill:#000000;fill-opacity:1;stroke:none;"
+         transform="translate(122.01492,40.104181)"><tspan
+           x="9.0878906"
+           y="-0.058735526"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Arial;-inkscape-font-specification:Arial">(b)</tspan></tspan></text>
+    </g>
+  </g>
+</svg>
