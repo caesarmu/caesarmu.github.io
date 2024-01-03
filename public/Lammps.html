@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>Lammps</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Lammps"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -159,16 +159,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -231,7 +234,7 @@ button{
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> mlp mlp_mpi </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> libinterface</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">## you will get bin/mlp and lib/lib_mlip_interface.a</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> lib_mlip_interface.a [root of interface-lammps-mlip-2]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> lib_mlip_interface.a [root of interface-lammps-mlip]</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">## serial version for some commands </span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">./configure</span> <span class="at">--no-mpi</span></span>
@@ -244,25 +247,49 @@ button{
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> mlp</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> libinterface</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">## you will get bin/mlp and lib/lib_mlip_interface.a</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> lib_mlip_interface.a [root of interface-lammps-mlip-2]</span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> lib_mlip_interface.a [interface-lammps-mlip]</span></code></pre></div>
 <h2 data-number="1.3" id="check-libraries-for-lammps"><span class="header-section-number">1.3</span> check libraries for Lammps</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [root of lammps]/src</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span>  package-status</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> yes-most <span class="kw">&amp;&amp;</span> <span class="fu">make</span> no-lib <span class="kw">&amp;&amp;</span> <span class="fu">make</span> no-ext</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> no-OPENMP no-EXTRA-DUMP</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span>  package-status <span class="kw">|</span> <span class="fu">grep</span> YES</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">## for intel openmpi , failed for intel 2015</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> MAKE/OPTIONS/Makefile.oneapi  MAKE/Makefile.mpi</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">### modify MAKE/Makefile.mpi for intel compiler including oneapi </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">replace</span> <span class="at">-xHost</span> with <span class="at">-march</span><span class="op">=</span>core-avx2</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">## OR for ompi </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> MAKE/OPTIONS/Makefile.g++_openmpi  MAKE/Makefile.mpi</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [interface-lammps-mlip-2]</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ex">./install.sh</span> ../mylammps mpi </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># you will get lmp_mpi</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [root_of_lammps]/src</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> yes-most <span class="kw">&amp;&amp;</span> <span class="fu">make</span> no-lib <span class="kw">&amp;&amp;</span> <span class="fu">make</span> no-ext</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span>  package-status<span class="kw">|</span> <span class="fu">grep</span> YES</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">### building some libs </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">### load python 3</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [root_of_lammps]/lib</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> plumed/</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> Install.py <span class="at">-b</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">### change the path of github in ../lib/plumed/Install.py if needed (e.g., hub.nuaa.cf)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../voronoi</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> Install.py <span class="at">-b</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">##################</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a> <span class="fu">make</span>  yes-PLUMED yes-VORONOI</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a> <span class="fu">make</span>  package-status <span class="kw">|</span> <span class="fu">grep</span> YES</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">### Optional </span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#### Add NEP-CPU </span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#### https://gtihub.com/brucefan1983/NEP_CPU</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://gtihub.com/brucefan1983/NEP_CPU.git</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> NEP_CPU-main </span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> src/<span class="pp">*</span>  interface/lammps/USER-NEP/</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> interface/lammps/USER-NEP  [root_of_lammps]/src/</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [root_of_lammps]/src/</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> yes-USER-NEP</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">##################</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">## for intel openmpi , failed for intel 2015</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> MAKE/OPTIONS/Makefile.oneapi  MAKE/Makefile.mpi</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co">### modify MAKE/Makefile.mpi for intel compiler including oneapi </span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ex">replace</span> <span class="at">-xHost</span> with <span class="at">-march</span><span class="op">=</span>core-avx2</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co">## OR for ompi </span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> MAKE/OPTIONS/Makefile.g++_openmpi  MAKE/Makefile.mpi</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> [interface-lammps-mlip]</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ex">./install.sh</span> [root_of_lammps] mpi </span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co"># you will get lmp_mpi</span></span></code></pre></div>
 <h1 data-number="2" id="xrd-and-saedfrom"><span class="header-section-number">2</span> XRD and SAED(<a href="https://github.com/lammps/lammps/tree/master/examples/USER/diffraction">From</a>)</h1>
 <h2 data-number="2.1" id="compute"><span class="header-section-number">2.1</span> Compute</h2>
 <ul>
@@ -399,5 +426,7 @@ uncompute       SAED</code></pre>
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>

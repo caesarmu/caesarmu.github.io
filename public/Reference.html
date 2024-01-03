@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>Reference</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Reference"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -27,6 +27,71 @@
     <![endif]-->
     <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+    <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
   <!-- style type="text/css">
             width:1220px;
             height:1100px;
@@ -94,16 +159,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -124,112 +192,529 @@ button{
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
           </ul>-->
           <ul>
-          <li><a href="#zotero"><span class="toc-section-number">1</span> Zotero</a>
+          <li><a href="#zotero-7"><span class="toc-section-number">1</span> <span>Zotero 7</span></a>
           <ul>
           <li><a href="#preference"><span class="toc-section-number">1.1</span> Preference</a>
           <ul>
           <li><a href="#main"><span class="toc-section-number">1.1.1</span> Main</a></li>
-          <li><a href="#zotero-connector-and-update"><span class="toc-section-number">1.1.2</span> Zotero connector and Update</a></li>
-          <li><a href="#proxy-setting-not-necessary"><span class="toc-section-number">1.1.3</span> Proxy Setting (Not Necessary)</a></li>
           </ul></li>
-          <li><a href="#plugins"><span class="toc-section-number">1.2</span> Plugins</a>
+          <li><a href="#zotero-connector-and-update"><span class="toc-section-number">1.2</span> Zotero connector and Update</a></li>
+          <li><a href="#plugins"><span class="toc-section-number">1.3</span> Plugins</a>
           <ul>
-          <li><a href="#better-bibtex"><span class="toc-section-number">1.2.1</span> <span>Better BibTex</span></a></li>
-          <li><a href="#zotfile"><span class="toc-section-number">1.2.2</span> <span>Zotfile</span></a></li>
-          <li><a href="#zutilo-for-shortcuts"><span class="toc-section-number">1.2.3</span> <span>Zutilo</span> for shortcuts</a></li>
-          <li><a href="#zotero-shortdoi"><span class="toc-section-number">1.2.4</span> <span>zotero-shortdoi</span></a></li>
-          <li><a href="#zotero-tag"><span class="toc-section-number">1.2.5</span> <span>zotero-tag</span></a></li>
-          <li><a href="#zotero-scihub"><span class="toc-section-number">1.2.6</span> <span>zotero-scihub</span></a></li>
-          <li><a href="#migrate-from-jabref"><span class="toc-section-number">1.2.7</span> Migrate from Jabref</a></li>
+          <li><a href="#better-bibtex-for-zotero-required"><span class="toc-section-number">1.3.1</span> <span>Better BibTex for Zotero</span> (Required)</a></li>
+          <li><a href="#wandering-file-required"><span class="toc-section-number">1.3.2</span> <span>Wandering file</span> (Required)</a></li>
+          <li><a href="#zotero-inspire-dev-required"><span class="toc-section-number">1.3.3</span> <span>zotero-inspire-dev</span> (Required)</a></li>
+          <li><a href="#del-item-with-attachment-required"><span class="toc-section-number">1.3.4</span> <span>Del Item With Attachment</span> (Required)</a></li>
+          <li><a href="#zotero-gpt"><span class="toc-section-number">1.3.5</span> <span>zotero-gpt</span></a></li>
+          <li><a href="#translate-for-zotero-opitional"><span class="toc-section-number">1.3.6</span> <span>Translate for Zotero</span> (Opitional)</a></li>
+          <li><a href="#actions-and-tags-for-zotero-required"><span class="toc-section-number">1.3.7</span> <span>Actions and Tags for Zotero</span> (Required)</a></li>
+          <li><a href="#copy-text-from-zotero-pdf-viewer-without-citation"><span class="toc-section-number">1.3.8</span> Copy text from zotero pdf viewer without citation</a></li>
           </ul></li>
+          <li><a href="#migrate-from-jabref"><span class="toc-section-number">1.4</span> Migrate from Jabref</a></li>
           </ul></li>
-          <li><a href="#free-reference-manangers"><span class="toc-section-number">2</span> Free Reference Manangers</a></li>
-          <li><a href="#trace-with-rss"><span class="toc-section-number">3</span> Trace with RSS</a>
+          <li><a href="#zotero-7-and-wps"><span class="toc-section-number">2</span> zotero 7 and WPS</a>
           <ul>
-          <li><a href="#get-rss"><span class="toc-section-number">3.1</span> Get RSS</a>
+          <li><a href="#installation-of-wps"><span class="toc-section-number">2.1</span> Installation of WPS</a></li>
+          <li><a href="#installation"><span class="toc-section-number">2.2</span> Installation</a>
           <ul>
-          <li><a href="#kill-the-newsletter"><span class="toc-section-number">3.1.1</span> <span>Kill the newsletter</span></a></li>
-          <li><a href="#storkapp-to-rss"><span class="toc-section-number">3.1.2</span> <span>Storkapp</span> to RSS</a></li>
-          <li><a href="#google-scholar-to-rss"><span class="toc-section-number">3.1.3</span> Google Scholar to RSS</a></li>
-          <li><a href="#web-of-science-email-alert-to-rss"><span class="toc-section-number">3.1.4</span> Web of Science Email Alert to RSS</a></li>
-          <li><a href="#wechat-to-rss"><span class="toc-section-number">3.1.5</span> WeChat to <span>RSS</span></a></li>
+          <li><a href="#wps-international-version"><span class="toc-section-number">2.2.1</span> WPS international Version</a></li>
+          <li><a href="#an-error-between-wps-international-version-and-zotero-when-inserting-new-reference"><span class="toc-section-number">2.2.2</span> An error between WPS International version and Zotero When inserting new reference</a></li>
           </ul></li>
-          <li><a href="#filter-rss"><span class="toc-section-number">3.2</span> <span>Filter RSS</span></a></li>
-          <li><a href="#read-rss"><span class="toc-section-number">3.3</span> Read RSS</a></li>
+          </ul></li>
+          <li><a href="#free-reference-manangers"><span class="toc-section-number">3</span> Free Reference Manangers</a></li>
+          <li><a href="#trace-with-rss"><span class="toc-section-number">4</span> Trace with RSS</a>
+          <ul>
+          <li><a href="#get-rss"><span class="toc-section-number">4.1</span> Get RSS</a>
+          <ul>
+          <li><a href="#kill-the-newsletter"><span class="toc-section-number">4.1.1</span> <span>Kill the newsletter</span></a></li>
+          <li><a href="#storkapp-to-rss"><span class="toc-section-number">4.1.2</span> <span>Storkapp</span> to RSS</a></li>
+          <li><a href="#google-scholar-to-rss"><span class="toc-section-number">4.1.3</span> Google Scholar to RSS</a></li>
+          <li><a href="#web-of-science-email-alert-to-rss"><span class="toc-section-number">4.1.4</span> Web of Science Email Alert to RSS</a></li>
+          <li><a href="#wechat-to-rss"><span class="toc-section-number">4.1.5</span> WeChat to <span>RSS</span></a></li>
+          </ul></li>
+          <li><a href="#filter-rss"><span class="toc-section-number">4.2</span> <span>Filter RSS</span></a></li>
+          <li><a href="#read-rss"><span class="toc-section-number">4.3</span> Read RSS</a></li>
           </ul></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         
-<h1 data-number="1" id="zotero"><span class="header-section-number">1</span> Zotero</h1>
+<h1 data-number="1" id="zotero-7"><span class="header-section-number">1</span> <a href="https://www.zotero.org/support/dev/zotero_7_for_developers">Zotero 7</a></h1>
+<blockquote>
+<p>Many of the plugins locate in github.com, replace <code>github.com</code> with <code>hub.nuaa.cf</code> to download them. OR go tto <a href="https://zotero-chinese.github.io/zotero-plugins/#/" class="uri">https://zotero-chinese.github.io/zotero-plugins/#/</a> to download plugins for zotero 7.</p>
+</blockquote>
 <h2 data-number="1.1" id="preference"><span class="header-section-number">1.1</span> Preference</h2>
 <h3 data-number="1.1.1" id="main"><span class="header-section-number">1.1.1</span> Main</h3>
 <ul>
-<li>General: Uncheck <code>Automatically tags items with keywords and subject headings</code></li>
-<li>Sync: Login zotero account, enable Data syncing and set <code>Sync automatically</code>, <code>Sync full-text context</code>, Disable File syncing.</li>
-<li>Advanced/Files and Folders/Base directory: <code>D:\Qsync\dosbin\Refs4Mu\Pdfs</code></li>
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;General: Uncheck <code>Automatically tags items with keywords and subject headings</code></li>
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;Synchronization : Login zotero account, enable Data syncing and set <code>Sync automatically</code>, <code>Sync full-text context</code>, Disable File syncing.</li>
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;Advanced-&gt;Files and Folders/Base directory: <code>D:\Qsync\dosbin\Refs4Mu\Pdfs</code></li>
 </ul>
-<h3 data-number="1.1.2" id="zotero-connector-and-update"><span class="header-section-number">1.1.2</span> Zotero connector and Update</h3>
+<h2 data-number="1.2" id="zotero-connector-and-update"><span class="header-section-number">1.2</span> Zotero connector and Update</h2>
 <blockquote>
-<p>Updation always leads to compatibility problems.</p>
+<p>Updation May lead to compatibility problems.</p>
 </blockquote>
 <ul>
-<li>Zotero-&gt;Edit-Preference-&gt;config editor: set <code>extension.zotero.automaticSnapshots</code> to false.</li>
-<li>Zotero-&gt;Edit-Preference-&gt;config editor: set <code>app.update.auto</code> and <code>app.update.enabled</code> to false.</li>
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;config editor: set <code>extension.zotero.automaticSnapshots</code> to false.</li>
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;config editor: set <code>app.update.auto</code> and <code>app.update.enabled</code> to false.</li>
 </ul>
-<h3 data-number="1.1.3" id="proxy-setting-not-necessary"><span class="header-section-number">1.1.3</span> Proxy Setting (Not Necessary)</h3>
+<h2 data-number="1.3" id="plugins"><span class="header-section-number">1.3</span> Plugins</h2>
+<h3 data-number="1.3.1" id="better-bibtex-for-zotero-required"><span class="header-section-number">1.3.1</span> <a href="https://github.com/retorquere/zotero-better-bibtex" title="Better BibTex">Better BibTex for Zotero</a> (Required)</h3>
 <ul>
-<li><code>Advanced/General/config</code> editor:</li>
-</ul>
-<pre><code>network.proxy.type;1    
-network.proxy.http;127.0.0.1
-network.proxy.http_port;4321</code></pre>
-<ul>
-<li><code>network.proxy.type</code>: 0(Direct),1(Manual), 2(PAC), 4(Auto-detect) and 5 (default: System proxy)</li>
-<li>Proxy in firefox does not work well, so it is better to use system proxy. The system proxy does not support loca pac file.</li>
-</ul>
-<h2 data-number="1.2" id="plugins"><span class="header-section-number">1.2</span> Plugins</h2>
-<h3 data-number="1.2.1" id="better-bibtex"><span class="header-section-number">1.2.1</span> <a href="https://github.com/retorquere/zotero-better-bibtex" title="Better BibTex">Better BibTex</a></h3>
-<ul>
-<li>Zotero-&gt;Edit-Preference-&gt;Better Bibtex</li>
-<li>Better BibTex/Citation keys: <code>[auth][shortyear:(0)][journal:abbr:upper:(P)]</code>, <code>Force citation keys to plain text</code>, <code>keeping keys unique across all libraries</code>, <code>postfixed for conflict keys</code>, select <code>CiteKey</code> quickcopy format, add item to lib from aux scanner.<br />
+<li>Zotero-&gt;Edit-&gt;Preference-&gt;Better Bibtex</li>
+<li>Better BibTex/Citation keys: <code>auth.fold + shortyear.default("0") + journal.abbr.upper.default(P)</code>, <code>Automaatically pin citation key after 30 secondes</code>, <code>Force citation keys to plain text</code>, <code>keeping keys unique across all libraries</code>, <code>postfixed for conflict keys</code>,<code>add item to lib from aux scanner</code>.<br />
 </li>
-<li>Better BibTex/Export: <code>Add URLs to Bibtex export: no</code>, keep doi rather than url, discard <code>abstract, URL,month,langid,copyright,groups</code>, auto abbreviate journal titles.</li>
+<li>Better BibTex/Export: <code>Add URLs to Bibtex export: no</code>, <code>keep doi rather than url</code>, discard <code>abstract, URL,month,langid,copyright,groups</code>, select <code>Cite Keys</code> for quickcopy format, <code>auto abbreviate journal titles</code>.</li>
 <li>Auto bib: File-&gt;export-&gt;Better Bibtex: <code>keep updated</code>,<code>abbreviated journal</code></li>
 <li>File-&gt;export-&gt;Better Bibtex: Export-&gt; Uncheck <code>Apply titel-casing to titles</code>, for this option will lead to wrong casing and wrong greek symbols. Also Uncheck <code>Aplly case-protection to capitalized words by enclosing them with braces</code>. You can set the title-casing in zotero.</li>
 </ul>
-<h3 data-number="1.2.2" id="zotfile"><span class="header-section-number">1.2.2</span> <a href="https://github.com/jlegewie/zotfile" title="Zotfile">Zotfile</a></h3>
+<h3 data-number="1.3.2" id="wandering-file-required"><span class="header-section-number">1.3.2</span> <a href="https://github.com/muisedestiny/zotero-file">Wandering file</a> (Required)</h3>
 <ul>
-<li>Set Source Folder for Attaching New files: <code>D:\Temp\Download\ZoteroPdf</code></li>
 <li>Set Custom location to <code>D:\Qsync\dosbin\Refs4Mu\Pdfs</code></li>
 <li>Set Renaming rules to <code>{%b}</code>, <code>replace blanks</code></li>
-<li>Advanced setting: automatically rename new attachments <code>Always rename</code> &amp; uncheck <code>Ask user when attaching new files</code>; Only work with the following filetypes: pdf,doc,docx,txt,rtf,djvu,md</li>
+<li>Advanced setting: automatically rename new attachments <code>Always rename</code> &amp; uncheck <code>Ask user when attaching new files</code>; Only work with the following filetypes: <code>pdf,doc,docx,txt,rtf,djvu,md,epub</code></li>
 </ul>
-<h3 data-number="1.2.3" id="zutilo-for-shortcuts"><span class="header-section-number">1.2.3</span> <a href="https://github.com/wshanks/Zutilo" title="Zutilo">Zutilo</a> for shortcuts</h3>
+<h3 data-number="1.3.3" id="zotero-inspire-dev-required"><span class="header-section-number">1.3.3</span> <a href="https://github.com/fkguo/zotero-inspire">zotero-inspire-dev</a> (Required)</h3>
 <ul>
-<li>Attach New file: <code>Ctrl+Alt+i</code></li>
-<li>Copy Item fields: <code>Ctrl+Alt+f</code></li>
-<li>Force-refresh keys for selection: <code>Ctrl+Shift+r</code></li>
-<li>Pin key for selection: <code>Ctrl+Shift+p</code></li>
-<li>Unpin key for selection: <code>Ctrl+Shift+u</code></li>
-<li>Lookup item by identifier: <code>Ctrl+Shift+d</code></li>
-<li>Move and Rename attachment (Zotfile): <code>Ctrl+Shift+m</code></li>
+<li>Update Metadata for Items</li>
 </ul>
-<h3 data-number="1.2.4" id="zotero-shortdoi"><span class="header-section-number">1.2.4</span> <a href="https://github.com/bwiernik/zotero-shortdoi" title="Zetoro DOI manager">zotero-shortdoi</a></h3>
+<h3 data-number="1.3.4" id="del-item-with-attachment-required"><span class="header-section-number">1.3.4</span> <a href="https://github.com/redleafnew/delitemwithatt">Del Item With Attachment</a> (Required)</h3>
 <ul>
-<li><p>Get Long DOIs for new items</p></li>
-<li><p>I usually delete the tags for DOI not found.</p></li>
+<li>Delete item(s) with attachment(s)</li>
 </ul>
-<h3 data-number="1.2.5" id="zotero-tag"><span class="header-section-number">1.2.5</span> <a href="https://github.com/windingwind/zotero-tag" title="Zetoro Tag">zotero-tag</a></h3>
+<h3 data-number="1.3.5" id="zotero-gpt"><span class="header-section-number">1.3.5</span> <a href="https://github.com/MuiseDestiny/zotero-gpt">zotero-gpt</a></h3>
+<h4 data-number="1.3.5.1" id="shortcuts"><span class="header-section-number">1.3.5.1</span> ShortCuts</h4>
 <ul>
-<li>Zotero-&gt;Edit-Preference-&gt;Zotero Tag: Set “To Read” for “add on item add,” Press right sign.</li>
+<li>Open: <code>Ctrl+/</code></li>
+<li>Exit: <code>Esc</code></li>
+<li>Multi-line editing: <code>Shift+Enter</code></li>
 </ul>
-<h3 data-number="1.2.6" id="zotero-scihub"><span class="header-section-number">1.2.6</span> <a href="https://github.com/ethanwillis/zotero-scihub">zotero-scihub</a></h3>
+<h4 data-number="1.3.5.2" id="setting"><span class="header-section-number">1.3.5.2</span> Setting</h4>
 <ul>
-<li>Get zotero-scihub and install</li>
-<li>Uncheck <code>Automatic PDF Download</code> in the zotero scihub setting, to use</li>
+<li><p><code>/api https://api.chatanywhere.com.cn</code></p></li>
+<li><p><code>/secretkey sk-xxxxxx</code></p></li>
 </ul>
-<h3 data-number="1.2.7" id="migrate-from-jabref"><span class="header-section-number">1.2.7</span> Migrate from Jabref</h3>
+<h3 data-number="1.3.6" id="translate-for-zotero-opitional"><span class="header-section-number">1.3.6</span> <a href="https://github.com/windingwind/zotero-pdf-translate">Translate for Zotero</a> (Opitional)</h3>
+<ul>
+<li><p>建议注册<a href="https://docs.caiyunapp.com/blog/2018/09/03/lingocloud-api/#%E7%94%B3%E8%AF%B7%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C">彩云小译</a>或<a href="https://github.com/chatanywhere/GPT_API_free">ChatGPT Anywhere</a>.</p></li>
+<li><p>如果安装了<a href="https://github.com/MuiseDestiny/zotero-gpt">zotero-gpt</a>，可以使用<a href="https://github.com/MuiseDestiny/zotero-gpt">zotero-gpt</a>的翻译功能，而不必安装<a href="https://github.com/windingwind/zotero-pdf-translate">Translate for Zotero</a>。</p></li>
+</ul>
+<h3 data-number="1.3.7" id="actions-and-tags-for-zotero-required"><span class="header-section-number">1.3.7</span> <a href="https://github.com/windingwind/zotero-actions-tags">Actions and Tags for Zotero</a> (Required)</h3>
+<figure>
+<img src="../img/image-20231208215340661.png" alt="image-20231208215340661" /><figcaption aria-hidden="true">image-20231208215340661</figcaption>
+</figure>
+<h4 data-number="1.3.7.1" id="open-doi-required"><span class="header-section-number">1.3.7.1</span> Open DOI (Required)</h4>
+<blockquote>
+<p>Open web page based on DOI</p>
+</blockquote>
+<ul>
+<li>Name: <code>OpenDOI</code></li>
+<li>Event: <code>None</code></li>
+<li>Operation: <code>Script</code></li>
+<li>ShortCut: <code>Alt+d</code></li>
+<li>Menu: <code>OpenDOI</code></li>
+<li>Data:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/// Open DOI by caesarmu </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>item) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> itemdoi <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">getTopLevel</span>([item])[<span class="dv">0</span>]<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;DOI&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Zotero<span class="op">.</span><span class="fu">launchURL</span>(<span class="vs">`https://www.doi.org/</span><span class="sc">${</span>itemdoi<span class="sc">}</span><span class="vs">`</span>)</span></code></pre></div>
+<h4 data-number="1.3.7.2" id="copylink-optional"><span class="header-section-number">1.3.7.2</span> CopyLink (Optional)</h4>
+<blockquote>
+<p>Copy Item link and show citation counts</p>
+</blockquote>
+<ul>
+<li><p>Name: <code>CopyLink</code></p></li>
+<li><p>Event: <code>None</code></p></li>
+<li><p>Operation: <code>Script</code></p></li>
+<li><p>ShortCut: <code>Alt+l</code></p></li>
+<li><p>Menu: <code>CopyLink</code></p></li>
+<li><p>Data:</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Copy item link</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// @author windingwind</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// @link https://github.com/windingwind/zotero-actions-tags/discussions/115</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">// @usage Select an item in the library and press the assigned shortcut keys</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">// add citatin counts by ywmu </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>item) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;[Copy Item Link] item is empty&quot;</span><span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>myitem <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">getTopLevel</span>([item])[<span class="dv">0</span>]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> libraryType <span class="op">=</span> myitem<span class="op">.</span><span class="at">library</span><span class="op">.</span><span class="at">libraryType</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> key <span class="op">=</span> myitem<span class="op">.</span><span class="at">key</span><span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> uri<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (libraryType <span class="op">===</span> <span class="st">&quot;user&quot;</span>) {</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    uri <span class="op">=</span> <span class="st">&quot;zotero://select/library/items/&quot;</span> <span class="op">+</span> key<span class="op">;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>}  <span class="cf">else</span> {</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groupID <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Libraries</span><span class="op">.</span><span class="fu">get</span>(myitem<span class="op">.</span><span class="at">libraryID</span>)<span class="op">.</span><span class="at">groupID</span><span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    uri <span class="op">=</span> <span class="st">&quot;zotero://select/groups/&quot;</span> <span class="op">+</span> groupID <span class="op">+</span> <span class="st">&quot;/items/&quot;</span> <span class="op">+</span> key<span class="op">;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> clipboard <span class="op">=</span> <span class="kw">new</span> Zotero<span class="op">.</span><span class="at">ActionsTags</span><span class="op">.</span><span class="at">api</span><span class="op">.</span><span class="at">utils</span><span class="op">.</span><span class="fu">ClipboardHelper</span>()<span class="op">;</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> linkText<span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">// Use title</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">// linkText = item.getField(&quot;title&quot;);</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">// Use citation key</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>linkText <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;citationKey&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>mydoi <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;DOI&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> plainText<span class="op">;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">// Use plain-text</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> uri<span class="op">;</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">// Use MarkDown</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">// plainURI = `[${linkText}](${uri})`</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> mytags<span class="op">;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> mylabel<span class="op">;</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>mytag <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getTags</span>()<span class="op">;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(mytag<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">tag</span> <span class="op">===</span> <span class="st">&quot;🚩&quot;</span>)) {</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>   mylabel<span class="op">=</span><span class="st">&quot;🚩&quot;</span><span class="op">;</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(mytag<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">tag</span> <span class="op">===</span> <span class="st">&quot;⭐&quot;</span>)){</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    mylabel<span class="op">=</span><span class="st">&quot;⭐&quot;</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        mylabel<span class="op">=</span><span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>clipboard</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">addText</span>(plainText<span class="op">,</span> <span class="st">&quot;text/unicode&quot;</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">addText</span>(<span class="vs">`&lt;a href=&quot;</span><span class="sc">${</span>uri<span class="sc">}</span><span class="vs">&quot;&gt;</span><span class="sc">${</span>mylabel<span class="sc">}\[</span><span class="vs">@</span><span class="sc">${</span>linkText<span class="sc">}\]</span><span class="vs">&lt;/a&gt;`</span><span class="op">,</span> <span class="st">&quot;text/html&quot;</span>)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">copy</span>()<span class="op">;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="fu">doi2field</span>(mydoi<span class="op">,</span><span class="st">&#39;is-referenced-by-count&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">///// added by ywmu </span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doi2field</span>(doi<span class="op">,</span>myfield) {</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>   <span class="fu">fetch</span>(<span class="st">&#39;https://api.crossref.org/works/&#39;</span><span class="op">+</span>doi)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>     <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">//        console.log(&#39;Output: &#39;, data);</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">//        console.log(&#39;status: &#39;, data.status);</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>          <span class="cf">try</span> {</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>              count <span class="op">=</span> data<span class="op">.</span><span class="at">message</span>[myfield]<span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>          } <span class="cf">catch</span>(e){</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>              count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(err))<span class="op">;</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">///// added by ywmu </span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="vs">`[Item link] for </span><span class="sc">${</span>linkText<span class="sc">}</span><span class="vs"> (cited by </span><span class="sc">${</span>count<span class="sc">}</span><span class="vs">) copied.`</span></span></code></pre></div>
+<h4 data-number="1.3.7.3" id="autotag-required"><span class="header-section-number">1.3.7.3</span> Autotag (Required)</h4>
+<blockquote>
+<p>P.S. Auto add tags based on titles</p>
+</blockquote>
+<ul>
+<li><p>Name: <code>Autotag</code></p></li>
+<li><p>Event: <code>New Item</code></p></li>
+<li><p>Operation: <code>Script</code></p></li>
+<li><p>ShortCut: <code>Alt+g</code></p></li>
+<li><p>Menu: <code>Autotag</code></p></li>
+<li><p>Data:</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Auto-tag based on specific keywords in the title and abstract</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">// @author windingwind</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// @link https://github.com/windingwind/zotero-actions-tags/discussions/119</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">// @usage Replace the `KEYWORDS_AND_TAGS` array with your own keywords and corresponding tags.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">// @see https://github.com/windingwind/zotero-actions-tags/issues/77</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">// @see https://github.com/windingwind/zotero-actions-tags/issues/85</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"> * Add `/unread` tag to new items (support multi-device syncing)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@author</span><span class="co"> windingwind</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@usage</span><span class="co"> See below</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@link</span><span class="co"> https://github.com/windingwind/zotero-actions-tags/discussions/202</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@see</span><span class="co"> https://github.com/windingwind/zotero-actions-tags/discussions/202</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"> */</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">// modified by caesarmu </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>item) {</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;[Conditional Tag] item is empty&quot;</span><span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> KEYWORDS_AND_TAGS <span class="op">=</span> [</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;superconductor&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;💫&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;superconductivity&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;💫&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;superconducting&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;💫&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;kagome&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;💫&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;growth&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;🧊&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;negf&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;device&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;device&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Device&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;electrode&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;electrode&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Electrode&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;junction&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;junction&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Junction&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectifier&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectifier&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Rectifier&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectifying&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectifying&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Rectifier&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectification&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Rectifier&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;rectification&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;sensor&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;sensor&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Sensor&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;sensing&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;sensing&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Sensor&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;transport&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;Transistor&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;⚡&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;Transistor&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Transistor&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;machine&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;💻&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;thermoelectric&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;🌡️&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;thermal&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;🌡️&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;review&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Review&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;nanotube&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_1D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;fullerene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_0D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;fullerene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Carbon&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;c60&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_0D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;c60&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Carbon&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;graphene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;graphene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Carbon&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;graphyne&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;graphyne&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Carbon&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;biphenylene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;biphenylene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Carbon&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;borophene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;borophene&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Boron&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;monolayer&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;bilayer&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;cluster&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_0D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;cage&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_0D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;superatom&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_0D&quot;</span> }<span class="op">,</span>    </span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;synthesis&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_Synthesis&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;hetero&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Hetero&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;two-dimensional&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;2d&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_2D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;one-dimensional&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_1D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;1d&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;_1D&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">keyword</span><span class="op">:</span> <span class="st">&quot;reduction&quot;</span><span class="op">,</span> <span class="dt">tag</span><span class="op">:</span> <span class="st">&quot;Reduction&quot;</span> }<span class="op">,</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="co">// You can add more keyword-tag pairs as needed</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> title <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;title&quot;</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> abstract <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;abstract&quot;</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemkey<span class="op">;</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>itemkey <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;citationKey&quot;</span>)<span class="op">;</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> tagged <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> itemTags <span class="op">=</span> item<span class="op">.</span><span class="fu">getTags</span>()<span class="op">;</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (itemTags<span class="op">.</span><span class="at">length</span> <span class="op">&lt;</span> <span class="dv">1</span> ) {</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>    item<span class="op">.</span><span class="fu">addTag</span>(<span class="st">&quot;💭&quot;</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> alltag <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> pair <span class="kw">of</span> KEYWORDS_AND_TAGS) {</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> { keyword<span class="op">,</span> tag } <span class="op">=</span> pair<span class="op">;</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (title<span class="op">.</span><span class="fu">includes</span>(keyword) <span class="op">||</span> (abstract <span class="op">&amp;&amp;</span> abstract<span class="op">.</span><span class="fu">includes</span>(keyword))) {</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>        item<span class="op">.</span><span class="fu">addTag</span>(tag<span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>        tagged <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(alltag<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>){</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>           alltag <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>tag<span class="sc">}</span><span class="vs">`</span>    </span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>          alltag <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>alltag<span class="sc">}</span><span class="vs">/</span><span class="sc">${</span>tag<span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (tagged) {</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`Tags </span><span class="sc">\(${</span>alltag<span class="sc">}\)</span><span class="vs"> added to </span><span class="sc">${</span>itemkey<span class="sc">}</span><span class="vs">.`</span><span class="op">;</span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`No tag added to </span><span class="sc">${</span>itemkey<span class="sc">}</span><span class="vs">.`</span><span class="op">;</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li><p>Add another two setting:</p>
+<figure>
+<img src="../img/image-20231208215423633.png" alt="image-20231208215423633" /><figcaption aria-hidden="true">image-20231208215423633</figcaption>
+</figure></li>
+</ul>
+<h4 data-number="1.3.7.4" id="preview-for-item-required"><span class="header-section-number">1.3.7.4</span> Preview for Item (Required)</h4>
+<blockquote>
+<p>P.S. Preview for Item</p>
+</blockquote>
+<ul>
+<li><p>Name: <code>PreviewItem</code></p></li>
+<li><p>Event: <code>None</code></p></li>
+<li><p>Operation: <code>Script</code></p></li>
+<li><p>ShortCut: <code>Alt+p</code></p></li>
+<li><p>Menu: <code>PreviewItem</code></p></li>
+<li><p>Data:</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Creat preview  for the Item </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// @author caesarmu</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>item) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;[Preview] item is empty&quot;</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>myitem <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">getTopLevel</span>([item])[<span class="dv">0</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> libraryType <span class="op">=</span> myitem<span class="op">.</span><span class="at">library</span><span class="op">.</span><span class="at">libraryType</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> key <span class="op">=</span> myitem<span class="op">.</span><span class="at">key</span><span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> clipboard <span class="op">=</span> <span class="kw">new</span> Zotero<span class="op">.</span><span class="at">ActionsTags</span><span class="op">.</span><span class="at">api</span><span class="op">.</span><span class="at">utils</span><span class="op">.</span><span class="fu">ClipboardHelper</span>()<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemtitle<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>itemtitle <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;title&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemcreator<span class="op">;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>itemcreator <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getCreator</span>(<span class="dv">0</span>)<span class="op">.</span><span class="at">lastName</span><span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemjournal<span class="op">;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>itemjournal <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;journalAbbreviation&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemyear<span class="op">;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>itemyear <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;date&quot;</span>)<span class="op">.</span><span class="fu">split</span>(<span class="st">&quot;-&quot;</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemvol<span class="op">;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>itemvol <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;volume&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itempage<span class="op">;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>itempage <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;pages&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">// Use citation key</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemkey<span class="op">;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>itemkey <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;citationKey&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>clipboard</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">addText</span>(<span class="vs">`</span><span class="sc">${</span>itemcreator<span class="sc">}</span><span class="vs"> et al. </span><span class="sc">${</span>itemtitle<span class="sc">}</span><span class="vs">. </span><span class="sc">${</span>itemjournal<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>itemyear<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>itemvol<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>itempage<span class="sc">}</span><span class="vs">.`</span><span class="op">,</span> <span class="st">&quot;text/unicode&quot;</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">copy</span>()<span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="vs">`[Item Preview] for </span><span class="sc">${</span>itemkey<span class="sc">}</span><span class="vs"> copied.`</span></span></code></pre></div>
+<h4 data-number="1.3.7.5" id="copy-notes-required"><span class="header-section-number">1.3.7.5</span> Copy Notes (Required)</h4>
+<blockquote>
+<p>P.S. Copy Notes for Items, You’d better use Typora Markdown editor</p>
+</blockquote>
+<ul>
+<li>Name: <code>CopyNote</code></li>
+<li>Event: <code>None</code></li>
+<li>Operation: <code>Script</code></li>
+<li>ShortCut: <code>Ctrl+Alt+n</code></li>
+<li>Menu: <code>CopyNote</code></li>
+<li>Data:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Copy Note for sevetal items </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">// @author caesarmu</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Zotero <span class="op">=</span> <span class="pp">require</span>(<span class="st">&quot;Zotero&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (items<span class="op">?.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span> <span class="op">||</span> item) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> clipboard <span class="op">=</span> <span class="kw">new</span> Zotero<span class="op">.</span><span class="at">ActionsTags</span><span class="op">.</span><span class="at">api</span><span class="op">.</span><span class="at">utils</span><span class="op">.</span><span class="fu">ClipboardHelper</span>()<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> zitems <span class="op">=</span> items<span class="op">.</span><span class="fu">filter</span>(_item <span class="kw">=&gt;</span> _item<span class="op">.</span><span class="fu">isRegularItem</span>())<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (zitems<span class="op">.</span><span class="at">length</span> <span class="op">&lt;</span> <span class="dv">1</span>) {</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Must select 1 or more items&quot;</span><span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> notestr <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> notenum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> zitem <span class="kw">of</span> zitems) {</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> myitem <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">getTopLevel</span>([zitem])[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mykey <span class="op">=</span> myitem<span class="op">.</span><span class="at">key</span><span class="op">;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> myuri <span class="op">=</span> <span class="st">&quot;zotero://select/library/items/&quot;</span> <span class="op">+</span> mykey<span class="op">;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mytitle <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;title&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mybibkey <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;citationKey&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> noteID <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getNotes</span>()[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mytags<span class="op">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mylabel<span class="op">;</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    mytag <span class="op">=</span> myitem<span class="op">.</span><span class="fu">getTags</span>()<span class="op">;</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(mytag<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">tag</span> <span class="op">===</span> <span class="st">&quot;🚩&quot;</span>)) {</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        mylabel<span class="op">=</span><span class="st">&quot;🚩&quot;</span><span class="op">;</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span>(mytag<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">tag</span> <span class="op">===</span> <span class="st">&quot;⭐&quot;</span>)){</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        mylabel<span class="op">=</span><span class="st">&quot;⭐&quot;</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        mylabel<span class="op">=</span><span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ( noteID <span class="op">&gt;</span> <span class="dv">1</span>){</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> noteHtml <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">get</span>(noteID)<span class="op">.</span><span class="fu">getNote</span>()<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;</span><span class="sc">\/</span><span class="ss">div&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;div</span><span class="sc">[^&gt;]+</span><span class="ss">&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;span</span><span class="sc">[^&gt;]+</span><span class="ss">&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        noteHtml <span class="op">=</span>  noteHtml<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;p&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;</span><span class="sc">\/</span><span class="ss">span&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;</span><span class="sc">\/</span><span class="ss">p&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;br&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">[\r\n]</span><span class="ss">/gm</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        noteHtml <span class="op">=</span>  noteHtml<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;img alt=</span><span class="sc">\&quot;\&quot;</span><span class="ss"> data-attachment-key=</span><span class="sc">\&quot;</span><span class="ss">/gm</span><span class="op">,</span><span class="st">&#39;</span><span class="sc">\n</span><span class="st">!</span><span class="sc">\[\[</span><span class="st">@&#39;</span><span class="op">+</span>mybibkey<span class="op">+</span><span class="st">&#39;</span><span class="sc">\]\]\(</span><span class="st">C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Caesar</span><span class="sc">\\</span><span class="st">Zotero</span><span class="sc">\\</span><span class="st">storage</span><span class="sc">\\</span><span class="st">&#39;</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">\&quot;</span><span class="ss"> width=</span><span class="sc">\&quot;[^&gt;]+</span><span class="ss">&gt;/gm</span><span class="op">,</span> <span class="st">&#39;</span><span class="sc">\\</span><span class="st">image.png</span><span class="sc">\)</span><span class="st">&#39;</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a> <span class="co">// To use right path for zotero storage, maybe %USERPROFILE%\Zotero\storage</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        notestr <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>notestr<span class="sc">}\n</span><span class="vs">* </span><span class="sc">\[${</span>mylabel<span class="sc">}\[</span><span class="vs">@</span><span class="sc">${</span>mybibkey<span class="sc">}\]\(${</span>myuri<span class="sc">}</span><span class="vs"> &quot;</span><span class="sc">${</span>mytitle<span class="sc">}</span><span class="vs">&quot;</span><span class="sc">\)\]</span><span class="vs"> </span><span class="sc">${</span>noteHtml<span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        notenum <span class="op">=</span> notenum <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    } </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>clipboard</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">addText</span>(<span class="vs">`</span><span class="sc">${</span>notestr<span class="sc">}</span><span class="vs">`</span><span class="op">,</span> <span class="st">&quot;text/unicode&quot;</span>)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">copy</span>()<span class="op">;</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="vs">`Notes for </span><span class="sc">${</span>notenum<span class="sc">}</span><span class="vs"> items copied.`</span><span class="op">;</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<h4 data-number="1.3.7.6" id="add-translated-abstract-to-note-optional"><span class="header-section-number">1.3.7.6</span> Add translated abstract to Note (Optional)</h4>
+<blockquote>
+<p>P.S. Translate abstract and add it to Note</p>
+<p>P.S. plugin <a href="https://github.com/windingwind/zotero-pdf-translate">Translate for Zotero</a> needed.</p>
+</blockquote>
+<ul>
+<li>Name: <code>Abs2Note</code></li>
+<li>Event: <code>None</code></li>
+<li>Operation: <code>Script</code></li>
+<li>ShortCut: <code>Alt+a</code></li>
+<li>Menu: <code>Abs2Note</code></li>
+<li>Data:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Add Translated item abstract to Note</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">// @author caearmu</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Zotero <span class="op">=</span> <span class="pp">require</span>(<span class="st">&quot;Zotero&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>Zotero<span class="op">.</span><span class="at">PDFTranslate</span>) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;[Translate Abstract] Translate for Zotero is not installed or disabled.&quot;</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">!</span>item) {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;[Translate Abstract] Target item is empty&quot;</span><span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> mydoi<span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>mydoi <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;DOI&quot;</span>)<span class="op">;</span>  </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Use citation key</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> itemkey <span class="op">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>itemkey <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;citationKey&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> abstract <span class="op">=</span> item<span class="op">.</span><span class="fu">getField</span>(<span class="st">&quot;abstractNote&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (abstract) {</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    abstract <span class="op">=</span> <span class="fu">doi2field</span>(mydoi<span class="op">,</span><span class="st">&#39;abstract&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (abstract<span class="op">.</span><span class="at">length</span> <span class="op">&lt;</span> <span class="dv">2</span>) {</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`No abstract found for </span><span class="sc">${</span>itemkey<span class="sc">}</span><span class="vs">!`</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">///// added by ywmu </span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doi2field</span>(doi<span class="op">,</span>myfield) {</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>   <span class="fu">fetch</span>(<span class="st">&#39;https://api.crossref.org/works/&#39;</span><span class="op">+</span>doi)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>     <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>(data <span class="kw">=&gt;</span> {</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co">//        console.log(&#39;Output: &#39;, data);</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">//        console.log(&#39;status: &#39;, data.status);</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> data<span class="op">.</span><span class="at">message</span>[myfield]<span class="op">;</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">catch</span>(err <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(err))<span class="op">;</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count<span class="op">;</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="co">///// added by ywmu </span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> abstractResult <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (abstract) {</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> myabstract <span class="op">=</span> abstract<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/&lt;</span><span class="sc">[^&gt;]+</span><span class="ss">&gt;/g</span><span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    abstractResult <span class="op">=</span> (<span class="cf">await</span> Zotero<span class="op">.</span><span class="at">PDFTranslate</span><span class="op">.</span><span class="at">api</span><span class="op">.</span><span class="fu">translate</span>(myabstract))<span class="op">.</span><span class="at">result</span><span class="op">;</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>}   </span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (abstractResult) {</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>   <span class="kw">const</span> parentItem <span class="op">=</span> Zotero<span class="op">.</span><span class="at">Items</span><span class="op">.</span><span class="fu">getTopLevel</span>([item])[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>   <span class="kw">const</span> noteItem <span class="op">=</span> <span class="kw">new</span> Zotero<span class="op">.</span><span class="fu">Item</span>(<span class="st">&quot;note&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>   noteItem<span class="op">.</span><span class="at">libraryID</span> <span class="op">=</span> parentItem<span class="op">.</span><span class="at">libraryID</span><span class="op">;</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>   noteItem<span class="op">.</span><span class="at">parentID</span> <span class="op">=</span> parentItem<span class="op">.</span><span class="at">id</span><span class="op">;</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>   <span class="co">//noteItem.addTag(&quot;auto&quot;, 0);</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>   noteItem<span class="op">.</span><span class="fu">setNote</span>(abstractResult)<span class="op">;</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>   <span class="cf">await</span> noteItem<span class="op">.</span><span class="fu">saveTx</span>()<span class="op">;</span>  </span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>   item<span class="op">.</span><span class="fu">setField</span>(<span class="st">&#39;abstractNote&#39;</span><span class="op">,</span><span class="st">&#39;&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="vs">`Translated Abstract for </span><span class="sc">${</span>itemkey<span class="sc">}</span><span class="vs"> added to Note!`</span><span class="op">;</span></span></code></pre></div>
+<h3 data-number="1.3.8" id="copy-text-from-zotero-pdf-viewer-without-citation"><span class="header-section-number">1.3.8</span> Copy text from zotero pdf viewer without citation</h3>
+<ol type="1">
+<li>Edit⇒Preference⇒Advanced⇒编辑器<br />
+</li>
+<li>Search <code>annotations.noteTemplates</code>, set <code>extensions.zotero.annotations.noteTemplates.highlight</code> to <code>&lt;p&gt;{{highlight quotes='false'}}&lt;/p&gt;</code> (Original: <code>&lt;p&gt;{{highlight}} {{citation}} {{comment}}&lt;/p&gt;</code>)</li>
+</ol>
+<h2 data-number="1.4" id="migrate-from-jabref"><span class="header-section-number">1.4</span> Migrate from Jabref</h2>
 <ul>
 <li>Supposing files for Jabref locate in <code>D:\Refs4Mu\Pdfs</code>, move it to <code>D:\Refs4Mu\Pdfs2</code></li>
 <li>Open Jabref, Options-&gt;Preference-&gt;Linked files-&gt;Main file directory, change it to <code>D:\Refs4Mu\Pdfs2</code>, restart Jabref.</li>
@@ -237,7 +722,34 @@ network.proxy.http_port;4321</code></pre>
 <li>Edit jab.bib, repace <code>.pdf:</code> with <code>.pdf:D\:\\Refs4Mu\\Pdfs2\\</code>, and then replace <code>:D\:\\Refs4Mu\\Pdfs2\\application</code> with <code>:application</code>.</li>
 <li>Import it to Zotero.</li>
 </ul>
-<h1 data-number="2" id="free-reference-manangers"><span class="header-section-number">2</span> Free Reference Manangers</h1>
+<h1 data-number="2" id="zotero-7-and-wps"><span class="header-section-number">2</span> zotero 7 and WPS</h1>
+<h2 data-number="2.1" id="installation-of-wps"><span class="header-section-number">2.1</span> Installation of WPS</h2>
+<blockquote>
+<p>Zotero support MS office，Libreoffice and Onlyoffice， however it does not support WPS office free personal version, which does not has VBA. However, the security of the VBA from the internet is unsure.</p>
+</blockquote>
+<h2 data-number="2.2" id="installation"><span class="header-section-number">2.2</span> Installation</h2>
+<ol type="1">
+<li>Download WPS 2019 education version from some universities, such as <a href="https://it.ynnu.edu.cn/info/1180/2599.htm" class="uri">https://it.ynnu.edu.cn/info/1180/2599.htm</a>.</li>
+<li>Install it and Uninstall it， but the VBA 6 keeps.</li>
+<li>Download and install the newest WPS free personal version.</li>
+<li>The installed zotero.dotm for MS word from Zotero would be used.</li>
+</ol>
+<h3 data-number="2.2.1" id="wps-international-version"><span class="header-section-number">2.2.1</span> WPS international Version</h3>
+<ol type="1">
+<li>If you want to use WPS International version, you can copy <code>C:\Users\xxxxxx\AppData\Local\Kingsoft\WPS Office\yyyyyy\office6\mui</code> of WPS free personal version to another place.</li>
+<li>Download and install <a href="https://www.wps.com/">WPS International version</a>, and replace its <code>mui</code> with the <code>mui</code> from WPS free personal version.</li>
+</ol>
+<blockquote>
+<p>P.S. It works for WPS International version before <code>11.2.0.11191</code>.</p>
+</blockquote>
+<h3 data-number="2.2.2" id="an-error-between-wps-international-version-and-zotero-when-inserting-new-reference"><span class="header-section-number">2.2.2</span> An error between WPS International version and Zotero When inserting new reference</h3>
+<blockquote>
+<p>Solve (From <a href="https://zhuanlan.zhihu.com/p/579975093" class="uri">https://zhuanlan.zhihu.com/p/579975093</a>):</p>
+</blockquote>
+<ul>
+<li>Open docx document, <code>文件</code>⇒<code>加密</code>⇒<code>属性</code>⇒<code>自定义</code>, Add <code>ZOTERO_PREF_1</code> and <code>ZOTERO_PREF_2</code> with values of <code>1</code>. It will not work if adding them to <code>Normal.domt</code>.</li>
+</ul>
+<h1 data-number="3" id="free-reference-manangers"><span class="header-section-number">3</span> Free Reference Manangers</h1>
 <table>
 <caption>Table. Compare Zotero, Mendeley and Jabref</caption>
 <colgroup>
@@ -275,8 +787,8 @@ network.proxy.http_port;4321</code></pre>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Data File</td>
-<td style="text-align: center;"><strong>SQLITE, broken sometimes</strong></td>
-<td style="text-align: center;">SQLITE, broken sometimes</td>
+<td style="text-align: center;"><strong>SQLITE, very robust</strong></td>
+<td style="text-align: center;">SQLITE, very robust</td>
 <td style="text-align: center;"><strong>bib (like txt), very robust</strong></td>
 </tr>
 <tr class="odd">
@@ -329,7 +841,7 @@ network.proxy.http_port;4321</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Metadata Update</td>
-<td style="text-align: center;">No</td>
+<td style="text-align: center;">Zotero format Metadata (Extension)</td>
 <td style="text-align: center;">Yes</td>
 <td style="text-align: center;">Yes</td>
 </tr>
@@ -337,13 +849,13 @@ network.proxy.http_port;4321</code></pre>
 <td style="text-align: center;">Pdf Preview</td>
 <td style="text-align: center;">Inherent</td>
 <td style="text-align: center;">Inherent</td>
-<td style="text-align: center;">Inherent</td>
+<td style="text-align: center;">External</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Item Preview</td>
 <td style="text-align: center;">Zotero Preview(Extension) Inherent</td>
 <td style="text-align: center;">Inherent</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">Inherent</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fulltext Download</td>
@@ -365,7 +877,7 @@ network.proxy.http_port;4321</code></pre>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Times Cited</td>
-<td style="text-align: center;">Scite</td>
+<td style="text-align: center;">Scite (Extension)</td>
 <td style="text-align: center;">None</td>
 <td style="text-align: center;">None</td>
 </tr>
@@ -383,43 +895,43 @@ network.proxy.http_port;4321</code></pre>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Drawback</td>
-<td style="text-align: center;">No Portable version, <strong>some bugs in Better bibtex often</strong>, some character via Better Bibtex not wright (e.g., in title), <strong>Plugins may be not compatible with new version of Zotero</strong></td>
-<td style="text-align: center;">Web Importer import PDF to online library, but the storage is limited, <strong>Not Customizable Bibtex Key (bibtexkey with space, not recognized by pandoc)</strong>, limited Customizable File name</td>
+<td style="text-align: center;">No Portable version, <strong>some bugs in Better bibtex occasionally</strong>, some character via Better Bibtex not wright (e.g., in title), <strong>Plugins may be not compatible with new version of Zotero</strong></td>
+<td style="text-align: center;">Web Importer import PDF to online library, but the storage is limited, <strong>Not Customizable Bibtex Key (bibtexkey with space, not recognized by pandoc)</strong>, limited Customizable File name, new version is rabbish.</td>
 <td style="text-align: center;"><strong>large memory needed, and sometimes stuck when search</strong>, <strong>Good performance never expected for this java based app</strong>, Portable very convenient</td>
 </tr>
 </tbody>
 </table>
-<h1 data-number="3" id="trace-with-rss"><span class="header-section-number">3</span> Trace with RSS</h1>
-<h2 data-number="3.1" id="get-rss"><span class="header-section-number">3.1</span> Get RSS</h2>
-<h3 data-number="3.1.1" id="kill-the-newsletter"><span class="header-section-number">3.1.1</span> <a href="https://kill-the-newsletter.com/">Kill the newsletter</a></h3>
+<h1 data-number="4" id="trace-with-rss"><span class="header-section-number">4</span> Trace with RSS</h1>
+<h2 data-number="4.1" id="get-rss"><span class="header-section-number">4.1</span> Get RSS</h2>
+<h3 data-number="4.1.1" id="kill-the-newsletter"><span class="header-section-number">4.1.1</span> <a href="https://kill-the-newsletter.com/">Kill the newsletter</a></h3>
 <ol type="1">
 <li><p>Visit <a href="https://kill-the-newsletter.com/" class="uri">https://kill-the-newsletter.com/</a>，Enter <code>MyRSS</code>, and <code>create inbox</code>. You will get an email and a RSS address, like <code>XXXXXXXXXXXX@kill-the-newsletter.com</code> and <a href="https://kill-the-newsletter.com/feeds/XXXXXXXXXXXX.xml" class="uri">https://kill-the-newsletter.com/feeds/XXXXXXXXXXXX.xml</a>.</p>
 <p><img src="../img/image-20230507102456441.png" /></p></li>
 </ol>
-<h3 data-number="3.1.2" id="storkapp-to-rss"><span class="header-section-number">3.1.2</span> <a href="https://www.storkapp.me/">Storkapp</a> to RSS</h3>
+<h3 data-number="4.1.2" id="storkapp-to-rss"><span class="header-section-number">4.1.2</span> <a href="https://www.storkapp.me/">Storkapp</a> to RSS</h3>
 <ol type="1">
 <li><p>Register on <a href="https://www.storkapp.me/" class="uri">https://www.storkapp.me/</a> with your email like <code>xxxxx@qq.com</code>.</p></li>
 <li><p>Forward your email from <code>storkapp.me</code> to <code>XXXXXXXXXXXX@kill-the-newsletter.com</code>.</p>
 <p><img src="../img/image-20230507102816687.png" /></p></li>
 </ol>
-<h3 data-number="3.1.3" id="google-scholar-to-rss"><span class="header-section-number">3.1.3</span> Google Scholar to RSS</h3>
+<h3 data-number="4.1.3" id="google-scholar-to-rss"><span class="header-section-number">4.1.3</span> Google Scholar to RSS</h3>
 <ol type="1">
 <li>Follow someone on the Google Scholar</li>
 <li>Forward your email from <code>Google Scholar</code> to <code>XXXXXXXXXXXX@kill-the-newsletter.com</code>.</li>
 </ol>
-<h3 data-number="3.1.4" id="web-of-science-email-alert-to-rss"><span class="header-section-number">3.1.4</span> Web of Science Email Alert to RSS</h3>
+<h3 data-number="4.1.4" id="web-of-science-email-alert-to-rss"><span class="header-section-number">4.1.4</span> Web of Science Email Alert to RSS</h3>
 <ol type="1">
 <li>Create Email Alerts for some paper on Web of Science</li>
 <li>Forward your email from <code>Web of Science</code> to <code>XXXXXXXXXXXX@kill-the-newsletter.com</code>.</li>
 </ol>
-<h3 data-number="3.1.5" id="wechat-to-rss"><span class="header-section-number">3.1.5</span> WeChat to <a href="https://werss.app/">RSS</a></h3>
+<h3 data-number="4.1.5" id="wechat-to-rss"><span class="header-section-number">4.1.5</span> WeChat to <a href="https://werss.app/">RSS</a></h3>
 <ul>
 <li><p>Registrate on <a href="https://werss.app/" class="uri">https://werss.app/</a>, buy one-year service (65 RMB for 16 feeds), convert WeChat public accounts to RSS.</p>
 <p><img src="../img/image-20230507103213013.png" title="#80%" style="width:80.0%" /></p></li>
 </ul>
-<h2 data-number="3.2" id="filter-rss"><span class="header-section-number">3.2</span> <a href="https://rssfilter.netlify.app/">Filter RSS</a></h2>
+<h2 data-number="4.2" id="filter-rss"><span class="header-section-number">4.2</span> <a href="https://rssfilter.netlify.app/">Filter RSS</a></h2>
 <p><img src="../img/image-20230507103513392.png" /></p>
-<h2 data-number="3.3" id="read-rss"><span class="header-section-number">3.3</span> Read RSS</h2>
+<h2 data-number="4.3" id="read-rss"><span class="header-section-number">4.3</span> Read RSS</h2>
 <ol type="1">
 <li><p>Registrate on <a href="https://www.innoreader.com/" class="uri">https://www.innoreader.com/</a></p></li>
 <li><p>Add the RSS URLs to feeds.</p>
@@ -455,5 +967,7 @@ network.proxy.http_port;4321</code></pre>
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>

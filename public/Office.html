@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>Office</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Office"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -159,16 +159,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -206,6 +209,12 @@ button{
           <li><a href="#wps国际版"><span class="toc-section-number">3.4</span> WPS国际版</a></li>
           <li><a href="#wps共享词典"><span class="toc-section-number">3.5</span> WPS共享词典</a></li>
           <li><a href="#word中图片高分辨转为pdf"><span class="toc-section-number">3.6</span> word中图片高分辨转为pdf</a></li>
+          <li><a href="#修改wps模板"><span class="toc-section-number">3.7</span> 修改WPS模板</a>
+          <ul>
+          <li><a href="#建立模板"><span class="toc-section-number">3.7.1</span> 建立模板</a></li>
+          <li><a href="#临时修改"><span class="toc-section-number">3.7.2</span> 临时修改</a></li>
+          <li><a href="#永久修改"><span class="toc-section-number">3.7.3</span> 永久修改</a></li>
+          </ul></li>
           </ul></li>
           </ul>
         </div>
@@ -373,6 +382,22 @@ so mkdir <code>D:\Temp\systmp</code>, and change TMP variable to <code>D:\Temp\s
 <li>导入本地图片。</li>
 <li>生成pdf时不使用wps自带的“Export to pdf,”而是选择：文件-&gt;打印-&gt;Microsoft Print to PDF。</li>
 </ol>
+<h2 data-number="3.7" id="修改wps模板"><span class="header-section-number">3.7</span> 修改WPS模板</h2>
+<h3 data-number="3.7.1" id="建立模板"><span class="header-section-number">3.7.1</span> 建立模板</h3>
+<ol type="1">
+<li>打开docx文件，修改相应的模板</li>
+<li>分别以dotx和dotm格式将其保存在<code>%DosHome%\InWords\software\wps\model</code>下(mymodel.dotx/Normal.dotm)</li>
+</ol>
+<h3 data-number="3.7.2" id="临时修改"><span class="header-section-number">3.7.2</span> 临时修改</h3>
+<ol type="1">
+<li>打开docx文件，文件⇒新建⇒本机上的模板⇒，选择mymodel.dotx,并设为默认模板，保存并关闭。</li>
+<li>以后打开docx文件，文件⇒新建⇒从默认模板新建。</li>
+</ol>
+<h3 data-number="3.7.3" id="永久修改"><span class="header-section-number">3.7.3</span> 永久修改</h3>
+<ul>
+<li>用Normal.dotm替换<code>%AppData%\kingsoft\office6\templates\wps\zh_CN\Normal.dotm</code></li>
+</ul>
+<p>;;;;;;;; set default model ; Open a docx file, modify the styles for titles, main text and so on ; save it to %DosHome%.dotx , close. ; Open a new docx file, File -&gt; Options-&gt; File Postion, modify it to %DosHome%, save and close. ; Open a new docx file, File-&gt;New -&gt; From Local model; select the mymodel.dotx, and set it to default ;;;;;;;;</p>
         </div>
       </div>
     </div>
@@ -401,5 +426,7 @@ so mkdir <code>D:\Temp\systmp</code>, and change TMP variable to <code>D:\Temp\s
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>

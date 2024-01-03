@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>HER, OER and ORR</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="HER, OER and ORR"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -73,7 +73,7 @@ button{
     .catch(console.error)
 </script>
 
-  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
    var mathElements = document.getElementsByClassName("math");
    var macros = [];
@@ -88,7 +88,7 @@ button{
      });
   }}});
   </script>
-  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" />
           <div class='content-body'>
               <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
           </div>
@@ -110,16 +110,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -453,7 +456,7 @@ button{
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">Zhang, Z.; Yang, Y.; Gao, G.; Yakobson, B. I. Two-Dimensional Boron Monolayers Mediated by Metal Substrates. <em>Angew. Chem. Int. Ed.</em> <strong>2015</strong>, <em>54</em>, 13022–13026.</div>
 </div>
 <div id="ref-Hinnemann05JACS" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Hinnemann, B.; Moses, P. G.; Bonde, J.; Jørgensen, K. P.; Nielsen, J. H.; Horch, S.; Chorkendorff, I.; Nørskov, J. K. Biomimetic Hydrogen Evolution: MoS <span><sub>2</sub></span> Nanoparticles as Catalyst for Hydrogen Evolution. <em>J. Am. Chem. Soc.</em> <strong>2005</strong>, <em>127</em>, 5308–5309.</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Hinnemann, B.; Moses, P. G.; Bonde, J.; Jørgensen, K. P.; Nielsen, J. H.; Horch, S.; Chorkendorff, I.; Nørskov, J. K. Biomimetic Hydrogen Evolution: <span>MoS</span> <span><span class="math inline">_2</span></span> Nanoparticles as Catalyst for Hydrogen Evolution. <em>J. Am. Chem. Soc.</em> <strong>2005</strong>, <em>127</em>, 5308–5309.</div>
 </div>
 <div id="ref-Yang20NC" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">Yang, Q.; Xu, W.; Gong, S.; Zheng, G.; Tian, Z.; Wen, Y.; Peng, L.; Zhang, L.; Lu, Z.; Chen, L. Atomically Dispersed Lewis Acid Sites Boost 2-Electron Oxygen Reduction Activity of Carbon-Based Catalysts. <em>Nat. Commun.</em> <strong>2020</strong>, <em>11</em>, 5478.</div>
@@ -462,22 +465,22 @@ button{
 <div class="csl-left-margin">[6] </div><div class="csl-right-inline">Xu, H.; Cheng, D.; Cao, D.; Zeng, X. C. A Universal Principle for a Rational Design of Single-Atom Electrocatalysts. <em>Nat. Catal.</em> <strong>2018</strong>, <em>1</em>, 339–348.</div>
 </div>
 <div id="ref-Li14JC" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Li, M.; Zhang, L.; Xu, Q.; Niu, J.; Xia, Z. N-Doped Graphene as Catalysts for Oxygen Reduction and Oxygen Evolution Reactions: Theoretical Considerations. <em>J. Catal.</em> <strong>2014</strong>, <em>314</em>, 66–72.</div>
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Li, M.; Zhang, L.; Xu, Q.; Niu, J.; Xia, Z. N-Doped Graphene as Catalysts for Oxygen Reduction and Oxygen Evolution Reactions: <span>Theoretical</span> Considerations. <em>J. Catal.</em> <strong>2014</strong>, <em>314</em>, 66–72.</div>
 </div>
 <div id="ref-Norskov04JPCB" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[8] </div><div class="csl-right-inline">Nørskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.; Kitchin, J. R.; Bligaard, T.; Jónsson, H. Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode. <em>J. Phys. Chem. B</em> <strong>2004</strong>, <em>108</em>, 17886–17892.</div>
 </div>
 <div id="ref-Desai03PRB" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Desai, S. K.; Neurock, M. First-Principles Study of the Role of Solvent in the Dissociation of Water over a Pt-Ru Alloy. <em>Phys. Rev. B</em> <strong>2003</strong>, <em>68</em>, 075420.</div>
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Desai, S. K.; Neurock, M. First-Principles Study of the Role of Solvent in the Dissociation of Water over a <span>Pt-Ru</span> Alloy. <em>Phys. Rev. B</em> <strong>2003</strong>, <em>68</em>, 075420.</div>
 </div>
 <div id="ref-Atkins10P" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Atkins, P.; de Paula, J. Physical Chemistry. <em>Physical chemistry</em>; Oxford University Press: Oxford, 2010.</div>
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Atkins, P.; de Paula, J. Physical Chemistry. <em>Physical chemistry</em>; <span>Oxford University Press</span>: <span>Oxford</span>, 2010.</div>
 </div>
 <div id="ref-Man11C" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[11] </div><div class="csl-right-inline">Man, I. C.; Su, H.-Y.; Calle-Vallejo, F.; Hansen, H. A.; Martínez, J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.; Rossmeisl, J. Universality in Oxygen Evolution Electrocatalysis on Oxide Surfaces. <em>ChemCatChem</em> <strong>2011</strong>, <em>3</em>, 1159–1165.</div>
 </div>
 <div id="ref-Wang21AC" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wang, Z.; Li, Q.-K.; Zhang, C.; Cheng, Z.; Chen, W.; McHugh, E. A.; Carter, R. A.; Yakobson, B. I.; Tour, J. M. Hydrogen Peroxide Generation with 100% Faradaic Efficiency on Metal-Free Carbon Black. <em>ACS Catal.</em> <strong>2021</strong>, <em>11</em>, 2454–2459.</div>
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Wang, Z.; Li, Q.-K.; Zhang, C.; Cheng, Z.; Chen, W.; McHugh, E. A.; Carter, R. A.; Yakobson, B. I.; Tour, J. M. Hydrogen Peroxide Generation with 100% Faradaic Efficiency on Metal-Free Carbon Black. <em>ACS Catal,</em> <strong>2021</strong>, <em>11</em>, 2454–2459.</div>
 </div>
 <div id="ref-Lu18NCa" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[13] </div><div class="csl-right-inline">Lu, Z.; Chen, G.; Siahrostami, S.; Chen, Z.; Liu, K.; Xie, J.; Liao, L.; Wu, T.; Lin, D.; Liu, Y.; et al. High-Efficiency Oxygen Reduction to Hydrogen Peroxide Catalysed by Oxidized Carbon Materials. <em>Nat. Catal.</em> <strong>2018</strong>, <em>1</em>, 156–162.</div>
@@ -511,5 +514,7 @@ button{
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>

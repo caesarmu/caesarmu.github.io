@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Caesarmu">
+    <meta name="dcterms.date" content=" 01/03/2024">
+  <title>Posts for science</title>
+  <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Posts for science"+"("+filename+")";</script -->
+    <!-- Bootstrap core CSS -->
+    <link href="/pandocmodels/sidebar/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/pandocmodels/sidebar/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/pandocmodels/sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  <!-- style type="text/css">
+            width:1220px;
+            height:1100px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+  </style -->
+  <style type="text/css">
+  #hitokoto{
+    background-color: #3288d31a;
+    padding: 10px;text-align: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 5px 0;
+}
+div.card {
+   background-color: #f5f5f5;
+   color: black;
+   text-align: center;
+   margin: 0 auto;
+   width: 85%;
+   max-width: 90%;
+}
+div.container {
+   padding: 10px;
+   background-color: white;
+}
+button{
+  border:groove 0.2em gray;
+  border-radius:0.4em;
+}
+  </style>
+
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto + " --- " + data.from
+    })
+    .catch(console.error)
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" />
+          <div class='content-body'>
+              <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
+          </div>
+          
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/paper.html">Publication</a></li>
+            <li><a href="/post.html">Post</a></li>
+            <li class="dropdown">
+              <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu">  
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
+            <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
+                <li><a  target="_blank" href="http://mail.sxu.edu.cn/">SXU MAIL</a></li>
+                <li><a  target="_blank" href="http://ehall.sxu.edu.cn/">SXU MYPORTAL</a></li>
+              </ul>
+            </li>
+            <li><span id="badgeCont708"><script type="text/javascript" src="https://publons.com/mashlets?el=badgeCont708&rid=B-2057-2012&size=small"></script></span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#d-mateirials-family"><span class="toc-section-number">1</span> <span><span style="color:red; font-size: 40; "><strong>﻿2D Mateirials Family</strong></span></span></a></li>
+          <li><a href="#adndp-and-pes-using-gaussian-03"><span class="toc-section-number">2</span> <span><span style="color:red; font-size: 40; "><strong>﻿AdNDP and PES using Gaussian 03</strong></span></span></a></li>
+          <li><a href="#band-structure"><span class="toc-section-number">3</span> <span><span style="color:red; font-size: 40; "><strong>﻿Band Structure</strong></span></span></a></li>
+          <li><a href="#battery"><span class="toc-section-number">4</span> <span><span style="color:red; font-size: 40; "><strong>﻿Battery</strong></span></span></a></li>
+          <li><a href="#boron-crystal-allotropes"><span class="toc-section-number">5</span> <span><span style="color:red; font-size: 40; "><strong>Boron Crystal Allotropes</strong></span></span></a></li>
+          <li><a href="#bigdft"><span class="toc-section-number">6</span> <span><span style="color:red; font-size: 40; "><strong>﻿BigDFT </strong></span></span></a></li>
+          <li><a href="#bonding-analysis"><span class="toc-section-number">7</span> <span><span style="color:red; font-size: 40; "><strong>﻿Bonding Analysis</strong></span></span></a></li>
+          <li><a href="#keywords-in-vasp-corresponding-to-castep"><span class="toc-section-number">8</span> <span><span style="color:red; font-size: 40; "><strong>﻿Keywords in VASP Corresponding to CASTEP</strong></span></span></a></li>
+          <li><a href="#cluster"><span class="toc-section-number">9</span> <span><span style="color:red; font-size: 40; "><strong>﻿Cluster</strong></span></span></a></li>
+          <li><a href="#co2-reduction"><span class="toc-section-number">10</span> <span><span style="color:red; font-size: 40; "><strong>﻿CO<sub>2</sub> Reduction</strong></span></span></a></li>
+          <li><a href="#cohp"><span class="toc-section-number">11</span> <span><span style="color:red; font-size: 40; "><strong>﻿COHP</strong></span></span></a></li>
+          <li><a href="#constants"><span class="toc-section-number">12</span> <span><span style="color:red; font-size: 40; "><strong>﻿Constants</strong></span></span></a></li>
+          <li><a href="#crystal-operation"><span class="toc-section-number">13</span> <span><span style="color:red; font-size: 40; "><strong>﻿Crystal Operation</strong></span></span></a></li>
+          <li><a href="#curie-temperature-and-mc"><span class="toc-section-number">14</span> <span><span style="color:red; font-size: 40; "><strong>﻿Curie temperature and MC</strong></span></span></a></li>
+          <li><a href="#dftb"><span class="toc-section-number">15</span> <span><span style="color:red; font-size: 40; "><strong>﻿DFTB </strong></span></span></a></li>
+          <li><a href="#dynamic-stabililty"><span class="toc-section-number">16</span> <span><span style="color:red; font-size: 40; "><strong>﻿Dynamic Stabililty</strong></span></span></a></li>
+          <li><a href="#energy-definition"><span class="toc-section-number">17</span> <span><span style="color:red; font-size: 40; "><strong>﻿Energy definition</strong></span></span></a></li>
+          <li><a href="#excel-tips"><span class="toc-section-number">18</span> <span><span style="color:red; font-size: 40; "><strong>﻿Excel Tips</strong></span></span></a></li>
+          <li><a href="#compare-with-experiments"><span class="toc-section-number">19</span> <span><span style="color:red; font-size: 40; "><strong>﻿Compare with Experiments</strong></span></span></a></li>
+          <li><a href="#easy-ways-to-fail-a-ph.d."><span class="toc-section-number">20</span> <span><span style="color:red; font-size: 40; "><strong>﻿10 easy ways to fail a Ph.D.</strong></span></span></a></li>
+          <li><a href="#gpu"><span class="toc-section-number">21</span> <span><span style="color:red; font-size: 40; "><strong>﻿GPU</strong></span></span></a></li>
+          <li><a href="#hardware-recommendations-for-vasp"><span class="toc-section-number">22</span> <span><span style="color:red; font-size: 40; "><strong>﻿Hardware Recommendations for VASP</strong></span></span></a></li>
+          <li><a href="#her-oer-and-orr"><span class="toc-section-number">23</span> <span><span style="color:red; font-size: 40; "><strong>﻿HER, OER and ORR</strong></span></span></a></li>
+          <li><a href="#hydrogen-storage"><span class="toc-section-number">24</span> <span><span style="color:red; font-size: 40; "><strong>﻿Hydrogen Storage</strong></span></span></a></li>
+          <li><a href="#journal-guidelines"><span class="toc-section-number">25</span> <span><span style="color:red; font-size: 40; "><strong>﻿Journal Guidelines</strong></span></span></a></li>
+          <li><a href="#lammps"><span class="toc-section-number">26</span> <span><span style="color:red; font-size: 40; "><strong>﻿Lammps </strong></span></span></a></li>
+          <li><a href="#mechanical-statility"><span class="toc-section-number">27</span> <span><span style="color:red; font-size: 40; "><strong>﻿Mechanical Statility</strong></span></span></a></li>
+          <li><a href="#d1d-mobility"><span class="toc-section-number">28</span> <span><span style="color:red; font-size: 40; "><strong>﻿2D/1D Mobility</strong></span></span></a></li>
+          <li><a href="#materials-studio-errors-and-examples"><span class="toc-section-number">29</span> <span><span style="color:red; font-size: 40; "><strong>﻿Materials Studio Errors and examples</strong></span></span></a></li>
+          <li><a href="#mxenes"><span class="toc-section-number">30</span> <span><span style="color:red; font-size: 40; "><strong>﻿MXenes</strong></span></span></a></li>
+          <li><a href="#my-papers"><span class="toc-section-number">31</span> <span><span style="color:red; font-size: 40; "><strong>﻿My Papers </strong></span></span></a></li>
+          <li><a href="#nitrogen-fixation"><span class="toc-section-number">32</span> <span><span style="color:red; font-size: 40; "><strong>﻿Nitrogen Fixation</strong></span></span></a></li>
+          <li><a href="#optic-gap"><span class="toc-section-number">33</span> <span><span style="color:red; font-size: 40; "><strong>﻿Optic Gap</strong></span></span></a></li>
+          <li><a href="#oxidation"><span class="toc-section-number">34</span> <span><span style="color:red; font-size: 40; "><strong>﻿Oxidation</strong></span></span></a></li>
+          <li><a href="#phase-diagram"><span class="toc-section-number">35</span> <span><span style="color:red; font-size: 40; "><strong>﻿Phase Diagram</strong></span></span></a></li>
+          <li><a href="#pwscf"><span class="toc-section-number">36</span> <span><span style="color:red; font-size: 40; "><strong>﻿PWSCF </strong></span></span></a></li>
+          <li><a href="#redox-potentials-and-standard-reduction-potentials"><span class="toc-section-number">37</span> <span><span style="color:red; font-size: 40; "><strong>﻿Redox Potentials and Standard Reduction Potentials</strong></span></span></a></li>
+          <li><a href="#single-point-catalysis"><span class="toc-section-number">38</span> <span><span style="color:red; font-size: 40; "><strong>﻿Single Point Catalysis </strong></span></span></a></li>
+          <li><a href="#semimetal"><span class="toc-section-number">39</span> <span><span style="color:red; font-size: 40; "><strong>﻿Semimetal </strong></span></span></a></li>
+          <li><a href="#siesta"><span class="toc-section-number">40</span> <span><span style="color:red; font-size: 40; "><strong>﻿Siesta</strong></span></span></a></li>
+          <li><a href="#siesta-1"><span class="toc-section-number">41</span> <span><span style="color:red; font-size: 40; "><strong>﻿Siesta </strong></span></span></a></li>
+          <li><a href="#solar-cell"><span class="toc-section-number">42</span> <span><span style="color:red; font-size: 40; "><strong>﻿Solar Cell</strong></span></span></a></li>
+          <li><a href="#ssadndp"><span class="toc-section-number">43</span> <span><span style="color:red; font-size: 40; "><strong>﻿SSAdNDP</strong></span></span></a></li>
+          <li><a href="#superconductor"><span class="toc-section-number">44</span> <span><span style="color:red; font-size: 40; "><strong>﻿Superconductor </strong></span></span></a></li>
+          <li><a href="#symmetry"><span class="toc-section-number">45</span> <span><span style="color:red; font-size: 40; "><strong>﻿Symmetry</strong></span></span></a></li>
+          <li><a href="#thermoelectric"><span class="toc-section-number">46</span> <span><span style="color:red; font-size: 40; "><strong>﻿Thermoelectric</strong></span></span></a></li>
+          <li><a href="#literature-tracking"><span class="toc-section-number">47</span> <span><span style="color:red; font-size: 40; "><strong>﻿Literature Tracking</strong></span></span></a></li>
+          <li><a href="#kinetics-and-transition-state"><span class="toc-section-number">48</span> <span><span style="color:red; font-size: 40; "><strong>﻿Kinetics and Transition State</strong></span></span></a></li>
+          <li><a href="#paramters-and-units"><span class="toc-section-number">49</span> <span><span style="color:red; font-size: 40; "><strong>﻿Paramters and Units</strong></span></span></a></li>
+          <li><a href="#energy-relative-to-vacuum"><span class="toc-section-number">50</span> <span><span style="color:red; font-size: 40; "><strong>﻿Energy Relative to vacuum</strong></span></span></a></li>
+          <li><a href="#band-structure-and-dos-in-vasp"><span class="toc-section-number">51</span> <span><span style="color:red; font-size: 40; "><strong>﻿Band structure and DOS in VASP </strong></span></span></a></li>
+          <li><a href="#benchmark-for-vasp"><span class="toc-section-number">52</span> <span><span style="color:red; font-size: 40; "><strong>﻿BenchMark for vasp</strong></span></span></a></li>
+          <li><a href="#cell-constraint"><span class="toc-section-number">53</span> <span><span style="color:red; font-size: 40; "><strong>Cell Constraint</strong></span></span></a></li>
+          <li><a href="#ggau"><span class="toc-section-number">54</span> <span><span style="color:red; font-size: 40; "><strong>GGA+U</strong></span></span></a></li>
+          <li><a href="#installtion-of-vasp"><span class="toc-section-number">55</span> <span><span style="color:red; font-size: 40; "><strong>﻿Installtion of VASP </strong></span></span></a></li>
+          <li><a href="#multiferro-for-vasp"><span class="toc-section-number">56</span> <span><span style="color:red; font-size: 40; "><strong>﻿Multiferro for VASP </strong></span></span></a></li>
+          <li><a href="#neb-for-vasp"><span class="toc-section-number">57</span> <span><span style="color:red; font-size: 40; "><strong>﻿NEB for VASP </strong></span></span></a></li>
+          <li><a href="#quantum-espresso-vs-vasp"><span class="toc-section-number">58</span> <span><span style="color:red; font-size: 40; "><strong>﻿Quantum Espresso vs VASP</strong></span></span></a></li>
+          <li><a href="#vasp-tips"><span class="toc-section-number">59</span> <span><span style="color:red; font-size: 40; "><strong>﻿VASP Tips</strong></span></span></a></li>
+          <li><a href="#vesta-vmd-and-avogadro"><span class="toc-section-number">60</span> <span><span style="color:red; font-size: 40; "><strong>﻿Vesta, VMD and Avogadro</strong></span></span></a></li>
+          <li><a href="#wannier-functions"><span class="toc-section-number">61</span> <span><span style="color:red; font-size: 40; "><strong>﻿Wannier Functions</strong></span></span></a></li>
+          <li><a href="#writting-skills"><span class="toc-section-number">62</span> <span><span style="color:red; font-size: 40; "><strong>﻿Writting Skills</strong></span></span></a></li>
+          <li><a href="#zotero-tips"><span class="toc-section-number">63</span> <span><span style="color:red; font-size: 40; "><strong>Zotero Tips</strong></span></span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 data-number="1" id="d-mateirials-family"><span class="header-section-number">1</span> <a href="2D_Family.html"><span style="color:red; font-size: 40; "><strong>﻿2D Mateirials Family</strong></span></a></h1>
+<p><a href="2D_Family.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="2D_Family.html"># definition 结构有序 二维平面生长 第三维度超薄 单层未必最好，也许几层更佳 # Graphene family: Graphene, Fluorographene, graphene oxide hBN white graphene BCN,…</a></p>
+<hr />
+<h1 data-number="2" id="adndp-and-pes-using-gaussian-03"><span class="header-section-number">2</span> <a href="AdNDP4Gaussian.html"><span style="color:red; font-size: 40; "><strong>﻿AdNDP and PES using Gaussian 03</strong></span></a></h1>
+<p><a href="AdNDP4Gaussian.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="AdNDP4Gaussian.html"># AdNDP ## 优化和频率计算 B4.square.gjf文件： ```sh %nprocshared=16 %mem=16GB %chk=B4.chk #p opt freq b3lyp/6-31g B4 0 1 B 1.21435106 -0.69628856 -0.10869034 …</a></p>
+<hr />
+<h1 data-number="3" id="band-structure"><span class="header-section-number">3</span> <a href="Band_structure.html"><span style="color:red; font-size: 40; "><strong>﻿Band Structure</strong></span></a></h1>
+<p><a href="Band_structure.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Band_structure.html"># High symmetry K points 1. From Bilbao Crystallographic Server. 2. From Materiasl Studio. 3. From Aconvasp. 4. From my Program vsym.x(not fully tested yet). # Fat Band 1. Could be generated by…</a></p>
+<hr />
+<h1 data-number="4" id="battery"><span class="header-section-number">4</span> <a href="Battery.html"><span style="color:red; font-size: 40; "><strong>﻿Battery</strong></span></a></h1>
+<p><a href="Battery.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Battery.html"># Li Ion Voltage [Aydinol97PRB]The equilibrium voltage difference between the two electrodes, also referred to as the open circuit voltage (OCV), depends on the difference of the Li chemical…</a></p>
+<hr />
+<h1 data-number="5" id="boron-crystal-allotropes"><span class="header-section-number">5</span> <a href="BCrystal.html"><span style="color:red; font-size: 40; "><strong>Boron Crystal Allotropes</strong></span></a></h1>
+<p><a href="BCrystal.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="BCrystal.html"># 硼的同素异形体(维基百科) <u>硼</u>有多种<u>同素异形体</u>，包括<u>晶体</u>和<u>无定形体</u>。现已知（已制备）的结晶状硼有α�…</a></p>
+<hr />
+<h1 data-number="6" id="bigdft"><span class="header-section-number">6</span> <a href="BigDFT.html"><span style="color:red; font-size: 40; "><strong>﻿BigDFT </strong></span></a></h1>
+<p><a href="BigDFT.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="BigDFT.html"># Install ## pass,intel2015 <code>sh ./configure FC=mpiifort   FCFLAGS="-O2 -openmp"  FCFLAGS="-O2 -openmp" -with-ext-linalg="-mkl=parallel"</code> ## pass,intel2015+openmpi1.6 ```sh ./configure…</a></p>
+<hr />
+<h1 data-number="7" id="bonding-analysis"><span class="header-section-number">7</span> <a href="bonding_analysis.html"><span style="color:red; font-size: 40; "><strong>﻿Bonding Analysis</strong></span></a></h1>
+<p><a href="bonding_analysis.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="bonding_analysis.html"># COOP and COHP &gt; Both COOP (crystal orbital overlap population) and COHP (crystal orbital Hamilton population) are partitioning methods for analyzing the (k-dependent) wavefunction. While COOP…</a></p>
+<hr />
+<h1 data-number="8" id="keywords-in-vasp-corresponding-to-castep"><span class="header-section-number">8</span> <a href="Castep_VASP.html"><span style="color:red; font-size: 40; "><strong>﻿Keywords in VASP Corresponding to CASTEP</strong></span></a></h1>
+<p><a href="Castep_VASP.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Castep_VASP.html"># Tabs in CASTEP ## Setup ### Main Task: NSW, IBRION Quality: PREC Functional: GGA Spin Polarized: ISPIN, MAGMOM LDA+U: LDAU (暂定) Charge: NELECT=N(中性）+charge, N(中性）有POTCAR得�…</a></p>
+<hr />
+<h1 data-number="9" id="cluster"><span class="header-section-number">9</span> <a href="Cluster.html"><span style="color:red; font-size: 40; "><strong>﻿Cluster</strong></span></a></h1>
+<p><a href="Cluster.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Cluster.html"># Sites[Montejano-Carrizales97NM] | | CO| Ico| BCC| SC| |::|::|::|::|::| | <span class="math inline">N</span> |<span class="math inline">10\nu^3/3+5\nu^2+11\nu/3+1</span>…</a></p>
+<hr />
+<h1 data-number="10" id="co2-reduction"><span class="header-section-number">10</span> <a href="CO2RR.html"><span style="color:red; font-size: 40; "><strong>﻿CO<sub>2</sub> Reduction</strong></span></a></h1>
+<p><a href="CO2RR.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="CO2RR.html"># 基本介绍 CO<sub>2</sub>热力学较为稳定（标准摩尔生成焓为-393.51 kJ•mol-1）、惰性、不易活化（C=O键键能为~750 kJ•mol-1）。因此，实现CO<sub>2</sub>在温和条件下的化学�…</a></p>
+<hr />
+<h1 data-number="11" id="cohp"><span class="header-section-number">11</span> <a href="cohp.html"><span style="color:red; font-size: 40; "><strong>﻿COHP</strong></span></a></h1>
+<p><a href="cohp.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="cohp.html"># Theory: From H<sub>2</sub> to Data-Storage Alloys From &lt;http://www.cohp.de/&gt; The COHP (or COOP) concept is most easily understood by looking at the simple band structure of a "one-dimensional"…</a></p>
+<hr />
+<h1 data-number="12" id="constants"><span class="header-section-number">12</span> <a href="Constant.html"><span style="color:red; font-size: 40; "><strong>﻿Constants</strong></span></a></h1>
+<p><a href="Constant.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Constant.html"># Physical Constants From &lt;https://physics.info/constants/&gt; | Symbol | Name | Value | |::|::|::| | <span class="math inline">c</span> | speed of light in a vacuum| 299,792,458 m/s | | <span class="math inline">G</span> | gravitational…</a></p>
+<hr />
+<h1 data-number="13" id="crystal-operation"><span class="header-section-number">13</span> <a href="crystaloperation.html"><span style="color:red; font-size: 40; "><strong>﻿Crystal Operation</strong></span></a></h1>
+<p><a href="crystaloperation.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="crystaloperation.html"># Creating Slab (3 Methods) ## Avogadro File-&gt;Import-&gt;Crystal-&gt;elements-&gt;Au-Gold.cif Crystallography-&gt;Build-&gt;Slab ! Change Lattice paratmer <span class="math inline">C</span> from 40  to 20. Crystallography-&gt;Wrap…</a></p>
+<hr />
+<h1 data-number="14" id="curie-temperature-and-mc"><span class="header-section-number">14</span> <a href="Curie_Temp.html"><span style="color:red; font-size: 40; "><strong>﻿Curie temperature and MC</strong></span></a></h1>
+<p><a href="Curie_Temp.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Curie_Temp.html">1. The exchange parameter was calculated from the energy difference between the ferromagnetic and antiferromagnetic states of a supercell with four adatoms[Zhou11JACS]. $$H(m)=-_{i,j}…</a></p>
+<hr />
+<h1 data-number="15" id="dftb"><span class="header-section-number">15</span> <a href="DFTB.html"><span style="color:red; font-size: 40; "><strong>﻿DFTB </strong></span></a></h1>
+<p><a href="DFTB.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="DFTB.html"># Install ```sh tar -xvf dftbp_1.2.1_src.tar.gz cd dftb+_1.2.1_src cp Makefile.user.template Makefile.user cd sysmakes # vi make.x86_64-linux-ifort : LN = $(FC90) -static change to: LN = $(FC90)…</a></p>
+<hr />
+<h1 data-number="16" id="dynamic-stabililty"><span class="header-section-number">16</span> <a href="Dynamic_Stabililty.html"><span style="color:red; font-size: 40; "><strong>﻿Dynamic Stabililty</strong></span></a></h1>
+<p><a href="Dynamic_Stabililty.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Dynamic_Stabililty.html"># Phonon Spectrum Zhang15PNASU Quantitatively, the frequency-wave vector relationship, in the vicinity of the <span class="math inline">\Gamma</span> point, can be formulated (<span class="math inline">\omega&lt;80</span> cm-1) as…</a></p>
+<hr />
+<h1 data-number="17" id="energy-definition"><span class="header-section-number">17</span> <a href="Energy_definition.html"><span style="color:red; font-size: 40; "><strong>﻿Energy definition</strong></span></a></h1>
+<p><a href="Energy_definition.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Energy_definition.html"># Binding Energy and Curvature energy 1. Average binding energy <span class="math display">E_b[AB]=(N_AE_A+N_BE_B-E_{tot}[AB])/(N_A+N_B)</span> where <span class="math inline">E_A</span> and <span class="math inline">E_B</span> are the energy of free atom in vacuum for A and B. 2….</a></p>
+<hr />
+<h1 data-number="18" id="excel-tips"><span class="header-section-number">18</span> <a href="Excel.html"><span style="color:red; font-size: 40; "><strong>﻿Excel Tips</strong></span></a></h1>
+<p><a href="Excel.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Excel.html">《excel高手捷径：一招鲜，吃遍天》读书笔记 # ShortCut | ShortCut | Function | |::|::| | Alt+Enter | 单元格内强制换行 | | Ctrl+Enter | 批量输入相�…</a></p>
+<hr />
+<h1 data-number="19" id="compare-with-experiments"><span class="header-section-number">19</span> <a href="Experiment.html"><span style="color:red; font-size: 40; "><strong>﻿Compare with Experiments</strong></span></a></h1>
+<p><a href="Experiment.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Experiment.html"># IR and Raman ## IR VASP_IR[Karhanek10JPCM] applied in my paper.[Mu16JMCC] ## Raman VASP_Raman[Porezag96PRB;Fonari00P] applied in my paper.[Mu16JMCC] The frequency mode for IR and Raman Peak…</a></p>
+<hr />
+<h1 data-number="20" id="easy-ways-to-fail-a-ph.d."><span class="header-section-number">20</span> <a href="Fail.Phd.html"><span style="color:red; font-size: 40; "><strong>﻿10 easy ways to fail a Ph.D.</strong></span></a></h1>
+<p><a href="Fail.Phd.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Fail.Phd.html">By Matt Might from &lt;https://matt.might.net/articles/ways-to-fail-a-phd/&gt; The attrition rate in Ph.D. school is high. Anywhere from a third to half will fail. In fact, there’s a disturbing…</a></p>
+<hr />
+<h1 data-number="21" id="gpu"><span class="header-section-number">21</span> <a href="gpu.html"><span style="color:red; font-size: 40; "><strong>﻿GPU</strong></span></a></h1>
+<p><a href="gpu.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="gpu.html"># Very Important DO NOT upgrade kernal to other version!!!!!!!! ```sh qemu-img create -f qcow2 /home/kvm/win10.img 200G qemu-img info /home/kvm/win10.img dd if=/dev/sr0…</a></p>
+<hr />
+<h1 data-number="22" id="hardware-recommendations-for-vasp"><span class="header-section-number">22</span> <a href="Hardware4vasp_php.html"><span style="color:red; font-size: 40; "><strong>﻿Hardware Recommendations for VASP</strong></span></a></h1>
+<p><a href="Hardware4vasp_php.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Hardware4vasp_php.html">From &lt;https://www.nsc.liu.se/~pla/blog/2013/09/04/hardware-for-vasp/&gt; I was recently asked what kind of hardware you should for running VASP calculations. I recommend looking at the configuration…</a></p>
+<hr />
+<h1 data-number="23" id="her-oer-and-orr"><span class="header-section-number">23</span> <a href="HER_ORR.html"><span style="color:red; font-size: 40; "><strong>﻿HER, OER and ORR</strong></span></a></h1>
+<p><a href="HER_ORR.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="HER_ORR.html"># Sabatier Principle It states that a good catalyst material should bind the molecules that participate in the chemical reaction neither too strongly nor too weakly to its surface. The bonds should…</a></p>
+<hr />
+<h1 data-number="24" id="hydrogen-storage"><span class="header-section-number">24</span> <a href="H_Storage.html"><span style="color:red; font-size: 40; "><strong>﻿Hydrogen Storage</strong></span></a></h1>
+<p><a href="H_Storage.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="H_Storage.html"># Diffusion [Mandeltort12JPCC]The fundamental kinetic equation for surface diffusion is given in eq 2. <span class="math display">D={\nu}a^2(\frac{-E_{diff}}{k_BT})</span> where <span class="math inline">D</span> = diffusion coefficient, <span class="math inline">\nu</span> = jump…</a></p>
+<hr />
+<h1 data-number="25" id="journal-guidelines"><span class="header-section-number">25</span> <a href="Journal.html"><span style="color:red; font-size: 40; "><strong>﻿Journal Guidelines</strong></span></a></h1>
+<p><a href="Journal.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Journal.html"># Images Prepare Use Arial, 16pt, Bold fonts and white background for (a),(b)… In Inkscape, set File-&gt;Document Properties-&gt;background color to white. # Guide for Journals ## Tips for ACS …</a></p>
+<hr />
+<h1 data-number="26" id="lammps"><span class="header-section-number">26</span> <a href="Lammps.html"><span style="color:red; font-size: 40; "><strong>﻿Lammps </strong></span></a></h1>
+<p><a href="Lammps.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Lammps.html"># Installtion ## download download lammps-16Mar18.tar.gz <code>sh tar -xvf lammps-16Mar18.tar.gz cd lammps-16Mar18</code> ## libraries ```sh cd [root of lammps]/src ##to edit…</a></p>
+<hr />
+<h1 data-number="27" id="mechanical-statility"><span class="header-section-number">27</span> <a href="Mechanical_Statility.html"><span style="color:red; font-size: 40; "><strong>﻿Mechanical Statility</strong></span></a></h1>
+<p><a href="Mechanical_Statility.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Mechanical_Statility.html"># 2D elastic constants ## Voigt notation for 2D square, rectangular, or hexagonal lattices [Zhang15PNASU;Wang16NC] As we fix the supercell during all of the MD simulations, it is necessary to…</a></p>
+<hr />
+<h1 data-number="28" id="d1d-mobility"><span class="header-section-number">28</span> <a href="Mobility.html"><span style="color:red; font-size: 40; "><strong>﻿2D/1D Mobility</strong></span></a></h1>
+<p><a href="Mobility.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Mobility.html"># Effective mass <span class="math display">m_e^=\hbar[\frac{\partial^2E(k)}{\partial k^2}]^{-1}</span> # 1D Mobility[Qiao14NC;Beleznay03JCP] An expression for the mobility in 1D systems is …</a></p>
+<hr />
+<h1 data-number="29" id="materials-studio-errors-and-examples"><span class="header-section-number">29</span> <a href="MS.html"><span style="color:red; font-size: 40; "><strong>﻿Materials Studio Errors and examples</strong></span></a></h1>
+<p><a href="MS.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="MS.html"># Errors ## Timeout Error !{width=100%} 解决方法: <code>Tools</code>-<code>&gt;Server Console</code>, 打开 <code>Server Console</code>面板，<code>Server Gateways</code>-&gt;<code>My Computer</code>,右键属性，修改如下两项。 !{width=100%} �…</a></p>
+<hr />
+<h1 data-number="30" id="mxenes"><span class="header-section-number">30</span> <a href="MXenes.html"><span style="color:red; font-size: 40; "><strong>﻿MXenes</strong></span></a></h1>
+<p><a href="MXenes.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="MXenes.html"># 基本介绍 过渡金属碳化物和氮化物（MXenes）是一类二维（2D）无机化合物，是由几个原子层的过渡金属碳化物，氮化物或碳氮化物组成的材料。Ti3C2是�…</a></p>
+<hr />
+<h1 data-number="31" id="my-papers"><span class="header-section-number">31</span> <a href="MyPapers.html"><span style="color:red; font-size: 40; "><strong>﻿My Papers </strong></span></a></h1>
+<p><a href="MyPapers.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="MyPapers.html"># New Technology | Paper | New Technology | |::|::| | Mu, Y. et al. Chem. Phys. Lett. 2011, 511, 97-100. | GA + SW potential | | Mu, Y. et al. Phys. Rev. A 2011, 84, 053201. | GA + EAM…</a></p>
+<hr />
+<h1 data-number="32" id="nitrogen-fixation"><span class="header-section-number">32</span> <a href="NRR.html"><span style="color:red; font-size: 40; "><strong>﻿Nitrogen Fixation</strong></span></a></h1>
+<p><a href="NRR.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="NRR.html"># 基本介绍…</a></p>
+<hr />
+<h1 data-number="33" id="optic-gap"><span class="header-section-number">33</span> <a href="optic_gap.html"><span style="color:red; font-size: 40; "><strong>﻿Optic Gap</strong></span></a></h1>
+<p><a href="optic_gap.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="optic_gap.html"># 理论 对于半导体材料，其光学带隙和吸收系数之间的关系式为[Smith1978]： <span class="math display">\alpha{h}\nu=B(h\nu-E_g)^m</span> 其中<span class="math inline">\alpha</span>为摩尔吸收系数,<span class="math inline">h</span>为普朗克常数， <span class="math inline">\nu</span>为�…</a></p>
+<hr />
+<h1 data-number="34" id="oxidation"><span class="header-section-number">34</span> <a href="Oxidation.html"><span style="color:red; font-size: 40; "><strong>﻿Oxidation</strong></span></a></h1>
+<p><a href="Oxidation.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Oxidation.html"># Oxidation of the Si(001) Surface[Kato98PRL] Molecular beam experiments reported that the initial sticking probability <span class="math inline">S_0</span> of an O<sub>2</sub> molecule with a low incident energy (<span class="math inline">E_i&lt;0.1</span> eV) decreases…</a></p>
+<hr />
+<h1 data-number="35" id="phase-diagram"><span class="header-section-number">35</span> <a href="Phase_Diagram.html"><span style="color:red; font-size: 40; "><strong>﻿Phase Diagram</strong></span></a></h1>
+<p><a href="Phase_Diagram.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Phase_Diagram.html">[Kvashnin14NL]The phase diagram was obtained from the calculation of the Gibbs free energies G of the compared phases in the quasiharmonic approximation: <span class="math display">G(P,T)=E_0(V)+PV+U_0(V)+F_{vib}(T,V)</span>…</a></p>
+<hr />
+<h1 data-number="36" id="pwscf"><span class="header-section-number">36</span> <a href="Pwscf.html"><span style="color:red; font-size: 40; "><strong>﻿PWSCF </strong></span></a></h1>
+<p><a href="Pwscf.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Pwscf.html">## QE 6.7 + gcc 9.3 + OpenMPI 3.1.6 + OpenBlas 0.3.10 + FFTW3 (passed) + thermo_pw ```sh tar -xvf qe-6.7-ReleasePack.tgz cd qe-6.7 # download thermo_pw…</a></p>
+<hr />
+<h1 data-number="37" id="redox-potentials-and-standard-reduction-potentials"><span class="header-section-number">37</span> <a href="Redox_Potentials.html"><span style="color:red; font-size: 40; "><strong>﻿Redox Potentials and Standard Reduction Potentials</strong></span></a></h1>
+<p><a href="Redox_Potentials.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Redox_Potentials.html"># Redox Poentails <span class="math display">V_{Reduction}(H)=0</span> <span class="math display">V_{Redox}(H)=4.44 eV</span> <span class="math display">V_{Redox}(A)=V_{Reduction}(A)+V_{Redox}(H)</span> | Species | V<sub>Redox</sub>(eV) | |::|::| |O<sub>2</sub>/O<sub>2</sub><sup>-</sup>| 4.44-0.33|…</a></p>
+<hr />
+<h1 data-number="38" id="single-point-catalysis"><span class="header-section-number">38</span> <a href="SAC.html"><span style="color:red; font-size: 40; "><strong>﻿Single Point Catalysis </strong></span></a></h1>
+<p><a href="SAC.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="SAC.html"># 制备要求 原子级分散的贵金属催化剂由于其高原子利用效率而表现出更高的催化活性。为了制备单原子催化剂，一般有以下几种方法： 1. 降低金属负�…</a></p>
+<hr />
+<h1 data-number="39" id="semimetal"><span class="header-section-number">39</span> <a href="SemiMetal.html"><span style="color:red; font-size: 40; "><strong>﻿Semimetal </strong></span></a></h1>
+<p><a href="SemiMetal.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="SemiMetal.html"># Semimetal types !Fig. 1:{width=100%} Fig. 1Schematic illustration of different types of semimetals and representative materials. a, Normal semimetal with the coexistence of electron and hole…</a></p>
+<hr />
+<h1 data-number="40" id="siesta"><span class="header-section-number">40</span> <a href="Siesta.html"><span style="color:red; font-size: 40; "><strong>﻿Siesta</strong></span></a></h1>
+<p><a href="Siesta.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Siesta.html"># Install gcc 7.5/openmpi 3.1.6/openblas 0.2.20 / scalapack 2.2 Downlad siesta from &lt;https://gitlab.com/siesta-project/siesta&gt; ``` tar -xvf siesta-4.1.5.tar.gz cd siesta-4.1.5.tar.gz mkdir bin cd…</a></p>
+<hr />
+<h1 data-number="41" id="siesta-1"><span class="header-section-number">41</span> <a href="Sieta.html"><span style="color:red; font-size: 40; "><strong>﻿Siesta </strong></span></a></h1>
+<p><a href="Sieta.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Sieta.html"># Install ```sh tar -xvf siesta-3.2-pl-4.tgz cd siesta-3.2-pl-4 cd Obj sh ../Src/obj_setup.sh ../Src/configure CC=icc FC=ifort # modify arch.make: 1)FC=… change to: FC=mpif90 2)add : CC=icc…</a></p>
+<hr />
+<h1 data-number="42" id="solar-cell"><span class="header-section-number">42</span> <a href="Solar_Cell.html"><span style="color:red; font-size: 40; "><strong>﻿Solar Cell</strong></span></a></h1>
+<p><a href="Solar_Cell.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Solar_Cell.html"># 基本介绍 钙钛矿太阳能电池以其优异的能量转换效率，在光伏领域掀起了新的研究热潮。近几年，钙钛矿电池的光电转换效率逐步飞升，通过调整钙�…</a></p>
+<hr />
+<h1 data-number="43" id="ssadndp"><span class="header-section-number">43</span> <a href="SSAdNDP.html"><span style="color:red; font-size: 40; "><strong>﻿SSAdNDP</strong></span></a></h1>
+<p><a href="SSAdNDP.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="SSAdNDP.html"># Installation ## Download Download SSAdNDP from &lt;http://ion.chem.usu.edu/~boldyrev/ssadndp.php&gt; ## Install New Periodic NBO ### New Periodic NBO (2015) Ref:…</a></p>
+<hr />
+<h1 data-number="44" id="superconductor"><span class="header-section-number">44</span> <a href="supercond.html"><span style="color:red; font-size: 40; "><strong>﻿Superconductor </strong></span></a></h1>
+<p><a href="supercond.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="supercond.html"># Formulas The total electron-phonon coupling constant <span class="math inline">\lambda</span> can be obtained by <span class="math display">\lambda=\sum_{q\nu}\lambda_{q\nu}=2\int_0^{\omega}\frac{\alpha^2F(\omega)}{\omega}d\omega</span>…</a></p>
+<hr />
+<h1 data-number="45" id="symmetry"><span class="header-section-number">45</span> <a href="Symmetry.html"><span style="color:red; font-size: 40; "><strong>﻿Symmetry</strong></span></a></h1>
+<p><a href="Symmetry.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Symmetry.html"># Symmetry Operations Symmetry operations include the improper rotation, inversion operation, mirror plane, and rotation. Together, these operations create 32 crystal classes corresponding to the…</a></p>
+<hr />
+<h1 data-number="46" id="thermoelectric"><span class="header-section-number">46</span> <a href="Thermoelectric.html"><span style="color:red; font-size: 40; "><strong>﻿Thermoelectric</strong></span></a></h1>
+<p><a href="Thermoelectric.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Thermoelectric.html"># 基本介绍…</a></p>
+<hr />
+<h1 data-number="47" id="literature-tracking"><span class="header-section-number">47</span> <a href="Track.html"><span style="color:red; font-size: 40; "><strong>﻿Literature Tracking</strong></span></a></h1>
+<p><a href="Track.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Track.html"># Email Alerts ## Follow a paper or an author 1. Visit <code>Microsoft Academic</code> &lt;https://academic.microsoft.com/php&gt;. 2. Search a paper or an author. 3. To <code>Follow</code> a paper or an author, then you…</a></p>
+<hr />
+<h1 data-number="48" id="kinetics-and-transition-state"><span class="header-section-number">48</span> <a href="Transition_State.html"><span style="color:red; font-size: 40; "><strong>﻿Kinetics and Transition State</strong></span></a></h1>
+<p><a href="Transition_State.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Transition_State.html"># Transition State in VASP VTST, CI-NEB[Henkelman00JCP] and SSNEB[Sheppard12JCP]. # Kinetics with Pressure[Zhang14JACS] The rate of the C monomer being captured can be roughly estimated as…</a></p>
+<hr />
+<h1 data-number="49" id="paramters-and-units"><span class="header-section-number">49</span> <a href="Units.html"><span style="color:red; font-size: 40; "><strong>﻿Paramters and Units</strong></span></a></h1>
+<p><a href="Units.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Units.html"># 常用物理基本常数表 |物理常数|符号|最佳实验值|供计算用值| |::|::|::|::| | 真空中光速 | c | 299792458±1.2m·s<sup>-1</sup> |…</a></p>
+<hr />
+<h1 data-number="50" id="energy-relative-to-vacuum"><span class="header-section-number">50</span> <a href="Vacuum_energy.html"><span style="color:red; font-size: 40; "><strong>﻿Energy Relative to vacuum</strong></span></a></h1>
+<p><a href="Vacuum_energy.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Vacuum_energy.html"># Light-Induced Ambient Degradation of Few-Layer Black Phosphorus: Mechanism and Protection[Zhou16ACIE] &gt;Visual light(400nm-760nm) by <span class="math inline">E=h\nu=hc/\lambda</span>, <span class="math inline">E_{visual}=1.63 \sim 3.1 eV</span> …</a></p>
+<hr />
+<h1 data-number="51" id="band-structure-and-dos-in-vasp"><span class="header-section-number">51</span> <a href="VASP-Band.html"><span style="color:red; font-size: 40; "><strong>﻿Band structure and DOS in VASP </strong></span></a></h1>
+<p><a href="VASP-Band.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP-Band.html"># Band structure ## Plot <code>fatband</code> with <code>P4vasp</code> 1. Open <code>P4vasp</code> 2. Open <code>vasprun.xml</code> 3. Click <code>Menu-&gt;Electronic-&gt;Local DOS+band control</code> 4. Click <code>Show-&gt;Bands</code> above the graph. 5. Focus on the…</a></p>
+<hr />
+<h1 data-number="52" id="benchmark-for-vasp"><span class="header-section-number">52</span> <a href="vasp.bench.html"><span style="color:red; font-size: 40; "><strong>﻿BenchMark for vasp</strong></span></a></h1>
+<p><a href="vasp.bench.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="vasp.bench.html">| OS| Hyper| CPU/GPU| NP| impi| Vasp| LREAL| Clcok| Steps| Energy| TotalTime| |||||||||||| | 7.4| n| GPU/i7| 1| 5| …</a></p>
+<hr />
+<h1 data-number="53" id="cell-constraint"><span class="header-section-number">53</span> <a href="VASP_ConstrCell.html"><span style="color:red; font-size: 40; "><strong>Cell Constraint</strong></span></a></h1>
+<p><a href="VASP_ConstrCell.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP_ConstrCell.html"># Cell Constraint for VASP Modify <code>src/constr_cell_relax.F</code> as follows, and recompile it. ```patch — src/constr_cell_relax.F 2020-08-25 23:27:21.000000000 +0800 +++…</a></p>
+<hr />
+<h1 data-number="54" id="ggau"><span class="header-section-number">54</span> <a href="VASP-GGAU.html"><span style="color:red; font-size: 40; "><strong>GGA+U</strong></span></a></h1>
+<p><a href="VASP-GGAU.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP-GGAU.html"># Determine U and J value U and J are screened Coulomb and exchange parameters The exchange J (typically of order ~1 eV[Anisimov97JPCM]), though not as strong as that of U (about one-tenth of U…</a></p>
+<hr />
+<h1 data-number="55" id="installtion-of-vasp"><span class="header-section-number">55</span> <a href="VASP.html"><span style="color:red; font-size: 40; "><strong>﻿Installtion of VASP </strong></span></a></h1>
+<p><a href="VASP.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP.html"># Installtion ## install Bader ``<code>sh tar -xvf  bader.tar.gz &amp;&amp; cd  bader</code> # #to edit makefile.lnx_ifort: Line 7: LINK = -static =&gt; LINK = -static-intel # make -f makefile.lnx_ifort cp…</a></p>
+<hr />
+<h1 data-number="56" id="multiferro-for-vasp"><span class="header-section-number">56</span> <a href="VASP_MF.html"><span style="color:red; font-size: 40; "><strong>﻿Multiferro for VASP </strong></span></a></h1>
+<p><a href="VASP_MF.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP_MF.html"># Berry phase 计算铁电极化的步骤 confirmed by 大牛Ederer &gt; by fan_zhen from &lt;http://muchong.com/bbs/viewthread.php?tid=8575960&amp;fpage=1&amp;target=blank&gt; 四年之前曾经发帖求助Berry…</a></p>
+<hr />
+<h1 data-number="57" id="neb-for-vasp"><span class="header-section-number">57</span> <a href="VASP-NEB.html"><span style="color:red; font-size: 40; "><strong>﻿NEB for VASP </strong></span></a></h1>
+<p><a href="VASP-NEB.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP-NEB.html"># NEB 转载自：&lt;http://blog.sina.com.cn/s/blog_b364ab230102v1wk.html&gt; The VASP manual has a brief description of how to perform elastic band calculations on this page: …</a></p>
+<hr />
+<h1 data-number="58" id="quantum-espresso-vs-vasp"><span class="header-section-number">58</span> <a href="vasp-pwscf.html"><span style="color:red; font-size: 40; "><strong>﻿Quantum Espresso vs VASP</strong></span></a></h1>
+<p><a href="vasp-pwscf.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+[转自：https://www.nsc.liu.se/~pla/blog/2013/02/04/qevasp-part1/
+<div class="entry-content">
+<p>There are just a few implementations of the PAW method: &lt;a…](vasp-pwscf.html)</p>
+<hr />
+<h1 data-number="59" id="vasp-tips"><span class="header-section-number">59</span> <a href="VASP-Tips.html"><span style="color:red; font-size: 40; "><strong>﻿VASP Tips</strong></span></a></h1>
+<p><a href="VASP-Tips.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="VASP-Tips.html"># Unit for CHGCAR From VASP manual, CHGCAR: "This file contains the lattice vectors, atomic coordinates, the total charge density multiplied by the volume <span class="math inline">\rho(r)V_{cell}</span> on the fine FFT-grid…</a></p>
+<hr />
+<h1 data-number="60" id="vesta-vmd-and-avogadro"><span class="header-section-number">60</span> <a href="Visual.html"><span style="color:red; font-size: 40; "><strong>﻿Vesta, VMD and Avogadro</strong></span></a></h1>
+<p><a href="Visual.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Visual.html"># Tips ## Vibration mold format: Visualization by Avogadro/Jmol. xsf/axsf format: Visualization by Xcrysen (or as Force vectors in Vesta) ## Animation xyz format: Visualization and making movie…</a></p>
+<hr />
+<h1 data-number="61" id="wannier-functions"><span class="header-section-number">61</span> <a href="Wannier.html"><span style="color:red; font-size: 40; "><strong>﻿Wannier Functions</strong></span></a></h1>
+<p><a href="Wannier.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Wannier.html"># Wannier90 ## How to construct high-quality Wannier functions From &lt;https://www.wanniertools.org/tutorials/high-quality-wfs/&gt; QuanSheng Wu École Polytechnique Fédérale de Lausanne (EPFL),…</a></p>
+<hr />
+<h1 data-number="62" id="writting-skills"><span class="header-section-number">62</span> <a href="Writting.html"><span style="color:red; font-size: 40; "><strong>﻿Writting Skills</strong></span></a></h1>
+<p><a href="Writting.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="Writting.html"># 选题和写作 与其跟风大文章，不如找一个有特色、原创性高、有系统的课题，这样更容易建立学术声誉 …</a></p>
+<hr />
+<h1 data-number="63" id="zotero-tips"><span class="header-section-number">63</span> <a href="zotero.html"><span style="color:red; font-size: 40; "><strong>Zotero Tips</strong></span></a></h1>
+<p><a href="zotero.html"><span style="color:black; font-size: 30; "><strong>Oct 04, 2021</strong></span></a></p>
+<p><a href="zotero.html"># Install Plugins zotfile Better-bibtex shortdoi zutilo # Preference ## Main Sync: Login zotero account, enable Data syncing and set <code>Sync automatically</code>, <code>Sync full-text context</code>, Disable…</a></p>
+<hr />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/pandocmodels/sidebar/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/pandocmodels/sidebar/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/pandocmodels/sidebar/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
+  </body>
+</html>

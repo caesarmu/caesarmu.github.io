@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>Phase Diagram</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Phase Diagram"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -72,7 +72,7 @@ button{
     .catch(console.error)
 </script>
 
-  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
    var mathElements = document.getElementsByClassName("math");
    var macros = [];
@@ -87,7 +87,7 @@ button{
      });
   }}});
   </script>
-  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" />
           <div class='content-body'>
               <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
           </div>
@@ -109,16 +109,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -139,7 +142,7 @@ button{
 <p><span class="citation" data-cites="Kvashnin14NL"><sup>[1]</sup></span>The phase diagram was obtained from the calculation of the Gibbs free energies G of the compared phases in the quasiharmonic approximation: <span class="math display">G(P,T)=E_0(V)+PV+U_0(V)+F_{vib}(T,V)</span> where E<sub>0</sub>, U<sub>0</sub>, and F<sub>vib</sub> are the total energy from the DFT calculations, while the zero-point and vibrational energies are calculated from the following relations: <span class="math display">U_0(V)=1/2\int g(V,\omega)\hbar \omega d\omega</span> <span class="math display">F_{vib}(T,V)=k_BT\int_{\Omega}g(V,\omega)ln[1-exp(-\frac{\hbar \omega}{k_BT})]d\omega</span> Here <span class="math inline">g(\omega)</span> is the phonon density of states at the given pressure calculated using the density-functional perturbation theory.<span class="citation" data-cites="Baroni01RMP"><sup>[2]</sup></span> The phonon density of states (PhDOS) was calculated for each value of equilibrium volume for each studied structure, using density functional perturbation theory. Then the PhDOS integrations above yield the zero-point (U<sub>0</sub>) and vibrational (F<sub>vib</sub>) energies, for every chosen temperature.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Kvashnin14NL" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Kvashnin, A. G.; Chernozatonskii, L. A.; Yakobson, B. I.; Sorokin, P. B. Phase Diagram of Quasi-Two-Dimensional Carbon, from Graphene to Diamond. <em>Nano Lett.</em> <strong>2014</strong>, <em>14</em>, 676–681.</div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Kvashnin, A. G.; Chernozatonskii, L. A.; Yakobson, B. I.; Sorokin, P. B. Phase Diagram of Quasi-Two-Dimensional Carbon, from Graphene to Diamond. <em>Nano Lett,</em> <strong>2014</strong>, <em>14</em>, 676–681.</div>
 </div>
 <div id="ref-Baroni01RMP" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">Baroni, S.; de Gironcoli, S.; Dal Corso, A.; Giannozzi, P. Phonons and Related Crystal Properties from Density-Functional Perturbation Theory. <em>Rev. Mod. Phys.</em> <strong>2001</strong>, <em>73</em>, 515–562.</div>
@@ -173,5 +176,7 @@ button{
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>
