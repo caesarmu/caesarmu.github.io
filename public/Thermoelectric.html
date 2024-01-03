@@ -8,7 +8,7 @@
     <meta name="generator" content="pandoc">
     <meta name="description" content="">
     <meta name="author" content="Caesarmu">
-    <meta name="dcterms.date" content=" 08/10/2023">
+    <meta name="dcterms.date" content=" 01/03/2024">
   <title>Thermoelectric</title>
   <!-- script type="text/javascript">var filename=location.href;filename=filename.substr(filename.lastIndexOf('/')+1);document.title="Thermoelectric"+"("+filename+")";</script -->
     <!-- Bootstrap core CSS -->
@@ -138,7 +138,7 @@ button{
     .catch(console.error)
 </script>
 
-  <script src="https://gitblog.nanomat.top/katex/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
    var mathElements = document.getElementsByClassName("math");
    var macros = [];
@@ -153,7 +153,7 @@ button{
      });
   }}});
   </script>
-  <link rel="stylesheet" href="https://gitblog.nanomat.top/katex/katex.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" />
           <div class='content-body'>
               <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a> </p>
           </div>
@@ -175,16 +175,19 @@ button{
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/paper.html">Paper</a></li>
+            <li><a href="/paper.html">Publication</a></li>
             <li><a href="/post.html">Post</a></li>
             <li class="dropdown">
               <a href="/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
               <ul class="dropdown-menu">  
-            <li><a href="http://172.21.169.223:8080/editor/" target="_blank" >MarkDown</a></li>
-            <li><a href="http://172.21.169.223:8080/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
-            <li><a href="http://172.21.169.223:8080/my-mind/" target="_blank" >MindMap</a></li>
+            <li><a href="/editor/" target="_blank" >MarkDown</a></li>
+            <li><a href="/svgedit/editor/svg-editor.html" target="_blank" >SvgEdit</a></li>
+            <li><a href="/my-mind/" target="_blank" >MindMap</a></li>
             <li><a target="_blank" href="https://materialsproject.org/">PyMatGen</a></li>
-            <li><a target="_blank" href="https://blog.nanomat.top/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/gold/">GoldMiner</a></li>
+            <li><a target="_blank" href="/games/Space/">SpaceInvaders</a></li>
+            <li><a target="_blank" href="/games/mario/">SuperMario</a></li>
+            <li><a target="_blank" href="/games/star/">StarBattle</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a  target="_blank" href="http://ims.sxu.edu.cn/">SXU IMS</a></li>
             <li><a target="_blank" href="https://vpn.sxu.edu.cn/portal/">SXU VPN</a></li>
@@ -208,9 +211,16 @@ button{
           <li><a href="#基本介绍"><span class="toc-section-number">0.1</span> 基本介绍</a></li>
           <li><a href="#shengbte-installation"><span class="toc-section-number">0.2</span> [ShengBTE Installation</a>
           <ul>
-          <li><a href="#shengbte-v1.5"><span class="toc-section-number">0.2.1</span> ShengBTE v1.5</a></li>
-          <li><a href="#gpu-optimized-version-of-shengbte"><span class="toc-section-number">0.2.2</span> <span>GPU optimized Version of ShengBTE</span></a></li>
-          <li><a href="#fourthorder-version-of-shengbte"><span class="toc-section-number">0.2.3</span> <span>Fourthorder Version of ShengBTE</span></a></li>
+          <li><a href="#spblig-1.12.2"><span class="toc-section-number">0.2.1</span> Spblig 1.12.2</a></li>
+          <li><a href="#shengbte-v1.5"><span class="toc-section-number">0.2.2</span> ShengBTE v1.5</a></li>
+          <li><a href="#gpu-optimized-version-of-shengbte"><span class="toc-section-number">0.2.3</span> <span>GPU optimized Version of ShengBTE</span></a></li>
+          <li><a href="#fourthorder-version-of-shengbte"><span class="toc-section-number">0.2.4</span> <span>Fourthorder Version of ShengBTE</span></a></li>
+          </ul></li>
+          <li><a href="#almabte-1.3.2-installation"><span class="toc-section-number">0.3</span> AlmaBTE 1.3.2 installation</a>
+          <ul>
+          <li><a href="#install-hdf5"><span class="toc-section-number">0.3.1</span> install hdf5</a></li>
+          <li><a href="#install-boost"><span class="toc-section-number">0.3.2</span> install boost</a></li>
+          <li><a href="#install-almabte-1.3.2"><span class="toc-section-number">0.3.3</span> install almaBTE 1.3.2</a></li>
           </ul></li>
           </ul>
         </div>
@@ -220,102 +230,203 @@ button{
 <p>热电效应是指在给定温度梯度下产生电势差的一种物理现象。通常用品质因子(ZT)<span class="math inline">ZT=S^2\sigma{T}/\kappa</span>,（其中<span class="math inline">S</span>是Seebeck系数，<span class="math inline">\sigma</span>代表电导率，<span class="math inline">T</span>是温度，<span class="math inline">\kappa</span>则表示热导率）来表征材料的热电性能。具有高品质因子的热电材料能够有效地将废热转换为电能，具有广泛的应用前景，因此寻找具有高品质因子的热电材料是能源转换领域的一个研究热点。为了提高热电材料的品质因子，有两种途径：增强<span class="math inline">S^2\sigma</span>（又称功率因子）或者降低材料的热导率。(From材料牛By Alisa)</p>
 <p>早在1993年，麻省理工学院的Mildred Dresselhaus教授和她的博士生L. D. Hicks曾预言二维量子限域效应引起的态密度增强现象会极大地提高材料的热电功率因子 (Phys. Rev. B 47, 12727 (1993))，这为获得高性能的热电材料提供了一个非常重要的理论指导。但是截至目前，一直没有实验确切地证实这个理论预测。即使在一些实验中半导体材料量子阱的宽度已经缩小至电荷的波尔直径尺度，仍然没有观察到热电性能的显著增强。最近，南京大学物理学院的梁世军副研究员和缪峰教授开展实验，同时与吉林大学张立军教授理论课题组合作，利用二维材料均匀厚度和载流子浓度可控的特性，首次证实了著名的Hicks-Dresselhaus理论预言。(From材料牛By Alisa)</p>
 <h2 data-number="0.2" id="shengbte-installation"><span class="header-section-number">0.2</span> [ShengBTE Installation</h2>
-<h3 data-number="0.2.1" id="shengbte-v1.5"><span class="header-section-number">0.2.1</span> ShengBTE v1.5</h3>
+<h3 data-number="0.2.1" id="spblig-1.12.2"><span class="header-section-number">0.2.1</span> Spblig 1.12.2</h3>
+<h4 data-number="0.2.1.1" id="using-gcc-4.8.5"><span class="header-section-number">0.2.1.1</span> using gcc 4.8.5</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Download spglib-1.12.2.tar.gz</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> _build</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> _build</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-DCMAKE_INSTALL_PREFIX</span><span class="op">=</span><span class="st">&quot;&quot;</span> ..</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> DESTDIR=/home/ywmu/backup/Src/comlib/gcc7/spglib.gcc4 install </span></code></pre></div>
+<h4 data-number="0.2.1.2" id="using-icc-2015"><span class="header-section-number">0.2.1.2</span> using icc 2015</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Download spglib-1.12.2.tar.gzmkdir _build</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">## load intel 2015 </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">aclocal</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">autoheader</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">libtoolize</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> INSTALL NEWS README AUTHORS</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">automake</span> <span class="at">-acf</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">autoconf</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--preifx</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/intel/spglib CC=icc </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install </span></code></pre></div>
+<h3 data-number="0.2.2" id="shengbte-v1.5"><span class="header-section-number">0.2.2</span> ShengBTE v1.5</h3>
 <ol type="1">
-<li>Down latest ShengBTE from <a href="https://bitbucket.org/sousaw/shengbte/src/master/">sousaw / shengbte — Bitbucket</a></li>
+<li>Download latest ShengBTE from <a href="https://bitbucket.org/sousaw/shengbte/src/master/">sousaw / shengbte — Bitbucket</a></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel oneapi</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> sousaw-shengbte-xxxxx.zip</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> sousaw-shengbte-xxxxx</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static-intel</span> <span class="at">-qopenmp</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/backup/Src/spglib/spglib-1.12.2/src/.libs/libsymspg.a  </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort   <span class="co">#modify this line </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory  </span></span></code></pre></div>
-<h3 data-number="0.2.2" id="gpu-optimized-version-of-shengbte"><span class="header-section-number">0.2.2</span> <a href="https://github.com/wxmwy/ShengBTE">GPU optimized Version of ShengBTE</a></h3>
-<ol type="1">
-<li>Download GPU ShengBTE from <a href="https://github.com/wxmwy/ShengBTE" class="uri">https://github.com/wxmwy/ShengBTE</a></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GPU Version </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015 (the intel version compatible with your cuda, maybe not intel oneapi)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> ShengBTE-master.zip</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ShengBTE-master</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src-gpu</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src-gpu</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify FFLAGS, LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/muyw/backup/comlib/intel/libsymspg.a</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#######</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">## Modify cuda root in Makefile to the right path </span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="va">LIBS</span><span class="op">+=</span>-L/usr/local/cuda-9.2/lib64 <span class="ex">-lcudart</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">icc</span> <span class="at">-g</span> <span class="at">-O3</span> <span class="at">-I</span>/usr/local/cuda-9.2/include <span class="at">-c</span> <span class="at">-o</span> <span class="va">$@</span> $^</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">####</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.gpu</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># you will get the GPU version ShengBTE</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># intel oneapi version </span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make ../Src</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">## unload intel2015, and load intel oneapi</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.oneapi</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">### Everything is ok for ShengBTE.gpu and ShengBTE.oneapi</span></span></code></pre></div>
-<ol start="2" type="1">
-<li>The results are very close to those from the original version of ShengBTE.</li>
-</ol>
-<h3 data-number="0.2.3" id="fourthorder-version-of-shengbte"><span class="header-section-number">0.2.3</span> <a href="https://github.com/wxmwy/ShengBTE">Fourthorder Version of ShengBTE</a></h3>
-<ol type="1">
-<li>Download Fourthorder Version of ShengBTE from <a href="https://github.com/FourPhonon/Fourthorder" class="uri">https://github.com/FourPhonon/Fourthorder</a></li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel oneapi</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FourPhonon-main.zip</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> FourPhonon-main</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> sousaw-shengbte-xxxxx.zip</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> sousaw-shengbte-xxxxx</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify LDFLAGS, MPIFC, and MKLROOT), </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static_intel</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/.soft/libadd/staticlib/spglib/libsymspg.a</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKLROOT</span><span class="op">=</span>/opt/intel11/Compiler/mkl</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>       <span class="dt">\</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_intel_lp64.a                                <span class="dt">\</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_sequential.a                               <span class="dt">\</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow for oneapi (modify LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static-intel</span> <span class="at">-qopenmp</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/backup/Src/spglib/spglib-1.12.2/src/.libs/libsymspg.a  </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort   <span class="co">#modify this line </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">########</span></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory </span></span></code></pre></div>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">## OR  arch.make for oneapi+openblas </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static-intel</span> <span class="at">-qopenmp</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/backup/Src/spglib/spglib-1.12.2/src/.libs/libsymspg.a  </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort   <span class="co">#modify this line </span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span>export <span class="va">LAPACK</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/intel/libopenblas.a</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">## OR arch.make for  openmpi3(gcc7) + Openblas</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>  <span class="at">-O2</span>  <span class="at">-fopenmp</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/backup/Src/spglib/spglib-1.9.9.gnu/src/.libs/libsymspg.a</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpif90</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span>/home/ywmu/backup/Src/comlib/gcc7/libopenblas.a</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">### load IMPI oneapi or Openmpi+gcc7(gcc7)</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory  </span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<h3 data-number="0.2.3" id="gpu-optimized-version-of-shengbte"><span class="header-section-number">0.2.3</span> <a href="https://github.com/wxmwy/ShengBTE">GPU optimized Version of ShengBTE</a></h3>
+<ol type="1">
+<li>Download GPU ShengBTE from <a href="https://github.com/wxmwy/ShengBTE" class="uri">https://github.com/wxmwy/ShengBTE</a></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GPU Version </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015 (the intel version compatible with your cuda, maybe not intel oneapi)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> ShengBTE-master.zip</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ShengBTE-master</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src-gpu</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src-gpu</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify FFLAGS, LDFLAGS, MPIFC, and replace lib/em64t with lib/intel64), </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/muyw/backup/comlib/intel/libsymspg.a</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>     <span class="dt">\</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_intel_lp64.a                              <span class="dt">\</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_sequential.a                             <span class="dt">\</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/intel64/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#######</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">## Modify cuda root in Makefile to the right path </span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="va">LIBS</span><span class="op">+=</span>-L/usr/local/cuda-9.2/lib64 <span class="ex">-lcudart</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">icc</span> <span class="at">-g</span> <span class="at">-O3</span> <span class="at">-I</span>/usr/local/cuda-9.2/include <span class="at">-c</span> <span class="at">-o</span> <span class="va">$@</span> $^</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">####</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.gpu</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># you will get the GPU version ShengBTE</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># intel oneapi version </span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make ../Src</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co">## unload intel2015, and load intel oneapi</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ../ShengBTE ../ShengBTE.oneapi</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co">### Everything is ok for ShengBTE.gpu and ShengBTE.oneapi</span></span></code></pre></div>
+<ol start="2" type="1">
+<li>The results are very close to those from the original version of ShengBTE.</li>
+</ol>
+<h3 data-number="0.2.4" id="fourthorder-version-of-shengbte"><span class="header-section-number">0.2.4</span> <a href="https://github.com/wxmwy/ShengBTE">Fourthorder Version of ShengBTE</a></h3>
+<ol type="1">
+<li>Download Fourthorder Version of ShengBTE from <a href="https://github.com/FourPhonon/Fourthorder" class="uri">https://github.com/FourPhonon/Fourthorder</a></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load intel 2015</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> FourPhonon-main.zip</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> FourPhonon-main</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> arch.make Src</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Src</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">## modify arch.make as follow (modify LDFLAGS, MPIFC, and MKLROOT), </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FFLAGS</span><span class="op">=</span>-traceback <span class="at">-debug</span> <span class="at">-O2</span> <span class="at">-static_intel</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LDFLAGS</span><span class="op">=</span>/home/ywmu/.soft/libadd/staticlib/spglib/libsymspg.a</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MPIFC</span><span class="op">=</span>mpiifort</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="va">MKLROOT</span><span class="op">=</span>/opt/intel11/Compiler/mkl</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="va">MKL</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_lapack95_lp64.a <span class="ex">-Wl,--start-group</span>       <span class="dt">\</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_intel_lp64.a                                <span class="dt">\</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_sequential.a                               <span class="dt">\</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a> <span class="va">$(</span><span class="ex">MKLROOT</span><span class="va">)</span>/lib/em64t/libmkl_core.a <span class="at">-Wl,--end-group</span> <span class="at">-lpthread</span> <span class="at">-lm</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LAPACK</span><span class="op">=</span><span class="va">$(</span><span class="ex">MKL</span><span class="va">)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBS</span><span class="op">=</span><span class="va">$(</span><span class="ex">LAPACK</span><span class="va">)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">## ShengBTE generated in the parent directory </span></span></code></pre></div>
 <ul>
 <li>The results are a little smaller than those from the original version of ShengBTE.</li>
 </ul>
+<h2 data-number="0.3" id="almabte-1.3.2-installation"><span class="header-section-number">0.3</span> AlmaBTE 1.3.2 installation</h2>
+<ul>
+<li>Reference: <a href="https://chempeng.github.io/post/2021/01/14/almabte-1.3.2-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/" class="uri">https://chempeng.github.io/post/2021/01/14/almabte-1.3.2-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</a></li>
+</ul>
+<h3 data-number="0.3.1" id="install-hdf5"><span class="header-section-number">0.3.1</span> install hdf5</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.20/src/hdf5-1.8.20.tar.bz2</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> hdf5-1.8.20.tar.bz2</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> hdf5-1.8.20</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="va">comlib</span><span class="op">=</span>/home/xxxx/xxx</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="va">hdfhome</span><span class="op">=</span><span class="va">$comlib</span>/hdf5 <span class="co">## for gcc4.8.5: hdfhome=$comlib/hdf5-gcc </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--prefix</span><span class="op">=</span><span class="va">$hdfhome</span> <span class="at">--enable-cxx</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j4</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">### Environment variables </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="va">comlib</span><span class="op">=</span>/home/xxxx/xxx</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="va">hdfhome</span><span class="op">=</span><span class="va">$comlib</span>/hdf5 <span class="co">## or hdfhome=$comlib/hdf5-gcc</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$PATH</span>:<span class="va">$hdfhome</span>/bin</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH</span><span class="op">=</span><span class="va">$LD_LIBRARY_PATH</span>:<span class="va">$hdfhome</span>/lib</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CPATH</span><span class="op">=</span><span class="va">$CPATH</span>:<span class="va">$hdfhome</span>/include</span></code></pre></div>
+<h3 data-number="0.3.2" id="install-boost"><span class="header-section-number">0.3.2</span> install boost</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://boostorg.jfrog.io/artifactory/main/release/1.68.0/source/boost_1_68_0.tar.gz</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> boost_1_68_0.tar.gz</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> boost_1_68_0</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="va">boosthome</span><span class="op">=</span><span class="va">$comlib</span>/boost <span class="co">## for  gcc4.8.5: boosthome=$comlib/boost-gcc </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./bootstrap.sh</span> <span class="at">--prefix</span><span class="op">=</span><span class="va">$boosthome</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">###for gcc4.8.5:  ./bootstrap.sh --prefix=$boosthome --with-libraries=all --with-toolset=gcc</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;using mpi : </span><span class="va">$(</span><span class="fu">which</span> mpicc<span class="va">)</span><span class="st"> ;&quot;</span> <span class="op">&gt;&gt;</span> project-config.jam</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./b2</span> <span class="at">-j4</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">### for gcc4.8.5: ./b2 toolset=gcc -j4 </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">./b2</span> install  <span class="at">--prefix</span><span class="op">=</span><span class="va">$comlib</span>/boost  </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">### Environment variables </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="va">comlib</span><span class="op">=</span>/home/xxxx/xxx</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="va">boosthome</span><span class="op">=</span><span class="va">$comlib</span>/boost  <span class="co">## or boosthome=$comlib/boost-gcc</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LD_LIBRARY_PATH</span><span class="op">=</span><span class="va">$LD_LIBRARY_PATH</span>:<span class="va">$boosthome</span>/lib</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CPATH</span><span class="op">=</span><span class="va">$CPATH</span>:<span class="va">$boosthome</span>/include</span></code></pre></div>
+<h3 data-number="0.3.3" id="install-almabte-1.3.2"><span class="header-section-number">0.3.3</span> install almaBTE 1.3.2</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://www.almabte.eu/wp-content/uploads/2018/10/almabte-v1.3.2.tar.gz</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvf</span> almabte-v1.3.2.tar.gz</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> almabte-v1.3.2</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">## modify CMakeList.txt </span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Add</span> </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span><span class="er">(</span><span class="ex">BOOST_ROOT</span> <span class="st">&quot;/home/xxxx/xxx/boost&quot;</span><span class="kw">)</span>  <span class="co">## for gcc4.8.5: set(BOOST_ROOT &quot;/home/xxxx/xxx/boost-gcc&quot;)  </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">before</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">find_package</span><span class="er">(</span><span class="ex">Boost</span> COMPONENTS system filesystem mpi serialization log REQUIRED<span class="kw">)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Add</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span><span class="er">(</span><span class="ex">HDF5_ROOT</span> <span class="st">&quot;/home/xxxx/xxx/hdf5&quot;</span><span class="kw">)</span> <span class="co">## for gcc4.8.5: set(BOOST_ROOT &quot;/home/xxxx/xxx/hdf5-gcc&quot;) </span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="ex">before</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="ex">find_package</span><span class="er">(</span><span class="ex">HDF5</span> COMPONENTS C CXX REQUIRED<span class="kw">)</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#######################</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> build <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> build</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">### for gcc4.8.5: mdkir buildgcc &amp;&amp; cd buildgcc</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> ../   <span class="co">#cmake3 needed</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span> 4 all</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">### Error: fatal error: boost/uuid/sha1.hpp  not found </span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Change &quot;boost/uuid/sha1.hpp&quot; to  &quot;boost/uuid/detail/sha1.hpp&quot; in superlattice_builder.cpp</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">### make clean &amp;&amp; make -j 4 all</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span> 4 test </span></code></pre></div>
         </div>
       </div>
     </div>
@@ -344,5 +455,7 @@ button{
             tables[i].className += "table table-bordered table-hover";
         }
     </script>
+<script type="text/javascript" color="208,55,66" pointColor="255,0,0"  opacity="0.5" count="200" src="/js4mu/canvas/canvas-nest.js"></script>
+<script type="text/javascript" src="/js4mu/canvas/canvas-nest.umd.js"></script>
   </body>
 </html>
