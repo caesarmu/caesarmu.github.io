@@ -29,7 +29,7 @@ function FindProxyForURL(url, host)
         dnsDomainIs(host,"orcid.org") ||
         dnsDomainIs(host,"manuscriptcentral.com") ||
         dnsDomainIs(host,"aps.org")) {
-            return "PROXY 127.0.0.1:8126; 127.0.0.1:8122; DIRECT";
+            return "PROXY 127.0.0.1:8122; 127.0.0.1:8126; DIRECT";
         };
     return "DIRECT";
 }
